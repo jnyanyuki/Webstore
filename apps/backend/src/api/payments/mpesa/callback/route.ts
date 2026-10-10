@@ -43,7 +43,7 @@ export async function POST(
   } catch (error) {
     console.error("M-Pesa Callback Processing Error:", error);
     // If it's a unique constraint error (idempotency hit), still return 200 to Safaricom
-    if (error.code === '23505') { // Postgres Unique Violation
+    if ((error as any)?.code === '23505') { // Postgres Unique Violation
       return res.status(200).json({ ResultCode: 0, ResultDesc: "Already Processed" });
     }
     

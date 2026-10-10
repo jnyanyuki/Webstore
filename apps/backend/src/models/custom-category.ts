@@ -4,28 +4,28 @@ import { generateEntityId } from "@medusajs/medusa";
 @Entity("custom_category")
 export class CustomCategory {
   @PrimaryGeneratedColumn("uuid")
-  id: string;
+  id!: string;
 
   @Column({ type: "uuid", nullable: true })
-  parent_id: string | null;
+  parent_id!: string | null;
 
   @Column({ type: "varchar", length: 255 })
-  name: string;
+  name!: string;
 
   @Column({ type: "varchar", length: 255, unique: true })
-  slug: string;
+  slug!: string;
 
   @Column({ type: "jsonb", default: {} })
-  attribute_schema: Record<string, any>;
+  attribute_schema!: Record<string, any>;
 
   @Column({ type: "boolean", default: true })
-  is_active: boolean;
+  is_active!: boolean;
 
   @CreateDateColumn({ type: "timestamptz" })
-  created_at: Date;
+  created_at!: Date;
 
   @UpdateDateColumn({ type: "timestamptz" })
-  updated_at: Date;
+  updated_at!: Date;
 
   @BeforeInsert()
   private beforeInsert(): void {

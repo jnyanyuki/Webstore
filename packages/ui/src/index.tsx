@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import React from "react";
 import { OrderStatusTimeline, OrderFulfillmentStatus } from "@webstore/types";
 

@@ -7,9 +7,9 @@ export default class MpesaService extends TransactionBaseService {
   protected manager_: EntityManager;
   protected transactionManager_: EntityManager | undefined;
 
-  constructor(container: any) {
+  constructor(container: any = {}) {
     super(container);
-    this.manager_ = container.manager;
+    this.manager_ = container?.manager;
   }
 
   /**

@@ -3,11 +3,11 @@ import { EntityManager } from "typeorm";
 import { CustomProduct } from "../models/custom-product";
 import { CustomCategory } from "../models/custom-category";
 
-export default class CustomCatalogService extends TransactionBaseService {
+export class CustomCatalogService extends TransactionBaseService {
   protected manager_: EntityManager;
   protected transactionManager_: EntityManager | undefined;
 
-  constructor(container: any) {
+  constructor(container: any = {}) {
     super(container);
     this.manager_ = container.manager;
   }

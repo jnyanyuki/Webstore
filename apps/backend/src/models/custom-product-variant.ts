@@ -4,25 +4,25 @@ import { generateEntityId } from "@medusajs/medusa";
 @Entity("custom_product_variant")
 export class CustomProductVariant {
   @PrimaryGeneratedColumn("uuid")
-  id: string;
+  id!: string;
 
   @Column({ type: "uuid" })
-  custom_product_id: string;
+  custom_product_id!: string;
 
   @Column({ type: "varchar", length: 255, unique: true })
-  medusa_variant_id: string;
+  medusa_variant_id!: string;
 
   @Column({ type: "varchar", length: 100, unique: true })
-  sku: string;
+  sku!: string;
 
   @Column({ type: "int", default: 0 })
-  stock_available: number;
+  stock_available!: number;
 
   @Column({ type: "int", default: 0 })
-  stock_reserved: number;
+  stock_reserved!: number;
 
   @Column({ type: "jsonb", default: {} })
-  variant_options: Record<string, any>;
+  variant_options!: Record<string, any>;
 
   @BeforeInsert()
   private beforeInsert(): void {
