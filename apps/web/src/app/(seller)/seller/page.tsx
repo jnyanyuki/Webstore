@@ -88,27 +88,27 @@ export default function SellerCenterHome() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
       <header className="bg-gray-900 text-white border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <a href="/" className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center font-bold text-white text-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <a href="/" className="w-7 h-7 bg-green-500 rounded-lg flex items-center justify-center font-bold text-white text-sm">
               S
             </a>
-            <span className="font-bold text-lg">NaiCBD Seller Center</span>
-            <span className="bg-gray-800 text-green-400 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-gray-700">
-              Merchant ID: VEND-CBD-042
+            <span className="font-bold text-base">NaiCBD Seller Center</span>
+            <span className="bg-gray-800 text-green-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-gray-700">
+              ID: VEND-CBD-042
             </span>
           </div>
 
           <div className="flex items-center gap-2">
             <a
               href="/"
-              className="px-3 py-2 text-xs font-bold text-gray-400 hover:text-white transition-colors"
+              className="px-2.5 py-1.5 text-xs font-semibold text-gray-400 hover:text-white transition-colors"
             >
-              ← Back to Storefront
+              ← Storefront
             </a>
             <button
               onClick={() => setActiveTab("fulfillment")}
-              className={`px-4 py-2 rounded-xl text-sm font-bold transition-all ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 activeTab === "fulfillment" ? "bg-green-600 text-white" : "text-gray-300 hover:bg-gray-800"
               }`}
             >
@@ -116,36 +116,36 @@ export default function SellerCenterHome() {
             </button>
             <button
               onClick={() => setActiveTab("pim")}
-              className={`px-4 py-2 rounded-xl text-sm font-bold transition-all ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 activeTab === "pim" ? "bg-green-600 text-white" : "text-gray-300 hover:bg-gray-800"
               }`}
             >
-              Dynamic PIM (List Product)
+              Dynamic PIM
             </button>
           </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm">
-            <div className="text-xs font-bold text-gray-400 uppercase">Today's CBD Sales</div>
-            <div className="text-2xl font-black text-gray-900 mt-1">KSh 38,500</div>
-            <div className="text-xs text-green-600 font-semibold mt-1">↑ 14% vs yesterday</div>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          <div className="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs">
+            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Today's Sales</div>
+            <div className="text-xl font-extrabold text-gray-900 mt-0.5">KSh 38,500</div>
+            <div className="text-[11px] text-green-600 font-semibold mt-0.5">↑ 14% vs yesterday</div>
           </div>
-          <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm">
-            <div className="text-xs font-bold text-gray-400 uppercase">Pending Boda Pickups</div>
-            <div className="text-2xl font-black text-gray-900 mt-1">
+          <div className="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs">
+            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Pending Boda Pickups</div>
+            <div className="text-xl font-extrabold text-gray-900 mt-0.5">
               {orderTimeline.status === "PENDING" ? "1 Order" : "0 Orders"}
             </div>
-            <div className="text-xs text-yellow-600 font-semibold mt-1">Action required at shop</div>
+            <div className="text-[11px] text-yellow-600 font-semibold mt-0.5">Action required at shop</div>
           </div>
-          <div className="bg-white p-5 rounded-2xl border border-gray-200 shadow-sm">
-            <div className="text-xs font-bold text-gray-400 uppercase">Active Boda Rider</div>
-            <div className="text-2xl font-black text-gray-900 mt-1">
+          <div className="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs">
+            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Active Boda Rider</div>
+            <div className="text-xl font-extrabold text-gray-900 mt-0.5">
               {orderTimeline.rider ? orderTimeline.rider.name.split(" ")[0] : "None"}
             </div>
-            <div className="text-xs text-blue-600 font-semibold mt-1">
+            <div className="text-[11px] text-blue-600 font-semibold mt-0.5">
               {orderTimeline.rider ? `${orderTimeline.rider.motorbikePlate}` : "Awaiting packing"}
             </div>
           </div>
@@ -154,17 +154,17 @@ export default function SellerCenterHome() {
         {activeTab === "pim" ? (
           <DynamicProductForm />
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Incoming Order Dispatch</h3>
-              <p className="text-xs text-gray-500 mb-6">
-                Customer ordered from stall G14 (Imenti House). Pack the order and trigger rider dispatch.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="bg-white p-5 rounded-xl border border-gray-200/80 shadow-xs">
+              <h3 className="text-lg font-bold text-gray-900 mb-1">Incoming Order Dispatch</h3>
+              <p className="text-xs text-gray-500 mb-4">
+                Customer ordered from stall G14 (Imenti House). Pack order and dispatch rider.
               </p>
 
-              <div className="bg-gray-50 p-4 rounded-xl mb-6 space-y-2 text-sm border border-gray-200">
+              <div className="bg-gray-50 p-3.5 rounded-lg mb-4 space-y-1.5 text-xs border border-gray-200/80">
                 <div className="flex justify-between">
                   <span className="text-gray-500">Order ID:</span>
-                  <span className="font-bold">{orderTimeline.orderId}</span>
+                  <span className="font-bold text-gray-900">{orderTimeline.orderId}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Customer Landmark:</span>
@@ -172,7 +172,7 @@ export default function SellerCenterHome() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Building / Shop:</span>
-                  <span className="font-bold">{orderTimeline.deliveryAddress.buildingName} ({orderTimeline.deliveryAddress.shopOrFloorNumber})</span>
+                  <span className="font-bold text-gray-900">{orderTimeline.deliveryAddress.buildingName} ({orderTimeline.deliveryAddress.shopOrFloorNumber})</span>
                 </div>
               </div>
 
@@ -180,7 +180,7 @@ export default function SellerCenterHome() {
                 <button
                   onClick={handlePackAndDispatch}
                   disabled={dispatchLoading}
-                  className="w-full bg-green-600 text-white font-bold py-4 rounded-xl hover:bg-green-700 transition-colors shadow-md flex items-center justify-center gap-2"
+                  className="w-full bg-green-600 text-white font-bold py-2.5 rounded-lg hover:bg-green-700 transition-colors shadow-xs text-xs flex items-center justify-center gap-2"
                 >
                   {dispatchLoading ? (
                     "Notifying Boda Stage..."
@@ -191,7 +191,7 @@ export default function SellerCenterHome() {
                   )}
                 </button>
               ) : (
-                <div className="bg-green-50 border border-green-200 text-green-800 p-4 rounded-xl text-center text-sm font-bold">
+                <div className="bg-green-50 border border-green-200 text-green-800 p-3 rounded-lg text-center text-xs font-bold">
                   ✓ Rider Assigned! SMS Alert sent via Africa's Talking API to {orderTimeline.rider?.phone}.
                 </div>
               )}

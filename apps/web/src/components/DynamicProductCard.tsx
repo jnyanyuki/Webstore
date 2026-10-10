@@ -34,14 +34,14 @@ export default function DynamicProductCard({
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="bg-white rounded-2xl border border-gray-200/70 overflow-hidden hover:shadow-xl hover:border-emerald-200 transition-all duration-300 flex flex-col justify-between group"
+      className="bg-white rounded-xl border border-gray-200/80 overflow-hidden hover:shadow-md hover:border-emerald-300 transition-all duration-200 flex flex-col justify-between group"
     >
       <div>
         {/* Uniform 4:5 Aspect Ratio Container with Neutral Backdrop */}
-        <div className="aspect-[4/5] bg-gray-50/80 relative overflow-hidden flex items-center justify-center p-4">
+        <div className="aspect-[4/5] bg-gray-50/80 relative overflow-hidden flex items-center justify-center p-3">
           {/* Trust Badge */}
-          <div className="absolute top-3 left-3 z-10">
-            <span className="inline-flex items-center gap-1 bg-white/95 text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm border border-emerald-100 backdrop-blur-sm">
+          <div className="absolute top-2 left-2 z-10">
+            <span className="inline-flex items-center gap-1 bg-white/95 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded-full shadow-xs border border-emerald-100 backdrop-blur-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
               {product.badge}
             </span>
@@ -49,45 +49,45 @@ export default function DynamicProductCard({
 
           {/* Discount Badge */}
           {product.originalPrice && (
-            <div className="absolute top-3 right-3 z-10 bg-rose-600 text-white text-[10px] font-extrabold px-2 py-1 rounded-md shadow-sm">
+            <div className="absolute top-2 right-2 z-10 bg-rose-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-xs">
               -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
             </div>
           )}
 
-          {/* Image with Secondary Angle Hover Reveal */}
+          {/* Image with Hover Zoom */}
           <img
             src={displayImage}
             alt={product.name}
-            className="w-full h-full object-contain transition-all duration-500 transform group-hover:scale-105"
+            className="w-full h-full object-contain transition-all duration-300 transform group-hover:scale-105"
           />
 
           {/* Quick View Floating Action */}
           <button
             onClick={() => onQuickView(product)}
-            className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-gray-900 text-xs font-bold px-4 py-2 rounded-xl shadow-md border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-200 backdrop-blur-sm"
+            className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-white/95 hover:bg-white text-gray-900 text-[11px] font-bold px-3 py-1.5 rounded-lg shadow-sm border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-200 backdrop-blur-xs"
           >
-            Quick View & Options
+            Quick View
           </button>
         </div>
 
         {/* Content Details */}
-        <div className="p-5">
-          <div className="flex items-center justify-between text-xs text-gray-500 mb-1">
-            <span className="font-semibold text-emerald-700">{product.category}</span>
-            <span className="text-[11px] text-gray-400 font-mono">{product.merchantStall}</span>
+        <div className="p-3.5">
+          <div className="flex items-center justify-between text-[11px] text-gray-500 mb-0.5">
+            <span className="font-medium text-emerald-700">{product.category}</span>
+            <span className="text-[10px] text-gray-400 font-mono">{product.merchantStall}</span>
           </div>
 
-          <h3 className="font-bold text-gray-900 text-base mb-2 line-clamp-1 group-hover:text-emerald-700 transition-colors">
+          <h3 className="font-semibold text-gray-900 text-xs sm:text-sm mb-1 line-clamp-1 group-hover:text-emerald-700 transition-colors">
             {product.name}
           </h3>
 
           {/* Price Tag */}
-          <div className="flex items-baseline gap-2 mb-4">
-            <span className="text-xl font-black text-gray-900">
+          <div className="flex items-baseline gap-1.5 mb-1">
+            <span className="text-base font-bold text-gray-900">
               KSh {product.price.toLocaleString()}
             </span>
             {product.originalPrice && (
-              <span className="text-xs text-gray-400 line-through">
+              <span className="text-[11px] text-gray-400 line-through">
                 KSh {product.originalPrice.toLocaleString()}
               </span>
             )}
@@ -96,13 +96,13 @@ export default function DynamicProductCard({
       </div>
 
       {/* Action Footer */}
-      <div className="px-5 pb-5 pt-0">
+      <div className="px-3.5 pb-3.5 pt-0">
         <button
           onClick={() => onAddToCart(product)}
-          className="w-full bg-gray-900 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-sm active:scale-[0.98]"
+          className="w-full bg-gray-900 hover:bg-emerald-600 text-white font-bold py-2 rounded-lg text-xs transition-all duration-200 flex items-center justify-center gap-1.5 shadow-xs active:scale-[0.98]"
         >
           <svg
-            className="w-4 h-4"
+            className="w-3.5 h-3.5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

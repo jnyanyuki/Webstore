@@ -110,66 +110,67 @@ export default function StorefrontHome() {
 
   return (
     <div className="min-h-screen bg-[#FBFBFB] text-[#111827] font-sans selection:bg-emerald-600 selection:text-white">
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-[#E5E7EB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-sm">
+      {/* 1. Compact Navbar */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-xs">
               N
             </div>
-            <div>
-              <span className="font-extrabold text-xl tracking-tight text-gray-900">
+            <div className="flex items-center gap-2">
+              <span className="font-extrabold text-base tracking-tight text-gray-900">
                 NaiCBD<span className="text-emerald-600">.</span>
               </span>
-              <span className="hidden sm:inline-block ml-2 text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full border border-emerald-200">
-                45-Min Dispatch
+              <span className="hidden sm:inline-block text-[9px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-200">
+                45-Min Boda
               </span>
             </div>
           </div>
 
-          <div className="flex-1 max-w-md hidden sm:block">
+          <div className="flex-1 max-w-sm hidden sm:block">
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="w-full bg-gray-100 hover:bg-gray-200/80 text-gray-500 text-xs font-semibold px-4 py-2.5 rounded-xl border border-gray-200/60 flex items-center justify-between transition-colors cursor-pointer group"
+              className="w-full bg-gray-100/80 hover:bg-gray-200/60 text-gray-500 text-xs font-medium px-3 py-1.5 rounded-lg border border-gray-200/80 flex items-center justify-between transition-colors cursor-pointer group"
             >
-              <span className="flex items-center gap-2 group-hover:text-gray-900">
-                <svg className="w-4 h-4 text-gray-400 group-hover:text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <span className="flex items-center gap-2 group-hover:text-gray-900 truncate">
+                <svg className="w-3.5 h-3.5 text-gray-400 group-hover:text-emerald-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 Search electronics, fashion, CBD stalls...
               </span>
-              <kbd className="bg-white text-gray-500 px-2 py-0.5 rounded text-[10px] font-mono border border-gray-200 shadow-2xs">
-                Cmd K
+              <kbd className="bg-white text-gray-400 px-1.5 py-0.5 rounded text-[9px] font-mono border border-gray-200">
+                ⌘K
               </kbd>
             </button>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <a
               href="/seller"
-              className="text-xs font-bold text-gray-600 hover:text-emerald-600 px-3 py-2 rounded-xl hover:bg-gray-100 transition-colors border border-gray-200"
+              className="text-xs font-semibold text-gray-700 hover:text-emerald-600 px-2.5 py-1.5 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200"
             >
-              Merchant Portal →
+              Merchant Portal
             </a>
 
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="sm:hidden text-gray-600 hover:text-emerald-600 p-2 rounded-xl hover:bg-gray-100 transition-colors"
+              className="sm:hidden text-gray-600 hover:text-emerald-600 p-1.5 rounded-lg hover:bg-gray-100"
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
 
             <button
               onClick={() => setIsCartSheetOpen(true)}
-              className="relative bg-gray-900 hover:bg-emerald-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all shadow-sm flex items-center gap-2"
+              className="relative bg-gray-900 hover:bg-emerald-600 text-white font-bold text-xs px-3 py-1.5 rounded-lg transition-all shadow-xs flex items-center gap-1.5"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
               <span>Cart</span>
               {cartItems.length > 0 && (
-                <span className="bg-emerald-500 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-gray-900">
+                <span className="bg-emerald-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
                   {cartItems.reduce((acc, item) => acc + item.quantity, 0)}
                 </span>
               )}
@@ -180,40 +181,42 @@ export default function StorefrontHome() {
 
       <MegaMenu onSelectCategory={(cat) => setSelectedCategoryFilter(cat)} />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
-        <div className="bg-gradient-to-r from-gray-900 via-emerald-950 to-gray-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl relative overflow-hidden border border-emerald-900/40">
-          <div className="relative z-10 max-w-xl space-y-4">
-            <span className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-extrabold tracking-wider border border-emerald-500/30 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      {/* 2. Compact Main Container & Refined Hero */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-6">
+        <div className="bg-gradient-to-r from-gray-900 via-emerald-950 to-gray-900 rounded-2xl p-6 sm:p-8 text-white shadow-md relative overflow-hidden border border-emerald-900/40">
+          <div className="relative z-10 max-w-xl space-y-3">
+            <span className="inline-flex items-center gap-1.5 py-0.5 px-2.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold tracking-wider border border-emerald-500/30 backdrop-blur-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
               NAIROBI CBD EXPRESS MARKETPLACE
             </span>
-            <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-none text-white">
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight text-white">
               Instant CBD Pickup &amp; Boda Dispatch.
             </h1>
-            <p className="text-emerald-100/80 text-base font-normal leading-relaxed">
+            <p className="text-emerald-100/80 text-xs sm:text-sm font-normal leading-relaxed">
               Discover verified stall items from Imenti House, Afya Centre, Kencom, and OTC. Paid seamlessly via M-Pesa STK Push.
             </p>
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="flex flex-wrap gap-3 pt-1">
               <button
                 onClick={() => setSelectedCategoryFilter(null)}
-                className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-md active:scale-95"
+                className="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold text-xs transition-all shadow-xs active:scale-95"
               >
                 Explore Full Catalog
               </button>
-              <div className="flex items-center gap-2 text-xs font-semibold bg-white/10 px-4 py-3 rounded-xl border border-white/10 backdrop-blur-sm">
+              <div className="flex items-center gap-1.5 text-xs font-medium bg-white/10 px-3 py-2 rounded-lg border border-white/10 backdrop-blur-xs">
                 <span>⚡ Sub-45 Min Boda Delivery</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="space-y-4">
+        {/* 3. Category Section & Compact Filter Bar */}
+        <div className="space-y-3">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-black text-gray-900 tracking-tight">
+              <h2 className="text-lg font-bold text-gray-900 tracking-tight">
                 {selectedCategoryFilter ? `${selectedCategoryFilter} Catalog` : "Featured CBD Catalog"}
               </h2>
-              <p className="text-xs text-gray-500 mt-0.5">
+              <p className="text-[11px] text-gray-500">
                 Verified merchant inventory across Nairobi Central Business District
               </p>
             </div>
@@ -222,19 +225,19 @@ export default function StorefrontHome() {
                 onClick={() => setSelectedCategoryFilter(null)}
                 className="text-xs font-bold text-emerald-700 hover:underline"
               >
-                Clear Filter (Show All)
+                Clear Filter
               </button>
             )}
           </div>
 
-          <div className="flex items-center gap-2 overflow-x-auto py-2 scrollbar-none border-b border-gray-200/60 pb-4">
+          <div className="flex items-center gap-2 overflow-x-auto py-1.5 scrollbar-none border-b border-gray-200/60 pb-3">
             {["All", "Electronics", "Fashion", "Home & Appliances", "Ready for Pickup", "45-Min Boda Dispatch"].map((pill) => (
               <button
                 key={pill}
                 onClick={() => setSelectedCategoryFilter(pill === "All" ? null : pill)}
-                className={`whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
+                className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold transition-all border ${
                   (pill === "All" && !selectedCategoryFilter) || selectedCategoryFilter === pill
-                    ? "bg-emerald-600 text-white border-emerald-600 shadow-sm"
+                    ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
                     : "bg-white text-gray-700 border-gray-200 hover:border-emerald-600 hover:text-emerald-700"
                 }`}
               >
@@ -244,7 +247,8 @@ export default function StorefrontHome() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4. High-Density Aspect Ratio Product Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {filteredProducts.map((product) => (
             <DynamicProductCard
               key={product.id}
