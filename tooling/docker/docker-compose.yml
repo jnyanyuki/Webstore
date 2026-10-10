@@ -1,0 +1,109 @@
+version: '3.8'
+
+services:
+  # 1. PostgreSQL Relational Database with JSONB GIN indexing
+  postgres:
+    image: postgres:15-alpine
+    container_name: webstore_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: webstore_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres_secure_pass}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../../apps/backend/src/migrations/01_nairobi_marketplace_schema.sql:/docker-entrypoint-initdb.d/01_nairobi_marketplace_schema.sql
+    ports:
+      - "5432:5432"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  # 2. PgBouncer Connection Pooler for 500 CCU Traffic Spikes
+  pgbouncer:
+    image: edoburu/pgbouncer:latest
+    container_name: webstore_pgbouncer
+    restart: always
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: webstore_db
+      DB_USER: postgres
+      DB_PASSWORD: ${DB_PASSWORD:-postgres_secure_pass}
+      POOL_MODE: transaction
+      MAX_CLIENT_CONN: 1000
+      DEFAULT_POOL_SIZE: 100
+    ports:
+      - "6432:6432"
+    depends_on:
+      - postgres
+
+  # 3. Redis Key-Value Store for Rate Limiting & Session Locks
+  redis:
+    image: redis:7-alpine
+    container_name: webstore_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  # 4. Meilisearch Faceted Search Engine (Low RAM Footprint)
+  meilisearch:
+    image: getmeili/meilisearch:v1.6
+    container_name: webstore_meilisearch
+    restart: always
+    environment:
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:-03042c90cd9967c36e7c4b49882a7550}
+      MEILI_ENV: production
+    ports:
+      - "7700:7700"
+    volumes:
+      - meili_data:/meili_data
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+
+  # 5. MedusaJS Backend Monolith Service
+  backend:
+    build:
+      context: ../..
+      dockerfile: tooling/docker/Dockerfile.backend
+    container_name: webstore_backend
+    restart: always
+    environment:
+      NODE_ENV: production
+      PORT: 9000
+      DB_HOST: pgbouncer
+      DB_PORT: 6432
+      DB_NAME: webstore_db
+      DB_USERNAME: postgres
+      DB_PASSWORD: ${DB_PASSWORD:-postgres_secure_pass}
+      DB_PGBOUNCER: "true"
+      REDIS_URL: redis://redis:6379
+      MEILISEARCH_HOST: http://meilisearch:7700
+      MEILISEARCH_KEY: ${MEILI_MASTER_KEY:-meili_master_key_123}
+      DATABASE_URL: ${DATABASE_URL:-postgresql://neondb_owner:npg_4ZYKLx6ArJNH@ep-royal-cake-b9cgphao.c-7.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require}
+      DATABASE_URL_POOLED: ${DATABASE_URL_POOLED:-postgresql://neondb_owner:npg_4ZYKLx6ArJNH@ep-royal-cake-b9cgphao-pooler.c-7.eu-central-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require}
+      AWS_ENDPOINT_URL_S3: ${AWS_ENDPOINT_URL_S3:-https://br-bold-frog-b9vc8adt.storage.c-7.eu-central-1.aws.neon.tech}
+      AWS_REGION: ${AWS_REGION:-eu-central-1}
+      S3_BUCKET: ${S3_BUCKET:-uploads}
+      NEON_AUTH_URL: ${NEON_AUTH_URL:-https://ep-royal-cake-b9cgphao.neonauth.c-7.eu-central-1.aws.neon.tech/neondb/auth}
+      NEON_JWKS_URL: ${NEON_JWKS_URL:-https://ep-royal-cake-b9cgphao.neonauth.c-7.eu-central-1.aws.neon.tech/neondb/auth/.well-known/jwks.json}
+      DARARA_CONSUMER_KEY: ${DARARA_CONSUMER_KEY}
+      DARARA_CONSUMER_SECRET: ${DARARA_CONSUMER_SECRET}
+      DARARA_PASSKEY: ${DARARA_PASSKEY}
+    ports:
+      - "9000:9000"
+    depends_on:
+      - pgbouncer
+      - redis
+      - meilisearch
+
+volumes:
+  postgres_data:
+  meili_data:

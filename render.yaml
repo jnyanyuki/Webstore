@@ -1,0 +1,50 @@
+services:
+  # 1. MedusaJS Backend Web Service on Render
+  - type: web
+    name: naicbd-backend
+    env: docker
+    dockerfilePath: tooling/docker/Dockerfile.backend
+    context: .
+    plan: starter
+    region: frankfurt
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 9000
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_URL_POOLED
+        sync: false
+      - key: AWS_ENDPOINT_URL_S3
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_REGION
+        value: eu-central-1
+      - key: S3_BUCKET
+        value: uploads
+      - key: NEON_AUTH_URL
+        sync: false
+      - key: NEON_JWKS_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: MEILISEARCH_HOST
+        sync: false
+      - key: MEILISEARCH_KEY
+        sync: false
+      - key: DARARA_CONSUMER_KEY
+        sync: false
+      - key: DARARA_CONSUMER_SECRET
+        sync: false
+      - key: DARARA_PASSKEY
+        sync: false
+      - key: DARARA_SHORTCODE
+        value: "174379"
+      - key: AT_API_KEY
+        sync: false
+      - key: AT_USERNAME
+        sync: false
