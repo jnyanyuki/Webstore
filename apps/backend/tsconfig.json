@@ -3,6 +3,8 @@
     "target": "es2020",
     "module": "commonjs",
     "lib": ["es2020"],
+    "outDir": "dist",
+    "rootDir": "src",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,7 +15,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@webstore/types": ["../../packages/types/src/index.ts"],
+      "@webstore/types": ["../../packages/types/dist/index.d.ts"],
       "@medusajs/medusa": ["../../node_modules/@medusajs/medusa"],
       "typeorm": ["../../node_modules/typeorm"]
     }
