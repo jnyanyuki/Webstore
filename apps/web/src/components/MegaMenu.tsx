@@ -3,86 +3,22 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { CategoryGroup } from "@webstore/types";
+import { NON_PERISHABLE_TAXONOMY } from "@/lib/data/categoriesData";
 
 export type { CategoryGroup, FeaturedPromo, SubCategory } from "@webstore/types";
 
-const FALLBACK_CATEGORIES: CategoryGroup[] = [
-  {
-    id: 1,
-    name: "Electronics",
-    slug: "electronics",
-    subcategories: [
-      {
-        id: 10,
-        title: "Phones & Audio",
-        slug: "phones-audio",
-        items: ["Wireless Earbuds", "Smartphones", "Bluetooth Speakers", "Power Banks"],
-      },
-      {
-        id: 11,
-        title: "Computers",
-        slug: "computers",
-        items: ["MacBooks", "Laptops", "Monitors & Screens", "Storage & SSDs"],
-      },
-    ],
-    featured: {
-      title: "Noise-Canceling Earbuds",
-      subtitle: "From KSh 4,500 with Express Delivery",
-      image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300&q=80",
-      targetUrl: "/shop/electronics",
-    },
-  },
-  {
-    id: 2,
-    name: "Fashion",
-    slug: "fashion",
-    subcategories: [
-      {
-        id: 20,
-        title: "Men's Wear",
-        slug: "mens-wear",
-        items: ["Heavyweight Hoodies", "Urban T-Shirts", "Denim Jackets", "Sneakers"],
-      },
-      {
-        id: 21,
-        title: "Accessories",
-        slug: "accessories",
-        items: ["Leather Wallets", "Sunglasses", "Watches", "Backpacks"],
-      },
-    ],
-    featured: {
-      title: "Urban Cotton Hoodies",
-      subtitle: "Special Sale - KSh 2,200",
-      image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=300&q=80",
-      targetUrl: "/shop/fashion",
-    },
-  },
-  {
-    id: 3,
-    name: "Home & Appliances",
-    slug: "home-appliances",
-    subcategories: [
-      {
-        id: 30,
-        title: "Kitchen Essentials",
-        slug: "kitchen-essentials",
-        items: ["Blenders & Mixers", "Air Fryers", "Microwaves", "Electric Kettles"],
-      },
-      {
-        id: 31,
-        title: "Living & Comfort",
-        slug: "living-comfort",
-        items: ["Smart TVs", "Standing Fans", "Heaters", "Coffee Makers"],
-      },
-    ],
-    featured: {
-      title: "Digital Air Fryer 5L",
-      subtitle: "Ready for 45-Min Boda Dispatch",
-      image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&q=80",
-      targetUrl: "/shop/home-appliances",
-    },
-  },
-];
+const FALLBACK_CATEGORIES: CategoryGroup[] = NON_PERISHABLE_TAXONOMY.map((dept, index) => ({
+  id: index + 1,
+  name: dept.name,
+  slug: dept.slug,
+  featured: dept.featured,
+  subcategories: dept.subcategories.map((sub, sIndex) => ({
+    id: (index + 1) * 100 + sIndex + 1,
+    title: sub.title,
+    slug: sub.slug,
+    items: sub.items,
+  })),
+}));
 
 export default function MegaMenu({
   onSelectCategory,

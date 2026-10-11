@@ -28,6 +28,21 @@ export const getCachedCategoryTree = unstable_cache(
       },
     });
 
+    if (rootCategories.length === 0) {
+      return (await import("./categoriesData")).NON_PERISHABLE_TAXONOMY.map((dept, index) => ({
+        id: index + 1,
+        name: dept.name,
+        slug: dept.slug,
+        featured: dept.featured,
+        subcategories: dept.subcategories.map((sub, sIndex) => ({
+          id: (index + 1) * 100 + sIndex + 1,
+          title: sub.title,
+          slug: sub.slug,
+          items: sub.items,
+        })),
+      }));
+    }
+
     return rootCategories.map((cat) => ({
       id: cat.id,
       name: cat.name,

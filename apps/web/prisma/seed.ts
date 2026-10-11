@@ -1,64 +1,8 @@
 import "dotenv/config";
 import { PrismaClient } from "@prisma/client";
+import { NON_PERISHABLE_TAXONOMY } from "../src/lib/data/categoriesData";
 
 const prisma = new PrismaClient();
-
-const CATEGORIES_DATA = [
-  {
-    name: "Electronics",
-    subcategories: [
-      {
-        title: "Phones & Audio",
-        items: ["Wireless Earbuds", "Smartphones", "Bluetooth Speakers", "Power Banks"],
-      },
-      {
-        title: "Computers",
-        items: ["MacBooks", "Laptops", "Monitors & Screens", "Storage & SSDs"],
-      },
-    ],
-    featured: {
-      title: "Noise-Canceling Earbuds",
-      subtitle: "From KSh 4,500 with Express Delivery",
-      image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300&q=80",
-    },
-  },
-  {
-    name: "Fashion",
-    subcategories: [
-      {
-        title: "Men's Wear",
-        items: ["Heavyweight Hoodies", "Urban T-Shirts", "Denim Jackets", "Sneakers"],
-      },
-      {
-        title: "Accessories",
-        items: ["Leather Wallets", "Sunglasses", "Watches", "Backpacks"],
-      },
-    ],
-    featured: {
-      title: "Urban Cotton Hoodies",
-      subtitle: "Special Sale - KSh 2,200",
-      image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=300&q=80",
-    },
-  },
-  {
-    name: "Home & Appliances",
-    subcategories: [
-      {
-        title: "Kitchen Essentials",
-        items: ["Blenders & Mixers", "Air Fryers", "Microwaves", "Electric Kettles"],
-      },
-      {
-        title: "Living & Comfort",
-        items: ["Smart TVs", "Standing Fans", "Heaters", "Coffee Makers"],
-      },
-    ],
-    featured: {
-      title: "Digital Air Fryer 5L",
-      subtitle: "Ready for 45-Min Boda Dispatch",
-      image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&q=80",
-    },
-  },
-];
 
 function slugify(text: string): string {
   return text
@@ -77,8 +21,8 @@ async function main() {
   await prisma.categoryItem.deleteMany();
   await prisma.category.deleteMany();
 
-  for (let groupIndex = 0; groupIndex < CATEGORIES_DATA.length; groupIndex++) {
-    const group = CATEGORIES_DATA[groupIndex];
+  for (let groupIndex = 0; groupIndex < NON_PERISHABLE_TAXONOMY.length; groupIndex++) {
+    const group = NON_PERISHABLE_TAXONOMY[groupIndex];
 
     await prisma.category.create({
       data: {
