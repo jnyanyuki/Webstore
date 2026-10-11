@@ -68,8 +68,45 @@ const SAMPLE_PRODUCTS: CatalogProduct[] = [
 export async function getCachedProductById(id: string): Promise<CatalogProduct | null> {
   const fetchProduct = unstable_cache(
     async (productId: string) => {
-      // In production, this queries Prisma: await prisma.product.findUnique({ where: { id: productId } })
-      return SAMPLE_PRODUCTS.find((p) => p.id === productId) || null;
+      try {
+        const { prisma } = await import("@/lib/prisma");
+        const numericId = parseInt(productId, 10);
+
+        const dbItem = await prisma.canonicalProduct.findFirst({
+          where: {
+            OR: [
+              ...(isNaN(numericId) ? [] : [{ id: numericId }]),
+              { slug: productId },
+              { gtin: productId },
+            ],
+            isActive: true,
+          },
+          include: { category: true },
+        });
+
+        if (dbItem) {
+          const imgs = Array.isArray(dbItem.images) ? (dbItem.images as string[]) : [];
+          return {
+            id: String(dbItem.id),
+            name: dbItem.title,
+            slug: dbItem.slug,
+            category: dbItem.category?.name || "General",
+            price: dbItem.basePrice,
+            originalPrice: dbItem.originalPrice || undefined,
+            images: {
+              front: imgs[0] || "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=900&q=85",
+              side: imgs[1] || undefined,
+            },
+            attributes: (dbItem.specs as Record<string, string>) || {},
+            description: dbItem.description || "",
+            badge: dbItem.badge || undefined,
+          };
+        }
+      } catch (e) {
+        console.warn("[getCachedProductById] DB lookup failed, using fallback", e);
+      }
+
+      return SAMPLE_PRODUCTS.find((p) => p.id === productId || p.slug === productId) || null;
     },
     [`product-cache-${id}`],
     {
@@ -84,7 +121,38 @@ export async function getCachedProductById(id: string): Promise<CatalogProduct |
 export async function getCachedAllProducts(): Promise<CatalogProduct[]> {
   const fetchAll = unstable_cache(
     async () => {
-      // In production: await prisma.product.findMany({ where: { isActive: true } })
+      try {
+        const { prisma } = await import("@/lib/prisma");
+        const dbItems = await prisma.canonicalProduct.findMany({
+          where: { isActive: true },
+          include: { category: true },
+          take: 50,
+        });
+
+        if (dbItems.length > 0) {
+          return dbItems.map((dbItem) => {
+            const imgs = Array.isArray(dbItem.images) ? (dbItem.images as string[]) : [];
+            return {
+              id: String(dbItem.id),
+              name: dbItem.title,
+              slug: dbItem.slug,
+              category: dbItem.category?.name || "General",
+              price: dbItem.basePrice,
+              originalPrice: dbItem.originalPrice || undefined,
+              images: {
+                front: imgs[0] || "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=900&q=85",
+                side: imgs[1] || undefined,
+              },
+              attributes: (dbItem.specs as Record<string, string>) || {},
+              description: dbItem.description || "",
+              badge: dbItem.badge || undefined,
+            };
+          });
+        }
+      } catch (e) {
+        console.warn("[getCachedAllProducts] DB lookup failed, using fallback", e);
+      }
+
       return SAMPLE_PRODUCTS;
     },
     ["products-all-catalog-cache"],

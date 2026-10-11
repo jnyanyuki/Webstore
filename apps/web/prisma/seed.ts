@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { PrismaClient } from "@prisma/client";
 import { NON_PERISHABLE_TAXONOMY } from "../src/lib/data/categoriesData";
+import { bootstrapCatalogProducts } from "../src/lib/catalog/seedCatalog";
 
 const prisma = new PrismaClient();
 
@@ -16,7 +17,9 @@ function slugify(text: string): string {
 async function main() {
   console.log("Seeding category hierarchy...");
 
-  // Wipe previous data
+  // Wipe previous data cleanly
+  await prisma.canonicalProduct.deleteMany();
+  await prisma.rawVendorProduct.deleteMany();
   await prisma.categoryFeaturedPromotion.deleteMany();
   await prisma.categoryItem.deleteMany();
   await prisma.category.deleteMany();
@@ -57,7 +60,10 @@ async function main() {
     });
   }
 
-  console.log("Seeding completed successfully.");
+  console.log("Categories seeded successfully.");
+  console.log("Seeding canonical catalog items...");
+  await bootstrapCatalogProducts();
+  console.log("All seeding completed successfully.");
 }
 
 main()
