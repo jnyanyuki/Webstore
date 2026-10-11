@@ -1,4 +1,4 @@
-﻿node_modules/
+node_modules/
 .next/
 out/
 build/
@@ -12,4 +12,15 @@ Thumbs.db
 **/.env
 **/.env.*
 !**/.env.example
+
+# Turborepo
+.turbo/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
 
