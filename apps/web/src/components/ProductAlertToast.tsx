@@ -27,23 +27,39 @@ interface ProductAlertToastProps {
 
 export function ProductAlertToast({
   userId = 999,
-  wsUrl = process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:8000/ws/notifications",
+  wsUrl = process.env.NEXT_PUBLIC_WS_URL,
 }: ProductAlertToastProps) {
   const [toasts, setToasts] = useState<AlertNotification[]>([]);
 
   useEffect(() => {
+    // Determine effective WebSocket URL
+    const isLocalhost =
+      typeof window !== "undefined" &&
+      (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+
+    const effectiveWsUrl =
+      wsUrl || (isLocalhost ? "ws://localhost:8000/ws/notifications" : undefined);
+
+    // If no WebSocket URL configured and we're not running on localhost, skip connection quietly
+    if (!effectiveWsUrl) {
+      return;
+    }
+
     let socket: WebSocket | null = null;
     let reconnectTimer: NodeJS.Timeout | null = null;
     let pingInterval: NodeJS.Timeout | null = null;
+    let retryCount = 0;
+    const MAX_RETRIES = 3;
     let isMounted = true;
 
     function connect() {
-      if (!isMounted) return;
+      if (!isMounted || !effectiveWsUrl || retryCount >= MAX_RETRIES) return;
       try {
-        const fullUrl = `${wsUrl}?user_id=${userId}`;
+        const fullUrl = `${effectiveWsUrl}?user_id=${userId}`;
         socket = new WebSocket(fullUrl);
 
         socket.onopen = () => {
+          retryCount = 0;
           pingInterval = setInterval(() => {
             if (socket?.readyState === WebSocket.OPEN) {
               socket.send("ping");
@@ -74,8 +90,10 @@ export function ProductAlertToast({
 
         socket.onclose = () => {
           if (pingInterval) clearInterval(pingInterval);
-          if (isMounted) {
-            reconnectTimer = setTimeout(connect, 4000);
+          if (isMounted && retryCount < MAX_RETRIES) {
+            retryCount += 1;
+            const backoff = Math.min(1000 * Math.pow(2, retryCount), 15000);
+            reconnectTimer = setTimeout(connect, backoff);
           }
         };
 
@@ -83,7 +101,8 @@ export function ProductAlertToast({
           socket?.close();
         };
       } catch {
-        if (isMounted) {
+        if (isMounted && retryCount < MAX_RETRIES) {
+          retryCount += 1;
           reconnectTimer = setTimeout(connect, 5000);
         }
       }

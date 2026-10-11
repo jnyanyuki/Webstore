@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getCachedCategoryTree } from "@/lib/data/categories";
+import { getCachedCategoryTree, getFallbackTaxonomy } from "@/lib/data/categories";
 
 export const dynamic = "force-dynamic";
 
@@ -14,10 +14,13 @@ export async function GET() {
       },
     });
   } catch (error) {
-    console.error("Failed to fetch category navigation:", error);
-    return NextResponse.json(
-      { error: "Internal Server Error" },
-      { status: 500 }
-    );
+    console.error("Failed to fetch category navigation, serving fallback taxonomy:", error);
+    const fallback = getFallbackTaxonomy();
+    return NextResponse.json(fallback, {
+      status: 200,
+      headers: {
+        "Cache-Control": "public, s-maxage=300, stale-while-revalidate=3600",
+      },
+    });
   }
 }

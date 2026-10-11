@@ -5,33 +5,48 @@ const IMAGEKIT_ENDPOINT =
   "https://ik.imagekit.io/njndeveloper";
 
 export default function imagekitLoader({ src, width, quality }: ImageLoaderProps): string {
-  // Return the original src directly if no endpoint is configured or if using SVG/data URLs
-  if (!IMAGEKIT_ENDPOINT || src.startsWith("data:") || src.endsWith(".svg")) {
+  if (!src) return "";
+
+  // Return data URLs or SVGs directly
+  if (src.startsWith("data:") || src.endsWith(".svg")) {
     return src;
   }
 
-  // Sanitize path (strip leading slash)
-  const cleanSrc = src.startsWith("/") ? src.slice(1) : src;
+  // Handle absolute URLs
+  if (src.startsWith("http://") || src.startsWith("https://")) {
+    try {
+      const url = new URL(src);
 
-  // Build the transformation parameters
-  // w: width, q: quality (fallback to NEXT_PUBLIC_DEFAULT_IMAGE_QUALITY or 85), f-auto: auto WebP/AVIF, c-at_max: maintain aspect ratio
-  const defaultQuality = Number(process.env.NEXT_PUBLIC_DEFAULT_IMAGE_QUALITY) || 85;
-  const params = [`w-${width}`, `q-${quality || defaultQuality}`, "f-auto", "c-at_max"];
+      // If it's an ImageKit URL, apply ImageKit transformation query
+      if (url.origin.includes("ik.imagekit.io")) {
+        const defaultQuality = Number(process.env.NEXT_PUBLIC_DEFAULT_IMAGE_QUALITY) || 85;
+        const params = [`w-${width}`, `q-${quality || defaultQuality}`, "f-auto", "c-at_max"];
+        url.searchParams.set("tr", params.join(","));
+        return url.toString();
+      }
 
-  const transformationString = `tr=${params.join(",")}`;
+      // If it's an Unsplash image, use Unsplash's native dynamic CDN parameters directly
+      if (url.hostname.includes("unsplash.com")) {
+        url.searchParams.set("w", String(width));
+        url.searchParams.set("q", String(quality || 80));
+        url.searchParams.set("auto", "format");
+        return url.toString();
+      }
 
-  // Case 1: Image path is already hosted directly on ImageKit (or an external proxy source via ImageKit)
-  if (cleanSrc.startsWith("http://") || cleanSrc.startsWith("https://")) {
-    const url = new URL(cleanSrc);
-    // If it's already an ImageKit URL, insert the transform query parameter
-    if (url.origin === IMAGEKIT_ENDPOINT) {
-      url.searchParams.set("tr", params.join(","));
-      return url.toString();
+      // Other external CDN or supplier images: return directly
+      return src;
+    } catch {
+      return src;
     }
-    // External URL routed through ImageKit URL proxy
-    return `${IMAGEKIT_ENDPOINT}/${cleanSrc}?${transformationString}`;
   }
 
-  // Case 2: Relative path pointing to ImageKit media library or connected origin bucket (e.g. S3 / Supabase)
-  return `${IMAGEKIT_ENDPOINT}/${transformationString}/${cleanSrc}`;
+  if (!IMAGEKIT_ENDPOINT) {
+    return src;
+  }
+
+  // Relative path pointing to ImageKit media library
+  const cleanSrc = src.startsWith("/") ? src.slice(1) : src;
+  const defaultQuality = Number(process.env.NEXT_PUBLIC_DEFAULT_IMAGE_QUALITY) || 85;
+  const params = [`w-${width}`, `q-${quality || defaultQuality}`, "f-auto", "c-at_max"];
+  return `${IMAGEKIT_ENDPOINT}/tr:${params.join(",")}/${cleanSrc}`;
 }

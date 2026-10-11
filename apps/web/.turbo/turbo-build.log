@@ -8,7 +8,7 @@ For more information, see: https://pris.ly/prisma-config
 Environment variables loaded from .env
 Prisma schema loaded from prisma\schema.prisma
 
-✔ Generated Prisma Client (v6.19.3) to .\..\..\node_modules\@prisma\client in 120ms
+✔ Generated Prisma Client (v6.19.3) to .\..\..\node_modules\@prisma\client in 149ms
 
 Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
 
@@ -16,7 +16,7 @@ Tip: Need your database queries to be 1000x faster? Accelerate offers you that a
 
 ▲ Next.js 16.4.0 (Turbopack)
 - Environments: .env.local, .env
-✓ Running next.config.mjs took 22ms
+✓ Running next.config.mjs took 50ms
 
 ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
 
@@ -25,15 +25,15 @@ Tip: Need your database queries to be 1000x faster? Accelerate offers you that a
 
   Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
   Creating an optimized production build ...
-✓ Compiled successfully in 1090ms
+✓ Compiled successfully in 6.6s
   Running TypeScript ...
-  Finished TypeScript in 2.1s ...
+  Finished TypeScript in 3.5s ...
   Collecting page data using 11 workers ...
   Generating static pages using 11 workers (0/8) ...
   Generating static pages using 11 workers (2/8) 
   Generating static pages using 11 workers (4/8) 
   Generating static pages using 11 workers (6/8) 
-✓ Generating static pages using 11 workers (8/8) in 389ms
+✓ Generating static pages using 11 workers (8/8) in 4.2s
   Finalizing page optimization ...
 
 Route (app)
