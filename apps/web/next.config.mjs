@@ -7,6 +7,10 @@ const nextConfig = {
     "@webstore/api-client",
     "@webstore/dynamic-attributes",
   ],
+  images: {
+    loader: "custom",
+    loaderFile: "./src/lib/imagekitLoader.ts",
+  },
   async rewrites() {
     return [
       {

@@ -1,7 +1,8 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import MpesaCheckout from "@/components/MpesaCheckout";
+import ProductImageGallery from "@/components/ProductImageGallery";
+import { getCachedProductById } from "@/lib/data/products";
 
 export const revalidate = 60;
 
@@ -18,11 +19,17 @@ interface PageProps {
 
 export default async function ProductDetailPage({ params }: PageProps) {
   const { id } = await params;
-  const product = {
+  const productData = await getCachedProductById(id);
+
+  const product = productData || {
     id,
-    title: id === "prod_earbuds" ? "Wireless Noise-Canceling Earbuds" : "Urban Cotton Hoodie - Black",
+    name: id === "prod_earbuds" ? "Wireless Noise-Canceling Earbuds Pro" : "Urban Cotton Hoodie - Black",
     price: id === "prod_earbuds" ? 4500 : 2200,
     category: id === "prod_earbuds" ? "Electronics" : "Fashion",
+    images: {
+      front: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=900&q=85",
+      side: "https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=900&q=85",
+    },
     attributes: id === "prod_earbuds"
       ? { ram: "N/A", battery_life: "24hrs", bluetooth: "v5.3", warranty: "12 months" }
       : { size: "L", color: "Black", material: "100% Organic Cotton" },
@@ -36,22 +43,27 @@ export default async function ProductDetailPage({ params }: PageProps) {
           <Link href="/" className="text-green-600 font-bold text-sm flex items-center gap-1 hover:underline">
             ← Back to Storefront
           </Link>
-          <span className="text-xs bg-green-100 text-green-800 font-semibold px-2.5 py-1 rounded-full">
-            Edge ISR Cached (60s)
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="text-xs bg-blue-100 text-blue-800 font-semibold px-2.5 py-1 rounded-full">
+              Neon Connection Pooled
+            </span>
+            <span className="text-xs bg-green-100 text-green-800 font-semibold px-2.5 py-1 rounded-full">
+              Edge ISR Cached (60s)
+            </span>
+          </div>
         </div>
       </header>
 
       <main className="max-w-5xl mx-auto px-4 py-8">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8">
-          <div className="aspect-square bg-gray-100 rounded-xl relative flex items-center justify-center">
-            <span className="text-4xl">🛍️</span>
+          <div>
+            <ProductImageGallery images={product.images} title={product.name} />
           </div>
 
           <div className="flex flex-col justify-between">
             <div>
               <span className="text-xs font-bold text-green-600 uppercase tracking-wider">{product.category}</span>
-              <h1 className="text-3xl font-extrabold text-gray-900 mt-1 mb-3">{product.title}</h1>
+              <h1 className="text-3xl font-extrabold text-gray-900 mt-1 mb-3">{product.name}</h1>
               <div className="text-2xl font-black text-gray-900 mb-4">KSh {product.price.toLocaleString()}</div>
               
               <p className="text-sm text-gray-600 mb-6">{product.description}</p>

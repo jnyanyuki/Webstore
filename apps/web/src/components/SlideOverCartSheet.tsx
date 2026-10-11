@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import NairobiDeliverySelector from "./NairobiDeliverySelector";
 import MpesaCheckout from "./MpesaCheckout";
 import { OrderStatusTimelineTracker } from "@webstore/ui";
@@ -95,9 +96,11 @@ export default function SlideOverCartSheet({
                     className="flex items-center justify-between bg-gray-50 p-3 rounded-xl border border-gray-100"
                   >
                     <div className="flex items-center gap-3">
-                      <img
+                      <Image
                         src={item.frontImage}
                         alt={item.name}
+                        width={64}
+                        height={64}
                         className="w-12 h-12 object-contain bg-white rounded-lg border border-gray-200/60 p-1"
                       />
                       <div>

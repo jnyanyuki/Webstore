@@ -3,8 +3,8 @@
 > next build
 
 ▲ Next.js 16.4.0 (Turbopack)
-- Environments: .env.local
-✓ Running next.config.mjs took 16ms
+- Environments: .env.local, .env
+✓ Running next.config.mjs took 27ms
 
 ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
 
@@ -13,20 +13,25 @@
 
   Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
   Creating an optimized production build ...
-✓ Compiled successfully in 915ms
+✓ Compiled successfully in 1791ms
   Running TypeScript ...
-  Finished TypeScript in 1833ms ...
-  Collecting page data using 6 workers ...
-  Generating static pages using 6 workers (0/6) ...
-  Generating static pages using 6 workers (1/6) 
-  Generating static pages using 6 workers (2/6) 
-  Generating static pages using 6 workers (4/6) 
-✓ Generating static pages using 6 workers (6/6) in 923ms
+  Finished TypeScript in 3.0s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/8) ...
+  Generating static pages using 11 workers (2/8) 
+  Generating static pages using 11 workers (4/8) 
+  Generating static pages using 11 workers (6/8) 
+✓ Generating static pages using 11 workers (8/8) in 1113ms
   Finalizing page optimization ...
 
 Route (app)
 ┌ ○ /
 ├ ○ /_not-found
+├ ƒ /admin
+├ ƒ /api/imagekit/auth
+├ ƒ /api/navigation/categories
+├ ƒ /api/revalidate-nav
+├ ƒ /api/revalidate/categories
 ├   /products/[id]
 │ ├ ● /products/prod_earbuds
 │ └ ● /products/prod_hoodie
@@ -35,6 +40,7 @@ Route (app)
 
 ƒ Proxy (Middleware)
 
-○  (Static)  prerendered as static content
-●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
 

@@ -9,13 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.4.0",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
+    "@prisma/client": "^6.19.3",
+    "@webstore/api-client": "*",
+    "@webstore/dynamic-attributes": "*",
     "@webstore/types": "*",
     "@webstore/ui": "*",
-    "@webstore/api-client": "*",
-    "@webstore/dynamic-attributes": "*"
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -26,7 +27,12 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
     "postcss": "^8.4.35",
+    "prisma": "^6.4.0",
     "tailwindcss": "^4",
+    "tsx": "^4.7.0",
     "typescript": "^5"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }

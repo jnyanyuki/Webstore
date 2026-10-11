@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 export type ProductItem = {
   id: string;
@@ -10,7 +11,7 @@ export type ProductItem = {
   originalPrice?: number;
   frontImage: string;
   sideImage?: string;
-  merchantStall: string;
+  merchantStall?: string;
   badge: "Ready for Pickup" | "45-Min Boda Dispatch" | "Verified CBD Merchant";
   colors?: string[];
   sizes?: string[];
@@ -54,10 +55,13 @@ export default function DynamicProductCard({
             </div>
           )}
 
-          {/* Image with Hover Zoom */}
-          <img
+          {/* Image with Hover Zoom powered by ImageKit Edge CDN */}
+          <Image
             src={displayImage}
             alt={product.name}
+            width={400}
+            height={500}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="w-full h-full object-contain transition-all duration-300 transform group-hover:scale-105"
           />
 
@@ -74,7 +78,7 @@ export default function DynamicProductCard({
         <div className="p-3.5">
           <div className="flex items-center justify-between text-[11px] text-gray-500 mb-0.5">
             <span className="font-medium text-emerald-700">{product.category}</span>
-            <span className="text-[10px] text-gray-400 font-mono">{product.merchantStall}</span>
+            <span className="text-[10px] text-emerald-600 font-medium">In Stock</span>
           </div>
 
           <h3 className="font-semibold text-gray-900 text-xs sm:text-sm mb-1 line-clamp-1 group-hover:text-emerald-700 transition-colors">

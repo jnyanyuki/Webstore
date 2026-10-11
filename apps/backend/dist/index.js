@@ -3,12 +3,69 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require("dotenv/config");
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
+const navigation_1 = require("./services/navigation");
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 9000;
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
+// Dynamic Catalog Navigation & Promotion Endpoints
+app.get("/api/navigation/categories", async (req, res) => {
+    try {
+        const forceRefresh = req.query.fresh === "true";
+        const categories = await navigation_1.NavigationService.getNavigationCategories(forceRefresh);
+        // Aggressive HTTP caching headers: 1 hour cache, stale-while-revalidate for 1 day
+        res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=86400");
+        return res.status(200).json(categories);
+    }
+    catch (error) {
+        console.error("[Navigation API Error]:", error);
+        return res.status(500).json({ error: "Failed to retrieve catalog navigation" });
+    }
+});
+// Cache Invalidation Webhook (for Admin UI / CMS updates)
+app.post("/api/navigation/revalidate", (_req, res) => {
+    navigation_1.NavigationService.invalidateCache();
+    return res.status(200).json({ success: true, revalidated: true, timestamp: Date.now() });
+});
+// Admin endpoint to dynamically update featured promotional banners
+app.put("/api/navigation/featured/:categoryId", async (req, res) => {
+    try {
+        const categoryId = parseInt(req.params.categoryId, 10);
+        const { title, subtitle, targetUrl, imageUrl, isActive = true } = req.body;
+        if (!title || !imageUrl) {
+            return res.status(400).json({ error: "Title and imageUrl are required" });
+        }
+        const query = `
+      INSERT INTO category_featured_promotions (category_id, title, subtitle, target_url, image_url, is_active)
+      VALUES ($1, $2, $3, $4, $5, $6)
+      ON CONFLICT (category_id) DO UPDATE SET
+        title = EXCLUDED.title,
+        subtitle = EXCLUDED.subtitle,
+        target_url = EXCLUDED.target_url,
+        image_url = EXCLUDED.image_url,
+        is_active = EXCLUDED.is_active
+      RETURNING *;
+    `;
+        const result = await navigation_1.dbPool.query(query, [
+            categoryId,
+            title,
+            subtitle || null,
+            targetUrl || null,
+            imageUrl,
+            isActive,
+        ]);
+        // Immediately bust navigation cache
+        navigation_1.NavigationService.invalidateCache();
+        return res.status(200).json({ success: true, promotion: result.rows[0] });
+    }
+    catch (error) {
+        console.error("[Update Featured Promo Error]:", error);
+        return res.status(500).json({ error: "Failed to update category promotion" });
+    }
+});
 // Health Check Endpoint for Render & Cloud Monitoring
 app.get("/health", (_req, res) => {
     res.status(200).json({ status: "healthy", timestamp: new Date().toISOString() });

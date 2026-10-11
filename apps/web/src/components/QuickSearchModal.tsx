@@ -61,7 +61,7 @@ const SAMPLE_PRODUCTS: SearchItem[] = [
 const TRENDING = [
   "Noise-Canceling Earbuds",
   "MacBook M2 512GB",
-  "Imenti House Stalls",
+  "Verified CBD Deals",
   "Cotton Hoodies",
   "Nairobi Boda Express",
 ];
@@ -123,7 +123,7 @@ export default function QuickSearchModal({
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search electronics, fashion, CBD stalls... (Cmd + K)"
+            placeholder="Search electronics, fashion, products... (Cmd + K)"
             className="w-full bg-transparent text-gray-900 placeholder-gray-400 text-base font-medium outline-none"
             autoFocus
           />

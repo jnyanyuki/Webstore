@@ -103,3 +103,22 @@ export interface MpesaCallbackData {
         };
     };
 }
+export interface FeaturedPromo {
+    title: string;
+    subtitle?: string;
+    image: string;
+    targetUrl?: string;
+}
+export interface SubCategory {
+    id: number;
+    title: string;
+    slug: string;
+    items: string[];
+}
+export interface CategoryGroup {
+    id: number;
+    name: string;
+    slug: string;
+    featured?: FeaturedPromo;
+    subcategories: SubCategory[];
+}

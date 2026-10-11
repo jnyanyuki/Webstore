@@ -136,7 +136,7 @@ export default function StorefrontHome() {
                 <svg className="w-3.5 h-3.5 text-gray-400 group-hover:text-emerald-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-                Search electronics, fashion, CBD stalls...
+                Search electronics, fashion, products...
               </span>
               <kbd className="bg-white text-gray-400 px-1.5 py-0.5 rounded text-[9px] font-mono border border-gray-200">
                 ⌘K
@@ -193,7 +193,7 @@ export default function StorefrontHome() {
               Instant CBD Pickup &amp; Boda Dispatch.
             </h1>
             <p className="text-emerald-100/80 text-xs sm:text-sm font-normal leading-relaxed">
-              Discover verified stall items from Imenti House, Afya Centre, Kencom, and OTC. Paid seamlessly via M-Pesa STK Push.
+              Discover verified catalog items across Nairobi CBD with instant delivery or pickup. Paid seamlessly via M-Pesa STK Push.
             </p>
             <div className="flex flex-wrap gap-3 pt-1">
               <button

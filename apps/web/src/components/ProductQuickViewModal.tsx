@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { ProductItem } from "./DynamicProductCard";
 
 export default function ProductQuickViewModal({
@@ -39,9 +40,11 @@ export default function ProductQuickViewModal({
         </button>
 
         <div className="md:w-1/2 bg-gray-50/80 p-6 flex items-center justify-center relative border-b md:border-b-0 md:border-r border-gray-200/60">
-          <img
+          <Image
             src={product.frontImage}
             alt={product.name}
+            width={400}
+            height={400}
             className="max-h-72 object-contain rounded-xl"
           />
           <div className="absolute bottom-4 left-4">
@@ -54,7 +57,7 @@ export default function ProductQuickViewModal({
         <div className="md:w-1/2 p-6 overflow-y-auto space-y-5 flex flex-col justify-between">
           <div>
             <div className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">
-              {product.category} • {product.merchantStall}
+              {product.category}
             </div>
             <h2 className="text-xl font-extrabold text-gray-900 leading-tight">
               {product.name}
