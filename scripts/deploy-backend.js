@@ -30,9 +30,17 @@ async function deployBackend() {
 
   const startTime = Date.now();
 
-  // 1. Build Backend
-  console.log("📦 [1/4] Compiling TypeScript backend...");
-  execSync("npm --prefix apps/backend run build", { cwd: ROOT_DIR, stdio: "inherit" });
+  // 1. Build Backend with esbuild Standalone Bundling
+  console.log("📦 [1/4] Compiling and bundling backend with esbuild...");
+  const esbuild = require("esbuild");
+  esbuild.buildSync({
+    entryPoints: [path.join(BACKEND_DIR, "src", "index.ts")],
+    bundle: true,
+    platform: "node",
+    target: "node20",
+    outfile: path.join(BACKEND_DIR, "dist", "bundle.js"),
+    external: ["pg-native"],
+  });
 
   // 2. Assemble Bundle
   console.log("📁 [2/4] Assembling backend production bundle...");
@@ -45,6 +53,7 @@ async function deployBackend() {
   fs.cpSync(path.join(BACKEND_DIR, "dist"), path.join(DEPLOY_DIR, "dist"), { recursive: true });
   // Copy app.js bootloader
   fs.copyFileSync(path.join(BACKEND_DIR, "app.js"), path.join(DEPLOY_DIR, "app.js"));
+
   // Copy package.json
   fs.copyFileSync(path.join(BACKEND_DIR, "package.json"), path.join(DEPLOY_DIR, "package.json"));
   // Copy .env

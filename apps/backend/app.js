@@ -23,12 +23,20 @@ if (fs.existsSync(zipFile)) {
 }
 
 // 2. Load compiled backend entrypoint
-const serverPath = path.join(__dirname, "dist", "index.js");
+const candidatePaths = [
+  path.join(__dirname, "dist", "bundle.js"),
+  path.join(__dirname, "bundle.js"),
+  path.join(__dirname, "dist", "index.js"),
+  path.join(__dirname, "index.js"),
+];
 
-if (fs.existsSync(serverPath)) {
+const serverPath = candidatePaths.find((p) => fs.existsSync(p));
+
+if (serverPath) {
   console.log(`[JuroMart API] Starting backend server from: ${serverPath}`);
   require(serverPath);
 } else {
-  console.error(`[JuroMart API] Entrypoint not found at: ${serverPath}`);
+  console.error(`[JuroMart API] Entrypoint not found in candidate paths:\n${candidatePaths.join("\n")}`);
   process.exit(1);
 }
+
