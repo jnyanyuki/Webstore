@@ -14,8 +14,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NaiCBD Marketplace & Merchant Portal",
-  description: "Unified Nairobi CBD E-Commerce Storefront & Merchant Seller Center",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://juromart.com"),
+  title: {
+    default: "JuroMart - Nairobi CBD E-Commerce Marketplace & Merchant Portal",
+    template: "%s | JuroMart",
+  },
+  description:
+    "JuroMart connects verified Nairobi CBD merchants with express shoppers across Kenya. Sub-45 min Boda dispatch, instant stall pickup, and instant M-Pesa STK Push.",
+  keywords: [
+    "JuroMart",
+    "Nairobi CBD shopping",
+    "online shopping Kenya",
+    "CBD Boda delivery",
+    "M-Pesa marketplace",
+    "electronics Nairobi",
+    "fashion Kenya",
+  ],
+  authors: [{ name: "JuroMart Kenya" }],
+  creator: "JuroMart",
+  publisher: "JuroMart",
+  formatDetection: {
+    email: false,
+    address: true,
+    telephone: true,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "JuroMart - Nairobi CBD Express Marketplace",
+    description:
+      "Shop verified electronics, fashion, and lifestyle items across Nairobi CBD with instant sub-45 min Boda dispatch and M-Pesa.",
+    url: "https://juromart.com",
+    siteName: "JuroMart",
+    locale: "en_KE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JuroMart - Nairobi CBD Express Marketplace",
+    description:
+      "Shop verified electronics, fashion, and lifestyle items across Nairobi CBD with instant sub-45 min Boda dispatch and M-Pesa.",
+  },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({

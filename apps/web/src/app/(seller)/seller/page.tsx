@@ -29,7 +29,8 @@ export default function SellerCenterHome() {
   const handlePackAndDispatch = async () => {
     setDispatchLoading(true);
     try {
-      const res = await fetch("http://localhost:9000/api/logistics/dispatch", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://api.juromart.com";
+      const res = await fetch(`${apiUrl}/api/logistics/dispatch`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -90,11 +91,11 @@ export default function SellerCenterHome() {
       <header className="bg-gray-900 text-white border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <a href="/" className="w-7 h-7 bg-green-500 rounded-lg flex items-center justify-center font-bold text-white text-sm">
-              S
+            <a href="/" className="w-7 h-7 bg-emerald-600 rounded-lg flex items-center justify-center font-bold text-white text-sm">
+              J
             </a>
-            <span className="font-bold text-base">NaiCBD Seller Center</span>
-            <span className="bg-gray-800 text-green-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-gray-700">
+            <span className="font-bold text-base">JuroMart Seller Center</span>
+            <span className="bg-gray-800 text-emerald-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-gray-700">
               ID: VEND-CBD-042
             </span>
           </div>

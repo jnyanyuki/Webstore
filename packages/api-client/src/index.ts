@@ -9,7 +9,11 @@ import {
 export class MarketplaceApiClient {
   private baseUrl: string;
 
-  constructor(baseUrl: string = "http://localhost:9000") {
+  constructor(
+    baseUrl: string = typeof process !== "undefined" && process.env?.NEXT_PUBLIC_API_URL
+      ? process.env.NEXT_PUBLIC_API_URL
+      : "https://api.juromart.com"
+  ) {
     this.baseUrl = baseUrl;
   }
 

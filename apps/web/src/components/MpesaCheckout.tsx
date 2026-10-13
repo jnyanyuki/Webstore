@@ -45,7 +45,7 @@ export default function MpesaCheckout({
         phoneNumber: phone,
         amount,
         accountReference: cartId,
-        transactionDesc: "NaiCBD Store Checkout",
+        transactionDesc: "JuroMart Store Checkout",
       };
 
       await apiClient.initiateMpesaStkPush(payload);

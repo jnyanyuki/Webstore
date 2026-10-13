@@ -115,11 +115,11 @@ export default function StorefrontHome() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
             <div className="w-7 h-7 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-xs">
-              N
+              J
             </div>
             <div className="flex items-center gap-2">
               <span className="font-extrabold text-base tracking-tight text-gray-900">
-                NaiCBD<span className="text-emerald-600">.</span>
+                JuroMart<span className="text-emerald-600">.</span>
               </span>
               <span className="hidden sm:inline-block text-[9px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-200">
                 45-Min Boda
@@ -187,7 +187,7 @@ export default function StorefrontHome() {
           <div className="relative z-10 max-w-xl space-y-3">
             <span className="inline-flex items-center gap-1.5 py-0.5 px-2.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold tracking-wider border border-emerald-500/30 backdrop-blur-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              NAIROBI CBD EXPRESS MARKETPLACE
+              JUROMART EXPRESS MARKETPLACE
             </span>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight text-white">
               Instant CBD Pickup &amp; Boda Dispatch.

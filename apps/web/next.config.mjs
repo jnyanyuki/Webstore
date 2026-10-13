@@ -1,6 +1,8 @@
-/** @type {import('next').NextConfig} */
+const backendUrl = process.env.BACKEND_INTERNAL_URL || "http://127.0.0.1:9000";
+
 const nextConfig = {
   reactStrictMode: true,
+  output: "standalone",
   transpilePackages: [
     "@webstore/ui",
     "@webstore/types",
@@ -11,11 +13,48 @@ const nextConfig = {
     loader: "custom",
     loaderFile: "./src/lib/imagekitLoader.ts",
   },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
+          },
+          {
+            key: "X-XSS-Protection",
+            value: "1; mode=block",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=(self)",
+          },
+        ],
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
         source: "/seller-center",
         destination: "/seller",
+      },
+      {
+        source: "/api/logistics/:path*",
+        destination: `${backendUrl}/api/logistics/:path*`,
+      },
+      {
+        source: "/api/payments/:path*",
+        destination: `${backendUrl}/api/payments/:path*`,
       },
     ];
   },

@@ -47,11 +47,11 @@ export default function PwaInstallPrompt() {
   return (
     <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-96 bg-gray-900 text-white p-4 rounded-2xl shadow-2xl border border-gray-800 z-50 flex items-center justify-between animate-bounce">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 bg-green-600 rounded-xl flex items-center justify-center font-bold text-lg">
-          N
+        <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center font-bold text-lg">
+          J
         </div>
         <div>
-          <h4 className="font-bold text-sm">Install NaiCBD App</h4>
+          <h4 className="font-bold text-sm">Install JuroMart App</h4>
           <p className="text-xs text-gray-400">Faster shopping & offline mode</p>
         </div>
       </div>

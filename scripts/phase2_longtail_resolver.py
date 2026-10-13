@@ -92,7 +92,7 @@ class BarcodeResolver:
         headers = {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "User-Agent": "NaiCBDWebstore-CatalogResolver/1.0",
+            "User-Agent": "JuroMartWebstore-CatalogResolver/1.0",
         }
         if UPCITEMDB_KEY:
             headers["user_key"] = UPCITEMDB_KEY

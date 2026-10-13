@@ -1,5 +1,5 @@
-// NaiCBD PWA Service Worker
-const CACHE_NAME = "naicbd-v1";
+// JuroMart PWA Service Worker
+const CACHE_NAME = "juromart-v1";
 
 self.addEventListener("install", (event) => {
   self.skipWaiting();

@@ -38,7 +38,12 @@ export function ProductAlertToast({
       (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
 
     const effectiveWsUrl =
-      wsUrl || (isLocalhost ? "ws://localhost:8000/ws/notifications" : undefined);
+      wsUrl ||
+      (isLocalhost
+        ? "ws://localhost:8000/ws/notifications"
+        : typeof window !== "undefined"
+          ? `${window.location.protocol === "https:" ? "wss:" : "ws:"}//${window.location.host}/ws/notifications`
+          : undefined);
 
     // If no WebSocket URL configured and we're not running on localhost, skip connection quietly
     if (!effectiveWsUrl) {

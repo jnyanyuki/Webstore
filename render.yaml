@@ -1,7 +1,7 @@
 services:
   # 1. MedusaJS Backend Web Service on Render
   - type: web
-    name: naicbd-backend
+    name: juromart-backend
     env: docker
     dockerfilePath: tooling/docker/Dockerfile.backend
     context: .

@@ -9,7 +9,33 @@ const cors_1 = __importDefault(require("cors"));
 const navigation_1 = require("./services/navigation");
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 9000;
-app.use((0, cors_1.default)());
+const allowedOriginsEnv = (process.env.CORS_ALLOWED_ORIGINS || "")
+    .split(",")
+    .map((o) => o.trim())
+    .filter(Boolean);
+const defaultAllowedOrigins = [
+    "https://juromart.com",
+    "https://www.juromart.com",
+    "http://juromart.com",
+    "http://www.juromart.com",
+    "https://api.juromart.com",
+    "https://seller.juromart.com",
+    "http://localhost:3000",
+    "http://localhost:3004",
+];
+const allowedOriginsList = Array.from(new Set([...defaultAllowedOrigins, ...allowedOriginsEnv]));
+app.use((0, cors_1.default)({
+    origin: (origin, callback) => {
+        // Allow requests with no origin (e.g. mobile apps, curl, server-to-server proxy)
+        if (!origin || allowedOriginsList.includes(origin) || origin.endsWith(".juromart.com")) {
+            return callback(null, true);
+        }
+        return callback(null, true);
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "x-seller-auth"],
+}));
 app.use(express_1.default.json());
 // Dynamic Catalog Navigation & Promotion Endpoints
 app.get("/api/navigation/categories", async (req, res) => {
@@ -72,7 +98,12 @@ app.get("/health", (_req, res) => {
 });
 // Root Endpoint
 app.get("/", (_req, res) => {
-    res.status(200).json({ name: "NaiCBD Backend API", status: "running" });
+    res.status(200).json({
+        name: "JuroMart Backend API",
+        status: "running",
+        domain: "juromart.com",
+        api: "https://api.juromart.com",
+    });
 });
 // Mock Boda Dispatch Endpoint
 app.post("/api/logistics/dispatch", (req, res) => {

@@ -22,14 +22,14 @@ class AfricasTalkingService {
      * Notify vendor when a Boda rider has been assigned to pick up their order
      */
     async notifyMerchantRiderAssigned(vendorPhone, orderId, riderName, riderPhone) {
-        const message = `[NaiCBD Marketplace] Order #${orderId} has been assigned to Boda Rider ${riderName} (${riderPhone}). Please have the package ready for pickup at your shop stage.`;
+        const message = `[JuroMart Marketplace] Order #${orderId} has been assigned to Boda Rider ${riderName} (${riderPhone}). Please have the package ready for pickup at your shop stage.`;
         await this.sendSms({ to: vendorPhone, message });
     }
     /**
      * Notify customer when order status updates
      */
     async notifyCustomerOrderStatus(customerPhone, orderId, status, details) {
-        const message = `[NaiCBD Marketplace] Order #${orderId} update: Status is now ${status}. ${details || ""}`;
+        const message = `[JuroMart Marketplace] Order #${orderId} update: Status is now ${status}. ${details || ""}`;
         await this.sendSms({ to: customerPhone, message });
     }
 }
