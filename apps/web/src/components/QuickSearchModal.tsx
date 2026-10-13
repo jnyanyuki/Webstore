@@ -12,51 +12,18 @@ export type SearchItem = {
   badge?: string;
 };
 
-const SAMPLE_PRODUCTS: SearchItem[] = [
-  {
-    id: "prod_earbuds",
-    name: "Wireless Noise-Canceling Earbuds",
-    category: "Electronics",
-    price: 4500,
-    originalPrice: 5294,
-    image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&q=80",
-    badge: "Ready for Pickup",
-  },
-  {
-    id: "prod_hoodie",
-    name: "Urban Heavyweight Cotton Hoodie - Black",
-    category: "Fashion",
-    price: 2200,
-    originalPrice: 2800,
-    image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=400&q=80",
-    badge: "45-Min Boda Dispatch",
-  },
-  {
-    id: "prod_macbook",
-    name: 'MacBook Air M2 13.6" 16GB RAM 512GB SSD',
-    category: "Electronics",
-    price: 145000,
-    originalPrice: 160000,
-    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80",
-    badge: "Verified CBD Merchant",
-  },
-  {
-    id: "prod_sneakers",
-    name: "Retro High Leather Sneakers - White/Green",
-    category: "Fashion",
-    price: 3800,
-    image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&q=80",
-    badge: "Ready for Pickup",
-  },
-  {
-    id: "prod_coffee",
-    name: "Nairobi Specialty Arabica Coffee Beans 500g",
-    category: "Groceries",
-    price: 1250,
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&q=80",
-    badge: "45-Min Boda Dispatch",
-  },
-];
+import { INITIAL_PRODUCTS } from "../data/products";
+
+const SAMPLE_PRODUCTS: SearchItem[] = INITIAL_PRODUCTS.map((p) => ({
+  id: p.id,
+  name: p.name,
+  category: p.category,
+  price: p.price,
+  originalPrice: p.originalPrice,
+  image: p.frontImage,
+  badge: p.badge,
+}));
+
 
 const TRENDING = [
   "Noise-Canceling Earbuds",

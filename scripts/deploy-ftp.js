@@ -128,8 +128,7 @@ async function deploy() {
   // ----------------------------------------------------------------------------
   console.log(`📡 [4/5] Connecting to NovaHost FTP (${FTP_CONFIG.host})...`);
   const client = new ftp.Client();
-  client.ftp.verbose = false;
-  client.ftp.timeout = 120000; // 2 minutes socket timeout
+  client.ftp.timeout = 600000; // 10 minutes socket timeout for large bundles
 
   try {
     await client.access(FTP_CONFIG);
