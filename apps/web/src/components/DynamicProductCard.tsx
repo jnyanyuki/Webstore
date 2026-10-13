@@ -6,7 +6,9 @@ import Image from "next/image";
 export type ProductItem = {
   id: string;
   name: string;
-  category: "Electronics" | "Fashion" | "Home & Appliances" | "Groceries";
+  category: string;
+  subcategory?: string;
+  itemType?: string;
   price: number;
   originalPrice?: number;
   frontImage: string;

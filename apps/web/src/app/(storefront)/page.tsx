@@ -47,7 +47,10 @@ export default function StorefrontHome() {
     ? INITIAL_PRODUCTS.filter(
         (p) =>
           p.category.toLowerCase().includes(selectedCategoryFilter.toLowerCase()) ||
-          p.name.toLowerCase().includes(selectedCategoryFilter.toLowerCase())
+          (p.subcategory && p.subcategory.toLowerCase().includes(selectedCategoryFilter.toLowerCase())) ||
+          (p.itemType && p.itemType.toLowerCase().includes(selectedCategoryFilter.toLowerCase())) ||
+          p.name.toLowerCase().includes(selectedCategoryFilter.toLowerCase()) ||
+          p.badge.toLowerCase().includes(selectedCategoryFilter.toLowerCase())
       )
     : INITIAL_PRODUCTS;
 
@@ -174,7 +177,17 @@ export default function StorefrontHome() {
           </div>
 
           <div className="flex items-center gap-2 overflow-x-auto py-1.5 scrollbar-none border-b border-gray-200/60 pb-3">
-            {["All", "Electronics", "Fashion", "Home & Appliances", "Ready for Pickup", "45-Min Boda Dispatch"].map((pill) => (
+            {[
+              "All",
+              "Phones & Tablets",
+              "Computers & Gaming",
+              "TVs, Audio & Vision",
+              "Home Appliances",
+              "Solar & Power Backup",
+              "Men's Fashion & Shoes",
+              "Ready for Pickup",
+              "45-Min Boda Dispatch",
+            ].map((pill) => (
               <button
                 key={pill}
                 onClick={() => setSelectedCategoryFilter(pill === "All" ? null : pill)}

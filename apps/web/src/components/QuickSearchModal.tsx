@@ -6,6 +6,8 @@ export type SearchItem = {
   id: string;
   name: string;
   category: string;
+  subcategory?: string;
+  itemType?: string;
   price: number;
   originalPrice?: number;
   image: string;
@@ -18,6 +20,8 @@ const SAMPLE_PRODUCTS: SearchItem[] = INITIAL_PRODUCTS.map((p) => ({
   id: p.id,
   name: p.name,
   category: p.category,
+  subcategory: p.subcategory,
+  itemType: p.itemType,
   price: p.price,
   originalPrice: p.originalPrice,
   image: p.frontImage,
@@ -65,7 +69,9 @@ export default function QuickSearchModal({
     ? SAMPLE_PRODUCTS.filter(
         (p) =>
           p.name.toLowerCase().includes(query.toLowerCase()) ||
-          p.category.toLowerCase().includes(query.toLowerCase())
+          p.category.toLowerCase().includes(query.toLowerCase()) ||
+          (p.subcategory && p.subcategory.toLowerCase().includes(query.toLowerCase())) ||
+          (p.itemType && p.itemType.toLowerCase().includes(query.toLowerCase()))
       )
     : SAMPLE_PRODUCTS;
 
