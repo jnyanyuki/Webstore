@@ -127,25 +127,34 @@ pm2 save
 
 ---
 
-## 4. Option B: NovaHost cPanel Node.js App Selector Setup
+## 4. Option B: NovaHost cPanel Node.js App (Active & Verified)
 
-If hosting on a NovaHost cPanel Shared or Business Cloud hosting account:
+Your platform is actively deployed and running on NovaHost cPanel via LiteSpeed and Phusion Passenger.
 
-1. **Log in to cPanel** at `https://juromart.com:2083` or via the NovaHost portal.
-2. In the **Software** section, click **Setup Node.js App**.
-3. Click **Create Application**:
-   - **Node.js version:** Select `20.x`
-   - **Application mode:** `Production`
-   - **Application root:** `juromart/apps/web`
-   - **Application URL:** `juromart.com`
-   - **Application startup file:** `app.js` (pre-configured to load `.next/standalone/apps/web/server.js`)
-4. In the **Environment variables** section, add:
-   - `NODE_ENV`: `production`
-   - `NEXT_PUBLIC_SITE_URL`: `https://juromart.com`
-   - `NEXT_PUBLIC_API_URL`: `https://api.juromart.com`
-   - `DATABASE_URL`: Your pooled database URL
-5. Click **Create** then click **Run NPM Install** and restart the app.
-6. The included `apps/web/.htaccess` automatically handles HTTPS enforcement and reverse proxy routing.
+### Configuration on NovaHost cPanel:
+- **cPanel URL:** `https://213.139.204.9:2083` or `https://cpanel.juromart.com`
+- **Application Root:** `apps/web` (points to `/home/juromart/apps/web`)
+- **Application URL:** `juromart.com`
+- **Application Startup File:** `app.js` (automatically unzips updates and starts Next.js standalone)
+- **Node.js Version:** `20.20.2`
+- **Application Mode:** `Production`
+
+### 1-Click Deployment (Local to Production):
+You can deploy updates from your local workspace with a single command:
+```bash
+# Deploy with existing build
+npm run deploy
+
+# Or rebuild Next.js and deploy in one step
+npm run deploy:build
+```
+
+### FTP Deployment Credentials (Automated):
+- **Server / Host:** `213.139.204.9` (Port `21`)
+- **FTP User:** `deploy@juromart.com`
+- **Target Root:** `/home/juromart/apps/web`
+- **Process Reload:** Automatically triggered via `tmp/restart.txt` on every deploy.
+
 
 ---
 
