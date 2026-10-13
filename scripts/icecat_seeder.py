@@ -191,12 +191,20 @@ def parse_icecat_archive(
     Memory-bounded XML streaming generator using iterparse.
     Clears parent & sibling nodes to keep heap memory < 200MB during multi-gigabyte parsing.
     """
-    records: List[Tuple] = []
-    open_fn = gzip.open if file_path.endswith(".gz") else open
-
     logger.info(f"Streaming data from archive: {file_path}")
+    is_gzip = False
+    try:
+        with open(file_path, "rb") as test_f:
+            is_gzip = test_f.read(2) == b"\x1f\x8b"
+    except Exception:
+        pass
+    open_fn = gzip.open if (is_gzip or file_path.endswith(".gz")) else open
+
+    records: List[Tuple] = []
     with open_fn(file_path, "rb") as f:
         context = etree.iterparse(
+
+
             f, events=("end",), tag=("Product", "product"), recover=True
         )
         for _, elem in context:
@@ -336,9 +344,11 @@ def generate_sample_icecat_xml(output_path: str, count: int = 20):
             etree.SubElement(f_name, "Name", {"Value": k})
 
     tree = etree.ElementTree(root)
+    os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
     with gzip.open(output_path, "wb") as f:
         tree.write(f, encoding="utf-8", xml_declaration=True, pretty_print=True)
     logger.info("Sample generation complete.")
+
 
 
 async def run_icecat_pipeline(
