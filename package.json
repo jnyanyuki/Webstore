@@ -11,6 +11,7 @@
     "build": "turbo run build",
     "deploy": "node scripts/deploy-ftp.js",
     "deploy:build": "node scripts/deploy-ftp.js --build",
+    "deploy:backend": "node scripts/deploy-backend.js",
     "dev": "turbo run dev --parallel",
     "dev:web": "npm --prefix apps/web run dev",
     "lint": "turbo run lint"
