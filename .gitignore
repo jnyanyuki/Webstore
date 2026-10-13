@@ -23,4 +23,7 @@ __pycache__/
 .venv/
 env/
 venv/
-
+# Deployment artifacts
+deploy_dist/
+*.zip
+scripts/test-*.js
