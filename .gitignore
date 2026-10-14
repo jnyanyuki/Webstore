@@ -27,3 +27,5 @@ venv/
 deploy_dist/
 *.zip
 scripts/test-*.js
+dist/
+apps/backend/dist/
