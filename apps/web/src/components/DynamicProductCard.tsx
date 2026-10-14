@@ -15,6 +15,9 @@ export type ProductItem = {
   sideImage?: string;
   merchantStall?: string;
   badge?: string;
+  description?: string;
+  generation?: string;
+  lineage?: string[];
   colors?: string[];
   sizes?: string[];
   variants?: { name: string; priceDelta: number }[];

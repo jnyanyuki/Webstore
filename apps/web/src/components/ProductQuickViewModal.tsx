@@ -63,7 +63,7 @@ export default function ProductQuickViewModal({
               {product.name}
             </h2>
 
-            <div className="flex items-baseline gap-2 mt-3 mb-4">
+            <div className="flex items-baseline gap-2 mt-3 mb-3">
               <span className="text-2xl font-black text-gray-900">
                 KSh {calculatedPrice.toLocaleString()}
               </span>
@@ -73,6 +73,49 @@ export default function ProductQuickViewModal({
                 </span>
               )}
             </div>
+
+            {product.description && (
+              <p className="text-xs text-gray-600 line-clamp-3 leading-relaxed mb-4">
+                {product.description}
+              </p>
+            )}
+
+            {product.lineage && product.lineage.length > 0 && (() => {
+              const lineageList = product.lineage;
+              return (
+                <div className="mb-4 p-3 bg-slate-900 rounded-xl text-white border border-slate-800">
+                  <div className="flex items-center justify-between text-[11px] mb-2 font-semibold">
+                    <span className="flex items-center gap-1.5 text-slate-300">
+                      <span>🧬</span> Product Lineup Lineage
+                    </span>
+                    {product.generation && (
+                      <span className="text-[10px] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded font-mono">
+                        {product.generation}
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-1.5 text-[11px] overflow-x-auto py-1 scrollbar-none">
+                    {lineageList.map((item, idx) => {
+                      const isLast = idx === lineageList.length - 1;
+                      return (
+                        <React.Fragment key={idx}>
+                          <span
+                            className={`whitespace-nowrap px-2 py-0.5 rounded text-[10px] ${
+                              isLast
+                                ? "bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold"
+                                : "bg-slate-800 text-slate-400"
+                            }`}
+                          >
+                            {item}
+                          </span>
+                          {!isLast && <span className="text-slate-600 text-[10px]">→</span>}
+                        </React.Fragment>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })()}
 
             {product.category === "Fashion" && (
               <div className="space-y-4 pt-2 border-t border-gray-100">

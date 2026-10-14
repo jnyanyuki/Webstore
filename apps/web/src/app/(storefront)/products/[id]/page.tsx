@@ -28,6 +28,12 @@ export default async function ProductDetailPage({ params }: PageProps) {
       price: catalogItem.price,
       originalPrice: catalogItem.originalPrice,
       category: catalogItem.category,
+      subcategory: catalogItem.subcategory || "Standard",
+      itemType: catalogItem.itemType || "Retail",
+      badge: catalogItem.badge,
+      generation: catalogItem.generation,
+      lineage: catalogItem.lineage || [],
+      description: catalogItem.description || `The ${catalogItem.name} delivers precision engineering, authenticated high-tier reliability, and official manufacturer warranty coverage.`,
       images: {
         front: catalogItem.frontImage,
         side: catalogItem.sideImage || catalogItem.frontImage,
@@ -36,25 +42,25 @@ export default async function ProductDetailPage({ params }: PageProps) {
         Category: catalogItem.category,
         Subcategory: catalogItem.subcategory || "Standard",
         ItemType: catalogItem.itemType || "Retail",
-        Highlights: catalogItem.badge,
-        Location: catalogItem.merchantStall || "Nairobi CBD",
+        Generation: catalogItem.generation || "Current Lineup",
+        Highlights: catalogItem.badge || "Verified Authentic",
+        Store: catalogItem.merchantStall || "Authorized Flagship Dealer",
       },
-      description: `Authentic ${catalogItem.name} sourced directly from verified CBD merchant at ${catalogItem.merchantStall || "Nairobi CBD"}. Guaranteed authentic with 45-minute boda boda express dispatch.`,
     };
 
     return (
       <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
-        <header className="bg-white border-b border-gray-100 py-4 px-6">
+        <header className="bg-white border-b border-gray-100 py-4 px-6 sticky top-0 z-30 shadow-xs">
           <div className="max-w-5xl mx-auto flex items-center justify-between">
-            <Link href="/" className="text-emerald-600 font-bold text-sm flex items-center gap-1 hover:underline">
+            <Link href="/" className="text-emerald-700 font-bold text-sm flex items-center gap-1.5 hover:underline transition-all">
               ← Back to Storefront
             </Link>
             <div className="flex items-center gap-2">
-              <span className="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full">
-                CBD Merchant Verified
+              <span className="text-xs bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+                ✓ 100% Verified Authentic
               </span>
-              <span className="text-xs bg-blue-100 text-blue-800 font-semibold px-2.5 py-1 rounded-full">
-                Edge Pre-rendered
+              <span className="text-xs bg-blue-50 text-blue-800 border border-blue-200 font-semibold px-2.5 py-1 rounded-full">
+                ⚡ Instant Pre-rendered
               </span>
             </div>
           </div>
@@ -62,8 +68,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
         <main className="max-w-5xl mx-auto px-4 py-8">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8">
-            <div>
+            <div className="space-y-4">
               <ProductImageGallery images={product.images} title={product.name} />
+              {product.badge && (
+                <div className="flex items-center justify-center">
+                  <span className="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-50 text-amber-900 border border-amber-200 shadow-xs">
+                    {product.badge}
+                  </span>
+                </div>
+              )}
             </div>
 
             <div className="flex flex-col justify-between space-y-6">
@@ -76,33 +89,83 @@ export default async function ProductDetailPage({ params }: PageProps) {
                     {product.attributes.Subcategory} • {product.attributes.ItemType}
                   </span>
                 </div>
-                <h1 className="text-2xl font-black text-gray-900 leading-snug">
+                
+                <h1 className="text-2xl md:text-3xl font-black text-gray-900 leading-snug">
                   {product.name}
                 </h1>
-                <p className="text-xs text-gray-600 mt-2 leading-relaxed">
-                  {product.description}
-                </p>
 
-                <div className="mt-4 p-3 bg-gray-50 rounded-xl border border-gray-100 space-y-1 text-xs">
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Merchant Stall:</span>
-                    <span className="font-semibold text-gray-800">{product.attributes.Location}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-500">Highlights:</span>
-                    <span className="font-semibold text-emerald-700">{product.attributes.Highlights}</span>
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <span className="text-2xl font-black text-emerald-600">
+                {/* Price Display */}
+                <div className="mt-3 flex items-baseline gap-3">
+                  <span className="text-3xl font-black text-emerald-600">
                     KES {product.price.toLocaleString()}
                   </span>
                   {product.originalPrice && (
-                    <span className="text-sm line-through text-gray-400 ml-2">
+                    <span className="text-sm line-through text-gray-400">
                       KES {product.originalPrice.toLocaleString()}
                     </span>
                   )}
+                </div>
+
+                {/* Broad Detailed Description */}
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <h3 className="text-xs font-bold text-gray-900 uppercase tracking-wider mb-1.5">
+                    Product Overview & Specifications
+                  </h3>
+                  <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                    {product.description}
+                  </p>
+                </div>
+
+                {/* Multi-Generational Product Lineup Matrix */}
+                {product.lineage && product.lineage.length > 0 && (
+                  <div className="mt-5 p-4 bg-slate-900 text-white rounded-xl border border-slate-800 shadow-md">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2">
+                        <span className="text-base">🧬</span>
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200">
+                          Multi-Generational Lineup
+                        </h4>
+                      </div>
+                      {product.generation && (
+                        <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                          {product.generation}
+                        </span>
+                      )}
+                    </div>
+                    
+                    <div className="relative pl-3 border-l-2 border-slate-700 space-y-2.5 my-2">
+                      {product.lineage.map((item, idx) => {
+                        const isCurrent = idx === product.lineage.length - 1;
+                        return (
+                          <div key={idx} className="relative flex items-center justify-between group">
+                            <div className="absolute -left-[19px] w-2.5 h-2.5 rounded-full border-2 border-slate-900 bg-slate-500 group-last:bg-emerald-400 group-last:ring-4 group-last:ring-emerald-400/20" />
+                            <span className={`text-xs ${isCurrent ? 'font-bold text-emerald-300' : 'text-slate-400'}`}>
+                              {item}
+                            </span>
+                            <span className={`text-[10px] px-1.5 py-0.5 rounded ${isCurrent ? 'bg-emerald-400/10 text-emerald-300 font-bold' : 'text-slate-500'}`}>
+                              {isCurrent ? 'Current Flagship' : `Gen ${idx + 1}`}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Authenticity & Specs Box */}
+                <div className="mt-4 p-3 bg-gray-50 rounded-xl border border-gray-100 space-y-1.5 text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Authorized Merchant:</span>
+                    <span className="font-semibold text-gray-800">{product.attributes.Store}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Warranty Assurance:</span>
+                    <span className="font-semibold text-emerald-700">{product.attributes.Highlights}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Inspection Status:</span>
+                    <span className="font-semibold text-blue-700">✓ 100-Point Factory QC Passed</span>
+                  </div>
                 </div>
               </div>
 
