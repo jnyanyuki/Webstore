@@ -938,4 +938,75 @@ export const NON_PERISHABLE_TAXONOMY: TaxonomyDepartment[] = [
       },
     ],
   },
+  {
+    name: "Sports, Fitness & Outdoors",
+    slug: "sports-fitness-outdoors",
+    featured: {
+      title: "Active Lifestyle & Workouts",
+      subtitle: "Gym weights, treadmills, camping tents & bikes",
+      image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&q=85",
+      targetUrl: "/shop/sports-fitness-outdoors",
+    },
+    subcategories: [
+      {
+        title: "Strength & Gym Equipment",
+        slug: "strength-gym-equipment",
+        items: [
+          "Adjustable Dumbbell & Barbell Sets",
+          "Heavy Duty Resistance Exercise Bands",
+          "Cast Iron Kettlebells",
+          "Multi-Position Weight Benches",
+          "Doorway Chin-Up & Pull-Up Bars",
+          "Non-Slip High-Density Yoga Mats",
+        ],
+      },
+      {
+        title: "Cardio Machines",
+        slug: "cardio-machines",
+        items: [
+          "Foldable Electric Motorized Treadmills",
+          "Magnetic Indoor Cycling Exercise Bikes",
+          "Elliptical Cross Trainers",
+          "Air & Water Rowing Machines",
+          "High-Speed Weighted Jump Ropes",
+        ],
+      },
+      {
+        title: "Outdoor & Camping Gear",
+        slug: "outdoor-camping-gear",
+        items: [
+          "Waterproof Family Camping Tents",
+          "All-Season Sleeping Bags",
+          "Heavy-Duty Tactical Backpacks",
+          "High-Lumen LED Torches & Lanterns",
+          "Foldable Camping Chairs & Tables",
+          "Stainless Steel Multi-Tools & Knives",
+        ],
+      },
+      {
+        title: "Cycling & Bicycles",
+        slug: "cycling-bicycles",
+        items: [
+          "Aluminum Mountain Bikes (MTB)",
+          "Urban Commuter Road Bicycles",
+          "Aerodynamic Bike Helmets",
+          "High-Decibel Bike Horns & LED Lights",
+          "Heavy-Duty Steel Bicycle Locks",
+          "Portable Bike Tire Pumps & Tool Kits",
+        ],
+      },
+      {
+        title: "Team & Ball Sports",
+        slug: "team-ball-sports",
+        items: [
+          "Official Match Footballs & Shin Guards",
+          "Indoor / Outdoor Leather Basketballs",
+          "Graphite Tennis & Badminton Rackets",
+          "Table Tennis Bats & Net Sets",
+          "Boxing Gloves & Heavy Punching Bags",
+        ],
+      },
+    ],
+  },
 ];
+

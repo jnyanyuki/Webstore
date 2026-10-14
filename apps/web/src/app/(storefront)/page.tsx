@@ -193,6 +193,7 @@ export default function StorefrontHome() {
               "Baby Gear, Nursery & Toys",
               "Security, Smart Home & Travel",
               "Office, Stationery & Music",
+              "Sports, Fitness & Outdoors",
               "Ready for Pickup",
               "45-Min Boda Dispatch",
             ].map((pill) => (
