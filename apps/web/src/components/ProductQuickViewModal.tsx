@@ -48,7 +48,7 @@ export default function ProductQuickViewModal({
             className="max-h-72 object-contain rounded-xl"
           />
           <div className="absolute bottom-4 left-4">
-            <span className="bg-white text-emerald-800 text-[10px] font-bold px-2.5 py-1 rounded-full border border-emerald-100 shadow-sm">
+            <span className="bg-white/95 text-gray-900 text-[10px] font-bold px-2.5 py-1 rounded-full border border-gray-200 shadow-sm backdrop-blur-xs">
               {product.badge}
             </span>
           </div>

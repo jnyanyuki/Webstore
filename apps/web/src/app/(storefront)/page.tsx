@@ -44,14 +44,21 @@ export default function StorefrontHome() {
   };
 
   const filteredProducts = selectedCategoryFilter
-    ? INITIAL_PRODUCTS.filter(
-        (p) =>
-          p.category.toLowerCase().includes(selectedCategoryFilter.toLowerCase()) ||
-          (p.subcategory && p.subcategory.toLowerCase().includes(selectedCategoryFilter.toLowerCase())) ||
-          (p.itemType && p.itemType.toLowerCase().includes(selectedCategoryFilter.toLowerCase())) ||
-          p.name.toLowerCase().includes(selectedCategoryFilter.toLowerCase()) ||
-          p.badge.toLowerCase().includes(selectedCategoryFilter.toLowerCase())
-      )
+    ? INITIAL_PRODUCTS.filter((p) => {
+        const q = selectedCategoryFilter.toLowerCase();
+        if (q === "🔥 best sellers") return p.badge?.toLowerCase().includes("best seller");
+        if (q === "⭐ top rated") return p.badge?.toLowerCase().includes("top rated");
+        if (q === "🛡️ official warranty") {
+          return p.badge?.toLowerCase().includes("warranty") || p.badge?.toLowerCase().includes("genuine");
+        }
+        return (
+          p.category.toLowerCase().includes(q) ||
+          (p.subcategory && p.subcategory.toLowerCase().includes(q)) ||
+          (p.itemType && p.itemType.toLowerCase().includes(q)) ||
+          p.name.toLowerCase().includes(q) ||
+          (p.badge && p.badge.toLowerCase().includes(q))
+        );
+      })
     : INITIAL_PRODUCTS;
 
   return (
@@ -194,8 +201,9 @@ export default function StorefrontHome() {
               "Security, Smart Home & Travel",
               "Office, Stationery & Music",
               "Sports, Fitness & Outdoors",
-              "Ready for Pickup",
-              "45-Min Boda Dispatch",
+              "🔥 Best Sellers",
+              "⭐ Top Rated",
+              "🛡️ Official Warranty",
             ].map((pill) => (
               <button
                 key={pill}

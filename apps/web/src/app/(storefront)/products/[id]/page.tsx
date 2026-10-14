@@ -36,7 +36,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
         Category: catalogItem.category,
         Subcategory: catalogItem.subcategory || "Standard",
         ItemType: catalogItem.itemType || "Retail",
-        Dispatch: catalogItem.badge,
+        Highlights: catalogItem.badge,
         Location: catalogItem.merchantStall || "Nairobi CBD",
       },
       description: `Authentic ${catalogItem.name} sourced directly from verified CBD merchant at ${catalogItem.merchantStall || "Nairobi CBD"}. Guaranteed authentic with 45-minute boda boda express dispatch.`,
@@ -89,8 +89,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
                     <span className="font-semibold text-gray-800">{product.attributes.Location}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500">Fulfillment:</span>
-                    <span className="font-semibold text-emerald-700">{product.attributes.Dispatch}</span>
+                    <span className="text-gray-500">Highlights:</span>
+                    <span className="font-semibold text-emerald-700">{product.attributes.Highlights}</span>
                   </div>
                 </div>
 

@@ -24,7 +24,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     frontImage: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600&q=80",
     sideImage: "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=600&q=80",
     merchantStall: "Kimathi Street • Tech Hub 3",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
     variants: [
       { name: "256GB Titanium Gray", priceDelta: 0 },
       { name: "512GB Titanium Black (+KES 12,000)", priceDelta: 12000 },
@@ -41,7 +41,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     frontImage: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=600&q=80",
     sideImage: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&q=80",
     merchantStall: "Imenti House • Stall G14",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 1-Year Warranty",
     variants: [
       { name: "256GB Natural Titanium", priceDelta: 0 },
       { name: "512GB Blue Titanium (+KES 18,000)", priceDelta: 18000 },
@@ -57,7 +57,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 38000,
     frontImage: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 18",
-    badge: "45-Min Boda Dispatch",
+    badge: "5G Ultra Speed",
   },
   {
     id: "phone_galaxy_a55",
@@ -69,7 +69,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 51000,
     frontImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=80",
     merchantStall: "Moi Avenue • Shop 8",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "phone_iphone_13_refurb",
@@ -81,7 +81,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 79000,
     frontImage: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600&q=80",
     merchantStall: "Imenti House • Stall B6",
-    badge: "Verified CBD Merchant",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "phone_blackview_rugged",
@@ -93,7 +93,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 48000,
     frontImage: "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=600&q=80",
     merchantStall: "Ronald Ngala • Stall 14",
-    badge: "45-Min Boda Dispatch",
+    badge: "⚡ Trending Now",
   },
   {
     id: "tablet_ipad_air_m2",
@@ -105,7 +105,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 105000,
     frontImage: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&q=80",
     merchantStall: "Kencom House • Suite 12",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
   {
     id: "tablet_galaxy_tab_s9_fe",
@@ -117,7 +117,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 72000,
     frontImage: "https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&q=80",
     merchantStall: "Kimathi Street • Tech Hub",
-    badge: "Ready for Pickup",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "tablet_kids_learning",
@@ -129,7 +129,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8500,
     frontImage: "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=600&q=80",
     merchantStall: "River Road • Kids Corner 4",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "tablet_kindle_paperwhite",
@@ -141,7 +141,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 28000,
     frontImage: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?w=600&q=80",
     merchantStall: "Tom Mboya Street • Stall 19",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
 
   // --- Mobile Accessories ---
@@ -155,7 +155,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6200,
     frontImage: "https://images.unsplash.com/photo-1622445262464-84b1456045b6?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 12",
-    badge: "45-Min Boda Dispatch",
+    badge: "💎 Official Dealer",
   },
   {
     id: "acc_magsafe_charger",
@@ -167,7 +167,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5800,
     frontImage: "https://images.unsplash.com/photo-1615526675159-e248c3021d3f?w=600&q=80",
     merchantStall: "Imenti House • Stall C3",
-    badge: "Ready for Pickup",
+    badge: "MagSafe Wireless Fast",
   },
   {
     id: "acc_anker_737_powerbank",
@@ -179,7 +179,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 15000,
     frontImage: "https://images.unsplash.com/photo-1609592424109-dd9892f1b177?w=600&q=80",
     merchantStall: "Moi Avenue • Shop 18",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
   {
     id: "acc_shockproof_case",
@@ -191,7 +191,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3000,
     frontImage: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&q=80",
     merchantStall: "Imenti House • Stall F8",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "acc_tempered_glass",
@@ -203,7 +203,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1600,
     frontImage: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=600&q=80",
     merchantStall: "Tom Mboya Street • Stall 5",
-    badge: "Ready for Pickup",
+    badge: "🔥 Best Seller",
   },
   {
     id: "acc_braided_cable",
@@ -215,7 +215,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1900,
     frontImage: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 22",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
   },
   {
     id: "acc_car_mount",
@@ -227,7 +227,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3200,
     frontImage: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=600&q=80",
     merchantStall: "Afya Centre • Shop 11",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "acc_dji_gimbal",
@@ -239,7 +239,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 24500,
     frontImage: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&q=80",
     merchantStall: "Kimathi Street • Camera & Tech",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
   },
 
   // --- Smart Wearables ---
@@ -253,7 +253,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 68000,
     frontImage: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&q=80",
     merchantStall: "Kencom House • Suite 12",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "wear_galaxy_watch_6",
@@ -265,7 +265,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 49000,
     frontImage: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&q=80",
     merchantStall: "Imenti House • Stall A4",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "wear_xiaomi_band_8",
@@ -277,7 +277,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 9900,
     frontImage: "https://images.unsplash.com/photo-1575311373937-042b6e5a5c61?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 14",
-    badge: "45-Min Boda Dispatch",
+    badge: "4K UHD HDR10+",
   },
   {
     id: "wear_rayban_meta_glasses",
@@ -289,7 +289,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 54000,
     frontImage: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80",
     merchantStall: "Biashara Street • Optic Hub",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
   {
     id: "wear_watch_strap",
@@ -301,7 +301,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1500,
     frontImage: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80",
     merchantStall: "Imenti House • Stall C1",
-    badge: "Ready for Pickup",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "wear_3in1_dock",
@@ -313,7 +313,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5000,
     frontImage: "https://images.unsplash.com/photo-1622445262464-84b1456045b6?w=600&q=80",
     merchantStall: "Tom Mboya • Stall 22",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
 
   // --- Parts & Tools ---
@@ -327,7 +327,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10500,
     frontImage: "https://images.unsplash.com/photo-1588702547919-26089e690ecc?w=600&q=80",
     merchantStall: "Luthuli Avenue • Spare Parts 6",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "part_phone_battery",
@@ -339,7 +339,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4000,
     frontImage: "https://images.unsplash.com/photo-1619725002198-6a689b72f41d?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 3",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
   {
     id: "tool_jakemy_screwdrivers",
@@ -351,7 +351,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3200,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "River Road • Tool Masters",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
   {
     id: "part_sim_adapters",
@@ -363,7 +363,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 500,
     frontImage: "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=600&q=80",
     merchantStall: "Afya Centre • Stall 1",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
   {
     id: "part_baofeng_walkie_talkie",
@@ -375,7 +375,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8200,
     frontImage: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&q=80",
     merchantStall: "River Road • Security Tech 2",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 2-Year Warranty",
   },
 
   // ============================================================================
@@ -394,7 +394,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     frontImage: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80",
     sideImage: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=600&q=80",
     merchantStall: "Kencom House • Suite 12",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
     variants: [
       { name: "256GB SSD (Standard)", priceDelta: 0 },
       { name: "512GB SSD (+KES 14,000)", priceDelta: 14000 },
@@ -410,7 +410,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 178000,
     frontImage: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&q=80",
     merchantStall: "Kimathi Street • Tech Hub 2",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
   },
   {
     id: "comp_asus_rog_strix_g16",
@@ -422,7 +422,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 265000,
     frontImage: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&q=80",
     merchantStall: "Kimathi Street • Gaming HQ",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "comp_hp_pavilion_15",
@@ -434,7 +434,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 76000,
     frontImage: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80",
     merchantStall: "Moi Avenue • Shop 14",
-    badge: "45-Min Boda Dispatch",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "comp_hp_gaming_desktop",
@@ -446,7 +446,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 128000,
     frontImage: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 9",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "comp_imac_24_m3",
@@ -458,7 +458,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 215000,
     frontImage: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&q=80",
     merchantStall: "Kencom House • Suite 12",
-    badge: "Verified CBD Merchant",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "comp_beelink_minipc",
@@ -470,7 +470,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 55000,
     frontImage: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=600&q=80",
     merchantStall: "Tom Mboya • Stall 18",
-    badge: "45-Min Boda Dispatch",
+    badge: "⚡ Trending Now",
   },
 
   // --- Components & Hardware ---
@@ -484,7 +484,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 65000,
     frontImage: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=600&q=80",
     merchantStall: "Luthuli Avenue • PC Components 1",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
   {
     id: "comp_asus_rtx_4080_super",
@@ -496,7 +496,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 189000,
     frontImage: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=600&q=80",
     merchantStall: "Kimathi Street • Gaming HQ",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "comp_msi_b650_motherboard",
@@ -508,7 +508,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 38000,
     frontImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 10",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "comp_corsair_ddr5_32gb",
@@ -520,7 +520,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 19000,
     frontImage: "https://images.unsplash.com/photo-1562976540-1502c2145186?w=600&q=80",
     merchantStall: "Imenti House • Stall 9",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "comp_samsung_990_pro_2tb",
@@ -532,7 +532,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 29500,
     frontImage: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&q=80",
     merchantStall: "Kimathi Street • Tech Hub",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
   {
     id: "comp_corsair_rm850x_psu",
@@ -544,7 +544,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 21500,
     frontImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 11",
-    badge: "Ready for Pickup",
+    badge: "18K Gold Plated",
   },
   {
     id: "comp_nzxt_h5_case",
@@ -556,7 +556,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 17000,
     frontImage: "https://images.unsplash.com/photo-1624705002806-5d72df19c3ad?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 5",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
   {
     id: "comp_deepcool_lt720_aio",
@@ -568,7 +568,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 21000,
     frontImage: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&q=80",
     merchantStall: "Kimathi Street • Gaming HQ",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 2-Year Warranty",
   },
 
   // --- Peripherals & Storage ---
@@ -582,7 +582,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 76000,
     frontImage: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&q=80",
     merchantStall: "Luthuli Avenue • Displays Corner",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
   },
   {
     id: "periph_logitech_pro_x_keyboard",
@@ -594,7 +594,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 19000,
     frontImage: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80",
     merchantStall: "Imenti House • Stall 10",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
   },
   {
     id: "periph_logitech_mx_master_3s",
@@ -606,7 +606,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 15500,
     frontImage: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&q=80",
     merchantStall: "Kencom House • Suite 8",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "periph_sandisk_extreme_1tb",
@@ -618,7 +618,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 18500,
     frontImage: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&q=80",
     merchantStall: "Moi Avenue • Shop 12",
-    badge: "Ready for Pickup",
+    badge: "Solid Hardwood Frame",
   },
   {
     id: "periph_kingston_256gb_flash",
@@ -630,7 +630,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5500,
     frontImage: "https://images.unsplash.com/photo-1622445262464-84b1456045b6?w=600&q=80",
     merchantStall: "Imenti House • Stall C2",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "periph_anker_8in1_hub",
@@ -642,7 +642,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 9200,
     frontImage: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=600&q=80",
     merchantStall: "Kencom House • Suite 8",
-    badge: "45-Min Boda Dispatch",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "periph_logitech_brio_4k",
@@ -654,7 +654,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 25500,
     frontImage: "https://images.unsplash.com/photo-1588702547919-26089e690ecc?w=600&q=80",
     merchantStall: "Kimathi Street • Tech Hub",
-    badge: "Verified CBD Merchant",
+    badge: "4K UHD HDR10+",
   },
   {
     id: "periph_shure_mv7_mic",
@@ -666,7 +666,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 41000,
     frontImage: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&q=80",
     merchantStall: "River Road • Audio Masters",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
 
   // --- Gaming & Consoles ---
@@ -680,7 +680,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 92000,
     frontImage: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600&q=80",
     merchantStall: "Kimathi Street • Gaming HQ",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "game_xbox_series_x",
@@ -692,7 +692,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 86000,
     frontImage: "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=600&q=80",
     merchantStall: "Imenti House • Stall 15",
-    badge: "Ready for Pickup",
+    badge: "4K UHD HDR10+",
   },
   {
     id: "game_nintendo_switch_oled",
@@ -704,7 +704,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 52000,
     frontImage: "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=600&q=80",
     merchantStall: "Moi Avenue • Shop 16",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "game_dualsense_controller",
@@ -716,7 +716,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 11000,
     frontImage: "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=600&q=80",
     merchantStall: "Imenti House • Stall 15",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
   {
     id: "game_hyperx_cloud_ii",
@@ -728,7 +728,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 22000,
     frontImage: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&q=80",
     merchantStall: "Kimathi Street • Gaming HQ",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
   {
     id: "game_dxracer_gaming_chair",
@@ -740,7 +740,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 38000,
     frontImage: "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600&q=80",
     merchantStall: "River Road • Ergonomics Hub",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
   {
     id: "game_logitech_g29_wheel",
@@ -752,7 +752,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 49000,
     frontImage: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80",
     merchantStall: "Kimathi Street • Gaming HQ",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "game_meta_quest_3_vr",
@@ -764,7 +764,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 98000,
     frontImage: "https://images.unsplash.com/photo-1622979135225-d2ba269bc1df?w=600&q=80",
     merchantStall: "Kencom House • Suite 12",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
   },
 
   // --- Networking & Office Tech ---
@@ -778,7 +778,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 20500,
     frontImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80",
     merchantStall: "Luthuli Avenue • Network Depot",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
   },
   {
     id: "net_tplink_deco_x50_mesh",
@@ -790,7 +790,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 39000,
     frontImage: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80",
     merchantStall: "Luthuli Avenue • Network Depot",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "net_cisco_8port_switch",
@@ -802,7 +802,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 11500,
     frontImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
     merchantStall: "Tom Mboya • Stall 25",
-    badge: "45-Min Boda Dispatch",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "net_huawei_5g_cpe_router",
@@ -814,7 +814,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 37000,
     frontImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 12",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "net_epson_l3250_printer",
@@ -826,7 +826,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 32000,
     frontImage: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600&q=80",
     merchantStall: "Moi Avenue • Shop 10",
-    badge: "45-Min Boda Dispatch",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "net_xprinter_label_printer",
@@ -838,7 +838,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 16000,
     frontImage: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80",
     merchantStall: "River Road • POS Supplies",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
   {
     id: "net_fellowes_paper_shredder",
@@ -850,7 +850,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 13500,
     frontImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80",
     merchantStall: "Tom Mboya • Office Solutions",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
 
   // ============================================================================
@@ -868,7 +868,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 72000,
     frontImage: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=80",
     merchantStall: "Luthuli Avenue • TV Electronics 4",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "tv_lg_c3_55_oled",
@@ -880,7 +880,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 172000,
     frontImage: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&q=80",
     merchantStall: "Kimathi Street • Tech Hub",
-    badge: "Verified CBD Merchant",
+    badge: "4K UHD HDR10+",
   },
   {
     id: "tv_tcl_50_google_tv",
@@ -892,7 +892,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 49500,
     frontImage: "https://images.unsplash.com/photo-1461151304267-38535e780c79?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 16",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "tv_hisense_32_frameless",
@@ -904,7 +904,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 20500,
     frontImage: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=600&q=80",
     merchantStall: "River Road • Home Appliance Plaza",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
   {
     id: "tv_samsung_65_signage",
@@ -916,7 +916,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 135000,
     frontImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80",
     merchantStall: "Luthuli Avenue • TV Electronics 4",
-    badge: "Verified CBD Merchant",
+    badge: "4K UHD HDR10+",
   },
 
   // --- Audio & Headphones ---
@@ -930,7 +930,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 38000,
     frontImage: "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=600&q=80",
     merchantStall: "Kencom House • Suite 12",
-    badge: "Verified CBD Merchant",
+    badge: "✨ New Arrival",
   },
   {
     id: "aud_sony_wh1000xm5",
@@ -943,7 +943,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     frontImage: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80",
     sideImage: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&q=80",
     merchantStall: "Imenti House • Stall B2",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "aud_ath_m50x_studio",
@@ -955,7 +955,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 24500,
     frontImage: "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&q=80",
     merchantStall: "River Road • Audio Masters",
-    badge: "45-Min Boda Dispatch",
+    badge: "Active Noise Canceling",
   },
   {
     id: "aud_jbl_endurance_peak3",
@@ -967,7 +967,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 13500,
     frontImage: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 14",
-    badge: "Ready for Pickup",
+    badge: "🔥 Best Seller",
   },
   {
     id: "aud_jabra_talk_45",
@@ -979,7 +979,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10200,
     frontImage: "https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=600&q=80",
     merchantStall: "Afya Centre • Stall 6",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 1-Year Warranty",
   },
 
   // --- Sound Systems & Hi-Fi ---
@@ -993,7 +993,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 74000,
     frontImage: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&q=80",
     merchantStall: "Luthuli Avenue • Audio World 1",
-    badge: "Verified CBD Merchant",
+    badge: "4K UHD HDR10+",
   },
   {
     id: "snd_sony_ht_s40r_51",
@@ -1005,7 +1005,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 53000,
     frontImage: "https://images.unsplash.com/photo-1519500099198-fd81846b8f03?w=600&q=80",
     merchantStall: "Luthuli Avenue • Audio World 2",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "snd_jbl_partybox_310",
@@ -1017,7 +1017,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 85000,
     frontImage: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&q=80",
     merchantStall: "River Road • Electro Sound",
-    badge: "Verified CBD Merchant",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "snd_jbl_flip_6",
@@ -1029,7 +1029,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 17000,
     frontImage: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&q=80",
     merchantStall: "Imenti House • Stall G10",
-    badge: "45-Min Boda Dispatch",
+    badge: "4K UHD HDR10+",
   },
   {
     id: "snd_edifier_r1280db",
@@ -1041,7 +1041,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 21500,
     frontImage: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&q=80",
     merchantStall: "Tom Mboya • HiFi Gallery",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
   {
     id: "snd_denon_avr_receiver",
@@ -1053,7 +1053,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 81000,
     frontImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
     merchantStall: "Luthuli Avenue • Audio World 1",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
 
   // --- Projectors & TV Accessories ---
@@ -1067,7 +1067,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 42000,
     frontImage: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=600&q=80",
     merchantStall: "Luthuli Avenue • Vision Tech",
-    badge: "45-Min Boda Dispatch",
+    badge: "4K UHD HDR10+",
   },
   {
     id: "proj_vega_100_screen",
@@ -1079,7 +1079,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 23000,
     frontImage: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=80",
     merchantStall: "River Road • Stage & Screen",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "proj_nb_p6_wall_mount",
@@ -1091,7 +1091,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6000,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "Luthuli Avenue • Bracket World",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
   {
     id: "proj_mi_box_s_2nd_gen",
@@ -1103,7 +1103,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 9200,
     frontImage: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&q=80",
     merchantStall: "Imenti House • Stall E5",
-    badge: "45-Min Boda Dispatch",
+    badge: "4K UHD HDR10+",
   },
   {
     id: "proj_ugreen_8k_hdmi",
@@ -1115,7 +1115,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2300,
     frontImage: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&q=80",
     merchantStall: "Luthuli Avenue • Cables Corner",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
   {
     id: "proj_broadlink_rm4_pro",
@@ -1127,7 +1127,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6400,
     frontImage: "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=600&q=80",
     merchantStall: "Tom Mboya • Smart Living",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 2-Year Warranty",
   },
 
   // ============================================================================
@@ -1145,7 +1145,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 17500,
     frontImage: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&q=80",
     merchantStall: "River Road • Home Appliance Centre",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
   },
   {
     id: "app_nutribullet_pro_900w",
@@ -1157,7 +1157,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 13000,
     frontImage: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=600&q=80",
     merchantStall: "Luthuli Avenue • Stall 15",
-    badge: "Ready for Pickup",
+    badge: "🔥 Best Seller",
   },
   {
     id: "app_ramtons_microwave_grill",
@@ -1169,7 +1169,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 14800,
     frontImage: "https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=600&q=80",
     merchantStall: "Moi Avenue • Appliance Store",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "app_russell_hobbs_kettle",
@@ -1181,7 +1181,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5500,
     frontImage: "https://images.unsplash.com/photo-1585837575652-267c041d77d4?w=600&q=80",
     merchantStall: "River Road • Stall 8",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "app_delonghi_espresso_maker",
@@ -1193,7 +1193,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 34000,
     frontImage: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&q=80",
     merchantStall: "Kenyatta Avenue • Roasters Corner",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "app_kenwood_stand_mixer",
@@ -1205,7 +1205,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 30000,
     frontImage: "https://images.unsplash.com/photo-1594385208974-2e75f8d7bb48?w=600&q=80",
     merchantStall: "River Road • Home Appliance Centre",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "app_blackdecker_waffle_maker",
@@ -1217,7 +1217,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6500,
     frontImage: "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
     merchantStall: "Tom Mboya • Kitchen World",
-    badge: "45-Min Boda Dispatch",
+    badge: "Multi-Ply Tri-Ply Steel",
   },
   {
     id: "app_instant_pot_duo_6l",
@@ -1229,7 +1229,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 19500,
     frontImage: "https://images.unsplash.com/photo-1544233726-9f1d2b27be8b?w=600&q=80",
     merchantStall: "River Road • Appliance Centre",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
 
   // --- Cooling & Refrigeration ---
@@ -1243,7 +1243,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 71000,
     frontImage: "https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=600&q=80",
     merchantStall: "Luthuli Avenue • Cool World 3",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "app_lg_635l_side_by_side",
@@ -1255,7 +1255,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 205000,
     frontImage: "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=600&q=80",
     merchantStall: "Kimathi Street • Tech Appliances",
-    badge: "Verified CBD Merchant",
+    badge: "Pure Sine Wave",
   },
   {
     id: "app_ramtons_200l_chest_freezer",
@@ -1267,7 +1267,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 43000,
     frontImage: "https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=600&q=80",
     merchantStall: "River Road • Cool Masters",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "app_mika_90l_mini_fridge",
@@ -1279,7 +1279,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 22500,
     frontImage: "https://images.unsplash.com/photo-1584992236310-6edddc08acff?w=600&q=80",
     merchantStall: "Afya Centre • Shop 14",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
   {
     id: "app_ramtons_water_dispenser",
@@ -1291,7 +1291,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 15800,
     frontImage: "https://images.unsplash.com/photo-1548839140-29a749e1bc4e?w=600&q=80",
     merchantStall: "Moi Avenue • Appliance Store",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
 
   // --- Cooking & Heavy Appliances ---
@@ -1305,7 +1305,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 41000,
     frontImage: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&q=80",
     merchantStall: "River Road • Heavy Kitchen Plaza",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
   {
     id: "app_bosch_4burner_hob",
@@ -1317,7 +1317,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 48000,
     frontImage: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=600&q=80",
     merchantStall: "River Road • Kitchen Fittings",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "app_ariston_90cm_hood",
@@ -1329,7 +1329,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 33000,
     frontImage: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&q=80",
     merchantStall: "River Road • Heavy Kitchen Plaza",
-    badge: "Ready for Pickup",
+    badge: "Rapid 360° Cooking",
   },
   {
     id: "app_bosch_66l_builtin_oven",
@@ -1341,7 +1341,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 65000,
     frontImage: "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=600&q=80",
     merchantStall: "River Road • Kitchen Fittings",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
   },
   {
     id: "app_beko_14place_dishwasher",
@@ -1353,7 +1353,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 56000,
     frontImage: "https://images.unsplash.com/photo-1585837575652-267c041d77d4?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 7",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 1-Year Warranty",
   },
 
   // --- Laundry & Garment Care ---
@@ -1367,7 +1367,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 83000,
     frontImage: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=600&q=80",
     merchantStall: "Luthuli Avenue • Wash Care 2",
-    badge: "Verified CBD Merchant",
+    badge: "Pure Sine Wave",
   },
   {
     id: "app_lg_11kg_topload",
@@ -1379,7 +1379,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 63000,
     frontImage: "https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=600&q=80",
     merchantStall: "River Road • Wash Tech",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "app_ramtons_8kg_twintub",
@@ -1391,7 +1391,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 28000,
     frontImage: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=600&q=80",
     merchantStall: "River Road • Home Appliance Centre",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "app_bosch_8kg_dryer",
@@ -1403,7 +1403,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 76000,
     frontImage: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=600&q=80",
     merchantStall: "Luthuli Avenue • Wash Care 2",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
   {
     id: "app_philips_easyspeed_iron",
@@ -1415,7 +1415,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4400,
     frontImage: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80",
     merchantStall: "Afya Centre • Shop 9",
-    badge: "45-Min Boda Dispatch",
+    badge: "⚡ Trending Now",
   },
   {
     id: "app_philips_garment_steamer",
@@ -1427,7 +1427,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 7000,
     frontImage: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80",
     merchantStall: "Tom Mboya • Stall 14",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔄 7-Day Free Return",
   },
 
   // --- Climate Control & Air Care ---
@@ -1441,7 +1441,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6200,
     frontImage: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80",
     merchantStall: "River Road • Fan Center",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "app_havells_52_ceiling_fan",
@@ -1453,7 +1453,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10200,
     frontImage: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80",
     merchantStall: "River Road • Electricals 12",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "app_lg_12000btu_split_ac",
@@ -1465,7 +1465,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 76000,
     frontImage: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80",
     merchantStall: "Luthuli Avenue • AC Hub",
-    badge: "Verified CBD Merchant",
+    badge: "💎 Official Dealer",
   },
   {
     id: "app_midea_portable_ac",
@@ -1477,7 +1477,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 52000,
     frontImage: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80",
     merchantStall: "Luthuli Avenue • AC Hub",
-    badge: "Ready for Pickup",
+    badge: "Solid Hardwood Frame",
   },
   {
     id: "app_xiaomi_air_purifier_4",
@@ -1489,7 +1489,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 16000,
     frontImage: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80",
     merchantStall: "Tom Mboya • Smart Living",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
   {
     id: "app_delonghi_ceramic_heater",
@@ -1501,7 +1501,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 7500,
     frontImage: "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=600&q=80",
     merchantStall: "Afya Centre • Shop 18",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
   },
 
   // ============================================================================
@@ -1519,7 +1519,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 16000,
     frontImage: "https://images.unsplash.com/photo-1509391365360-2e959784a276?w=600&q=80",
     merchantStall: "Nyamakima • Solar City 4",
-    badge: "Verified CBD Merchant",
+    badge: "Tier 1 High-Efficiency",
   },
   {
     id: "sol_victron_mppt_100_30",
@@ -1531,7 +1531,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 28000,
     frontImage: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=600&q=80",
     merchantStall: "River Road • Solar Masters",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
   },
   {
     id: "sol_dlight_d200_kit",
@@ -1543,7 +1543,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 11500,
     frontImage: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80",
     merchantStall: "Nyamakima • Renewable Hub",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "sol_street_light_300w",
@@ -1555,7 +1555,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 7200,
     frontImage: "https://images.unsplash.com/photo-1509391365360-2e959784a276?w=600&q=80",
     merchantStall: "River Road • Light & Solar 2",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "sol_dayliff_submersible_pump",
@@ -1567,7 +1567,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 42000,
     frontImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
     merchantStall: "Nyamakima • Agro-Solar 1",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "sol_mc4_connectors_10pair",
@@ -1579,7 +1579,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1900,
     frontImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
     merchantStall: "River Road • Solar Electricals",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
   },
 
   // --- Inverters & Storage Batteries ---
@@ -1593,7 +1593,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 56000,
     frontImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
     merchantStall: "Nyamakima • Solar City 4",
-    badge: "Verified CBD Merchant",
+    badge: "Pure Sine Wave",
   },
   {
     id: "sol_felicity_5kwh_lifepo4",
@@ -1605,7 +1605,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 165000,
     frontImage: "https://images.unsplash.com/photo-1619725002198-6a689b72f41d?w=600&q=80",
     merchantStall: "River Road • Solar Masters",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
   {
     id: "sol_ritar_200ah_gel_battery",
@@ -1617,7 +1617,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 38000,
     frontImage: "https://images.unsplash.com/photo-1619725002198-6a689b72f41d?w=600&q=80",
     merchantStall: "Nyamakima • Renewable Hub",
-    badge: "Ready for Pickup",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "sol_ecoflow_river2_pro",
@@ -1629,7 +1629,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 89000,
     frontImage: "https://images.unsplash.com/photo-1609592424109-dd9892f1b177?w=600&q=80",
     merchantStall: "Kimathi Street • Tech Hub",
-    badge: "Verified CBD Merchant",
+    badge: "LiFePO4 3000+ Cycles",
   },
   {
     id: "sol_apc_1100va_ups",
@@ -1641,7 +1641,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 22000,
     frontImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",
     merchantStall: "Tom Mboya • Power Systems",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
 
   // --- Backup Generators & Protection ---
@@ -1655,7 +1655,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 155000,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "Nyamakima • Machinery Hub",
-    badge: "Verified CBD Merchant",
+    badge: "💎 Official Dealer",
   },
   {
     id: "gen_perkins_15kva_diesel",
@@ -1667,7 +1667,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 740000,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "Industrial Area / Nyamakima Hub",
-    badge: "Verified CBD Merchant",
+    badge: "100% Copper Winding",
   },
   {
     id: "prot_sollatek_avs30",
@@ -1679,7 +1679,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5800,
     frontImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
     merchantStall: "River Road • Electrical Masters",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
   {
     id: "prot_huntkey_surge_strip",
@@ -1691,7 +1691,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3000,
     frontImage: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&q=80",
     merchantStall: "Luthuli Avenue • Cables Corner",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "prot_tomzn_63a_ats",
@@ -1703,7 +1703,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5500,
     frontImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
     merchantStall: "River Road • Power Electricals",
-    badge: "Ready for Pickup",
+    badge: "100% Copper Winding",
   },
 
   // ============================================================================
@@ -1722,7 +1722,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     frontImage: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&q=80",
     sideImage: "https://images.unsplash.com/photo-1509967419530-da38b4704bc6?w=600&q=80",
     merchantStall: "Afya Centre • Shop 4B",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
     colors: ["#111827", "#059669", "#2563EB"],
     sizes: ["S", "M", "L", "XL", "XXL"],
   },
@@ -1736,7 +1736,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1800,
     frontImage: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&q=80",
     merchantStall: "OTC Complex • Stall 12",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 1-Year Warranty",
     sizes: ["M", "L", "XL"],
   },
   {
@@ -1749,7 +1749,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2300,
     frontImage: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=600&q=80",
     merchantStall: "Tom Mboya • Menswear Stall 6",
-    badge: "Ready for Pickup",
+    badge: "🌿 100% Cotton",
     sizes: ["M", "L", "XL", "XXL"],
   },
   {
@@ -1762,7 +1762,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1542272604-780c96856592?w=600&q=80",
     merchantStall: "Ronald Ngala • Stall 12",
-    badge: "45-Min Boda Dispatch",
+    badge: "⭐ Top Rated (4.9★)",
     sizes: ["30", "32", "34", "36"],
   },
   {
@@ -1775,7 +1775,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3200,
     frontImage: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&q=80",
     merchantStall: "Afya Centre • Shop 7",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
     sizes: ["30", "32", "34", "36"],
   },
   {
@@ -1788,7 +1788,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2600,
     frontImage: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&q=80",
     merchantStall: "OTC Complex • Stall 5",
-    badge: "45-Min Boda Dispatch",
+    badge: "⚡ Trending Now",
     sizes: ["M", "L", "XL"],
   },
   {
@@ -1801,7 +1801,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 14000,
     frontImage: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80",
     merchantStall: "Kimathi Street • Executive Menswear",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
     sizes: ["38R", "40R", "42R", "44R"],
   },
   {
@@ -1814,7 +1814,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 9500,
     frontImage: "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=600&q=80",
     merchantStall: "Afya Centre • Shop 4B",
-    badge: "Ready for Pickup",
+    badge: "🔄 7-Day Free Return",
     sizes: ["M", "L", "XL"],
   },
 
@@ -1830,7 +1830,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     frontImage: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
     sideImage: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=600&q=80",
     merchantStall: "OTC Complex • Stall 8",
-    badge: "Ready for Pickup",
+    badge: "👞 Genuine Leather",
     sizes: ["40", "41", "42", "43", "44", "45"],
   },
   {
@@ -1843,7 +1843,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5800,
     frontImage: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
     merchantStall: "Afya Centre • Sports Store",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
     sizes: ["41", "42", "43", "44"],
   },
   {
@@ -1856,7 +1856,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 7800,
     frontImage: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=600&q=80",
     merchantStall: "Tom Mboya • Leather Shoes Hub",
-    badge: "Verified CBD Merchant",
+    badge: "💎 Official Dealer",
     sizes: ["40", "41", "42", "43", "44"],
   },
   {
@@ -1869,7 +1869,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5900,
     frontImage: "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=600&q=80",
     merchantStall: "Kimathi Street • Shoe Gallery",
-    badge: "Ready for Pickup",
+    badge: "Cushioned Arch Support",
     sizes: ["40", "41", "42", "43"],
   },
   {
@@ -1882,7 +1882,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6900,
     frontImage: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600&q=80",
     merchantStall: "Afya Centre • Stall 11",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
     sizes: ["40", "41", "42", "43", "44"],
   },
   {
@@ -1895,7 +1895,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3200,
     frontImage: "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=600&q=80",
     merchantStall: "Tom Mboya • Stall 9",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
     sizes: ["40", "41", "42", "43", "44"],
   },
 
@@ -1910,7 +1910,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1700,
     frontImage: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&q=80",
     merchantStall: "OTC Complex • Underwear Corner",
-    badge: "Ready for Pickup",
+    badge: "🌿 100% Cotton",
     sizes: ["M", "L", "XL", "XXL"],
   },
   {
@@ -1923,7 +1923,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1400,
     frontImage: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&q=80",
     merchantStall: "Afya Centre • Stall 15",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
     sizes: ["M", "L", "XL"],
   },
   {
@@ -1936,7 +1936,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600&q=80",
     merchantStall: "Tom Mboya • Nightwear Shop",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 1-Year Warranty",
     sizes: ["M", "L", "XL"],
   },
   {
@@ -1949,7 +1949,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1200,
     frontImage: "https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=600&q=80",
     merchantStall: "Afya Centre • Stall 4",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "und_thermal_base_layer",
@@ -1961,7 +1961,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4000,
     frontImage: "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=600&q=80",
     merchantStall: "OTC Complex • Stall 14",
-    badge: "45-Min Boda Dispatch",
+    badge: "⭐ Top Rated (4.9★)",
     sizes: ["M", "L", "XL"],
   },
 
@@ -1976,7 +1976,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2300,
     frontImage: "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=600&q=80",
     merchantStall: "Tom Mboya • Leather Works",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
     sizes: ["32", "34", "36", "38"],
   },
   {
@@ -1989,7 +1989,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2600,
     frontImage: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&q=80",
     merchantStall: "Kimathi Street • Leather Shop",
-    badge: "45-Min Boda Dispatch",
+    badge: "👞 Genuine Leather",
   },
   {
     id: "acc_silk_tie_set",
@@ -2001,7 +2001,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3300,
     frontImage: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600&q=80",
     merchantStall: "Kimathi Street • Executive Menswear",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
   {
     id: "acc_dad_cap",
@@ -2013,7 +2013,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1500,
     frontImage: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&q=80",
     merchantStall: "Afya Centre • Streetwear 3",
-    badge: "Ready for Pickup",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "acc_aviator_sunglasses",
@@ -2025,7 +2025,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&q=80",
     merchantStall: "Biashara Street • Optic Hub",
-    badge: "Verified CBD Merchant",
+    badge: "UV400 Polarized Lens",
   },
 
   // ============================================================================
@@ -2044,7 +2044,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     frontImage: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80",
     sideImage: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=600&q=80",
     merchantStall: "Biashara Street • Glamour Boutique",
-    badge: "Verified CBD Merchant",
+    badge: "⏳ Only 2 Left",
     colors: ["#047857", "#881337", "#1E1B4B"],
     sizes: ["S", "M", "L", "XL"],
   },
@@ -2058,7 +2058,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2400,
     frontImage: "https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=600&q=80",
     merchantStall: "Afya Centre • Shop 14",
-    badge: "45-Min Boda Dispatch",
+    badge: "💎 Official Dealer",
     sizes: ["S", "M", "L"],
   },
   {
@@ -2071,7 +2071,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&q=80",
     merchantStall: "OTC Complex • Stall 6",
-    badge: "Ready for Pickup",
+    badge: "Stretch Denim Fit",
     sizes: ["28", "30", "32", "34"],
   },
   {
@@ -2084,7 +2084,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3200,
     frontImage: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&q=80",
     merchantStall: "Tom Mboya • Chic Apparel",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
     sizes: ["S", "M", "L"],
   },
   {
@@ -2097,7 +2097,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2600,
     frontImage: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=600&q=80",
     merchantStall: "Afya Centre • Stall 19",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 2-Year Warranty",
     sizes: ["Free Size"],
   },
   {
@@ -2110,7 +2110,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3000,
     frontImage: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600&q=80",
     merchantStall: "Biashara Street • Knitwear Hub",
-    badge: "Ready for Pickup",
+    badge: "Thermal Cable-Knit",
     sizes: ["S", "M", "L"],
   },
   {
@@ -2123,7 +2123,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5600,
     frontImage: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&q=80",
     merchantStall: "Kimathi Street • Winter & Coats",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
     sizes: ["M", "L", "XL"],
   },
   {
@@ -2136,7 +2136,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3900,
     frontImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80",
     merchantStall: "Biashara Street • Glamour Boutique",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 1-Year Warranty",
     sizes: ["S", "M", "L"],
   },
 
@@ -2151,7 +2151,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4200,
     frontImage: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&q=80",
     merchantStall: "OTC Complex • Stall 18",
-    badge: "45-Min Boda Dispatch",
+    badge: "Cushioned Arch Support",
     sizes: ["37", "38", "39", "40", "41"],
   },
   {
@@ -2164,7 +2164,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4800,
     frontImage: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80",
     merchantStall: "Biashara Street • Heel Avenue",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
     sizes: ["37", "38", "39", "40"],
   },
   {
@@ -2177,7 +2177,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=600&q=80",
     merchantStall: "Afya Centre • Shop 12",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
     sizes: ["37", "38", "39", "40"],
   },
   {
@@ -2190,7 +2190,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5200,
     frontImage: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=600&q=80",
     merchantStall: "Tom Mboya • Leather Shoes Hub",
-    badge: "Ready for Pickup",
+    badge: "Cushioned Arch Support",
     sizes: ["38", "39", "40", "41"],
   },
   {
@@ -2203,7 +2203,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4400,
     frontImage: "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?w=600&q=80",
     merchantStall: "Biashara Street • Heel Avenue",
-    badge: "45-Min Boda Dispatch",
+    badge: "⚡ Trending Now",
     sizes: ["37", "38", "39", "40"],
   },
   {
@@ -2216,7 +2216,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?w=600&q=80",
     merchantStall: "Afya Centre • Shop 10",
-    badge: "Ready for Pickup",
+    badge: "🔄 7-Day Free Return",
     sizes: ["37", "38", "39", "40"],
   },
 
@@ -2231,7 +2231,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3300,
     frontImage: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80",
     merchantStall: "Biashara Street • Bag Palace",
-    badge: "45-Min Boda Dispatch",
+    badge: "👞 Genuine Leather",
   },
   {
     id: "wbag_leather_tote",
@@ -2243,7 +2243,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6000,
     frontImage: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&q=80",
     merchantStall: "Kimathi Street • Luxury Leather",
-    badge: "Verified CBD Merchant",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "wbag_hobo_satchel",
@@ -2255,7 +2255,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4000,
     frontImage: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&q=80",
     merchantStall: "Afya Centre • Stall 8",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
   {
     id: "wbag_evening_clutch",
@@ -2267,7 +2267,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3000,
     frontImage: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&q=80",
     merchantStall: "Biashara Street • Glamour Boutique",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
   {
     id: "wbag_compact_wallet",
@@ -2279,7 +2279,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1800,
     frontImage: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&q=80",
     merchantStall: "Imenti House • Stall D4",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
 
   // --- Lingerie & Shapewear ---
@@ -2293,7 +2293,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=600&q=80",
     merchantStall: "Afya Centre • Lingerie 5",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
     sizes: ["34B", "36B", "38C", "40D"],
   },
   {
@@ -2306,7 +2306,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2000,
     frontImage: "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=600&q=80",
     merchantStall: "OTC Complex • Stall 15",
-    badge: "45-Min Boda Dispatch",
+    badge: "🌿 100% Cotton",
     sizes: ["M", "L", "XL"],
   },
   {
@@ -2319,7 +2319,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4000,
     frontImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80",
     merchantStall: "Afya Centre • Shapewear Pro",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
     sizes: ["S", "M", "L", "XL", "XXL"],
   },
   {
@@ -2332,7 +2332,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4500,
     frontImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80",
     merchantStall: "Afya Centre • Shapewear Pro",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 1-Year Warranty",
     sizes: ["M", "L", "XL"],
   },
   {
@@ -2345,7 +2345,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3600,
     frontImage: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80",
     merchantStall: "Biashara Street • Silk & Lace",
-    badge: "45-Min Boda Dispatch",
+    badge: "Pure Silk-Feel",
     sizes: ["S", "M", "L"],
   },
 
@@ -2364,7 +2364,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 32000,
     frontImage: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=600&q=80",
     merchantStall: "Kencom House • Timepieces",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "watch_citizen_ecodrive",
@@ -2376,7 +2376,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 22000,
     frontImage: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80",
     merchantStall: "Tom Mboya • Watch Gallery",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "watch_casio_edifice",
@@ -2388,7 +2388,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 19000,
     frontImage: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&q=80",
     merchantStall: "Imenti House • Stall 18",
-    badge: "45-Min Boda Dispatch",
+    badge: "Sapphire Glass • 50M",
   },
   {
     id: "watch_casio_gshock_2100",
@@ -2400,7 +2400,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 17000,
     frontImage: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shop 14",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
   {
     id: "watch_dual_winder_box",
@@ -2412,7 +2412,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 14500,
     frontImage: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80",
     merchantStall: "Kencom House • Timepieces",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
 
   // --- Fine & Fashion Jewelry ---
@@ -2426,7 +2426,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3200,
     frontImage: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
     merchantStall: "Biashara Street • Jewel Box",
-    badge: "Ready for Pickup",
+    badge: "18K Gold Plated",
   },
   {
     id: "jewel_teardrop_earrings",
@@ -2438,7 +2438,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2200,
     frontImage: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
     merchantStall: "Afya Centre • Stall 16",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "jewel_cuban_bracelet",
@@ -2450,7 +2450,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2600,
     frontImage: "https://images.unsplash.com/photo-1611591475819-797de2338ffb?w=600&q=80",
     merchantStall: "Tom Mboya • Street Gems",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
   {
     id: "jewel_tungsten_band",
@@ -2462,7 +2462,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3600,
     frontImage: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
     merchantStall: "Kimathi Street • Wedding Rings",
-    badge: "Verified CBD Merchant",
+    badge: "✨ New Arrival",
     sizes: ["7", "8", "9", "10", "11"],
   },
   {
@@ -2475,7 +2475,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1600,
     frontImage: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
     merchantStall: "Kimathi Street • Executive Menswear",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
   {
     id: "jewel_velvet_organizer",
@@ -2487,7 +2487,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&q=80",
     merchantStall: "Biashara Street • Jewel Box",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 2-Year Warranty",
   },
 
   // --- Eyewear & Optics ---
@@ -2501,7 +2501,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3400,
     frontImage: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600&q=80",
     merchantStall: "Biashara Street • Optic Hub",
-    badge: "Verified CBD Merchant",
+    badge: "UV400 Polarized Lens",
   },
   {
     id: "opt_anti_bluelight",
@@ -2513,7 +2513,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2400,
     frontImage: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80",
     merchantStall: "Imenti House • Stall C5",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
   },
   {
     id: "opt_retro_acetate_frames",
@@ -2525,7 +2525,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4200,
     frontImage: "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?w=600&q=80",
     merchantStall: "Biashara Street • Optic Hub",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "opt_magnifying_reading",
@@ -2537,7 +2537,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2000,
     frontImage: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80",
     merchantStall: "Tom Mboya • Vision Care",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "opt_leather_sunglass_case",
@@ -2549,7 +2549,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1900,
     frontImage: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&q=80",
     merchantStall: "Biashara Street • Optic Hub",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
 
   // ============================================================================
@@ -2567,7 +2567,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 56000,
     frontImage: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",
     merchantStall: "River Road • Furniture Emporium",
-    badge: "Verified CBD Merchant",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "furn_nesting_coffee_tables",
@@ -2579,7 +2579,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 17500,
     frontImage: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=600&q=80",
     merchantStall: "River Road • Home Decor",
-    badge: "Ready for Pickup",
+    badge: "18K Gold Plated",
   },
   {
     id: "furn_tv_stand_console",
@@ -2591,7 +2591,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 22000,
     frontImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
     merchantStall: "Luthuli Avenue • TV & Consoles",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
   {
     id: "furn_mahogany_bed",
@@ -2603,7 +2603,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 38000,
     frontImage: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80",
     merchantStall: "River Road • Furniture Emporium",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "furn_orthopedic_mattress",
@@ -2615,7 +2615,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 28500,
     frontImage: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80",
     merchantStall: "Moi Avenue • Mattress Centre",
-    badge: "Verified CBD Merchant",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "furn_ergonomic_office_chair",
@@ -2627,7 +2627,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 19500,
     frontImage: "https://images.unsplash.com/photo-1580481077195-c2688785465f?w=600&q=80",
     merchantStall: "River Road • Ergonomics Hub",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "furn_standing_desk",
@@ -2639,7 +2639,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 39500,
     frontImage: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&q=80",
     merchantStall: "Kencom House • Office Tech",
-    badge: "Verified CBD Merchant",
+    badge: "💎 Official Dealer",
   },
   {
     id: "furn_wooden_dining_set",
@@ -2651,7 +2651,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 60000,
     frontImage: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80",
     merchantStall: "River Road • Furniture Emporium",
-    badge: "Verified CBD Merchant",
+    badge: "Solid Hardwood Frame",
   },
 
   // --- Cookware & Dining ---
@@ -2665,7 +2665,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 11500,
     frontImage: "https://images.unsplash.com/photo-1584990347449-399a0f0237e1?w=600&q=80",
     merchantStall: "River Road • Kitchen Utensils 3",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
   {
     id: "cook_cast_iron_dutch",
@@ -2677,7 +2677,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8200,
     frontImage: "https://images.unsplash.com/photo-1585837575652-267c041d77d4?w=600&q=80",
     merchantStall: "River Road • Cast Iron Hub",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "cook_chef_knife_block",
@@ -2689,7 +2689,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6800,
     frontImage: "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=600&q=80",
     merchantStall: "Luthuli Avenue • Chef Tools",
-    badge: "Ready for Pickup",
+    badge: "Biometric 0.3s Unlock",
   },
   {
     id: "cook_gold_cutlery_set",
@@ -2701,7 +2701,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4800,
     frontImage: "https://images.unsplash.com/photo-1584990347449-399a0f0237e1?w=600&q=80",
     merchantStall: "Biashara Street • Tableware",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
   },
   {
     id: "cook_ceramic_dinnerware",
@@ -2713,7 +2713,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8900,
     frontImage: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80",
     merchantStall: "River Road • Ceramics & Glass",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "cook_glass_tumblers_6pack",
@@ -2725,7 +2725,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2400,
     frontImage: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80",
     merchantStall: "Tom Mboya • Kitchen World",
-    badge: "45-Min Boda Dispatch",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "cook_acacia_cutting_board",
@@ -2737,7 +2737,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3400,
     frontImage: "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=600&q=80",
     merchantStall: "River Road • Kitchen Utensils 3",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
 
   // --- Home Decor & Lighting ---
@@ -2751,7 +2751,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4800,
     frontImage: "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=600&q=80",
     merchantStall: "Biashara Street • Wall Decor",
-    badge: "45-Min Boda Dispatch",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "decor_canvas_wall_art",
@@ -2763,7 +2763,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8000,
     frontImage: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&q=80",
     merchantStall: "River Road • Art Gallery",
-    badge: "Verified CBD Merchant",
+    badge: "18K Gold Plated",
   },
   {
     id: "decor_standing_floor_lamp",
@@ -2775,7 +2775,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 7200,
     frontImage: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&q=80",
     merchantStall: "Luthuli Avenue • Lights & Lamps",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
   {
     id: "decor_rgb_strip_lights",
@@ -2787,7 +2787,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3200,
     frontImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",
     merchantStall: "Luthuli Avenue • Cables Corner",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "decor_moroccan_area_rug",
@@ -2799,7 +2799,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10500,
     frontImage: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=600&q=80",
     merchantStall: "River Road • Carpets & Rugs",
-    badge: "Verified CBD Merchant",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "decor_blackout_curtains",
@@ -2811,7 +2811,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4200,
     frontImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80",
     merchantStall: "Biashara Street • Curtain Haven",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "decor_ceramic_vases_pair",
@@ -2823,7 +2823,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&q=80",
     merchantStall: "Biashara Street • Tableware",
-    badge: "45-Min Boda Dispatch",
+    badge: "💎 Official Dealer",
   },
 
   // --- Bedding & Bath ---
@@ -2837,7 +2837,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5500,
     frontImage: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80",
     merchantStall: "Biashara Street • Bedding Central",
-    badge: "Ready for Pickup",
+    badge: "🌿 100% Cotton",
   },
   {
     id: "bed_microfiber_duvet",
@@ -2849,7 +2849,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4600,
     frontImage: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80",
     merchantStall: "Moi Avenue • Bedding Store",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
   {
     id: "bed_orthopedic_pillow",
@@ -2861,7 +2861,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80",
     merchantStall: "River Road • Sleep Comfort",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "bed_throw_blanket",
@@ -2873,7 +2873,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3000,
     frontImage: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=600&q=80",
     merchantStall: "Biashara Street • Bedding Central",
-    badge: "45-Min Boda Dispatch",
+    badge: "Solid Hardwood Frame",
   },
   {
     id: "bath_cotton_towels_2pack",
@@ -2885,7 +2885,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3300,
     frontImage: "https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80",
     merchantStall: "Afya Centre • Stall 11",
-    badge: "Ready for Pickup",
+    badge: "🔥 Best Seller",
   },
   {
     id: "bath_memory_foam_mat",
@@ -2897,7 +2897,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1600,
     frontImage: "https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80",
     merchantStall: "Tom Mboya • Home Essentials",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 1-Year Warranty",
   },
 
   // --- Storage & Home Organization ---
@@ -2911,7 +2911,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=80",
     merchantStall: "River Road • Home Organizers",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "stor_wardrobe_bins_3pack",
@@ -2923,7 +2923,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2400,
     frontImage: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=80",
     merchantStall: "Biashara Street • Storage Hub",
-    badge: "45-Min Boda Dispatch",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "stor_clothes_drying_rack",
@@ -2935,7 +2935,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5000,
     frontImage: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=600&q=80",
     merchantStall: "River Road • Home Organizers",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "stor_airtight_containers_7p",
@@ -2947,7 +2947,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3900,
     frontImage: "https://images.unsplash.com/photo-1584990347449-399a0f0237e1?w=600&q=80",
     merchantStall: "Tom Mboya • Kitchen World",
-    badge: "45-Min Boda Dispatch",
+    badge: "⚡ Trending Now",
   },
   {
     id: "stor_vacuum_storage_bags",
@@ -2959,7 +2959,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2400,
     frontImage: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=600&q=80",
     merchantStall: "OTC Complex • Stall 11",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
 
   // ============================================================================
@@ -2977,7 +2977,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 19500,
     frontImage: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
     merchantStall: "Biashara Street • Hair Haven",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "bty_synthetic_braids",
@@ -2989,7 +2989,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1500,
     frontImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     merchantStall: "River Road • Braids & Beauty",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "bty_ionic_blow_dryer",
@@ -3001,7 +3001,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5600,
     frontImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     merchantStall: "Luthuli Avenue • Salon Supplies",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "bty_titanium_flat_iron",
@@ -3013,7 +3013,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4800,
     frontImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     merchantStall: "Biashara Street • Beauty Tech",
-    badge: "45-Min Boda Dispatch",
+    badge: "💎 Official Dealer",
   },
   {
     id: "bty_auto_curling_wand",
@@ -3025,7 +3025,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5200,
     frontImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     merchantStall: "Imenti House • Stall 14",
-    badge: "Ready for Pickup",
+    badge: "Sapphire Glass • 50M",
   },
   {
     id: "bty_kemei_clippers",
@@ -3037,7 +3037,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1621607512214-68297480165e?w=600&q=80",
     merchantStall: "Luthuli Avenue • Barber World",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
   {
     id: "bty_beard_grooming_kit",
@@ -3049,7 +3049,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3200,
     frontImage: "https://images.unsplash.com/photo-1621607512214-68297480165e?w=600&q=80",
     merchantStall: "Tom Mboya • Men's Grooming",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
   },
 
   // --- Skincare & Wellness Devices ---
@@ -3063,7 +3063,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2400,
     frontImage: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80",
     merchantStall: "Afya Centre • Skin Care Hub",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
   },
   {
     id: "bty_microcurrent_facelift",
@@ -3075,7 +3075,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4600,
     frontImage: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80",
     merchantStall: "Biashara Street • Beauty Tech",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
   },
   {
     id: "bty_massage_gun",
@@ -3087,7 +3087,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6800,
     frontImage: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600&q=80",
     merchantStall: "Afya Centre • Fitness & Recovery",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "bty_led_therapy_mask",
@@ -3099,7 +3099,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8200,
     frontImage: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80",
     merchantStall: "Biashara Street • Beauty Tech",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "bty_guasha_jade_roller",
@@ -3111,7 +3111,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2000,
     frontImage: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80",
     merchantStall: "Afya Centre • Stall 12",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "bty_foot_callus_remover",
@@ -3123,7 +3123,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80",
     merchantStall: "Tom Mboya • Body Care",
-    badge: "45-Min Boda Dispatch",
+    badge: "✓ 100% Genuine",
   },
 
   // --- Oral Care & Shaving ---
@@ -3137,7 +3137,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1559591937-e62fb3d8d4bb?w=600&q=80",
     merchantStall: "Afya Centre • Dental Care",
-    badge: "45-Min Boda Dispatch",
+    badge: "⚡ Trending Now",
   },
   {
     id: "bty_water_dental_flosser",
@@ -3149,7 +3149,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4200,
     frontImage: "https://images.unsplash.com/photo-1559591937-e62fb3d8d4bb?w=600&q=80",
     merchantStall: "Afya Centre • Dental Care",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
   {
     id: "bty_rotary_shaver",
@@ -3161,7 +3161,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 7000,
     frontImage: "https://images.unsplash.com/photo-1621607512214-68297480165e?w=600&q=80",
     merchantStall: "Luthuli Avenue • Shaver Depot",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "bty_ipl_laser_hair_remover",
@@ -3173,7 +3173,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 9200,
     frontImage: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80",
     merchantStall: "Biashara Street • Beauty Tech",
-    badge: "Verified CBD Merchant",
+    badge: "⏳ Only 2 Left",
   },
 
   // --- Makeup Accessories & Scent ---
@@ -3187,7 +3187,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3200,
     frontImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     merchantStall: "Afya Centre • Glam Shop",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "bty_led_vanity_mirror",
@@ -3199,7 +3199,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3600,
     frontImage: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=600&q=80",
     merchantStall: "Biashara Street • Mirror & Light",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
   {
     id: "bty_makeup_organizer_case",
@@ -3211,7 +3211,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3400,
     frontImage: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
     merchantStall: "Tom Mboya • Vanity World",
-    badge: "Ready for Pickup",
+    badge: "65W GaN Fast Charge",
   },
   {
     id: "bty_perfume_club_de_nuit",
@@ -3223,7 +3223,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 7500,
     frontImage: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&q=80",
     merchantStall: "Kimathi Street • Fragrance Hub",
-    badge: "Verified CBD Merchant",
+    badge: "✨ New Arrival",
   },
   {
     id: "bty_perfume_lattafa_yara",
@@ -3235,7 +3235,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4600,
     frontImage: "https://images.unsplash.com/photo-1588405748880-12d1d2259f75?w=600&q=80",
     merchantStall: "Biashara Street • Arabian Scents",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "bty_aroma_oil_diffuser",
@@ -3247,7 +3247,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&q=80",
     merchantStall: "Afya Centre • Aroma Living",
-    badge: "Ready for Pickup",
+    badge: "🔥 Best Seller",
   },
 
   // ============================================================================
@@ -3265,7 +3265,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 16000,
     frontImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80",
     merchantStall: "Kirinyaga Road • Car Radio Depot",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
   },
   {
     id: "auto_4k_dash_cam",
@@ -3277,7 +3277,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10500,
     frontImage: "https://images.unsplash.com/photo-1588702547919-26089e690ecc?w=600&q=80",
     merchantStall: "Luthuli Avenue • Auto Electronics",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "auto_pioneer_subwoofer",
@@ -3289,7 +3289,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 13500,
     frontImage: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600&q=80",
     merchantStall: "Kirinyaga Road • Car Audio",
-    badge: "Ready for Pickup",
+    badge: "Dolby Atmos 5.1",
   },
   {
     id: "auto_bluetooth_fm_transmitter",
@@ -3301,7 +3301,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2400,
     frontImage: "https://images.unsplash.com/photo-1622445262464-84b1456045b6?w=600&q=80",
     merchantStall: "Imenti House • Stall C8",
-    badge: "45-Min Boda Dispatch",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "auto_jump_starter",
@@ -3313,7 +3313,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10500,
     frontImage: "https://images.unsplash.com/photo-1609592424109-dd9892f1b177?w=600&q=80",
     merchantStall: "Kirinyaga Road • Auto Spares 2",
-    badge: "Verified CBD Merchant",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "auto_tire_inflator",
@@ -3325,7 +3325,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5600,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "River Road • Auto Tools",
-    badge: "Ready for Pickup",
+    badge: "Cushioned Arch Support",
   },
   {
     id: "auto_obd2_scanner",
@@ -3337,7 +3337,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2200,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "Kirinyaga Road • Diagnostics Hub",
-    badge: "45-Min Boda Dispatch",
+    badge: "⚡ Trending Now",
   },
 
   // --- Interior & Exterior Accessories ---
@@ -3351,7 +3351,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 9200,
     frontImage: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
     merchantStall: "Kirinyaga Road • Auto Upholstery",
-    badge: "Ready for Pickup",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "auto_rubber_floor_mats",
@@ -3363,7 +3363,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5800,
     frontImage: "https://images.unsplash.com/photo-1580481077195-c2688785465f?w=600&q=80",
     merchantStall: "Kirinyaga Road • Auto Accessories",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "auto_microfiber_wash_kit",
@@ -3375,7 +3375,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1616627547584-bf28cee262db?w=600&q=80",
     merchantStall: "River Road • Auto Care",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "auto_pressure_washer_gun",
@@ -3387,7 +3387,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8200,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "River Road • Power Tools",
-    badge: "Verified CBD Merchant",
+    badge: "💎 Official Dealer",
   },
   {
     id: "auto_car_vacuum_cleaner",
@@ -3399,7 +3399,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3600,
     frontImage: "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=600&q=80",
     merchantStall: "Kirinyaga Road • Auto Spares",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
   {
     id: "auto_reflective_car_cover",
@@ -3411,7 +3411,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5500,
     frontImage: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
     merchantStall: "Kirinyaga Road • Auto Accessories",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
 
   // --- Motorcycle Gear ---
@@ -3425,7 +3425,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 7800,
     frontImage: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80",
     merchantStall: "River Road • Biker City",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 2-Year Warranty",
     sizes: ["M", "L", "XL"],
   },
   {
@@ -3438,7 +3438,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10500,
     frontImage: "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=600&q=80",
     merchantStall: "River Road • Biker City",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
     sizes: ["M", "L", "XL"],
   },
   {
@@ -3451,7 +3451,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80",
     merchantStall: "OTC Complex • Rider Gear",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
     sizes: ["M", "L", "XL"],
   },
   {
@@ -3464,7 +3464,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4600,
     frontImage: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80",
     merchantStall: "River Road • Biker City",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "moto_handlebar_phone_mount",
@@ -3476,7 +3476,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3000,
     frontImage: "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=600&q=80",
     merchantStall: "Kirinyaga Road • Rider Tech",
-    badge: "45-Min Boda Dispatch",
+    badge: "⭐ Top Rated (4.9★)",
   },
 
   // --- Power Tools & Workshop ---
@@ -3490,7 +3490,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 14500,
     frontImage: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80",
     merchantStall: "Kirinyaga Road • Hardware Masters",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "tool_bosch_angle_grinder",
@@ -3502,7 +3502,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 9200,
     frontImage: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80",
     merchantStall: "River Road • Power Tools Central",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "tool_total_circular_saw",
@@ -3514,7 +3514,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 9600,
     frontImage: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80",
     merchantStall: "Kirinyaga Road • Woodworking Tools",
-    badge: "Ready for Pickup",
+    badge: "Solid Hardwood Frame",
   },
   {
     id: "tool_demolition_hammer",
@@ -3526,7 +3526,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 16500,
     frontImage: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80",
     merchantStall: "Kirinyaga Road • Hardware Masters",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
   {
     id: "tool_riland_welding_machine",
@@ -3538,7 +3538,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 19000,
     frontImage: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80",
     merchantStall: "River Road • Welding World",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "tool_auto_welding_helmet",
@@ -3550,7 +3550,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4200,
     frontImage: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&q=80",
     merchantStall: "River Road • Welding World",
-    badge: "45-Min Boda Dispatch",
+    badge: "Aircraft Alloy Frame",
   },
 
   // --- Hand Tools & Hardware ---
@@ -3564,7 +3564,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 11500,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "Kirinyaga Road • Mechanics Alley",
-    badge: "Verified CBD Merchant",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "tool_magnetic_screwdrivers_12p",
@@ -3576,7 +3576,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "River Road • Tool Masters",
-    badge: "45-Min Boda Dispatch",
+    badge: "💎 Official Dealer",
   },
   {
     id: "tool_laser_distance_tape",
@@ -3588,7 +3588,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4000,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "Kirinyaga Road • Measuring Hub",
-    badge: "Ready for Pickup",
+    badge: "Active Noise Canceling",
   },
   {
     id: "tool_insulated_pliers_3p",
@@ -3600,7 +3600,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3200,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "River Road • Electrical Hardware",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
   {
     id: "tool_steel_toe_boots",
@@ -3612,7 +3612,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5600,
     frontImage: "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=600&q=80",
     merchantStall: "Kirinyaga Road • Safety Gear 1",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 2-Year Warranty",
     sizes: ["40", "41", "42", "43", "44", "45"],
   },
   {
@@ -3625,7 +3625,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6400,
     frontImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=80",
     merchantStall: "Kirinyaga Road • Hardware Masters",
-    badge: "Ready for Pickup",
+    badge: "🔥 Best Seller",
   },
 
   // ============================================================================
@@ -3643,7 +3643,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 17500,
     frontImage: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80",
     merchantStall: "Biashara Street • Baby World",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
   },
   {
     id: "baby_isofix_car_seat",
@@ -3655,7 +3655,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 23000,
     frontImage: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80",
     merchantStall: "Kimathi Street • Baby Haven",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "baby_ergonomic_carrier",
@@ -3667,7 +3667,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4200,
     frontImage: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80",
     merchantStall: "Afya Centre • Stall 18",
-    badge: "45-Min Boda Dispatch",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "baby_adjustable_high_chair",
@@ -3679,7 +3679,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10200,
     frontImage: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80",
     merchantStall: "Biashara Street • Baby World",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "baby_activity_walker",
@@ -3691,7 +3691,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 7000,
     frontImage: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=80",
     merchantStall: "River Road • Kids Corner 2",
-    badge: "45-Min Boda Dispatch",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "baby_video_monitor",
@@ -3703,7 +3703,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 11800,
     frontImage: "https://images.unsplash.com/photo-1588702547919-26089e690ecc?w=600&q=80",
     merchantStall: "Kencom House • Smart Baby",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
 
   // --- Nursery & Furniture ---
@@ -3717,7 +3717,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 22000,
     frontImage: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80",
     merchantStall: "Biashara Street • Nursery Dreams",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
   {
     id: "nurs_bedside_bassinet",
@@ -3729,7 +3729,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 14500,
     frontImage: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80",
     merchantStall: "Biashara Street • Baby World",
-    badge: "Ready for Pickup",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "nurs_folding_playpen",
@@ -3741,7 +3741,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10500,
     frontImage: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=80",
     merchantStall: "River Road • Kids Corner 2",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "nurs_changing_table",
@@ -3753,7 +3753,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8200,
     frontImage: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80",
     merchantStall: "Biashara Street • Nursery Dreams",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "nurs_muslin_swaddles_3p",
@@ -3765,7 +3765,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80",
     merchantStall: "Afya Centre • Stall 18",
-    badge: "45-Min Boda Dispatch",
+    badge: "💎 Official Dealer",
   },
 
   // --- Baby & Kids Fashion ---
@@ -3779,7 +3779,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2300,
     frontImage: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80",
     merchantStall: "OTC Complex • Kids Fashion",
-    badge: "Ready for Pickup",
+    badge: "🌿 100% Cotton",
     sizes: ["0-3M", "3-6M", "6-9M", "9-12M"],
   },
   {
@@ -3792,7 +3792,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3000,
     frontImage: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&q=80",
     merchantStall: "Biashara Street • Kids Apparel",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
     sizes: ["2T", "3T", "4T", "5T"],
   },
   {
@@ -3805,7 +3805,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3300,
     frontImage: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80",
     merchantStall: "Biashara Street • Princess Corner",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
     sizes: ["3Y", "4Y", "5Y", "6Y"],
   },
   {
@@ -3818,7 +3818,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80",
     merchantStall: "OTC Complex • Kids Shoes",
-    badge: "45-Min Boda Dispatch",
+    badge: "Cushioned Arch Support",
     sizes: ["26", "27", "28", "29", "30", "31"],
   },
   {
@@ -3831,7 +3831,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2500,
     frontImage: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80",
     merchantStall: "Afya Centre • Stall 18",
-    badge: "Ready for Pickup",
+    badge: "🔥 Best Seller",
     sizes: ["3-6M", "6-12M", "12-18M"],
   },
 
@@ -3846,7 +3846,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4500,
     frontImage: "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=600&q=80",
     merchantStall: "River Road • Toy World",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "toy_rc_monster_truck",
@@ -3858,7 +3858,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6800,
     frontImage: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=80",
     merchantStall: "Tom Mboya • RC & Hobbies",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "toy_foldable_drone_4k",
@@ -3870,7 +3870,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8200,
     frontImage: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&q=80",
     merchantStall: "Imenti House • Tech Hub 2",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "toy_stem_solar_robot",
@@ -3882,7 +3882,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3900,
     frontImage: "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=600&q=80",
     merchantStall: "Tom Mboya • STEM Learning",
-    badge: "45-Min Boda Dispatch",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "toy_montessori_wooden_puzzle",
@@ -3894,7 +3894,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1900,
     frontImage: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=80",
     merchantStall: "River Road • Kids Corner 2",
-    badge: "Ready for Pickup",
+    badge: "Solid Hardwood Frame",
   },
   {
     id: "toy_monopoly_classic",
@@ -3906,7 +3906,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3000,
     frontImage: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&q=80",
     merchantStall: "Moi Avenue • Books & Games",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
 
   // ============================================================================
@@ -3924,7 +3924,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 17000,
     frontImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80",
     merchantStall: "Luthuli Avenue • Security World",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "sec_360_ptz_dome",
@@ -3936,7 +3936,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5600,
     frontImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80",
     merchantStall: "River Road • CCTV Depot",
-    badge: "45-Min Boda Dispatch",
+    badge: "2K Color Night Vision",
   },
   {
     id: "sec_8ch_nvr_kit",
@@ -3948,7 +3948,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 31000,
     frontImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80",
     merchantStall: "Luthuli Avenue • Security World",
-    badge: "Verified CBD Merchant",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "sec_smart_doorbell_chime",
@@ -3960,7 +3960,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6500,
     frontImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80",
     merchantStall: "Tom Mboya • Smart Living",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
   {
     id: "sec_pir_floodlight_camera",
@@ -3972,7 +3972,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10200,
     frontImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80",
     merchantStall: "River Road • Security Depot",
-    badge: "45-Min Boda Dispatch",
+    badge: "2K Color Night Vision",
   },
 
   // --- Smart Locks & Access ---
@@ -3986,7 +3986,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 16500,
     frontImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80",
     merchantStall: "Kimathi Street • Smart Access",
-    badge: "Verified CBD Merchant",
+    badge: "✨ New Arrival",
   },
   {
     id: "sec_tuya_deadbolt",
@@ -3998,7 +3998,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 13800,
     frontImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80",
     merchantStall: "Tom Mboya • Smart Living",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "sec_rfid_access_control",
@@ -4010,7 +4010,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5200,
     frontImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
     merchantStall: "River Road • Access Systems",
-    badge: "45-Min Boda Dispatch",
+    badge: "BPA-Free Non-Toxic",
   },
   {
     id: "sec_fingerprint_padlock",
@@ -4022,7 +4022,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80",
     merchantStall: "Imenti House • Stall C9",
-    badge: "Ready for Pickup",
+    badge: "🔥 Best Seller",
   },
 
   // --- Smart Home Automation ---
@@ -4036,7 +4036,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3300,
     frontImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
     merchantStall: "River Road • Smart Electricals",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "home_smart_plug_metering",
@@ -4048,7 +4048,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2100,
     frontImage: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",
     merchantStall: "Luthuli Avenue • Cables Corner",
-    badge: "45-Min Boda Dispatch",
+    badge: "Chrome Vanadium Steel",
   },
   {
     id: "home_zigbee_gateway_hub",
@@ -4060,7 +4060,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3600,
     frontImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80",
     merchantStall: "Tom Mboya • Smart Living",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "home_door_window_sensor",
@@ -4072,7 +4072,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1600,
     frontImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80",
     merchantStall: "Tom Mboya • Smart Living",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "home_smart_curtain_robot",
@@ -4084,7 +4084,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8000,
     frontImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80",
     merchantStall: "Biashara Street • Curtain Haven",
-    badge: "Verified CBD Merchant",
+    badge: "Sapphire Glass • 50M",
   },
 
   // --- Luggage & Travel Bags ---
@@ -4098,7 +4098,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 23500,
     frontImage: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=600&q=80",
     merchantStall: "Moi Avenue • Luggage Centre",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
   {
     id: "trav_antitheft_backpack",
@@ -4110,7 +4110,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6000,
     frontImage: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
     merchantStall: "Kimathi Street • Backpacks Pro",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "trav_foldable_duffel_bag",
@@ -4122,7 +4122,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3100,
     frontImage: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
     merchantStall: "Afya Centre • Bags & Travel",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "trav_packing_cubes_6p",
@@ -4134,7 +4134,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=600&q=80",
     merchantStall: "Biashara Street • Travel Gear",
-    badge: "45-Min Boda Dispatch",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "trav_luggage_hanging_scale",
@@ -4146,7 +4146,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1600,
     frontImage: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=600&q=80",
     merchantStall: "Imenti House • Stall B8",
-    badge: "Ready for Pickup",
+    badge: "💎 Official Dealer",
   },
 
   // ============================================================================
@@ -4164,7 +4164,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10200,
     frontImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80",
     merchantStall: "River Road • Printing Supplies",
-    badge: "Verified CBD Merchant",
+    badge: "✨ New Arrival",
   },
   {
     id: "off_comb_binding_machine",
@@ -4176,7 +4176,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 11000,
     frontImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80",
     merchantStall: "Tom Mboya • Office Solutions",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
   {
     id: "off_magnetic_whiteboard",
@@ -4188,7 +4188,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4600,
     frontImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80",
     merchantStall: "Moi Avenue • Books & Stationery",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "off_leather_desk_blotter",
@@ -4200,7 +4200,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80",
     merchantStall: "Kimathi Street • Office Tech",
-    badge: "Ready for Pickup",
+    badge: "👞 Genuine Leather",
   },
   {
     id: "off_heavy_stapler_punch",
@@ -4212,7 +4212,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4000,
     frontImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80",
     merchantStall: "River Road • Stationery World",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
   },
 
   // --- Art, Craft & Drawing ---
@@ -4226,7 +4226,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4500,
     frontImage: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
     merchantStall: "Biashara Street • Art Station",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "art_colored_pencils_72",
@@ -4238,7 +4238,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4000,
     frontImage: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
     merchantStall: "Moi Avenue • Books & Stationery",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "art_sketchbook_pad",
@@ -4250,7 +4250,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2100,
     frontImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80",
     merchantStall: "Biashara Street • Art Station",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "art_acrylic_paints_canvases",
@@ -4262,7 +4262,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
     merchantStall: "River Road • Art Supplies",
-    badge: "45-Min Boda Dispatch",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "art_cutting_mat_a3",
@@ -4274,7 +4274,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2000,
     frontImage: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
     merchantStall: "Tom Mboya • Craft Corner",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
 
   // --- Musical Instruments & Pro Audio ---
@@ -4288,7 +4288,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 10500,
     frontImage: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80",
     merchantStall: "River Road • Music Masters 2",
-    badge: "Verified CBD Merchant",
+    badge: "⚡ Trending Now",
   },
   {
     id: "mus_61key_electronic_piano",
@@ -4300,7 +4300,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 17000,
     frontImage: "https://images.unsplash.com/photo-1520523839898-50712825e3a7?w=600&q=80",
     merchantStall: "Luthuli Avenue • Music Corner",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "mus_bm800_condenser_mic",
@@ -4312,7 +4312,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 6800,
     frontImage: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&q=80",
     merchantStall: "River Road • Audio Masters",
-    badge: "45-Min Boda Dispatch",
+    badge: "Studio Grade Audio",
   },
   {
     id: "mus_focusrite_scarlett_2i2",
@@ -4324,7 +4324,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 27500,
     frontImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
     merchantStall: "Kimathi Street • Pro Audio Studio",
-    badge: "Verified CBD Merchant",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "mus_yamaha_audio_mixer",
@@ -4336,7 +4336,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 21500,
     frontImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
     merchantStall: "River Road • Music Masters 2",
-    badge: "Verified CBD Merchant",
+    badge: "💎 Official Dealer",
   },
 
   // ============================================================================
@@ -4354,7 +4354,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 22000,
     frontImage: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&q=80",
     merchantStall: "Afya Centre • Gym Gear Hub",
-    badge: "Verified CBD Merchant",
+    badge: "Solid Cast Iron",
   },
   {
     id: "sport_resistance_bands",
@@ -4366,7 +4366,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=600&q=80",
     merchantStall: "Tom Mboya • Fitness Masters",
-    badge: "45-Min Boda Dispatch",
+    badge: "✨ New Arrival",
   },
   {
     id: "sport_cast_iron_kettlebell",
@@ -4378,7 +4378,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5800,
     frontImage: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80",
     merchantStall: "River Road • Heavy Weights",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "sport_weight_bench",
@@ -4390,7 +4390,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 17000,
     frontImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&q=80",
     merchantStall: "Afya Centre • Gym Gear Hub",
-    badge: "Verified CBD Merchant",
+    badge: "🔥 Best Seller",
   },
   {
     id: "sport_pullup_bar",
@@ -4402,7 +4402,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&q=80",
     merchantStall: "OTC Complex • Fitness Stall 4",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
   },
   {
     id: "sport_yoga_mat",
@@ -4414,7 +4414,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3000,
     frontImage: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80",
     merchantStall: "Afya Centre • Yoga & Wellness",
-    badge: "Ready for Pickup",
+    badge: "🛡️ 1-Year Warranty",
   },
 
   // --- Cardio Machines ---
@@ -4428,7 +4428,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 72000,
     frontImage: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80",
     merchantStall: "Moi Avenue • Cardio Kings",
-    badge: "Verified CBD Merchant",
+    badge: "Heavy-Duty 150kg Frame",
   },
   {
     id: "cardio_spin_bike",
@@ -4440,7 +4440,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 38000,
     frontImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&q=80",
     merchantStall: "Afya Centre • Gym Gear Hub",
-    badge: "Verified CBD Merchant",
+    badge: "⭐ Top Rated (4.9★)",
   },
   {
     id: "cardio_elliptical_trainer",
@@ -4452,7 +4452,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 42000,
     frontImage: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80",
     merchantStall: "Moi Avenue • Cardio Kings",
-    badge: "Ready for Pickup",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "cardio_water_rower",
@@ -4464,7 +4464,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 55000,
     frontImage: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80",
     merchantStall: "Afya Centre • Gym Gear Hub",
-    badge: "Verified CBD Merchant",
+    badge: "Active Noise Canceling",
   },
   {
     id: "cardio_speed_jump_rope",
@@ -4476,7 +4476,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 1600,
     frontImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=600&q=80",
     merchantStall: "Tom Mboya • Fitness Masters",
-    badge: "45-Min Boda Dispatch",
+    badge: "⚡ Trending Now",
   },
 
   // --- Outdoor & Camping Gear ---
@@ -4490,7 +4490,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 15000,
     frontImage: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80",
     merchantStall: "Biashara Street • Outdoor Adventure",
-    badge: "Verified CBD Merchant",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "camp_sleeping_bag",
@@ -4502,7 +4502,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4200,
     frontImage: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=600&q=80",
     merchantStall: "River Road • Campers Corner",
-    badge: "45-Min Boda Dispatch",
+    badge: "PU3000mm Waterproof",
   },
   {
     id: "camp_tactical_backpack",
@@ -4514,7 +4514,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 5600,
     frontImage: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80",
     merchantStall: "Kimathi Street • Backpacks Pro",
-    badge: "Ready for Pickup",
+    badge: "⏳ Only 2 Left",
   },
   {
     id: "camp_high_lumen_torch",
@@ -4526,7 +4526,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3400,
     frontImage: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=600&q=80",
     merchantStall: "Luthuli Avenue • Lights & Lamps",
-    badge: "45-Min Boda Dispatch",
+    badge: "💎 Official Dealer",
   },
   {
     id: "camp_foldable_chair_table",
@@ -4538,7 +4538,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 8200,
     frontImage: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80",
     merchantStall: "Biashara Street • Outdoor Adventure",
-    badge: "Ready for Pickup",
+    badge: "PU3000mm Waterproof",
   },
   {
     id: "camp_multitool_pliers",
@@ -4550,7 +4550,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3000,
     frontImage: "https://images.unsplash.com/photo-1593618998160-e34014e67546?w=600&q=80",
     merchantStall: "River Road • Tool Masters",
-    badge: "Ready for Pickup",
+    badge: "✨ New Arrival",
   },
 
   // --- Cycling & Bicycles ---
@@ -4564,7 +4564,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 28000,
     frontImage: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&q=80",
     merchantStall: "River Road • Bike Masters",
-    badge: "Verified CBD Merchant",
+    badge: "🛡️ 2-Year Warranty",
   },
   {
     id: "bike_commuter_road",
@@ -4576,7 +4576,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 25000,
     frontImage: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&q=80",
     merchantStall: "River Road • Bike Masters",
-    badge: "Verified CBD Merchant",
+    badge: "Aircraft Alloy Frame",
   },
   {
     id: "bike_aero_helmet",
@@ -4588,7 +4588,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80",
     merchantStall: "OTC Complex • Rider Gear",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔥 Best Seller",
     sizes: ["M", "L"],
   },
   {
@@ -4601,7 +4601,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2000,
     frontImage: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&q=80",
     merchantStall: "Luthuli Avenue • Cables Corner",
-    badge: "45-Min Boda Dispatch",
+    badge: "🛡️ 1-Year Warranty",
   },
   {
     id: "bike_steel_ulock",
@@ -4613,7 +4613,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2800,
     frontImage: "https://images.unsplash.com/photo-1558002038-1055907df827?w=600&q=80",
     merchantStall: "River Road • Security Depot",
-    badge: "Ready for Pickup",
+    badge: "Biometric 0.3s Unlock",
   },
   {
     id: "bike_mini_pump_toolkit",
@@ -4625,7 +4625,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 2400,
     frontImage: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&q=80",
     merchantStall: "River Road • Bike Masters",
-    badge: "Ready for Pickup",
+    badge: "⭐ Top Rated (4.9★)",
   },
 
   // --- Team & Ball Sports ---
@@ -4639,7 +4639,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4000,
     frontImage: "https://images.unsplash.com/photo-1511886929837-354d827aae26?w=600&q=80",
     merchantStall: "Afya Centre • Sports World",
-    badge: "45-Min Boda Dispatch",
+    badge: "✓ 100% Genuine",
   },
   {
     id: "sport_leather_basketball",
@@ -4651,7 +4651,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4600,
     frontImage: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80",
     merchantStall: "Afya Centre • Sports World",
-    badge: "Ready for Pickup",
+    badge: "👞 Genuine Leather",
   },
   {
     id: "sport_badminton_racket_pair",
@@ -4663,7 +4663,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 4500,
     frontImage: "https://images.unsplash.com/photo-1521537634581-0dced2fee2ef?w=600&q=80",
     merchantStall: "Tom Mboya • Rackets & Balls",
-    badge: "Ready for Pickup",
+    badge: "⚡ Trending Now",
   },
   {
     id: "sport_table_tennis_set",
@@ -4675,7 +4675,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 3500,
     frontImage: "https://images.unsplash.com/photo-1534158914592-062992fbe900?w=600&q=80",
     merchantStall: "Afya Centre • Sports World",
-    badge: "45-Min Boda Dispatch",
+    badge: "🔄 7-Day Free Return",
   },
   {
     id: "sport_boxing_gloves_bag",
@@ -4687,7 +4687,7 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     originalPrice: 7000,
     frontImage: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=600&q=80",
     merchantStall: "Afya Centre • Combat Sports",
-    badge: "Verified CBD Merchant",
+    badge: "👞 Genuine Leather",
   },
 ];
 

@@ -14,11 +14,25 @@ export type ProductItem = {
   frontImage: string;
   sideImage?: string;
   merchantStall?: string;
-  badge: "Ready for Pickup" | "45-Min Boda Dispatch" | "Verified CBD Merchant";
+  badge?: string;
   colors?: string[];
   sizes?: string[];
   variants?: { name: string; priceDelta: number }[];
 };
+
+function getBadgeStyles(badge: string) {
+  if (badge.includes("🔥") || badge.includes("Only") || badge.includes("Trending")) {
+    return "bg-amber-50/95 text-amber-900 border-amber-200/90";
+  }
+  if (badge.includes("⭐") || badge.includes("Top Rated") || badge.includes("✨")) {
+    return "bg-amber-50/95 text-amber-950 border-amber-200/90";
+  }
+  if (badge.includes("🛡️") || badge.includes("✓") || badge.includes("💎") || badge.includes("Return")) {
+    return "bg-blue-50/95 text-blue-900 border-blue-200/90";
+  }
+  // Spec / Material tag
+  return "bg-white/95 text-gray-800 border-gray-200/90";
+}
 
 export default function DynamicProductCard({
   product,
@@ -42,13 +56,21 @@ export default function DynamicProductCard({
       <div>
         {/* Uniform 4:5 Aspect Ratio Container with Neutral Backdrop */}
         <div className="aspect-[4/5] bg-gray-50/80 relative overflow-hidden flex items-center justify-center p-3">
-          {/* Trust Badge */}
-          <div className="absolute top-2 left-2 z-10">
-            <span className="inline-flex items-center gap-1 bg-white/95 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded-full shadow-xs border border-emerald-100 backdrop-blur-xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              {product.badge}
-            </span>
-          </div>
+          {/* Trust / Social Proof / Spec Badge */}
+          {product.badge && (
+            <div className="absolute top-2 left-2 z-10">
+              <span
+                className={`inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.5 rounded-full shadow-xs border backdrop-blur-xs ${getBadgeStyles(
+                  product.badge
+                )}`}
+              >
+                {!/^[\p{Emoji}\u2700-\u27BF\uE000-\uF8FF]/u.test(product.badge) && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                )}
+                {product.badge}
+              </span>
+            </div>
+          )}
 
           {/* Discount Badge */}
           {product.originalPrice && (
