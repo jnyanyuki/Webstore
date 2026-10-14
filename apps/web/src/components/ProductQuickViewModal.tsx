@@ -56,20 +56,32 @@ export default function ProductQuickViewModal({
 
         <div className="md:w-1/2 p-6 overflow-y-auto space-y-5 flex flex-col justify-between">
           <div>
-            <div className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">
-              {product.category}
+            <div className="flex items-center justify-between gap-2 mb-1">
+              <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">
+                {product.category}
+              </span>
+              {product.sku && (
+                <span className="text-[10px] font-mono font-bold bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
+                  {product.sku}
+                </span>
+              )}
             </div>
             <h2 className="text-xl font-extrabold text-gray-900 leading-tight">
               {product.name}
             </h2>
 
-            <div className="flex items-baseline gap-2 mt-3 mb-3">
+            <div className="flex flex-wrap items-baseline gap-2 mt-3 mb-3">
               <span className="text-2xl font-black text-gray-900">
                 KSh {calculatedPrice.toLocaleString()}
               </span>
-              {product.originalPrice && (
+              {product.baseMsrp && (
                 <span className="text-sm text-gray-400 line-through">
-                  KSh {(product.originalPrice + (selectedVariant?.priceDelta || 0)).toLocaleString()}
+                  MSRP: KSh {(product.baseMsrp + (selectedVariant?.priceDelta || 0)).toLocaleString()}
+                </span>
+              )}
+              {product.baseMsrp && product.baseMsrp > calculatedPrice && (
+                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                  Save {Math.round(((product.baseMsrp - calculatedPrice) / product.baseMsrp) * 100)}%
                 </span>
               )}
             </div>

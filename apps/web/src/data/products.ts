@@ -32,6 +32,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Galaxy S24 Ultra 5G - 512GB Titanium represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "15th Gen Galaxy S-Series (Snapdragon 8 Gen 3 for Galaxy)",
     lineage: ["Galaxy S22 Ultra (2022 Embedded S-Pen)","Galaxy S23 Ultra (2023 200MP HP2)","Galaxy S24 Ultra (Current Flat Titanium Galaxy AI)"],
+    sku: "PHN-SAM-S24ULTR-373",
+    baseMsrp: 189000,
+    releaseYear: 2024,
   },
   {
     id: "phone_iphone_15_pro_max",
@@ -52,6 +55,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple iPhone 15 Pro Max 256GB - Natural Titanium represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "17th Gen Apple Silicon (A17 Pro Titanium)",
     lineage: ["iPhone 13 Pro Max (2021 A15)","iPhone 14 Pro Max (2022 Dynamic Island)","iPhone 15 Pro Max (Aerospace Grade 5 Titanium)"],
+    sku: "PHN-APL-IPHO15-732",
+    baseMsrp: 213800,
+    releaseYear: 2023,
   },
   {
     id: "phone_redmi_note_13",
@@ -67,6 +73,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Xiaomi Redmi Note 13 Pro 4G/5G 256GB - Midnight Black represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "13th Gen Redmi Note Series (200MP OIS Camera)",
     lineage: ["Redmi Note 11 Pro (2022 108MP)","Redmi Note 12 Pro (2023 IMX766 OIS)","Redmi Note 13 Pro (Current 1.5K 120Hz AMOLED 200MP)"],
+    sku: "PHN-XIA-REDMNOTE-472",
+    baseMsrp: 41000,
+    releaseYear: 2021,
   },
   {
     id: "phone_galaxy_a55",
@@ -82,6 +91,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Galaxy A55 5G 128GB - Awesome Navy represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "6th Gen Galaxy A-Series (Exynos 1480 + AMD Xclipse 530)",
     lineage: ["Galaxy A53 5G (2022 Exynos 1280)","Galaxy A54 5G (2023 Glass Back)","Galaxy A55 5G (Current Metal Frame Key Island)"],
+    sku: "PHN-SAM-GALAA55-445",
+    baseMsrp: 55100,
+    releaseYear: 2024,
   },
   {
     id: "phone_iphone_13_refurb",
@@ -97,6 +109,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple iPhone 13 128GB (Grade A+ Certified Refurbished) represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "15th Gen Apple Silicon (A15 Bionic)",
     lineage: ["iPhone 11 Pro (2019 Triple Camera)","iPhone 12 (2020 Ceramic Shield)","iPhone 13 (Cinematic Sensor-Shift OIS)"],
+    sku: "PHN-APL-IPHO13-706",
+    baseMsrp: 85300,
+    releaseYear: 2024,
   },
   {
     id: "phone_blackview_rugged",
@@ -112,6 +127,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Blackview BV9300 Heavy-Duty Rugged Smartphone (15080mAh) represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Mil-Spec 810H Rugged Satellite Lineup",
     lineage: ["CAT S62 Pro (2020 FLIR Thermal)","CAT S75 Bullitt (2023 2-Way Satellite)","Ulefone Armor 24 (Current 22000mAh Camping Light Flagship)"],
+    sku: "PHN-BKV-BLACRUGG-706",
+    baseMsrp: 51800,
+    releaseYear: 2024,
   },
   {
     id: "tablet_ipad_air_m2",
@@ -127,6 +145,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "PHN-GEN-TABLIPAD-566",
+    baseMsrp: 113400,
+    releaseYear: 2024,
   },
   {
     id: "tablet_galaxy_tab_s9_fe",
@@ -142,6 +163,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "PHN-GEN-TABLGALA-800",
+    baseMsrp: 77800,
+    releaseYear: 2024,
   },
   {
     id: "tablet_kids_learning",
@@ -157,6 +181,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "PHN-GEN-TABLKIDS-505",
+    baseMsrp: 9200,
+    releaseYear: 2024,
   },
   {
     id: "tablet_kindle_paperwhite",
@@ -172,6 +199,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "PHN-GEN-TABLKIND-566",
+    baseMsrp: 30200,
+    releaseYear: 2024,
   },
 
   // --- Mobile Accessories ---
@@ -189,6 +219,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Anker Prime 67W GaN 3-Port Ultra-Fast Wall Charger Plug represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Anker Legacy Series (Gen 1 Performance Standard)","Anker Enhanced Series (Gen 2 Efficiency Upgrade)","Anker Prime 67W GaN 3-Port Ultra-Fast Wall Charger Plug (Current 2024 Flagship Release)"],
+    sku: "PHN-ANK-ACCANKE-541",
+    baseMsrp: 6700,
+    releaseYear: 2024,
   },
   {
     id: "acc_magsafe_charger",
@@ -204,6 +237,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple MagSafe 15W Fast Wireless Magnetic Charger Pad represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Qi2 Magnetic Wireless Power Standard (15W Fast Charge)",
     lineage: ["Apple MagSafe Charger (2020 15W Qi1)","Belkin BoostCharge Pro (2021 3-in-1)","Anker MagGo Qi2 (Current 15W Magnetic Fast Charge Standard)"],
+    sku: "PHN-APL-ACCMAGS-153",
+    baseMsrp: 6300,
+    releaseYear: 2024,
   },
   {
     id: "acc_anker_737_powerbank",
@@ -219,6 +255,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Anker 737 Power Bank 24,000mAh 140W Dual USB-C Fast Charge represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "3rd Gen GaNFast / GaNPrime Multi-Port Architecture",
     lineage: ["PowerPort Atom PD 1 (2018 30W GaN 1)","Anker Nano II 65W (2021 GaN II)","Anker 737 GaNPrime 120W / Nexode 300W (Current Thermal Guard 2.0)"],
+    sku: "PHN-ANK-ACCANKE-627",
+    baseMsrp: 16200,
+    releaseYear: 2024,
   },
   {
     id: "acc_shockproof_case",
@@ -234,6 +273,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Spigen Tough Armor Heavy-Duty Dual-Layer Shockproof Case represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Spigen Tough Armor Heavy-Duty Dual-Layer Shockproof Case (Current 2024 Flagship Release)"],
+    sku: "PHN-SPI-ACCSHOC-291",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
   {
     id: "acc_tempered_glass",
@@ -249,6 +291,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 9H Diamond Armor Privacy Tempered Glass Screen Protector (2-Pack) represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","9H Diamond Armor Privacy Tempered Glass Screen Protector (2-Pack) (Current 2024 Flagship Release)"],
+    sku: "PHN-GEN-ACCTEMP-365",
+    baseMsrp: 1700,
+    releaseYear: 2024,
   },
   {
     id: "acc_braided_cable",
@@ -264,6 +309,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Baseus 100W PD 2m Heavy-Duty Braided Type-C to Type-C Cable represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Baseus 100W PD 2m Heavy-Duty Braided Type-C to Type-C Cable (Current 2024 Flagship Release)"],
+    sku: "PHN-BAS-ACCBRAI-499",
+    baseMsrp: 2100,
+    releaseYear: 2024,
   },
   {
     id: "acc_car_mount",
@@ -279,6 +327,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Baseus MagSafe Air Vent Strong Magnetic Car Phone Mount represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Qi2 Magnetic Wireless Power Standard (15W Fast Charge)",
     lineage: ["Apple MagSafe Charger (2020 15W Qi1)","Belkin BoostCharge Pro (2021 3-in-1)","Anker MagGo Qi2 (Current 15W Magnetic Fast Charge Standard)"],
+    sku: "PHN-BAS-ACCCAR-660",
+    baseMsrp: 3500,
+    releaseYear: 2024,
   },
   {
     id: "acc_dji_gimbal",
@@ -294,6 +345,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The DJI Osmo Mobile 6 3-Axis Smartphone Handheld Gimbal Stabilizer represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","DJI Osmo Mobile 6 3-Axis Smartphone Handheld Gimbal Stabilizer (Current 2024 Flagship Release)"],
+    sku: "PHN-DJI-ACCDJI-544",
+    baseMsrp: 26500,
+    releaseYear: 2024,
   },
 
   // --- Smart Wearables ---
@@ -311,6 +365,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple Watch Series 9 GPS 45mm - Midnight Aluminum Case represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Apple Legacy Series (Gen 1 Performance Standard)","Apple Enhanced Series (Gen 2 Efficiency Upgrade)","Apple Watch Series 9 GPS 45mm - Midnight Aluminum Case (Current 2024 Flagship Release)"],
+    sku: "PHN-APL-WEARAPPL-889",
+    baseMsrp: 73400,
+    releaseYear: 2024,
   },
   {
     id: "wear_galaxy_watch_6",
@@ -326,6 +383,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Galaxy Watch 6 Classic 47mm Bluetooth - Silver represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "3nm Exynos W1000 Dual-Frequency Rugged Lineup",
     lineage: ["Galaxy Watch 4 Classic (2021 WearOS 3)","Galaxy Watch 5 Pro (2022 Sapphire Titanium)","Galaxy Watch Ultra (Current 100M Water Dual GPS 3nm W1000)"],
+    sku: "PHN-SAM-WEARGALA-245",
+    baseMsrp: 52900,
+    releaseYear: 2024,
   },
   {
     id: "wear_xiaomi_band_8",
@@ -341,6 +401,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Xiaomi Smart Band 8 Pro 1.74\" AMOLED Fitness Tracker represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Xiaomi Legacy Series (Gen 1 Performance Standard)","Xiaomi Enhanced Series (Gen 2 Efficiency Upgrade)","Xiaomi Smart Band 8 Pro 1.74\" AMOLED Fitness Tracker (Current 2024 Flagship Release)"],
+    sku: "PHN-XIA-WEARXIAO-550",
+    baseMsrp: 10700,
+    releaseYear: 2024,
   },
   {
     id: "wear_rayban_meta_glasses",
@@ -356,6 +419,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ray-Ban Meta Wayfarer Smart Audio Glasses with Camera & AI represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "2nd Gen Meta Smart Eyewear (Qualcomm Snapdragon AR1 Gen 1)",
     lineage: ["Ray-Ban Stories (2021 Dual 5MP)","Ray-Ban Meta Wayfarer (Current 12MP Ultra-Wide + Meta AI Audio)","Ray-Ban Meta Headliner (Current Transition Lenses Edition)"],
+    sku: "PHN-RAY-WEARRAYB-614",
+    baseMsrp: 58300,
+    releaseYear: 2024,
   },
   {
     id: "wear_watch_strap",
@@ -371,6 +437,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Premium Breathable Sport Silicone Strap for Apple & Galaxy Watch represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Premium Breathable Sport Silicone Strap for Apple & Galaxy Watch (Current 2024 Flagship Release)"],
+    sku: "PHN-APL-WEARWATC-444",
+    baseMsrp: 1600,
+    releaseYear: 2024,
   },
   {
     id: "wear_3in1_dock",
@@ -386,6 +455,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 3-in-1 Foldable Magnetic Wireless Charging Station Stand represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","3-in-1 Foldable Magnetic Wireless Charging Station Stand (Current 2024 Flagship Release)"],
+    sku: "PHN-3IN-WEAR3IN1-365",
+    baseMsrp: 5400,
+    releaseYear: 2024,
   },
 
   // --- Parts & Tools ---
@@ -403,6 +475,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple iPhone 12/13/14 Original Quality OLED Replacement Screen represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Apple Legacy Series (Gen 1 Performance Standard)","Apple Enhanced Series (Gen 2 Efficiency Upgrade)","Apple iPhone 12/13/14 Original Quality OLED Replacement Screen (Current 2024 Flagship Release)"],
+    sku: "PHN-APL-PARTIPHO-719",
+    baseMsrp: 11300,
+    releaseYear: 2024,
   },
   {
     id: "part_phone_battery",
@@ -418,6 +493,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The High-Capacity 0-Cycle Internal Replacement Battery with Adhesive represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","High-Capacity 0-Cycle Internal Replacement Battery with Adhesive (Current 2024 Flagship Release)"],
+    sku: "PHN-HIG-PARTPHON-136",
+    baseMsrp: 4300,
+    releaseYear: 2024,
   },
   {
     id: "tool_jakemy_screwdrivers",
@@ -433,6 +511,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The JAKEMY 48-in-1 Precision Magnetic Screwdriver Repair Toolkit represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","JAKEMY 48-in-1 Precision Magnetic Screwdriver Repair Toolkit (Current 2024 Flagship Release)"],
+    sku: "PHN-JAK-TOOLJAKE-622",
+    baseMsrp: 3500,
+    releaseYear: 2024,
   },
   {
     id: "part_sim_adapters",
@@ -448,6 +529,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Universal 4-in-1 SIM Card Adapter Kit + Steel Ejection Pin represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Universal 4-in-1 SIM Card Adapter Kit + Steel Ejection Pin (Current 2024 Flagship Release)"],
+    sku: "PHN-UNI-PARTSIM-948",
+    baseMsrp: 500,
+    releaseYear: 2024,
   },
   {
     id: "part_baofeng_walkie_talkie",
@@ -463,6 +547,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Baofeng UV-5R Dual Band UHF/VHF Long-Range Two-Way Radio (Pair) represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Baofeng UV-5R Dual Band UHF/VHF Long-Range Two-Way Radio (Pair) (Current 2024 Flagship Release)"],
+    sku: "PHN-BAO-PARTBAOF-211",
+    baseMsrp: 8900,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -489,6 +576,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the 256GB SSD (Standard) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","256GB SSD (Standard) (Current 2024 Flagship Release)"],
+    sku: "CMP-256-MACBAIR-615",
+    baseMsrp: 181400,
+    releaseYear: 2024,
   },
   {
     id: "comp_dell_xps_13",
@@ -504,6 +594,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the  features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "CMP-GEN-DELLXPS-228",
+    baseMsrp: 192200,
+    releaseYear: 2024,
   },
   {
     id: "comp_asus_rog_strix_g16",
@@ -519,6 +612,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the ASUS ROG Strix G16 Gaming Laptop (i9-13980HX, RTX 4070, 240Hz) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["ASUS Legacy Series (Gen 1 Performance Standard)","ASUS Enhanced Series (Gen 2 Efficiency Upgrade)","ASUS ROG Strix G16 Gaming Laptop (i9-13980HX, RTX 4070, 240Hz) (Current 2024 Flagship Release)"],
+    sku: "CMP-ASU-ASUSROG-519",
+    baseMsrp: 286200,
+    releaseYear: 2024,
   },
   {
     id: "comp_hp_pavilion_15",
@@ -534,6 +630,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the  features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "CMP-GEN-HPPAVI-796",
+    baseMsrp: 82100,
+    releaseYear: 2024,
   },
   {
     id: "comp_hp_gaming_desktop",
@@ -549,6 +648,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the HP Pavilion Gaming Tower PC (Intel Core i7, RTX 3060, 16GB RAM) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["HP Legacy Series (Gen 1 Performance Standard)","HP Enhanced Series (Gen 2 Efficiency Upgrade)","HP Pavilion Gaming Tower PC (Intel Core i7, RTX 3060, 16GB RAM) (Current 2024 Flagship Release)"],
+    sku: "CMP-HPI-HPGAMI-781",
+    baseMsrp: 138200,
+    releaseYear: 2024,
   },
   {
     id: "comp_imac_24_m3",
@@ -564,6 +666,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the  features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "CMP-GEN-IMAC24-598",
+    baseMsrp: 232200,
+    releaseYear: 2024,
   },
   {
     id: "comp_beelink_minipc",
@@ -579,6 +684,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Beelink SER5 AMD Ryzen 7 5800H Mini PC 16GB RAM 500GB NVMe features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Zen 4 Architecture (2nd Gen 3D V-Cache Technology)",
     lineage: ["Ryzen 9 5950X (2020 Zen 3 16-Core)","Ryzen 7 5800X3D (2022 1st Gen 3D V-Cache)","Ryzen 9 7950X3D (Current 144MB Cache AM5 120W TDP)"],
+    sku: "CMP-AMD-BEELMINI-835",
+    baseMsrp: 59400,
+    releaseYear: 2024,
   },
 
   // --- Components & Hardware ---
@@ -596,6 +704,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Intel Core i7-14700K 20-Core Desktop Processor (Up to 5.6 GHz) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Intel Core i7-14700K 20-Core Desktop Processor (Up to 5.6 GHz) (Current 2024 Flagship Release)"],
+    sku: "CMP-INT-INTEI7-231",
+    baseMsrp: 70200,
+    releaseYear: 2024,
   },
   {
     id: "comp_asus_rtx_4080_super",
@@ -611,6 +722,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the ASUS TUF Gaming GeForce RTX 4080 Super 16GB GDDR6X GPU features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "4th Gen RTX Architecture (Ada Lovelace TSMC 4N)",
     lineage: ["GeForce RTX 2080 Ti (2018 Turing 12nm)","GeForce RTX 3090 (2020 Ampere 8nm)","GeForce RTX 4090 24GB (Current DLSS 3.5 16384 CUDA Cores)"],
+    sku: "CMP-ASU-ASUSRTX-204",
+    baseMsrp: 204100,
+    releaseYear: 2024,
   },
   {
     id: "comp_msi_b650_motherboard",
@@ -626,6 +740,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the MSI MAG B650 Tomahawk WiFi AM5 ATX Gaming Motherboard features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","MSI MAG B650 Tomahawk WiFi AM5 ATX Gaming Motherboard (Current 2024 Flagship Release)"],
+    sku: "CMP-MSI-MSIB650-661",
+    baseMsrp: 41000,
+    releaseYear: 2024,
   },
   {
     id: "comp_corsair_ddr5_32gb",
@@ -641,6 +758,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz CL36 RAM features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Corsair Vengeance RGB 32GB (2x16GB) DDR5 6000MHz CL36 RAM (Current 2024 Flagship Release)"],
+    sku: "CMP-COR-CORSDDR5-916",
+    baseMsrp: 20500,
+    releaseYear: 2024,
   },
   {
     id: "comp_samsung_990_pro_2tb",
@@ -656,6 +776,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Samsung 990 PRO 2TB PCIe 4.0 NVMe M.2 Internal SSD 7450MB/s features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Samsung Legacy Series (Gen 1 Performance Standard)","Samsung Enhanced Series (Gen 2 Efficiency Upgrade)","Samsung 990 PRO 2TB PCIe 4.0 NVMe M.2 Internal SSD 7450MB/s (Current 2024 Flagship Release)"],
+    sku: "CMP-SAM-SAMS990-838",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "comp_corsair_rm850x_psu",
@@ -671,6 +794,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Corsair RM850x 850W 80 PLUS Gold Fully Modular ATX Power Supply features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Corsair RM850x 850W 80 PLUS Gold Fully Modular ATX Power Supply (Current 2024 Flagship Release)"],
+    sku: "CMP-COR-CORSRM85-591",
+    baseMsrp: 23200,
+    releaseYear: 2024,
   },
   {
     id: "comp_nzxt_h5_case",
@@ -686,6 +812,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the NZXT H5 Flow RGB Mid-Tower Case with Dual Tempered Glass features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","NZXT H5 Flow RGB Mid-Tower Case with Dual Tempered Glass (Current 2024 Flagship Release)"],
+    sku: "CMP-NZX-NZXTH5-525",
+    baseMsrp: 18400,
+    releaseYear: 2024,
   },
   {
     id: "comp_deepcool_lt720_aio",
@@ -701,6 +830,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the DeepCool LT720 360mm High-Performance Liquid AIO CPU Cooler features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","DeepCool LT720 360mm High-Performance Liquid AIO CPU Cooler (Current 2024 Flagship Release)"],
+    sku: "CMP-DEE-DEEPLT72-309",
+    baseMsrp: 22700,
+    releaseYear: 2024,
   },
 
   // --- Peripherals & Storage ---
@@ -718,6 +850,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the  features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "CMP-GEN-PERISAMS-997",
+    baseMsrp: 82100,
+    releaseYear: 2024,
   },
   {
     id: "periph_logitech_pro_x_keyboard",
@@ -733,6 +868,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Logitech G PRO X Mechanical RGB Gaming Keyboard (GX Blue Switches) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Logitech G PRO X Mechanical RGB Gaming Keyboard (GX Blue Switches) (Current 2024 Flagship Release)"],
+    sku: "CMP-LOG-PERILOGI-121",
+    baseMsrp: 20500,
+    releaseYear: 2024,
   },
   {
     id: "periph_logitech_mx_master_3s",
@@ -748,6 +886,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Logitech MX Master 3S Wireless Performance Ergonomic Mouse features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Logitech MX Master 3S Wireless Performance Ergonomic Mouse (Current 2024 Flagship Release)"],
+    sku: "CMP-LOG-PERILOGI-730",
+    baseMsrp: 16700,
+    releaseYear: 2024,
   },
   {
     id: "periph_sandisk_extreme_1tb",
@@ -763,6 +904,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the SanDisk Extreme 1TB Portable Rugged External SSD (1050MB/s USB-C) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Mil-Spec 810H Rugged Satellite Lineup",
     lineage: ["CAT S62 Pro (2020 FLIR Thermal)","CAT S75 Bullitt (2023 2-Way Satellite)","Ulefone Armor 24 (Current 22000mAh Camping Light Flagship)"],
+    sku: "CMP-SAN-PERISAND-479",
+    baseMsrp: 20000,
+    releaseYear: 2024,
   },
   {
     id: "periph_kingston_256gb_flash",
@@ -778,6 +922,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Kingston DataTraveler Max 256GB USB 3.2 Gen 2 High-Speed Flash Drive features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Kingston DataTraveler Max 256GB USB 3.2 Gen 2 High-Speed Flash Drive (Current 2024 Flagship Release)"],
+    sku: "CMP-KIN-PERIKING-654",
+    baseMsrp: 5900,
+    releaseYear: 2024,
   },
   {
     id: "periph_anker_8in1_hub",
@@ -793,6 +940,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Anker 8-in-1 Multi-Port USB-C Dock Hub (4K HDMI, 100W PD, SD Slot) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Anker Legacy Series (Gen 1 Performance Standard)","Anker Enhanced Series (Gen 2 Efficiency Upgrade)","Anker 8-in-1 Multi-Port USB-C Dock Hub (4K HDMI, 100W PD, SD Slot) (Current 2024 Flagship Release)"],
+    sku: "CMP-ANK-PERIANKE-279",
+    baseMsrp: 9900,
+    releaseYear: 2024,
   },
   {
     id: "periph_logitech_brio_4k",
@@ -808,6 +958,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Logitech Brio 4K Ultra HD Streaming Webcam with HDR & Auto-Focus features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Logitech Brio 4K Ultra HD Streaming Webcam with HDR & Auto-Focus (Current 2024 Flagship Release)"],
+    sku: "CMP-LOG-PERILOGI-765",
+    baseMsrp: 27500,
+    releaseYear: 2024,
   },
   {
     id: "periph_shure_mv7_mic",
@@ -823,6 +976,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Shure MV7 USB/XLR Dynamic Podcasting Microphone with Touch Panel features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Shure MV7 USB/XLR Dynamic Podcasting Microphone with Touch Panel (Current 2024 Flagship Release)"],
+    sku: "CMP-SHU-PERISHUR-111",
+    baseMsrp: 44300,
+    releaseYear: 2024,
   },
 
   // --- Gaming & Consoles ---
@@ -840,6 +996,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Sony PlayStation 5 Slim Disc Edition 1TB Console + DualSense features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "9th Generation Home Console (Custom AMD RDNA 2 GPU)",
     lineage: ["PlayStation 4 Pro (2016 1TB)","PlayStation 5 Launch Model (2020 825GB)","PlayStation 5 Slim (Current 1TB Detachable Ultra HD Drive)"],
+    sku: "CMP-SNY-GAMEPS5-365",
+    baseMsrp: 99400,
+    releaseYear: 2024,
   },
   {
     id: "game_xbox_series_x",
@@ -855,6 +1014,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Microsoft Xbox Series X 1TB 4K 120FPS Next-Gen Gaming Console features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "9th Generation Home Console (Xbox Velocity Architecture)",
     lineage: ["Xbox One X (2017 6 TFLOPS Scorpio)","Xbox Series S (2020 4 TFLOPS 512GB)","Xbox Series X (Current 12 TFLOPS 1TB/2TB Quick Resume 4K 120Hz)"],
+    sku: "CMP-MSF-GAMEXBOX-765",
+    baseMsrp: 92900,
+    releaseYear: 2024,
   },
   {
     id: "game_nintendo_switch_oled",
@@ -870,6 +1032,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Nintendo Switch OLED Model Console - White Joy-Con 64GB features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Nintendo Switch Premium Tier (7.0-inch OLED Display)",
     lineage: ["Nintendo Switch V1 (2017 6.2-inch LCD)","Nintendo Switch V2 (2019 Enhanced Mariko SoC)","Nintendo Switch OLED Model (Current 64GB LAN Dock Vivid OLED)"],
+    sku: "CMP-NTN-GAMENINT-354",
+    baseMsrp: 56200,
+    releaseYear: 2024,
   },
   {
     id: "game_dualsense_controller",
@@ -885,6 +1050,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Sony PlayStation DualSense Wireless Controller - Midnight Black features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Sony Legacy Series (Gen 1 Performance Standard)","Sony Enhanced Series (Gen 2 Efficiency Upgrade)","Sony PlayStation DualSense Wireless Controller - Midnight Black (Current 2024 Flagship Release)"],
+    sku: "CMP-SNY-GAMEDUAL-994",
+    baseMsrp: 11900,
+    releaseYear: 2024,
   },
   {
     id: "game_hyperx_cloud_ii",
@@ -900,6 +1068,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the HyperX Cloud II Wireless 7.1 Surround Sound Gaming Headset features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","HyperX Cloud II Wireless 7.1 Surround Sound Gaming Headset (Current 2024 Flagship Release)"],
+    sku: "CMP-HYP-GAMEHYPE-580",
+    baseMsrp: 23800,
+    releaseYear: 2024,
   },
   {
     id: "game_dxracer_gaming_chair",
@@ -915,6 +1086,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the DXRacer Formula Series High-Back Ergonomic Leather Gaming Chair features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","DXRacer Formula Series High-Back Ergonomic Leather Gaming Chair (Current 2024 Flagship Release)"],
+    sku: "CMP-DXR-GAMEDXRA-728",
+    baseMsrp: 41000,
+    releaseYear: 2024,
   },
   {
     id: "game_logitech_g29_wheel",
@@ -930,6 +1104,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Logitech G29 Driving Force Dual-Motor Racing Wheel + Pedals features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Logitech G29 Driving Force Dual-Motor Racing Wheel + Pedals (Current 2024 Flagship Release)"],
+    sku: "CMP-LOG-GAMELOGI-739",
+    baseMsrp: 52900,
+    releaseYear: 2024,
   },
   {
     id: "game_meta_quest_3_vr",
@@ -945,6 +1122,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Meta Quest 3 128GB Breakthrough Mixed Reality All-In-One VR Headset features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Meta Quest 3 128GB Breakthrough Mixed Reality All-In-One VR Headset (Current 2024 Flagship Release)"],
+    sku: "CMP-MET-GAMEMETA-394",
+    baseMsrp: 105800,
+    releaseYear: 2024,
   },
 
   // --- Networking & Office Tech ---
@@ -962,6 +1142,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the TP-Link Archer AX73 Dual-Band 5400Mbps Gigabit Wi-Fi 6 Router features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","TP-Link Archer AX73 Dual-Band 5400Mbps Gigabit Wi-Fi 6 Router (Current 2024 Flagship Release)"],
+    sku: "CMP-TPL-NETTPLI-322",
+    baseMsrp: 22100,
+    releaseYear: 2024,
   },
   {
     id: "net_tplink_deco_x50_mesh",
@@ -977,6 +1160,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the TP-Link Deco X50 Whole-Home Mesh WiFi 6 System (3-Pack) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","TP-Link Deco X50 Whole-Home Mesh WiFi 6 System (3-Pack) (Current 2024 Flagship Release)"],
+    sku: "CMP-TPL-NETTPLI-440",
+    baseMsrp: 42100,
+    releaseYear: 2024,
   },
   {
     id: "net_cisco_8port_switch",
@@ -992,6 +1178,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Cisco Business CBS110-8T-D 8-Port Unmanaged Gigabit Switch features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Cisco Business CBS110-8T-D 8-Port Unmanaged Gigabit Switch (Current 2024 Flagship Release)"],
+    sku: "CMP-CIS-NETCISC-730",
+    baseMsrp: 12400,
+    releaseYear: 2024,
   },
   {
     id: "net_huawei_5g_cpe_router",
@@ -1007,6 +1196,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Huawei 5G CPE Pro 2 H122-373 High-Speed SIM Card Mobile Router features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Huawei 5G CPE Pro 2 H122-373 High-Speed SIM Card Mobile Router (Current 2024 Flagship Release)"],
+    sku: "CMP-HUA-NETHUAW-701",
+    baseMsrp: 40000,
+    releaseYear: 2024,
   },
   {
     id: "net_epson_l3250_printer",
@@ -1022,6 +1214,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Epson EcoTank L3250 All-in-One Wi-Fi Ink Tank Color Printer features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Epson EcoTank L3250 All-in-One Wi-Fi Ink Tank Color Printer (Current 2024 Flagship Release)"],
+    sku: "CMP-EPS-NETEPSO-513",
+    baseMsrp: 34600,
+    releaseYear: 2024,
   },
   {
     id: "net_xprinter_label_printer",
@@ -1037,6 +1232,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Xprinter XP-420B High-Speed 4x6 Direct Thermal Shipping Label Printer features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Xprinter XP-420B High-Speed 4x6 Direct Thermal Shipping Label Printer (Current 2024 Flagship Release)"],
+    sku: "CMP-XPR-NETXPRI-340",
+    baseMsrp: 17300,
+    releaseYear: 2024,
   },
   {
     id: "net_fellowes_paper_shredder",
@@ -1052,6 +1250,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Fellowes Powershred 8-Sheet Cross-Cut Heavy Duty Security Shredder features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Fellowes Powershred 8-Sheet Cross-Cut Heavy Duty Security Shredder (Current 2024 Flagship Release)"],
+    sku: "CMP-FEL-NETFELL-844",
+    baseMsrp: 14600,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -1073,6 +1274,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "TVS-GEN-SAMS55-783",
+    baseMsrp: 77800,
+    releaseYear: 2024,
   },
   {
     id: "tv_lg_c3_55_oled",
@@ -1088,6 +1292,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "TVS-GEN-LGC3-663",
+    baseMsrp: 185800,
+    releaseYear: 2024,
   },
   {
     id: "tv_tcl_50_google_tv",
@@ -1103,6 +1310,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "TVS-GEN-TCL50-433",
+    baseMsrp: 53500,
+    releaseYear: 2024,
   },
   {
     id: "tv_hisense_32_frameless",
@@ -1118,6 +1328,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "TVS-GEN-HISE32-567",
+    baseMsrp: 22100,
+    releaseYear: 2024,
   },
   {
     id: "tv_samsung_65_signage",
@@ -1133,6 +1346,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "TVS-GEN-SAMS65-844",
+    baseMsrp: 145800,
+    releaseYear: 2024,
   },
 
   // --- Audio & Headphones ---
@@ -1150,6 +1366,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple AirPods Pro 2nd Gen with MagSafe Charging Case (USB-C) delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Qi2 Magnetic Wireless Power Standard (15W Fast Charge)",
     lineage: ["Apple MagSafe Charger (2020 15W Qi1)","Belkin BoostCharge Pro (2021 3-in-1)","Anker MagGo Qi2 (Current 15W Magnetic Fast Charge Standard)"],
+    sku: "AUD-APL-AUDAIRP-674",
+    baseMsrp: 41000,
+    releaseYear: 2024,
   },
   {
     id: "aud_sony_wh1000xm5",
@@ -1166,6 +1385,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sony WH-1000XM5 Wireless Noise-Canceling Over-Ear Headphones delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "5th Gen 1000X Industry-Leading Noise Canceling Series",
     lineage: ["WH-1000XM3 (2018 QN1 HD Processor)","WH-1000XM4 (2020 Multi-Point Bluetooth)","WH-1000XM5 (Current Dual Processor V1+QN1 8-Mic Auto NC)"],
+    sku: "AUD-SNY-AUDSONY-135",
+    baseMsrp: 51800,
+    releaseYear: 2024,
   },
   {
     id: "aud_ath_m50x_studio",
@@ -1181,6 +1403,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Audio-Technica ATH-M50x Professional Studio Monitor Headphones delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Audio-Technica ATH-M50x Professional Studio Monitor Headphones (Current 2024 Flagship Release)"],
+    sku: "AUD-AUD-AUDATH-600",
+    baseMsrp: 26500,
+    releaseYear: 2024,
   },
   {
     id: "aud_jbl_endurance_peak3",
@@ -1196,6 +1421,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The JBL Endurance Peak 3 Waterproof IP68 Sports Bluetooth Earphones delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["JBL Legacy Series (Gen 1 Performance Standard)","JBL Enhanced Series (Gen 2 Efficiency Upgrade)","JBL Endurance Peak 3 Waterproof IP68 Sports Bluetooth Earphones (Current 2024 Flagship Release)"],
+    sku: "AUD-JBL-AUDJBL-286",
+    baseMsrp: 14600,
+    releaseYear: 2024,
   },
   {
     id: "aud_jabra_talk_45",
@@ -1211,6 +1439,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Jabra Talk 45 HD Voice Noise-Canceling Bluetooth Ear Headset delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Jabra Talk 45 HD Voice Noise-Canceling Bluetooth Ear Headset (Current 2024 Flagship Release)"],
+    sku: "AUD-JAB-AUDJABR-852",
+    baseMsrp: 11000,
+    releaseYear: 2024,
   },
 
   // --- Sound Systems & Hi-Fi ---
@@ -1228,6 +1459,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The JBL Bar 500 590W 5.1-Channel Dolby Atmos Soundbar with Subwoofer delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["JBL Legacy Series (Gen 1 Performance Standard)","JBL Enhanced Series (Gen 2 Efficiency Upgrade)","JBL Bar 500 590W 5.1-Channel Dolby Atmos Soundbar with Subwoofer (Current 2024 Flagship Release)"],
+    sku: "AUD-JBL-SNDJBL-708",
+    baseMsrp: 79900,
+    releaseYear: 2024,
   },
   {
     id: "snd_sony_ht_s40r_51",
@@ -1243,6 +1477,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sony HT-S40R 600W 5.1ch Real Surround Sound Home Theater System delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Sony Legacy Series (Gen 1 Performance Standard)","Sony Enhanced Series (Gen 2 Efficiency Upgrade)","Sony HT-S40R 600W 5.1ch Real Surround Sound Home Theater System (Current 2024 Flagship Release)"],
+    sku: "TVS-SNY-SNDSONY-663",
+    baseMsrp: 57200,
+    releaseYear: 2024,
   },
   {
     id: "snd_jbl_partybox_310",
@@ -1258,6 +1495,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The JBL PartyBox 310 Portable High-Power 240W Bluetooth Party Speaker delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "4th Gen High-Power Portable PA Party Audio (AI Sound Boost)",
     lineage: ["JBL PartyBox 100 (2019 160W)","JBL PartyBox 110 (2021 IPX4 Splashproof)","JBL PartyBox Stage 320 / Club 120 (Current Auracast AI Sound Boost)"],
+    sku: "AUD-JBL-SNDJBL-183",
+    baseMsrp: 91800,
+    releaseYear: 2024,
   },
   {
     id: "snd_jbl_flip_6",
@@ -1273,6 +1513,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The JBL Flip 6 Portable Waterproof IP67 Bluetooth Speaker delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["JBL Legacy Series (Gen 1 Performance Standard)","JBL Enhanced Series (Gen 2 Efficiency Upgrade)","JBL Flip 6 Portable Waterproof IP67 Bluetooth Speaker (Current 2024 Flagship Release)"],
+    sku: "AUD-JBL-SNDJBL-875",
+    baseMsrp: 18400,
+    releaseYear: 2024,
   },
   {
     id: "snd_edifier_r1280db",
@@ -1288,6 +1531,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Edifier R1280DB Powered Bluetooth Bookshelf Hi-Fi Studio Speakers delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Edifier R1280DB Powered Bluetooth Bookshelf Hi-Fi Studio Speakers (Current 2024 Flagship Release)"],
+    sku: "AUD-EDI-SNDEDIF-274",
+    baseMsrp: 23200,
+    releaseYear: 2024,
   },
   {
     id: "snd_denon_avr_receiver",
@@ -1303,6 +1549,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Denon AVR-S660H 5.2ch 8K Ultra HD AV Stereo Receiver with HEOS delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Denon AVR-S660H 5.2ch 8K Ultra HD AV Stereo Receiver with HEOS (Current 2024 Flagship Release)"],
+    sku: "TVS-DEN-SNDDENO-818",
+    baseMsrp: 87500,
+    releaseYear: 2024,
   },
 
   // --- Projectors & TV Accessories ---
@@ -1320,6 +1569,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Wanbo T6 Max Full HD 1080p Smart Android Home Cinema Projector delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Wanbo T6 Max Full HD 1080p Smart Android Home Cinema Projector (Current 2024 Flagship Release)"],
+    sku: "TVS-WAN-PROJWANB-769",
+    baseMsrp: 45400,
+    releaseYear: 2024,
   },
   {
     id: "proj_vega_100_screen",
@@ -1335,6 +1587,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "TVS-GEN-PROJVEGA-834",
+    baseMsrp: 24800,
+    releaseYear: 2024,
   },
   {
     id: "proj_nb_p6_wall_mount",
@@ -1350,6 +1605,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)"," (Current 2024 Flagship Release)"],
+    sku: "TVS-GEN-PROJNB-968",
+    baseMsrp: 6500,
+    releaseYear: 2024,
   },
   {
     id: "proj_mi_box_s_2nd_gen",
@@ -1365,6 +1623,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Xiaomi Mi TV Box S 2nd Gen 4K Ultra HD Streaming Android Player delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Xiaomi Legacy Series (Gen 1 Performance Standard)","Xiaomi Enhanced Series (Gen 2 Efficiency Upgrade)","Xiaomi Mi TV Box S 2nd Gen 4K Ultra HD Streaming Android Player (Current 2024 Flagship Release)"],
+    sku: "TVS-XIA-PROJMI-512",
+    baseMsrp: 9900,
+    releaseYear: 2024,
   },
   {
     id: "proj_ugreen_8k_hdmi",
@@ -1380,6 +1641,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The UGREEN 8K Ultra High Speed HDMI 2.1 Braided Cable 2m (48Gbps) delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","UGREEN 8K Ultra High Speed HDMI 2.1 Braided Cable 2m (48Gbps) (Current 2024 Flagship Release)"],
+    sku: "TVS-UGR-PROJUGRE-241",
+    baseMsrp: 2500,
+    releaseYear: 2024,
   },
   {
     id: "proj_broadlink_rm4_pro",
@@ -1395,6 +1659,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The BroadLink RM4 Pro Smart IR/RF Universal Remote Hub (Alexa/Google) delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","BroadLink RM4 Pro Smart IR/RF Universal Remote Hub (Alexa/Google) (Current 2024 Flagship Release)"],
+    sku: "TVS-GGL-PROJBROA-482",
+    baseMsrp: 6900,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -1416,6 +1683,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Philips Digital Airfryer XL 6.2L Rapid Air Convection (HD9270) brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Philips Digital Airfryer XL 6.2L Rapid Air Convection (HD9270) (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-PHP-PHILAIRF-169",
+    baseMsrp: 18900,
+    releaseYear: 2024,
   },
   {
     id: "app_nutribullet_pro_900w",
@@ -1431,6 +1701,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The NutriBullet Pro 900W High-Speed Personal Nutrient Blender Set brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","NutriBullet Pro 900W High-Speed Personal Nutrient Blender Set (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-NUT-NUTRPRO-403",
+    baseMsrp: 14000,
+    releaseYear: 2024,
   },
   {
     id: "app_ramtons_microwave_grill",
@@ -1446,6 +1719,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ramtons 20L Digital Microwave Oven with Grill (RM/585) Stainless brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Ramtons 20L Digital Microwave Oven with Grill (RM/585) Stainless (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-RAM-RAMTMICR-449",
+    baseMsrp: 16000,
+    releaseYear: 2024,
   },
   {
     id: "app_russell_hobbs_kettle",
@@ -1461,6 +1737,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Russell Hobbs 1.7L Stainless Steel Cordless Fast Boil Electric Kettle brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Russell Hobbs 1.7L Stainless Steel Cordless Fast Boil Electric Kettle (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-RUS-RUSSHOBB-151",
+    baseMsrp: 5900,
+    releaseYear: 2024,
   },
   {
     id: "app_delonghi_espresso_maker",
@@ -1476,6 +1755,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The De'Longhi Dedica Deluxe 15-Bar Stainless Pump Espresso Machine brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","De'Longhi Dedica Deluxe 15-Bar Stainless Pump Espresso Machine (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-DEL-DELOESPR-502",
+    baseMsrp: 36700,
+    releaseYear: 2024,
   },
   {
     id: "app_kenwood_stand_mixer",
@@ -1491,6 +1773,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Kenwood Prospero+ 1000W 4.3L Kitchen Stand Mixer & Food Processor brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Kenwood Prospero+ 1000W 4.3L Kitchen Stand Mixer & Food Processor (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-KEN-KENWSTAN-644",
+    baseMsrp: 32400,
+    releaseYear: 2024,
   },
   {
     id: "app_blackdecker_waffle_maker",
@@ -1506,6 +1791,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Black & Decker 3-in-1 Sandwich, Waffle & Panini Grill Maker brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Black & Decker 3-in-1 Sandwich, Waffle & Panini Grill Maker (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BLA-BLACWAFF-924",
+    baseMsrp: 7000,
+    releaseYear: 2024,
   },
   {
     id: "app_instant_pot_duo_6l",
@@ -1521,6 +1809,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Instant Pot Duo 7-in-1 Smart Electric Pressure Cooker 6L brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Instant Pot Duo 7-in-1 Smart Electric Pressure Cooker 6L (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-INS-INSTPOT-771",
+    baseMsrp: 21100,
+    releaseYear: 2024,
   },
 
   // --- Cooling & Refrigeration ---
@@ -1538,6 +1829,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung 253L Top Mount Frost-Free Digital Inverter Double Door Fridge brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-SAM-SAMS253L-113",
+    baseMsrp: 76700,
+    releaseYear: 2024,
   },
   {
     id: "app_lg_635l_side_by_side",
@@ -1553,6 +1847,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG 635L Side-by-Side Smart Inverter Refrigerator with Water Dispenser brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-LGE-LG635L-548",
+    baseMsrp: 221400,
+    releaseYear: 2024,
   },
   {
     id: "app_ramtons_200l_chest_freezer",
@@ -1568,6 +1865,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ramtons 200L Hard Top Deep Chest Freezer (CF/221) Fast Freezing brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Ramtons 200L Hard Top Deep Chest Freezer (CF/221) Fast Freezing (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-RAM-RAMT200L-597",
+    baseMsrp: 46400,
+    releaseYear: 2024,
   },
   {
     id: "app_mika_90l_mini_fridge",
@@ -1583,6 +1883,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Mika 90L Single Door Compact Bedroom Beverage Mini-Fridge brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Mika 90L Single Door Compact Bedroom Beverage Mini-Fridge (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MIK-MIKA90L-176",
+    baseMsrp: 24300,
+    releaseYear: 2024,
   },
   {
     id: "app_ramtons_water_dispenser",
@@ -1598,6 +1901,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ramtons Freestanding Hot & Cold Water Dispenser with Bottom Cabinet brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Ramtons Freestanding Hot & Cold Water Dispenser with Bottom Cabinet (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-RAM-RAMTWATE-966",
+    baseMsrp: 17100,
+    releaseYear: 2024,
   },
 
   // --- Cooking & Heavy Appliances ---
@@ -1615,6 +1921,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Mika 4-Gas Free-Standing Cooker 60x60 with Electric Oven & Rotisserie brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Mika 4-Gas Free-Standing Cooker 60x60 with Electric Oven & Rotisserie (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MIK-MIKA60X6-579",
+    baseMsrp: 44300,
+    releaseYear: 2024,
   },
   {
     id: "app_bosch_4burner_hob",
@@ -1630,6 +1939,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Serie 6 4-Burner Tempered Black Glass Built-In Gas Hob brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch Serie 6 4-Burner Tempered Black Glass Built-In Gas Hob (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-BOSC4BUR-854",
+    baseMsrp: 51800,
+    releaseYear: 2024,
   },
   {
     id: "app_ariston_90cm_hood",
@@ -1645,6 +1957,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ariston 90cm Stainless Steel Chimney Cooker Hood Extractor 700m³/h brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Ariston 90cm Stainless Steel Chimney Cooker Hood Extractor 700m³/h (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-ARI-ARIS90CM-253",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "app_bosch_66l_builtin_oven",
@@ -1660,6 +1975,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Serie 4 66L Built-in Electric Convection Fan Oven Stainless brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch Serie 4 66L Built-in Electric Convection Fan Oven Stainless (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-BOSC66L-555",
+    baseMsrp: 70200,
+    releaseYear: 2024,
   },
   {
     id: "app_beko_14place_dishwasher",
@@ -1675,6 +1993,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Beko 14-Place Settings Freestanding A++ Energy-Saver Dishwasher brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Beko 14-Place Settings Freestanding A++ Energy-Saver Dishwasher (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BEK-BEKO14PL-955",
+    baseMsrp: 60500,
+    releaseYear: 2024,
   },
 
   // --- Laundry & Garment Care ---
@@ -1692,6 +2013,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung 9kg Front Load EcoBubble AI Digital Inverter Washing Machine brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-SAM-SAMS9KG-614",
+    baseMsrp: 89600,
+    releaseYear: 2024,
   },
   {
     id: "app_lg_11kg_topload",
@@ -1707,6 +2031,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG 11kg Smart Inverter Smart Motion TurboWash Top-Load Washer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "3rd Gen AI Direct Drive Inverter Washing Machine (TurboWash 360)",
     lineage: ["LG 6 Motion Direct Drive (2017 Inverter DD)","LG AI DD V500 (2020 Fabric Sensing)","LG AI DD TurboWash 360 12kg (Current Steam+ Allergy Care 39-Min Rapid)"],
+    sku: "APP-LGE-LG11KG-506",
+    baseMsrp: 68000,
+    releaseYear: 2024,
   },
   {
     id: "app_ramtons_8kg_twintub",
@@ -1722,6 +2049,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ramtons 8kg Semi-Automatic Twin Tub Washer & High-Speed Spinner brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Ramtons 8kg Semi-Automatic Twin Tub Washer & High-Speed Spinner (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-RAM-RAMT8KG-431",
+    baseMsrp: 30200,
+    releaseYear: 2024,
   },
   {
     id: "app_bosch_8kg_dryer",
@@ -1737,6 +2067,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch 8kg Serie 4 Sensitive Drying Condenser Clothes Tumble Dryer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch 8kg Serie 4 Sensitive Drying Condenser Clothes Tumble Dryer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-BOSC8KG-255",
+    baseMsrp: 82100,
+    releaseYear: 2024,
   },
   {
     id: "app_philips_easyspeed_iron",
@@ -1752,6 +2085,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Philips EasySpeed Plus 2100W Non-Stick Ceramic Soleplate Steam Iron brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Philips EasySpeed Plus 2100W Non-Stick Ceramic Soleplate Steam Iron (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-PHP-PHILEASY-966",
+    baseMsrp: 4800,
+    releaseYear: 2024,
   },
   {
     id: "app_philips_garment_steamer",
@@ -1767,6 +2103,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Philips Handheld Compact Foldable Garment Steamer 1000W brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Philips Handheld Compact Foldable Garment Steamer 1000W (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-PHP-PHILGARM-284",
+    baseMsrp: 7600,
+    releaseYear: 2024,
   },
 
   // --- Climate Control & Air Care ---
@@ -1784,6 +2123,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)"," (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-GEN-BINA16-394",
+    baseMsrp: 6700,
+    releaseYear: 2024,
   },
   {
     id: "app_havells_52_ceiling_fan",
@@ -1799,6 +2141,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The  brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)"," (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-GEN-HAVE52-851",
+    baseMsrp: 11000,
+    releaseYear: 2024,
   },
   {
     id: "app_lg_12000btu_split_ac",
@@ -1814,6 +2159,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG Dual Inverter 12000 BTU Split Air Conditioner with Wi-Fi Control brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-LGE-LG1200-828",
+    baseMsrp: 82100,
+    releaseYear: 2024,
   },
   {
     id: "app_midea_portable_ac",
@@ -1829,6 +2177,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Midea 12000 BTU 3-in-1 Portable Rolling Air Conditioner & Dehumidifier brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Midea 12000 BTU 3-in-1 Portable Rolling Air Conditioner & Dehumidifier (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MID-MIDEPORT-125",
+    baseMsrp: 56200,
+    releaseYear: 2024,
   },
   {
     id: "app_xiaomi_air_purifier_4",
@@ -1844,6 +2195,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Xiaomi Smart Air Purifier 4 Compact with True HEPA Allergen Filter brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Xiaomi Standard Duty Line (Gen 1 Foundation)","Xiaomi Heavy-Duty Series (Gen 2 High-Capacity Revision)","Xiaomi Smart Air Purifier 4 Compact with True HEPA Allergen Filter (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-XIA-XIAOAIR-148",
+    baseMsrp: 17300,
+    releaseYear: 2024,
   },
   {
     id: "app_delonghi_ceramic_heater",
@@ -1859,6 +2213,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The De'Longhi Capsule 2000W Ceramic Fast Space Room Heater with Thermostat brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","De'Longhi Capsule 2000W Ceramic Fast Space Room Heater with Thermostat (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-DEL-DELOCERA-869",
+    baseMsrp: 8100,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -1880,6 +2237,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Jinko Solar 550W Tiger Pro Monocrystalline Half-Cell Solar Panel integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "N-Type TOPCon 16BB Ultra-High Efficiency Solar Generation",
     lineage: ["P-Type Mono PERC 450W (2020 9BB 20.8% Efficiency)","Tiger Pro Mono PERC 540W (2022 10BB Half-Cell)","Tiger Neo N-Type TOPCon 585W - 615W (Current 16BB 22.8% Bifacial)"],
+    sku: "SOL-JNK-SOLJINK-945",
+    baseMsrp: 17300,
+    releaseYear: 2024,
   },
   {
     id: "sol_victron_mppt_100_30",
@@ -1895,6 +2255,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Victron Energy SmartSolar MPPT 100/30 Solar Charge Controller integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Victron Energy SmartSolar MPPT 100/30 Solar Charge Controller (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-VIC-SOLVICT-538",
+    baseMsrp: 30200,
+    releaseYear: 2024,
   },
   {
     id: "sol_dlight_d200_kit",
@@ -1910,6 +2273,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the D.light D200 Solar Home System with 3 LED Lamps, Torch & FM Radio integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","D.light D200 Solar Home System with 3 LED Lamps, Torch & FM Radio (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-DLI-SOLDLIG-703",
+    baseMsrp: 12400,
+    releaseYear: 2024,
   },
   {
     id: "sol_street_light_300w",
@@ -1925,6 +2291,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Solar Integrated 300W IP67 Waterproof Outdoor LED Street & Floodlight integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Solar Integrated 300W IP67 Waterproof Outdoor LED Street & Floodlight (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-SOL-SOLSTRE-586",
+    baseMsrp: 7800,
+    releaseYear: 2024,
   },
   {
     id: "sol_dayliff_submersible_pump",
@@ -1940,6 +2309,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Dayliff SunFlo 150W DC Solar Submersible Borehole Water Pump Kit integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Dayliff SunFlo 150W DC Solar Submersible Borehole Water Pump Kit (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-DAY-SOLDAYL-247",
+    baseMsrp: 45400,
+    releaseYear: 2024,
   },
   {
     id: "sol_mc4_connectors_10pair",
@@ -1955,6 +2327,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Heavy-Duty IP68 Waterproof MC4 Solar Cable Connectors (10-Pairs) integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Heavy-Duty IP68 Waterproof MC4 Solar Cable Connectors (10-Pairs) (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-HEA-SOLMC4-358",
+    baseMsrp: 2100,
+    releaseYear: 2024,
   },
 
   // --- Inverters & Storage Batteries ---
@@ -1972,6 +2347,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Must 3KW 24V Pure Sine Wave Hybrid Solar Inverter with 60A MPPT integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "SOL-MUS-SOLMUST-301",
+    baseMsrp: 60500,
+    releaseYear: 2024,
   },
   {
     id: "sol_felicity_5kwh_lifepo4",
@@ -1987,6 +2365,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Felicity Solar 5KWh 48V 100Ah LiFePO4 Lithium Wall Battery Bank integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Felicity Solar 5KWh 48V 100Ah LiFePO4 Lithium Wall Battery Bank (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-FLC-SOLFELI-882",
+    baseMsrp: 178200,
+    releaseYear: 2024,
   },
   {
     id: "sol_ritar_200ah_gel_battery",
@@ -2002,6 +2383,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Ritar 12V 200Ah Deep Cycle Gel Maintenance-Free Solar Battery integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Ritar 12V 200Ah Deep Cycle Gel Maintenance-Free Solar Battery (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-RIT-SOLRITA-198",
+    baseMsrp: 41000,
+    releaseYear: 2024,
   },
   {
     id: "sol_ecoflow_river2_pro",
@@ -2017,6 +2401,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the EcoFlow RIVER 2 Pro 768Wh Portable Lithium LiFePO4 Power Station integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Heavy-Duty Expandable LFP Power Ecosystem (3600W - 7200W)",
     lineage: ["EcoFlow DELTA 1300 (2019 1260Wh NMC)","EcoFlow DELTA Max (2021 2016Wh Expandable)","EcoFlow DELTA Pro (Current 3600Wh EV-Grade LFP 6500+ Cycles 3600W AC)"],
+    sku: "SOL-ECO-SOLECOF-135",
+    baseMsrp: 96100,
+    releaseYear: 2024,
   },
   {
     id: "sol_apc_1100va_ups",
@@ -2032,6 +2419,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the APC Back-UPS 1100VA 230V AVR Heavy-Duty Battery Backup UPS integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","APC Back-UPS 1100VA 230V AVR Heavy-Duty Battery Backup UPS (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-APC-SOLAPC-634",
+    baseMsrp: 23800,
+    releaseYear: 2024,
   },
 
   // --- Backup Generators & Protection ---
@@ -2049,6 +2439,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Honda EU22i 2200W Super Silent Portable Inverter Petrol Generator integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "SOL-HON-GENHOND-239",
+    baseMsrp: 167400,
+    releaseYear: 2024,
   },
   {
     id: "gen_perkins_15kva_diesel",
@@ -2064,6 +2457,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Perkins 15kVA Silent Three-Phase Heavy Duty Soundproof Diesel Generator integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Perkins 15kVA Silent Three-Phase Heavy Duty Soundproof Diesel Generator (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-PER-GENPERK-161",
+    baseMsrp: 799200,
+    releaseYear: 2024,
   },
   {
     id: "prot_sollatek_avs30",
@@ -2079,6 +2475,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Sollatek Voltshield AVS30 Heavy-Duty Automatic Voltage Surge Protector integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Sollatek Voltshield AVS30 Heavy-Duty Automatic Voltage Surge Protector (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-SOL-PROTSOLL-409",
+    baseMsrp: 6300,
+    releaseYear: 2024,
   },
   {
     id: "prot_huntkey_surge_strip",
@@ -2094,6 +2493,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Huntkey 6-Outlet Heavy Duty Overload Surge Protected Power Strip 3m integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Huntkey 6-Outlet Heavy Duty Overload Surge Protected Power Strip 3m (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-HUN-PROTHUNT-892",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
   {
     id: "prot_tomzn_63a_ats",
@@ -2109,6 +2511,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Tomzn Dual Power 63A 2P Automatic Transfer Switch (ATS) for Generator integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Tomzn Dual Power 63A 2P Automatic Transfer Switch (ATS) for Generator (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-TOM-PROTTOMZ-776",
+    baseMsrp: 5900,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -2133,6 +2538,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Urban 450GSM French Terry Heavyweight Cotton Hoodie - Jet Black combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Urban 450GSM French Terry Heavyweight Cotton Hoodie - Jet Black (Current All-Weather Performance Release)"],
+    sku: "FSH-URB-FASHHEAV-711",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
   {
     id: "fash_graphic_tee",
@@ -2149,6 +2557,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Heavyweight 240GSM Crewneck Drop-Shoulder Graphic T-Shirt combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Heavyweight 240GSM Crewneck Drop-Shoulder Graphic T-Shirt (Current All-Weather Performance Release)"],
+    sku: "FSH-HEA-FASHGRAP-370",
+    baseMsrp: 1900,
+    releaseYear: 2024,
   },
   {
     id: "fash_pique_polo",
@@ -2165,6 +2576,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Classic Pique Breathable Cotton Slim-Fit Polo Shirt - Navy Blue combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Classic Pique Breathable Cotton Slim-Fit Polo Shirt - Navy Blue (Current All-Weather Performance Release)"],
+    sku: "FSH-CLA-FASHPIQU-184",
+    baseMsrp: 2500,
+    releaseYear: 2024,
   },
   {
     id: "fash_selvedge_denim",
@@ -2181,6 +2595,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Raw Selvedge Slim-Straight Stretch Denim Jeans - Deep Indigo combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Raw Selvedge Slim-Straight Stretch Denim Jeans - Deep Indigo (Current All-Weather Performance Release)"],
+    sku: "FSH-RAW-FASHSELV-922",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
   {
     id: "fash_cargo_pants",
@@ -2197,6 +2614,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Utility Multi-Pocket Tactical Chino Cargo Pants - Olive Green combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Anti-Gravity Seamless 3D Suspension Pack Lineup",
     lineage: ["Atmos AG 50 (2015 1st Gen Suspended Mesh)","Atmos AG 65 (2018 Fit-on-the-Fly Hipbelt)","Osprey Atmos AG 65 LT / 5.11 Rush 2.0 (Current Recycled Bluesign Ripstop)"],
+    sku: "FSH-UTI-FASHCARG-938",
+    baseMsrp: 3500,
+    releaseYear: 2024,
   },
   {
     id: "fash_tech_joggers",
@@ -2213,6 +2633,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tapered Tech Fleece Zippered Athletic Joggers - Heather Grey combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Tapered Tech Fleece Zippered Athletic Joggers - Heather Grey (Current All-Weather Performance Release)"],
+    sku: "FSH-TAP-FASHTECH-171",
+    baseMsrp: 2800,
+    releaseYear: 2024,
   },
   {
     id: "fash_formal_suit",
@@ -2229,6 +2652,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Modern Slim-Fit Two-Piece Formal Wool Blend Suit Set - Charcoal combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Modern Slim-Fit Two-Piece Formal Wool Blend Suit Set - Charcoal (Current All-Weather Performance Release)"],
+    sku: "FSH-MOD-FASHFORM-286",
+    baseMsrp: 15100,
+    releaseYear: 2024,
   },
   {
     id: "fash_leather_jacket",
@@ -2245,6 +2671,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Vintage Café Racer Full-Grain Leather Biker Jacket - Cognac Brown combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Vintage Café Racer Full-Grain Leather Biker Jacket - Cognac Brown (Current All-Weather Performance Release)"],
+    sku: "FSH-VIN-FASHLEAT-811",
+    baseMsrp: 10300,
+    releaseYear: 2024,
   },
 
   // --- Men's Footwear ---
@@ -2264,6 +2693,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Retro Low-Top Leather Court Sneakers - White / Forest Green combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Retro Low-Top Leather Court Sneakers - White / Forest Green (Current All-Weather Performance Release)"],
+    sku: "FSH-RET-SHOERETR-491",
+    baseMsrp: 5000,
+    releaseYear: 2024,
   },
   {
     id: "shoe_running_shoes",
@@ -2280,6 +2712,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Carbon Plate Breathable Performance Running Shoes - Electric Lime combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Carbon Plate Breathable Performance Running Shoes - Electric Lime (Current All-Weather Performance Release)"],
+    sku: "FSH-CAR-SHOERUNN-276",
+    baseMsrp: 6300,
+    releaseYear: 2024,
   },
   {
     id: "shoe_oxford_leather",
@@ -2296,6 +2731,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Handcrafted Full-Grain Leather Cap-Toe Oxford Dress Shoes - Black combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Handcrafted Full-Grain Leather Cap-Toe Oxford Dress Shoes - Black (Current All-Weather Performance Release)"],
+    sku: "FSH-HAN-SHOEOXFO-710",
+    baseMsrp: 8400,
+    releaseYear: 2024,
   },
   {
     id: "shoe_suede_penny_loafers",
@@ -2312,6 +2750,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Italian Suede Penny Loafers with Cushioned Insole - Snuff Brown combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Italian Suede Penny Loafers with Cushioned Insole - Snuff Brown (Current All-Weather Performance Release)"],
+    sku: "FSH-ITA-SHOESUED-724",
+    baseMsrp: 6400,
+    releaseYear: 2024,
   },
   {
     id: "shoe_chelsea_boots",
@@ -2328,6 +2769,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Goodyear-Welted Genuine Leather Chelsea Boots - Chestnut Brown combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Goodyear-Welted Genuine Leather Chelsea Boots - Chestnut Brown (Current All-Weather Performance Release)"],
+    sku: "FSH-GOO-SHOECHEL-479",
+    baseMsrp: 7500,
+    releaseYear: 2024,
   },
   {
     id: "shoe_leather_slides",
@@ -2344,6 +2788,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ergonomic Dual-Buckle Cork Footbed Genuine Leather Slides combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Ergonomic Dual-Buckle Cork Footbed Genuine Leather Slides (Current All-Weather Performance Release)"],
+    sku: "FSH-ERG-SHOELEAT-948",
+    baseMsrp: 3500,
+    releaseYear: 2024,
   },
 
   // --- Underwear & Loungewear ---
@@ -2362,6 +2809,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 100% Combed Cotton Breathable Anti-Chafe Boxer Briefs (3-Pack) combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","100% Combed Cotton Breathable Anti-Chafe Boxer Briefs (3-Pack) (Current All-Weather Performance Release)"],
+    sku: "FSH-100-UNDBOXE-365",
+    baseMsrp: 1800,
+    releaseYear: 2024,
   },
   {
     id: "und_ribbed_vests_3pack",
@@ -2378,6 +2828,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Premium Ribbed 100% Cotton Athletic Undershirts / Vests (3-Pack) combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Premium Ribbed 100% Cotton Athletic Undershirts / Vests (3-Pack) (Current All-Weather Performance Release)"],
+    sku: "FSH-PRE-UNDRIBB-503",
+    baseMsrp: 1500,
+    releaseYear: 2024,
   },
   {
     id: "und_cotton_pajamas",
@@ -2394,6 +2847,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Classic Woven Cotton Plaid Pajama Button Shirt & Pants Loungewear combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Classic Woven Cotton Plaid Pajama Button Shirt & Pants Loungewear (Current All-Weather Performance Release)"],
+    sku: "FSH-CLA-UNDCOTT-381",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
   {
     id: "und_cushioned_socks_5pack",
@@ -2409,6 +2865,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Arch-Support Heavy Cushioned Terry Crew Athletic Socks (5-Pack) combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Arch-Support Heavy Cushioned Terry Crew Athletic Socks (5-Pack) (Current All-Weather Performance Release)"],
+    sku: "FSH-ARC-UNDCUSH-655",
+    baseMsrp: 1300,
+    releaseYear: 2024,
   },
   {
     id: "und_thermal_base_layer",
@@ -2425,6 +2884,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Merino Wool Thermal Compression Base Layer Top & Bottom Set combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Merino Wool Thermal Compression Base Layer Top & Bottom Set (Current All-Weather Performance Release)"],
+    sku: "FSH-MER-UNDTHER-759",
+    baseMsrp: 4300,
+    releaseYear: 2024,
   },
 
   // --- Men's Accessories ---
@@ -2443,6 +2905,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Full-Grain Vegetable-Tanned Genuine Leather Belt with Brass Buckle combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Full-Grain Vegetable-Tanned Genuine Leather Belt with Brass Buckle (Current All-Weather Performance Release)"],
+    sku: "FSH-FUL-ACCLEAT-333",
+    baseMsrp: 2500,
+    releaseYear: 2024,
   },
   {
     id: "acc_bifold_wallet",
@@ -2458,6 +2923,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The RFID-Blocking Slim Bifold Genuine Leather Wallet with Card Slider combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","RFID-Blocking Slim Bifold Genuine Leather Wallet with Card Slider (Current All-Weather Performance Release)"],
+    sku: "FSH-RFI-ACCBIFO-822",
+    baseMsrp: 2800,
+    releaseYear: 2024,
   },
   {
     id: "acc_silk_tie_set",
@@ -2473,6 +2941,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Jacquard Silk Necktie & Matching Pocket Square Cufflink Gift Set combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Jacquard Silk Necktie & Matching Pocket Square Cufflink Gift Set (Current All-Weather Performance Release)"],
+    sku: "FSH-JAC-ACCSILK-793",
+    baseMsrp: 3600,
+    releaseYear: 2024,
   },
   {
     id: "acc_dad_cap",
@@ -2488,6 +2959,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Vintage Washed Cotton Unstructured Low-Profile Baseball Dad Cap combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Vintage Washed Cotton Unstructured Low-Profile Baseball Dad Cap (Current All-Weather Performance Release)"],
+    sku: "FSH-VIN-ACCDAD-808",
+    baseMsrp: 1600,
+    releaseYear: 2024,
   },
   {
     id: "acc_aviator_sunglasses",
@@ -2503,6 +2977,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Classic Teardrop Polarized Aviator Sunglasses (UV400 Gold Frame) combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Classic Teardrop Polarized Aviator Sunglasses (UV400 Gold Frame) (Current All-Weather Performance Release)"],
+    sku: "FSH-CLA-ACCAVIA-683",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -2527,6 +3004,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Pleated Satin Evening Cocktail Party Dress - Emerald Green combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Pleated Satin Evening Cocktail Party Dress - Emerald Green (Current All-Weather Performance Release)"],
+    sku: "FSH-PLE-WFASEVEN-284",
+    baseMsrp: 5200,
+    releaseYear: 2024,
   },
   {
     id: "wfash_satin_blouse",
@@ -2543,6 +3023,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Silk-Feel Button-Down Long Sleeve Office Blouse - Champagne combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Silk-Feel Button-Down Long Sleeve Office Blouse - Champagne (Current All-Weather Performance Release)"],
+    sku: "FSH-SIL-WFASSATI-754",
+    baseMsrp: 2600,
+    releaseYear: 2024,
   },
   {
     id: "wfash_highwaist_jeans",
@@ -2559,6 +3042,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Stretch High-Waist Butt-Lifting Denim Jeggings - Washed Blue combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Stretch High-Waist Butt-Lifting Denim Jeggings - Washed Blue (Current All-Weather Performance Release)"],
+    sku: "FSH-STR-WFASHIGH-314",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "wfash_tailored_trousers",
@@ -2575,6 +3061,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The High-Rise Pleated Wide-Leg Palazzo Dress Trousers - Beige combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","High-Rise Pleated Wide-Leg Palazzo Dress Trousers - Beige (Current All-Weather Performance Release)"],
+    sku: "FSH-HIG-WFASTAIL-752",
+    baseMsrp: 3500,
+    releaseYear: 2024,
   },
   {
     id: "wfash_pleated_skirt",
@@ -2591,6 +3080,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The High-Waist A-Line Accordion Pleated Metallic Midi Skirt combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","High-Waist A-Line Accordion Pleated Metallic Midi Skirt (Current All-Weather Performance Release)"],
+    sku: "FSH-HIG-WFASPLEA-905",
+    baseMsrp: 2800,
+    releaseYear: 2024,
   },
   {
     id: "wfash_knit_cardigan",
@@ -2607,6 +3099,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Soft Ribbed Knit Button-Front Longline Cardigan Sweater - Oatmeal combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Soft Ribbed Knit Button-Front Longline Cardigan Sweater - Oatmeal (Current All-Weather Performance Release)"],
+    sku: "FSH-SOF-WFASKNIT-180",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
   {
     id: "wfash_trench_coat",
@@ -2623,6 +3118,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Double-Breasted Classic Belted Windproof Trench Coat - British Tan combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Double-Breasted Classic Belted Windproof Trench Coat - British Tan (Current All-Weather Performance Release)"],
+    sku: "FSH-DOU-WFASTREN-598",
+    baseMsrp: 6000,
+    releaseYear: 2024,
   },
   {
     id: "wfash_wrap_jumpsuit",
@@ -2639,6 +3137,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Elegant Wide-Leg Wrap Belted Sleeveless Jumpsuit - Midnight Navy combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Elegant Wide-Leg Wrap Belted Sleeveless Jumpsuit - Midnight Navy (Current All-Weather Performance Release)"],
+    sku: "FSH-ELE-WFASWRAP-984",
+    baseMsrp: 4200,
+    releaseYear: 2024,
   },
 
   // --- Women's Shoes ---
@@ -2657,6 +3158,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Chunky Platform Breathable Casual Street Sneakers - White/Pink combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Chunky Platform Breathable Casual Street Sneakers - White/Pink (Current All-Weather Performance Release)"],
+    sku: "FSH-CHU-WSHOCHUN-480",
+    baseMsrp: 4500,
+    releaseYear: 2024,
   },
   {
     id: "wshoe_stiletto_pumps",
@@ -2673,6 +3177,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Pointed-Toe Patent Leather Classic 8cm Stiletto Pumps - Nude combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "WeatherTec Dark Room Hydrostatic Shield Generation",
     lineage: ["Coleman Classic Sundome (Standard PU 600mm Pin & Ring)","Coleman Instant Cabin (1-Minute Telescoping Poles)","Coleman Dark Room Skydome (Current 90% Sunlight Block WeatherTec 3000mm)"],
+    sku: "FSH-POI-WSHOSTIL-651",
+    baseMsrp: 5200,
+    releaseYear: 2024,
   },
   {
     id: "wshoe_ballet_flats",
@@ -2689,6 +3196,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Soft Memory Foam Pointed Ballet Slip-On Work Flats - Black combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Soft Memory Foam Pointed Ballet Slip-On Work Flats - Black (Current All-Weather Performance Release)"],
+    sku: "FSH-SOF-WSHOBALL-990",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "wshoe_ankle_boots",
@@ -2705,6 +3215,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Block-Heel Faux Suede Ankle Chelsea Dress Boots - Camel combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Block-Heel Faux Suede Ankle Chelsea Dress Boots - Camel (Current All-Weather Performance Release)"],
+    sku: "FSH-BLO-WSHOANKL-848",
+    baseMsrp: 5600,
+    releaseYear: 2024,
   },
   {
     id: "wshoe_espadrille_wedges",
@@ -2721,6 +3234,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Closed-Toe Ankle-Strap Jute Platform Espadrille Wedges - Ivory combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Closed-Toe Ankle-Strap Jute Platform Espadrille Wedges - Ivory (Current All-Weather Performance Release)"],
+    sku: "FSH-CLO-WSHOESPA-644",
+    baseMsrp: 4800,
+    releaseYear: 2024,
   },
   {
     id: "wshoe_strappy_sandals",
@@ -2737,6 +3253,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Minimalist Square-Toe Strappy Low-Block Heeled Sandals - Gold combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Minimalist Square-Toe Strappy Low-Block Heeled Sandals - Gold (Current All-Weather Performance Release)"],
+    sku: "FSH-MIN-WSHOSTRA-839",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
 
   // --- Handbags & Wallets ---
@@ -2754,6 +3273,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Structured Textured Vegan Leather Mini Crossbody Bag with Gold Chain combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Structured Textured Vegan Leather Mini Crossbody Bag with Gold Chain (Current All-Weather Performance Release)"],
+    sku: "FSH-STR-WBAGCROS-458",
+    baseMsrp: 3600,
+    releaseYear: 2024,
   },
   {
     id: "wbag_leather_tote",
@@ -2769,6 +3291,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Spacious Full-Grain Leather Work Tote Bag with 15\" Laptop Sleeve combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Spacious Full-Grain Leather Work Tote Bag with 15\" Laptop Sleeve (Current All-Weather Performance Release)"],
+    sku: "FSH-SPA-WBAGLEAT-460",
+    baseMsrp: 6500,
+    releaseYear: 2024,
   },
   {
     id: "wbag_hobo_satchel",
@@ -2784,6 +3309,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Slouchy Crescent Vegan Leather Shoulder Hobo Handbag - Toffee combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Slouchy Crescent Vegan Leather Shoulder Hobo Handbag - Toffee (Current All-Weather Performance Release)"],
+    sku: "FSH-SLO-WBAGHOBO-867",
+    baseMsrp: 4300,
+    releaseYear: 2024,
   },
   {
     id: "wbag_evening_clutch",
@@ -2799,6 +3327,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Glitter Sparkle Envelope Clutch Evening Party Wristlet Purse combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Glitter Sparkle Envelope Clutch Evening Party Wristlet Purse (Current All-Weather Performance Release)"],
+    sku: "FSH-GLI-WBAGEVEN-954",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
   {
     id: "wbag_compact_wallet",
@@ -2814,6 +3345,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The RFID-Blocking Multi-Card Compact Zip-Around Wallet - Rose Gold combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","RFID-Blocking Multi-Card Compact Zip-Around Wallet - Rose Gold (Current All-Weather Performance Release)"],
+    sku: "FSH-RFI-WBAGCOMP-737",
+    baseMsrp: 1900,
+    releaseYear: 2024,
   },
 
   // --- Lingerie & Shapewear ---
@@ -2832,6 +3366,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Seamless Wireless Ultra-Comfort Push-Up T-Shirt Bra (2-Pack) combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Seamless Wireless Ultra-Comfort Push-Up T-Shirt Bra (2-Pack) (Current All-Weather Performance Release)"],
+    sku: "FSH-SEA-WLINWIRE-826",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "wling_seamless_panties",
@@ -2848,6 +3385,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Invisible Laser-Cut Breathable Cotton Gusset Panties (5-Pack) combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Invisible Laser-Cut Breathable Cotton Gusset Panties (5-Pack) (Current All-Weather Performance Release)"],
+    sku: "FSH-INV-WLINSEAM-314",
+    baseMsrp: 2200,
+    releaseYear: 2024,
   },
   {
     id: "wling_waist_trainer",
@@ -2864,6 +3404,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 9-Steel Bone Latex High-Compression Hourglass Waist Trainer Cincher combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","9-Steel Bone Latex High-Compression Hourglass Waist Trainer Cincher (Current All-Weather Performance Release)"],
+    sku: "FSH-9ST-WLINWAIS-664",
+    baseMsrp: 4300,
+    releaseYear: 2024,
   },
   {
     id: "wling_shapewear_bodysuit",
@@ -2880,6 +3423,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Seamless Tummy-Control Butt-Lifting Open-Bust Shapewear Bodysuit combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Seamless Tummy-Control Butt-Lifting Open-Bust Shapewear Bodysuit (Current All-Weather Performance Release)"],
+    sku: "FSH-SEA-WLINSHAP-936",
+    baseMsrp: 4900,
+    releaseYear: 2024,
   },
   {
     id: "wling_silk_robe_set",
@@ -2896,6 +3442,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Mulberry Silk-Feel Lace Trim Cami Nightgown & Robe Loungewear Set combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["women's fashion Classic Heritage Edition (Original Silhouette)","women's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Mulberry Silk-Feel Lace Trim Cami Nightgown & Robe Loungewear Set (Current All-Weather Performance Release)"],
+    sku: "FSH-MUL-WLINSILK-513",
+    baseMsrp: 3900,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -2917,6 +3466,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The SEIKO 5 Sports Automatic 24-Jewel Stainless Steel Watch (100m Water) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","SEIKO 5 Sports Automatic 24-Jewel Stainless Steel Watch (100m Water) (Current Generation Flagship)"],
+    sku: "WTC-SEI-WATCSEIK-451",
+    baseMsrp: 34600,
+    releaseYear: 2024,
   },
   {
     id: "watch_citizen_ecodrive",
@@ -2932,6 +3484,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Citizen Eco-Drive Solar Ultra-Thin Quartz Analog Dress Watch is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Citizen Eco-Drive Solar Ultra-Thin Quartz Analog Dress Watch (Current Generation Flagship)"],
+    sku: "WTC-CTZ-WATCCITI-464",
+    baseMsrp: 23800,
+    releaseYear: 2024,
   },
   {
     id: "watch_casio_edifice",
@@ -2947,6 +3502,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Casio Edifice Solar Powered Tachymeter Chronograph Sports Watch is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Tough Solar Multi-Band 6 Full Metal Square Lineup",
     lineage: ["DW-5000C OG Square (1983 Kikuo Ibe Hollow Case)","DW-5600E (1996 Classic Illuminator Resin)","GMW-B5000 / GA-B2100 (Current Tough Solar Bluetooth Smartphone Link)"],
+    sku: "WTC-CAS-WATCCASI-855",
+    baseMsrp: 20500,
+    releaseYear: 2024,
   },
   {
     id: "watch_casio_gshock_2100",
@@ -2962,6 +3520,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Casio G-Shock GA-2100 'CasiOak' Carbon Core Guard Shock-Resistant Watch is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Tough Solar Multi-Band 6 Full Metal Square Lineup",
     lineage: ["DW-5000C OG Square (1983 Kikuo Ibe Hollow Case)","DW-5600E (1996 Classic Illuminator Resin)","GMW-B5000 / GA-B2100 (Current Tough Solar Bluetooth Smartphone Link)"],
+    sku: "WTC-CAS-WATCCASI-955",
+    baseMsrp: 18400,
+    releaseYear: 2024,
   },
   {
     id: "watch_dual_winder_box",
@@ -2977,6 +3538,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Carbon Fiber Dual Automatic Watch Winder Silent Motor Display Case is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Carbon Fiber Dual Automatic Watch Winder Silent Motor Display Case (Current Generation Flagship)"],
+    sku: "WTC-CAR-WATCDUAL-688",
+    baseMsrp: 15700,
+    releaseYear: 2024,
   },
 
   // --- Fine & Fashion Jewelry ---
@@ -2994,6 +3558,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 18K Gold Plated Herringbone Flat Snake Chain Necklace (Tarnish-Free) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","18K Gold Plated Herringbone Flat Snake Chain Necklace (Tarnish-Free) (Current Generation Flagship)"],
+    sku: "WTC-18K-JEWEHERR-844",
+    baseMsrp: 3500,
+    releaseYear: 2024,
   },
   {
     id: "jewel_teardrop_earrings",
@@ -3009,6 +3576,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Chunky Teardrop 18K Gold Plated Lightweight Hollow Hoop Earrings is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Chunky Teardrop 18K Gold Plated Lightweight Hollow Hoop Earrings (Current Generation Flagship)"],
+    sku: "WTC-CHU-JEWETEAR-643",
+    baseMsrp: 2400,
+    releaseYear: 2024,
   },
   {
     id: "jewel_cuban_bracelet",
@@ -3024,6 +3594,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Heavy Cuban Curb Link 316L Stainless Steel Bracelet - Silver/Gold is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Heavy Cuban Curb Link 316L Stainless Steel Bracelet - Silver/Gold (Current Generation Flagship)"],
+    sku: "WTC-HEA-JEWECUBA-638",
+    baseMsrp: 2800,
+    releaseYear: 2024,
   },
   {
     id: "jewel_tungsten_band",
@@ -3040,6 +3613,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Brushed Black Tungsten Carbide Comfort-Fit Wedding Band Ring is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Brushed Black Tungsten Carbide Comfort-Fit Wedding Band Ring (Current Generation Flagship)"],
+    sku: "WTC-BRU-JEWETUNG-128",
+    baseMsrp: 3900,
+    releaseYear: 2024,
   },
   {
     id: "jewel_lapel_brooch",
@@ -3055,6 +3631,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Crystal Pearl Vintage Floral Suit Lapel Brooch Pin - Gold/Silver is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Crystal Pearl Vintage Floral Suit Lapel Brooch Pin - Gold/Silver (Current Generation Flagship)"],
+    sku: "WTC-CRY-JEWELAPE-530",
+    baseMsrp: 1700,
+    releaseYear: 2024,
   },
   {
     id: "jewel_velvet_organizer",
@@ -3070,6 +3649,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Double-Layer Portable Velvet Travel Jewelry Box with Mirror & Lock is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Double-Layer Portable Velvet Travel Jewelry Box with Mirror & Lock (Current Generation Flagship)"],
+    sku: "WTC-DOU-JEWEVELV-736",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
 
   // --- Eyewear & Optics ---
@@ -3087,6 +3669,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Retro Hexagonal Metal Frame Polarized UV400 Sunglasses - Gold/Green is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Retro Hexagonal Metal Frame Polarized UV400 Sunglasses - Gold/Green (Current Generation Flagship)"],
+    sku: "WTC-RET-OPTHEX-466",
+    baseMsrp: 3700,
+    releaseYear: 2024,
   },
   {
     id: "opt_anti_bluelight",
@@ -3102,6 +3687,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Blue Light Blocking Anti-Eye Strain Computer Reading Glasses is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Blue Light Blocking Anti-Eye Strain Computer Reading Glasses (Current Generation Flagship)"],
+    sku: "WTC-BLU-OPTANTI-697",
+    baseMsrp: 2600,
+    releaseYear: 2024,
   },
   {
     id: "opt_retro_acetate_frames",
@@ -3117,6 +3705,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Vintage Round Tortoiseshell Acetate Prescription-Ready Eyeglass Frames is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Vintage Round Tortoiseshell Acetate Prescription-Ready Eyeglass Frames (Current Generation Flagship)"],
+    sku: "WTC-VIN-OPTRETR-191",
+    baseMsrp: 4500,
+    releaseYear: 2024,
   },
   {
     id: "opt_magnifying_reading",
@@ -3132,6 +3723,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Magnetic Front-Connect Hangable Neck Magnifying Reading Glasses (+2.00) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Magnetic Front-Connect Hangable Neck Magnifying Reading Glasses (+2.00) (Current Generation Flagship)"],
+    sku: "WTC-MAG-OPTMAGN-646",
+    baseMsrp: 2200,
+    releaseYear: 2024,
   },
   {
     id: "opt_leather_sunglass_case",
@@ -3147,6 +3741,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Handcrafted Genuine Leather Hard-Shell Sunglasses Case + Braided Cord is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Handcrafted Genuine Leather Hard-Shell Sunglasses Case + Braided Cord (Current Generation Flagship)"],
+    sku: "WTC-HAN-OPTLEAT-681",
+    baseMsrp: 2100,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -3168,6 +3765,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nordic Fabric 4-Seater L-Shaped Corner Sectional Couch with Chaise is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Nordic Fabric 4-Seater L-Shaped Corner Sectional Couch with Chaise (Current Generation Flagship)"],
+    sku: "HOM-NOR-FURNSECT-730",
+    baseMsrp: 60500,
+    releaseYear: 2024,
   },
   {
     id: "furn_nesting_coffee_tables",
@@ -3183,6 +3783,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nesting Round Tempered Glass & Gold Metal Coffee Table (Set of 2) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Nesting Round Tempered Glass & Gold Metal Coffee Table (Set of 2) (Current Generation Flagship)"],
+    sku: "HOM-NES-FURNNEST-563",
+    baseMsrp: 18900,
+    releaseYear: 2024,
   },
   {
     id: "furn_tv_stand_console",
@@ -3198,6 +3801,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Modern Minimalist 65\" TV Stand Media Console with 3 Storage Drawers is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Modern Minimalist 65\" TV Stand Media Console with 3 Storage Drawers (Current Generation Flagship)"],
+    sku: "HOM-MOD-FURNTV-513",
+    baseMsrp: 23800,
+    releaseYear: 2024,
   },
   {
     id: "furn_mahogany_bed",
@@ -3213,6 +3819,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Solid Hardwood Mahogany 5x6 Bed Frame with Tufted Padded Headboard is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Solid Hardwood Mahogany 5x6 Bed Frame with Tufted Padded Headboard (Current Generation Flagship)"],
+    sku: "HOM-ASU-FURNMAHO-250",
+    baseMsrp: 41000,
+    releaseYear: 2024,
   },
   {
     id: "furn_orthopedic_mattress",
@@ -3228,6 +3837,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Slumber King 5x6 High-Density Orthopedic Spring Mattress (10-Inch) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Slumber King 5x6 High-Density Orthopedic Spring Mattress (10-Inch) (Current Generation Flagship)"],
+    sku: "HOM-SLU-FURNORTH-853",
+    baseMsrp: 30800,
+    releaseYear: 2024,
   },
   {
     id: "furn_ergonomic_office_chair",
@@ -3243,6 +3855,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The High-Back Breathable Mesh Ergonomic Office Chair with 3D Lumbar Support is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","High-Back Breathable Mesh Ergonomic Office Chair with 3D Lumbar Support (Current Generation Flagship)"],
+    sku: "HOM-HIG-FURNERGO-968",
+    baseMsrp: 21100,
+    releaseYear: 2024,
   },
   {
     id: "furn_standing_desk",
@@ -3258,6 +3873,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Dual-Motor Electric Height-Adjustable Standing Desk 140x70cm is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Dual-Motor Electric Height-Adjustable Standing Desk 140x70cm (Current Generation Flagship)"],
+    sku: "HOM-DUA-FURNSTAN-176",
+    baseMsrp: 42700,
+    releaseYear: 2024,
   },
   {
     id: "furn_wooden_dining_set",
@@ -3273,6 +3891,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Contemporary 6-Seater Solid Hardwood Dining Table + Padded Chairs is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Contemporary 6-Seater Solid Hardwood Dining Table + Padded Chairs (Current Generation Flagship)"],
+    sku: "HOM-CON-FURNWOOD-557",
+    baseMsrp: 64800,
+    releaseYear: 2024,
   },
 
   // --- Cookware & Dining ---
@@ -3290,6 +3911,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Dessini 10-Piece Die-Cast Granite Non-Stick Cookware Pot & Pan Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Dessini 10-Piece Die-Cast Granite Non-Stick Cookware Pot & Pan Set (Current Generation Flagship)"],
+    sku: "HOM-DES-COOKGRAN-737",
+    baseMsrp: 12400,
+    releaseYear: 2024,
   },
   {
     id: "cook_cast_iron_dutch",
@@ -3305,6 +3929,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Pre-Seasoned Heavy Cast Iron 10-Inch Skillet & 5L Dutch Oven Combo is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Pre-Seasoned Heavy Cast Iron 10-Inch Skillet & 5L Dutch Oven Combo (Current Generation Flagship)"],
+    sku: "HOM-PRE-COOKCAST-338",
+    baseMsrp: 8900,
+    releaseYear: 2024,
   },
   {
     id: "cook_chef_knife_block",
@@ -3320,6 +3947,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The German High-Carbon Stainless Steel 6-Piece Chef Knife Block Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","German High-Carbon Stainless Steel 6-Piece Chef Knife Block Set (Current Generation Flagship)"],
+    sku: "HOM-GER-COOKCHEF-921",
+    baseMsrp: 7300,
+    releaseYear: 2024,
   },
   {
     id: "cook_gold_cutlery_set",
@@ -3335,6 +3965,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 24-Piece Mirror-Polished Gold Stainless Steel Cutlery Flatware Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","24-Piece Mirror-Polished Gold Stainless Steel Cutlery Flatware Set (Current Generation Flagship)"],
+    sku: "HOM-24P-COOKGOLD-865",
+    baseMsrp: 5200,
+    releaseYear: 2024,
   },
   {
     id: "cook_ceramic_dinnerware",
@@ -3350,6 +3983,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 16-Piece Matte Black Ceramic Dinnerware Plates & Bowls Service for 4 is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","16-Piece Matte Black Ceramic Dinnerware Plates & Bowls Service for 4 (Current Generation Flagship)"],
+    sku: "HOM-16P-COOKCERA-363",
+    baseMsrp: 9600,
+    releaseYear: 2024,
   },
   {
     id: "cook_glass_tumblers_6pack",
@@ -3365,6 +4001,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Highball Heavy-Base Tempered Glass Tumbler Drinking Cups (Pack of 6) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Highball Heavy-Base Tempered Glass Tumbler Drinking Cups (Pack of 6) (Current Generation Flagship)"],
+    sku: "HOM-HIG-COOKGLAS-178",
+    baseMsrp: 2600,
+    releaseYear: 2024,
   },
   {
     id: "cook_acacia_cutting_board",
@@ -3380,6 +4019,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Organic Acacia Wood End-Grain Reversible Chopping Board with Groove is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Organic Acacia Wood End-Grain Reversible Chopping Board with Groove (Current Generation Flagship)"],
+    sku: "HOM-ORG-COOKACAC-891",
+    baseMsrp: 3700,
+    releaseYear: 2024,
   },
 
   // --- Home Decor & Lighting ---
@@ -3397,6 +4039,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 60cm Large Nordic Metal Minimalist Silent Non-Ticking Wall Clock is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","60cm Large Nordic Metal Minimalist Silent Non-Ticking Wall Clock (Current Generation Flagship)"],
+    sku: "HOM-60C-DECONORD-933",
+    baseMsrp: 5200,
+    releaseYear: 2024,
   },
   {
     id: "decor_canvas_wall_art",
@@ -3412,6 +4057,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Large 3-Piece Framed Modern Gold & Navy Abstract Canvas Wall Art is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Large 3-Piece Framed Modern Gold & Navy Abstract Canvas Wall Art (Current Generation Flagship)"],
+    sku: "HOM-LAR-DECOCANV-679",
+    baseMsrp: 8600,
+    releaseYear: 2024,
   },
   {
     id: "decor_standing_floor_lamp",
@@ -3427,6 +4075,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Dimmable Modern Arc Standing Floor Lamp with Natural Linen Shade is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Dimmable Modern Arc Standing Floor Lamp with Natural Linen Shade (Current Generation Flagship)"],
+    sku: "HOM-DIM-DECOSTAN-764",
+    baseMsrp: 7800,
+    releaseYear: 2024,
   },
   {
     id: "decor_rgb_strip_lights",
@@ -3442,6 +4093,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 10m Wi-Fi Tuya App Smart RGBIC LED Strip Lights with Music Sync is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","10m Wi-Fi Tuya App Smart RGBIC LED Strip Lights with Music Sync (Current Generation Flagship)"],
+    sku: "HOM-TUY-DECORGB-592",
+    baseMsrp: 3500,
+    releaseYear: 2024,
   },
   {
     id: "decor_moroccan_area_rug",
@@ -3457,6 +4111,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ultra-Soft Moroccan Geometric Shaggy Living Room Area Rug (5x7 ft) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Ultra-Soft Moroccan Geometric Shaggy Living Room Area Rug (5x7 ft) (Current Generation Flagship)"],
+    sku: "HOM-ULT-DECOMORO-759",
+    baseMsrp: 11300,
+    releaseYear: 2024,
   },
   {
     id: "decor_blackout_curtains",
@@ -3472,6 +4129,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Thermal Insulated 100% Total Blackout Eyelet Curtains (2-Panels Set) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Thermal Insulated 100% Total Blackout Eyelet Curtains (2-Panels Set) (Current Generation Flagship)"],
+    sku: "HOM-THE-DECOBLAC-971",
+    baseMsrp: 4500,
+    releaseYear: 2024,
   },
   {
     id: "decor_ceramic_vases_pair",
@@ -3487,6 +4147,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nordic Donut Ceramic Matte White Decorative Flower Vase Pair is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Nordic Donut Ceramic Matte White Decorative Flower Vase Pair (Current Generation Flagship)"],
+    sku: "HOM-NOR-DECOCERA-122",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
 
   // --- Bedding & Bath ---
@@ -3504,6 +4167,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 400 Thread Count 100% Egyptian Cotton 4-Piece Bed Sheet Set (5x6) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","400 Thread Count 100% Egyptian Cotton 4-Piece Bed Sheet Set (5x6) (Current Generation Flagship)"],
+    sku: "HOM-400-BEDEGYP-330",
+    baseMsrp: 5900,
+    releaseYear: 2024,
   },
   {
     id: "bed_microfiber_duvet",
@@ -3519,6 +4185,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The All-Season 300GSM Plush Hypoallergenic Microfiber Comforter Duvet (Queen) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","All-Season 300GSM Plush Hypoallergenic Microfiber Comforter Duvet (Queen) (Current Generation Flagship)"],
+    sku: "HOM-ALL-BEDMICR-515",
+    baseMsrp: 5000,
+    releaseYear: 2024,
   },
   {
     id: "bed_orthopedic_pillow",
@@ -3534,6 +4203,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Contour Cervical Orthopedic Ergonomic Slow-Rebound Memory Foam Pillow is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Contour Cervical Orthopedic Ergonomic Slow-Rebound Memory Foam Pillow (Current Generation Flagship)"],
+    sku: "HOM-CON-BEDORTH-539",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
   {
     id: "bed_throw_blanket",
@@ -3549,6 +4221,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Velvet Touch Herringbone Soft Warm Sofa & Bed Throw Blanket is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Velvet Touch Herringbone Soft Warm Sofa & Bed Throw Blanket (Current Generation Flagship)"],
+    sku: "HOM-VEL-BEDTHRO-408",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
   {
     id: "bath_cotton_towels_2pack",
@@ -3564,6 +4239,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 600GSM Turkish 100% Ring-Spun Cotton Jumbo Bath Towels (Set of 2) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","600GSM Turkish 100% Ring-Spun Cotton Jumbo Bath Towels (Set of 2) (Current Generation Flagship)"],
+    sku: "HOM-600-BATHCOTT-252",
+    baseMsrp: 3600,
+    releaseYear: 2024,
   },
   {
     id: "bath_memory_foam_mat",
@@ -3579,6 +4257,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Cobblestone Embossed Ultra-Absorbent Non-Slip Memory Foam Bath Mat is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Cobblestone Embossed Ultra-Absorbent Non-Slip Memory Foam Bath Mat (Current Generation Flagship)"],
+    sku: "HOM-COB-BATHMEMO-668",
+    baseMsrp: 1700,
+    releaseYear: 2024,
   },
 
   // --- Storage & Home Organization ---
@@ -3596,6 +4277,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 5-Tier Heavy Duty Rust-Resistant Metal Entryway Shoe Storage Rack is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","5-Tier Heavy Duty Rust-Resistant Metal Entryway Shoe Storage Rack (Current Generation Flagship)"],
+    sku: "HOM-5TI-STORMETA-804",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
   {
     id: "stor_wardrobe_bins_3pack",
@@ -3611,6 +4295,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Foldable Fabric Wardrobe Clothes Organizer Storage Bins (3-Pack) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Foldable Fabric Wardrobe Clothes Organizer Storage Bins (3-Pack) (Current Generation Flagship)"],
+    sku: "HOM-FOL-STORWARD-565",
+    baseMsrp: 2600,
+    releaseYear: 2024,
   },
   {
     id: "stor_clothes_drying_rack",
@@ -3626,6 +4313,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Multi-Wing Stainless Steel Foldable Heavy Duty Clothes Laundry Drying Rack is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Multi-Wing Stainless Steel Foldable Heavy Duty Clothes Laundry Drying Rack (Current Generation Flagship)"],
+    sku: "HOM-MUL-STORCLOT-489",
+    baseMsrp: 5400,
+    releaseYear: 2024,
   },
   {
     id: "stor_airtight_containers_7p",
@@ -3641,6 +4331,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 7-Piece BPA-Free Airtight Cereal & Dry Food Storage Container Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","7-Piece BPA-Free Airtight Cereal & Dry Food Storage Container Set (Current Generation Flagship)"],
+    sku: "HOM-7PI-STORAIRT-194",
+    baseMsrp: 4200,
+    releaseYear: 2024,
   },
   {
     id: "stor_vacuum_storage_bags",
@@ -3656,6 +4349,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Heavy Duty Vacuum Storage Compression Bags with Hand Pump (6-Pack) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Heavy Duty Vacuum Storage Compression Bags with Hand Pump (6-Pack) (Current Generation Flagship)"],
+    sku: "HOM-HEA-STORVACU-522",
+    baseMsrp: 2600,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -3677,6 +4373,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 13x4 HD Glueless 100% Virgin Brazilian Human Hair Bone Straight Wig is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","13x4 HD Glueless 100% Virgin Brazilian Human Hair Bone Straight Wig (Current Generation Flagship)"],
+    sku: "BTY-13X-BTYLACE-381",
+    baseMsrp: 21100,
+    releaseYear: 2024,
   },
   {
     id: "bty_synthetic_braids",
@@ -3692,6 +4391,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Pre-Stretched Lightweight Synthetic Jumbo Braiding Hair (Pack of 3) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Pre-Stretched Lightweight Synthetic Jumbo Braiding Hair (Pack of 3) (Current Generation Flagship)"],
+    sku: "BTY-PRE-BTYSYNT-283",
+    baseMsrp: 1600,
+    releaseYear: 2024,
   },
   {
     id: "bty_ionic_blow_dryer",
@@ -3707,6 +4409,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 2200W Professional Fast-Drying Negative Ionic Ceramic Hair Blow Dryer is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","2200W Professional Fast-Drying Negative Ionic Ceramic Hair Blow Dryer (Current Generation Flagship)"],
+    sku: "BTY-220-BTYIONI-464",
+    baseMsrp: 6000,
+    releaseYear: 2024,
   },
   {
     id: "bty_titanium_flat_iron",
@@ -3722,6 +4427,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 1-Inch Nano Titanium Digital Salon Hair Flat Iron Straightener (450°F) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","1-Inch Nano Titanium Digital Salon Hair Flat Iron Straightener (450°F) (Current Generation Flagship)"],
+    sku: "BTY-1IN-BTYTITA-748",
+    baseMsrp: 5200,
+    releaseYear: 2024,
   },
   {
     id: "bty_auto_curling_wand",
@@ -3737,6 +4445,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Anti-Scald Cordless Automatic Ceramic Rotating Hair Curling Iron Wand is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Anti-Scald Cordless Automatic Ceramic Rotating Hair Curling Iron Wand (Current Generation Flagship)"],
+    sku: "BTY-ANT-BTYAUTO-757",
+    baseMsrp: 5600,
+    releaseYear: 2024,
   },
   {
     id: "bty_kemei_clippers",
@@ -3752,6 +4463,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Kemei Professional Cordless T-Blade Hair & Beard Outliner Trimmer Clipper is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Kemei Professional Cordless T-Blade Hair & Beard Outliner Trimmer Clipper (Current Generation Flagship)"],
+    sku: "BTY-KEM-BTYKEME-286",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
   {
     id: "bty_beard_grooming_kit",
@@ -3767,6 +4481,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 10-in-1 Complete Men's Beard Grooming Oil, Balm, Boar Brush & Scissor Kit is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","10-in-1 Complete Men's Beard Grooming Oil, Balm, Boar Brush & Scissor Kit (Current Generation Flagship)"],
+    sku: "BTY-10I-BTYBEAR-794",
+    baseMsrp: 3500,
+    releaseYear: 2024,
   },
 
   // --- Skincare & Wellness Devices ---
@@ -3784,6 +4501,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The IPX7 Waterproof Ultra-Hygienic Silicone Sonic Facial Cleansing Brush is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","IPX7 Waterproof Ultra-Hygienic Silicone Sonic Facial Cleansing Brush (Current Generation Flagship)"],
+    sku: "BTY-IPX-BTYSONI-966",
+    baseMsrp: 2600,
+    releaseYear: 2024,
   },
   {
     id: "bty_microcurrent_facelift",
@@ -3799,6 +4519,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The EMS Micro-Current V-Face Shaping Contour Firming Skin Massage Device is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","EMS Micro-Current V-Face Shaping Contour Firming Skin Massage Device (Current Generation Flagship)"],
+    sku: "BTY-EMS-BTYMICR-250",
+    baseMsrp: 5000,
+    releaseYear: 2024,
   },
   {
     id: "bty_massage_gun",
@@ -3814,6 +4537,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 30-Speed High-Frequency Deep Tissue Muscle Massage Gun with 6 Heads is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","30-Speed High-Frequency Deep Tissue Muscle Massage Gun with 6 Heads (Current Generation Flagship)"],
+    sku: "BTY-30S-BTYMASS-536",
+    baseMsrp: 7300,
+    releaseYear: 2024,
   },
   {
     id: "bty_led_therapy_mask",
@@ -3829,6 +4555,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 7-Color LED Photon Light Therapy Facial Skin Rejuvenation Beauty Mask is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","7-Color LED Photon Light Therapy Facial Skin Rejuvenation Beauty Mask (Current Generation Flagship)"],
+    sku: "BTY-7CO-BTYLED-254",
+    baseMsrp: 8900,
+    releaseYear: 2024,
   },
   {
     id: "bty_guasha_jade_roller",
@@ -3844,6 +4573,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 100% Natural Rose Quartz Jade Roller & Gua Sha Facial Massage Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","100% Natural Rose Quartz Jade Roller & Gua Sha Facial Massage Set (Current Generation Flagship)"],
+    sku: "BTY-100-BTYGUAS-295",
+    baseMsrp: 2200,
+    releaseYear: 2024,
   },
   {
     id: "bty_foot_callus_remover",
@@ -3859,6 +4591,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Rechargeable Electronic Waterproof Hard Skin Foot Callus File Scraper is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Rechargeable Electronic Waterproof Hard Skin Foot Callus File Scraper (Current Generation Flagship)"],
+    sku: "BTY-REC-BTYFOOT-372",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
 
   // --- Oral Care & Shaving ---
@@ -3876,6 +4611,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sonic 40,000 VPM USB Rechargeable Electric Toothbrush with 8 Brush Heads is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Sonic 40,000 VPM USB Rechargeable Electric Toothbrush with 8 Brush Heads (Current Generation Flagship)"],
+    sku: "BTY-SON-BTYSONI-653",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
   {
     id: "bty_water_dental_flosser",
@@ -3891,6 +4629,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 300ml IPX7 Waterproof High-Pressure Cordless Oral Irrigator Water Flosser is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","300ml IPX7 Waterproof High-Pressure Cordless Oral Irrigator Water Flosser (Current Generation Flagship)"],
+    sku: "BTY-300-BTYWATE-683",
+    baseMsrp: 4500,
+    releaseYear: 2024,
   },
   {
     id: "bty_rotary_shaver",
@@ -3906,6 +4647,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Philips 3D Floating Head Wet & Dry Rotary Rechargeable Electric Shaver is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Philips 3D Floating Head Wet & Dry Rotary Rechargeable Electric Shaver (Current Generation Flagship)"],
+    sku: "BTY-PHP-BTYROTA-881",
+    baseMsrp: 7600,
+    releaseYear: 2024,
   },
   {
     id: "bty_ipl_laser_hair_remover",
@@ -3921,6 +4665,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 999,999 Flashes Painless Permanent IPL Laser Hair Removal Handset is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","999,999 Flashes Painless Permanent IPL Laser Hair Removal Handset (Current Generation Flagship)"],
+    sku: "BTY-999-BTYIPL-929",
+    baseMsrp: 9900,
+    releaseYear: 2024,
   },
 
   // --- Makeup Accessories & Scent ---
@@ -3938,6 +4685,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 14-Piece Ultra-Soft Synthetic Bristle Professional Makeup Brush Set with Case is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","14-Piece Ultra-Soft Synthetic Bristle Professional Makeup Brush Set with Case (Current Generation Flagship)"],
+    sku: "BTY-14P-BTYMAKE-208",
+    baseMsrp: 3500,
+    releaseYear: 2024,
   },
   {
     id: "bty_led_vanity_mirror",
@@ -3953,6 +4703,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tri-Fold 3X/2X/1X Magnification Touch Screen LED Vanity Makeup Mirror is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Tri-Fold 3X/2X/1X Magnification Touch Screen LED Vanity Makeup Mirror (Current Generation Flagship)"],
+    sku: "BTY-TRI-BTYLED-171",
+    baseMsrp: 3900,
+    releaseYear: 2024,
   },
   {
     id: "bty_makeup_organizer_case",
@@ -3968,6 +4721,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 360-Degree Rotating Adjustable Acrylic Cosmetic & Makeup Organizer Carousel is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","360-Degree Rotating Adjustable Acrylic Cosmetic & Makeup Organizer Carousel (Current Generation Flagship)"],
+    sku: "BTY-360-BTYMAKE-890",
+    baseMsrp: 3700,
+    releaseYear: 2024,
   },
   {
     id: "bty_perfume_club_de_nuit",
@@ -3983,6 +4739,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Club de Nuit Intense Man 105ml Pure Parfum (Long-Lasting Woody Smoky) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Club de Nuit Intense Man 105ml Pure Parfum (Long-Lasting Woody Smoky) (Current Generation Flagship)"],
+    sku: "BTY-CLU-BTYPERF-502",
+    baseMsrp: 8100,
+    releaseYear: 2024,
   },
   {
     id: "bty_perfume_lattafa_yara",
@@ -3998,6 +4757,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Lattafa Yara Eau de Parfum 100ml for Women (Vanilla Orchid Sweet Scent) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Lattafa Yara Eau de Parfum 100ml for Women (Vanilla Orchid Sweet Scent) (Current Generation Flagship)"],
+    sku: "BTY-HPI-BTYPERF-846",
+    baseMsrp: 5000,
+    releaseYear: 2024,
   },
   {
     id: "bty_aroma_oil_diffuser",
@@ -4013,6 +4775,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 500ml Remote-Controlled Ultrasonic Cool Mist Essential Oil Aroma Diffuser is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","500ml Remote-Controlled Ultrasonic Cool Mist Essential Oil Aroma Diffuser (Current Generation Flagship)"],
+    sku: "BTY-500-BTYAROM-762",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -4034,6 +4799,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 9\" Universal Android 13 Car Stereo Multimedia Player (CarPlay/Android Auto) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","9\" Universal Android 13 Car Stereo Multimedia Player (CarPlay/Android Auto) (Current Generation Flagship)"],
+    sku: "AUT-GEN-AUTOANDR-803",
+    baseMsrp: 17300,
+    releaseYear: 2024,
   },
   {
     id: "auto_4k_dash_cam",
@@ -4049,6 +4817,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 4K Ultra HD Dual Lens Front & Rear Dash Cam with Night Vision & GPS is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","4K Ultra HD Dual Lens Front & Rear Dash Cam with Night Vision & GPS (Current Generation Flagship)"],
+    sku: "AUT-GEN-AUTO4K-246",
+    baseMsrp: 11300,
+    releaseYear: 2024,
   },
   {
     id: "auto_pioneer_subwoofer",
@@ -4064,6 +4835,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Pioneer 12\" 1400W Champion Series Subwoofer with Vented Enclosure Box is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Pioneer 12\" 1400W Champion Series Subwoofer with Vented Enclosure Box (Current Generation Flagship)"],
+    sku: "AUT-PIO-AUTOPION-327",
+    baseMsrp: 14600,
+    releaseYear: 2024,
   },
   {
     id: "auto_bluetooth_fm_transmitter",
@@ -4079,6 +4853,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The PD 30W Fast USB-C Dual Port Car Charger with Bluetooth 5.3 FM Transmitter is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","PD 30W Fast USB-C Dual Port Car Charger with Bluetooth 5.3 FM Transmitter (Current Generation Flagship)"],
+    sku: "AUT-GEN-AUTOBLUE-126",
+    baseMsrp: 2600,
+    releaseYear: 2024,
   },
   {
     id: "auto_jump_starter",
@@ -4094,6 +4871,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Baseus 20,000mAh 1000A Heavy Duty 12V Emergency Car Battery Jump Starter is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Baseus 20,000mAh 1000A Heavy Duty 12V Emergency Car Battery Jump Starter (Current Generation Flagship)"],
+    sku: "AUT-BAS-AUTOJUMP-414",
+    baseMsrp: 11300,
+    releaseYear: 2024,
   },
   {
     id: "auto_tire_inflator",
@@ -4109,6 +4889,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The High-Speed Digital Preset Cordless 12V Car Tire Air Compressor Pump is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","High-Speed Digital Preset Cordless 12V Car Tire Air Compressor Pump (Current Generation Flagship)"],
+    sku: "AUT-HIG-AUTOTIRE-760",
+    baseMsrp: 6000,
+    releaseYear: 2024,
   },
   {
     id: "auto_obd2_scanner",
@@ -4124,6 +4907,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The ELM327 Bluetooth OBD2 Car Engine Diagnostic Code Reader Scanner Tool is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","ELM327 Bluetooth OBD2 Car Engine Diagnostic Code Reader Scanner Tool (Current Generation Flagship)"],
+    sku: "AUT-ELM-AUTOOBD2-576",
+    baseMsrp: 2400,
+    releaseYear: 2024,
   },
 
   // --- Interior & Exterior Accessories ---
@@ -4141,6 +4927,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 5-Seat Full Set Premium Breathable PU Leather Luxury Car Seat Covers is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","5-Seat Full Set Premium Breathable PU Leather Luxury Car Seat Covers (Current Generation Flagship)"],
+    sku: "AUT-5SE-AUTOLEAT-392",
+    baseMsrp: 9900,
+    releaseYear: 2024,
   },
   {
     id: "auto_rubber_floor_mats",
@@ -4156,6 +4945,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Universal Heavy Duty Deep Dish All-Weather Waterproof Rubber Car Floor Mats is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Universal Heavy Duty Deep Dish All-Weather Waterproof Rubber Car Floor Mats (Current Generation Flagship)"],
+    sku: "AUT-UNI-AUTORUBB-921",
+    baseMsrp: 6300,
+    releaseYear: 2024,
   },
   {
     id: "auto_microfiber_wash_kit",
@@ -4171,6 +4963,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 9-Piece Professional Scratch-Free Microfiber Car Cleaning Detailing Kit is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","9-Piece Professional Scratch-Free Microfiber Car Cleaning Detailing Kit (Current Generation Flagship)"],
+    sku: "AUT-9PI-AUTOMICR-265",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "auto_pressure_washer_gun",
@@ -4186,6 +4981,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 48V Cordless Portable High-Pressure Handheld Car Washer Gun (Dual Battery) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","48V Cordless Portable High-Pressure Handheld Car Washer Gun (Dual Battery) (Current Generation Flagship)"],
+    sku: "AUT-48V-AUTOPRES-499",
+    baseMsrp: 8900,
+    releaseYear: 2024,
   },
   {
     id: "auto_car_vacuum_cleaner",
@@ -4201,6 +4999,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 120W High-Power Cordless Handheld Wet & Dry Car Vacuum Cleaner (9000Pa) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","120W High-Power Cordless Handheld Wet & Dry Car Vacuum Cleaner (9000Pa) (Current Generation Flagship)"],
+    sku: "AUT-120-AUTOCAR-597",
+    baseMsrp: 3900,
+    releaseYear: 2024,
   },
   {
     id: "auto_reflective_car_cover",
@@ -4216,6 +5017,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Multi-Layer Thick Waterproof UV-Reflective Cotton-Lined Full Car Cover is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Multi-Layer Thick Waterproof UV-Reflective Cotton-Lined Full Car Cover (Current Generation Flagship)"],
+    sku: "AUT-MUL-AUTOREFL-820",
+    baseMsrp: 5900,
+    releaseYear: 2024,
   },
 
   // --- Motorcycle Gear ---
@@ -4234,6 +5038,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The DOT Certified Dual Visor Aerodynamic Full Face Motorcycle Biker Helmet is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","DOT Certified Dual Visor Aerodynamic Full Face Motorcycle Biker Helmet (Current Generation Flagship)"],
+    sku: "AUT-DOT-MOTOFULL-765",
+    baseMsrp: 8400,
+    releaseYear: 2024,
   },
   {
     id: "moto_armored_jacket",
@@ -4250,6 +5057,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The All-Weather Breathable Motorcycle Riding Jacket with CE Level 2 Body Armor is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","All-Weather Breathable Motorcycle Riding Jacket with CE Level 2 Body Armor (Current Generation Flagship)"],
+    sku: "AUT-ALL-MOTOARMO-961",
+    baseMsrp: 11300,
+    releaseYear: 2024,
   },
   {
     id: "moto_touchscreen_gloves",
@@ -4266,6 +5076,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Breathable Hard Knuckle Carbon Fiber Reinforced Touchscreen Biker Gloves is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Breathable Hard Knuckle Carbon Fiber Reinforced Touchscreen Biker Gloves (Current Generation Flagship)"],
+    sku: "AUT-BRE-MOTOTOUC-476",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "moto_waterproof_tail_bag",
@@ -4281,6 +5094,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Heavy Duty 30L Waterproof Roll-Top Motorcycle Rear Seat Tail Bag is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Heavy Duty 30L Waterproof Roll-Top Motorcycle Rear Seat Tail Bag (Current Generation Flagship)"],
+    sku: "AUT-HEA-MOTOWATE-605",
+    baseMsrp: 5000,
+    releaseYear: 2024,
   },
   {
     id: "moto_handlebar_phone_mount",
@@ -4296,6 +5112,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Anti-Vibration Aluminum Handlebar Motorcycle Phone Mount with Damping is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Anti-Vibration Aluminum Handlebar Motorcycle Phone Mount with Damping (Current Generation Flagship)"],
+    sku: "AUT-ANT-MOTOHAND-926",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
 
   // --- Power Tools & Workshop ---
@@ -4313,6 +5132,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ingco 20V Cordless Brushless Heavy-Duty Impact Drill Kit with 2 Batteries is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Ingco 20V Cordless Brushless Heavy-Duty Impact Drill Kit with 2 Batteries (Current Generation Flagship)"],
+    sku: "AUT-ING-TOOLINGC-362",
+    baseMsrp: 15700,
+    releaseYear: 2024,
   },
   {
     id: "tool_bosch_angle_grinder",
@@ -4328,6 +5150,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Professional 4.5\" 850W Heavy Duty Angle Grinder (GWS 850) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Bosch Professional 4.5\" 850W Heavy Duty Angle Grinder (GWS 850) (Current Generation Flagship)"],
+    sku: "AUT-BSC-TOOLBOSC-398",
+    baseMsrp: 9900,
+    releaseYear: 2024,
   },
   {
     id: "tool_total_circular_saw",
@@ -4343,6 +5168,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Total Tools 1400W 185mm Heavy Duty Electric Circular Wood Saw is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Total Tools 1400W 185mm Heavy Duty Electric Circular Wood Saw (Current Generation Flagship)"],
+    sku: "AUT-TOT-TOOLTOTA-437",
+    baseMsrp: 10400,
+    releaseYear: 2024,
   },
   {
     id: "tool_demolition_hammer",
@@ -4358,6 +5186,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Total 1500W SDS-Plus Heavy Industrial Rotary Demolition Hammer Drill is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Total 1500W SDS-Plus Heavy Industrial Rotary Demolition Hammer Drill (Current Generation Flagship)"],
+    sku: "AUT-TOT-TOOLDEMO-946",
+    baseMsrp: 17800,
+    releaseYear: 2024,
   },
   {
     id: "tool_riland_welding_machine",
@@ -4373,6 +5204,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Riland 200A Portable IGBT Inverter MMA Arc Welding Machine with Cables is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "AUT-RIL-TOOLRILA-890",
+    baseMsrp: 20500,
+    releaseYear: 2024,
   },
   {
     id: "tool_auto_welding_helmet",
@@ -4388,6 +5222,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Solar-Powered True Color Auto-Darkening Welder's Protective Face Helmet is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Solar-Powered True Color Auto-Darkening Welder's Protective Face Helmet (Current Generation Flagship)"],
+    sku: "AUT-SOL-TOOLAUTO-369",
+    baseMsrp: 4500,
+    releaseYear: 2024,
   },
 
   // --- Hand Tools & Hardware ---
@@ -4405,6 +5242,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Workpro 108-Piece Chrome Vanadium Ratchet Socket Wrench Toolkit is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Workpro 108-Piece Chrome Vanadium Ratchet Socket Wrench Toolkit (Current Generation Flagship)"],
+    sku: "AUT-WOR-TOOLSOCK-895",
+    baseMsrp: 12400,
+    releaseYear: 2024,
   },
   {
     id: "tool_magnetic_screwdrivers_12p",
@@ -4420,6 +5260,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 12-Piece Heavy Duty Magnetic Cushion Grip Screwdriver Hand Tool Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","12-Piece Heavy Duty Magnetic Cushion Grip Screwdriver Hand Tool Set (Current Generation Flagship)"],
+    sku: "AUT-12P-TOOLMAGN-261",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "tool_laser_distance_tape",
@@ -4435,6 +5278,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 40m Digital Laser Distance Tape Measure with Backlit LCD Screen is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","40m Digital Laser Distance Tape Measure with Backlit LCD Screen (Current Generation Flagship)"],
+    sku: "AUT-40M-TOOLLASE-199",
+    baseMsrp: 4300,
+    releaseYear: 2024,
   },
   {
     id: "tool_insulated_pliers_3p",
@@ -4450,6 +5296,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 3-Piece Heavy Duty Insulated Electrician Combination Pliers & Cutters is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","3-Piece Heavy Duty Insulated Electrician Combination Pliers & Cutters (Current Generation Flagship)"],
+    sku: "AUT-3PI-TOOLINSU-560",
+    baseMsrp: 3500,
+    releaseYear: 2024,
   },
   {
     id: "tool_steel_toe_boots",
@@ -4466,6 +5315,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Indestructible Steel-Toe Puncture-Proof Leather Safety Industrial Work Boots is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Indestructible Steel-Toe Puncture-Proof Leather Safety Industrial Work Boots (Current Generation Flagship)"],
+    sku: "AUT-IND-TOOLSTEE-361",
+    baseMsrp: 6000,
+    releaseYear: 2024,
   },
   {
     id: "tool_cantilever_box",
@@ -4481,6 +5333,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 3-Tier Cantilever Heavy Duty Metal Tool Box with Sturdy Latches is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","3-Tier Cantilever Heavy Duty Metal Tool Box with Sturdy Latches (Current Generation Flagship)"],
+    sku: "AUT-3TI-TOOLCANT-408",
+    baseMsrp: 6900,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -4502,6 +5357,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Compact Airplane Overhead Cabin Foldable Lightweight Baby Stroller is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Compact Airplane Overhead Cabin Foldable Lightweight Baby Stroller (Current Generation Flagship)"],
+    sku: "BBY-COM-BABYFOLD-926",
+    baseMsrp: 18900,
+    releaseYear: 2024,
   },
   {
     id: "baby_isofix_car_seat",
@@ -4517,6 +5375,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 360-Degree Rotating All-in-One Convertible ISOFIX Infant Car Safety Seat is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","360-Degree Rotating All-in-One Convertible ISOFIX Infant Car Safety Seat (Current Generation Flagship)"],
+    sku: "BBY-360-BABYISOF-782",
+    baseMsrp: 24800,
+    releaseYear: 2024,
   },
   {
     id: "baby_ergonomic_carrier",
@@ -4532,6 +5393,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The All-Position Ergonomic 3D Mesh Hip Seat 4-in-1 Baby Kangaroo Carrier is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","All-Position Ergonomic 3D Mesh Hip Seat 4-in-1 Baby Kangaroo Carrier (Current Generation Flagship)"],
+    sku: "BBY-ALL-BABYERGO-879",
+    baseMsrp: 4500,
+    releaseYear: 2024,
   },
   {
     id: "baby_adjustable_high_chair",
@@ -4547,6 +5411,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Multi-Functional Foldable Adjustable Height Baby Feeding High Chair is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Multi-Functional Foldable Adjustable Height Baby Feeding High Chair (Current Generation Flagship)"],
+    sku: "BBY-MUL-BABYADJU-685",
+    baseMsrp: 11000,
+    releaseYear: 2024,
   },
   {
     id: "baby_activity_walker",
@@ -4562,6 +5429,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 2-in-1 Anti-O-Leg Foldable Baby Activity Walker with Musical Play Tray is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","2-in-1 Anti-O-Leg Foldable Baby Activity Walker with Musical Play Tray (Current Generation Flagship)"],
+    sku: "BBY-2IN-BABYACTI-741",
+    baseMsrp: 7600,
+    releaseYear: 2024,
   },
   {
     id: "baby_video_monitor",
@@ -4577,6 +5447,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 5\" LCD 1080p Wireless Video Baby Monitor with Night Vision & Temperature is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","5\" LCD 1080p Wireless Video Baby Monitor with Night Vision & Temperature (Current Generation Flagship)"],
+    sku: "BBY-GEN-BABYVIDE-621",
+    baseMsrp: 12700,
+    releaseYear: 2024,
   },
 
   // --- Nursery & Furniture ---
@@ -4594,6 +5467,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Solid Pine Convertible 3-in-1 Wooden Baby Crib Cot with Rocking Bed Base is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Solid Pine Convertible 3-in-1 Wooden Baby Crib Cot with Rocking Bed Base (Current Generation Flagship)"],
+    sku: "BBY-SOL-NURSWOOD-646",
+    baseMsrp: 23800,
+    releaseYear: 2024,
   },
   {
     id: "nurs_bedside_bassinet",
@@ -4609,6 +5485,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Easy-Fold Portable Bedside Co-Sleeper Bassinet with Breathable Mesh is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Easy-Fold Portable Bedside Co-Sleeper Bassinet with Breathable Mesh (Current Generation Flagship)"],
+    sku: "BBY-EAS-NURSBEDS-393",
+    baseMsrp: 15700,
+    releaseYear: 2024,
   },
   {
     id: "nurs_folding_playpen",
@@ -4624,6 +5503,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Large Foldable Safety Baby Playpen with Ocean Balls & Crawling Play Mat is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Large Foldable Safety Baby Playpen with Ocean Balls & Crawling Play Mat (Current Generation Flagship)"],
+    sku: "BBY-LAR-NURSFOLD-432",
+    baseMsrp: 11300,
+    releaseYear: 2024,
   },
   {
     id: "nurs_changing_table",
@@ -4639,6 +5521,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Multi-Tier Mobile Waterproof Foldable Diaper Changing Table with Wheels is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Multi-Tier Mobile Waterproof Foldable Diaper Changing Table with Wheels (Current Generation Flagship)"],
+    sku: "BBY-MUL-NURSCHAN-153",
+    baseMsrp: 8900,
+    releaseYear: 2024,
   },
   {
     id: "nurs_muslin_swaddles_3p",
@@ -4654,6 +5539,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 100% Muslin Organic Cotton Breathable Baby Swaddle Blankets (3-Pack) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","100% Muslin Organic Cotton Breathable Baby Swaddle Blankets (3-Pack) (Current Generation Flagship)"],
+    sku: "BBY-100-NURSMUSL-595",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
 
   // --- Baby & Kids Fashion ---
@@ -4672,6 +5560,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 100% Organic Cotton Short-Sleeve Newborn Baby Onesie Bodysuits (5-Pack) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","100% Organic Cotton Short-Sleeve Newborn Baby Onesie Bodysuits (5-Pack) (Current Generation Flagship)"],
+    sku: "BBY-100-KFASONES-967",
+    baseMsrp: 2500,
+    releaseYear: 2024,
   },
   {
     id: "kfashion_boys_hoodie_denim",
@@ -4688,6 +5579,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Boys 2-Piece Fashion Dinosaur Print Cotton Hoodie & Denim Pants Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Boys 2-Piece Fashion Dinosaur Print Cotton Hoodie & Denim Pants Set (Current Generation Flagship)"],
+    sku: "BBY-BOY-KFASBOYS-964",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
   {
     id: "kfashion_girls_party_dress",
@@ -4704,6 +5598,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Girls Elegant Floral Lace Princess Tulle Birthday Party Dress is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Girls Elegant Floral Lace Princess Tulle Birthday Party Dress (Current Generation Flagship)"],
+    sku: "BBY-GIR-KFASGIRL-404",
+    baseMsrp: 3600,
+    releaseYear: 2024,
   },
   {
     id: "kfashion_kids_sneakers",
@@ -4720,6 +5617,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Breathable Anti-Slip Lightweight Kids School & Running Sports Sneakers is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Breathable Anti-Slip Lightweight Kids School & Running Sports Sneakers (Current Generation Flagship)"],
+    sku: "BBY-BRE-KFASKIDS-298",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "kfashion_fleece_romper",
@@ -4736,6 +5636,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Fleece Lined Warm Bear Ears Winter Baby Hooded Romper Jumpsuit is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Fleece Lined Warm Bear Ears Winter Baby Hooded Romper Jumpsuit (Current Generation Flagship)"],
+    sku: "BBY-FLE-KFASFLEE-518",
+    baseMsrp: 2700,
+    releaseYear: 2024,
   },
 
   // --- Toys, STEM & Hobbies ---
@@ -4753,6 +5656,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 1000-Piece Creative City Engineering Vehicle Building Blocks Brick Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","1000-Piece Creative City Engineering Vehicle Building Blocks Brick Set (Current Generation Flagship)"],
+    sku: "BBY-100-TOYBUIL-422",
+    baseMsrp: 4900,
+    releaseYear: 2024,
   },
   {
     id: "toy_rc_monster_truck",
@@ -4768,6 +5674,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 4WD High-Speed 40km/h Off-Road Monster Truck Remote Control RC Buggy is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","4WD High-Speed 40km/h Off-Road Monster Truck Remote Control RC Buggy (Current Generation Flagship)"],
+    sku: "BBY-4WD-TOYRC-271",
+    baseMsrp: 7300,
+    releaseYear: 2024,
   },
   {
     id: "toy_foldable_drone_4k",
@@ -4783,6 +5692,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 4K HD Dual Camera Obstacle Avoidance Foldable Beginner Toy Drone with App is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","4K HD Dual Camera Obstacle Avoidance Foldable Beginner Toy Drone with App (Current Generation Flagship)"],
+    sku: "BBY-GEN-TOYFOLD-775",
+    baseMsrp: 8900,
+    releaseYear: 2024,
   },
   {
     id: "toy_stem_solar_robot",
@@ -4798,6 +5710,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 12-in-1 Solar Powered DIY Educational STEM Robotics Learning Science Kit is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","12-in-1 Solar Powered DIY Educational STEM Robotics Learning Science Kit (Current Generation Flagship)"],
+    sku: "BBY-12I-TOYSTEM-859",
+    baseMsrp: 4200,
+    releaseYear: 2024,
   },
   {
     id: "toy_montessori_wooden_puzzle",
@@ -4813,6 +5728,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Montessori 3D Wooden Alphabet, Numbers & Shapes Early Learning Puzzle is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Montessori 3D Wooden Alphabet, Numbers & Shapes Early Learning Puzzle (Current Generation Flagship)"],
+    sku: "BBY-MON-TOYMONT-250",
+    baseMsrp: 2100,
+    releaseYear: 2024,
   },
   {
     id: "toy_monopoly_classic",
@@ -4828,6 +5746,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Monopoly Classic Deluxe Fast-Dealing Property Trading Family Board Game is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Monopoly Classic Deluxe Fast-Dealing Property Trading Family Board Game (Current Generation Flagship)"],
+    sku: "BBY-MON-TOYMONO-779",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -4849,6 +5770,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 4G SIM Card Solar Powered Outdoor 2K Dual-Lens PTZ Security Camera is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","4G SIM Card Solar Powered Outdoor 2K Dual-Lens PTZ Security Camera (Current Generation Flagship)"],
+    sku: "SEC-GEN-SECSOLA-982",
+    baseMsrp: 18400,
+    releaseYear: 2024,
   },
   {
     id: "sec_360_ptz_dome",
@@ -4864,6 +5788,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 360-Degree 3MP Wireless Indoor/Outdoor Wi-Fi Dome Security Camera is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","360-Degree 3MP Wireless Indoor/Outdoor Wi-Fi Dome Security Camera (Current Generation Flagship)"],
+    sku: "SEC-360-SEC360-696",
+    baseMsrp: 6000,
+    releaseYear: 2024,
   },
   {
     id: "sec_8ch_nvr_kit",
@@ -4879,6 +5806,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 8-Channel Wireless 1080p NVR Kit with 4 Weatherproof Outdoor IP Cameras is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","8-Channel Wireless 1080p NVR Kit with 4 Weatherproof Outdoor IP Cameras (Current Generation Flagship)"],
+    sku: "SEC-8CH-SEC8CH-279",
+    baseMsrp: 33500,
+    releaseYear: 2024,
   },
   {
     id: "sec_smart_doorbell_chime",
@@ -4894,6 +5824,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Wi-Fi 1080p Video Doorbell with Wireless Indoor Chime & Two-Way Audio is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Wi-Fi 1080p Video Doorbell with Wireless Indoor Chime & Two-Way Audio (Current Generation Flagship)"],
+    sku: "SEC-WIF-SECSMAR-342",
+    baseMsrp: 7000,
+    releaseYear: 2024,
   },
   {
     id: "sec_pir_floodlight_camera",
@@ -4909,6 +5842,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Dual 2500-Lumen PIR Motion Detection Floodlight CCTV Security Camera is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Dual 2500-Lumen PIR Motion Detection Floodlight CCTV Security Camera (Current Generation Flagship)"],
+    sku: "SEC-DUA-SECPIR-608",
+    baseMsrp: 11000,
+    releaseYear: 2024,
   },
 
   // --- Smart Locks & Access ---
@@ -4926,6 +5862,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 5-in-1 Keyless Biometric Fingerprint / Password / RFID / App Smart Door Lock is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","5-in-1 Keyless Biometric Fingerprint / Password / RFID / App Smart Door Lock (Current Generation Flagship)"],
+    sku: "SEC-5IN-SECFING-682",
+    baseMsrp: 17800,
+    releaseYear: 2024,
   },
   {
     id: "sec_tuya_deadbolt",
@@ -4941,6 +5880,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tuya Wi-Fi Remote Controlled Keypad Touchscreen Deadbolt Smart Door Lock is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Tuya Wi-Fi Remote Controlled Keypad Touchscreen Deadbolt Smart Door Lock (Current Generation Flagship)"],
+    sku: "SEC-TUY-SECTUYA-413",
+    baseMsrp: 14900,
+    releaseYear: 2024,
   },
   {
     id: "sec_rfid_access_control",
@@ -4956,6 +5898,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Standalone RFID Metal Keypad Access Control System with 10 Keyfobs is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Standalone RFID Metal Keypad Access Control System with 10 Keyfobs (Current Generation Flagship)"],
+    sku: "SEC-STA-SECRFID-980",
+    baseMsrp: 5600,
+    releaseYear: 2024,
   },
   {
     id: "sec_fingerprint_padlock",
@@ -4971,6 +5916,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Heavy Duty IP65 Waterproof USB Rechargeable Fingerprint Smart Padlock is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Heavy Duty IP65 Waterproof USB Rechargeable Fingerprint Smart Padlock (Current Generation Flagship)"],
+    sku: "SEC-HEA-SECFING-351",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
 
   // --- Smart Home Automation ---
@@ -4988,6 +5936,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tuya Smart Wi-Fi 3-Gang Tempered Glass Touch Wall Light Switch is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Tuya Smart Wi-Fi 3-Gang Tempered Glass Touch Wall Light Switch (Current Generation Flagship)"],
+    sku: "SEC-TUY-HOMETUYA-329",
+    baseMsrp: 3600,
+    releaseYear: 2024,
   },
   {
     id: "home_smart_plug_metering",
@@ -5003,6 +5954,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 16A Smart Wi-Fi Plug Socket with Real-Time Energy Consumption Metering is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","16A Smart Wi-Fi Plug Socket with Real-Time Energy Consumption Metering (Current Generation Flagship)"],
+    sku: "SEC-16A-HOMESMAR-864",
+    baseMsrp: 2300,
+    releaseYear: 2024,
   },
   {
     id: "home_zigbee_gateway_hub",
@@ -5018,6 +5972,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tuya Multi-Mode Zigbee 3.0 & Bluetooth Mesh Wireless Smart Home Gateway is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Tuya Multi-Mode Zigbee 3.0 & Bluetooth Mesh Wireless Smart Home Gateway (Current Generation Flagship)"],
+    sku: "SEC-TUY-HOMEZIGB-181",
+    baseMsrp: 3900,
+    releaseYear: 2024,
   },
   {
     id: "home_door_window_sensor",
@@ -5033,6 +5990,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Wireless Wi-Fi Magnetic Door & Window Anti-Theft Alarm Contact Sensor is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Wireless Wi-Fi Magnetic Door & Window Anti-Theft Alarm Contact Sensor (Current Generation Flagship)"],
+    sku: "SEC-WIR-HOMEDOOR-156",
+    baseMsrp: 1700,
+    releaseYear: 2024,
   },
   {
     id: "home_smart_curtain_robot",
@@ -5048,6 +6008,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tuya App Controlled USB Rechargeable Smart Automatic Electric Curtain Robot is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Tuya App Controlled USB Rechargeable Smart Automatic Electric Curtain Robot (Current Generation Flagship)"],
+    sku: "SEC-TUY-HOMESMAR-473",
+    baseMsrp: 8600,
+    releaseYear: 2024,
   },
 
   // --- Luggage & Travel Bags ---
@@ -5065,6 +6028,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 3-Piece TSA-Lock Lightweight ABS+PC Hard-Shell Spinner Suitcase Luggage Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","3-Piece TSA-Lock Lightweight ABS+PC Hard-Shell Spinner Suitcase Luggage Set (Current Generation Flagship)"],
+    sku: "SEC-3PI-TRAVSPIN-204",
+    baseMsrp: 25400,
+    releaseYear: 2024,
   },
   {
     id: "trav_antitheft_backpack",
@@ -5080,6 +6046,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The BANGE 17.3\" Water-Resistant Expandable Anti-Theft Travel Laptop Backpack is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Anti-Gravity Seamless 3D Suspension Pack Lineup",
     lineage: ["Atmos AG 50 (2015 1st Gen Suspended Mesh)","Atmos AG 65 (2018 Fit-on-the-Fly Hipbelt)","Osprey Atmos AG 65 LT / 5.11 Rush 2.0 (Current Recycled Bluesign Ripstop)"],
+    sku: "SEC-BNG-TRAVANTI-682",
+    baseMsrp: 6500,
+    releaseYear: 2024,
   },
   {
     id: "trav_foldable_duffel_bag",
@@ -5095,6 +6064,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Large 65L Waterproof Foldable Travel Duffel Bag with Shoe Compartment is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Large 65L Waterproof Foldable Travel Duffel Bag with Shoe Compartment (Current Generation Flagship)"],
+    sku: "SEC-LAR-TRAVFOLD-337",
+    baseMsrp: 3300,
+    releaseYear: 2024,
   },
   {
     id: "trav_packing_cubes_6p",
@@ -5110,6 +6082,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 6-Piece Waterproof Travel Luggage Compression Packing Cubes Organizer Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","6-Piece Waterproof Travel Luggage Compression Packing Cubes Organizer Set (Current Generation Flagship)"],
+    sku: "SEC-6PI-TRAVPACK-799",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "trav_luggage_hanging_scale",
@@ -5125,6 +6100,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 50kg Portable Backlit Precision Digital Luggage Hanging Scale with Tare is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","50kg Portable Backlit Precision Digital Luggage Hanging Scale with Tare (Current Generation Flagship)"],
+    sku: "SEC-50K-TRAVLUGG-778",
+    baseMsrp: 1700,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -5146,6 +6124,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The A3 Heavy Duty Hot & Cold Thermal Document Photo Laminating Machine is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","A3 Heavy Duty Hot & Cold Thermal Document Photo Laminating Machine (Current Generation Flagship)"],
+    sku: "FSH-GEN-OFFA3-475",
+    baseMsrp: 11000,
+    releaseYear: 2024,
   },
   {
     id: "off_comb_binding_machine",
@@ -5161,6 +6142,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 21-Hole Manual Comb Binding Machine (450-Sheet Heavy Duty Capacity) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","21-Hole Manual Comb Binding Machine (450-Sheet Heavy Duty Capacity) (Current Generation Flagship)"],
+    sku: "FSH-21H-OFFCOMB-239",
+    baseMsrp: 11900,
+    releaseYear: 2024,
   },
   {
     id: "off_magnetic_whiteboard",
@@ -5176,6 +6160,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 90x60cm Magnetic Dry-Erase Wall Whiteboard with Aluminum Frame + Markers is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","90x60cm Magnetic Dry-Erase Wall Whiteboard with Aluminum Frame + Markers (Current Generation Flagship)"],
+    sku: "FSH-90X-OFFMAGN-840",
+    baseMsrp: 5000,
+    releaseYear: 2024,
   },
   {
     id: "off_leather_desk_blotter",
@@ -5191,6 +6178,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Large 90x45cm Waterproof Dual-Sided PU Leather Office Desk Blotter Pad is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Large 90x45cm Waterproof Dual-Sided PU Leather Office Desk Blotter Pad (Current Generation Flagship)"],
+    sku: "FSH-LAR-OFFLEAT-662",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "off_heavy_stapler_punch",
@@ -5206,6 +6196,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Kangaro 100-Sheet Heavy Duty Metal Desk Plier Stapler & 2-Hole Punch Set is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Kangaro 100-Sheet Heavy Duty Metal Desk Plier Stapler & 2-Hole Punch Set (Current Generation Flagship)"],
+    sku: "FSH-KAN-OFFHEAV-584",
+    baseMsrp: 4300,
+    releaseYear: 2024,
   },
 
   // --- Art, Craft & Drawing ---
@@ -5223,6 +6216,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Touch 80-Color Dual-Tip Alcohol Graphic Art Sketching Markers with Bag is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Touch 80-Color Dual-Tip Alcohol Graphic Art Sketching Markers with Bag (Current Generation Flagship)"],
+    sku: "FSH-TOU-ARTDUAL-825",
+    baseMsrp: 4900,
+    releaseYear: 2024,
   },
   {
     id: "art_colored_pencils_72",
@@ -5238,6 +6234,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 72-Piece Premium Soft Core Artist Colored Pencils in Sturdy Metal Tin is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","72-Piece Premium Soft Core Artist Colored Pencils in Sturdy Metal Tin (Current Generation Flagship)"],
+    sku: "FSH-72P-ARTCOLO-545",
+    baseMsrp: 4300,
+    releaseYear: 2024,
   },
   {
     id: "art_sketchbook_pad",
@@ -5253,6 +6252,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 200GSM A4 Hardcover Spiral Bound Mixed Media Sketchbook Pad (60 Sheets) is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","200GSM A4 Hardcover Spiral Bound Mixed Media Sketchbook Pad (60 Sheets) (Current Generation Flagship)"],
+    sku: "FSH-200-ARTSKET-681",
+    baseMsrp: 2300,
+    releaseYear: 2024,
   },
   {
     id: "art_acrylic_paints_canvases",
@@ -5268,6 +6270,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 24-Color Vibrant Acrylic Paint Tubes Set with 3 Stretched Cotton Canvases is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","24-Color Vibrant Acrylic Paint Tubes Set with 3 Stretched Cotton Canvases (Current Generation Flagship)"],
+    sku: "FSH-24C-ARTACRY-534",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
   {
     id: "art_cutting_mat_a3",
@@ -5283,6 +6288,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The A3 Professional Double-Sided Self-Healing PVC Craft Grid Cutting Mat is engineered to deliver category-defining excellence with industry-grade performance, verified authenticity, and exceptional durability. Built with premium materials and certified manufacturing tolerances, it delivers unmatched precision, energy efficiency, and modern aesthetic elegance. Fully inspected and packaged with genuine accessories, comprehensive documentation, and direct manufacturer-backed warranty assurance for complete peace of mind.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","A3 Professional Double-Sided Self-Healing PVC Craft Grid Cutting Mat (Current Generation Flagship)"],
+    sku: "FSH-GEN-ARTCUTT-772",
+    baseMsrp: 2200,
+    releaseYear: 2024,
   },
 
   // --- Musical Instruments & Pro Audio ---
@@ -5300,6 +6308,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 38\" Full-Size Linden Wood Acoustic Guitar Bundle with Bag, Capo & Strings delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","38\" Full-Size Linden Wood Acoustic Guitar Bundle with Bag, Capo & Strings (Current Generation Flagship)"],
+    sku: "FSH-GEN-MUSACOU-233",
+    baseMsrp: 11300,
+    releaseYear: 2024,
   },
   {
     id: "mus_61key_electronic_piano",
@@ -5315,6 +6326,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The 61-Key Touch-Sensitive Portable Electronic Piano Keyboard with Stand & Mic delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","61-Key Touch-Sensitive Portable Electronic Piano Keyboard with Stand & Mic (Current Generation Flagship)"],
+    sku: "FSH-61K-MUS61KE-647",
+    baseMsrp: 18400,
+    releaseYear: 2024,
   },
   {
     id: "mus_bm800_condenser_mic",
@@ -5330,6 +6344,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The BM-800 Studio Condenser Microphone Kit with Scissor Arm & V8 Live Sound Card delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","BM-800 Studio Condenser Microphone Kit with Scissor Arm & V8 Live Sound Card (Current Generation Flagship)"],
+    sku: "FSH-BM8-MUSBM80-483",
+    baseMsrp: 7300,
+    releaseYear: 2024,
   },
   {
     id: "mus_focusrite_scarlett_2i2",
@@ -5345,6 +6362,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Focusrite Scarlett 2i2 3rd Gen 2-In / 2-Out USB Recording Audio Interface delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Focusrite Scarlett 2i2 3rd Gen 2-In / 2-Out USB Recording Audio Interface (Current Generation Flagship)"],
+    sku: "FSH-FCS-MUSFOCU-103",
+    baseMsrp: 29700,
+    releaseYear: 2024,
   },
   {
     id: "mus_yamaha_audio_mixer",
@@ -5360,6 +6380,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Yamaha 8-Channel USB Bluetooth DSP Effects DJ Studio Audio Mixer Console delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Current 2024 Production Lineup",
     lineage: ["Gen 1 Baseline Architecture","Gen 2 Enhanced Precision Upgrade","Yamaha 8-Channel USB Bluetooth DSP Effects DJ Studio Audio Mixer Console (Current Generation Flagship)"],
+    sku: "FSH-YMH-MUSYAMA-742",
+    baseMsrp: 23200,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -5381,6 +6404,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Bowflex SelectTech Style 24kg Quick-Adjustable Dumbbells (Pair with Tray) is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Quick-Select Dial Adjustable Ergonomic Weight Generation",
     lineage: ["Standard Cast Iron Spin-Lock Plates (Classic Threaded)","SelectTech 552 Series 1 (Original Dial 5-52.5 lbs)","SelectTech 552 Series 2 / Nuo FlexBell (Current Rapid 1-Second Twist Lock)"],
+    sku: "SPT-BWF-SPORADJ-879",
+    baseMsrp: 23800,
+    releaseYear: 2024,
   },
   {
     id: "sport_resistance_bands",
@@ -5396,6 +6422,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the 5-Level Heavy Duty Resistance Loop Exercise Bands Set with Door Anchor & Handles is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","5-Level Heavy Duty Resistance Loop Exercise Bands Set with Door Anchor & Handles (Current All-Weather Performance Release)"],
+    sku: "SPT-5LE-SPORRESI-377",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "sport_cast_iron_kettlebell",
@@ -5411,6 +6440,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Solid Cast Iron Competition Kettlebell (16kg Powder-Coated Grip) is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Quick-Select Dial Adjustable Ergonomic Weight Generation",
     lineage: ["Standard Cast Iron Spin-Lock Plates (Classic Threaded)","SelectTech 552 Series 1 (Original Dial 5-52.5 lbs)","SelectTech 552 Series 2 / Nuo FlexBell (Current Rapid 1-Second Twist Lock)"],
+    sku: "SPT-SOL-SPORCAST-360",
+    baseMsrp: 6300,
+    releaseYear: 2024,
   },
   {
     id: "sport_weight_bench",
@@ -5426,6 +6458,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Heavy Duty Foldable Multi-Position Incline/Decline Flat Workout Weight Bench is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Heavy Duty Foldable Multi-Position Incline/Decline Flat Workout Weight Bench (Current All-Weather Performance Release)"],
+    sku: "SPT-HEA-SPORWEIG-932",
+    baseMsrp: 18400,
+    releaseYear: 2024,
   },
   {
     id: "sport_pullup_bar",
@@ -5441,6 +6476,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Heavy Duty Multi-Grip No-Screw Doorway Chin-Up & Pull-Up Workout Bar is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Heavy Duty Multi-Grip No-Screw Doorway Chin-Up & Pull-Up Workout Bar (Current All-Weather Performance Release)"],
+    sku: "SPT-HEA-SPORPULL-333",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
   {
     id: "sport_yoga_mat",
@@ -5456,6 +6494,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Eco-Friendly TPE Non-Slip 10mm Extra Thick Alignment Line Yoga & Pilates Mat is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Eco-Friendly TPE Non-Slip 10mm Extra Thick Alignment Line Yoga & Pilates Mat (Current All-Weather Performance Release)"],
+    sku: "SPT-ECO-SPORYOGA-856",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
 
   // --- Cardio Machines ---
@@ -5473,6 +6514,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the ProForm 2.5HP Foldable Electric Motorized Running Treadmill with LCD & Incline is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Smart Interactive HD Motorized Running Platform",
     lineage: ["Commercial 1750 Classic (2018 3.6 CHP 10-inch Touch)","Commercial 1750 Gen 2 (2021 Quiet Drive Incline)","Commercial 1750 Gen 3 (Current 14-inch Rotating HD Tilt -3% to 12% Incline)"],
+    sku: "SPT-HPI-CARDMOTO-937",
+    baseMsrp: 77800,
+    releaseYear: 2024,
   },
   {
     id: "cardio_spin_bike",
@@ -5488,6 +6532,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Commercial Magnetic Resistance Indoor Studio Cycling Spin Exercise Bike is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Magnetic Silent Flywheel Connected Fitness Generation",
     lineage: ["Peloton Bike Classic (2014 Fixed 21.5-inch Screen)","Schwinn IC4 Magnetic (2019 Dual Link Pedals)","Peloton Bike+ (Current 23.8-inch Rotating Touch Auto-Resistance Apple GymKit)"],
+    sku: "SPT-COM-CARDSPIN-807",
+    baseMsrp: 41000,
+    releaseYear: 2024,
   },
   {
     id: "cardio_elliptical_trainer",
@@ -5503,6 +6550,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the 2-in-1 Dual Action Magnetic Elliptical Cross Trainer with Pulse Sensors is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","2-in-1 Dual Action Magnetic Elliptical Cross Trainer with Pulse Sensors (Current All-Weather Performance Release)"],
+    sku: "SPT-2IN-CARDELLI-824",
+    baseMsrp: 45400,
+    releaseYear: 2024,
   },
   {
     id: "cardio_water_rower",
@@ -5518,6 +6568,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Foldable Water-Resistance Wooden Studio Rowing Machine with Digital Monitor is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Commercial Air Resistance Ergometer (PM5 Performance Monitor)",
     lineage: ["Concept2 Model C (1993 PM2 Monitor)","Concept2 Model D (2003 PM3/PM4 Nickel Chain)","Concept2 RowErg (Current PM5 Bluetooth/ANT+ Backlit Smartphone Cradle)"],
+    sku: "SPT-FOL-CARDWATE-614",
+    baseMsrp: 59400,
+    releaseYear: 2024,
   },
   {
     id: "cardio_speed_jump_rope",
@@ -5533,6 +6586,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Steel Bearing High-Speed Weighted Skipping Jump Rope for Boxing & Crossfit is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Steel Bearing High-Speed Weighted Skipping Jump Rope for Boxing & Crossfit (Current All-Weather Performance Release)"],
+    sku: "SPT-STE-CARDSPEE-850",
+    baseMsrp: 1700,
+    releaseYear: 2024,
   },
 
   // --- Outdoor & Camping Gear ---
@@ -5550,6 +6606,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the 4-6 Person Double Layer Waterproof Windproof Pop-Up Family Camping Tent is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "WeatherTec Dark Room Hydrostatic Shield Generation",
     lineage: ["Coleman Classic Sundome (Standard PU 600mm Pin & Ring)","Coleman Instant Cabin (1-Minute Telescoping Poles)","Coleman Dark Room Skydome (Current 90% Sunlight Block WeatherTec 3000mm)"],
+    sku: "SPT-GEN-CAMPWATE-559",
+    baseMsrp: 16200,
+    releaseYear: 2024,
   },
   {
     id: "camp_sleeping_bag",
@@ -5565,6 +6624,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Lightweight All-Season Envelope Thermal Camping Sleeping Bag (-5°C Rated) is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Lightweight All-Season Envelope Thermal Camping Sleeping Bag (-5°C Rated) (Current All-Weather Performance Release)"],
+    sku: "SPT-LIG-CAMPSLEE-894",
+    baseMsrp: 4500,
+    releaseYear: 2024,
   },
   {
     id: "camp_tactical_backpack",
@@ -5580,6 +6642,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the 50L Heavy Duty Military Tactical MOLLE Waterproof Camping & Hiking Backpack is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Anti-Gravity Seamless 3D Suspension Pack Lineup",
     lineage: ["Atmos AG 50 (2015 1st Gen Suspended Mesh)","Atmos AG 65 (2018 Fit-on-the-Fly Hipbelt)","Osprey Atmos AG 65 LT / 5.11 Rush 2.0 (Current Recycled Bluesign Ripstop)"],
+    sku: "SPT-50L-CAMPTACT-558",
+    baseMsrp: 6000,
+    releaseYear: 2024,
   },
   {
     id: "camp_high_lumen_torch",
@@ -5595,6 +6660,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the 10,000-Lumen Ultra-Bright USB Rechargeable Tactical LED Torch & Worklight is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Anti-Gravity Seamless 3D Suspension Pack Lineup",
     lineage: ["Atmos AG 50 (2015 1st Gen Suspended Mesh)","Atmos AG 65 (2018 Fit-on-the-Fly Hipbelt)","Osprey Atmos AG 65 LT / 5.11 Rush 2.0 (Current Recycled Bluesign Ripstop)"],
+    sku: "SPT-100-CAMPHIGH-387",
+    baseMsrp: 3700,
+    releaseYear: 2024,
   },
   {
     id: "camp_foldable_chair_table",
@@ -5610,6 +6678,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Heavy Duty Portable Aluminum Folding Camping Table & 2-Chair Compact Set is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Heavy Duty Portable Aluminum Folding Camping Table & 2-Chair Compact Set (Current All-Weather Performance Release)"],
+    sku: "SPT-HEA-CAMPFOLD-598",
+    baseMsrp: 8900,
+    releaseYear: 2024,
   },
   {
     id: "camp_multitool_pliers",
@@ -5625,6 +6696,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the 14-in-1 Heavy Duty Stainless Steel Multi-Tool Pliers & Pocket Survival Knife is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","14-in-1 Heavy Duty Stainless Steel Multi-Tool Pliers & Pocket Survival Knife (Current All-Weather Performance Release)"],
+    sku: "SPT-14I-CAMPMULT-815",
+    baseMsrp: 3200,
+    releaseYear: 2024,
   },
 
   // --- Cycling & Bicycles ---
@@ -5642,6 +6716,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the 26\" 21-Speed Aluminum Alloy Dual Disc Brake Front Suspension Mountain Bike is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Gen 3 Trail Geometry Alpha Silver Aluminum Lineup",
     lineage: ["Trek Marlin 5 (Gen 1 3x7 Shimano Tourney Mechanical)","Trek Marlin 6 (Gen 2 1x10 Deore Dropper Routing)","Trek Marlin 7 (Gen 3 Current 29er 1x10 Deore RockShox Judy Hydraulic)"],
+    sku: "SPT-GEN-BIKEALUM-706",
+    baseMsrp: 30200,
+    releaseYear: 2024,
   },
   {
     id: "bike_commuter_road",
@@ -5657,6 +6734,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the 700C Lightweight Aluminum Single-Speed Fixie Urban Commuter Road Bicycle is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Gen 3 Trail Geometry Alpha Silver Aluminum Lineup",
     lineage: ["Trek Marlin 5 (Gen 1 3x7 Shimano Tourney Mechanical)","Trek Marlin 6 (Gen 2 1x10 Deore Dropper Routing)","Trek Marlin 7 (Gen 3 Current 29er 1x10 Deore RockShox Judy Hydraulic)"],
+    sku: "SPT-700-BIKECOMM-491",
+    baseMsrp: 27000,
+    releaseYear: 2024,
   },
   {
     id: "bike_aero_helmet",
@@ -5673,6 +6753,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Ultra-Lightweight In-Mold Aerodynamic Bicycle Riding Helmet with Visor & LED is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Gen 3 Trail Geometry Alpha Silver Aluminum Lineup",
     lineage: ["Trek Marlin 5 (Gen 1 3x7 Shimano Tourney Mechanical)","Trek Marlin 6 (Gen 2 1x10 Deore Dropper Routing)","Trek Marlin 7 (Gen 3 Current 29er 1x10 Deore RockShox Judy Hydraulic)"],
+    sku: "SPT-ULT-BIKEAERO-861",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
   {
     id: "bike_led_light_horn",
@@ -5688,6 +6771,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Super Bright USB Rechargeable Waterproof Bike Headlight + 140dB Electronic Horn is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Super Bright USB Rechargeable Waterproof Bike Headlight + 140dB Electronic Horn (Current All-Weather Performance Release)"],
+    sku: "SPT-SUP-BIKELED-230",
+    baseMsrp: 2200,
+    releaseYear: 2024,
   },
   {
     id: "bike_steel_ulock",
@@ -5703,6 +6789,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Heavy Duty Anti-Theft Hardened Steel U-Lock with 1.2m Braided Security Cable is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Heavy Duty Anti-Theft Hardened Steel U-Lock with 1.2m Braided Security Cable (Current All-Weather Performance Release)"],
+    sku: "SPT-HEA-BIKESTEE-758",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "bike_mini_pump_toolkit",
@@ -5718,6 +6807,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the 16-in-1 Compact Bike Repair Multi-Tool with Aluminum Portable High-Pressure Tire Pump is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","16-in-1 Compact Bike Repair Multi-Tool with Aluminum Portable High-Pressure Tire Pump (Current All-Weather Performance Release)"],
+    sku: "SPT-16I-BIKEMINI-465",
+    baseMsrp: 2600,
+    releaseYear: 2024,
   },
 
   // --- Team & Ball Sports ---
@@ -5735,6 +6827,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the FIFA Quality Pro Seamless Thermal Bonded Size 5 Match Football + Shin Guards is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","FIFA Quality Pro Seamless Thermal Bonded Size 5 Match Football + Shin Guards (Current All-Weather Performance Release)"],
+    sku: "SPT-FIF-SPORMATC-910",
+    baseMsrp: 4300,
+    releaseYear: 2024,
   },
   {
     id: "sport_leather_basketball",
@@ -5750,6 +6845,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Spalding NBA Composite Leather Official Size 7 Indoor/Outdoor Basketball is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Spalding NBA Composite Leather Official Size 7 Indoor/Outdoor Basketball (Current All-Weather Performance Release)"],
+    sku: "SPT-SPA-SPORLEAT-354",
+    baseMsrp: 5000,
+    releaseYear: 2024,
   },
   {
     id: "sport_badminton_racket_pair",
@@ -5765,6 +6863,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the High-Modulus Full Carbon Fiber Badminton Racket Pair with Bag & Shuttlecocks is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","High-Modulus Full Carbon Fiber Badminton Racket Pair with Bag & Shuttlecocks (Current All-Weather Performance Release)"],
+    sku: "SPT-HIG-SPORBADM-215",
+    baseMsrp: 4900,
+    releaseYear: 2024,
   },
   {
     id: "sport_table_tennis_set",
@@ -5780,6 +6881,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Professional 7-Ply Wood Table Tennis Bats (Set of 2) + Retractable Net & 3 Balls is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Professional 7-Ply Wood Table Tennis Bats (Set of 2) + Retractable Net & 3 Balls (Current All-Weather Performance Release)"],
+    sku: "SPT-PRO-SPORTABL-414",
+    baseMsrp: 3800,
+    releaseYear: 2024,
   },
   {
     id: "sport_boxing_gloves_bag",
@@ -5795,6 +6899,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Built to withstand intense athletic training and rugged outdoor expeditions, the Everlast Style 12oz Leather Boxing Gloves & 4ft Heavy Punching Bag Kit is fabricated from heavy-gauge structural alloys, weatherproof ripstop synthetics, and ergonomically balanced grip surfaces. Tested under extreme biomechanical stress to ensure safety, joint alignment, and uncompromising athletic performance, it empowers beginners and professional athletes alike to achieve peak conditioning.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["sports, fitness Classic Heritage Edition (Original Silhouette)","sports, fitness Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Everlast Style 12oz Leather Boxing Gloves & 4ft Heavy Punching Bag Kit (Current All-Weather Performance Release)"],
+    sku: "SPT-EVE-SPORBOXI-196",
+    baseMsrp: 7600,
+    releaseYear: 2024,
   },
 
   // ============================================================================
@@ -5815,6 +6922,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple iPhone 16 Pro Max represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "18th Gen Apple Silicon (A18 Pro 3nm)",
     lineage: ["iPhone 14 Pro Max (2022 A16)","iPhone 15 Pro Max (2023 A17 Pro Titanium)","iPhone 16 Pro Max (Current Camera Control + A18 Pro)"],
+    sku: "PHN-APL-SMAAPPL-795",
+    baseMsrp: 248500,
+    releaseYear: 2024,
   },
   {
     id: "sma_samsung_galaxy_s24_ultra",
@@ -5830,6 +6940,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Galaxy S24 Ultra represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "15th Gen Galaxy S-Series (Snapdragon 8 Gen 3 for Galaxy)",
     lineage: ["Galaxy S22 Ultra (2022 Embedded S-Pen)","Galaxy S23 Ultra (2023 200MP HP2)","Galaxy S24 Ultra (Current Flat Titanium Galaxy AI)"],
+    sku: "PHN-SAM-SMASAMS-372",
+    baseMsrp: 201300,
+    releaseYear: 2024,
   },
   {
     id: "sma_google_pixel_9_pro_xl",
@@ -5845,6 +6958,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Google Pixel 9 Pro XL represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "9th Gen Google Tensor (Tensor G4 + Gemini Nano AI)",
     lineage: ["Pixel 7 Pro (2022 Tensor G2)","Pixel 8 Pro (2023 Tensor G3 Super Actua)","Pixel 9 Pro XL (Current Tensor G4 Satellite SOS)"],
+    sku: "PHN-GGL-SMAGOOG-115",
+    baseMsrp: 184800,
+    releaseYear: 2024,
   },
   {
     id: "sma_xiaomi_14_ultra",
@@ -5860,6 +6976,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Xiaomi 14 Ultra represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "14th Gen Xiaomi Flagship (Leica Summilux Quad 50MP)",
     lineage: ["Xiaomi 12S Ultra (2022 1-inch IMX989)","Xiaomi 13 Ultra (2023 Quad Leica)","Xiaomi 14 Ultra (Current Stepless f/1.63-f/4.0 Aperture)"],
+    sku: "PHN-XIA-SMAXIAO-712",
+    baseMsrp: 172000,
+    releaseYear: 2024,
   },
   {
     id: "sma_samsung_galaxy_a55",
@@ -5875,6 +6994,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Galaxy A55 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "6th Gen Galaxy A-Series (Exynos 1480 + AMD Xclipse 530)",
     lineage: ["Galaxy A53 5G (2022 Exynos 1280)","Galaxy A54 5G (2023 Glass Back)","Galaxy A55 5G (Current Metal Frame Key Island)"],
+    sku: "PHN-SAM-SMASAMS-481",
+    baseMsrp: 58600,
+    releaseYear: 2024,
   },
   {
     id: "sma_xiaomi_redmi_note_13_pro",
@@ -5890,6 +7012,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Xiaomi Redmi Note 13 Pro represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "13th Gen Redmi Note Series (200MP OIS Camera)",
     lineage: ["Redmi Note 11 Pro (2022 108MP)","Redmi Note 12 Pro (2023 IMX766 OIS)","Redmi Note 13 Pro (Current 1.5K 120Hz AMOLED 200MP)"],
+    sku: "PHN-XIA-SMAXIAO-749",
+    baseMsrp: 22900,
+    releaseYear: 2021,
   },
   {
     id: "sma_nothing_phone_2a",
@@ -5905,6 +7030,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nothing Phone (2a) represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "2nd Gen Glyph Matrix Interface (Dimensity 7200 Pro)",
     lineage: ["Nothing Phone (1) (2022 Original Glyph)","Nothing Phone (2) (2023 Flagship Glyph)","Nothing Phone (2a) (Current Transparent Dual Camera)"],
+    sku: "PHN-NOT-SMANOTH-442",
+    baseMsrp: 53600,
+    releaseYear: 2024,
   },
   {
     id: "sma_tecno_camon_30_premier",
@@ -5920,6 +7048,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tecno Camon 30 Premier represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "8th Gen Camon Imaging Series (PolarTec Dual AI Engine)",
     lineage: ["Camon 19 Pro (2022 RGBW OIS)","Camon 20 Premier (2023 Sensor-Shift)","Camon 30 Premier (Current 50MP Sony IMX890 Periscope)"],
+    sku: "PHN-TEC-SMATECN-221",
+    baseMsrp: 48400,
+    releaseYear: 2024,
   },
   {
     id: "sma_apple_certified_refurbished_iphone_14_pro",
@@ -5935,6 +7066,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple Certified Refurbished iPhone 14 Pro represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "16th Gen Apple Silicon (A16 Bionic)",
     lineage: ["iPhone 12 Pro (2020 5G Ceramic)","iPhone 13 Pro (2021 120Hz ProMotion)","iPhone 14 Pro (Dynamic Island Debut)"],
+    sku: "PHN-APL-SMAAPPL-602",
+    baseMsrp: 117300,
+    releaseYear: 2022,
   },
   {
     id: "sma_samsung_re_newed_galaxy_s23",
@@ -5950,6 +7084,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Re-Newed Galaxy S23 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "14th Gen Galaxy S-Series (Snapdragon 8 Gen 2)",
     lineage: ["Galaxy S21 Ultra (2021 Contour-Cut)","Galaxy S22 Ultra (2022 Note DNA)","Galaxy S23 (Nightography & Pro-Visual Engine)"],
+    sku: "PHN-SAM-SMASAMS-236",
+    baseMsrp: 86600,
+    releaseYear: 2023,
   },
   {
     id: "sma_back_market_premium_refurbished_iphone_13",
@@ -5965,6 +7102,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Back Market Premium Refurbished iPhone 13 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "15th Gen Apple Silicon (A15 Bionic)",
     lineage: ["iPhone 11 Pro (2019 Triple Camera)","iPhone 12 (2020 Ceramic Shield)","iPhone 13 (Cinematic Sensor-Shift OIS)"],
+    sku: "PHN-APL-SMABACK-191",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_cat_s75",
@@ -5980,6 +7120,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The CAT S75 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Mil-Spec 810H Rugged Satellite Lineup",
     lineage: ["CAT S62 Pro (2020 FLIR Thermal)","CAT S75 Bullitt (2023 2-Way Satellite)","Ulefone Armor 24 (Current 22000mAh Camping Light Flagship)"],
+    sku: "PHN-CAT-SMACAT-464",
+    baseMsrp: 73900,
+    releaseYear: 2024,
   },
   {
     id: "sma_ulefone_armor_24",
@@ -5995,6 +7138,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ulefone Armor 24 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Mil-Spec 810H Rugged Satellite Lineup",
     lineage: ["CAT S62 Pro (2020 FLIR Thermal)","CAT S75 Bullitt (2023 2-Way Satellite)","Ulefone Armor 24 (Current 22000mAh Camping Light Flagship)"],
+    sku: "PHN-ULF-SMAULEF-127",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sma_blackview_bv9300",
@@ -6010,6 +7156,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Blackview BV9300 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Mil-Spec 810H Rugged Satellite Lineup",
     lineage: ["CAT S62 Pro (2020 FLIR Thermal)","CAT S75 Bullitt (2023 2-Way Satellite)","Ulefone Armor 24 (Current 22000mAh Camping Light Flagship)"],
+    sku: "PHN-BKV-SMABLAC-439",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_nokia_3210_4g",
@@ -6025,6 +7174,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nokia 3210 4G represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "25th Anniversary Modern Feature Lineup (4G VoLTE + UPI)",
     lineage: ["Nokia 3310 (2000 Iconic GSM)","Nokia 3310 3G (2017 Reborn)","Nokia 3210 4G (Current Bluetooth 5.0 Type-C Edition)"],
+    sku: "PHN-NOK-SMANOKI-367",
+    baseMsrp: 10800,
+    releaseYear: 2024,
   },
   {
     id: "sma_apple_ipad_pro_13_m4",
@@ -6040,6 +7192,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple iPad Pro 13\" (M4) represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "7th Gen iPad Pro (Apple M4 Tandem OLED Architecture)",
     lineage: ["iPad Pro 12.9 M1 (2021 Mini-LED)","iPad Pro 12.9 M2 (2022 Apple Pencil Hover)","iPad Pro 13 M4 (Current 5.1mm Ultra-Thin Tandem OLED)"],
+    sku: "PHN-APL-SMAAPPL-514",
+    baseMsrp: 235800,
+    releaseYear: 2024,
   },
   {
     id: "sma_samsung_galaxy_tab_s9_ultra",
@@ -6055,6 +7210,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Galaxy Tab S9 Ultra represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "6th Gen Galaxy Tab (Dynamic AMOLED 2X + IP68)",
     lineage: ["Galaxy Tab S7+ (2020 S-Pen 9ms)","Galaxy Tab S8 Ultra (2022 14.6-inch Notch)","Galaxy Tab S9 Ultra (Current IP68 Armor Aluminum)"],
+    sku: "PHN-SAM-SMASAMS-551",
+    baseMsrp: 188600,
+    releaseYear: 2024,
   },
   {
     id: "sma_xiaomi_pad_6s_pro",
@@ -6070,6 +7228,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Xiaomi Pad 6S Pro represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Xiaomi Legacy Series (Gen 1 Performance Standard)","Xiaomi Enhanced Series (Gen 2 Efficiency Upgrade)","Xiaomi Pad 6S Pro (Current 2024 Flagship Release)"],
+    sku: "PHN-XIA-SMAXIAO-923",
+    baseMsrp: 82800,
+    releaseYear: 2024,
   },
   {
     id: "sma_lenovo_tab_p12_pro",
@@ -6085,6 +7246,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Lenovo Tab P12 Pro represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Lenovo Legacy Series (Gen 1 Performance Standard)","Lenovo Enhanced Series (Gen 2 Efficiency Upgrade)","Lenovo Tab P12 Pro (Current 2024 Flagship Release)"],
+    sku: "PHN-LNV-SMALENO-319",
+    baseMsrp: 73900,
+    releaseYear: 2020,
   },
   {
     id: "sma_amazon_fire_hd_10_kids_pro",
@@ -6100,6 +7264,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Amazon Fire HD 10 Kids Pro represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Amazon Fire HD 10 Kids Pro (Current 2024 Flagship Release)"],
+    sku: "PHN-AMA-SMAAMAZ-674",
+    baseMsrp: 24800,
+    releaseYear: 2024,
   },
   {
     id: "sma_leapfrog_leappad_academy",
@@ -6115,6 +7282,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LeapFrog LeapPad Academy represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","LeapFrog LeapPad Academy (Current 2024 Flagship Release)"],
+    sku: "PHN-ASU-SMALEAP-477",
+    baseMsrp: 17800,
+    releaseYear: 2024,
   },
   {
     id: "sma_samsung_galaxy_tab_a9_kids_edition",
@@ -6130,6 +7300,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Galaxy Tab A9+ Kids Edition represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Samsung Legacy Series (Gen 1 Performance Standard)","Samsung Enhanced Series (Gen 2 Efficiency Upgrade)","Samsung Galaxy Tab A9+ Kids Edition (Current 2024 Flagship Release)"],
+    sku: "PHN-SAM-SMASAMS-697",
+    baseMsrp: 33200,
+    releaseYear: 2024,
   },
   {
     id: "sma_amazon_kindle_paperwhite_signature",
@@ -6145,6 +7318,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Amazon Kindle Paperwhite Signature represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "11th Gen Amazon Paperwhite (6.8-inch 300ppi Warm Light)",
     lineage: ["Kindle Paperwhite 7th Gen (2015 300ppi)","Kindle Paperwhite 10th Gen (2018 IPX8 Waterproof)","Kindle Paperwhite 11th Gen (Current USB-C + 10-Week Battery)"],
+    sku: "PHN-AMZ-SMAAMAZ-813",
+    baseMsrp: 30600,
+    releaseYear: 2024,
   },
   {
     id: "sma_kobo_clara_colour",
@@ -6160,6 +7336,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Kobo Clara Colour represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Kobo Clara Colour (Current 2024 Flagship Release)"],
+    sku: "PHN-KOB-SMAKOBO-190",
+    baseMsrp: 26800,
+    releaseYear: 2024,
   },
   {
     id: "sma_remarkable_2",
@@ -6175,6 +7354,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The reMarkable 2 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "2nd Gen Digital Paper Slate (4.7mm CANVAS Display)",
     lineage: ["reMarkable 1 (2017 Plastic Friction)","reMarkable 2 (2020 4.7mm Aluminum Slate)","reMarkable Paper Pro (Current Color Canvas Frontlight)"],
+    sku: "PHN-RMK-SMAREMA-793",
+    baseMsrp: 86600,
+    releaseYear: 2024,
   },
   {
     id: "sma_onyx_boox_note_air_3_c",
@@ -6190,6 +7372,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Onyx Boox Note Air 3 C represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Onyx Boox Note Air 3 C (Current 2024 Flagship Release)"],
+    sku: "PHN-ONY-SMAONYX-657",
+    baseMsrp: 99400,
+    releaseYear: 2024,
   },
   {
     id: "mob_anker_prime_100w_gan_charger",
@@ -6205,6 +7390,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Anker Prime 100W GaN Charger represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "3rd Gen GaNFast / GaNPrime Multi-Port Architecture",
     lineage: ["PowerPort Atom PD 1 (2018 30W GaN 1)","Anker Nano II 65W (2021 GaN II)","Anker 737 GaNPrime 120W / Nexode 300W (Current Thermal Guard 2.0)"],
+    sku: "PHN-ANK-MOBANKE-443",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_ugreen_nexode_100w",
@@ -6220,6 +7408,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ugreen Nexode 100W represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "3rd Gen GaNFast / GaNPrime Multi-Port Architecture",
     lineage: ["PowerPort Atom PD 1 (2018 30W GaN 1)","Anker Nano II 65W (2021 GaN II)","Anker 737 GaNPrime 120W / Nexode 300W (Current Thermal Guard 2.0)"],
+    sku: "PHN-UGR-MOBUGRE-752",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_baseus_gan5_pro_100w",
@@ -6235,6 +7426,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Baseus Gan5 Pro 100W represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Baseus Gan5 Pro 100W (Current 2024 Flagship Release)"],
+    sku: "PHN-BAS-MOBBASE-535",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_apple_magsafe_charger",
@@ -6250,6 +7444,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple MagSafe Charger represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Qi2 Magnetic Wireless Power Standard (15W Fast Charge)",
     lineage: ["Apple MagSafe Charger (2020 15W Qi1)","Belkin BoostCharge Pro (2021 3-in-1)","Anker MagGo Qi2 (Current 15W Magnetic Fast Charge Standard)"],
+    sku: "PHN-APL-MOBAPPL-241",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_belkin_boostcharge_pro_3_in_1",
@@ -6265,6 +7462,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Belkin BoostCharge Pro 3-in-1 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Qi2 Magnetic Wireless Power Standard (15W Fast Charge)",
     lineage: ["Apple MagSafe Charger (2020 15W Qi1)","Belkin BoostCharge Pro (2021 3-in-1)","Anker MagGo Qi2 (Current 15W Magnetic Fast Charge Standard)"],
+    sku: "PHN-BEL-MOBBELK-498",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_anker_maggo_qi2_charging_station",
@@ -6280,6 +7480,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Anker MagGo Qi2 Charging Station represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Qi2 Magnetic Wireless Power Standard (15W Fast Charge)",
     lineage: ["Apple MagSafe Charger (2020 15W Qi1)","Belkin BoostCharge Pro (2021 3-in-1)","Anker MagGo Qi2 (Current 15W Magnetic Fast Charge Standard)"],
+    sku: "PHN-ANK-MOBANKE-950",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_anker_737_power_bank_powercore_24k",
@@ -6295,6 +7498,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Anker 737 Power Bank (PowerCore 24K) represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "3rd Gen GaNFast / GaNPrime Multi-Port Architecture",
     lineage: ["PowerPort Atom PD 1 (2018 30W GaN 1)","Anker Nano II 65W (2021 GaN II)","Anker 737 GaNPrime 120W / Nexode 300W (Current Thermal Guard 2.0)"],
+    sku: "PHN-ANK-MOBANKE-524",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_ugreen_145w_power_bank_25_000mah",
@@ -6310,6 +7516,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ugreen 145W Power Bank 25,000mAh represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Ugreen 145W Power Bank 25,000mAh (Current 2024 Flagship Release)"],
+    sku: "PHN-UGR-MOBUGRE-517",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_baseus_blade_100w",
@@ -6325,6 +7534,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Baseus Blade 100W represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Baseus Blade 100W (Current 2024 Flagship Release)"],
+    sku: "PHN-BAS-MOBBASE-766",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_spigen_tough_armor",
@@ -6340,6 +7552,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Spigen Tough Armor represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Spigen Tough Armor (Current 2024 Flagship Release)"],
+    sku: "PHN-SPI-MOBSPIG-695",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_otterbox_defender_series",
@@ -6355,6 +7570,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The OtterBox Defender Series represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","OtterBox Defender Series (Current 2024 Flagship Release)"],
+    sku: "PHN-OTT-MOBOTTE-906",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_uag_urban_armor_gear_monarch_pro",
@@ -6370,6 +7588,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The UAG (Urban Armor Gear) Monarch Pro represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","UAG (Urban Armor Gear) Monarch Pro (Current 2024 Flagship Release)"],
+    sku: "PHN-UAG-MOBUAG-140",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_esr_classic_kickstand_case",
@@ -6385,6 +7606,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The ESR Classic Kickstand Case represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","ESR Classic Kickstand Case (Current 2024 Flagship Release)"],
+    sku: "PHN-ESR-MOBESR-534",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_spigen_ez_fit",
@@ -6400,6 +7624,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Spigen EZ Fit represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Spigen EZ Fit (Current 2024 Flagship Release)"],
+    sku: "PHN-SPI-MOBSPIG-931",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_whitestone_dome_glass",
@@ -6415,6 +7642,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Whitestone Dome Glass represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Whitestone Dome Glass (Current 2024 Flagship Release)"],
+    sku: "PHN-WHI-MOBWHIT-516",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_esr_armorite",
@@ -6430,6 +7660,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The ESR Armorite represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","ESR Armorite (Current 2024 Flagship Release)"],
+    sku: "PHN-ESR-MOBESR-185",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_amfilm_onetouch",
@@ -6445,6 +7678,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The amFilm OneTouch represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","amFilm OneTouch (Current 2024 Flagship Release)"],
+    sku: "PHN-AMF-MOBAMFI-435",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_anker_765_bio_braided_usb_c",
@@ -6460,6 +7696,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Anker 765 Bio-Braided USB-C represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Anker Legacy Series (Gen 1 Performance Standard)","Anker Enhanced Series (Gen 2 Efficiency Upgrade)","Anker 765 Bio-Braided USB-C (Current 2024 Flagship Release)"],
+    sku: "PHN-ANK-MOBANKE-683",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_belkin_boostcharge_braided_pro",
@@ -6475,6 +7714,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Belkin BoostCharge Braided Pro represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Qi2 Magnetic Wireless Power Standard (15W Fast Charge)",
     lineage: ["Apple MagSafe Charger (2020 15W Qi1)","Belkin BoostCharge Pro (2021 3-in-1)","Anker MagGo Qi2 (Current 15W Magnetic Fast Charge Standard)"],
+    sku: "PHN-BEL-MOBBELK-892",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_ugreen_braided_100w_usb_c",
@@ -6490,6 +7732,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ugreen Braided 100W USB-C represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Ugreen Braided 100W USB-C (Current 2024 Flagship Release)"],
+    sku: "PHN-UGR-MOBUGRE-275",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_esr_halolock_magnetic_car_mount",
@@ -6505,6 +7750,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The ESR HaloLock Magnetic Car Mount represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","ESR HaloLock Magnetic Car Mount (Current 2024 Flagship Release)"],
+    sku: "PHN-ESR-MOBESR-777",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_belkin_magnetic_wireless_car_charger",
@@ -6520,6 +7768,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Belkin Magnetic Wireless Car Charger represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Belkin Magnetic Wireless Car Charger (Current 2024 Flagship Release)"],
+    sku: "PHN-BEL-MOBBELK-740",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_scosche_magicmount_pro_charge5",
@@ -6535,6 +7786,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Scosche MagicMount Pro Charge5 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Scosche MagicMount Pro Charge5 (Current 2024 Flagship Release)"],
+    sku: "PHN-SCO-MOBSCOS-470",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_dji_osmo_mobile_6",
@@ -6550,6 +7804,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The DJI Osmo Mobile 6 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","DJI Osmo Mobile 6 (Current 2024 Flagship Release)"],
+    sku: "PHN-DJI-MOBDJI-375",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_insta360_flow_pro",
@@ -6565,6 +7822,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Insta360 Flow Pro represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Insta360 Flow Pro (Current 2024 Flagship Release)"],
+    sku: "PHN-INS-MOBINST-954",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "mob_hohem_isteady_m6",
@@ -6580,6 +7840,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hohem iSteady M6 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Hohem iSteady M6 (Current 2024 Flagship Release)"],
+    sku: "PHN-HOH-MOBHOHE-262",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_apple_watch_series_10_ultra_2",
@@ -6595,6 +7858,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple Watch Series 10 / Ultra 2 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "10th Anniversary Apple Silicon SiP (S10 SiP + OLED)",
     lineage: ["Apple Watch Series 7 (2021 Curved Display)","Apple Watch Ultra 1 (2022 49mm Titanium)","Apple Watch Ultra 2 / Series 10 (Current Wide-Angle OLED S10)"],
+    sku: "PHN-APL-SMAAPPL-958",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_samsung_galaxy_watch_ultra",
@@ -6610,6 +7876,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Galaxy Watch Ultra represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "3nm Exynos W1000 Dual-Frequency Rugged Lineup",
     lineage: ["Galaxy Watch 4 Classic (2021 WearOS 3)","Galaxy Watch 5 Pro (2022 Sapphire Titanium)","Galaxy Watch Ultra (Current 100M Water Dual GPS 3nm W1000)"],
+    sku: "PHN-SAM-SMASAMS-494",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_garmin_venu_3",
@@ -6625,6 +7894,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Garmin Venu 3 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Garmin Legacy Series (Gen 1 Performance Standard)","Garmin Enhanced Series (Gen 2 Efficiency Upgrade)","Garmin Venu 3 (Current 2024 Flagship Release)"],
+    sku: "PHN-GRM-SMAGARM-959",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_huawei_watch_gt_4",
@@ -6640,6 +7912,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Huawei Watch GT 4 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Huawei Watch GT 4 (Current 2024 Flagship Release)"],
+    sku: "PHN-HUA-SMAHUAW-310",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_fitbit_charge_6",
@@ -6655,6 +7930,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Fitbit Charge 6 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Fitbit Charge 6 (Current 2024 Flagship Release)"],
+    sku: "PHN-FIT-SMAFITB-950",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_xiaomi_smart_band_9",
@@ -6670,6 +7948,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Xiaomi Smart Band 9 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Xiaomi Legacy Series (Gen 1 Performance Standard)","Xiaomi Enhanced Series (Gen 2 Efficiency Upgrade)","Xiaomi Smart Band 9 (Current 2024 Flagship Release)"],
+    sku: "PHN-XIA-SMAXIAO-209",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_garmin_vivosmart_5",
@@ -6685,6 +7966,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Garmin vivosmart 5 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Garmin Legacy Series (Gen 1 Performance Standard)","Garmin Enhanced Series (Gen 2 Efficiency Upgrade)","Garmin vivosmart 5 (Current 2024 Flagship Release)"],
+    sku: "PHN-GRM-SMAGARM-886",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_whoop_4_0",
@@ -6700,6 +7984,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Whoop 4.0 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Whoop 4.0 (Current 2024 Flagship Release)"],
+    sku: "PHN-WHO-SMAWHOO-289",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_ray_ban_meta_wayfarer_smart_glasses",
@@ -6715,6 +8002,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ray-Ban Meta Wayfarer Smart Glasses represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "2nd Gen Meta Smart Eyewear (Qualcomm Snapdragon AR1 Gen 1)",
     lineage: ["Ray-Ban Stories (2021 Dual 5MP)","Ray-Ban Meta Wayfarer (Current 12MP Ultra-Wide + Meta AI Audio)","Ray-Ban Meta Headliner (Current Transition Lenses Edition)"],
+    sku: "PHN-RAY-SMARAY-367",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_bose_frames_tenor",
@@ -6730,6 +8020,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bose Frames Tenor represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Bose Legacy Series (Gen 1 Performance Standard)","Bose Enhanced Series (Gen 2 Efficiency Upgrade)","Bose Frames Tenor (Current 2024 Flagship Release)"],
+    sku: "PHN-BOS-SMABOSE-455",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_amazon_echo_frames_3rd_gen",
@@ -6745,6 +8038,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Amazon Echo Frames (3rd Gen) represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Amazon Echo Frames (3rd Gen) (Current 2024 Flagship Release)"],
+    sku: "PHN-AMA-SMAAMAZ-576",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_nomad_rugged_sport_band",
@@ -6760,6 +8056,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nomad Rugged Sport Band represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Mil-Spec 810H Rugged Satellite Lineup",
     lineage: ["CAT S62 Pro (2020 FLIR Thermal)","CAT S75 Bullitt (2023 2-Way Satellite)","Ulefone Armor 24 (Current 22000mAh Camping Light Flagship)"],
+    sku: "PHN-NOM-SMANOMA-653",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_spigen_durapro_armor_band",
@@ -6775,6 +8074,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Spigen DuraPro Armor Band represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Spigen DuraPro Armor Band (Current 2024 Flagship Release)"],
+    sku: "PHN-SPI-SMASPIG-810",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_barton_quick_release_leather_band",
@@ -6790,6 +8092,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Barton Quick Release Leather Band represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Barton Quick Release Leather Band (Current 2024 Flagship Release)"],
+    sku: "PHN-BAR-SMABART-808",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_spigen_night_stand_for_apple_watch",
@@ -6805,6 +8110,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Spigen Night Stand for Apple Watch represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Spigen Night Stand for Apple Watch (Current 2024 Flagship Release)"],
+    sku: "PHN-APL-SMASPIG-325",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_elago_w2_stand",
@@ -6820,6 +8128,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The elago W2 Stand represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","elago W2 Stand (Current 2024 Flagship Release)"],
+    sku: "PHN-ELA-SMAELAG-303",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "sma_belkin_fast_wireless_charger_pad",
@@ -6835,6 +8146,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Belkin Fast Wireless Charger Pad represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Belkin Fast Wireless Charger Pad (Current 2024 Flagship Release)"],
+    sku: "PHN-BEL-SMABELK-856",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_ifixit_prime_oled_replacement_screen",
@@ -6850,6 +8164,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The iFixit Prime OLED Replacement Screen represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","iFixit Prime OLED Replacement Screen (Current 2024 Flagship Release)"],
+    sku: "PHN-IFI-PARIFIX-386",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_injuredgadgets_fx5_oled_assembly",
@@ -6865,6 +8182,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The InjuredGadgets FX5 OLED Assembly represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","InjuredGadgets FX5 OLED Assembly (Current 2024 Flagship Release)"],
+    sku: "PHN-INJ-PARINJU-238",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_mobilesentrix_select_oled_panel",
@@ -6880,6 +8200,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The MobileSentrix Select OLED Panel represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","MobileSentrix Select OLED Panel (Current 2024 Flagship Release)"],
+    sku: "PHN-MOB-PARMOBI-782",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_ifixit_high_capacity_battery_replacement_",
@@ -6895,6 +8218,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The iFixit High Capacity Battery Replacement Kits represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","iFixit High Capacity Battery Replacement Kits (Current 2024 Flagship Release)"],
+    sku: "PHN-IFI-PARIFIX-543",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_deji_high_capacity_internal_battery",
@@ -6910,6 +8236,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Deji High Capacity Internal Battery represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Deji High Capacity Internal Battery (Current 2024 Flagship Release)"],
+    sku: "PHN-DEJ-PARDEJI-504",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_nohon_replacement_battery",
@@ -6925,6 +8254,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nohon Replacement Battery represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Nohon Replacement Battery (Current 2024 Flagship Release)"],
+    sku: "PHN-NOH-PARNOHO-817",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_ifixit_pro_tech_screwdriver_kit",
@@ -6940,6 +8272,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The iFixit Pro Tech Screwdriver Kit represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","iFixit Pro Tech Screwdriver Kit (Current 2024 Flagship Release)"],
+    sku: "PHN-IFI-PARIFIX-546",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_wiha_43_piece_micro_bit_set",
@@ -6955,6 +8290,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Wiha 43-Piece Micro Bit Set represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Wiha 43-Piece Micro Bit Set (Current 2024 Flagship Release)"],
+    sku: "PHN-WIH-PARWIHA-550",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_xiaomi_wiha_precision_screwdriver_set",
@@ -6970,6 +8308,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Xiaomi Wiha Precision Screwdriver Set represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Xiaomi Legacy Series (Gen 1 Performance Standard)","Xiaomi Enhanced Series (Gen 2 Efficiency Upgrade)","Xiaomi Wiha Precision Screwdriver Set (Current 2024 Flagship Release)"],
+    sku: "PHN-XIA-PARXIAO-852",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_noosy_nano_sim_adapter_4_in_1_kit",
@@ -6985,6 +8326,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Noosy Nano SIM Adapter 4-in-1 Kit represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Noosy Nano SIM Adapter 4-in-1 Kit (Current 2024 Flagship Release)"],
+    sku: "PHN-NOO-PARNOOS-277",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_mobi_lock_sim_card_adapter_kit",
@@ -7000,6 +8344,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Mobi Lock SIM Card Adapter Kit represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Mobi Lock SIM Card Adapter Kit (Current 2024 Flagship Release)"],
+    sku: "PHN-MOB-PARMOBI-383",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_motorola_talkabout_t800",
@@ -7015,6 +8362,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Motorola Talkabout T800 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Motorola Talkabout T800 (Current 2024 Flagship Release)"],
+    sku: "PHN-MOT-PARMOTO-144",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_baofeng_uv_5r_pro",
@@ -7030,6 +8380,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Baofeng UV-5R Pro represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Baofeng UV-5R Pro (Current 2024 Flagship Release)"],
+    sku: "PHN-BAO-PARBAOF-636",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "par_midland_gxt1000vp4",
@@ -7045,6 +8398,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Midland GXT1000VP4 represents cutting-edge mobile engineering, combining ultra-responsive high-refresh display technology, next-generation silicon processing, and advanced pro-grade imaging algorithms. Optimized for seamless all-day multitasking, high-throughput connectivity, and intelligent on-device AI performance, its aerospace-grade chassis ensures both ergonomic comfort and long-term durability. Each unit is brand-new, factory unlocked for all global cellular carriers, and backed by comprehensive official manufacturer warranty coverage.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["phones Legacy Series (Gen 1 Performance Standard)","phones Enhanced Series (Gen 2 Efficiency Upgrade)","Midland GXT1000VP4 (Current 2024 Flagship Release)"],
+    sku: "PHN-MID-PARMIDL-210",
+    baseMsrp: 22900,
+    releaseYear: 2024,
   },
   {
     id: "lap_apple_macbook_pro_16_m3_max",
@@ -7060,6 +8416,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Apple MacBook Pro 16\" (M3 Max) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "3rd Gen Apple Silicon Pro/Max (3nm Process Node)",
     lineage: ["MacBook Pro 16 M1 Max (2021 Liquid Retina XDR)","MacBook Pro 16 M2 Max (2023 HDMI 2.1)","MacBook Pro 16 M3 Max (Current 16-Core CPU 40-Core GPU Space Black)"],
+    sku: "CMP-APL-LAPAPPL-771",
+    baseMsrp: 439700,
+    releaseYear: 2024,
   },
   {
     id: "lap_dell_xps_15_9530",
@@ -7075,6 +8434,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Dell XPS 15 (9530) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "13th Gen Intel Core H-Series + RTX 40 InfinityEdge",
     lineage: ["XPS 15 9510 (2021 11th Gen Core)","XPS 15 9520 (2022 12th Gen Alder Lake)","Dell XPS 15 9530 (Current 3.5K OLED RTX 4070 Ada Lovelace)"],
+    sku: "CMP-DEL-LAPDELL-886",
+    baseMsrp: 337700,
+    releaseYear: 2024,
   },
   {
     id: "lap_lenovo_thinkpad_x1_carbon_gen_12",
@@ -7090,6 +8452,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Lenovo ThinkPad X1 Carbon Gen 12 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "12th Gen Carbon Fiber Ultrabook (Intel Core Ultra Meteor Lake)",
     lineage: ["ThinkPad X1 Carbon Gen 10 (2022)","ThinkPad X1 Carbon Gen 11 (2023)","ThinkPad X1 Carbon Gen 12 (Current NPU AI Engine 120Hz OLED)"],
+    sku: "CMP-LNV-LAPLENO-970",
+    baseMsrp: 312200,
+    releaseYear: 2024,
   },
   {
     id: "lap_asus_zenbook_14_oled",
@@ -7105,6 +8470,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Asus Zenbook 14 OLED features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Asus Legacy Series (Gen 1 Performance Standard)","Asus Enhanced Series (Gen 2 Efficiency Upgrade)","Asus Zenbook 14 OLED (Current 2024 Flagship Release)"],
+    sku: "CMP-ASU-LAPASUS-478",
+    baseMsrp: 172000,
+    releaseYear: 2024,
   },
   {
     id: "lap_asus_rog_strix_scar_18",
@@ -7120,6 +8488,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Asus ROG Strix SCAR 18 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Asus Legacy Series (Gen 1 Performance Standard)","Asus Enhanced Series (Gen 2 Efficiency Upgrade)","Asus ROG Strix SCAR 18 (Current 2024 Flagship Release)"],
+    sku: "CMP-ASU-LAPASUS-646",
+    baseMsrp: 490600,
+    releaseYear: 2024,
   },
   {
     id: "lap_lenovo_legion_pro_7i",
@@ -7135,6 +8506,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Lenovo Legion Pro 7i features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Lenovo Legacy Series (Gen 1 Performance Standard)","Lenovo Enhanced Series (Gen 2 Efficiency Upgrade)","Lenovo Legion Pro 7i (Current 2024 Flagship Release)"],
+    sku: "CMP-LNV-LAPLENO-715",
+    baseMsrp: 395100,
+    releaseYear: 2024,
   },
   {
     id: "lap_msi_titan_18_hx",
@@ -7150,6 +8524,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the MSI Titan 18 HX features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","MSI Titan 18 HX (Current 2024 Flagship Release)"],
+    sku: "CMP-MSI-LAPMSI-999",
+    baseMsrp: 624500,
+    releaseYear: 2024,
   },
   {
     id: "lap_alienware_m18_r2",
@@ -7165,6 +8542,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Alienware m18 R2 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Alienware m18 R2 (Current 2024 Flagship Release)"],
+    sku: "CMP-DEL-LAPALIE-462",
+    baseMsrp: 503400,
+    releaseYear: 2022,
   },
   {
     id: "lap_hp_envy_x360_14",
@@ -7180,6 +8560,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the HP Envy x360 14 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["HP Legacy Series (Gen 1 Performance Standard)","HP Enhanced Series (Gen 2 Efficiency Upgrade)","HP Envy x360 14 (Current 2024 Flagship Release)"],
+    sku: "CMP-HPI-LAPHP-685",
+    baseMsrp: 146600,
+    releaseYear: 2024,
   },
   {
     id: "lap_lenovo_ideapad_5",
@@ -7195,6 +8578,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Lenovo IdeaPad 5 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Lenovo Legacy Series (Gen 1 Performance Standard)","Lenovo Enhanced Series (Gen 2 Efficiency Upgrade)","Lenovo IdeaPad 5 (Current 2024 Flagship Release)"],
+    sku: "CMP-LNV-LAPLENO-634",
+    baseMsrp: 86600,
+    releaseYear: 2024,
   },
   {
     id: "lap_acer_swift_go_14",
@@ -7210,6 +8596,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Acer Swift Go 14 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Acer Swift Go 14 (Current 2024 Flagship Release)"],
+    sku: "CMP-ACE-LAPACER-654",
+    baseMsrp: 104500,
+    releaseYear: 2024,
   },
   {
     id: "lap_dell_inspiron_15",
@@ -7225,6 +8614,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Dell Inspiron 15 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Dell Legacy Series (Gen 1 Performance Standard)","Dell Enhanced Series (Gen 2 Efficiency Upgrade)","Dell Inspiron 15 (Current 2024 Flagship Release)"],
+    sku: "CMP-DEL-LAPDELL-511",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "lap_alienware_aurora_r16",
@@ -7240,6 +8632,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Alienware Aurora R16 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Alienware Aurora R16 (Current 2024 Flagship Release)"],
+    sku: "CMP-DEL-LAPALIE-455",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "lap_hp_omen_45l",
@@ -7255,6 +8650,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the HP OMEN 45L features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["HP Legacy Series (Gen 1 Performance Standard)","HP Enhanced Series (Gen 2 Efficiency Upgrade)","HP OMEN 45L (Current 2024 Flagship Release)"],
+    sku: "CMP-HPI-LAPHP-130",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "lap_corsair_vengeance_i7500",
@@ -7270,6 +8668,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Corsair Vengeance i7500 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Corsair Vengeance i7500 (Current 2024 Flagship Release)"],
+    sku: "CMP-COR-LAPCORS-318",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "lap_lenovo_legion_tower_7i",
@@ -7285,6 +8686,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Lenovo Legion Tower 7i features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Lenovo Legacy Series (Gen 1 Performance Standard)","Lenovo Enhanced Series (Gen 2 Efficiency Upgrade)","Lenovo Legion Tower 7i (Current 2024 Flagship Release)"],
+    sku: "CMP-LNV-LAPLENO-427",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "lap_apple_imac_24_m3",
@@ -7300,6 +8704,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Apple iMac 24\" (M3) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Apple Legacy Series (Gen 1 Performance Standard)","Apple Enhanced Series (Gen 2 Efficiency Upgrade)","Apple iMac 24\" (M3) (Current 2024 Flagship Release)"],
+    sku: "CMP-APL-LAPAPPL-913",
+    baseMsrp: 248500,
+    releaseYear: 2024,
   },
   {
     id: "lap_hp_pavilion_27_all_in_one",
@@ -7315,6 +8722,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the HP Pavilion 27 All-in-One features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["HP Legacy Series (Gen 1 Performance Standard)","HP Enhanced Series (Gen 2 Efficiency Upgrade)","HP Pavilion 27 All-in-One (Current 2024 Flagship Release)"],
+    sku: "CMP-HPI-LAPHP-856",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "lap_dell_inspiron_27_7000_aio",
@@ -7330,6 +8740,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Dell Inspiron 27 7000 AIO features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Dell Legacy Series (Gen 1 Performance Standard)","Dell Enhanced Series (Gen 2 Efficiency Upgrade)","Dell Inspiron 27 7000 AIO (Current 2024 Flagship Release)"],
+    sku: "CMP-DEL-LAPDELL-932",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "lap_lenovo_ideacentre_aio_5i",
@@ -7345,6 +8758,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Lenovo IdeaCentre AIO 5i features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Lenovo Legacy Series (Gen 1 Performance Standard)","Lenovo Enhanced Series (Gen 2 Efficiency Upgrade)","Lenovo IdeaCentre AIO 5i (Current 2024 Flagship Release)"],
+    sku: "CMP-LNV-LAPLENO-391",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "lap_apple_mac_studio_m2_ultra",
@@ -7360,6 +8776,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Apple Mac Studio (M2 Ultra) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Apple Legacy Series (Gen 1 Performance Standard)","Apple Enhanced Series (Gen 2 Efficiency Upgrade)","Apple Mac Studio (M2 Ultra) (Current 2024 Flagship Release)"],
+    sku: "CMP-APL-LAPAPPL-978",
+    baseMsrp: 458800,
+    releaseYear: 2023,
   },
   {
     id: "lap_minisforum_neptune_hx99g",
@@ -7375,6 +8794,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Minisforum Neptune HX99G features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Minisforum Neptune HX99G (Current 2024 Flagship Release)"],
+    sku: "CMP-MIN-LAPMINI-813",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "lap_beelink_ser8",
@@ -7390,6 +8812,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Beelink SER8 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Beelink SER8 (Current 2024 Flagship Release)"],
+    sku: "CMP-BEE-LAPBEEL-445",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "lap_asus_rog_nuc_970",
@@ -7405,6 +8830,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the ASUS ROG NUC 970 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["ASUS Legacy Series (Gen 1 Performance Standard)","ASUS Enhanced Series (Gen 2 Efficiency Upgrade)","ASUS ROG NUC 970 (Current 2024 Flagship Release)"],
+    sku: "CMP-ASU-LAPASUS-315",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_intel_core_i9_14900k",
@@ -7420,6 +8848,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Intel Core i9-14900K features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "14th Gen Intel Core Hybrid Architecture (Raptor Lake Refresh)",
     lineage: ["Core i9-12900K (2021 16 Cores Intel 7)","Core i9-13900K (2022 24 Cores 5.8 GHz)","Core i9-14900K (Current 24 Cores 32 Threads 6.0 GHz Thermal Velocity)"],
+    sku: "CMP-INT-COMINTE-649",
+    baseMsrp: 108300,
+    releaseYear: 2024,
   },
   {
     id: "com_amd_ryzen_9_7950x3d",
@@ -7435,6 +8866,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the AMD Ryzen 9 7950X3D features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Zen 4 Architecture (2nd Gen 3D V-Cache Technology)",
     lineage: ["Ryzen 9 5950X (2020 Zen 3 16-Core)","Ryzen 7 5800X3D (2022 1st Gen 3D V-Cache)","Ryzen 9 7950X3D (Current 144MB Cache AM5 120W TDP)"],
+    sku: "CMP-AMD-COMAMD-854",
+    baseMsrp: 117300,
+    releaseYear: 2024,
   },
   {
     id: "com_amd_ryzen_7_7800x3d",
@@ -7450,6 +8884,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the AMD Ryzen 7 7800X3D features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Zen 4 Architecture (2nd Gen 3D V-Cache Technology)",
     lineage: ["Ryzen 9 5950X (2020 Zen 3 16-Core)","Ryzen 7 5800X3D (2022 1st Gen 3D V-Cache)","Ryzen 9 7950X3D (Current 144MB Cache AM5 120W TDP)"],
+    sku: "CMP-AMD-COMAMD-628",
+    baseMsrp: 82800,
+    releaseYear: 2024,
   },
   {
     id: "com_intel_core_i7_14700k",
@@ -7465,6 +8902,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Intel Core i7-14700K features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Intel Core i7-14700K (Current 2024 Flagship Release)"],
+    sku: "CMP-INT-COMINTE-909",
+    baseMsrp: 73900,
+    releaseYear: 2024,
   },
   {
     id: "com_nvidia_geforce_rtx_4090_founders_asus_rog",
@@ -7480,6 +8920,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the NVIDIA GeForce RTX 4090 (Founders / ASUS ROG) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "4th Gen RTX Architecture (Ada Lovelace TSMC 4N)",
     lineage: ["GeForce RTX 2080 Ti (2018 Turing 12nm)","GeForce RTX 3090 (2020 Ampere 8nm)","GeForce RTX 4090 24GB (Current DLSS 3.5 16384 CUDA Cores)"],
+    sku: "CMP-ASU-COMNVID-295",
+    baseMsrp: 363200,
+    releaseYear: 2022,
   },
   {
     id: "com_amd_radeon_rx_7900_xtx_sapphire_nitro",
@@ -7495,6 +8938,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the AMD Radeon RX 7900 XTX (Sapphire Nitro+) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "3rd Gen RDNA Chiplet Gaming Architecture (5nm GCD + 6nm MCD)",
     lineage: ["Radeon RX 5700 XT (2019 RDNA 1)","Radeon RX 6900 XT (2020 RDNA 2 Infinity Cache)","Radeon RX 7900 XTX 24GB (Current RDNA 3 DisplayPort 2.1)"],
+    sku: "CMP-AMD-COMAMD-979",
+    baseMsrp: 210300,
+    releaseYear: 2024,
   },
   {
     id: "com_msi_geforce_rtx_4080_super_gaming_x_slim",
@@ -7510,6 +8956,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the MSI GeForce RTX 4080 Super Gaming X Slim features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "4th Gen RTX Architecture (Ada Lovelace TSMC 4N)",
     lineage: ["GeForce RTX 2080 Ti (2018 Turing 12nm)","GeForce RTX 3090 (2020 Ampere 8nm)","GeForce RTX 4090 24GB (Current DLSS 3.5 16384 CUDA Cores)"],
+    sku: "CMP-NVD-COMMSI-470",
+    baseMsrp: 223000,
+    releaseYear: 2024,
   },
   {
     id: "com_asus_rog_maximus_z790_dark_hero",
@@ -7525,6 +8974,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the ASUS ROG Maximus Z790 Dark Hero features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["ASUS Legacy Series (Gen 1 Performance Standard)","ASUS Enhanced Series (Gen 2 Efficiency Upgrade)","ASUS ROG Maximus Z790 Dark Hero (Current 2024 Flagship Release)"],
+    sku: "CMP-ASU-COMASUS-915",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_msi_mag_b650_tomahawk_wifi",
@@ -7540,6 +8992,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the MSI MAG B650 Tomahawk WiFi features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","MSI MAG B650 Tomahawk WiFi (Current 2024 Flagship Release)"],
+    sku: "CMP-MSI-COMMSI-662",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_gigabyte_x670e_aorus_master",
@@ -7555,6 +9010,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Gigabyte X670E AORUS Master features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Gigabyte X670E AORUS Master (Current 2024 Flagship Release)"],
+    sku: "CMP-GIG-COMGIGA-811",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_asrock_taichi_carrara",
@@ -7570,6 +9028,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the ASRock Taichi Carrara features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","ASRock Taichi Carrara (Current 2024 Flagship Release)"],
+    sku: "CMP-ASR-COMASRO-543",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_corsair_dominator_titanium_ddr5",
@@ -7585,6 +9046,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Corsair Dominator Titanium DDR5 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Corsair Dominator Titanium DDR5 (Current 2024 Flagship Release)"],
+    sku: "CMP-COR-COMCORS-151",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_g_skill_trident_z5_rgb_ddr5",
@@ -7600,6 +9064,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the G.Skill Trident Z5 RGB DDR5 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","G.Skill Trident Z5 RGB DDR5 (Current 2024 Flagship Release)"],
+    sku: "CMP-GSK-COMG-404",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_kingston_fury_beast_ddr5",
@@ -7615,6 +9082,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Kingston FURY Beast DDR5 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Kingston FURY Beast DDR5 (Current 2024 Flagship Release)"],
+    sku: "CMP-KIN-COMKING-354",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_crucial_pro_ddr5",
@@ -7630,6 +9100,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Crucial Pro DDR5 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Crucial Pro DDR5 (Current 2024 Flagship Release)"],
+    sku: "CMP-CRU-COMCRUC-809",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_samsung_990_pro_2tb",
@@ -7645,6 +9118,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Samsung 990 PRO 2TB features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Samsung Legacy Series (Gen 1 Performance Standard)","Samsung Enhanced Series (Gen 2 Efficiency Upgrade)","Samsung 990 PRO 2TB (Current 2024 Flagship Release)"],
+    sku: "CMP-SAM-COMSAMS-688",
+    baseMsrp: 33200,
+    releaseYear: 2024,
   },
   {
     id: "com_western_digital_wd_black_sn850x",
@@ -7660,6 +9136,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Western Digital WD_BLACK SN850X features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Western Digital WD_BLACK SN850X (Current 2024 Flagship Release)"],
+    sku: "CMP-WES-COMWEST-716",
+    baseMsrp: 31200,
+    releaseYear: 2024,
   },
   {
     id: "com_crucial_t700_gen5_ssd",
@@ -7675,6 +9154,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Crucial T700 Gen5 SSD features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Crucial T700 Gen5 SSD (Current 2024 Flagship Release)"],
+    sku: "CMP-CRU-COMCRUC-144",
+    baseMsrp: 48400,
+    releaseYear: 2024,
   },
   {
     id: "com_kingston_kc3000",
@@ -7690,6 +9172,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Kingston KC3000 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Kingston KC3000 (Current 2024 Flagship Release)"],
+    sku: "CMP-KIN-COMKING-951",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_corsair_rm1000x_shift",
@@ -7705,6 +9190,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Corsair RM1000x Shift features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Corsair RM1000x Shift (Current 2024 Flagship Release)"],
+    sku: "CMP-COR-COMCORS-561",
+    baseMsrp: 35600,
+    releaseYear: 2022,
   },
   {
     id: "com_seasonic_prime_tx_1000",
@@ -7720,6 +9208,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Seasonic Prime TX-1000 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Seasonic Prime TX-1000 (Current 2024 Flagship Release)"],
+    sku: "CMP-SEA-COMSEAS-298",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_be_quiet_dark_power_pro_13",
@@ -7735,6 +9226,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the be quiet! Dark Power Pro 13 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","be quiet! Dark Power Pro 13 (Current 2024 Flagship Release)"],
+    sku: "CMP-GEN-COMBE-518",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_evga_supernova_1000_g7",
@@ -7750,6 +9244,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the EVGA SuperNOVA 1000 G7 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","EVGA SuperNOVA 1000 G7 (Current 2024 Flagship Release)"],
+    sku: "CMP-EVG-COMEVGA-350",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_lian_li_o11_dynamic_evo",
@@ -7765,6 +9262,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Lian Li O11 Dynamic EVO features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Lian Li O11 Dynamic EVO (Current 2024 Flagship Release)"],
+    sku: "CMP-LIA-COMLIAN-879",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_nzxt_h9_flow",
@@ -7780,6 +9280,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the NZXT H9 Flow features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","NZXT H9 Flow (Current 2024 Flagship Release)"],
+    sku: "CMP-NZX-COMNZXT-881",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_corsair_icue_5000x_rgb",
@@ -7795,6 +9298,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Corsair iCUE 5000X RGB features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Corsair iCUE 5000X RGB (Current 2024 Flagship Release)"],
+    sku: "CMP-COR-COMCORS-570",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_fractal_design_torrent",
@@ -7810,6 +9316,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Fractal Design Torrent features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Fractal Design Torrent (Current 2024 Flagship Release)"],
+    sku: "CMP-FRA-COMFRAC-717",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_nzxt_kraken_elite_360_rgb",
@@ -7825,6 +9334,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the NZXT Kraken Elite 360 RGB features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","NZXT Kraken Elite 360 RGB (Current 2024 Flagship Release)"],
+    sku: "CMP-NZX-COMNZXT-765",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_corsair_icue_link_h150i_lcd",
@@ -7840,6 +9352,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Corsair iCUE LINK H150i LCD features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Corsair iCUE LINK H150i LCD (Current 2024 Flagship Release)"],
+    sku: "CMP-COR-COMCORS-731",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_arctic_liquid_freezer_iii_360",
@@ -7855,6 +9370,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the ARCTIC Liquid Freezer III 360 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","ARCTIC Liquid Freezer III 360 (Current 2024 Flagship Release)"],
+    sku: "CMP-ARC-COMARCT-287",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "com_asus_rog_ryujin_iii_360",
@@ -7870,6 +9388,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the ASUS ROG Ryujin III 360 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["ASUS Legacy Series (Gen 1 Performance Standard)","ASUS Enhanced Series (Gen 2 Efficiency Upgrade)","ASUS ROG Ryujin III 360 (Current 2024 Flagship Release)"],
+    sku: "CMP-ASU-COMASUS-263",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_samsung_odyssey_neo_g9_oled_g9",
@@ -7885,6 +9406,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Samsung Odyssey Neo G9 (OLED G9) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Samsung Legacy Series (Gen 1 Performance Standard)","Samsung Enhanced Series (Gen 2 Efficiency Upgrade)","Samsung Odyssey Neo G9 (OLED G9) (Current 2024 Flagship Release)"],
+    sku: "CMP-SAM-PERSAMS-767",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_lg_ultragear_45gr95qe_b",
@@ -7900,6 +9424,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the LG UltraGear 45GR95QE-B features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["LG Legacy Series (Gen 1 Performance Standard)","LG Enhanced Series (Gen 2 Efficiency Upgrade)","LG UltraGear 45GR95QE-B (Current 2024 Flagship Release)"],
+    sku: "CMP-LGE-PERLG-241",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_alienware_aw3423dwf",
@@ -7915,6 +9442,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Alienware AW3423DWF features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Alienware AW3423DWF (Current 2024 Flagship Release)"],
+    sku: "CMP-DEL-PERALIE-318",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_asus_rog_swift_pg32ucdm",
@@ -7930,6 +9460,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the ASUS ROG Swift PG32UCDM features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["ASUS Legacy Series (Gen 1 Performance Standard)","ASUS Enhanced Series (Gen 2 Efficiency Upgrade)","ASUS ROG Swift PG32UCDM (Current 2024 Flagship Release)"],
+    sku: "CMP-ASU-PERASUS-201",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_steelseries_apex_pro_tkl",
@@ -7945,6 +9478,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the SteelSeries Apex Pro TKL features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","SteelSeries Apex Pro TKL (Current 2024 Flagship Release)"],
+    sku: "CMP-STE-PERSTEE-379",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_razer_blackwidow_v4_pro",
@@ -7960,6 +9496,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Razer BlackWidow V4 Pro features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Razer BlackWidow V4 Pro (Current 2024 Flagship Release)"],
+    sku: "CMP-RAZ-PERRAZE-813",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_logitech_g915_lightspeed",
@@ -7975,6 +9514,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Logitech G915 LIGHTSPEED features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Logitech G915 LIGHTSPEED (Current 2024 Flagship Release)"],
+    sku: "CMP-LOG-PERLOGI-620",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_keychron_q3_max",
@@ -7990,6 +9532,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Keychron Q3 Max features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Keychron Q3 Max (Current 2024 Flagship Release)"],
+    sku: "CMP-KEY-PERKEYC-487",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_logitech_mx_master_3s",
@@ -8005,6 +9550,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Logitech MX Master 3S features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Logitech MX Master 3S (Current 2024 Flagship Release)"],
+    sku: "CMP-LOG-PERLOGI-275",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_razer_pro_click",
@@ -8020,6 +9568,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Razer Pro Click features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Razer Pro Click (Current 2024 Flagship Release)"],
+    sku: "CMP-RAZ-PERRAZE-743",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_microsoft_ergonomic_wireless_mouse",
@@ -8035,6 +9586,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Microsoft Ergonomic Wireless Mouse features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Microsoft Ergonomic Wireless Mouse (Current 2024 Flagship Release)"],
+    sku: "CMP-MSF-PERMICR-835",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_keychron_m6",
@@ -8050,6 +9604,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Keychron M6 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Keychron M6 (Current 2024 Flagship Release)"],
+    sku: "CMP-KEY-PERKEYC-239",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_samsung_t9_portable_ssd",
@@ -8065,6 +9622,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Samsung T9 Portable SSD features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Samsung Legacy Series (Gen 1 Performance Standard)","Samsung Enhanced Series (Gen 2 Efficiency Upgrade)","Samsung T9 Portable SSD (Current 2024 Flagship Release)"],
+    sku: "CMP-SAM-PERSAMS-935",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_sandisk_extreme_pro_portable_ssd",
@@ -8080,6 +9640,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the SanDisk Extreme PRO Portable SSD features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","SanDisk Extreme PRO Portable SSD (Current 2024 Flagship Release)"],
+    sku: "CMP-SAN-PERSAND-827",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_crucial_x10_pro",
@@ -8095,6 +9658,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Crucial X10 Pro features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Crucial X10 Pro (Current 2024 Flagship Release)"],
+    sku: "CMP-CRU-PERCRUC-387",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_wd_my_passport_ultra_hdd",
@@ -8110,6 +9676,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the WD My Passport Ultra HDD features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","WD My Passport Ultra HDD (Current 2024 Flagship Release)"],
+    sku: "CMP-GEN-PERWD-321",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_sandisk_extreme_pro_solid_state_flash_dri",
@@ -8125,6 +9694,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the SanDisk Extreme PRO Solid State Flash Drive features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","SanDisk Extreme PRO Solid State Flash Drive (Current 2024 Flagship Release)"],
+    sku: "CMP-SAN-PERSAND-457",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_kingston_datatraveler_max",
@@ -8140,6 +9712,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Kingston DataTraveler Max features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Kingston DataTraveler Max (Current 2024 Flagship Release)"],
+    sku: "CMP-KIN-PERKING-144",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_samsung_type_c_usb_3_2_flash_drive",
@@ -8155,6 +9730,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Samsung Type-C USB 3.2 Flash Drive features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Samsung Legacy Series (Gen 1 Performance Standard)","Samsung Enhanced Series (Gen 2 Efficiency Upgrade)","Samsung Type-C USB 3.2 Flash Drive (Current 2024 Flagship Release)"],
+    sku: "CMP-SAM-PERSAMS-237",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_caldigit_ts4_thunderbolt_4_dock",
@@ -8170,6 +9748,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the CalDigit TS4 Thunderbolt 4 Dock features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","CalDigit TS4 Thunderbolt 4 Dock (Current 2024 Flagship Release)"],
+    sku: "CMP-CAL-PERCALD-176",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_anker_778_thunderbolt_4_docking_station",
@@ -8185,6 +9766,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Anker 778 Thunderbolt 4 Docking Station features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Anker Legacy Series (Gen 1 Performance Standard)","Anker Enhanced Series (Gen 2 Efficiency Upgrade)","Anker 778 Thunderbolt 4 Docking Station (Current 2024 Flagship Release)"],
+    sku: "CMP-ANK-PERANKE-570",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_satechi_dual_dock_stand",
@@ -8200,6 +9784,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Satechi Dual Dock Stand features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Satechi Dual Dock Stand (Current 2024 Flagship Release)"],
+    sku: "CMP-SAT-PERSATE-773",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_logitech_brio_4k",
@@ -8215,6 +9802,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Logitech Brio 4K features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Logitech Brio 4K (Current 2024 Flagship Release)"],
+    sku: "CMP-LOG-PERLOGI-614",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_elgato_facecam_pro_4k60",
@@ -8230,6 +9820,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Elgato Facecam Pro 4K60 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Elgato Facecam Pro 4K60 (Current 2024 Flagship Release)"],
+    sku: "CMP-ELG-PERELGA-261",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_razer_kiyo_pro_ultra",
@@ -8245,6 +9838,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Razer Kiyo Pro Ultra features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Razer Kiyo Pro Ultra (Current 2024 Flagship Release)"],
+    sku: "CMP-RAZ-PERRAZE-856",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_obsbot_tiny_2_ai",
@@ -8260,6 +9856,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the OBSBOT Tiny 2 AI features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","OBSBOT Tiny 2 AI (Current 2024 Flagship Release)"],
+    sku: "CMP-OBS-PEROBSB-630",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_shure_mv7",
@@ -8275,6 +9874,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Shure MV7+ features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Shure MV7+ (Current 2024 Flagship Release)"],
+    sku: "CMP-SHU-PERSHUR-800",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_blue_yeti_x_logitech",
@@ -8290,6 +9892,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Blue Yeti X (Logitech) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Blue Yeti X (Logitech) (Current 2024 Flagship Release)"],
+    sku: "CMP-BLU-PERBLUE-231",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_rode_nt_usb",
@@ -8305,6 +9910,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Rode NT-USB+ features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Rode NT-USB+ (Current 2024 Flagship Release)"],
+    sku: "CMP-ROD-PERRODE-386",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "per_audio_technica_at2020usb_x",
@@ -8320,6 +9928,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Audio-Technica AT2020USB-X features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Audio-Technica AT2020USB-X (Current 2024 Flagship Release)"],
+    sku: "CMP-AUD-PERAUDI-125",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_sony_playstation_5_slim",
@@ -8335,6 +9946,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Sony PlayStation 5 Slim features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "9th Generation Home Console (Custom AMD RDNA 2 GPU)",
     lineage: ["PlayStation 4 Pro (2016 1TB)","PlayStation 5 Launch Model (2020 825GB)","PlayStation 5 Slim (Current 1TB Detachable Ultra HD Drive)"],
+    sku: "CMP-SNY-GAMSONY-754",
+    baseMsrp: 99400,
+    releaseYear: 2024,
   },
   {
     id: "gam_sony_playstation_5_pro",
@@ -8350,6 +9964,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Sony PlayStation 5 Pro features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "PlayStation 5 Mid-Gen Enhancement (PlayStation Spectral Super Resolution)",
     lineage: ["PlayStation 4 Pro (2016 4.2 TFLOPS)","PlayStation 5 (2020 10.28 TFLOPS Liquid Metal)","PlayStation 5 Pro (Current 2TB SSD 4K 60FPS Ray Tracing PSSR AI)"],
+    sku: "CMP-SNY-GAMSONY-780",
+    baseMsrp: 146600,
+    releaseYear: 2024,
   },
   {
     id: "gam_microsoft_xbox_series_x_1tb_2tb",
@@ -8365,6 +9982,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Microsoft Xbox Series X 1TB / 2TB features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "9th Generation Home Console (Xbox Velocity Architecture)",
     lineage: ["Xbox One X (2017 6 TFLOPS Scorpio)","Xbox Series S (2020 4 TFLOPS 512GB)","Xbox Series X (Current 12 TFLOPS 1TB/2TB Quick Resume 4K 120Hz)"],
+    sku: "CMP-MSF-GAMMICR-536",
+    baseMsrp: 94300,
+    releaseYear: 2024,
   },
   {
     id: "gam_microsoft_xbox_series_s_1tb",
@@ -8380,6 +10000,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Microsoft Xbox Series S 1TB features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Microsoft Xbox Series S 1TB (Current 2024 Flagship Release)"],
+    sku: "CMP-MSF-GAMMICR-686",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "gam_nintendo_switch_oled_model",
@@ -8395,6 +10018,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Nintendo Switch OLED Model features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Nintendo Switch Premium Tier (7.0-inch OLED Display)",
     lineage: ["Nintendo Switch V1 (2017 6.2-inch LCD)","Nintendo Switch V2 (2019 Enhanced Mariko SoC)","Nintendo Switch OLED Model (Current 64GB LAN Dock Vivid OLED)"],
+    sku: "CMP-NTN-GAMNINT-965",
+    baseMsrp: 58600,
+    releaseYear: 2024,
   },
   {
     id: "gam_valve_steam_deck_oled",
@@ -8410,6 +10036,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Valve Steam Deck OLED features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "2nd Gen Portable Gaming Handheld (7.4-inch 90Hz HDR OLED)",
     lineage: ["Steam Deck LCD (2022 7.0-inch 60Hz 7nm Aerith)","Steam Deck OLED 512GB (Current 6nm Sephiroth 50Wh)","Steam Deck OLED 1TB (Current Anti-Glare Etched Glass 90Hz)"],
+    sku: "CMP-VAL-GAMVALV-148",
+    baseMsrp: 100700,
+    releaseYear: 2024,
   },
   {
     id: "gam_asus_rog_ally_x",
@@ -8425,6 +10054,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the ASUS ROG Ally X features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "2nd Gen Windows 11 Gaming Handheld (AMD Ryzen Z1 Extreme)",
     lineage: ["ROG Ally 2023 (40Wh 16GB LPDDR5)","ROG Ally X 2024 (Current 80Wh Battery 24GB LPDDR5X Dual USB-C)","ROG Ally X 1TB (Current Ergonomic Grip Redesign)"],
+    sku: "CMP-ASU-GAMASUS-243",
+    baseMsrp: 124800,
+    releaseYear: 2024,
   },
   {
     id: "gam_xbox_elite_wireless_controller_series_2",
@@ -8440,6 +10072,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Xbox Elite Wireless Controller Series 2 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Xbox Elite Wireless Controller Series 2 (Current 2024 Flagship Release)"],
+    sku: "CMP-MSF-GAMXBOX-416",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_sony_dualsense_edge_wireless_controller",
@@ -8455,6 +10090,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Sony DualSense Edge Wireless Controller features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Sony Legacy Series (Gen 1 Performance Standard)","Sony Enhanced Series (Gen 2 Efficiency Upgrade)","Sony DualSense Edge Wireless Controller (Current 2024 Flagship Release)"],
+    sku: "CMP-SNY-GAMSONY-896",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_scuf_reflex_pro",
@@ -8470,6 +10108,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Scuf Reflex Pro features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Scuf Reflex Pro (Current 2024 Flagship Release)"],
+    sku: "CMP-SCU-GAMSCUF-480",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_razer_wolverine_v2_pro",
@@ -8485,6 +10126,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Razer Wolverine V2 Pro features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Razer Wolverine V2 Pro (Current 2024 Flagship Release)"],
+    sku: "CMP-RAZ-GAMRAZE-505",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_steelseries_arctis_nova_pro_wireless",
@@ -8500,6 +10144,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the SteelSeries Arctis Nova Pro Wireless features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","SteelSeries Arctis Nova Pro Wireless (Current 2024 Flagship Release)"],
+    sku: "CMP-STE-GAMSTEE-115",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_razer_blackshark_v2_pro_2023",
@@ -8515,6 +10162,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Razer BlackShark V2 Pro (2023) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Razer BlackShark V2 Pro (2023) (Current 2024 Flagship Release)"],
+    sku: "CMP-RAZ-GAMRAZE-646",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_astro_a50_x",
@@ -8530,6 +10180,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Astro A50 X features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Astro A50 X (Current 2024 Flagship Release)"],
+    sku: "CMP-AST-GAMASTR-999",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_hyperx_cloud_iii_wireless",
@@ -8545,6 +10198,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the HyperX Cloud III Wireless features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","HyperX Cloud III Wireless (Current 2024 Flagship Release)"],
+    sku: "CMP-HYP-GAMHYPE-879",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_secretlab_titan_evo",
@@ -8560,6 +10216,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Secretlab Titan Evo features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Secretlab Titan Evo (Current 2024 Flagship Release)"],
+    sku: "CMP-SEC-GAMSECR-835",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_noblechairs_hero",
@@ -8575,6 +10234,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Noblechairs HERO features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Noblechairs HERO (Current 2024 Flagship Release)"],
+    sku: "CMP-NOB-GAMNOBL-945",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_herman_miller_x_logitech_g_embody",
@@ -8590,6 +10252,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Herman Miller x Logitech G Embody features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Herman Miller x Logitech G Embody (Current 2024 Flagship Release)"],
+    sku: "CMP-HMN-GAMHERM-313",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_corsair_t3_rush",
@@ -8605,6 +10270,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Corsair T3 RUSH features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Corsair T3 RUSH (Current 2024 Flagship Release)"],
+    sku: "CMP-COR-GAMCORS-138",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_logitech_g_pro_racing_wheel",
@@ -8620,6 +10288,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Logitech G PRO Racing Wheel features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Logitech G PRO Racing Wheel (Current 2024 Flagship Release)"],
+    sku: "CMP-LOG-GAMLOGI-544",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_thrustmaster_t300_rs_gt_edition",
@@ -8635,6 +10306,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Thrustmaster T300 RS GT Edition features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Thrustmaster T300 RS GT Edition (Current 2024 Flagship Release)"],
+    sku: "CMP-THR-GAMTHRU-997",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_fanatec_gran_turismo_dd_pro",
@@ -8650,6 +10324,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Fanatec Gran Turismo DD Pro features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Fanatec Gran Turismo DD Pro (Current 2024 Flagship Release)"],
+    sku: "CMP-FAN-GAMFANA-748",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_turtle_beach_velocityone_flightstick",
@@ -8665,6 +10342,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Turtle Beach VelocityOne Flightstick features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Turtle Beach VelocityOne Flightstick (Current 2024 Flagship Release)"],
+    sku: "CMP-TUR-GAMTURT-375",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_meta_quest_3",
@@ -8680,6 +10360,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Meta Quest 3 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Meta Quest 3 (Current 2024 Flagship Release)"],
+    sku: "CMP-MET-GAMMETA-900",
+    baseMsrp: 96900,
+    releaseYear: 2024,
   },
   {
     id: "gam_playstation_vr2",
@@ -8695,6 +10378,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the PlayStation VR2 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","PlayStation VR2 (Current 2024 Flagship Release)"],
+    sku: "CMP-SNY-GAMPLAY-635",
+    baseMsrp: 107000,
+    releaseYear: 2024,
   },
   {
     id: "gam_htc_vive_xr_elite",
@@ -8710,6 +10396,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the HTC Vive XR Elite features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","HTC Vive XR Elite (Current 2024 Flagship Release)"],
+    sku: "CMP-HTC-GAMHTC-765",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "gam_valve_index",
@@ -8725,6 +10414,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Valve Index features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Valve Index (Current 2024 Flagship Release)"],
+    sku: "CMP-VAL-GAMVALV-421",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_asus_rt_ax88u_pro",
@@ -8740,6 +10432,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Asus RT-AX88U Pro features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Asus Legacy Series (Gen 1 Performance Standard)","Asus Enhanced Series (Gen 2 Efficiency Upgrade)","Asus RT-AX88U Pro (Current 2024 Flagship Release)"],
+    sku: "CMP-ASU-NETASUS-452",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_netgear_nighthawk_raxe500",
@@ -8755,6 +10450,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Netgear Nighthawk RAXE500 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Netgear Nighthawk RAXE500 (Current 2024 Flagship Release)"],
+    sku: "CMP-NET-NETNETG-498",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_tp_link_archer_axe75",
@@ -8770,6 +10468,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the TP-Link Archer AXE75 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","TP-Link Archer AXE75 (Current 2024 Flagship Release)"],
+    sku: "CMP-TPL-NETTP-616",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_linksys_hydra_pro_6e",
@@ -8785,6 +10486,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Linksys Hydra Pro 6E features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Linksys Hydra Pro 6E (Current 2024 Flagship Release)"],
+    sku: "CMP-LIN-NETLINK-436",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_eero_max_7",
@@ -8800,6 +10504,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the eero Max 7 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","eero Max 7 (Current 2024 Flagship Release)"],
+    sku: "CMP-EER-NETEERO-600",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_netgear_orbi_quad_band_wifi_6e_7_rbke963",
@@ -8815,6 +10522,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Netgear Orbi Quad-Band WiFi 6E/7 (RBKE963) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Netgear Orbi Quad-Band WiFi 6E/7 (RBKE963) (Current 2024 Flagship Release)"],
+    sku: "CMP-NET-NETNETG-536",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_tp_link_deco_xe75_pro",
@@ -8830,6 +10540,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the TP-Link Deco XE75 Pro features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","TP-Link Deco XE75 Pro (Current 2024 Flagship Release)"],
+    sku: "CMP-TPL-NETTP-593",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_asus_zenwifi_pro_xt12",
@@ -8845,6 +10558,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Asus ZenWiFi Pro XT12 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Asus Legacy Series (Gen 1 Performance Standard)","Asus Enhanced Series (Gen 2 Efficiency Upgrade)","Asus ZenWiFi Pro XT12 (Current 2024 Flagship Release)"],
+    sku: "CMP-ASU-NETASUS-493",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_ubiquiti_unifi_pro_24_poe_switch",
@@ -8860,6 +10576,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Ubiquiti UniFi Pro 24 PoE Switch features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Ubiquiti UniFi Pro 24 PoE Switch (Current 2024 Flagship Release)"],
+    sku: "CMP-UBI-NETUBIQ-687",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_netgear_gs308p_8_port_poe_switch",
@@ -8875,6 +10594,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Netgear GS308P 8-Port PoE Switch features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Netgear GS308P 8-Port PoE Switch (Current 2024 Flagship Release)"],
+    sku: "CMP-NET-NETNETG-471",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_tp_link_tl_sg108pe_8_port_easy_smart_swit",
@@ -8890,6 +10612,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the TP-Link TL-SG108PE 8-Port Easy Smart Switch features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","TP-Link TL-SG108PE 8-Port Easy Smart Switch (Current 2024 Flagship Release)"],
+    sku: "CMP-TPL-NETTP-773",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_netgear_nighthawk_m6_pro_5g_wifi_router",
@@ -8905,6 +10630,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Netgear Nighthawk M6 Pro 5G WiFi Router features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Netgear Nighthawk M6 Pro 5G WiFi Router (Current 2024 Flagship Release)"],
+    sku: "CMP-NET-NETNETG-891",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_huawei_5g_mobile_wifi_pro_e6878",
@@ -8920,6 +10648,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Huawei 5G Mobile WiFi Pro (E6878) features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Huawei 5G Mobile WiFi Pro (E6878) (Current 2024 Flagship Release)"],
+    sku: "CMP-HUA-NETHUAW-982",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_d_link_dwr_2101_5g_hotspot",
@@ -8935,6 +10666,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the D-Link DWR-2101 5G Hotspot features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","D-Link DWR-2101 5G Hotspot (Current 2024 Flagship Release)"],
+    sku: "CMP-DLI-NETD-327",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_epson_ecotank_l8050_et_4850",
@@ -8950,6 +10684,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Epson EcoTank L8050 / ET-4850 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Epson EcoTank L8050 / ET-4850 (Current 2024 Flagship Release)"],
+    sku: "CMP-EPS-NETEPSO-707",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_canon_megatank_maxify_gx7020",
@@ -8965,6 +10702,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Canon MegaTank MAXIFY GX7020 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Canon MegaTank MAXIFY GX7020 (Current 2024 Flagship Release)"],
+    sku: "CMP-CAN-NETCANO-514",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_hp_smart_tank_7301",
@@ -8980,6 +10720,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the HP Smart Tank 7301 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["HP Legacy Series (Gen 1 Performance Standard)","HP Enhanced Series (Gen 2 Efficiency Upgrade)","HP Smart Tank 7301 (Current 2024 Flagship Release)"],
+    sku: "CMP-HPI-NETHP-127",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_brother_mfc_l3780cdw_color_laser",
@@ -8995,6 +10738,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Brother MFC-L3780CDW Color Laser features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Brother MFC-L3780CDW Color Laser (Current 2024 Flagship Release)"],
+    sku: "CMP-BRO-NETBROT-988",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_zebra_zd421_thermal_desktop_printer",
@@ -9010,6 +10756,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Zebra ZD421 Thermal Desktop Printer features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Zebra ZD421 Thermal Desktop Printer (Current 2024 Flagship Release)"],
+    sku: "CMP-ZEB-NETZEBR-170",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_honeywell_voyager_1200g_scanner",
@@ -9025,6 +10774,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Honeywell Voyager 1200g Scanner features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Honeywell Voyager 1200g Scanner (Current 2024 Flagship Release)"],
+    sku: "CMP-HON-NETHONE-767",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_epson_tm_t88vii_receipt_printer",
@@ -9040,6 +10792,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Epson TM-T88VII Receipt Printer features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Epson TM-T88VII Receipt Printer (Current 2024 Flagship Release)"],
+    sku: "CMP-EPS-NETEPSO-682",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_dymo_labelwriter_550",
@@ -9055,6 +10810,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Dymo LabelWriter 550 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Dymo LabelWriter 550 (Current 2024 Flagship Release)"],
+    sku: "CMP-DYM-NETDYMO-202",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_fellowes_powershred_99ci",
@@ -9070,6 +10828,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Fellowes Powershred 99Ci features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Fellowes Powershred 99Ci (Current 2024 Flagship Release)"],
+    sku: "CMP-FEL-NETFELL-754",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_bonsaii_heavy_duty_18_sheet_shredder",
@@ -9085,6 +10846,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Bonsaii Heavy Duty 18-Sheet Shredder features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Bonsaii Heavy Duty 18-Sheet Shredder (Current 2024 Flagship Release)"],
+    sku: "CMP-BON-NETBONS-382",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "net_rexel_momentum_x415",
@@ -9100,6 +10864,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Designed for demanding computational workloads, esports competition, and creative production, the Rexel Momentum X415 features state-of-the-art architecture calibrated for maximum thermal headroom and sustained peak throughput. With high-speed memory channels, lightning-fast solid-state I/O, and advanced cooling dynamics, it handles complex multitasking, 4K rendering, and AAA gaming effortlessly. Constructed with military-grade structural reinforcement and certified for professional long-term reliability.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["computers Legacy Series (Gen 1 Performance Standard)","computers Enhanced Series (Gen 2 Efficiency Upgrade)","Rexel Momentum X415 (Current 2024 Flagship Release)"],
+    sku: "CMP-HPI-NETREXE-462",
+    baseMsrp: 35600,
+    releaseYear: 2024,
   },
   {
     id: "tel_samsung_crystal_uhd_cu8000",
@@ -9115,6 +10882,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Crystal UHD CU8000 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Samsung Legacy Series (Gen 1 Performance Standard)","Samsung Enhanced Series (Gen 2 Efficiency Upgrade)","Samsung Crystal UHD CU8000 (Current 2024 Flagship Release)"],
+    sku: "TVS-SAM-TELSAMS-998",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_lg_ur80_4k_smart_tv",
@@ -9130,6 +10900,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG UR80 4K Smart TV delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["LG Legacy Series (Gen 1 Performance Standard)","LG Enhanced Series (Gen 2 Efficiency Upgrade)","LG UR80 4K Smart TV (Current 2024 Flagship Release)"],
+    sku: "TVS-LGE-TELLG-826",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_tcl_qm7_series_4k",
@@ -9145,6 +10918,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The TCL QM7 Series 4K delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","TCL QM7 Series 4K (Current 2024 Flagship Release)"],
+    sku: "TVS-TCL-TELTCL-401",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_hisense_u6n",
@@ -9160,6 +10936,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hisense U6N delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Hisense U6N (Current 2024 Flagship Release)"],
+    sku: "TVS-HIS-TELHISE-927",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_lg_g4_series_oled",
@@ -9175,6 +10954,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG G4 Series OLED delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "4th Gen LG Gallery OLED (Micro Lens Array + Alpha 11 AI)",
     lineage: ["LG G2 OLED (2022 Evo Brightness Booster)","LG G3 OLED (2023 1st Gen MLA 70% Brighter)","LG G4 OLED (Current Alpha 11 AI 144Hz G-Sync Zero Gap)"],
+    sku: "TVS-LGE-TELLG-538",
+    baseMsrp: 375900,
+    releaseYear: 2024,
   },
   {
     id: "tel_samsung_s95d_qd_oled",
@@ -9190,6 +10972,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung S95D QD-OLED delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "3rd Gen Samsung QD-OLED (OLED Glare-Free + NQ4 AI Gen2)",
     lineage: ["Samsung S95B (2022 1st Gen QD-OLED)","Samsung S95C (2023 One Connect Box 144Hz)","Samsung S95D (Current Anti-Reflective Matte Coating 144Hz)"],
+    sku: "TVS-SAM-TELSAMS-523",
+    baseMsrp: 375900,
+    releaseYear: 2024,
   },
   {
     id: "tel_sony_bravia_8_oled",
@@ -9205,6 +10990,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sony BRAVIA 8 OLED delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "2nd Gen Cognitive Processor XR QD-OLED / OLED Series",
     lineage: ["Sony A80J (2021 Acoustic Surface)","Sony A95K (2022 1st Gen QD-OLED)","Sony A95L / Bravia 8 (Current XR Clear Image QD-OLED Acoustic Audio+)"],
+    sku: "TVS-SNY-TELSONY-967",
+    baseMsrp: 356800,
+    releaseYear: 2024,
   },
   {
     id: "tel_hisense_u8n_mini_led",
@@ -9220,6 +11008,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hisense U8N Mini-LED delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "6th Gen QD-Mini LED Display (2000+ Local Dimming Zones)",
     lineage: ["TCL C825 (2021 1st Gen Mini-LED)","TCL C845 (2023 2000 Nits HDR)","TCL C855 / C89B (Current 3500 Nits 2160 Zones Onkyo 2.2.2 Audio)"],
+    sku: "TVS-HIS-TELHISE-467",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_sony_bravia_xr_a80l_google_tv",
@@ -9235,6 +11026,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sony BRAVIA XR A80L (Google TV) delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Sony Legacy Series (Gen 1 Performance Standard)","Sony Enhanced Series (Gen 2 Efficiency Upgrade)","Sony BRAVIA XR A80L (Google TV) (Current 2024 Flagship Release)"],
+    sku: "TVS-SNY-TELSONY-759",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_tcl_qm8_series_google_tv",
@@ -9250,6 +11044,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The TCL QM8 Series (Google TV) delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","TCL QM8 Series (Google TV) (Current 2024 Flagship Release)"],
+    sku: "TVS-GGL-TELTCL-567",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_hisense_u7n_google_tv",
@@ -9265,6 +11062,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hisense U7N (Google TV) delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Hisense U7N (Google TV) (Current 2024 Flagship Release)"],
+    sku: "TVS-GGL-TELHISE-243",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_philips_ambilight_android_tv",
@@ -9280,6 +11080,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Philips Ambilight Android TV delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Philips Ambilight Android TV (Current 2024 Flagship Release)"],
+    sku: "TVS-PHP-TELPHIL-696",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_samsung_the_frame_32_43",
@@ -9295,6 +11098,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung The Frame 32\"/43\" delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Samsung Legacy Series (Gen 1 Performance Standard)","Samsung Enhanced Series (Gen 2 Efficiency Upgrade)","Samsung The Frame 32\"/43\" (Current 2024 Flagship Release)"],
+    sku: "TVS-SAM-TELSAMS-758",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_lg_43_ur9000",
@@ -9310,6 +11116,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG 43\" UR9000 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["LG Legacy Series (Gen 1 Performance Standard)","LG Enhanced Series (Gen 2 Efficiency Upgrade)","LG 43\" UR9000 (Current 2024 Flagship Release)"],
+    sku: "TVS-LGE-TELLG-760",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_tcl_43_class_s4",
@@ -9325,6 +11134,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The TCL 43\" Class S4 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","TCL 43\" Class S4 (Current 2024 Flagship Release)"],
+    sku: "TVS-TCL-TELTCL-634",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_hisense_32_a4_series",
@@ -9340,6 +11152,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hisense 32\" A4 Series delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Hisense 32\" A4 Series (Current 2024 Flagship Release)"],
+    sku: "TVS-HIS-TELHISE-891",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_samsung_qm55b_crystal_4k_commercial_displ",
@@ -9355,6 +11170,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung QM55B Crystal 4K Commercial Display delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Samsung Legacy Series (Gen 1 Performance Standard)","Samsung Enhanced Series (Gen 2 Efficiency Upgrade)","Samsung QM55B Crystal 4K Commercial Display (Current 2024 Flagship Release)"],
+    sku: "TVS-SAM-TELSAMS-898",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_lg_55uh5j_h_uhd_signage",
@@ -9370,6 +11188,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG 55UH5J-H UHD Signage delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["LG Legacy Series (Gen 1 Performance Standard)","LG Enhanced Series (Gen 2 Efficiency Upgrade)","LG 55UH5J-H UHD Signage (Current 2024 Flagship Release)"],
+    sku: "TVS-LGE-TELLG-474",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "tel_viewsonic_cde5520_commercial_presentation",
@@ -9385,6 +11206,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The ViewSonic CDE5520 Commercial Presentation Display delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","ViewSonic CDE5520 Commercial Presentation Display (Current 2024 Flagship Release)"],
+    sku: "TVS-VIE-TELVIEW-170",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_apple_airpods_pro_2",
@@ -9400,6 +11224,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple AirPods Pro 2 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Apple Legacy Series (Gen 1 Performance Standard)","Apple Enhanced Series (Gen 2 Efficiency Upgrade)","Apple AirPods Pro 2 (Current 2024 Flagship Release)"],
+    sku: "AUD-APL-AUDAPPL-747",
+    baseMsrp: 40800,
+    releaseYear: 2024,
   },
   {
     id: "aud_sony_wf_1000xm5",
@@ -9415,6 +11242,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sony WF-1000XM5 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Sony Legacy Series (Gen 1 Performance Standard)","Sony Enhanced Series (Gen 2 Efficiency Upgrade)","Sony WF-1000XM5 (Current 2024 Flagship Release)"],
+    sku: "AUD-SNY-AUDSONY-534",
+    baseMsrp: 43300,
+    releaseYear: 2024,
   },
   {
     id: "aud_bose_quietcomfort_ultra_earbuds",
@@ -9430,6 +11260,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bose QuietComfort Ultra Earbuds delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "QuietComfort Ultra Flagship Series (Bose Immersive Audio)",
     lineage: ["Bose QC35 II (2017 Acoustic Noise Cancelling)","Bose QC45 (2021 Aware Mode USB-C)","Bose QuietComfort Ultra (Current Spatial Audio CustomTune Head Tracking)"],
+    sku: "AUD-BOS-AUDBOSE-911",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_sennheiser_momentum_true_wireless_4",
@@ -9445,6 +11278,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sennheiser Momentum True Wireless 4 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Sennheiser Momentum True Wireless 4 (Current 2024 Flagship Release)"],
+    sku: "AUD-HPI-AUDSENN-119",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_sony_wh_1000xm5",
@@ -9460,6 +11296,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sony WH-1000XM5 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "5th Gen 1000X Industry-Leading Noise Canceling Series",
     lineage: ["WH-1000XM3 (2018 QN1 HD Processor)","WH-1000XM4 (2020 Multi-Point Bluetooth)","WH-1000XM5 (Current Dual Processor V1+QN1 8-Mic Auto NC)"],
+    sku: "AUD-SNY-AUDSONY-164",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_bose_quietcomfort_ultra_headphones",
@@ -9475,6 +11314,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bose QuietComfort Ultra Headphones delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "QuietComfort Ultra Flagship Series (Bose Immersive Audio)",
     lineage: ["Bose QC35 II (2017 Acoustic Noise Cancelling)","Bose QC45 (2021 Aware Mode USB-C)","Bose QuietComfort Ultra (Current Spatial Audio CustomTune Head Tracking)"],
+    sku: "AUD-BOS-AUDBOSE-434",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_apple_airpods_max",
@@ -9490,6 +11332,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple AirPods Max delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "2nd Gen Apple Over-Ear Fidelity Series (USB-C Edition)",
     lineage: ["AirPods Max Lightning (2020 Dual H1 SiP)","AirPods Max 2024 Refresh (Current USB-C Lossless Audio Space Gray)"],
+    sku: "AUD-APL-AUDAPPL-315",
+    baseMsrp: 100700,
+    releaseYear: 2024,
   },
   {
     id: "aud_sennheiser_momentum_4_wireless",
@@ -9505,6 +11350,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sennheiser Momentum 4 Wireless delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Sennheiser Momentum 4 Wireless (Current 2024 Flagship Release)"],
+    sku: "AUD-HPI-AUDSENN-614",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_audio_technica_ath_m50x",
@@ -9520,6 +11368,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Audio-Technica ATH-M50x delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Audio-Technica ATH-M50x (Current 2024 Flagship Release)"],
+    sku: "AUD-AUD-AUDAUDI-358",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_beyerdynamic_dt_990_pro",
@@ -9535,6 +11386,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Beyerdynamic DT 990 Pro delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Beyerdynamic DT 990 Pro (Current 2024 Flagship Release)"],
+    sku: "AUD-BEY-AUDBEYE-421",
+    baseMsrp: 33200,
+    releaseYear: 2024,
   },
   {
     id: "aud_sony_mdr_7506",
@@ -9550,6 +11404,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sony MDR-7506 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Sony Legacy Series (Gen 1 Performance Standard)","Sony Enhanced Series (Gen 2 Efficiency Upgrade)","Sony MDR-7506 (Current 2024 Flagship Release)"],
+    sku: "AUD-SNY-AUDSONY-493",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_sennheiser_hd_560s",
@@ -9565,6 +11422,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sennheiser HD 560S delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Sennheiser HD 560S (Current 2024 Flagship Release)"],
+    sku: "AUD-SEN-AUDSENN-523",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_beats_powerbeats_pro",
@@ -9580,6 +11440,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Beats Powerbeats Pro delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Beats Powerbeats Pro (Current 2024 Flagship Release)"],
+    sku: "AUD-BEA-AUDBEAT-883",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_shokz_openrun_pro_bone_conduction",
@@ -9595,6 +11458,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Shokz OpenRun Pro (Bone Conduction) delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Shokz OpenRun Pro (Bone Conduction) (Current 2024 Flagship Release)"],
+    sku: "AUD-SHO-AUDSHOK-418",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_jabra_elite_8_active",
@@ -9610,6 +11476,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Jabra Elite 8 Active delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Jabra Elite 8 Active (Current 2024 Flagship Release)"],
+    sku: "AUD-JAB-AUDJABR-381",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_jaybird_vista_2",
@@ -9625,6 +11494,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Jaybird Vista 2 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Jaybird Vista 2 (Current 2024 Flagship Release)"],
+    sku: "AUD-JAY-AUDJAYB-461",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_jabra_talk_65",
@@ -9640,6 +11512,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Jabra Talk 65 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Jabra Talk 65 (Current 2024 Flagship Release)"],
+    sku: "AUD-JAB-AUDJABR-790",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_plantronics_poly_voyager_5200",
@@ -9655,6 +11530,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Plantronics (Poly) Voyager 5200 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Plantronics (Poly) Voyager 5200 (Current 2024 Flagship Release)"],
+    sku: "AUD-PLA-AUDPLAN-783",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "aud_blueparrott_b450_xt",
@@ -9670,6 +11548,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The BlueParrott B450-XT delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","BlueParrott B450-XT (Current 2024 Flagship Release)"],
+    sku: "AUD-BLU-AUDBLUE-972",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_sonos_arc_with_sub_gen_3",
@@ -9685,6 +11566,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sonos Arc with Sub (Gen 3) delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Dolby Atmos Smart Soundbar Lineup (Trueplay Acoustic Tuning)",
     lineage: ["Sonos Playbar (2013 Optical 3.0)","Sonos Beam Gen 2 (2021 eARC Atmos)","Sonos Arc + Sub Gen 3 (Current 11 High-Performance Drivers Master Audio)"],
+    sku: "AUD-SNS-SOUSONO-660",
+    baseMsrp: 159300,
+    releaseYear: 2024,
   },
   {
     id: "sou_samsung_hw_q990d",
@@ -9700,6 +11584,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung HW-Q990D delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Samsung Legacy Series (Gen 1 Performance Standard)","Samsung Enhanced Series (Gen 2 Efficiency Upgrade)","Samsung HW-Q990D (Current 2024 Flagship Release)"],
+    sku: "AUD-SAM-SOUSAMS-968",
+    baseMsrp: 210300,
+    releaseYear: 2024,
   },
   {
     id: "sou_bose_smart_ultra_soundbar_bass_module_700",
@@ -9715,6 +11602,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bose Smart Ultra Soundbar + Bass Module 700 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Bose Legacy Series (Gen 1 Performance Standard)","Bose Enhanced Series (Gen 2 Efficiency Upgrade)","Bose Smart Ultra Soundbar + Bass Module 700 (Current 2024 Flagship Release)"],
+    sku: "AUD-BOS-SOUBOSE-260",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_sony_bravia_theater_bar_9",
@@ -9730,6 +11620,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sony BRAVIA Theater Bar 9 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Sony Legacy Series (Gen 1 Performance Standard)","Sony Enhanced Series (Gen 2 Efficiency Upgrade)","Sony BRAVIA Theater Bar 9 (Current 2024 Flagship Release)"],
+    sku: "AUD-SNY-SOUSONY-317",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_klipsch_reference_cinema_system_5_1_4",
@@ -9745,6 +11638,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Klipsch Reference Cinema System 5.1.4 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Klipsch Reference Cinema System 5.1.4 (Current 2024 Flagship Release)"],
+    sku: "TVS-KLI-SOUKLIP-287",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_polk_audio_tl1600_5_1_system",
@@ -9760,6 +11656,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Polk Audio TL1600 5.1 System delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Polk Audio TL1600 5.1 System (Current 2024 Flagship Release)"],
+    sku: "TVS-POL-SOUPOLK-911",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_yamaha_yht_4950u_5_1_home_theater_package",
@@ -9775,6 +11674,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Yamaha YHT-4950U 5.1 Home Theater Package delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Yamaha YHT-4950U 5.1 Home Theater Package (Current 2024 Flagship Release)"],
+    sku: "TVS-YMH-SOUYAMA-512",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_jbl_partybox_710_stage_320",
@@ -9790,6 +11692,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The JBL PartyBox 710 / Stage 320 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "4th Gen High-Power Portable PA Party Audio (AI Sound Boost)",
     lineage: ["JBL PartyBox 100 (2019 160W)","JBL PartyBox 110 (2021 IPX4 Splashproof)","JBL PartyBox Stage 320 / Club 120 (Current Auracast AI Sound Boost)"],
+    sku: "AUD-JBL-SOUJBL-586",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_sony_mhc_v73d_high_power_audio_system",
@@ -9805,6 +11710,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sony MHC-V73D High-Power Audio System delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Sony Legacy Series (Gen 1 Performance Standard)","Sony Enhanced Series (Gen 2 Efficiency Upgrade)","Sony MHC-V73D High-Power Audio System (Current 2024 Flagship Release)"],
+    sku: "AUD-SNY-SOUSONY-985",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_ultimate_ears_hyperboom",
@@ -9820,6 +11728,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ultimate Ears HYPERBOOM delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Ultimate Ears HYPERBOOM (Current 2024 Flagship Release)"],
+    sku: "AUD-ULT-SOUULTI-999",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_jbl_charge_5",
@@ -9835,6 +11746,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The JBL Charge 5 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["JBL Legacy Series (Gen 1 Performance Standard)","JBL Enhanced Series (Gen 2 Efficiency Upgrade)","JBL Charge 5 (Current 2024 Flagship Release)"],
+    sku: "AUD-JBL-SOUJBL-959",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_ultimate_ears_megaboom_4",
@@ -9850,6 +11764,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ultimate Ears MEGABOOM 4 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Ultimate Ears MEGABOOM 4 (Current 2024 Flagship Release)"],
+    sku: "AUD-ULT-SOUULTI-992",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_bose_soundlink_flex",
@@ -9865,6 +11782,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bose SoundLink Flex delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Bose Legacy Series (Gen 1 Performance Standard)","Bose Enhanced Series (Gen 2 Efficiency Upgrade)","Bose SoundLink Flex (Current 2024 Flagship Release)"],
+    sku: "AUD-BOS-SOUBOSE-715",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_marshall_emberton_ii",
@@ -9880,6 +11800,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Marshall Emberton II delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Marshall Emberton II (Current 2024 Flagship Release)"],
+    sku: "AUD-MAR-SOUMARS-792",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_kef_ls50_wireless_ii",
@@ -9895,6 +11818,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The KEF LS50 Wireless II delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","KEF LS50 Wireless II (Current 2024 Flagship Release)"],
+    sku: "AUD-KEF-SOUKEF-259",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_bowers_wilkins_606_s3",
@@ -9910,6 +11836,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bowers & Wilkins 606 S3 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Bowers & Wilkins 606 S3 (Current 2024 Flagship Release)"],
+    sku: "AUD-BOW-SOUBOWE-878",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_klipsch_reference_premiere_rp_600m_ii",
@@ -9925,6 +11854,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Klipsch Reference Premiere RP-600M II delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Klipsch Reference Premiere RP-600M II (Current 2024 Flagship Release)"],
+    sku: "AUD-KLI-SOUKLIP-304",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_elac_debut_2_0_b6_2",
@@ -9940,6 +11872,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The ELAC Debut 2.0 B6.2 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","ELAC Debut 2.0 B6.2 (Current 2024 Flagship Release)"],
+    sku: "AUD-ELA-SOUELAC-722",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_denon_avr_x3800h",
@@ -9955,6 +11890,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Denon AVR-X3800H delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Denon AVR-X3800H (Current 2024 Flagship Release)"],
+    sku: "TVS-DEN-SOUDENO-894",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_marantz_cinema_50",
@@ -9970,6 +11908,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Marantz Cinema 50 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Marantz Cinema 50 (Current 2024 Flagship Release)"],
+    sku: "TVS-MAR-SOUMARA-709",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_yamaha_a_s801",
@@ -9985,6 +11926,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Yamaha A-S801 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Yamaha A-S801 (Current 2024 Flagship Release)"],
+    sku: "TVS-YMH-SOUYAMA-480",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sou_nad_c_3050_bluos",
@@ -10000,6 +11944,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The NAD C 3050 BluOS delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","NAD C 3050 BluOS (Current 2024 Flagship Release)"],
+    sku: "TVS-NAD-SOUNAD-556",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_benq_ht4550i_4k_home_cinema",
@@ -10015,6 +11962,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The BenQ HT4550i 4K Home Cinema delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","BenQ HT4550i 4K Home Cinema (Current 2024 Flagship Release)"],
+    sku: "TVS-BEN-PROBENQ-942",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_epson_home_cinema_5050ub",
@@ -10030,6 +11980,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Epson Home Cinema 5050UB delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Epson Home Cinema 5050UB (Current 2024 Flagship Release)"],
+    sku: "TVS-EPS-PROEPSO-933",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_xgimi_horizon_ultra_4k",
@@ -10045,6 +11998,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The XGIMI Horizon Ultra 4K delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","XGIMI Horizon Ultra 4K (Current 2024 Flagship Release)"],
+    sku: "TVS-XGI-PROXGIM-695",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_optoma_uhd38x",
@@ -10060,6 +12016,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Optoma UHD38x delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Optoma UHD38x (Current 2024 Flagship Release)"],
+    sku: "TVS-OPT-PROOPTO-519",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_elite_screens_spectrum_electric_motorized",
@@ -10075,6 +12034,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Elite Screens Spectrum Electric Motorized Screen delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Elite Screens Spectrum Electric Motorized Screen (Current 2024 Flagship Release)"],
+    sku: "TVS-ELI-PROELIT-511",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_silver_ticket_products_100_fixed_frame",
@@ -10090,6 +12052,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Silver Ticket Products 100\" Fixed Frame delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Silver Ticket Products 100\" Fixed Frame (Current 2024 Flagship Release)"],
+    sku: "TVS-SIL-PROSILV-116",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_vankyo_100_inch_portable_screen",
@@ -10105,6 +12070,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Vankyo 100-Inch Portable Screen delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Vankyo 100-Inch Portable Screen (Current 2024 Flagship Release)"],
+    sku: "TVS-VAN-PROVANK-972",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_sanus_elite_advanced_full_motion_mount",
@@ -10120,6 +12088,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sanus Elite Advanced Full-Motion Mount delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Sanus Elite Advanced Full-Motion Mount (Current 2024 Flagship Release)"],
+    sku: "TVS-SAN-PROSANU-946",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_vogels_tvm_3645_full_motion",
@@ -10135,6 +12106,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Vogel's TVM 3645 Full-Motion delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Vogel's TVM 3645 Full-Motion (Current 2024 Flagship Release)"],
+    sku: "TVS-VOG-PROVOGE-786",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_mounting_dream_md2298_heavy_duty_mount",
@@ -10150,6 +12124,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Mounting Dream MD2298 Heavy-Duty Mount delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Mounting Dream MD2298 Heavy-Duty Mount (Current 2024 Flagship Release)"],
+    sku: "TVS-MOU-PROMOUN-359",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_apple_tv_4k_3rd_gen",
@@ -10165,6 +12142,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Apple TV 4K (3rd Gen) delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["Apple Legacy Series (Gen 1 Performance Standard)","Apple Enhanced Series (Gen 2 Efficiency Upgrade)","Apple TV 4K (3rd Gen) (Current 2024 Flagship Release)"],
+    sku: "TVS-APL-PROAPPL-348",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_nvidia_shield_tv_pro",
@@ -10180,6 +12160,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The NVIDIA SHIELD TV Pro delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","NVIDIA SHIELD TV Pro (Current 2024 Flagship Release)"],
+    sku: "TVS-NVD-PRONVID-324",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_amazon_fire_tv_stick_4k_max",
@@ -10195,6 +12178,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Amazon Fire TV Stick 4K Max delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Amazon Fire TV Stick 4K Max (Current 2024 Flagship Release)"],
+    sku: "TVS-AMA-PROAMAZ-860",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_google_chromecast_with_google_tv_4k",
@@ -10210,6 +12196,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Google Chromecast with Google TV (4K) delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Google Chromecast with Google TV (4K) (Current 2024 Flagship Release)"],
+    sku: "TVS-GGL-PROGOOG-501",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_audioquest_pearl_48_ultra_high_speed_8k_h",
@@ -10225,6 +12214,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The AudioQuest Pearl 48 Ultra High Speed 8K HDMI delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","AudioQuest Pearl 48 Ultra High Speed 8K HDMI (Current 2024 Flagship Release)"],
+    sku: "TVS-AUD-PROAUDI-769",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_belkin_ultra_high_speed_8k_hdmi_2_1",
@@ -10240,6 +12232,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Belkin Ultra High Speed 8K HDMI 2.1 delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Belkin Ultra High Speed 8K HDMI 2.1 (Current 2024 Flagship Release)"],
+    sku: "TVS-BEL-PROBELK-463",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_ugreen_8k_hdmi_2_1_cable",
@@ -10255,6 +12250,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ugreen 8K HDMI 2.1 Cable delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Ugreen 8K HDMI 2.1 Cable (Current 2024 Flagship Release)"],
+    sku: "TVS-UGR-PROUGRE-492",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_sofabaton_x1s_universal_remote_hub",
@@ -10270,6 +12268,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The SofaBaton X1S Universal Remote Hub delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","SofaBaton X1S Universal Remote Hub (Current 2024 Flagship Release)"],
+    sku: "TVS-SOF-PROSOFA-657",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_logitech_harmony_companion",
@@ -10285,6 +12286,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Logitech Harmony Companion delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Logitech Harmony Companion (Current 2024 Flagship Release)"],
+    sku: "TVS-LOG-PROLOGI-629",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "pro_philips_6_device_universal_remote",
@@ -10300,6 +12304,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Philips 6-Device Universal Remote delivers an acoustic and visual tour-de-force, calibrated by world-class audio-visual engineers for breathtaking sensory immersion. Featuring high-dynamic-range processing, ultra-low total harmonic distortion, and precision-tuned drivers, it reproduces dialogue, cinematic bass, and delicate musical overtones with studio-master fidelity. Outfitted with robust digital connectivity and universal smart ecosystem integration for effortless plug-and-play entertainment.",
     generation: "Series 2026 Precision Engineering Platform",
     lineage: ["tvs, audio Legacy Series (Gen 1 Performance Standard)","tvs, audio Enhanced Series (Gen 2 Efficiency Upgrade)","Philips 6-Device Universal Remote (Current 2024 Flagship Release)"],
+    sku: "TVS-PHP-PROPHIL-290",
+    baseMsrp: 57300,
+    releaseYear: 2024,
   },
   {
     id: "sma_ninja_foodi_deluxe_dualzone_flexbasket",
@@ -10315,6 +12322,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ninja Foodi Deluxe DualZone FlexBasket brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "DualZone FlexBasket Multi-Cooker Generation",
     lineage: ["Ninja Foodi OP300 (2018 TenderCrisp Pressure Air Fry)","Ninja Foodi DZ201 DualZone (2021 2-Basket 8-Qt)","Ninja Foodi FlexBasket Deluxe (Current 11-Qt MegaZone 7-in-1 Smart Cook)"],
+    sku: "APP-NNJ-SMANINJ-143",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_philips_premium_xxl_connected_airfryer",
@@ -10330,6 +12340,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Philips Premium XXL Connected Airfryer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Philips Premium XXL Connected Airfryer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-PHP-SMAPHIL-189",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_instant_vortex_plus_6_in_1",
@@ -10345,6 +12358,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Instant Vortex Plus 6-in-1 brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Instant Vortex Plus 6-in-1 (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-INS-SMAINST-482",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_cosori_dual_blaze_6_8qt",
@@ -10360,6 +12376,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Cosori Dual Blaze 6.8Qt brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Cosori Dual Blaze 6.8Qt (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-COS-SMACOSO-898",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_vitamix_a3500_ascent_series",
@@ -10375,6 +12394,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Vitamix A3500 Ascent Series brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Ascent Smart System Generation (Self-Detect Wireless NFC)",
     lineage: ["Vitamix 5200 Legacy (2007 High/Variable 2.0HP)","Explorian E310 (2017 Variable Dial 48oz)","Vitamix Ascent A3500 (Current 5 Presets Digital Timer Wireless NFC)"],
+    sku: "APP-VTM-SMAVITA-621",
+    baseMsrp: 86600,
+    releaseYear: 2024,
   },
   {
     id: "sma_ninja_professional_plus_blender_with_auto",
@@ -10390,6 +12412,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ninja Professional Plus Blender with Auto-iQ brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Ninja Professional Plus Blender with Auto-iQ (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-NNJ-SMANINJ-725",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_nutribullet_pro_900w",
@@ -10405,6 +12430,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The NutriBullet Pro 900W brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","NutriBullet Pro 900W (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-NUT-SMANUTR-131",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_panasonic_nn_cd87ks_inverter_convection_m",
@@ -10420,6 +12448,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Panasonic NN-CD87KS Inverter Convection Microwave brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-PAN-SMAPANA-519",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_samsung_1_4_cu_ft_countertop_grill_microw",
@@ -10435,6 +12466,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung 1.4 cu. ft. Countertop Grill Microwave brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Samsung Standard Duty Line (Gen 1 Foundation)","Samsung Heavy-Duty Series (Gen 2 High-Capacity Revision)","Samsung 1.4 cu. ft. Countertop Grill Microwave (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SAM-SMASAMS-752",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_lg_neochef_smart_inverter",
@@ -10450,6 +12484,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG NeoChef Smart Inverter brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-LGE-SMALG-442",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_fellow_corvo_ekg_electric_kettle",
@@ -10465,6 +12502,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Fellow Corvo EKG Electric Kettle brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Fellow Corvo EKG Electric Kettle (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-FEL-SMAFELL-245",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_russell_hobbs_retro_style_kettle",
@@ -10480,6 +12520,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Russell Hobbs Retro Style Kettle brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Russell Hobbs Retro Style Kettle (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-RUS-SMARUSS-974",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_smeg_50s_style_variable_temperature_kettl",
@@ -10495,6 +12538,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Smeg 50's Style Variable Temperature Kettle brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Smeg 50's Style Variable Temperature Kettle (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SME-SMASMEG-776",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_breville_the_soft_top_dual_kettle",
@@ -10510,6 +12556,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Breville the Soft Top Dual Kettle brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Breville the Soft Top Dual Kettle (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BRE-SMABREV-299",
+    baseMsrp: 112100,
+    releaseYear: 2024,
   },
   {
     id: "sma_breville_the_barista_touch_impress",
@@ -10525,6 +12574,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Breville the Barista Touch Impress brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Breville the Barista Touch Impress (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BRE-SMABREV-482",
+    baseMsrp: 112100,
+    releaseYear: 2024,
   },
   {
     id: "sma_delonghi_magnifica_s_dedica",
@@ -10540,6 +12592,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The De'Longhi Magnifica S / Dedica brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","De'Longhi Magnifica S / Dedica (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-DEL-SMADELO-361",
+    baseMsrp: 121100,
+    releaseYear: 2024,
   },
   {
     id: "sma_jura_e8",
@@ -10555,6 +12610,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Jura E8 brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Jura E8 (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-JUR-SMAJURA-608",
+    baseMsrp: 121100,
+    releaseYear: 2024,
   },
   {
     id: "sma_moccamaster_kbgv_select_drip_brewer",
@@ -10570,6 +12628,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Moccamaster KBGV Select Drip Brewer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Moccamaster KBGV Select Drip Brewer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MOC-SMAMOCC-229",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_kitchenaid_artisan_series_5_quart_stand_m",
@@ -10585,6 +12646,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The KitchenAid Artisan Series 5-Quart Stand Mixer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","KitchenAid Artisan Series 5-Quart Stand Mixer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-KIT-SMAKITC-230",
+    baseMsrp: 91800,
+    releaseYear: 2024,
   },
   {
     id: "sma_kenwood_titanium_chef_patissier_xl",
@@ -10600,6 +12664,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Kenwood Titanium Chef Patissier XL brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Kenwood Titanium Chef Patissier XL (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-KEN-SMAKENW-296",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_magimix_compact_5200_xl_food_processor",
@@ -10615,6 +12682,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Magimix Compact 5200 XL Food Processor brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Magimix Compact 5200 XL Food Processor (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MAG-SMAMAGI-313",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_breville_the_perfect_press",
@@ -10630,6 +12700,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Breville the Perfect Press brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Breville the Perfect Press (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BRE-SMABREV-323",
+    baseMsrp: 112100,
+    releaseYear: 2024,
   },
   {
     id: "sma_cuisinart_4_slice_belgian_waffle_maker_gr",
@@ -10645,6 +12718,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Cuisinart 4-Slice Belgian Waffle Maker & Grill brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Cuisinart 4-Slice Belgian Waffle Maker & Grill (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-CUI-SMACUIS-150",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_tefal_snack_collection",
@@ -10660,6 +12736,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tefal Snack Collection brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Tefal Snack Collection (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-TEF-SMATEFA-610",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_instant_pot_duo_crisp_11_in_1",
@@ -10675,6 +12754,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Instant Pot Duo Crisp 11-in-1 brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Instant Pot Duo Crisp 11-in-1 (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-INS-SMAINST-713",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_ninja_foodi_tendercrisp_multi_cooker",
@@ -10690,6 +12772,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ninja Foodi TenderCrisp Multi-Cooker brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "DualZone FlexBasket Multi-Cooker Generation",
     lineage: ["Ninja Foodi OP300 (2018 TenderCrisp Pressure Air Fry)","Ninja Foodi DZ201 DualZone (2021 2-Basket 8-Qt)","Ninja Foodi FlexBasket Deluxe (Current 11-Qt MegaZone 7-in-1 Smart Cook)"],
+    sku: "APP-NNJ-SMANINJ-504",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sma_tefal_turbo_cuisine_fast_multicooker",
@@ -10705,6 +12790,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tefal Turbo Cuisine Fast Multicooker brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Tefal Turbo Cuisine Fast Multicooker (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-TEF-SMATEFA-306",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_samsung_415l_top_mount_freezer_with_twin_",
@@ -10720,6 +12808,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung 415L Top Mount Freezer with Twin Cooling Plus brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Samsung Standard Duty Line (Gen 1 Foundation)","Samsung Heavy-Duty Series (Gen 2 High-Capacity Revision)","Samsung 415L Top Mount Freezer with Twin Cooling Plus (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SAM-COOSAMS-980",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_lg_395l_top_mount_door_cooling_fridge",
@@ -10735,6 +12826,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG 395L Top Mount Door Cooling+ Fridge brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["LG Standard Duty Line (Gen 1 Foundation)","LG Heavy-Duty Series (Gen 2 High-Capacity Revision)","LG 395L Top Mount Door Cooling+ Fridge (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-LGE-COOLG-990",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_whirlpool_intellifresh_inverter",
@@ -10750,6 +12844,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Whirlpool IntelliFresh Inverter brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-INT-COOWHIR-766",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_lg_instaview_door_in_door_side_by_side_re",
@@ -10765,6 +12862,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG InstaView Door-in-Door Side-by-Side Refrigerator brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "4th Gen InstaView Door-in-Door (Linear Cooling + Craft Ice)",
     lineage: ["LG InstaView Knock-On (2018 Glass Tint)","LG InstaView UVnano (2021 Water Dispenser Hygiene)","LG InstaView Craft Ice ThinQ (Current Spherical Craft Ice Linear Inverter)"],
+    sku: "APP-LGE-COOLG-270",
+    baseMsrp: 363200,
+    releaseYear: 2024,
   },
   {
     id: "coo_samsung_family_hub_side_by_side",
@@ -10780,6 +12880,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Family Hub Side-by-Side brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "5th Gen AI Smart Refrigerator Lineup (AI Vision Inside)",
     lineage: ["Family Hub 1.0 (2016 21.5-inch Tizen)","Family Hub 3.0 (2020 Bixby Food Cam)","Bespoke AI Family Hub 4-Door (Current AI Vision Dual Auto Ice 32-inch)"],
+    sku: "APP-SAM-COOSAMS-391",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_bosch_serie_6_side_by_side_refrigerator",
@@ -10795,6 +12898,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Serie 6 Side-by-Side Refrigerator brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch Serie 6 Side-by-Side Refrigerator (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-COOBOSC-684",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_haier_319l_chest_freezer",
@@ -10810,6 +12916,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Haier 319L Chest Freezer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Haier 319L Chest Freezer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-HAI-COOHAIE-915",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_midea_double_door_chest_freezer",
@@ -10825,6 +12934,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Midea Double Door Chest Freezer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Midea Double Door Chest Freezer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MID-COOMIDE-605",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_hisense_250l_hybrid_chest_freezer",
@@ -10840,6 +12952,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hisense 250L Hybrid Chest Freezer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Hisense 250L Hybrid Chest Freezer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-HIS-COOHISE-604",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_beko_chest_freezer",
@@ -10855,6 +12970,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Beko Chest Freezer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Beko Chest Freezer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BEK-COOBEKO-203",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_smeg_fab5_mini_fridge",
@@ -10870,6 +12988,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Smeg FAB5 Mini Fridge brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Smeg FAB5 Mini Fridge (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SME-COOSMEG-229",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_marshall_medium_3_2_bar_fridge",
@@ -10885,6 +13006,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Marshall Medium 3.2 Bar Fridge brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Marshall Medium 3.2 Bar Fridge (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MAR-COOMARS-739",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_danby_120_can_beverage_center",
@@ -10900,6 +13024,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Danby 120-Can Beverage Center brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Danby 120-Can Beverage Center (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-DAN-COODANB-751",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_midea_compact_single_door_refrigerator",
@@ -10915,6 +13042,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Midea Compact Single Door Refrigerator brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Midea Compact Single Door Refrigerator (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MID-COOMIDE-641",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_avalon_bottom_loading_water_dispenser",
@@ -10930,6 +13060,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Avalon Bottom Loading Water Dispenser brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Avalon Bottom Loading Water Dispenser (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-AVA-COOAVAL-578",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_primo_deluxe_bottom_loading_dispenser",
@@ -10945,6 +13078,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Primo Deluxe Bottom Loading Dispenser brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Primo Deluxe Bottom Loading Dispenser (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-PRI-COOPRIM-104",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_blue_star_bottom_loading_dispenser",
@@ -10960,6 +13096,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Blue Star Bottom Loading Dispenser brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Blue Star Bottom Loading Dispenser (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BLU-COOBLUE-162",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_bosch_serie_4_90cm_freestanding_dual_fuel",
@@ -10975,6 +13114,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Serie 4 90cm Freestanding Dual Fuel Cooker brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch Serie 4 90cm Freestanding Dual Fuel Cooker (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-COOBOSC-786",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_smeg_concert_series_dual_fuel_cooker",
@@ -10990,6 +13132,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Smeg Concert Series Dual Fuel Cooker brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Smeg Concert Series Dual Fuel Cooker (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SME-COOSMEG-499",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_beko_freestanding_electric_range",
@@ -11005,6 +13150,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Beko Freestanding Electric Range brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Beko Freestanding Electric Range (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BEK-COOBEKO-982",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_lg_probake_convection_freestanding_cooker",
@@ -11020,6 +13168,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG ProBake Convection Freestanding Cooker brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["LG Standard Duty Line (Gen 1 Foundation)","LG Heavy-Duty Series (Gen 2 High-Capacity Revision)","LG ProBake Convection Freestanding Cooker (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-LGE-COOLG-860",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_bosch_serie_8_induction_cooktop",
@@ -11035,6 +13186,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Serie 8 Induction Cooktop brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch Serie 8 Induction Cooktop (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-COOBOSC-995",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_miele_4_zone_induction_cooktop",
@@ -11050,6 +13204,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Miele 4-Zone Induction Cooktop brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Miele 4-Zone Induction Cooktop (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MIE-COOMIEL-940",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_siemens_iq500_built_in_gas_hob",
@@ -11065,6 +13222,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Siemens iQ500 Built-In Gas Hob brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Siemens iQ500 Built-In Gas Hob (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SIE-COOSIEM-725",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_electrolux_ehi645be_induction_hob",
@@ -11080,6 +13240,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Electrolux EHI645BE Induction Hob brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Electrolux EHI645BE Induction Hob (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-ELE-COOELEC-906",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_elica_flat_glass_chimney_cooker_hood",
@@ -11095,6 +13258,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Elica Flat Glass Chimney Cooker Hood brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Elica Flat Glass Chimney Cooker Hood (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-ELI-COOELIC-598",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_faber_in_nova_built_in_hood",
@@ -11110,6 +13276,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Faber In-Nova Built-in Hood brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Faber In-Nova Built-in Hood (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-FAB-COOFABE-449",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_bosch_serie_6_wall_mounted_canopy_hood",
@@ -11125,6 +13294,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Serie 6 Wall-Mounted Canopy Hood brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch Serie 6 Wall-Mounted Canopy Hood (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-COOBOSC-925",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_ciarra_30_inch_island_hood",
@@ -11140,6 +13312,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The CIARRA 30-inch Island Hood brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","CIARRA 30-inch Island Hood (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-CIA-COOCIAR-898",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_bosch_serie_8_built_in_pyrolytic_oven",
@@ -11155,6 +13330,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Serie 8 Built-in Pyrolytic Oven brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch Serie 8 Built-in Pyrolytic Oven (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-COOBOSC-785",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_siemens_iq700_built_in_oven",
@@ -11170,6 +13348,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Siemens iQ700 Built-in Oven brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Siemens iQ700 Built-in Oven (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SIE-COOSIEM-442",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_miele_contourline_convection_oven",
@@ -11185,6 +13366,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Miele ContourLine Convection Oven brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Miele ContourLine Convection Oven (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MIE-COOMIEL-305",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_whirlpool_built_in_w_collection_oven",
@@ -11200,6 +13384,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Whirlpool Built-in W-Collection Oven brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Whirlpool Built-in W-Collection Oven (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-WHI-COOWHIR-713",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_bosch_serie_6_freestanding_built_in_dishw",
@@ -11215,6 +13402,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Serie 6 Freestanding/Built-in Dishwasher brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch Serie 6 Freestanding/Built-in Dishwasher (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-COOBOSC-503",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_miele_g_5000_scu",
@@ -11230,6 +13420,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Miele G 5000 SCU brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Miele G 5000 SCU (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MIE-COOMIEL-814",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_siemens_iq300_dishwasher",
@@ -11245,6 +13438,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Siemens iQ300 Dishwasher brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Siemens iQ300 Dishwasher (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SIE-COOSIEM-893",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "coo_beko_cornerintense_dishwasher",
@@ -11260,6 +13456,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Beko CornerIntense Dishwasher brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Beko CornerIntense Dishwasher (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BEK-COOBEKO-472",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_lg_ai_dd_front_load_washing_machine",
@@ -11275,6 +13474,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG AI DD Front Load Washing Machine brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "3rd Gen AI Direct Drive Inverter Washing Machine (TurboWash 360)",
     lineage: ["LG 6 Motion Direct Drive (2017 Inverter DD)","LG AI DD V500 (2020 Fabric Sensing)","LG AI DD TurboWash 360 12kg (Current Steam+ Allergy Care 39-Min Rapid)"],
+    sku: "APP-LGE-LAULG-413",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_bosch_serie_8_front_loader",
@@ -11290,6 +13492,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Serie 8 Front Loader brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch Serie 8 Front Loader (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-LAUBOSC-942",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_samsung_ecobubble_ai_inverter_washer",
@@ -11305,6 +13510,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung EcoBubble AI Inverter Washer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-SAM-LAUSAMS-993",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_miele_twindos_w1_washer",
@@ -11320,6 +13528,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Miele TwinDos W1 Washer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Miele TwinDos W1 Washer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MIE-LAUMIEL-726",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_lg_smart_inverter_turbodrum_top_loader",
@@ -11335,6 +13546,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG Smart Inverter TurboDrum Top Loader brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-LGE-LAULG-791",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_samsung_wobble_technology_top_loader",
@@ -11350,6 +13564,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Wobble Technology Top Loader brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Samsung Standard Duty Line (Gen 1 Foundation)","Samsung Heavy-Duty Series (Gen 2 High-Capacity Revision)","Samsung Wobble Technology Top Loader (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SAM-LAUSAMS-614",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_whirlpool_stainwash_ultra_top_loader",
@@ -11365,6 +13582,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Whirlpool Stainwash Ultra Top Loader brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Whirlpool Stainwash Ultra Top Loader (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-WHI-LAUWHIR-761",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_midea_twin_tub_semi_automatic_washer",
@@ -11380,6 +13600,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Midea Twin Tub Semi-Automatic Washer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Midea Twin Tub Semi-Automatic Washer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MID-LAUMIDE-562",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_haier_high_performance_twin_tub",
@@ -11395,6 +13618,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Haier High Performance Twin Tub brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Haier High Performance Twin Tub (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-HAI-LAUHAIE-399",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_lg_roller_jet_twin_tub",
@@ -11410,6 +13636,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG Roller Jet Twin Tub brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["LG Standard Duty Line (Gen 1 Foundation)","LG Heavy-Duty Series (Gen 2 High-Capacity Revision)","LG Roller Jet Twin Tub (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-LGE-LAULG-280",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_bosch_serie_6_heat_pump_condenser_dryer",
@@ -11425,6 +13654,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bosch Serie 6 Heat Pump Condenser Dryer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Bosch Standard Duty Line (Gen 1 Foundation)","Bosch Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bosch Serie 6 Heat Pump Condenser Dryer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BSC-LAUBOSC-559",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_lg_dual_inverter_heat_pump_dryer",
@@ -11440,6 +13672,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG DUAL Inverter Heat Pump Dryer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-LGE-LAULG-514",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_samsung_heat_pump_tumble_dryer",
@@ -11455,6 +13690,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung Heat Pump Tumble Dryer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Samsung Standard Duty Line (Gen 1 Foundation)","Samsung Heavy-Duty Series (Gen 2 High-Capacity Revision)","Samsung Heat Pump Tumble Dryer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SAM-LAUSAMS-780",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_philips_azur_elite_steam_iron",
@@ -11470,6 +13708,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Philips Azur Elite Steam Iron brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Philips Azur Elite Steam Iron (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-PHP-LAUPHIL-631",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_tefal_ultimate_pure_steam_iron",
@@ -11485,6 +13726,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tefal Ultimate Pure Steam Iron brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Tefal Ultimate Pure Steam Iron (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-TEF-LAUTEFA-406",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_braun_texstyle_9",
@@ -11500,6 +13744,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Braun TexStyle 9 brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Braun TexStyle 9 (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BRA-LAUBRAU-444",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_rowenta_steamforce_pro",
@@ -11515,6 +13762,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Rowenta Steamforce Pro brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Rowenta Steamforce Pro (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-ROW-LAUROWE-833",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_steamery_cirrus_no_3_iron_steamer",
@@ -11530,6 +13780,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Steamery Cirrus No.3 Iron-Steamer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Steamery Cirrus No.3 Iron-Steamer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-STE-LAUSTEA-161",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_philips_7000_series_handheld_steamer",
@@ -11545,6 +13798,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Philips 7000 Series Handheld Steamer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Philips 7000 Series Handheld Steamer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-PHP-LAUPHIL-359",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "lau_conair_turbo_extremesteam_handheld_fabric",
@@ -11560,6 +13816,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Conair Turbo ExtremeSteam Handheld Fabric Steamer brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Conair Turbo ExtremeSteam Handheld Fabric Steamer (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-CON-LAUCONA-366",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_dyson_purifier_cool_tp07_tower_fan",
@@ -11575,6 +13834,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Dyson Purifier Cool TP07 Tower Fan brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "5th Gen Sealed HEPA H13 & Catalytic Air Purification",
     lineage: ["Dyson Pure Cool Link (2016 Glass HEPA)","Dyson Pure Hot+Cool HP04 (2018 LCD Air Quality)","Dyson Purifier Hot+Cool HP09 (Current Solid-State Cryptomic Formaldehyde)"],
+    sku: "APP-DYS-CLIDYSO-227",
+    baseMsrp: 108300,
+    releaseYear: 2024,
   },
   {
     id: "cli_rowenta_turbo_silence_extreme_stand_fan",
@@ -11590,6 +13852,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Rowenta Turbo Silence Extreme+ Stand Fan brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Rowenta Turbo Silence Extreme+ Stand Fan (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-ROW-CLIROWE-338",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_xiaomi_smartmi_standing_fan_3",
@@ -11605,6 +13870,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Xiaomi Smartmi Standing Fan 3 brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Xiaomi Standard Duty Line (Gen 1 Foundation)","Xiaomi Heavy-Duty Series (Gen 2 High-Capacity Revision)","Xiaomi Smartmi Standing Fan 3 (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-XIA-CLIXIAO-173",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_big_ass_fans_haiku_home_smart_ceiling_fan",
@@ -11620,6 +13888,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Big Ass Fans Haiku Home Smart Ceiling Fan brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Big Ass Fans Haiku Home Smart Ceiling Fan (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BIG-CLIBIG-229",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_hunter_aerodyne_smart_ceiling_fan",
@@ -11635,6 +13906,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hunter Aerodyne Smart Ceiling Fan brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Hunter Aerodyne Smart Ceiling Fan (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-HUN-CLIHUNT-355",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_orient_electric_aeroslim_smart_fan",
@@ -11650,6 +13924,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Orient Electric Aeroslim Smart Fan brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Orient Electric Aeroslim Smart Fan (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-ORI-CLIORIE-609",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_daikin_ftkm_series_inverter_split_ac",
@@ -11665,6 +13942,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Daikin FTKM Series Inverter Split AC brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-DAI-CLIDAIK-578",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_mitsubishi_electric_msz_ln_series_air_con",
@@ -11680,6 +13960,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Mitsubishi Electric MSZ-LN Series Air Conditioner brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Mitsubishi Electric MSZ-LN Series Air Conditioner (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-MIT-CLIMITS-490",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_lg_dual_inverter_artcool_ac",
@@ -11695,6 +13978,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The LG Dual Inverter Artcool AC brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "APP-LGE-CLILG-967",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_samsung_windfree_elite_ac",
@@ -11710,6 +13996,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Samsung WindFree Elite AC brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Samsung Standard Duty Line (Gen 1 Foundation)","Samsung Heavy-Duty Series (Gen 2 High-Capacity Revision)","Samsung WindFree Elite AC (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-SAM-CLISAMS-457",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_delonghi_pinguino_deluxe_portable_ac",
@@ -11725,6 +14014,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The De'Longhi Pinguino Deluxe Portable AC brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","De'Longhi Pinguino Deluxe Portable AC (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-DEL-CLIDELO-984",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_whynter_arc_14s_dual_hose_portable_air_co",
@@ -11740,6 +14032,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Whynter ARC-14S Dual Hose Portable Air Conditioner brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Whynter ARC-14S Dual Hose Portable Air Conditioner (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-WHY-CLIWHYN-741",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_frigidaire_cool_connect_portable_ac",
@@ -11755,6 +14050,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Frigidaire Cool Connect Portable AC brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Frigidaire Cool Connect Portable AC (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-FRI-CLIFRIG-605",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_dyson_purifier_hot_cool_formaldehyde_hp09",
@@ -11770,6 +14068,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Dyson Purifier Hot+Cool Formaldehyde HP09 brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "5th Gen Sealed HEPA H13 & Catalytic Air Purification",
     lineage: ["Dyson Pure Cool Link (2016 Glass HEPA)","Dyson Pure Hot+Cool HP04 (2018 LCD Air Quality)","Dyson Purifier Hot+Cool HP09 (Current Solid-State Cryptomic Formaldehyde)"],
+    sku: "APP-DYS-CLIDYSO-372",
+    baseMsrp: 108300,
+    releaseYear: 2024,
   },
   {
     id: "cli_levoit_core_400s_smart_air_purifier",
@@ -11785,6 +14086,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Levoit Core 400S Smart Air Purifier brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Levoit Core 400S Smart Air Purifier (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-LEV-CLILEVO-518",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_blueair_blue_pure_211_auto",
@@ -11800,6 +14104,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Blueair Blue Pure 211+ Auto brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Blueair Blue Pure 211+ Auto (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-BLU-CLIBLUE-180",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_coway_airmega_400",
@@ -11815,6 +14122,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Coway Airmega 400 brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Coway Airmega 400 (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-COW-CLICOWA-162",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_delonghi_tasciugo_ariadry_multi_dehumidif",
@@ -11830,6 +14140,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The De'Longhi Tasciugo AriaDry Multi Dehumidifier brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","De'Longhi Tasciugo AriaDry Multi Dehumidifier (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-DEL-CLIDELO-660",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_frigidaire_50_pint_dehumidifier",
@@ -11845,6 +14158,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Frigidaire 50-Pint Dehumidifier brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Frigidaire 50-Pint Dehumidifier (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-FRI-CLIFRIG-625",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_dyson_hot_cool_jet_focus_am09",
@@ -11860,6 +14176,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Dyson Hot+Cool Jet Focus AM09 brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Dyson Standard Duty Line (Gen 1 Foundation)","Dyson Heavy-Duty Series (Gen 2 High-Capacity Revision)","Dyson Hot+Cool Jet Focus AM09 (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-DYS-CLIDYSO-367",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "cli_lasko_ceramic_space_heater",
@@ -11875,6 +14194,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Lasko Ceramic Space Heater brings commercial-grade culinary and household efficiency into your living space, powered by high-torque inverter drive systems and precision digital temperature management. Built with food-safe stainless steel, BPA-free polymers, and whisper-quiet motor dampening, it significantly reduces operational energy consumption while maximizing convenience. Engineered to endure rigorous daily household cycles, backed by comprehensive official after-sales support.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["home appliances Standard Duty Line (Gen 1 Foundation)","home appliances Heavy-Duty Series (Gen 2 High-Capacity Revision)","Lasko Ceramic Space Heater (Current 2024 Commercial Grade Standard)"],
+    sku: "APP-LAS-CLILASK-773",
+    baseMsrp: 31900,
+    releaseYear: 2024,
   },
   {
     id: "sol_jinko_solar_tiger_pro_550w",
@@ -11890,6 +14212,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Jinko Solar Tiger Pro 550W integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "N-Type TOPCon 16BB Ultra-High Efficiency Solar Generation",
     lineage: ["P-Type Mono PERC 450W (2020 9BB 20.8% Efficiency)","Tiger Pro Mono PERC 540W (2022 10BB Half-Cell)","Tiger Neo N-Type TOPCon 585W - 615W (Current 16BB 22.8% Bifacial)"],
+    sku: "SOL-JNK-SOLJINK-878",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_canadian_solar_hiku6_540w_mono",
@@ -11905,6 +14230,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Canadian Solar HiKu6 540W Mono integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "N-Type TOPCon 16BB Ultra-High Efficiency Solar Generation",
     lineage: ["P-Type Mono PERC 450W (2020 9BB 20.8% Efficiency)","Tiger Pro Mono PERC 540W (2022 10BB Half-Cell)","Tiger Neo N-Type TOPCon 585W - 615W (Current 16BB 22.8% Bifacial)"],
+    sku: "SOL-CSI-SOLCANA-619",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_longi_solar_hi_mo_6",
@@ -11920,6 +14248,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Longi Solar Hi-MO 6 integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Longi Solar Hi-MO 6 (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-LON-SOLLONG-520",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_trina_solar_vertex_s",
@@ -11935,6 +14266,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Trina Solar Vertex S+ integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Trina Solar Vertex S+ (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-TRI-SOLTRIN-430",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_victron_energy_smartsolar_mppt_150_70",
@@ -11950,6 +14284,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Victron Energy SmartSolar MPPT 150/70 integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Victron Energy SmartSolar MPPT 150/70 (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-VIC-SOLVICT-863",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_epever_tracer_mppt_solar_charge_controlle",
@@ -11965,6 +14302,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the EPEVER Tracer MPPT Solar Charge Controller integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","EPEVER Tracer MPPT Solar Charge Controller (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-EPE-SOLEPEV-222",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_renogy_rover_60a_mppt",
@@ -11980,6 +14320,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Renogy Rover 60A MPPT integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Renogy Rover 60A MPPT (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-REN-SOLRENO-638",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_outback_power_flexmax",
@@ -11995,6 +14338,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Outback Power FLEXmax integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Outback Power FLEXmax (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-OUT-SOLOUTB-356",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_d_light_d30_solar_home_system",
@@ -12010,6 +14356,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the d.light D30 Solar Home System integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","d.light D30 Solar Home System (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-DLI-SOLD-808",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_sun_king_home_400_multi_light_solar_kit",
@@ -12025,6 +14374,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Sun King Home 400 Multi-light Solar Kit integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Sun King Home 400 Multi-light Solar Kit (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-SUN-SOLSUN-124",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_biolite_solarhome_620",
@@ -12040,6 +14392,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the BioLite SolarHome 620+ integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","BioLite SolarHome 620+ (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-BIO-SOLBIOL-441",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_philips_solar_led_street_light_brp_series",
@@ -12055,6 +14410,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Philips Solar LED Street Light (BRP Series) integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Philips Solar LED Street Light (BRP Series) (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-PHP-SOLPHIL-356",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_tenkoo_all_in_one_solar_street_light",
@@ -12070,6 +14428,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the TenKOO All-in-One Solar Street Light integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","TenKOO All-in-One Solar Street Light (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-TEN-SOLTENK-805",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_roadman_commercial_solar_floodlight",
@@ -12085,6 +14446,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Roadman Commercial Solar Floodlight integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Roadman Commercial Solar Floodlight (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-ROA-SOLROAD-263",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_grundfos_sqflex_solar_submersible_pump",
@@ -12100,6 +14464,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Grundfos SQFlex Solar Submersible Pump integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Grundfos SQFlex Solar Submersible Pump (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-GRU-SOLGRUN-560",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_lorentz_ps2_solar_submersible_pump_system",
@@ -12115,6 +14482,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Lorentz PS2 Solar Submersible Pump Systems integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Lorentz PS2 Solar Submersible Pump Systems (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-LOR-SOLLORE-400",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_shurflo_9300_solar_submersible_pump",
@@ -12130,6 +14500,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Shurflo 9300 Solar Submersible Pump integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Shurflo 9300 Solar Submersible Pump (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-SHU-SOLSHUR-460",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_st_ubli_mc4_original_pv_connectors",
@@ -12145,6 +14518,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Stäubli MC4 Original PV Connectors integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Stäubli MC4 Original PV Connectors (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-STU-SOLST-280",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_renogy_mc4_female_male_waterproof_connect",
@@ -12160,6 +14536,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Renogy MC4 Female/Male Waterproof Connectors integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Renogy MC4 Female/Male Waterproof Connectors (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-REN-SOLRENO-218",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "sol_amphenol_h4_solar_connectors",
@@ -12175,6 +14554,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Amphenol H4 Solar Connectors integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Amphenol H4 Solar Connectors (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-AMP-SOLAMPH-993",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_deye_8kw_12kw_hybrid_inverter",
@@ -12190,6 +14572,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Deye 8kW / 12kW Hybrid Inverter integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "SOL-DEY-INVDEYE-807",
+    baseMsrp: 312200,
+    releaseYear: 2024,
   },
   {
     id: "inv_growatt_sph_series_hybrid_inverter",
@@ -12205,6 +14590,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Growatt SPH Series Hybrid Inverter integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "SOL-GRW-INVGROW-557",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_victron_energy_multiplus_ii",
@@ -12220,6 +14608,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Victron Energy MultiPlus-II integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Victron Energy MultiPlus-II (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-VIC-INVVICT-785",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_sunsynk_parity_hybrid_inverter",
@@ -12235,6 +14626,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Sunsynk Parity Hybrid Inverter integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "SOL-SUN-INVSUNS-498",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_pylontech_us3000c_us5000_lithium_battery",
@@ -12250,6 +14644,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Pylontech US3000C / US5000 Lithium Battery integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "3rd Gen Rack-Mount LiFePO4 Energy Storage (6000+ Cycles 95% DoD)",
     lineage: ["Pylontech US2000B (2017 2.4kWh 80% DoD)","Pylontech US3000C (2020 3.5kWh 90% DoD)","Pylontech US5000 (Current 4.8kWh 95% DoD CAN/RS485 Tier-1 BMS)"],
+    sku: "SOL-PYL-INVPYLO-104",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_byd_battery_box_premium",
@@ -12265,6 +14662,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the BYD Battery-Box Premium integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","BYD Battery-Box Premium (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-BYD-INVBYD-157",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_freedom_won_lite_home_battery",
@@ -12280,6 +14680,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Freedom Won LiTE Home Battery integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Freedom Won LiTE Home Battery (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-FRE-INVFREE-122",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_tesla_powerwall_3",
@@ -12295,6 +14698,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Tesla Powerwall 3 integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Tesla Powerwall 3 (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-TES-INVTESL-905",
+    baseMsrp: 1210700,
+    releaseYear: 2024,
   },
   {
     id: "inv_trojan_sagm_12_205_deep_cycle_battery",
@@ -12310,6 +14716,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Trojan SAGM 12 205 Deep-Cycle Battery integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Trojan SAGM 12 205 Deep-Cycle Battery (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-TRO-INVTROJ-219",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_fullriver_dc_series_agm",
@@ -12325,6 +14734,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Fullriver DC Series AGM integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Fullriver DC Series AGM (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-FUL-INVFULL-991",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_ritar_deep_cycle_gel_battery",
@@ -12340,6 +14752,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Ritar Deep Cycle Gel Battery integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Ritar Deep Cycle Gel Battery (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-RIT-INVRITA-265",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_victron_energy_deep_cycle_gel",
@@ -12355,6 +14770,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Victron Energy Deep Cycle GEL integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Victron Energy Deep Cycle GEL (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-VIC-INVVICT-367",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_ecoflow_delta_pro_3_6kwh",
@@ -12370,6 +14788,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the EcoFlow DELTA Pro (3.6kWh) integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Heavy-Duty Expandable LFP Power Ecosystem (3600W - 7200W)",
     lineage: ["EcoFlow DELTA 1300 (2019 1260Wh NMC)","EcoFlow DELTA Max (2021 2016Wh Expandable)","EcoFlow DELTA Pro (Current 3600Wh EV-Grade LFP 6500+ Cycles 3600W AC)"],
+    sku: "SOL-ECO-INVECOF-759",
+    baseMsrp: 535200,
+    releaseYear: 2024,
   },
   {
     id: "inv_jackery_explorer_2000_plus",
@@ -12385,6 +14806,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Jackery Explorer 2000 Plus integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Jackery Explorer 2000 Plus (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-JAC-INVJACK-425",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_bluetti_ac200max_ac300",
@@ -12400,6 +14824,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Bluetti AC200MAX / AC300 integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Bluetti AC200MAX / AC300 (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-BLU-INVBLUE-588",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_anker_solix_f2000_powerhouse_767",
@@ -12415,6 +14842,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Anker SOLIX F2000 (PowerHouse 767) integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["Anker Standard Duty Line (Gen 1 Foundation)","Anker Heavy-Duty Series (Gen 2 High-Capacity Revision)","Anker SOLIX F2000 (PowerHouse 767) (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-ANK-INVANKE-697",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_apc_smart_ups_1500va_schneider_electric",
@@ -12430,6 +14860,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the APC Smart-UPS 1500VA (Schneider Electric) integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","APC Smart-UPS 1500VA (Schneider Electric) (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-APC-INVAPC-587",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_cyberpower_cp1500pfclcd",
@@ -12445,6 +14878,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the CyberPower CP1500PFCLCD integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","CyberPower CP1500PFCLCD (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-CYB-INVCYBE-210",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "inv_eaton_5sc_pure_sine_wave_ups",
@@ -12460,6 +14896,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Eaton 5SC Pure Sine Wave UPS integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Eaton 5SC Pure Sine Wave UPS (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-EAT-INVEATO-707",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_honda_eu2200i_eu3000is_inverter_generator",
@@ -12475,6 +14914,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Honda EU2200i / EU3000is Inverter Generator integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "SOL-HON-BACHOND-973",
+    baseMsrp: 235800,
+    releaseYear: 2024,
   },
   {
     id: "bac_yamaha_ef2200is_inverter",
@@ -12490,6 +14932,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Yamaha EF2200iS Inverter integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "SOL-YMH-BACYAMA-564",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_champion_power_equipment_2500w_inverter",
@@ -12505,6 +14950,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Champion Power Equipment 2500W Inverter integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "SOL-CHA-BACCHAM-648",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_predator_3500_inverter",
@@ -12520,6 +14968,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Predator 3500 Inverter integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "Hybrid Dual MPPT Smart Load Architecture (IP65 Outdoor Rated)",
     lineage: ["Deye SUN-5K Hybrid (2020 Single Phase)","Deye SUN-8K Hybrid (2022 Dual MPPT Generator Peak Shaving)","Deye 8kW / 12kW Low-Voltage Hybrid (Current Smart Load Grid-Tie Microgrid)"],
+    sku: "SOL-PRE-BACPRED-515",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_perkins_power_silent_diesel_generator_15k",
@@ -12535,6 +14986,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Perkins Power Silent Diesel Generator (15kVA - 50kVA) integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Perkins Power Silent Diesel Generator (15kVA - 50kVA) (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-PER-BACPERK-932",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_cummins_onan_quiet_diesel_generator",
@@ -12550,6 +15004,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Cummins Onan Quiet Diesel Generator integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Cummins Onan Quiet Diesel Generator (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-CUM-BACCUMM-706",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_caterpillar_cat_de_series_diesel_generato",
@@ -12565,6 +15022,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Caterpillar (CAT) DE Series Diesel Generator integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Caterpillar (CAT) DE Series Diesel Generator (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-CAT-BACCATE-164",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_kipor_silent_diesel_generator",
@@ -12580,6 +15040,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Kipor Silent Diesel Generator integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Kipor Silent Diesel Generator (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-KIP-BACKIPO-397",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_apc_line_r_1200va_1500va_automatic_voltag",
@@ -12595,6 +15058,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the APC Line-R 1200VA / 1500VA Automatic Voltage Regulator integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","APC Line-R 1200VA / 1500VA Automatic Voltage Regulator (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-APC-BACAPC-658",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_sollatek_automatic_voltage_switcher_avs30",
@@ -12610,6 +15076,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Sollatek Automatic Voltage Switcher (AVS30) integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Sollatek Automatic Voltage Switcher (AVS30) (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-SOL-BACSOLL-793",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_sollatek_voltshield_avs",
@@ -12625,6 +15094,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Sollatek Voltshield AVS integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Sollatek Voltshield AVS (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-SOL-BACSOLL-656",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_tripp_lite_line_conditioner_lc1200",
@@ -12640,6 +15112,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Tripp Lite Line Conditioner (LC1200) integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Tripp Lite Line Conditioner (LC1200) (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-TRI-BACTRIP-200",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_apc_performance_surgearrest_8_outlet_schn",
@@ -12655,6 +15130,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the APC Performance SurgeArrest 8-Outlet (Schneider) integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","APC Performance SurgeArrest 8-Outlet (Schneider) (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-APC-BACAPC-600",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_belkin_pivotplug_12_outlet_surge_protecto",
@@ -12670,6 +15148,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Belkin PivotPlug 12-Outlet Surge Protector integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Belkin PivotPlug 12-Outlet Surge Protector (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-BEL-BACBELK-307",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_brennenstuhl_premium_line_surge_strip",
@@ -12685,6 +15166,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Brennenstuhl Premium-Line Surge Strip integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Brennenstuhl Premium-Line Surge Strip (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-BRE-BACBREN-302",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_schneider_electric_compact_nsx_automatic_",
@@ -12700,6 +15184,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Schneider Electric Compact NSX Automatic Transfer Switch integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Schneider Electric Compact NSX Automatic Transfer Switch (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-SCH-BACSCHN-237",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_abb_compact_ats_series",
@@ -12715,6 +15202,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the ABB Compact ATS Series integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","ABB Compact ATS Series (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-ABB-BACABB-395",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "bac_socomec_atys_automatic_transfer_switch",
@@ -12730,6 +15220,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "Engineered for uninterrupted mission-critical energy independence, the Socomec ATyS Automatic Transfer Switch integrates high-efficiency power conversion electronics with industrial surge dampening and intelligent battery management. Built with heavy-duty heat-dissipating casings, certified high-capacity busbars, and robust multi-stage electrical safeguards, it reliably supports residential loads, business facilities, and off-grid hybrid setups. Fully tested for harsh tropical weather and fluctuating line voltages.",
     generation: "High-Efficiency EcoSmart Inverter Lineup",
     lineage: ["solar Standard Duty Line (Gen 1 Foundation)","solar Heavy-Duty Series (Gen 2 High-Capacity Revision)","Socomec ATyS Automatic Transfer Switch (Current 2024 Commercial Grade Standard)"],
+    sku: "SOL-SOC-BACSOCO-319",
+    baseMsrp: 61100,
+    releaseYear: 2024,
   },
   {
     id: "men_champion_reverse_weave_hoodie",
@@ -12745,6 +15238,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Champion Reverse Weave Hoodie combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Champion Reverse Weave Hoodie (Current All-Weather Performance Release)"],
+    sku: "FSH-CHA-MENCHAM-285",
+    baseMsrp: 5700,
+    releaseYear: 2024,
   },
   {
     id: "men_carhartt_loose_fit_heavyweight_hoodie",
@@ -12760,6 +15256,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Carhartt Loose Fit Heavyweight Hoodie combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Carhartt Loose Fit Heavyweight Hoodie (Current All-Weather Performance Release)"],
+    sku: "FSH-CAR-MENCARH-252",
+    baseMsrp: 5700,
+    releaseYear: 2024,
   },
   {
     id: "men_reigning_champ_midweight_french_terry",
@@ -12775,6 +15274,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Reigning Champ Midweight French Terry combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Reigning Champ Midweight French Terry (Current All-Weather Performance Release)"],
+    sku: "FSH-REI-MENREIG-587",
+    baseMsrp: 5700,
+    releaseYear: 2024,
   },
   {
     id: "men_st_ssy_basic_appliqu_hoodie",
@@ -12790,6 +15292,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Stüssy Basic Appliqué Hoodie combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Stüssy Basic Appliqué Hoodie (Current All-Weather Performance Release)"],
+    sku: "FSH-STS-MENST-667",
+    baseMsrp: 5700,
+    releaseYear: 2024,
   },
   {
     id: "men_uniqlo_u_crew_neck_t_shirt",
@@ -12805,6 +15310,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Uniqlo U Crew Neck T-Shirt combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Uniqlo U Crew Neck T-Shirt (Current All-Weather Performance Release)"],
+    sku: "FSH-UNI-MENUNIQ-153",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "men_everlane_premium_weight_tee",
@@ -12820,6 +15328,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Everlane Premium Weight Tee combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Everlane Premium Weight Tee (Current All-Weather Performance Release)"],
+    sku: "FSH-EVE-MENEVER-389",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "men_nike_sportswear_club_tee",
@@ -12835,6 +15346,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nike Sportswear Club Tee combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Nike Air Basketball & Heritage Streetwear Lineage (1982 - Present)",
     lineage: ["Air Force 1 High OG (1982 Bruce Kilgore Encapsulated Air)","Air Force 1 Mid Jewel (1997 Street Icon)","Air Force 1 '07 LV8 (Current Premium Full-Grain Leather Cupsole)"],
+    sku: "FSH-NIK-MENNIKE-611",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "men_graphic_tees_by_carhartt_wip_obey",
@@ -12850,6 +15364,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Graphic Tees by Carhartt WIP / Obey combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Graphic Tees by Carhartt WIP / Obey (Current All-Weather Performance Release)"],
+    sku: "FSH-GRA-MENGRAP-534",
+    baseMsrp: 3000,
+    releaseYear: 2024,
   },
   {
     id: "men_ralph_lauren_classic_fit_polo",
@@ -12865,6 +15382,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ralph Lauren Classic Fit Polo combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Ralph Lauren Classic Fit Polo (Current All-Weather Performance Release)"],
+    sku: "FSH-RAL-MENRALP-826",
+    baseMsrp: 4900,
+    releaseYear: 2024,
   },
   {
     id: "men_lacoste_classic_piqu_polo",
@@ -12880,6 +15400,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Lacoste Classic Piqué Polo combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Lacoste Classic Piqué Polo (Current All-Weather Performance Release)"],
+    sku: "FSH-LAC-MENLACO-798",
+    baseMsrp: 4900,
+    releaseYear: 2024,
   },
   {
     id: "men_brooks_brothers_oxford_button_down",
@@ -12895,6 +15418,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Brooks Brothers Oxford Button-Down combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Brooks Brothers Oxford Button-Down (Current All-Weather Performance Release)"],
+    sku: "FSH-BRO-MENBROO-394",
+    baseMsrp: 4900,
+    releaseYear: 2024,
   },
   {
     id: "men_j_crew_secret_wash_cotton_shirt",
@@ -12910,6 +15436,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The J.Crew Secret Wash Cotton Shirt combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","J.Crew Secret Wash Cotton Shirt (Current All-Weather Performance Release)"],
+    sku: "FSH-JCR-MENJ-103",
+    baseMsrp: 4900,
+    releaseYear: 2024,
   },
   {
     id: "men_levis_501_original_511_slim_jeans",
@@ -12925,6 +15454,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Levi's 501 Original / 511 Slim Jeans combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "150th Anniversary Heritage Denim Lineup (Original Button Fly)",
     lineage: ["1890 Original Riveted Waist Overalls (Cone Mills)","1947 Post-War Classic Straight Leg (Red Tab)","1993 Heritage Loose Straight Fit","501 Original Button Fly (Current 100% Cotton Shrink-to-Fit)"],
+    sku: "FSH-LEV-MENLEVI-575",
+    baseMsrp: 5400,
+    releaseYear: 2024,
   },
   {
     id: "men_wrangler_texas_stretch_denim",
@@ -12940,6 +15472,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Wrangler Texas Stretch Denim combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Wrangler Texas Stretch Denim (Current All-Weather Performance Release)"],
+    sku: "FSH-WRA-MENWRAN-225",
+    baseMsrp: 5400,
+    releaseYear: 2024,
   },
   {
     id: "men_nudie_jeans_lean_dean",
@@ -12955,6 +15490,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nudie Jeans Lean Dean combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Nudie Jeans Lean Dean (Current All-Weather Performance Release)"],
+    sku: "FSH-NUD-MENNUDI-752",
+    baseMsrp: 5400,
+    releaseYear: 2024,
   },
   {
     id: "men_edwin_ed_55_regular_tapered",
@@ -12970,6 +15508,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Edwin ED-55 Regular Tapered combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Edwin ED-55 Regular Tapered (Current All-Weather Performance Release)"],
+    sku: "FSH-EDW-MENEDWI-774",
+    baseMsrp: 5400,
+    releaseYear: 2024,
   },
   {
     id: "men_dockers_signature_iron_free_khaki_chinos",
@@ -12985,6 +15526,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Dockers Signature Iron-Free Khaki Chinos combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Dockers Signature Iron-Free Khaki Chinos (Current All-Weather Performance Release)"],
+    sku: "FSH-DOC-MENDOCK-537",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_carhartt_aviation_cargo_pant",
@@ -13000,6 +15544,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Carhartt Aviation Cargo Pant combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Carhartt Aviation Cargo Pant (Current All-Weather Performance Release)"],
+    sku: "FSH-CAR-MENCARH-463",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_bonobos_stretch_washed_chino",
@@ -13015,6 +15562,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bonobos Stretch Washed Chino combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Bonobos Stretch Washed Chino (Current All-Weather Performance Release)"],
+    sku: "FSH-BON-MENBONO-994",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_g_star_raw_rovic_zip_3d_cargo",
@@ -13030,6 +15580,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The G-Star RAW Rovic Zip 3D Cargo combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","G-Star RAW Rovic Zip 3D Cargo (Current All-Weather Performance Release)"],
+    sku: "FSH-GST-MENG-471",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_nike_tech_fleece_joggers",
@@ -13045,6 +15598,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nike Tech Fleece Joggers combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Nike Air Basketball & Heritage Streetwear Lineage (1982 - Present)",
     lineage: ["Air Force 1 High OG (1982 Bruce Kilgore Encapsulated Air)","Air Force 1 Mid Jewel (1997 Street Icon)","Air Force 1 '07 LV8 (Current Premium Full-Grain Leather Cupsole)"],
+    sku: "FSH-NIK-MENNIKE-186",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_adidas_originals_sst_track_pants",
@@ -13060,6 +15616,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Adidas Originals SST Track Pants combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["Adidas Classic Heritage Edition (Original Silhouette)","Adidas Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Adidas Originals SST Track Pants (Current All-Weather Performance Release)"],
+    sku: "FSH-ADI-MENADID-846",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_lululemon_surge_city_sweat_jogger",
@@ -13075,6 +15634,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Lululemon Surge / City Sweat Jogger combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Lululemon Surge / City Sweat Jogger (Current All-Weather Performance Release)"],
+    sku: "FSH-LUL-MENLULU-221",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_gymshark_crest_joggers",
@@ -13090,6 +15652,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Gymshark Crest Joggers combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Gymshark Crest Joggers (Current All-Weather Performance Release)"],
+    sku: "FSH-GYM-MENGYMS-185",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_hugo_boss_huge_genius_wool_suit",
@@ -13105,6 +15670,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hugo Boss Huge/Genius Wool Suit combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Hugo Boss Huge/Genius Wool Suit (Current All-Weather Performance Release)"],
+    sku: "FSH-HUG-MENHUGO-430",
+    baseMsrp: 30600,
+    releaseYear: 2024,
   },
   {
     id: "men_suitsupply_havana_classic_suit",
@@ -13120,6 +15688,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Suitsupply Havana Classic Suit combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Suitsupply Havana Classic Suit (Current All-Weather Performance Release)"],
+    sku: "FSH-SUI-MENSUIT-884",
+    baseMsrp: 30600,
+    releaseYear: 2024,
   },
   {
     id: "men_tommy_hilfiger_tailored_wool_blazer",
@@ -13135,6 +15706,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tommy Hilfiger Tailored Wool Blazer combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Tommy Hilfiger Tailored Wool Blazer (Current All-Weather Performance Release)"],
+    sku: "FSH-TOM-MENTOMM-172",
+    baseMsrp: 30600,
+    releaseYear: 2024,
   },
   {
     id: "men_zara_man_tailored_slim_suit",
@@ -13150,6 +15724,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Zara Man Tailored Slim Suit combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Zara Man Tailored Slim Suit (Current All-Weather Performance Release)"],
+    sku: "FSH-ZAR-MENZARA-273",
+    baseMsrp: 30600,
+    releaseYear: 2024,
   },
   {
     id: "men_the_north_face_cyclone_windbreaker",
@@ -13165,6 +15742,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The The North Face Cyclone Windbreaker combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","The North Face Cyclone Windbreaker (Current All-Weather Performance Release)"],
+    sku: "FSH-THE-MENTHE-465",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_schott_nyc_classic_perfecto_leather_jacke",
@@ -13180,6 +15760,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Schott NYC Classic Perfecto Leather Jacket combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Schott NYC Classic Perfecto Leather Jacket (Current All-Weather Performance Release)"],
+    sku: "FSH-SCH-MENSCHO-162",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_patagonia_houdini_jacket",
@@ -13195,6 +15778,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Patagonia Houdini Jacket combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Patagonia Houdini Jacket (Current All-Weather Performance Release)"],
+    sku: "FSH-PAT-MENPATA-973",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_allsaints_milo_leather_biker_jacket",
@@ -13210,6 +15796,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The AllSaints Milo Leather Biker Jacket combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","AllSaints Milo Leather Biker Jacket (Current All-Weather Performance Release)"],
+    sku: "FSH-ALL-MENALLS-953",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_nike_air_force_1_07",
@@ -13225,6 +15814,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nike Air Force 1 '07 combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Nike Air Basketball & Heritage Streetwear Lineage (1982 - Present)",
     lineage: ["Air Force 1 High OG (1982 Bruce Kilgore Encapsulated Air)","Air Force 1 Mid Jewel (1997 Street Icon)","Air Force 1 '07 LV8 (Current Premium Full-Grain Leather Cupsole)"],
+    sku: "FSH-NIK-MENNIKE-427",
+    baseMsrp: 16000,
+    releaseYear: 2024,
   },
   {
     id: "men_adidas_originals_stan_smith",
@@ -13240,6 +15832,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Adidas Originals Stan Smith combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["Adidas Classic Heritage Edition (Original Silhouette)","Adidas Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Adidas Originals Stan Smith (Current All-Weather Performance Release)"],
+    sku: "FSH-ADI-MENADID-497",
+    baseMsrp: 16000,
+    releaseYear: 2024,
   },
   {
     id: "men_new_balance_550",
@@ -13255,6 +15850,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The New Balance 550 combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","New Balance 550 (Current All-Weather Performance Release)"],
+    sku: "FSH-NEW-MENNEW-153",
+    baseMsrp: 16000,
+    releaseYear: 2024,
   },
   {
     id: "men_veja_campo_leather",
@@ -13270,6 +15868,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Veja Campo Leather combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Veja Campo Leather (Current All-Weather Performance Release)"],
+    sku: "FSH-VEJ-MENVEJA-664",
+    baseMsrp: 16000,
+    releaseYear: 2024,
   },
   {
     id: "men_nike_air_zoom_pegasus_41",
@@ -13285,6 +15886,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nike Air Zoom Pegasus 41 combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Nike Air Basketball & Heritage Streetwear Lineage (1982 - Present)",
     lineage: ["Air Force 1 High OG (1982 Bruce Kilgore Encapsulated Air)","Air Force 1 Mid Jewel (1997 Street Icon)","Air Force 1 '07 LV8 (Current Premium Full-Grain Leather Cupsole)"],
+    sku: "FSH-ASU-MENNIKE-320",
+    baseMsrp: 16000,
+    releaseYear: 2024,
   },
   {
     id: "men_brooks_ghost_16",
@@ -13300,6 +15904,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Brooks Ghost 16 combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Brooks Ghost 16 (Current All-Weather Performance Release)"],
+    sku: "FSH-BRO-MENBROO-359",
+    baseMsrp: 16000,
+    releaseYear: 2024,
   },
   {
     id: "men_asics_gel_kayano_31",
@@ -13315,6 +15922,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The ASICS Gel-Kayano 31 combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","ASICS Gel-Kayano 31 (Current All-Weather Performance Release)"],
+    sku: "FSH-ASI-MENASIC-220",
+    baseMsrp: 16000,
+    releaseYear: 2024,
   },
   {
     id: "men_hoka_clifton_9",
@@ -13330,6 +15940,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hoka Clifton 9 combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Hoka Clifton 9 (Current All-Weather Performance Release)"],
+    sku: "FSH-HOK-MENHOKA-874",
+    baseMsrp: 16000,
+    releaseYear: 2024,
   },
   {
     id: "men_churchs_consul_leather_oxford",
@@ -13345,6 +15958,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Church's Consul Leather Oxford combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Church's Consul Leather Oxford (Current All-Weather Performance Release)"],
+    sku: "FSH-CHU-MENCHUR-927",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_allen_edmonds_park_avenue_cap_toe_oxford",
@@ -13360,6 +15976,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Allen Edmonds Park Avenue Cap-Toe Oxford combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Allen Edmonds Park Avenue Cap-Toe Oxford (Current All-Weather Performance Release)"],
+    sku: "FSH-ALL-MENALLE-373",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_clarks_oliver_cap_derby",
@@ -13375,6 +15994,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Clarks Oliver Cap Derby combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Crepe Sole Heritage Desert Lineage (1950 - Present)",
     lineage: ["Clarks Desert Boot OG (1950 Nathan Clark Cairo Suede)","Clarks Bushacre 2 (Synthetic Sole Daily)","Clarks Desert Boot 2 (Current Ortholite Cushion Footbed English Suede)"],
+    sku: "FSH-CLK-MENCLAR-707",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_barker_malton_derby",
@@ -13390,6 +16012,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Barker Malton Derby combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Barker Malton Derby (Current All-Weather Performance Release)"],
+    sku: "FSH-BAR-MENBARK-365",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_g_h_bass_weejuns_larson_penny_loafer",
@@ -13405,6 +16030,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The G.H. Bass Weejuns Larson Penny Loafer combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","G.H. Bass Weejuns Larson Penny Loafer (Current All-Weather Performance Release)"],
+    sku: "FSH-GEN-MENG-398",
+    baseMsrp: 12100,
+    releaseYear: 2024,
   },
   {
     id: "men_sebago_classic_dan_loafer",
@@ -13420,6 +16048,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Sebago Classic Dan Loafer combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Sebago Classic Dan Loafer (Current All-Weather Performance Release)"],
+    sku: "FSH-SEB-MENSEBA-123",
+    baseMsrp: 12100,
+    releaseYear: 2024,
   },
   {
     id: "men_gucci_1953_horsebit_loafer",
@@ -13435,6 +16066,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Gucci 1953 Horsebit Loafer combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Gucci 1953 Horsebit Loafer (Current All-Weather Performance Release)"],
+    sku: "FSH-GUC-MENGUCC-192",
+    baseMsrp: 12100,
+    releaseYear: 2024,
   },
   {
     id: "men_cole_haan_pinch_penny_loafer",
@@ -13450,6 +16084,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Cole Haan Pinch Penny Loafer combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Cole Haan Pinch Penny Loafer (Current All-Weather Performance Release)"],
+    sku: "FSH-COL-MENCOLE-655",
+    baseMsrp: 12100,
+    releaseYear: 2024,
   },
   {
     id: "men_blundstone_500_original_chelsea",
@@ -13465,6 +16102,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Blundstone 500 Original Chelsea combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Blundstone 500 Original Chelsea (Current All-Weather Performance Release)"],
+    sku: "FSH-BLU-MENBLUN-937",
+    baseMsrp: 18500,
+    releaseYear: 2024,
   },
   {
     id: "men_dr_martens_1460_8_eye_smooth_leather_boot",
@@ -13480,6 +16120,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Dr. Martens 1460 8-Eye Smooth Leather Boot combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Original 8-Eye Boot Series (AirWair Bouncing Soles)",
     lineage: ["1460 Smooth Leather OG (1 April 1960 Northamptonshire)","1460 Pascal Nappa Leather (Soft Tumbled Finish)","1460 8-Eye Bex Smooth (Current Goodyear Welted Air-Cushioned Sole)"],
+    sku: "FSH-DOC-MENDR-471",
+    baseMsrp: 18500,
+    releaseYear: 2024,
   },
   {
     id: "men_timberland_6_inch_premium_waterproof_boot",
@@ -13495,6 +16138,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Timberland 6-Inch Premium Waterproof Boot combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Timberland 6-Inch Premium Waterproof Boot (Current All-Weather Performance Release)"],
+    sku: "FSH-TBL-MENTIMB-276",
+    baseMsrp: 18500,
+    releaseYear: 2024,
   },
   {
     id: "men_r_m_williams_comfort_craftsman",
@@ -13510,6 +16156,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The R.M. Williams Comfort Craftsman combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","R.M. Williams Comfort Craftsman (Current All-Weather Performance Release)"],
+    sku: "FSH-GEN-MENR-143",
+    baseMsrp: 18500,
+    releaseYear: 2024,
   },
   {
     id: "men_birkenstock_arizona_leather_sandals",
@@ -13525,6 +16174,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Birkenstock Arizona Leather Sandals combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Birkenstock Arizona Leather Sandals (Current All-Weather Performance Release)"],
+    sku: "FSH-BIR-MENBIRK-420",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_teva_hurricane_xlt2",
@@ -13540,6 +16192,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Teva Hurricane XLT2 combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Teva Hurricane XLT2 (Current All-Weather Performance Release)"],
+    sku: "FSH-TEV-MENTEVA-678",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_suicoke_kisee_v_sandal",
@@ -13555,6 +16210,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Suicoke KISEE-V Sandal combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Suicoke KISEE-V Sandal (Current All-Weather Performance Release)"],
+    sku: "FSH-SUI-MENSUIC-255",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_nike_calm_slide",
@@ -13570,6 +16228,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nike Calm Slide combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Nike Air Basketball & Heritage Streetwear Lineage (1982 - Present)",
     lineage: ["Air Force 1 High OG (1982 Bruce Kilgore Encapsulated Air)","Air Force 1 Mid Jewel (1997 Street Icon)","Air Force 1 '07 LV8 (Current Premium Full-Grain Leather Cupsole)"],
+    sku: "FSH-NIK-MENNIKE-714",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_calvin_klein_cotton_stretch_boxer_briefs",
@@ -13585,6 +16246,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Calvin Klein Cotton Stretch Boxer Briefs combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Calvin Klein Cotton Stretch Boxer Briefs (Current All-Weather Performance Release)"],
+    sku: "FSH-CAL-UNDCALV-198",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_tommy_hilfiger_cotton_classics",
@@ -13600,6 +16264,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tommy Hilfiger Cotton Classics combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Tommy Hilfiger Cotton Classics (Current All-Weather Performance Release)"],
+    sku: "FSH-TOM-UNDTOMM-413",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_saxx_undercover_boxer_briefs",
@@ -13615,6 +16282,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The SAXX Undercover Boxer Briefs combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","SAXX Undercover Boxer Briefs (Current All-Weather Performance Release)"],
+    sku: "FSH-SAX-UNDSAXX-697",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_under_armour_tech_6_boxerjock",
@@ -13630,6 +16300,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Under Armour Tech 6\" Boxerjock combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Under Armour Tech 6\" Boxerjock (Current All-Weather Performance Release)"],
+    sku: "FSH-UND-UNDUNDE-789",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_hanes_comfortsoft_crewneck_undershirts",
@@ -13645,6 +16318,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hanes ComfortSoft Crewneck Undershirts combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Hanes ComfortSoft Crewneck Undershirts (Current All-Weather Performance Release)"],
+    sku: "FSH-HAN-UNDHANE-109",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_uniqlo_airism_seamless_v_neck_undershirt",
@@ -13660,6 +16336,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Uniqlo AIRism Seamless V-Neck Undershirt combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Uniqlo AIRism Seamless V-Neck Undershirt (Current All-Weather Performance Release)"],
+    sku: "FSH-UNI-UNDUNIQ-832",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_fruit_of_the_loom_classic_ribbed_tank_a_s",
@@ -13675,6 +16354,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Fruit of the Loom Classic Ribbed Tank A-Shirts combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Fruit of the Loom Classic Ribbed Tank A-Shirts (Current All-Weather Performance Release)"],
+    sku: "FSH-FRU-UNDFRUI-555",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_ralph_lauren_classic_flannel_cotton_pj_se",
@@ -13690,6 +16372,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ralph Lauren Classic Flannel/Cotton PJ Set combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Ralph Lauren Classic Flannel/Cotton PJ Set (Current All-Weather Performance Release)"],
+    sku: "FSH-RAL-UNDRALP-751",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_derek_rose_modern_fit_cotton_pajama",
@@ -13705,6 +16390,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Derek Rose Modern Fit Cotton Pajama combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Derek Rose Modern Fit Cotton Pajama (Current All-Weather Performance Release)"],
+    sku: "FSH-DER-UNDDERE-922",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_calvin_klein_ultra_soft_lounge_set",
@@ -13720,6 +16408,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Calvin Klein Ultra-Soft Lounge Set combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Calvin Klein Ultra-Soft Lounge Set (Current All-Weather Performance Release)"],
+    sku: "FSH-CAL-UNDCALV-555",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_nike_everyday_cushion_crew_socks",
@@ -13735,6 +16426,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Nike Everyday Cushion Crew Socks combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Nike Air Basketball & Heritage Streetwear Lineage (1982 - Present)",
     lineage: ["Air Force 1 High OG (1982 Bruce Kilgore Encapsulated Air)","Air Force 1 Mid Jewel (1997 Street Icon)","Air Force 1 '07 LV8 (Current Premium Full-Grain Leather Cupsole)"],
+    sku: "FSH-NIK-UNDNIKE-133",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_adidas_cushion_crew_3_stripes",
@@ -13750,6 +16444,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Adidas Cushion Crew 3-Stripes combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["Adidas Classic Heritage Edition (Original Silhouette)","Adidas Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Adidas Cushion Crew 3-Stripes (Current All-Weather Performance Release)"],
+    sku: "FSH-ADI-UNDADID-233",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_stance_performance_crew_socks",
@@ -13765,6 +16462,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Stance Performance Crew Socks combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Stance Performance Crew Socks (Current All-Weather Performance Release)"],
+    sku: "FSH-STA-UNDSTAN-973",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_darn_tough_light_hiker_micro_crew",
@@ -13780,6 +16480,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Darn Tough Light Hiker Micro Crew combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Darn Tough Light Hiker Micro Crew (Current All-Weather Performance Release)"],
+    sku: "FSH-DAR-UNDDARN-959",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_under_armour_coldgear_compression_mock",
@@ -13795,6 +16498,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Under Armour ColdGear Compression Mock combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Under Armour ColdGear Compression Mock (Current All-Weather Performance Release)"],
+    sku: "FSH-UND-UNDUNDE-163",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_smartwool_classic_thermal_merino_base_lay",
@@ -13810,6 +16516,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Smartwool Classic Thermal Merino Base Layer combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Smartwool Classic Thermal Merino Base Layer (Current All-Weather Performance Release)"],
+    sku: "FSH-SMA-UNDSMAR-725",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "und_columbia_omni_heat_midweight_baselayer",
@@ -13825,6 +16534,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Columbia Omni-Heat Midweight Baselayer combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Columbia Omni-Heat Midweight Baselayer (Current All-Weather Performance Release)"],
+    sku: "FSH-COL-UNDCOLU-585",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_montblanc_classic_reversible_leather_belt",
@@ -13840,6 +16552,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Montblanc Classic Reversible Leather Belt combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Montblanc Classic Reversible Leather Belt (Current All-Weather Performance Release)"],
+    sku: "FSH-MON-MENMONT-470",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_timberland_classic_leather_jean_belt",
@@ -13855,6 +16570,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Timberland Classic Leather Jean Belt combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Timberland Classic Leather Jean Belt (Current All-Weather Performance Release)"],
+    sku: "FSH-TBL-MENTIMB-249",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_fossil_joe_casual_leather_belt",
@@ -13870,6 +16588,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Fossil Joe Casual Leather Belt combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Fossil Joe Casual Leather Belt (Current All-Weather Performance Release)"],
+    sku: "FSH-FOS-MENFOSS-248",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_tommy_hilfiger_reversible_dress_belt",
@@ -13885,6 +16606,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Tommy Hilfiger Reversible Dress Belt combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Tommy Hilfiger Reversible Dress Belt (Current All-Weather Performance Release)"],
+    sku: "FSH-TOM-MENTOMM-218",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_bellroy_hide_seek_bifold_wallet",
@@ -13900,6 +16624,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Bellroy Hide & Seek Bifold Wallet combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Bellroy Hide & Seek Bifold Wallet (Current All-Weather Performance Release)"],
+    sku: "FSH-BEL-MENBELL-843",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_ridge_rfid_metal_cardholder",
@@ -13915,6 +16642,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ridge RFID Metal Cardholder combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Ridge RFID Metal Cardholder (Current All-Weather Performance Release)"],
+    sku: "FSH-RID-MENRIDG-821",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_montblanc_meisterst_ck_card_pocket",
@@ -13930,6 +16660,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Montblanc Meisterstück Card Pocket combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Montblanc Meisterstück Card Pocket (Current All-Weather Performance Release)"],
+    sku: "FSH-MON-MENMONT-897",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_fossil_derrick_leather_rfid_bifold",
@@ -13945,6 +16678,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Fossil Derrick Leather RFID Bifold combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Fossil Derrick Leather RFID Bifold (Current All-Weather Performance Release)"],
+    sku: "FSH-FOS-MENFOSS-703",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_brooks_brothers_silk_rep_tie",
@@ -13960,6 +16696,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Brooks Brothers Silk Rep Tie combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Brooks Brothers Silk Rep Tie (Current All-Weather Performance Release)"],
+    sku: "FSH-BRO-MENBROO-942",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_herm_s_silk_patterned_tie",
@@ -13975,6 +16714,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Hermès Silk Patterned Tie combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Hermès Silk Patterned Tie (Current All-Weather Performance Release)"],
+    sku: "FSH-HER-MENHERM-164",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_montblanc_iconic_cufflinks",
@@ -13990,6 +16732,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Montblanc Iconic Cufflinks combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Montblanc Iconic Cufflinks (Current All-Weather Performance Release)"],
+    sku: "FSH-MON-MENMONT-827",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_ties_com_silk_bowtie_set",
@@ -14005,6 +16750,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ties.com Silk Bowtie Set combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Ties.com Silk Bowtie Set (Current All-Weather Performance Release)"],
+    sku: "FSH-TIE-MENTIES-802",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_new_era_59fifty_fitted_cap",
@@ -14020,6 +16768,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The New Era 59FIFTY Fitted Cap combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","New Era 59FIFTY Fitted Cap (Current All-Weather Performance Release)"],
+    sku: "FSH-NEW-MENNEW-681",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_47_brand_clean_up_adjustable_cap",
@@ -14035,6 +16786,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The '47 Brand Clean Up Adjustable Cap combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","'47 Brand Clean Up Adjustable Cap (Current All-Weather Performance Release)"],
+    sku: "FSH-GEN-MEN47-213",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_brixton_messer_fedora",
@@ -14050,6 +16804,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Brixton Messer Fedora combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Brixton Messer Fedora (Current All-Weather Performance Release)"],
+    sku: "FSH-BRI-MENBRIX-267",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_mitchell_ness_wool_solid_snapback",
@@ -14065,6 +16822,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Mitchell & Ness Wool Solid Snapback combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Mitchell & Ness Wool Solid Snapback (Current All-Weather Performance Release)"],
+    sku: "FSH-MIT-MENMITC-829",
+    baseMsrp: 4400,
+    releaseYear: 2024,
   },
   {
     id: "men_ray_ban_aviator_classic_rb3025",
@@ -14080,6 +16840,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Ray-Ban Aviator Classic (RB3025) combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Ray-Ban Aviator Classic (RB3025) (Current All-Weather Performance Release)"],
+    sku: "FSH-RAY-MENRAY-780",
+    baseMsrp: 18500,
+    releaseYear: 2024,
   },
   {
     id: "men_randolph_engineering_aviator_military",
@@ -14095,6 +16858,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Randolph Engineering Aviator Military combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Randolph Engineering Aviator Military (Current All-Weather Performance Release)"],
+    sku: "FSH-RAN-MENRAND-550",
+    baseMsrp: 18500,
+    releaseYear: 2024,
   },
   {
     id: "men_maui_jim_mavericks_polarized_aviator",
@@ -14110,6 +16876,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Maui Jim Mavericks Polarized Aviator combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Maui Jim Mavericks Polarized Aviator (Current All-Weather Performance Release)"],
+    sku: "FSH-MAU-MENMAUI-668",
+    baseMsrp: 18500,
+    releaseYear: 2024,
   },
   {
     id: "men_oakley_holbrook",
@@ -14125,6 +16894,9 @@ export const INITIAL_PRODUCTS: ProductItem[] = [
     description: "The Oakley Holbrook combines timeless sartorial silhouettes with modern technical tailoring, crafted from premium ethically sourced textiles selected for breathability, tactile softness, and shape retention. Finished with reinforced double-needle seam stitching, anti-corrosion hardware, and anatomical drape contours, it offers unmatched day-to-evening versatility. An essential wardrobe investment designed to age beautifully across years of wear.",
     generation: "Athletic & Heritage Pro Performance Lineup",
     lineage: ["men's fashion Classic Heritage Edition (Original Silhouette)","men's fashion Technical Reinforcement Series (Gen 2 Ergonomic Upgrade)","Oakley Holbrook (Current All-Weather Performance Release)"],
+    sku: "FSH-OAK-MENOAKL-601",
+    baseMsrp: 18500,
+    releaseYear: 2024,
   },
 ];
 

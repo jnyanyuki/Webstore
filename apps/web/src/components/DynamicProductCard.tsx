@@ -18,6 +18,9 @@ export type ProductItem = {
   description?: string;
   generation?: string;
   lineage?: string[];
+  sku?: string;
+  baseMsrp?: number;
+  releaseYear?: number;
   colors?: string[];
   sizes?: string[];
   variants?: { name: string; priceDelta: number }[];

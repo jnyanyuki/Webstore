@@ -27,6 +27,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
       name: catalogItem.name,
       price: catalogItem.price,
       originalPrice: catalogItem.originalPrice,
+      baseMsrp: catalogItem.baseMsrp || catalogItem.originalPrice || catalogItem.price,
+      sku: catalogItem.sku || `SKU-${catalogItem.id.toUpperCase()}`,
+      releaseYear: catalogItem.releaseYear || 2024,
       category: catalogItem.category,
       subcategory: catalogItem.subcategory || "Standard",
       itemType: catalogItem.itemType || "Retail",
@@ -39,6 +42,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
         side: catalogItem.sideImage || catalogItem.frontImage,
       },
       attributes: {
+        SKU: catalogItem.sku || `SKU-${catalogItem.id.toUpperCase()}`,
+        "Launch MSRP": `KES ${(catalogItem.baseMsrp || catalogItem.originalPrice || catalogItem.price).toLocaleString()}`,
+        "Release Year": `${catalogItem.releaseYear || 2024}`,
         Category: catalogItem.category,
         Subcategory: catalogItem.subcategory || "Standard",
         ItemType: catalogItem.itemType || "Retail",
@@ -81,12 +87,18 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
             <div className="flex flex-col justify-between space-y-6">
               <div>
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
                   <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100 uppercase tracking-wider">
                     {product.category}
                   </span>
                   <span className="text-xs font-semibold text-gray-500">
                     {product.attributes.Subcategory} • {product.attributes.ItemType}
+                  </span>
+                  <span className="text-[11px] font-mono font-bold bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
+                    {product.sku}
+                  </span>
+                  <span className="text-[11px] font-semibold text-slate-500 bg-gray-50 px-2 py-0.5 rounded border border-gray-200">
+                    Yr: {product.releaseYear}
                   </span>
                 </div>
                 
@@ -94,16 +106,23 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   {product.name}
                 </h1>
 
-                {/* Price Display */}
-                <div className="mt-3 flex items-baseline gap-3">
-                  <span className="text-3xl font-black text-emerald-600">
-                    KES {product.price.toLocaleString()}
-                  </span>
-                  {product.originalPrice && (
-                    <span className="text-sm line-through text-gray-400">
-                      KES {product.originalPrice.toLocaleString()}
+                {/* Price & MSRP Comparison Display */}
+                <div className="mt-3 space-y-1">
+                  <div className="flex flex-wrap items-baseline gap-3">
+                    <span className="text-3xl font-black text-emerald-600">
+                      KES {product.price.toLocaleString()}
                     </span>
-                  )}
+                    {product.baseMsrp && product.baseMsrp > product.price && (
+                      <span className="text-sm line-through text-gray-400">
+                        MSRP: KES {product.baseMsrp.toLocaleString()}
+                      </span>
+                    )}
+                    {product.baseMsrp && product.baseMsrp > product.price && (
+                      <span className="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                        Save KES {(product.baseMsrp - product.price).toLocaleString()} ({Math.round(((product.baseMsrp - product.price) / product.baseMsrp) * 100)}% Off)
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 {/* Broad Detailed Description */}
@@ -153,7 +172,19 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 )}
 
                 {/* Authenticity & Specs Box */}
-                <div className="mt-4 p-3 bg-gray-50 rounded-xl border border-gray-100 space-y-1.5 text-xs">
+                <div className="mt-4 p-3.5 bg-gray-50 rounded-xl border border-gray-100 space-y-1.5 text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Catalog SKU:</span>
+                    <span className="font-mono font-bold text-gray-900">{product.sku}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Benchmark Launch MSRP:</span>
+                    <span className="font-semibold text-gray-700">KES {product.baseMsrp.toLocaleString()}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">Production Year:</span>
+                    <span className="font-semibold text-gray-800">{product.releaseYear} Release</span>
+                  </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Authorized Merchant:</span>
                     <span className="font-semibold text-gray-800">{product.attributes.Store}</span>
