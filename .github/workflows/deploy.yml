@@ -4,65 +4,45 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # Allows manual deploy trigger from GitHub Actions tab
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
 
 jobs:
-  build-and-deploy:
-    name: Build & Deploy to NovaHost
+  deploy:
+    name: Automatic Pull & Deploy on NovaHost
     runs-on: ubuntu-latest
     steps:
-      - name: 1. Checkout Code
+      - name: 1. Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 2. Setup Node.js 20
-        uses: actions/setup-node@v4
+      - name: 2. Trigger Automatic Git Pull & Deploy on NovaHost
+        uses: appleboy/ssh-action@v1.0.3
         with:
-          node-version: 20
-          cache: "npm"
-
-      - name: 3. Install Monorepo Dependencies
-        run: npm ci
-
-      - name: 4. Generate Prisma Client
-        run: npx prisma generate --schema=apps/web/prisma/schema.prisma
-
-      - name: 5. Build Next.js Production Standalone
-        run: npm run build
-        env:
-          DATABASE_URL: "postgresql://mock_user:mock_pass@localhost:5432/mock_db"
-          DIRECT_URL: "postgresql://mock_user:mock_pass@localhost:5432/mock_db"
-          NEXT_PUBLIC_SITE_URL: "https://juromart.com"
-          NEXT_PUBLIC_API_URL: "https://api.juromart.com"
-          NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT: "https://ik.imagekit.io/njndeveloper"
-          REVALIDATION_SECRET_TOKEN: "mock_revalidation_token"
-
-      - name: 6. Prepare Deployment Package
-        run: |
-          mkdir -p deploy_dist/apps/web
-          # Copy Next.js standalone server and dependencies
-          cp -r apps/web/.next/standalone/apps/web/* deploy_dist/apps/web/ 2>/dev/null || true
-          cp -r apps/web/.next/standalone/node_modules deploy_dist/apps/web/node_modules 2>/dev/null || true
-          # Copy public static files
-          mkdir -p deploy_dist/apps/web/public
-          cp -r apps/web/public/* deploy_dist/apps/web/public/ 2>/dev/null || true
-          # Copy Next.js static assets
-          mkdir -p deploy_dist/apps/web/.next/static
-          cp -r apps/web/.next/static deploy_dist/apps/web/.next/ 2>/dev/null || true
-          # Copy cPanel entrypoints
-          cp apps/web/app.js deploy_dist/apps/web/app.js
-          cp apps/web/.htaccess deploy_dist/apps/web/.htaccess
-          # Touch passenger restart trigger
-          mkdir -p deploy_dist/apps/web/tmp
-          touch deploy_dist/apps/web/tmp/restart.txt
-
-      - name: 7. Deploy to NovaHost Kenya via FTPS/FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: "213.139.204.9"
-          username: ${{ secrets.NOVAHOST_FTP_USER || 'juromart' }}
-          password: ${{ secrets.NOVAHOST_FTP_PASSWORD }}
-          local-dir: "deploy_dist/apps/web/"
-          server-dir: "apps/web/"
-          protocol: "ftp"
-          port: 21
-          dangerous-clean-slate: false
+          host: ${{ secrets.NOVAHOST_SSH_HOST || '213.139.204.9' }}
+          username: ${{ secrets.NOVAHOST_SSH_USER || 'juromart' }}
+          password: ${{ secrets.NOVAHOST_SSH_PASSWORD }}
+          port: ${{ secrets.NOVAHOST_SSH_PORT || 22 }}
+          command_timeout: 15m
+          script_stop: true
+          script: |
+            echo "=========================================================="
+            echo "🚀 NovaHost Kenya Automatic Pull & Production Deployment"
+            echo "Target: juromart.com (213.139.204.9)"
+            echo "=========================================================="
+            
+            # Navigate to the repository directory
+            if [ -d "/home/juromart/Webstore" ]; then
+              cd /home/juromart/Webstore
+            elif [ -d "$HOME/Webstore" ]; then
+              cd "$HOME/Webstore"
+            else
+              echo "Creating or locating Webstore directory in $HOME..."
+              cd "$HOME"
+            fi
+            
+            echo "📥 Fetching and pulling latest changes from main branch..."
+            git fetch origin main
+            git reset --hard origin/main
+            
+            echo "⚙️ Executing deployment script..."
+            chmod +x deploy-novahost.sh
+            ./deploy-novahost.sh
