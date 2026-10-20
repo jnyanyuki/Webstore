@@ -205,11 +205,11 @@ export default function ProductQuickViewModal({
               {product.name}
             </h2>
 
-            {/* Single Seller Brand Badge */}
+            {/* Stock & Fulfillment Badge */}
             <div className="flex items-center justify-between text-[11px] text-gray-500 mb-2">
               <span className="font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-100 text-[10px] flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                JuroMart Direct • Verified Stock
+                In Stock • Verified Genuine
               </span>
               <span className="text-[10px] text-emerald-600 font-semibold">Ready for Dispatch</span>
             </div>

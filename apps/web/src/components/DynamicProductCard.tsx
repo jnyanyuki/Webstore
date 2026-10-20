@@ -242,13 +242,15 @@ export default function DynamicProductCard({
 
         {/* Content Details */}
         <div className="p-3.5 space-y-2">
-          {/* Single Seller Brand Badge */}
+          {/* Stock & Category Bar */}
           <div className="flex items-center justify-between text-[11px] text-gray-500">
-            <span className="font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 text-[10px] flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              JuroMart Direct
+            <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider truncate max-w-[65%]">
+              {product.category}
             </span>
-            <span className="text-[10px] text-emerald-600 font-medium">In Stock</span>
+            <span className="text-[10px] text-emerald-600 font-medium flex items-center gap-1 flex-shrink-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              In Stock
+            </span>
           </div>
 
           <h3 className="font-semibold text-gray-900 text-xs sm:text-sm line-clamp-1 group-hover:text-emerald-700 transition-colors">
