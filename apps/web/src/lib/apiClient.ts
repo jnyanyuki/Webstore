@@ -27,19 +27,31 @@ class ApiClient {
 
   private resolveBaseUrl(): string {
     if (typeof window !== "undefined") {
-      if (process.env.NEXT_PUBLIC_API_URL) {
-        return process.env.NEXT_PUBLIC_API_URL.replace(/\/$/, "");
-      }
-      if (window.location.hostname.includes("juromart.com")) {
+      const hostname = window.location.hostname;
+      // 1. If running on production juromart.com (e.g. juromart.com or www.juromart.com),
+      // ALWAYS target https://api.juromart.com so httpOnly session cookies (.juromart.com) propagate
+      // and obsolete/suspended Render service URLs in Vercel environment variables are bypassed.
+      if (hostname === "juromart.com" || hostname.endsWith(".juromart.com")) {
         return "https://api.juromart.com";
+      }
+
+      // 2. Custom environment override (guarding against suspended webstore-czie service)
+      const envUrl = process.env.NEXT_PUBLIC_API_URL;
+      if (envUrl && !envUrl.includes("webstore-czie")) {
+        return envUrl.replace(/\/$/, "");
       }
       return "http://localhost:9000";
     }
-    return (
-      process.env.INTERNAL_API_URL ||
-      process.env.NEXT_PUBLIC_API_URL ||
-      "https://api.juromart.com"
-    ).replace(/\/$/, "");
+
+    const envUrl = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL;
+    if (envUrl && !envUrl.includes("webstore-czie")) {
+      return envUrl.replace(/\/$/, "");
+    }
+    return "https://api.juromart.com";
+  }
+
+  public getBaseUrl(): string {
+    return this.baseUrl;
   }
 
   private subscribeTokenRefresh(cb: (refreshed: boolean) => void) {

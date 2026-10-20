@@ -6,6 +6,8 @@ import UserNavDropdown from "@/components/UserNavDropdown";
 import { OrderStatusTimelineTracker } from "@webstore/ui";
 import { OrderStatusTimeline } from "@webstore/types";
 
+import { apiClient } from "@/lib/apiClient";
+
 const INITIAL_MOCK_ORDER: OrderStatusTimeline = {
   orderId: "ORD-CBD-8891",
   status: "PENDING",
@@ -30,7 +32,7 @@ export default function SellerCenterHome() {
   const handlePackAndDispatch = async () => {
     setDispatchLoading(true);
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://api.juromart.com";
+      const apiUrl = apiClient.getBaseUrl();
       const res = await fetch(`${apiUrl}/api/logistics/dispatch`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
