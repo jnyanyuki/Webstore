@@ -8,6 +8,7 @@ import QuickSearchModal, { SearchItem } from "../../components/QuickSearchModal"
 import MegaMenu from "../../components/MegaMenu";
 import WhatsAppWidget from "../../components/WhatsAppWidget";
 import PwaInstallPrompt from "../../components/PwaInstallPrompt";
+import JuroMartLogo from "../../components/JuroMartLogo";
 import { INITIAL_PRODUCTS } from "../../data/products";
 
 type AudienceScope = "universal" | "local" | "nationwide" | "global";
@@ -158,17 +159,10 @@ export default function StorefrontHome() {
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 bg-emerald-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-xs">
-              J
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="font-extrabold text-base tracking-tight text-gray-900">
-                JuroMart<span className="text-emerald-600">.</span>
-              </span>
-              <span className="hidden sm:inline-block text-[9px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-200">
-                Express Delivery
-              </span>
-            </div>
+            <JuroMartLogo size="sm" />
+            <span className="hidden sm:inline-block text-[9px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-200">
+              Express Delivery
+            </span>
           </div>
 
           <div className="flex-1 max-w-sm hidden sm:block">
