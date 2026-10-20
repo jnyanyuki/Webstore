@@ -29,3 +29,4 @@ deploy_dist/
 scripts/test-*.js
 dist/
 apps/backend/dist/
+*.tsbuildinfo
