@@ -37,10 +37,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
       generation: catalogItem.generation,
       lineage: catalogItem.lineage || [],
       description: catalogItem.description || `The ${catalogItem.name} delivers precision engineering, authenticated high-tier reliability, and official manufacturer warranty coverage.`,
-      images: {
-        front: catalogItem.frontImage,
-        side: catalogItem.sideImage || catalogItem.frontImage,
-      },
+      images:
+        catalogItem.images && catalogItem.images.length > 0
+          ? catalogItem.images
+          : catalogItem.gallery && catalogItem.gallery.length > 0
+          ? catalogItem.gallery.map((g) => g.url)
+          : {
+              front: catalogItem.frontImage,
+              side: catalogItem.sideImage || catalogItem.frontImage,
+            },
       attributes: {
         SKU: catalogItem.sku || `SKU-${catalogItem.id.toUpperCase()}`,
         "Launch MSRP": `KES ${(catalogItem.baseMsrp || catalogItem.originalPrice || catalogItem.price).toLocaleString()}`,

@@ -3,6 +3,11 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
+export type ProductImageAngle = {
+  url: string;
+  label?: string;
+};
+
 export type ProductItem = {
   id: string;
   name: string;
@@ -13,6 +18,8 @@ export type ProductItem = {
   originalPrice?: number;
   frontImage: string;
   sideImage?: string;
+  images?: string[];
+  gallery?: ProductImageAngle[];
   merchantStall?: string;
   badge?: string;
   description?: string;
@@ -57,9 +64,21 @@ export default function DynamicProductCard({
   onQuickView: (p: ProductItem) => void;
 }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedPackIndex, setSelectedPackIndex] = useState(0);
   const [isAdded, setIsAdded] = useState(false);
+
+  // Multi-angle image extraction
+  const allImages = React.useMemo(() => {
+    if (product.images && product.images.length > 0) return product.images;
+    if (product.gallery && product.gallery.length > 0) return product.gallery.map((g) => g.url);
+    const list = [product.frontImage];
+    if (product.sideImage && product.sideImage !== product.frontImage) {
+      list.push(product.sideImage);
+    }
+    return list;
+  }, [product]);
 
   // Option A: Multi-item Pack & Variant Options
   const packOptions: PackOption[] =
@@ -88,7 +107,7 @@ export default function DynamicProductCard({
   const grandTotal = packTotalPrice * quantity;
   const totalItemUnits = activePack.multiplier * quantity;
 
-  const displayImage = isHovered && product.sideImage ? product.sideImage : product.frontImage;
+  const displayImage = allImages[activeImageIndex] || product.frontImage;
 
   const handleAdd = () => {
     setIsAdded(true);
@@ -107,15 +126,46 @@ export default function DynamicProductCard({
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        setActiveImageIndex(0);
+      }}
       className="bg-white rounded-xl border border-gray-200/80 overflow-hidden hover:shadow-md hover:border-emerald-300 transition-all duration-200 flex flex-col justify-between group"
     >
       <div>
         {/* Uniform 4:5 Aspect Ratio Container with Neutral Backdrop */}
-        <div className="aspect-[4/5] bg-gray-50/80 relative overflow-hidden flex items-center justify-center p-3">
+        <div className="aspect-[4/5] bg-gray-50/80 relative overflow-hidden flex items-center justify-center p-3 select-none">
+          {/* Segmented Hover Indicator Bars (Instagram / ASOS style) */}
+          {allImages.length > 1 && (
+            <div className="absolute top-2 inset-x-3 z-30 flex gap-1 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+              {allImages.map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`h-1 flex-1 rounded-full transition-all ${
+                    activeImageIndex === idx ? "bg-emerald-600 shadow-sm" : "bg-black/20"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Invisible Segmented Hover Zones across the image */}
+          {allImages.length > 1 && (
+            <div className="absolute inset-0 flex z-10">
+              {allImages.map((_, idx) => (
+                <div
+                  key={idx}
+                  onMouseEnter={() => setActiveImageIndex(idx)}
+                  className="flex-1 h-full cursor-pointer"
+                  title={`Angle ${idx + 1} of ${allImages.length}`}
+                />
+              ))}
+            </div>
+          )}
+
           {/* Trust / Social Proof / Spec Badge */}
           {product.badge && (
-            <div className="absolute top-2 left-2 z-10">
+            <div className="absolute top-4 left-2 z-20 pointer-events-none">
               <span
                 className={`inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.5 rounded-full shadow-xs border backdrop-blur-xs ${getBadgeStyles(
                   product.badge
@@ -131,25 +181,60 @@ export default function DynamicProductCard({
 
           {/* Discount Badge */}
           {product.originalPrice && (
-            <div className="absolute top-2 right-2 z-10 bg-rose-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-xs">
+            <div className="absolute top-4 right-2 z-20 bg-rose-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-xs pointer-events-none">
               -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
             </div>
           )}
 
-          {/* Image with Hover Zoom powered by ImageKit Edge CDN */}
+          {/* Multi-Angle Count Indicator */}
+          {allImages.length > 1 && (
+            <div className="absolute bottom-2 right-2 z-20 bg-black/60 backdrop-blur-xs text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-xs pointer-events-none">
+              {activeImageIndex + 1}/{allImages.length}
+            </div>
+          )}
+
+          {/* Left/Right Angle Stepper Arrows on Hover */}
+          {allImages.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : allImages.length - 1));
+                }}
+                className="absolute left-1.5 top-1/2 -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-xs border border-gray-200 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold cursor-pointer"
+                aria-label="Previous angle"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveImageIndex((prev) => (prev < allImages.length - 1 ? prev + 1 : 0));
+                }}
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-xs border border-gray-200 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold cursor-pointer"
+                aria-label="Next angle"
+              >
+                ›
+              </button>
+            </>
+          )}
+
+          {/* Image with Dynamic Angle Switching */}
           <Image
             src={displayImage}
-            alt={product.name}
+            alt={`${product.name} - Angle ${activeImageIndex + 1}`}
             width={400}
             height={500}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="w-full h-full object-contain transition-all duration-300 transform group-hover:scale-105"
+            className="w-full h-full object-contain transition-all duration-200 transform group-hover:scale-105 pointer-events-none"
           />
 
           {/* Quick View Floating Action */}
           <button
             onClick={() => onQuickView(product)}
-            className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-white/95 hover:bg-white text-gray-900 text-[11px] font-bold px-3 py-1.5 rounded-lg shadow-sm border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-200 backdrop-blur-xs cursor-pointer"
+            className="absolute bottom-2.5 left-1/2 -translate-x-1/2 z-20 bg-white/95 hover:bg-white text-gray-900 text-[11px] font-bold px-3 py-1.5 rounded-lg shadow-sm border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-200 backdrop-blur-xs cursor-pointer"
           >
             Quick View
           </button>

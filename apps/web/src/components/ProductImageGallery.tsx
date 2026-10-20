@@ -4,19 +4,35 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { getProductImageUrl } from "@/lib/imageKitUrls";
 
+export type ProductImageInput =
+  | {
+      front: string;
+      side?: string;
+    }
+  | string[]
+  | { url: string; label?: string }[];
+
 interface ProductImageGalleryProps {
-  images: {
-    front: string;
-    side?: string;
-  };
+  images: ProductImageInput;
   title: string;
 }
 
 export default function ProductImageGallery({ images, title }: ProductImageGalleryProps) {
-  const [activeImageKey, setActiveImageKey] = useState<"front" | "side">("front");
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
 
-  const currentImagePath = activeImageKey === "front" ? images.front : images.side || images.front;
+  const imageList: string[] = React.useMemo(() => {
+    if (Array.isArray(images)) {
+      return images.map((item) => (typeof item === "string" ? item : item.url)).filter(Boolean);
+    }
+    const list = [images.front];
+    if (images.side && images.side !== images.front) {
+      list.push(images.side);
+    }
+    return list;
+  }, [images]);
+
+  const currentImagePath = imageList[activeImageIndex] || imageList[0] || "";
 
   // 1. High-Quality PDP Gallery URL (900px, 85% quality, Retina)
   const galleryUrl = getProductImageUrl({
@@ -32,21 +48,6 @@ export default function ProductImageGallery({ images, title }: ProductImageGalle
     quality: 90,
   });
 
-  // 3. Thumbnails for switcher (150px, 80% quality)
-  const frontThumb = getProductImageUrl({
-    path: images.front,
-    variant: "thumb",
-    quality: 80,
-  });
-
-  const sideThumb = images.side
-    ? getProductImageUrl({
-        path: images.side,
-        variant: "thumb",
-        quality: 80,
-      })
-    : null;
-
   return (
     <div className="flex flex-col gap-4">
       {/* Main High-Resolution Display */}
@@ -56,7 +57,7 @@ export default function ProductImageGallery({ images, title }: ProductImageGalle
       >
         <Image
           src={galleryUrl}
-          alt={`${title} - View`}
+          alt={`${title} - View ${activeImageIndex + 1}`}
           fill
           sizes="(max-width: 768px) 100vw, 550px"
           className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
@@ -65,33 +66,43 @@ export default function ProductImageGallery({ images, title }: ProductImageGalle
         <div className="absolute bottom-3 right-3 rounded-lg bg-black/60 px-2.5 py-1 text-[11px] font-semibold text-white backdrop-blur-sm opacity-80 group-hover:opacity-100 transition-opacity flex items-center gap-1.5">
           <span>🔍 Click to inspect (1600px HD)</span>
         </div>
+
+        {imageList.length > 1 && (
+          <div className="absolute top-3 right-3 rounded-full bg-black/60 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
+            {activeImageIndex + 1} / {imageList.length}
+          </div>
+        )}
       </div>
 
       {/* Thumbnail Switcher (if multiple images exist) */}
-      {sideThumb && (
-        <div className="flex items-center gap-3">
-          <button
-            type="button"
-            onClick={() => setActiveImageKey("front")}
-            className={`relative h-20 w-20 overflow-hidden rounded-xl border-2 transition-all ${
-              activeImageKey === "front"
-                ? "border-green-600 ring-2 ring-green-600/20"
-                : "border-gray-200 hover:border-gray-400"
-            }`}
-          >
-            <Image src={frontThumb} alt="Front View Thumbnail" fill className="object-contain p-1" />
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveImageKey("side")}
-            className={`relative h-20 w-20 overflow-hidden rounded-xl border-2 transition-all ${
-              activeImageKey === "side"
-                ? "border-green-600 ring-2 ring-green-600/20"
-                : "border-gray-200 hover:border-gray-400"
-            }`}
-          >
-            <Image src={sideThumb} alt="Side View Thumbnail" fill className="object-contain p-1" />
-          </button>
+      {imageList.length > 1 && (
+        <div className="flex items-center gap-3 overflow-x-auto pb-1 scrollbar-none">
+          {imageList.map((imgUrl, idx) => {
+            const thumbUrl = getProductImageUrl({
+              path: imgUrl,
+              variant: "thumb",
+              quality: 80,
+            });
+            return (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setActiveImageIndex(idx)}
+                className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl border-2 transition-all cursor-pointer bg-white ${
+                  activeImageIndex === idx
+                    ? "border-emerald-600 ring-2 ring-emerald-600/20 scale-105 shadow-xs"
+                    : "border-gray-200 hover:border-gray-400 opacity-80 hover:opacity-100"
+                }`}
+              >
+                <Image
+                  src={thumbUrl}
+                  alt={`${title} - Thumbnail ${idx + 1}`}
+                  fill
+                  className="object-contain p-1"
+                />
+              </button>
+            );
+          })}
         </div>
       )}
 

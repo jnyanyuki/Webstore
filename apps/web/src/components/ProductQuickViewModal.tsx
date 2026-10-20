@@ -29,12 +29,33 @@ export default function ProductQuickViewModal({
   const [showSizeGuide, setShowSizeGuide] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [selectedPackIndex, setSelectedPackIndex] = useState(0);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const [selectedVariant, setSelectedVariant] = useState<{ name: string; priceDelta: number }>(
     product?.variants?.[0] || { name: "256GB", priceDelta: 0 }
   );
 
+  React.useEffect(() => {
+    setActiveImageIndex(0);
+    setQuantity(1);
+    setSelectedPackIndex(0);
+  }, [product?.id]);
+
   if (!product) return null;
+
+  // Multi-angle image extraction
+  const allImages = [
+    ...(product.images && product.images.length > 0
+      ? product.images
+      : product.gallery && product.gallery.length > 0
+      ? product.gallery.map((g) => g.url)
+      : [
+          product.frontImage,
+          ...(product.sideImage && product.sideImage !== product.frontImage
+            ? [product.sideImage]
+            : []),
+        ]),
+  ];
 
   // Option A: Multi-item Pack & Variant Options
   const packOptions: PackOption[] =
@@ -70,24 +91,102 @@ export default function ProductQuickViewModal({
       <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full overflow-hidden relative border border-gray-100 flex flex-col md:flex-row max-h-[90vh]">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-full transition-colors"
+          className="absolute top-4 right-4 z-10 bg-gray-100 hover:bg-gray-200 text-gray-600 p-2 rounded-full transition-colors cursor-pointer"
         >
           ✕
         </button>
 
-        <div className="md:w-1/2 bg-gray-50/80 p-6 flex items-center justify-center relative border-b md:border-b-0 md:border-r border-gray-200/60">
-          <Image
-            src={product.frontImage}
-            alt={product.name}
-            width={400}
-            height={400}
-            className="max-h-72 object-contain rounded-xl"
-          />
-          <div className="absolute bottom-4 left-4">
-            <span className="bg-white/95 text-gray-900 text-[10px] font-bold px-2.5 py-1 rounded-full border border-gray-200 shadow-sm backdrop-blur-xs">
-              {product.badge}
-            </span>
+        <div className="md:w-1/2 bg-gray-50/80 p-5 flex flex-col justify-between relative border-b md:border-b-0 md:border-r border-gray-200/60">
+          {/* Main Showcase Image */}
+          <div className="relative aspect-square w-full flex items-center justify-center overflow-hidden rounded-xl bg-white border border-gray-200/70 p-4 select-none">
+            <Image
+              src={allImages[activeImageIndex] || product.frontImage}
+              alt={`${product.name} - View ${activeImageIndex + 1}`}
+              width={400}
+              height={400}
+              className="w-full h-full object-contain transition-all duration-300"
+              priority
+            />
+
+            {/* Trust / Spec Badge */}
+            {product.badge && (
+              <div className="absolute top-3 left-3">
+                <span className="bg-white/95 text-gray-900 text-[10px] font-bold px-2.5 py-1 rounded-full border border-gray-200 shadow-xs backdrop-blur-xs">
+                  {product.badge}
+                </span>
+              </div>
+            )}
+
+            {/* Angle Indicator Counter */}
+            {allImages.length > 1 && (
+              <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-xs text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs">
+                {activeImageIndex + 1} / {allImages.length}
+              </div>
+            )}
+
+            {/* Chevron Navigation Arrows */}
+            {allImages.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : allImages.length - 1))
+                  }
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-md border border-gray-200 flex items-center justify-center text-xs font-bold transition-all cursor-pointer"
+                  aria-label="Previous angle"
+                >
+                  ‹
+                </button>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveImageIndex((prev) => (prev < allImages.length - 1 ? prev + 1 : 0))
+                  }
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-md border border-gray-200 flex items-center justify-center text-xs font-bold transition-all cursor-pointer"
+                  aria-label="Next angle"
+                >
+                  ›
+                </button>
+              </>
+            )}
           </div>
+
+          {/* Multi-Angle Interactive Thumbnail Dock */}
+          {allImages.length > 1 && (
+            <div className="mt-3">
+              <div className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5 flex items-center justify-between">
+                <span>Angles & Details ({allImages.length})</span>
+                <span className="text-emerald-700 font-semibold lowercase">
+                  {activeImageIndex === 0
+                    ? "front view"
+                    : activeImageIndex === 1
+                    ? "side profile"
+                    : `angle ${activeImageIndex + 1}`}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+                {allImages.map((imgUrl, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setActiveImageIndex(idx)}
+                    className={`relative w-14 h-14 rounded-lg border-2 overflow-hidden p-1 transition-all flex-shrink-0 bg-white cursor-pointer ${
+                      activeImageIndex === idx
+                        ? "border-emerald-600 ring-2 ring-emerald-500/30 scale-105 shadow-xs"
+                        : "border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100"
+                    }`}
+                  >
+                    <Image
+                      src={imgUrl}
+                      alt={`Thumbnail angle ${idx + 1}`}
+                      fill
+                      className="object-contain p-0.5"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="md:w-1/2 p-6 overflow-y-auto space-y-5 flex flex-col justify-between">
