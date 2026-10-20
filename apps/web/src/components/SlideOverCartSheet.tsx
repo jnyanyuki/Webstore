@@ -10,6 +10,12 @@ import { ProductItem } from "./DynamicProductCard";
 
 const FREE_DELIVERY_THRESHOLD = 5000;
 
+export type CartItemType = ProductItem & {
+  quantity: number;
+  selectedVariant?: string;
+  cartKey?: string;
+};
+
 export default function SlideOverCartSheet({
   isOpen,
   onClose,
@@ -20,7 +26,7 @@ export default function SlideOverCartSheet({
 }: {
   isOpen: boolean;
   onClose: () => void;
-  cartItems: (ProductItem & { quantity: number })[];
+  cartItems: CartItemType[];
   onUpdateQuantity: (id: string, delta: number) => void;
   onRemoveItem: (id: string) => void;
   onClearCart: () => void;
@@ -90,52 +96,60 @@ export default function SlideOverCartSheet({
               </div>
             ) : (
               <div className="space-y-3">
-                {cartItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex items-center justify-between bg-gray-50 p-3 rounded-xl border border-gray-100"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Image
-                        src={item.frontImage}
-                        alt={item.name}
-                        width={64}
-                        height={64}
-                        className="w-12 h-12 object-contain bg-white rounded-lg border border-gray-200/60 p-1"
-                      />
-                      <div>
-                        <h4 className="text-xs font-bold text-gray-900 line-clamp-1">{item.name}</h4>
-                        <div className="text-xs font-extrabold text-emerald-700 mt-0.5">
-                          KSh {item.price.toLocaleString()}
+                {cartItems.map((item) => {
+                  const itemKey = item.cartKey || item.id;
+                  return (
+                    <div
+                      key={itemKey}
+                      className="flex items-center justify-between bg-gray-50 p-3 rounded-xl border border-gray-100"
+                    >
+                      <div className="flex items-center gap-3">
+                        <Image
+                          src={item.frontImage}
+                          alt={item.name}
+                          width={64}
+                          height={64}
+                          className="w-12 h-12 object-contain bg-white rounded-lg border border-gray-200/60 p-1"
+                        />
+                        <div>
+                          <h4 className="text-xs font-bold text-gray-900 line-clamp-1">{item.name}</h4>
+                          {item.selectedVariant && (
+                            <span className="inline-block mt-0.5 text-[10px] font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                              {item.selectedVariant}
+                            </span>
+                          )}
+                          <div className="text-xs font-extrabold text-emerald-700 mt-0.5">
+                            KSh {item.price.toLocaleString()}
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div className="flex items-center gap-2">
-                      <div className="flex items-center bg-white border rounded-lg">
+                      <div className="flex items-center gap-2">
+                        <div className="flex items-center bg-white border rounded-lg">
+                          <button
+                            onClick={() => onUpdateQuantity(itemKey, -1)}
+                            className="px-2 py-1 text-xs font-bold text-gray-600 hover:bg-gray-100 cursor-pointer"
+                          >
+                            -
+                          </button>
+                          <span className="px-2 text-xs font-bold">{item.quantity}</span>
+                          <button
+                            onClick={() => onUpdateQuantity(itemKey, 1)}
+                            className="px-2 py-1 text-xs font-bold text-gray-600 hover:bg-gray-100 cursor-pointer"
+                          >
+                            +
+                          </button>
+                        </div>
                         <button
-                          onClick={() => onUpdateQuantity(item.id, -1)}
-                          className="px-2 py-1 text-xs font-bold text-gray-600 hover:bg-gray-100"
+                          onClick={() => onRemoveItem(itemKey)}
+                          className="text-gray-400 hover:text-rose-600 p-1 text-xs cursor-pointer"
                         >
-                          -
-                        </button>
-                        <span className="px-2 text-xs font-bold">{item.quantity}</span>
-                        <button
-                          onClick={() => onUpdateQuantity(item.id, 1)}
-                          className="px-2 py-1 text-xs font-bold text-gray-600 hover:bg-gray-100"
-                        >
-                          +
+                          ✕
                         </button>
                       </div>
-                      <button
-                        onClick={() => onRemoveItem(item.id)}
-                        className="text-gray-400 hover:text-rose-600 p-1 text-xs"
-                      >
-                        ✕
-                      </button>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )
           ) : (

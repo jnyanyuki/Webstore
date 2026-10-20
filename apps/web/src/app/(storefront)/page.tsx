@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import DynamicProductCard, { ProductItem } from "../../components/DynamicProductCard";
 import ProductQuickViewModal from "../../components/ProductQuickViewModal";
-import SlideOverCartSheet from "../../components/SlideOverCartSheet";
+import SlideOverCartSheet, { CartItemType } from "../../components/SlideOverCartSheet";
 import QuickSearchModal, { SearchItem } from "../../components/QuickSearchModal";
 import MegaMenu from "../../components/MegaMenu";
 import WhatsAppWidget from "../../components/WhatsAppWidget";
@@ -82,7 +82,7 @@ const AUDIENCE_CONFIG: Record<
 };
 
 export default function StorefrontHome() {
-  const [cartItems, setCartItems] = useState<(ProductItem & { quantity: number })[]>([]);
+  const [cartItems, setCartItems] = useState<CartItemType[]>([]);
   const [isCartSheetOpen, setIsCartSheetOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<ProductItem | null>(null);
@@ -90,29 +90,48 @@ export default function StorefrontHome() {
   const [audienceScope, setAudienceScope] = useState<AudienceScope>("universal");
   const activeAudience = AUDIENCE_CONFIG[audienceScope];
 
-  const handleAddToCart = (product: ProductItem) => {
+  const handleAddToCart = (
+    product: ProductItem,
+    quantityToAdd: number = 1,
+    selectedVariant?: string
+  ) => {
     setCartItems((prev) => {
-      const existing = prev.find((item) => item.id === product.id);
+      const cartKey = selectedVariant ? `${product.id}__${selectedVariant}` : product.id;
+      const existing = prev.find((item) => (item.cartKey || item.id) === cartKey);
       if (existing) {
         return prev.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+          (item.cartKey || item.id) === cartKey
+            ? { ...item, quantity: item.quantity + quantityToAdd }
+            : item
         );
       }
-      return [...prev, { ...product, quantity: 1 }];
+      return [
+        ...prev,
+        {
+          ...product,
+          quantity: quantityToAdd,
+          selectedVariant,
+          cartKey,
+        },
+      ];
     });
     setIsCartSheetOpen(true);
   };
 
-  const handleUpdateQuantity = (id: string, delta: number) => {
+  const handleUpdateQuantity = (cartKeyOrId: string, delta: number) => {
     setCartItems((prev) =>
       prev
-        .map((item) => (item.id === id ? { ...item, quantity: item.quantity + delta } : item))
+        .map((item) =>
+          (item.cartKey || item.id) === cartKeyOrId
+            ? { ...item, quantity: item.quantity + delta }
+            : item
+        )
         .filter((item) => item.quantity > 0)
     );
   };
 
-  const handleRemoveItem = (id: string) => {
-    setCartItems((prev) => prev.filter((item) => item.id !== id));
+  const handleRemoveItem = (cartKeyOrId: string) => {
+    setCartItems((prev) => prev.filter((item) => (item.cartKey || item.id) !== cartKeyOrId));
   };
 
   const filteredProducts = selectedCategoryFilter
@@ -440,7 +459,9 @@ export default function StorefrontHome() {
       <ProductQuickViewModal
         product={quickViewProduct}
         onClose={() => setQuickViewProduct(null)}
-        onAddToCart={(p) => handleAddToCart(p)}
+        onAddToCart={(p, options) => {
+          handleAddToCart(p, options.quantity || 1, options.variant);
+        }}
       />
 
       <SlideOverCartSheet

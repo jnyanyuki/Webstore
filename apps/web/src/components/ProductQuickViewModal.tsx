@@ -4,6 +4,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { ProductItem } from "./DynamicProductCard";
 
+interface PackOption {
+  label: string;
+  multiplier: number;
+  discountRate: number;
+  priceDelta?: number;
+}
+
 export default function ProductQuickViewModal({
   product,
   onClose,
@@ -11,12 +18,17 @@ export default function ProductQuickViewModal({
 }: {
   product: ProductItem | null;
   onClose: () => void;
-  onAddToCart: (item: ProductItem, selectedOptions: { color?: string; size?: string; variant?: string }) => void;
+  onAddToCart: (
+    item: ProductItem,
+    selectedOptions: { color?: string; size?: string; variant?: string; quantity?: number }
+  ) => void;
 }) {
   const [selectedColor, setSelectedColor] = useState<string>("Black");
   const [selectedSize, setSelectedSize] = useState<string>("M");
   const [unitToggle, setUnitToggle] = useState<"cm" | "inch">("cm");
   const [showSizeGuide, setShowSizeGuide] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const [selectedPackIndex, setSelectedPackIndex] = useState(0);
 
   const [selectedVariant, setSelectedVariant] = useState<{ name: string; priceDelta: number }>(
     product?.variants?.[0] || { name: "256GB", priceDelta: 0 }
@@ -24,7 +36,31 @@ export default function ProductQuickViewModal({
 
   if (!product) return null;
 
-  const calculatedPrice = product.price + (selectedVariant?.priceDelta || 0);
+  // Option A: Multi-item Pack & Variant Options
+  const packOptions: PackOption[] =
+    product.variants && product.variants.length > 0
+      ? product.variants.map((v) => ({
+          label: v.name,
+          multiplier: 1,
+          discountRate: 0,
+          priceDelta: v.priceDelta,
+        }))
+      : [
+          { label: "1 pc", multiplier: 1, discountRate: 0 },
+          { label: "2-Pack (-5%)", multiplier: 2, discountRate: 0.05 },
+          { label: "3-Pack (-10%)", multiplier: 3, discountRate: 0.1 },
+        ];
+
+  const activePack = packOptions[selectedPackIndex] || packOptions[0];
+
+  const unitPrice =
+    activePack.priceDelta !== undefined
+      ? product.price + activePack.priceDelta
+      : Math.round(product.price * (1 - activePack.discountRate));
+
+  const packTotalPrice = unitPrice * activePack.multiplier;
+  const grandTotal = packTotalPrice * quantity;
+  const totalItemUnits = activePack.multiplier * quantity;
 
   const colors = product.colors || ["#111827", "#059669", "#2563EB", "#D97706"];
   const sizes = product.sizes || ["S", "M", "L", "XL"];
@@ -70,20 +106,28 @@ export default function ProductQuickViewModal({
               {product.name}
             </h2>
 
-            <div className="flex flex-wrap items-baseline gap-2 mt-3 mb-3">
-              <span className="text-2xl font-black text-gray-900">
-                KSh {calculatedPrice.toLocaleString()}
+            {/* Single Seller Brand Badge */}
+            <div className="flex items-center justify-between text-[11px] text-gray-500 mb-2">
+              <span className="font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-100 text-[10px] flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                JuroMart Direct • Verified Stock
               </span>
-              {product.baseMsrp && (
+              <span className="text-[10px] text-emerald-600 font-semibold">Ready for Dispatch</span>
+            </div>
+
+            <div className="flex flex-wrap items-baseline gap-2 mt-2 mb-3">
+              <span className="text-2xl font-black text-gray-900">
+                KSh {packTotalPrice.toLocaleString()}
+              </span>
+              {activePack.multiplier > 1 ? (
+                <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  (KSh {unitPrice.toLocaleString()}/ea)
+                </span>
+              ) : product.baseMsrp ? (
                 <span className="text-sm text-gray-400 line-through">
-                  MSRP: KSh {(product.baseMsrp + (selectedVariant?.priceDelta || 0)).toLocaleString()}
+                  MSRP: KSh {product.baseMsrp.toLocaleString()}
                 </span>
-              )}
-              {product.baseMsrp && product.baseMsrp > calculatedPrice && (
-                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
-                  Save {Math.round(((product.baseMsrp - calculatedPrice) / product.baseMsrp) * 100)}%
-                </span>
-              )}
+              ) : null}
             </div>
 
             {product.description && (
@@ -91,6 +135,29 @@ export default function ProductQuickViewModal({
                 {product.description}
               </p>
             )}
+
+            {/* Option A: Pack & Bundle Options Pills */}
+            <div className="mb-4 pt-2 border-t border-gray-100">
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                {product.variants && product.variants.length > 0 ? "Options / Config:" : "Pack Size & Savings:"}
+              </label>
+              <div className="flex flex-wrap items-center gap-2">
+                {packOptions.map((pack, idx) => (
+                  <button
+                    key={pack.label}
+                    type="button"
+                    onClick={() => setSelectedPackIndex(idx)}
+                    className={`text-xs font-bold px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
+                      selectedPackIndex === idx
+                        ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
+                        : "bg-gray-50 text-gray-700 border-gray-200 hover:border-emerald-500 hover:text-emerald-700"
+                    }`}
+                  >
+                    {pack.label}
+                  </button>
+                ))}
+              </div>
+            </div>
 
             {product.lineage && product.lineage.length > 0 && (() => {
               const lineageList = product.lineage;
@@ -130,7 +197,7 @@ export default function ProductQuickViewModal({
             })()}
 
             {product.category === "Fashion" && (
-              <div className="space-y-4 pt-2 border-t border-gray-100">
+              <div className="space-y-4 pt-2 border-t border-gray-100 mb-4">
                 <div>
                   <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
                     Color: <span className="text-gray-500 font-normal">{selectedColor}</span>
@@ -208,50 +275,62 @@ export default function ProductQuickViewModal({
                 </div>
               </div>
             )}
-
-            {product.category === "Electronics" && (
-              <div className="space-y-3 pt-2 border-t border-gray-100">
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider">
-                  Storage Variant:
-                </label>
-                <div className="grid grid-cols-2 gap-2.5">
-                  {(product.variants || [
-                    { name: "128GB", priceDelta: 0 },
-                    { name: "256GB (+KES 4,500)", priceDelta: 4500 },
-                    { name: "512GB (+KES 12,000)", priceDelta: 12000 },
-                  ]).map((v) => (
-                    <button
-                      key={v.name}
-                      onClick={() => setSelectedVariant(v)}
-                      className={`p-3 text-left rounded-xl border transition-all flex flex-col justify-between ${
-                        selectedVariant?.name === v.name
-                          ? "bg-emerald-50 border-emerald-600 text-emerald-900 ring-2 ring-emerald-600"
-                          : "bg-white border-gray-200 hover:border-gray-300 text-gray-800"
-                      }`}
-                    >
-                      <span className="font-bold text-xs">{v.name}</span>
-                      <span className="text-[11px] font-semibold text-emerald-700">
-                        {v.priceDelta > 0 ? `+KES ${v.priceDelta.toLocaleString()}` : "Included"}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
 
-          <button
-            onClick={() => {
-              onAddToCart(
-                { ...product, price: calculatedPrice },
-                { color: selectedColor, size: selectedSize, variant: selectedVariant?.name }
-              );
-              onClose();
-            }}
-            className="w-full bg-gray-900 hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-md active:scale-[0.98]"
-          >
-            Add to Cart • KSh {calculatedPrice.toLocaleString()}
-          </button>
+          {/* Option C: Action Footer with Quantity Stepper and Add to Cart */}
+          <div className="pt-3 border-t border-gray-100 flex items-center gap-3">
+            <div className="flex items-center border border-gray-200 rounded-xl bg-gray-50 p-1 shadow-xs">
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                disabled={quantity <= 1}
+                className="w-9 h-9 flex items-center justify-center text-sm font-bold text-gray-600 hover:bg-white rounded-lg transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+                title="Decrease quantity"
+              >
+                −
+              </button>
+              <span className="w-8 text-center text-sm font-bold text-gray-900 select-none">
+                {quantity}
+              </span>
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => Math.min(10, q + 1))}
+                className="w-9 h-9 flex items-center justify-center text-sm font-bold text-gray-600 hover:bg-white rounded-lg transition-colors cursor-pointer"
+                title="Increase quantity"
+              >
+                +
+              </button>
+            </div>
+
+            <button
+              onClick={() => {
+                onAddToCart(
+                  { ...product, price: packTotalPrice },
+                  {
+                    color: selectedColor,
+                    size: selectedSize,
+                    variant: activePack.label !== "1 pc" ? activePack.label : undefined,
+                    quantity,
+                  }
+                );
+                onClose();
+              }}
+              className="flex-1 bg-gray-900 hover:bg-emerald-600 text-white font-bold py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <span>
+                Add {totalItemUnits > 1 ? `${totalItemUnits} Items` : "to Cart"} • KSh{" "}
+                {grandTotal.toLocaleString()}
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

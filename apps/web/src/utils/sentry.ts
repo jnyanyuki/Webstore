@@ -1,8 +1,6 @@
 import * as Sentry from "@sentry/nextjs";
 
 export function initStorefrontSentry() {
-  //if (!process.env.NEXT_PUBLIC_SENTRY_DSN) return; // Don't initialize if no DSN
-
   Sentry.init({
     dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
     environment: process.env.NODE_ENV,
