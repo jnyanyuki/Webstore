@@ -130,14 +130,14 @@ export default function DynamicProductCard({
         setIsHovered(false);
         setActiveImageIndex(0);
       }}
-      className="bg-white rounded-xl border border-gray-200/80 overflow-hidden hover:shadow-md hover:border-emerald-300 transition-all duration-200 flex flex-col justify-between group"
+      className="bg-white rounded-xl sm:rounded-2xl border border-gray-200/90 overflow-hidden hover:shadow-lg hover:border-emerald-400 transition-all duration-200 flex flex-col justify-between h-full group"
     >
-      <div>
+      <div className="flex flex-col flex-1 justify-between">
         {/* Uniform 4:5 Aspect Ratio Container with Neutral Backdrop */}
-        <div className="aspect-[4/5] bg-gray-50/80 relative overflow-hidden flex items-center justify-center p-3 select-none">
-          {/* Segmented Hover Indicator Bars (Instagram / ASOS style) */}
+        <div className="relative aspect-[4/5] w-full bg-gradient-to-b from-gray-50/90 to-gray-100/50 overflow-hidden flex items-center justify-center p-2 sm:p-3 select-none flex-shrink-0">
+          {/* Segmented Hover Indicator Bars */}
           {allImages.length > 1 && (
-            <div className="absolute top-2 inset-x-3 z-30 flex gap-1 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="absolute top-2 inset-x-2 sm:inset-x-3 z-30 flex gap-1 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
               {allImages.map((_, idx) => (
                 <div
                   key={idx}
@@ -163,11 +163,11 @@ export default function DynamicProductCard({
             </div>
           )}
 
-          {/* Trust / Social Proof / Spec Badge */}
+          {/* Trust / Social Proof Badge */}
           {product.badge && (
-            <div className="absolute top-4 left-2 z-20 pointer-events-none">
+            <div className="absolute top-2.5 sm:top-3 left-2 z-20 pointer-events-none">
               <span
-                className={`inline-flex items-center gap-1 text-[9px] font-bold px-2 py-0.5 rounded-full shadow-xs border backdrop-blur-xs ${getBadgeStyles(
+                className={`inline-flex items-center gap-1 text-[clamp(0.5625rem,0.52rem+0.18vw,0.6875rem)] font-bold px-1.5 py-0.5 sm:px-2 sm:py-0.5 rounded-full shadow-xs border backdrop-blur-xs ${getBadgeStyles(
                   product.badge
                 )}`}
               >
@@ -181,14 +181,14 @@ export default function DynamicProductCard({
 
           {/* Discount Badge */}
           {product.originalPrice && (
-            <div className="absolute top-4 right-2 z-20 bg-rose-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-xs pointer-events-none">
+            <div className="absolute top-2.5 sm:top-3 right-2 z-20 bg-rose-600 text-white text-[clamp(0.5625rem,0.52rem+0.18vw,0.6875rem)] font-extrabold px-1.5 py-0.5 rounded shadow-xs pointer-events-none">
               -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
             </div>
           )}
 
           {/* Multi-Angle Count Indicator */}
           {allImages.length > 1 && (
-            <div className="absolute bottom-2 right-2 z-20 bg-black/60 backdrop-blur-xs text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-xs pointer-events-none">
+            <div className="absolute bottom-2 right-2 z-20 bg-black/60 backdrop-blur-xs text-white text-[clamp(0.5625rem,0.52rem+0.18vw,0.6875rem)] font-bold px-1.5 py-0.5 rounded shadow-xs pointer-events-none">
               {activeImageIndex + 1}/{allImages.length}
             </div>
           )}
@@ -202,7 +202,7 @@ export default function DynamicProductCard({
                   e.stopPropagation();
                   setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : allImages.length - 1));
                 }}
-                className="absolute left-1.5 top-1/2 -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-xs border border-gray-200 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold cursor-pointer"
+                className="absolute left-1.5 top-1/2 -translate-y-1/2 z-20 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-xs border border-gray-200 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold cursor-pointer"
                 aria-label="Previous angle"
               >
                 ‹
@@ -213,7 +213,7 @@ export default function DynamicProductCard({
                   e.stopPropagation();
                   setActiveImageIndex((prev) => (prev < allImages.length - 1 ? prev + 1 : 0));
                 }}
-                className="absolute right-1.5 top-1/2 -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-xs border border-gray-200 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold cursor-pointer"
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 z-20 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/90 hover:bg-white text-gray-800 shadow-xs border border-gray-200 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold cursor-pointer"
                 aria-label="Next angle"
               >
                 ›
@@ -227,64 +227,70 @@ export default function DynamicProductCard({
             alt={`${product.name} - Angle ${activeImageIndex + 1}`}
             width={400}
             height={500}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
             className="w-full h-full object-contain transition-all duration-200 transform group-hover:scale-105 pointer-events-none"
           />
 
           {/* Quick View Floating Action */}
           <button
             onClick={() => onQuickView(product)}
-            className="absolute bottom-2.5 left-1/2 -translate-x-1/2 z-20 bg-white/95 hover:bg-white text-gray-900 text-[11px] font-bold px-3 py-1.5 rounded-lg shadow-sm border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-200 backdrop-blur-xs cursor-pointer"
+            className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 bg-white/95 hover:bg-white text-gray-900 text-[clamp(0.625rem,0.58rem+0.2vw,0.75rem)] font-bold px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg shadow-sm border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-200 backdrop-blur-xs cursor-pointer whitespace-nowrap"
           >
             Quick View
           </button>
         </div>
 
-        {/* Content Details */}
-        <div className="p-3.5 space-y-2">
-          {/* Stock & Category Bar */}
-          <div className="flex items-center justify-between text-[11px] text-gray-500">
-            <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider truncate max-w-[65%]">
-              {product.category}
-            </span>
-            <span className="text-[10px] text-emerald-600 font-medium flex items-center gap-1 flex-shrink-0">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              In Stock
-            </span>
-          </div>
-
-          <h3 className="font-semibold text-gray-900 text-xs sm:text-sm line-clamp-1 group-hover:text-emerald-700 transition-colors">
-            {product.name}
-          </h3>
-
-          {/* Price Tag with dynamic pack calculation */}
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-base font-black text-gray-900">
-              KSh {packTotalPrice.toLocaleString()}
-            </span>
-            {activePack.multiplier > 1 ? (
-              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
-                (KSh {unitPrice.toLocaleString()}/ea)
+        {/* Content Details with Vertical Growth Absorption */}
+        <div className="p-2.5 sm:p-3.5 space-y-1.5 sm:space-y-2 flex-1 flex flex-col justify-between">
+          <div className="space-y-1 sm:space-y-1.5">
+            {/* Stock & Category Bar */}
+            <div className="flex items-center justify-between text-[clamp(0.5625rem,0.52rem+0.2vw,0.6875rem)] text-gray-500 gap-1">
+              <span className="font-semibold text-gray-400 uppercase tracking-wider truncate max-w-[62%]">
+                {product.category}
               </span>
-            ) : product.originalPrice ? (
-              <span className="text-[11px] text-gray-400 line-through">
-                KSh {product.originalPrice.toLocaleString()}
+              <span className="text-emerald-600 font-bold flex items-center gap-1 flex-shrink-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                In Stock
               </span>
-            ) : null}
+            </div>
+
+            {/* Product Title with standard 2-line height alignment */}
+            <h3
+              className="font-bold text-gray-900 text-[clamp(0.75rem,0.7rem+0.28vw,0.875rem)] leading-snug line-clamp-2 min-h-[2.2rem] sm:min-h-[2.5rem] group-hover:text-emerald-700 transition-colors"
+              title={product.name}
+            >
+              {product.name}
+            </h3>
+
+            {/* Price Tag with dynamic pack calculation */}
+            <div className="flex items-baseline flex-wrap gap-1 sm:gap-1.5 pt-0.5">
+              <span className="text-[clamp(0.875rem,0.8rem+0.45vw,1.1875rem)] font-black text-gray-900 tracking-tight leading-none">
+                KSh {packTotalPrice.toLocaleString()}
+              </span>
+              {activePack.multiplier > 1 ? (
+                <span className="text-[clamp(0.5625rem,0.52rem+0.18vw,0.6875rem)] font-bold text-emerald-700 bg-emerald-50 px-1 py-0.5 rounded border border-emerald-200">
+                  (KSh {unitPrice.toLocaleString()}/ea)
+                </span>
+              ) : product.originalPrice ? (
+                <span className="text-[clamp(0.625rem,0.58rem+0.2vw,0.75rem)] text-gray-400 line-through">
+                  KSh {product.originalPrice.toLocaleString()}
+                </span>
+              ) : null}
+            </div>
           </div>
 
           {/* Option A: Multi-Item Bundle / Pack Selector Pills */}
-          <div className="pt-0.5">
-            <div className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1">
+          <div className="pt-1">
+            <div className="text-[clamp(0.5625rem,0.52rem+0.18vw,0.6875rem)] font-extrabold text-gray-400 uppercase tracking-wider mb-1">
               {product.variants && product.variants.length > 0 ? "Options / Config:" : "Pack Size & Savings:"}
             </div>
-            <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none py-0.5">
+            <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto scrollbar-none py-0.5 -mx-0.5 px-0.5">
               {packOptions.map((pack, idx) => (
                 <button
                   key={pack.label}
                   type="button"
                   onClick={() => setSelectedPackIndex(idx)}
-                  className={`text-[10px] font-bold px-2 py-1 rounded-md border transition-all whitespace-nowrap cursor-pointer ${
+                  className={`text-[clamp(0.5625rem,0.52rem+0.18vw,0.6875rem)] font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md border transition-all whitespace-nowrap cursor-pointer ${
                     selectedPackIndex === idx
                       ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
                       : "bg-gray-50 text-gray-700 border-gray-200 hover:border-emerald-400 hover:text-emerald-700"
@@ -299,26 +305,26 @@ export default function DynamicProductCard({
       </div>
 
       {/* Option C: Action Footer with Interactive Quantity Stepper */}
-      <div className="px-3.5 pb-3.5 pt-1">
-        <div className="flex items-center gap-2">
+      <div className="px-2.5 pb-2.5 sm:px-3.5 sm:pb-3.5 pt-1.5 border-t border-gray-100/80 bg-gray-50/30">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           {/* Quantity Stepper */}
-          <div className="flex items-center border border-gray-200 rounded-lg bg-gray-50/70 p-0.5 shadow-xs">
+          <div className="flex items-center border border-gray-200 rounded-lg bg-white p-0.5 shadow-2xs">
             <button
               type="button"
               onClick={() => setQuantity((q) => Math.max(1, q - 1))}
               disabled={quantity <= 1}
-              className="w-7 h-7 flex items-center justify-center text-xs font-bold text-gray-600 hover:bg-white rounded transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+              className="w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center text-xs font-bold text-gray-600 hover:bg-gray-100 rounded transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
               title="Decrease quantity"
             >
               −
             </button>
-            <span className="w-6 text-center text-xs font-bold text-gray-900 select-none">
+            <span className="w-5 sm:w-6 text-center text-[11px] sm:text-xs font-bold text-gray-900 select-none">
               {quantity}
             </span>
             <button
               type="button"
               onClick={() => setQuantity((q) => Math.min(10, q + 1))}
-              className="w-7 h-7 flex items-center justify-center text-xs font-bold text-gray-600 hover:bg-white rounded transition-colors cursor-pointer"
+              className="w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center text-xs font-bold text-gray-600 hover:bg-gray-100 rounded transition-colors cursor-pointer"
               title="Increase quantity"
             >
               +
@@ -329,7 +335,7 @@ export default function DynamicProductCard({
           <button
             type="button"
             onClick={handleAdd}
-            className={`flex-1 font-bold py-2 px-2.5 rounded-lg text-xs transition-all duration-200 flex items-center justify-center gap-1.5 shadow-xs cursor-pointer active:scale-[0.98] ${
+            className={`flex-1 font-bold py-1.5 sm:py-2 px-2 sm:px-2.5 rounded-lg text-[clamp(0.6875rem,0.64rem+0.2vw,0.8125rem)] transition-all duration-200 flex items-center justify-center gap-1 sm:gap-1.5 shadow-xs cursor-pointer active:scale-[0.98] ${
               isAdded
                 ? "bg-emerald-600 text-white ring-2 ring-emerald-500"
                 : "bg-gray-900 hover:bg-emerald-600 text-white"
@@ -344,7 +350,7 @@ export default function DynamicProductCard({
               </>
             ) : (
               <>
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -353,7 +359,7 @@ export default function DynamicProductCard({
                   />
                 </svg>
                 <span className="truncate">
-                  {totalItemUnits > 1 ? `Add ${totalItemUnits} Items` : "Add to Cart"}
+                  {totalItemUnits > 1 ? `Add ${totalItemUnits}` : "Add to Cart"}
                 </span>
               </>
             )}

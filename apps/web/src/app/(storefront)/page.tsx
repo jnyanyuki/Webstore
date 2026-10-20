@@ -150,7 +150,7 @@ export default function StorefrontHome() {
       <MegaMenu onSelectCategory={(cat) => setSelectedCategoryFilter(cat)} />
 
       {/* 2. Compact Location-Neutral Marketplace Hero */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-6">
+      <main className="max-w-[1600px] mx-auto px-2.5 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 space-y-5 sm:space-y-6">
         <section className="relative overflow-hidden rounded-2xl bg-[#071d18] border border-emerald-900/40 p-6 md:p-10 text-white shadow-xl">
           {/* Subtle decorative glow */}
           <div className="absolute -top-24 -left-24 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -263,10 +263,10 @@ export default function StorefrontHome() {
         <div id="catalog-section" className="space-y-3">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-lg font-bold text-gray-900 tracking-tight">
+              <h2 className="text-[clamp(1.125rem,1rem+0.5vw,1.375rem)] font-extrabold text-gray-900 tracking-tight">
                 {selectedCategoryFilter ? `${selectedCategoryFilter} Catalog` : "Featured Verified Catalog"}
               </h2>
-              <p className="text-[11px] text-gray-500">
+              <p className="text-[clamp(0.6875rem,0.65rem+0.15vw,0.75rem)] text-gray-500">
                 Verified merchant inventory with instant city dispatch &amp; nationwide delivery
               </p>
             </div>
@@ -280,7 +280,7 @@ export default function StorefrontHome() {
             )}
           </div>
 
-          <div className="flex items-center gap-2 overflow-x-auto py-1.5 scrollbar-none border-b border-gray-200/60 pb-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto py-1.5 scrollbar-none border-b border-gray-200/60 pb-3">
             {[
               "All",
               "Phones & Tablets",
@@ -305,7 +305,7 @@ export default function StorefrontHome() {
               <button
                 key={pill}
                 onClick={() => setSelectedCategoryFilter(pill === "All" ? null : pill)}
-                className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold transition-all border ${
+                className={`whitespace-nowrap px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[clamp(0.6875rem,0.64rem+0.2vw,0.75rem)] font-bold transition-all border cursor-pointer ${
                   (pill === "All" && !selectedCategoryFilter) || selectedCategoryFilter === pill
                     ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
                     : "bg-white text-gray-700 border-gray-200 hover:border-emerald-600 hover:text-emerald-700"
@@ -317,8 +317,8 @@ export default function StorefrontHome() {
           </div>
         </div>
 
-        {/* 4. High-Density Aspect Ratio Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        {/* 4. High-Density Aspect Ratio Product Grid with Maximum Horizontal & Vertical Consumption */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2.5 sm:gap-3.5 md:gap-4 lg:gap-5">
           {filteredProducts.map((product) => (
             <DynamicProductCard
               key={product.id}
