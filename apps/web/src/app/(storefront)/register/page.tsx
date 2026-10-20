@@ -15,7 +15,6 @@ function RegisterForm() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [role, setRole] = useState<"CUSTOMER" | "SELLER">("CUSTOMER");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -53,12 +52,11 @@ function RegisterForm() {
         fullName: fullName.trim(),
         email: email.trim().toLowerCase(),
         phone: phone.trim() || undefined,
-        role,
+        role: "CUSTOMER",
         password,
       });
 
-      const destination =
-        redirectTarget || (role === "SELLER" ? "/seller" : "/account");
+      const destination = redirectTarget || "/account";
       router.push(destination);
     } catch (err: any) {
       setError(
@@ -80,34 +78,8 @@ function RegisterForm() {
           Create Your JuroMart Account
         </h1>
         <p className="text-xs sm:text-sm text-gray-500 mt-1">
-          Join Nairobi&apos;s leading CBD express marketplace network
+          Enjoy express delivery, live courier tracking, and instant checkout
         </p>
-      </div>
-
-      {/* Role Selection Tabs */}
-      <div className="grid grid-cols-2 gap-2 p-1 bg-gray-100 rounded-xl mb-6">
-        <button
-          type="button"
-          onClick={() => setRole("CUSTOMER")}
-          className={`py-2 text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-            role === "CUSTOMER"
-              ? "bg-white text-emerald-700 shadow-xs"
-              : "text-gray-500 hover:text-gray-800"
-          }`}
-        >
-          <span>🛍️ Express Shopper</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => setRole("SELLER")}
-          className={`py-2 text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-            role === "SELLER"
-              ? "bg-white text-emerald-700 shadow-xs"
-              : "text-gray-500 hover:text-gray-800"
-          }`}
-        >
-          <span>🏪 Stall / Merchant</span>
-        </button>
       </div>
 
       {/* Error Alert */}
@@ -124,7 +96,7 @@ function RegisterForm() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block text-xs font-semibold text-gray-700 mb-1.5" htmlFor="fullName">
-            {role === "SELLER" ? "Business / Stall Contact Name *" : "Full Name *"}
+            Full Name *
           </label>
           <input
             id="fullName"
@@ -132,7 +104,7 @@ function RegisterForm() {
             required
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            placeholder={role === "SELLER" ? "e.g. Kiprono Electronics Hub" : "e.g. Sarah Mwangi"}
+            placeholder="e.g. Sarah Mwangi"
             className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-gray-50 border border-gray-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 transition-all text-gray-900 placeholder:text-gray-400"
           />
         </div>
@@ -228,7 +200,7 @@ function RegisterForm() {
               className="w-3.5 h-3.5 mt-0.5 rounded text-emerald-600 focus:ring-emerald-500 border-gray-300"
             />
             <span>
-              I agree to the JuroMart Marketplace Terms, Delivery Policy, and Privacy Terms.
+              I agree to the JuroMart Terms of Service, Delivery Policy, and Privacy Policy.
             </span>
           </label>
         </div>
@@ -247,11 +219,7 @@ function RegisterForm() {
               <span>Creating your account...</span>
             </>
           ) : (
-            <span>
-              {role === "SELLER"
-                ? "Register as Merchant & Launch Stall"
-                : "Create Free Shopper Account"}
-            </span>
+            <span>Create Free Customer Account</span>
           )}
         </button>
       </form>
@@ -265,6 +233,14 @@ function RegisterForm() {
         >
           Sign in here
         </Link>
+      </div>
+
+      {/* Security Assurance Badge */}
+      <div className="mt-6 flex items-center justify-center gap-2 text-[11px] text-gray-400">
+        <svg className="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+        </svg>
+        <span>Protected with httpOnly cross-domain SSL security</span>
       </div>
     </div>
   );

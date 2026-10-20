@@ -7,11 +7,14 @@ const router = Router();
 
 /**
  * POST /auth/register
- * Registers a new customer or vendor with email and password
+ * Registers a new customer account with email and password
  */
 router.post("/register", async (req: Request, res: Response): Promise<any> => {
   try {
-    const { email, password, fullName, phone, role = "CUSTOMER" } = req.body;
+    const { email, password, fullName, phone } = req.body;
+    // Public registration strictly provisions CUSTOMER accounts only.
+    // Merchant & administrative accounts are provisioned via secured internal channels.
+    const role = "CUSTOMER";
 
     // 1. Validation
     if (!email || !email.includes("@")) {
