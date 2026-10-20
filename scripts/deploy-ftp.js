@@ -76,6 +76,9 @@ async function deploy() {
   // 2. Package Assembly in deploy_dist
   // ----------------------------------------------------------------------------
   console.log("📁 [2/5] Assembling production standalone bundle...");
+  if (fs.existsSync(DEPLOY_DIR)) {
+    fs.rmSync(DEPLOY_DIR, { recursive: true, force: true });
+  }
   fs.mkdirSync(DEPLOY_DIR, { recursive: true });
 
   const standaloneWebDir = path.join(standalonePath, "apps", "web");
@@ -110,6 +113,21 @@ async function deploy() {
   fs.mkdirSync(tmpDir, { recursive: true });
   fs.writeFileSync(path.join(tmpDir, "restart.txt"), `${Date.now()}`);
 
+  // Remove Windows-specific native binaries and temporary files that are not needed on Linux cPanel
+  const cleanWindowsFiles = (dir) => {
+    if (!fs.existsSync(dir)) return;
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        cleanWindowsFiles(fullPath);
+      } else if (entry.name.includes("windows.dll.node") || entry.name.includes(".tmp")) {
+        try { fs.unlinkSync(fullPath); } catch (_) {}
+      }
+    }
+  };
+  cleanWindowsFiles(DEPLOY_DIR);
+
   // ----------------------------------------------------------------------------
   // 3. Compress into Production ZIP
   // ----------------------------------------------------------------------------
@@ -127,8 +145,7 @@ async function deploy() {
   // 4. FTP Upload to NovaHost Kenya
   // ----------------------------------------------------------------------------
   console.log(`📡 [4/5] Connecting to NovaHost FTP (${FTP_CONFIG.host})...`);
-  const client = new ftp.Client();
-  client.ftp.timeout = 600000; // 10 minutes socket timeout for large bundles
+  const client = new ftp.Client(600000); // 10 minutes socket timeout for large bundles
 
   try {
     await client.access(FTP_CONFIG);
@@ -154,10 +171,29 @@ async function deploy() {
       }
     });
 
-    console.log(`⬆️  Uploading juromart-production.zip (${zipMb} MB)...`);
-    await client.uploadFrom(ZIP_FILE, "juromart-production.zip");
-    process.stdout.write("\n");
-    console.log("✓ juromart-production.zip uploaded.");
+    // Robust upload with auto-retry
+    let uploadSuccess = false;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        console.log(`⬆️  Uploading juromart-production.zip (${zipMb} MB) [Attempt ${attempt}/3]...`);
+        await client.uploadFrom(ZIP_FILE, "juromart-production.zip");
+        process.stdout.write("\n");
+        console.log("✓ juromart-production.zip uploaded.");
+        uploadSuccess = true;
+        break;
+      } catch (uploadErr) {
+        process.stdout.write("\n");
+        console.warn(`⚠️  Upload attempt ${attempt} failed: ${uploadErr.message}`);
+        if (attempt === 3) throw uploadErr;
+        console.log("Reconnecting in 5 seconds...");
+        await new Promise((r) => setTimeout(r, 5000));
+        await client.access(FTP_CONFIG);
+        const curPwd = await client.pwd();
+        if (curPwd !== "/" && !curPwd.endsWith("apps/web")) {
+          await client.ensureDir("apps/web");
+        }
+      }
+    }
 
     // Upload bootloader entrypoints
     console.log("⬆️  Updating app.js bootloader, .htaccess, and restart trigger...");
