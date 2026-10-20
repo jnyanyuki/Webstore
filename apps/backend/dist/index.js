@@ -6,7 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("dotenv/config");
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const navigation_1 = require("./services/navigation");
+const auth_1 = __importDefault(require("./routes/auth"));
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 9000;
 const allowedOriginsEnv = (process.env.CORS_ALLOWED_ORIGINS || "")
@@ -80,8 +82,12 @@ const csrfOriginGuard = (req, res, next) => {
     }
     next();
 };
+app.use((0, cookie_parser_1.default)());
 app.use(csrfOriginGuard);
 app.use(express_1.default.json());
+// Authentication Endpoints (Register, Login, Refresh, Logout, Me)
+app.use("/auth", auth_1.default);
+app.use("/api/auth", auth_1.default);
 // Optional CSRF Token Handshake Endpoint (for cookie/session forms)
 app.get("/api/auth/csrf-token", (_req, res) => {
     const csrfToken = Buffer.from(`${Date.now()}-${Math.random().toString(36).substring(2, 15)}`).toString("base64");

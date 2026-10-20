@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import DynamicProductForm from "@/components/DynamicProductForm";
+import UserNavDropdown from "@/components/UserNavDropdown";
 import { OrderStatusTimelineTracker } from "@webstore/ui";
 import { OrderStatusTimeline } from "@webstore/types";
 
@@ -123,6 +124,7 @@ export default function SellerCenterHome() {
             >
               Dynamic PIM
             </button>
+            <UserNavDropdown />
           </div>
         </div>
       </header>

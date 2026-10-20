@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ProductAlertToast } from "@/components/ProductAlertToast";
+import { AuthProvider } from "@/context/AuthContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,8 +71,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#FBFBFB] text-[#111827]">
-        {children}
-        <ProductAlertToast />
+        <AuthProvider>
+          {children}
+          <ProductAlertToast />
+        </AuthProvider>
       </body>
     </html>
   );

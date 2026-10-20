@@ -193,3 +193,34 @@ model UserProductAlert {
   @@map("user_product_alerts")
 }
 
+model User {
+  id           String         @id @default(uuid())
+  email        String         @unique @db.VarChar(255)
+  passwordHash String         @map("password_hash") @db.VarChar(255)
+  fullName     String?        @map("full_name") @db.VarChar(150)
+  phone        String?        @db.VarChar(30)
+  role         String         @default("CUSTOMER") @db.VarChar(30) // 'CUSTOMER', 'ADMIN', 'SELLER'
+  isActive     Boolean        @default(true) @map("is_active")
+  createdAt    DateTime       @default(now()) @map("created_at")
+  updatedAt    DateTime       @updatedAt @map("updated_at")
+
+  refreshTokens RefreshToken[]
+
+  @@map("users")
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  tokenHash String   @unique @map("token_hash") @db.VarChar(255)
+  userId    String   @map("user_id")
+  revoked   Boolean  @default(false)
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("refresh_tokens")
+}
+
+

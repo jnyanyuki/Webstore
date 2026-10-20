@@ -9,6 +9,7 @@ import MegaMenu from "../../components/MegaMenu";
 import WhatsAppWidget from "../../components/WhatsAppWidget";
 import PwaInstallPrompt from "../../components/PwaInstallPrompt";
 import JuroMartLogo from "../../components/JuroMartLogo";
+import UserNavDropdown from "../../components/UserNavDropdown";
 import { INITIAL_PRODUCTS } from "../../data/products";
 
 type AudienceScope = "universal" | "local" | "nationwide" | "global";
@@ -183,6 +184,8 @@ export default function StorefrontHome() {
           </div>
 
           <div className="flex items-center gap-2">
+            <UserNavDropdown />
+
             <a
               href="/seller"
               className="text-xs font-semibold text-gray-700 hover:text-emerald-600 px-2.5 py-1.5 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200"

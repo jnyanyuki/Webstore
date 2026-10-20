@@ -1,7 +1,9 @@
 import "dotenv/config";
 import express, { Request, Response } from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import { NavigationService, dbPool } from "./services/navigation";
+import authRouter from "./routes/auth";
 
 const app = express();
 const PORT = process.env.PORT || 9000;
@@ -84,8 +86,13 @@ const csrfOriginGuard = (req: Request, res: Response, next: () => void) => {
   next();
 };
 
+app.use(cookieParser() as any);
 app.use(csrfOriginGuard);
 app.use(express.json());
+
+// Authentication Endpoints (Register, Login, Refresh, Logout, Me)
+app.use("/auth", authRouter);
+app.use("/api/auth", authRouter);
 
 // Optional CSRF Token Handshake Endpoint (for cookie/session forms)
 app.get("/api/auth/csrf-token", (_req: Request, res: Response) => {

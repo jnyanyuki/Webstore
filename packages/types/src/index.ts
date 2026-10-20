@@ -195,3 +195,34 @@ export interface CategoryGroup {
   subcategories: SubCategory[];
 }
 
+// Authentication & User Session Types
+export interface AuthUser {
+  id: string;
+  email: string;
+  fullName?: string | null;
+  phone?: string | null;
+  role: string;
+  createdAt: string;
+}
+
+export interface LoginCredentials {
+  email: string;
+  password: string;
+}
+
+export interface RegisterPayload {
+  email: string;
+  password: string;
+  fullName?: string;
+  phone?: string;
+  role?: string;
+}
+
+export interface AuthResponse {
+  success: boolean;
+  message?: string;
+  user?: AuthUser;
+  accessToken?: string;
+  error?: string;
+}
+
