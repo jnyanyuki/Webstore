@@ -9,11 +9,18 @@ const ACCESS_TOKEN_EXPIRY = "15m";
 const REFRESH_TOKEN_EXPIRY_DAYS = 7;
 
 // Domain configuration for cross-domain cookies across juromart.com and api.juromart.com
-const getCookieDomain = (): string | undefined => {
+const getCookieDomain = (req?: any): string | undefined => {
   if (process.env.COOKIE_DOMAIN) {
     return process.env.COOKIE_DOMAIN;
   }
-  if (process.env.NODE_ENV === "production") {
+  const host = req?.headers?.host || "";
+  const origin = req?.headers?.origin || "";
+  if (
+    host.includes("juromart.com") ||
+    origin.includes("juromart.com") ||
+    process.env.NODE_ENV === "production" ||
+    process.env.RENDER
+  ) {
     return ".juromart.com";
   }
   return undefined; // Localhost development
@@ -127,14 +134,18 @@ export class AuthService {
   /**
    * Sets cross-domain httpOnly secure cookies
    */
-  public static setAuthCookies(res: Response, accessToken: string, refreshToken: string): void {
-    const isProduction = process.env.NODE_ENV === "production";
-    const cookieDomain = getCookieDomain();
+  public static setAuthCookies(res: Response, accessToken: string, refreshToken: string, req?: any): void {
+    const isProduction =
+      process.env.NODE_ENV === "production" ||
+      Boolean(process.env.RENDER) ||
+      req?.headers?.host?.includes("juromart.com") ||
+      req?.headers?.origin?.includes("juromart.com");
+    const cookieDomain = getCookieDomain(req);
 
     // 15-minute access token cookie
     res.cookie("access_token", accessToken, {
       httpOnly: true,
-      secure: isProduction,
+      secure: Boolean(isProduction),
       sameSite: "lax",
       domain: cookieDomain,
       path: "/",
@@ -144,7 +155,7 @@ export class AuthService {
     // 7-day refresh token cookie
     res.cookie("refresh_token", refreshToken, {
       httpOnly: true,
-      secure: isProduction,
+      secure: Boolean(isProduction),
       sameSite: "lax",
       domain: cookieDomain,
       path: "/",
@@ -155,13 +166,17 @@ export class AuthService {
   /**
    * Clears auth cookies upon logout
    */
-  public static clearAuthCookies(res: Response): void {
-    const isProduction = process.env.NODE_ENV === "production";
-    const cookieDomain = getCookieDomain();
+  public static clearAuthCookies(res: Response, req?: any): void {
+    const isProduction =
+      process.env.NODE_ENV === "production" ||
+      Boolean(process.env.RENDER) ||
+      req?.headers?.host?.includes("juromart.com") ||
+      req?.headers?.origin?.includes("juromart.com");
+    const cookieDomain = getCookieDomain(req);
 
     res.clearCookie("access_token", {
       httpOnly: true,
-      secure: isProduction,
+      secure: Boolean(isProduction),
       sameSite: "lax",
       domain: cookieDomain,
       path: "/",
@@ -169,7 +184,7 @@ export class AuthService {
 
     res.clearCookie("refresh_token", {
       httpOnly: true,
-      secure: isProduction,
+      secure: Boolean(isProduction),
       sameSite: "lax",
       domain: cookieDomain,
       path: "/",

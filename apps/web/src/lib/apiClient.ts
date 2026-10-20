@@ -54,6 +54,31 @@ class ApiClient {
     return this.baseUrl;
   }
 
+  public setAuthToken(token: string | null): void {
+    if (typeof window === "undefined") return;
+    if (token) {
+      localStorage.setItem("juromart_access_token", token);
+      const isJuromart =
+        window.location.hostname === "juromart.com" ||
+        window.location.hostname.endsWith(".juromart.com");
+      const domainAttr = isJuromart ? "; domain=.juromart.com" : "";
+      const secureAttr = window.location.protocol === "https:" ? "; secure" : "";
+      document.cookie = `access_token=${token}; path=/${domainAttr}; max-age=${15 * 60}${secureAttr}; samesite=lax`;
+    } else {
+      localStorage.removeItem("juromart_access_token");
+      const isJuromart =
+        window.location.hostname === "juromart.com" ||
+        window.location.hostname.endsWith(".juromart.com");
+      const domainAttr = isJuromart ? "; domain=.juromart.com" : "";
+      document.cookie = `access_token=; path=/${domainAttr}; max-age=0; samesite=lax`;
+    }
+  }
+
+  public getAuthToken(): string | null {
+    if (typeof window === "undefined") return null;
+    return localStorage.getItem("juromart_access_token");
+  }
+
   private subscribeTokenRefresh(cb: (refreshed: boolean) => void) {
     this.refreshSubscribers.push(cb);
   }
@@ -74,14 +99,18 @@ class ApiClient {
       ? endpoint
       : `${this.baseUrl}${endpoint.startsWith("/") ? "" : "/"}${endpoint}`;
 
+    const token = this.getAuthToken();
+    const configHeaders: Record<string, string> = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...(options.headers as Record<string, string> || {}),
+    };
+
     const config: RequestInit = {
       ...options,
       credentials: "include", // Essential for sharing httpOnly cookies across juromart.com and api.juromart.com
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        ...(options.headers || {}),
-      },
+      headers: configHeaders,
     };
 
     let response: Response;

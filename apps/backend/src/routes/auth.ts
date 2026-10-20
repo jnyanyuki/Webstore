@@ -48,7 +48,7 @@ router.post("/register", async (req: Request, res: Response): Promise<any> => {
     // 4. Issue tokens and set cookies
     const accessToken = AuthService.generateAccessToken(user);
     const refreshToken = await AuthService.generateRefreshToken(user.id);
-    AuthService.setAuthCookies(res, accessToken, refreshToken);
+    AuthService.setAuthCookies(res, accessToken, refreshToken, req);
 
     return res.status(201).json({
       success: true,
@@ -109,7 +109,7 @@ router.post("/login", async (req: Request, res: Response): Promise<any> => {
     // 3. Issue tokens and set cookies
     const accessToken = AuthService.generateAccessToken(user);
     const refreshToken = await AuthService.generateRefreshToken(user.id);
-    AuthService.setAuthCookies(res, accessToken, refreshToken);
+    AuthService.setAuthCookies(res, accessToken, refreshToken, req);
 
     return res.status(200).json({
       success: true,
@@ -178,7 +178,7 @@ router.post("/refresh", async (req: Request, res: Response): Promise<any> => {
       role: record.role,
     });
     const newRefreshToken = await AuthService.generateRefreshToken(record.user_id);
-    AuthService.setAuthCookies(res, newAccessToken, newRefreshToken);
+    AuthService.setAuthCookies(res, newAccessToken, newRefreshToken, req);
 
     return res.status(200).json({
       success: true,
@@ -206,11 +206,11 @@ router.post("/logout", async (req: Request, res: Response): Promise<any> => {
       ]);
     }
 
-    AuthService.clearAuthCookies(res);
+    AuthService.clearAuthCookies(res, req);
     return res.status(200).json({ success: true, message: "Logged out successfully" });
   } catch (error: any) {
     console.error("[Auth Logout Error]:", error);
-    AuthService.clearAuthCookies(res);
+    AuthService.clearAuthCookies(res, req);
     return res.status(200).json({ success: true });
   }
 });
