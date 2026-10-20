@@ -12,85 +12,12 @@ import JuroMartLogo from "../../components/JuroMartLogo";
 import UserNavDropdown from "../../components/UserNavDropdown";
 import { INITIAL_PRODUCTS } from "../../data/products";
 
-type AudienceScope = "universal" | "local" | "nationwide" | "global";
-
-const AUDIENCE_CONFIG: Record<
-  AudienceScope,
-  {
-    badge: string;
-    title: string;
-    highlight: string;
-    description: string;
-    primaryAction: string;
-    pill: string;
-    deliveryTime: string;
-    coverage: string;
-    paymentMethods: string;
-    perk: string;
-  }
-> = {
-  universal: {
-    badge: "GLOBAL & LOCAL EXPRESS MARKETPLACE",
-    title: "Verified Merchant Deals.",
-    highlight: "Instant Pickup & Worldwide Delivery.",
-    description:
-      "Discover authentic electronics, fashion, and lifestyle gear from verified merchants. Enjoy sub-45 min local courier, nationwide doorstep shipping, and seamless checkout via M-Pesa, Cards, & Global Wallets.",
-    primaryAction: "Explore Full Catalog",
-    pill: "⚡ Same-Day & Tracked Delivery",
-    deliveryTime: "Sub-45m Local • 24-48h Countrywide",
-    coverage: "Nairobi Hubs, All 47 Counties & Global",
-    paymentMethods: "M-Pesa, Visa, Mastercard, Apple Pay",
-    perk: "100% Genuine with Official Warranty",
-  },
-  local: {
-    badge: "CITY EXPRESS • SUB-45 MIN DISPATCH",
-    title: "Instant City Pickup &",
-    highlight: "Rapid Doorstep Courier.",
-    description:
-      "Direct from verified city merchants and hub stalls. Collect instantly at pickup stations or have a dedicated motorcycle courier deliver straight to your door or office in minutes.",
-    primaryAction: "Explore City Hub Catalog",
-    pill: "⚡ Sub-45 Min Rapid Courier",
-    deliveryTime: "15 to 45 Minutes (Live GPS)",
-    coverage: "Nairobi CBD, Westlands, Upper Hill & Suburbs",
-    paymentMethods: "M-Pesa STK Push, Cash on Delivery, Cards",
-    perk: "Live Rider Tracking & Instant Dispatch",
-  },
-  nationwide: {
-    badge: "COUNTRYWIDE DOORSTEP FULFILLMENT",
-    title: "Safe, Tracked Delivery to",
-    highlight: "Every County Across Kenya.",
-    description:
-      "Order genuine goods delivered reliably to any doorstep or regional parcel station in Mombasa, Kisumu, Nakuru, Eldoret, and beyond within 24 to 48 hours.",
-    primaryAction: "Shop Nationwide Shipping",
-    pill: "📦 24-48 Hour Doorstep Courier",
-    deliveryTime: "24 – 48 Hours Guaranteed",
-    coverage: "All 47 Counties & Regional Hubs",
-    paymentMethods: "M-Pesa, Bank Transfer, Visa/Mastercard",
-    perk: "Tamper-Evident Packaging & Insurance",
-  },
-  global: {
-    badge: "DIASPORA & INTERNATIONAL SHOPPERS",
-    title: "Order from Anywhere,",
-    highlight: "Delivered Directly to Loved Ones.",
-    description:
-      "Support family and friends with verified electronics, appliances, and fashion. Pay seamlessly with international debit or credit cards and receive photo proof on delivery.",
-    primaryAction: "Send Gift or Order Abroad",
-    pill: "🌍 International Cards Accepted",
-    deliveryTime: "Same-Day Dispatch with Photo Proof",
-    coverage: "Kenya-Wide Delivery for Overseas Buyers",
-    paymentMethods: "Visa, Mastercard, Google Pay, Apple Pay",
-    perk: "Photo Proof of Delivery & Zero Hidden Fees",
-  },
-};
-
 export default function StorefrontHome() {
   const [cartItems, setCartItems] = useState<CartItemType[]>([]);
   const [isCartSheetOpen, setIsCartSheetOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<ProductItem | null>(null);
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string | null>(null);
-  const [audienceScope, setAudienceScope] = useState<AudienceScope>("universal");
-  const activeAudience = AUDIENCE_CONFIG[audienceScope];
 
   const handleAddToCart = (
     product: ProductItem,
@@ -222,147 +149,118 @@ export default function StorefrontHome() {
 
       <MegaMenu onSelectCategory={(cat) => setSelectedCategoryFilter(cat)} />
 
-      {/* 2. Compact Main Container & Universal Audience Hero */}
+      {/* 2. Compact Location-Neutral Marketplace Hero */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 space-y-6">
-        <div className="bg-gradient-to-br from-gray-950 via-slate-900 to-emerald-950 rounded-2xl p-5 sm:p-7 lg:p-8 text-white shadow-xl relative overflow-hidden border border-emerald-900/40">
-          {/* Subtle Ambient Glow Effects */}
-          <div className="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-          <div className="absolute bottom-0 left-1/3 -mb-20 w-80 h-80 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <section className="relative overflow-hidden rounded-2xl bg-[#071d18] border border-emerald-900/40 p-6 md:p-10 text-white shadow-xl">
+          {/* Subtle decorative glow */}
+          <div className="absolute -top-24 -left-24 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Audience & Delivery Scope Switcher */}
-          <div className="relative z-10 flex items-center gap-1.5 overflow-x-auto pb-3 mb-4 scrollbar-none border-b border-white/10">
-            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mr-1 hidden sm:inline-block">
-              Delivery Scope:
-            </span>
-            {(
-              [
-                { id: "universal", label: "🌍 Universal (All Shoppers)", short: "🌍 All" },
-                { id: "local", label: "⚡ Local City Express (Sub-45m)", short: "⚡ Local Express" },
-                { id: "nationwide", label: "🇰🇪 Nationwide (47 Counties)", short: "🇰🇪 Nationwide" },
-                { id: "global", label: "🌐 Global / Diaspora Orders", short: "🌐 Global" },
-              ] as const
-            ).map((scope) => (
-              <button
-                key={scope.id}
-                onClick={() => setAudienceScope(scope.id)}
-                className={`text-xs font-bold px-3 py-1.5 rounded-full transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
-                  audienceScope === scope.id
-                    ? "bg-emerald-500 text-gray-950 shadow-md shadow-emerald-500/20 scale-[1.02]"
-                    : "bg-white/10 text-gray-300 hover:bg-white/15 hover:text-white"
-                }`}
-              >
-                <span className="hidden sm:inline">{scope.label}</span>
-                <span className="sm:hidden">{scope.short}</span>
-              </button>
-            ))}
-          </div>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Main Value Proposition */}
+            <div className="lg:col-span-7 space-y-5">
+              {/* Value badges row */}
+              <div className="flex flex-wrap items-center gap-2 text-xs text-emerald-300 font-medium">
+                <span className="flex items-center gap-1.5 bg-emerald-950/70 border border-emerald-700/40 px-2.5 py-1 rounded-full">
+                  <svg className="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Verified Sellers
+                </span>
+                <span className="flex items-center gap-1.5 bg-emerald-950/70 border border-emerald-700/40 px-2.5 py-1 rounded-full">
+                  <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  Instant Local &amp; Nationwide Delivery
+                </span>
+                <span className="flex items-center gap-1.5 bg-emerald-950/70 border border-emerald-700/40 px-2.5 py-1 rounded-full">
+                  <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  Guaranteed Authentic
+                </span>
+              </div>
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-3.5">
-              <span className="inline-flex items-center gap-1.5 py-0.5 px-2.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold tracking-wider border border-emerald-500/30 backdrop-blur-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                {activeAudience.badge}
-              </span>
-
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight text-white">
-                {activeAudience.title}{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
-                  {activeAudience.highlight}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                Authentic Gear.{" "}
+                <span className="text-emerald-400">
+                  Instant Dispatch &amp; Doorstep Delivery.
                 </span>
               </h1>
 
-              <p className="text-gray-300 text-xs sm:text-sm font-normal leading-relaxed max-w-xl">
-                {activeAudience.description}
+              <p className="text-sm sm:text-base text-gray-300 max-w-xl leading-relaxed">
+                Shop electronics, fashion, and everyday essentials from verified merchants. Enjoy fast doorstep fulfillment with secure, instant checkout.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 pt-1">
+              <div className="flex flex-wrap items-center gap-4 pt-2">
                 <button
-                  onClick={() => setSelectedCategoryFilter(null)}
-                  className="bg-emerald-500 hover:bg-emerald-400 text-gray-950 px-5 py-2.5 rounded-xl font-extrabold text-xs transition-all shadow-md shadow-emerald-500/20 active:scale-95 cursor-pointer flex items-center gap-1.5"
+                  onClick={() => {
+                    setSelectedCategoryFilter(null);
+                    const catalogEl = document.getElementById("catalog-section");
+                    if (catalogEl) {
+                      catalogEl.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-600 text-gray-950 font-semibold px-6 py-3 rounded-xl transition duration-150 shadow-md hover:shadow-emerald-500/20 cursor-pointer text-xs sm:text-sm"
                 >
-                  <span>{activeAudience.primaryAction}</span>
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span>Explore Full Catalog</span>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </button>
 
-                <div className="flex items-center gap-1.5 text-xs font-semibold bg-white/10 px-3.5 py-2.5 rounded-xl border border-white/10 backdrop-blur-xs text-emerald-300">
-                  <span>{activeAudience.pill}</span>
-                </div>
-              </div>
-
-              {/* Payment & Trust Signals */}
-              <div className="flex flex-wrap items-center gap-3 pt-2 text-[11px] text-gray-400">
-                <span className="flex items-center gap-1">
-                  <svg className="w-3.5 h-3.5 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Verified Merchants
-                </span>
-                <span className="text-gray-600">•</span>
-                <span className="flex items-center gap-1">
-                  <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                  </svg>
-                  M-Pesa, Cards &amp; Apple Pay
-                </span>
-                <span className="text-gray-600">•</span>
-                <span className="flex items-center gap-1">
-                  <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                  Buyer Protection Guaranteed
-                </span>
-              </div>
-            </div>
-
-            {/* Right Interactive Matrix / Trust Card (Desktop & Tablet) */}
-            <div className="lg:col-span-5 bg-white/5 backdrop-blur-md rounded-xl p-4 sm:p-5 border border-white/10 space-y-3 shadow-inner">
-              <div className="flex items-center justify-between border-b border-white/10 pb-2.5">
-                <span className="text-xs font-bold text-gray-200 flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                  Fulfillment Status Radar
-                </span>
-                <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
-                  Global / Local
-                </span>
-              </div>
-
-              <div className="grid grid-cols-2 gap-2.5 text-left">
-                <div className="bg-black/30 p-2.5 rounded-lg border border-white/5 space-y-1">
-                  <div className="text-[10px] text-gray-400 font-medium">Delivery Speed</div>
-                  <div className="text-xs font-extrabold text-white truncate">{activeAudience.deliveryTime}</div>
-                </div>
-                <div className="bg-black/30 p-2.5 rounded-lg border border-white/5 space-y-1">
-                  <div className="text-[10px] text-gray-400 font-medium">Coverage Area</div>
-                  <div className="text-xs font-extrabold text-white truncate">{activeAudience.coverage}</div>
-                </div>
-                <div className="bg-black/30 p-2.5 rounded-lg border border-white/5 space-y-1">
-                  <div className="text-[10px] text-gray-400 font-medium">Payment Channels</div>
-                  <div className="text-xs font-extrabold text-emerald-300 truncate">{activeAudience.paymentMethods}</div>
-                </div>
-                <div className="bg-black/30 p-2.5 rounded-lg border border-white/5 space-y-1">
-                  <div className="text-[10px] text-gray-400 font-medium">Buyer Guarantee</div>
-                  <div className="text-xs font-extrabold text-emerald-300 truncate">{activeAudience.perk}</div>
-                </div>
-              </div>
-
-              <div className="pt-1 flex items-center justify-between text-[11px] text-gray-400">
-                <span>Fast &amp; Tracked Dispatch</span>
                 <button
                   onClick={() => setIsCartSheetOpen(true)}
-                  className="text-emerald-400 hover:text-emerald-300 font-bold hover:underline cursor-pointer"
+                  className="text-sm font-medium text-emerald-300/80 hover:text-emerald-200 underline underline-offset-4 transition cursor-pointer"
                 >
-                  Delivery Options →
+                  View Delivery Options →
                 </button>
               </div>
             </div>
+
+            {/* Clean Compact Radar Card (Zero Truncation) */}
+            <div className="lg:col-span-5">
+              <div className="bg-[#0b2821]/80 backdrop-blur-md border border-emerald-800/40 rounded-xl p-5 shadow-inner">
+                <div className="flex items-center justify-between border-b border-emerald-800/50 pb-3 mb-4">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-xs font-semibold tracking-wider text-emerald-200 uppercase">
+                      Fulfillment Radar
+                    </span>
+                  </div>
+                  <span className="text-[11px] bg-emerald-900/60 text-emerald-300 font-mono px-2 py-0.5 rounded border border-emerald-700/30">
+                    Active
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <div className="bg-[#061814]/60 p-3 rounded-lg border border-emerald-900/40">
+                    <span className="text-gray-400 block mb-1">Dispatch Speed</span>
+                    <span className="text-gray-100 font-medium">Sub-45m &amp; 24–48h</span>
+                  </div>
+
+                  <div className="bg-[#061814]/60 p-3 rounded-lg border border-emerald-900/40">
+                    <span className="text-gray-400 block mb-1">Payment Options</span>
+                    <span className="text-gray-100 font-medium">M-Pesa, Cards, Wallets</span>
+                  </div>
+
+                  <div className="bg-[#061814]/60 p-3 rounded-lg border border-emerald-900/40">
+                    <span className="text-gray-400 block mb-1">Coverage</span>
+                    <span className="text-gray-100 font-medium">Doorstep &amp; Pickups</span>
+                  </div>
+
+                  <div className="bg-[#061814]/60 p-3 rounded-lg border border-emerald-900/40">
+                    <span className="text-gray-400 block mb-1">Buyer Shield</span>
+                    <span className="text-gray-100 font-medium">100% Genuine Policy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* 3. Category Section & Compact Filter Bar */}
-        <div className="space-y-3">
+        <div id="catalog-section" className="space-y-3">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg font-bold text-gray-900 tracking-tight">
