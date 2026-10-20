@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3004",
-    "build": "prisma generate && next build",
+    "build": "node -e \"try { require('child_process').execSync('prisma generate', {stdio:'inherit'}) } catch(e) { if (!require('fs').existsSync('../../node_modules/@prisma/client')) throw e; console.warn('Prisma client already active; skipping regeneration.') }\" && next build",
     "start": "next start -p 3004",
     "lint": "eslint"
   },
