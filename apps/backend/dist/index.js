@@ -24,19 +24,70 @@ const defaultAllowedOrigins = [
     "http://localhost:3004",
 ];
 const allowedOriginsList = Array.from(new Set([...defaultAllowedOrigins, ...allowedOriginsEnv]));
+// 1. CORS Configuration for cross-domain Vercel frontend to Render backend
+const isOriginAllowed = (origin) => {
+    if (!origin)
+        return true; // Server-to-server, curl, mobile native
+    if (allowedOriginsList.includes(origin))
+        return true;
+    if (/^https?:\/\/([a-z0-9-]+\.)*juromart\.com(:\d+)?$/i.test(origin))
+        return true;
+    if (/^https:\/\/([a-z0-9-]+\.)*vercel\.app$/i.test(origin))
+        return true;
+    if (/^http:\/\/localhost(:\d+)?$/i.test(origin))
+        return true;
+    return false;
+};
 app.use((0, cors_1.default)({
     origin: (origin, callback) => {
-        // Allow requests with no origin (e.g. mobile apps, curl, server-to-server proxy)
-        if (!origin || allowedOriginsList.includes(origin) || origin.endsWith(".juromart.com")) {
+        if (isOriginAllowed(origin)) {
             return callback(null, true);
         }
-        return callback(null, true);
+        return callback(new Error(`CORS blocked for origin: ${origin}`));
     },
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "x-seller-auth"],
+    allowedHeaders: [
+        "Content-Type",
+        "Authorization",
+        "X-Requested-With",
+        "x-seller-auth",
+        "X-CSRF-Token",
+        "Accept",
+        "Cache-Control",
+    ],
+    exposedHeaders: ["Content-Range", "X-Total-Count", "X-CSRF-Token"],
+    maxAge: 86400, // 24 hours preflight cache to eliminate redundant OPTIONS latency
 }));
+// 2. OWASP Cross-Site Request Forgery (CSRF) Origin Verification Middleware
+// Protects mutating endpoints against unauthorized third-party cross-site submissions
+const csrfOriginGuard = (req, res, next) => {
+    const mutatingMethods = ["POST", "PUT", "DELETE", "PATCH"];
+    if (!mutatingMethods.includes(req.method)) {
+        return next();
+    }
+    // Exempt public webhooks with external signatures (e.g., M-Pesa IPN, Daraja STK callback)
+    if (req.path.includes("/webhook") || req.path.includes("/callback")) {
+        return next();
+    }
+    const origin = req.headers.origin || (req.headers.referer ? new URL(req.headers.referer).origin : undefined);
+    if (origin && !isOriginAllowed(origin)) {
+        console.warn(`[CSRF Blocked]: Mutating ${req.method} from untrusted origin ${origin}`);
+        return res.status(403).json({
+            error: "CSRF Forbidden",
+            message: "Cross-site request blocked: origin not permitted.",
+        });
+    }
+    next();
+};
+app.use(csrfOriginGuard);
 app.use(express_1.default.json());
+// Optional CSRF Token Handshake Endpoint (for cookie/session forms)
+app.get("/api/auth/csrf-token", (_req, res) => {
+    const csrfToken = Buffer.from(`${Date.now()}-${Math.random().toString(36).substring(2, 15)}`).toString("base64");
+    res.setHeader("X-CSRF-Token", csrfToken);
+    res.status(200).json({ csrfToken });
+});
 // Dynamic Catalog Navigation & Promotion Endpoints
 app.get("/api/navigation/categories", async (req, res) => {
     try {
