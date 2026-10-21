@@ -24,30 +24,63 @@ body {
     scrollbar-width: none;
   }
 
-  /* Fluid dynamic typography utilities across all viewports */
+  /* ============================================================================
+     INDUSTRY STANDARD DYNAMIC / FLUID TYPOGRAPHY (WCAG 2.1 / Material 3 / Apple HIG)
+     Strict Minimum Font Size Floor: 12px (0.75rem) for legible captions & badges
+     ============================================================================ */
+
+  /* Micro / Badge / Subtitle: Clamped with a strict 12px (0.75rem) minimum floor */
   .text-fluid-micro {
-    font-size: clamp(0.5625rem, 0.52rem + 0.18vw, 0.6875rem);
-    line-height: 1.3;
-  }
-  .text-fluid-xs {
-    font-size: clamp(0.6875rem, 0.65rem + 0.2vw, 0.75rem);
+    font-size: clamp(0.75rem, 0.72rem + 0.14vw, 0.8125rem); /* 12px -> 13px */
     line-height: 1.35;
   }
-  .text-fluid-sm {
-    font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  
+  /* Extra Small / Captions / Secondary Text: Minimum 12px floor */
+  .text-fluid-xs {
+    font-size: clamp(0.75rem, 0.73rem + 0.12vw, 0.8125rem); /* 12px -> 13px */
     line-height: 1.4;
   }
+
+  /* Small / Helper Text: 13px -> 14px */
+  .text-fluid-sm {
+    font-size: clamp(0.8125rem, 0.78rem + 0.18vw, 0.875rem); /* 13px -> 14px */
+    line-height: 1.45;
+  }
+
+  /* Body / Paragraphs: 14px -> 16px */
   .text-fluid-base {
-    font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+    font-size: clamp(0.875rem, 0.82rem + 0.25vw, 1rem); /* 14px -> 16px */
     line-height: 1.5;
   }
+
+  /* Product & Section Titles: 15px -> 18px */
   .text-fluid-title {
-    font-size: clamp(0.8125rem, 0.74rem + 0.35vw, 0.9375rem);
+    font-size: clamp(0.9375rem, 0.88rem + 0.3vw, 1.125rem); /* 15px -> 18px */
     line-height: 1.35;
   }
+
+  /* Price & Key Metrics: 17px -> 22px */
   .text-fluid-price {
-    font-size: clamp(0.9375rem, 0.82rem + 0.55vw, 1.25rem);
-    line-height: 1.2;
+    font-size: clamp(1.0625rem, 0.95rem + 0.5vw, 1.375rem); /* 17px -> 22px */
+    line-height: 1.25;
+  }
+}
+
+/* Automated Enforcer for Minimum Acceptable Font Size across legacy/arbitrary selectors */
+[class*="text-[7px]"],
+[class*="text-[8px]"],
+[class*="text-[9px]"],
+[class*="text-[10px]"],
+[class*="text-[11px]"] {
+  font-size: clamp(0.75rem, 0.72rem + 0.14vw, 0.8125rem) !important; /* 12px min floor */
+}
+
+/* Mobile Viewport Form Controls: Enforce 16px minimum to prevent disruptive iOS auto-zoom */
+@media screen and (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
+  select,
+  textarea {
+    font-size: 16px !important;
   }
 }
 

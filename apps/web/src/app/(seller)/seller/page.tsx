@@ -322,11 +322,11 @@ export default function SellerCenterHome() {
                       <span className="font-extrabold text-base tracking-tight text-white group-hover:text-emerald-400 transition-colors">
                         JuroMart
                       </span>
-                      <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded">
+                      <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-black uppercase tracking-wider px-2 py-0.5 rounded">
                         SELLER OS
                       </span>
                     </div>
-                    <p className="text-[11px] font-medium text-zinc-400">Nairobi CBD Merchant Hub</p>
+                    <p className="text-xs font-medium text-zinc-400">Nairobi CBD Merchant Hub</p>
                   </div>
                 )}
               </a>
@@ -494,7 +494,7 @@ export default function SellerCenterHome() {
                     </div>
                     {!isSidebarCollapsed && (
                       <span
-                        className={`text-[9px] uppercase tracking-wider font-extrabold px-1.5 py-0.5 rounded ${
+                        className={`text-xs uppercase tracking-wider font-extrabold px-2 py-0.5 rounded ${
                           activeTab === "catalog-admin" ? "bg-zinc-950 text-amber-400" : "bg-amber-500/20 text-amber-300"
                         }`}
                       >
@@ -613,10 +613,10 @@ export default function SellerCenterHome() {
                       {user?.fullName || user?.email?.split("@")[0] || "Merchant"}
                     </p>
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[9px] font-black uppercase text-emerald-400 bg-emerald-500/10 px-1 py-0.2 rounded border border-emerald-500/30">
+                      <span className="text-xs font-black uppercase text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/30">
                         {user?.role || "SELLER"}
                       </span>
-                      <span className="text-[10px] text-zinc-500 truncate">{user?.email}</span>
+                      <span className="text-xs text-zinc-400 truncate">{user?.email}</span>
                     </div>
                   </div>
                 )}

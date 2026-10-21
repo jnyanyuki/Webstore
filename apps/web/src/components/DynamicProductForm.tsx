@@ -413,7 +413,7 @@ export default function DynamicProductForm({
                 className="w-full text-xs font-medium bg-transparent focus:outline-hidden text-zinc-900"
               />
               {selectedProductId && (
-                <span className="text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md whitespace-nowrap">
+                <span className="text-xs font-mono font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md whitespace-nowrap">
                   Loaded
                 </span>
               )}
@@ -422,7 +422,7 @@ export default function DynamicProductForm({
             {/* Dropdown Results */}
             {isSearchDropdownOpen && (
               <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-white border border-zinc-200 rounded-2xl shadow-2xl max-h-72 overflow-y-auto divide-y divide-zinc-100 animate-in fade-in zoom-in-95 duration-150">
-                <div className="p-2 text-[10px] font-bold uppercase tracking-wider text-zinc-400 bg-zinc-50 flex items-center justify-between">
+                <div className="p-2 text-xs font-bold uppercase tracking-wider text-zinc-500 bg-zinc-50 flex items-center justify-between">
                   <span>Select Product to Edit Schema & Details</span>
                   <button
                     type="button"
@@ -456,7 +456,7 @@ export default function DynamicProductForm({
                         <div className="text-xs font-bold text-zinc-900 truncate">
                           {prod.name}
                         </div>
-                        <div className="flex items-center gap-2 text-[10px] text-zinc-500">
+                        <div className="flex items-center gap-2 text-xs text-zinc-500">
                           <span className="font-semibold text-emerald-700">{prod.category}</span>
                           <span>•</span>
                           <span className="font-mono text-zinc-700">KES {prod.price.toLocaleString()}</span>
@@ -571,7 +571,7 @@ export default function DynamicProductForm({
                       <span className="text-xl shrink-0">{cat.icon}</span>
                       <div className="min-w-0">
                         <div className="text-xs font-bold truncate leading-tight">{cat.name}</div>
-                        <div className="text-[10px] text-zinc-500 truncate">{cat.subcategories.length} subcategories</div>
+                        <div className="text-xs text-zinc-500 truncate">{cat.subcategories.length} subcategories</div>
                       </div>
                     </button>
                   );
@@ -653,7 +653,7 @@ export default function DynamicProductForm({
                         Original MSRP / Strikethrough
                       </label>
                       {discountPercentage > 0 && (
-                        <span className="text-[10px] font-black bg-rose-100 text-rose-700 px-2 py-0.5 rounded-full">
+                        <span className="text-xs font-black bg-rose-100 text-rose-700 px-2 py-0.5 rounded-full">
                           -{discountPercentage}% Off
                         </span>
                       )}
@@ -732,7 +732,7 @@ export default function DynamicProductForm({
                     Polymorphic attributes validated against domain Zod schema
                   </p>
                 </div>
-                <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full">
+                <span className="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full">
                   {activeFields.length} Attributes Defined
                 </span>
               </div>
@@ -748,7 +748,7 @@ export default function DynamicProductForm({
                           {field.label} {field.required && <span className="text-rose-500">*</span>}
                         </label>
                         {field.unit && (
-                          <span className="text-[10px] text-zinc-400 font-mono font-bold">
+                          <span className="text-xs text-zinc-500 font-mono font-bold">
                             {field.unit}
                           </span>
                         )}
@@ -865,7 +865,7 @@ export default function DynamicProductForm({
                       className="object-cover"
                     />
                     {idx === 0 && (
-                      <span className="absolute bottom-1 left-1 right-1 bg-emerald-600 text-white text-[9px] font-black uppercase text-center rounded py-0.5 shadow-xs">
+                      <span className="absolute bottom-1 left-1 right-1 bg-emerald-600 text-white text-xs font-black uppercase text-center rounded py-0.5 shadow-xs">
                         Primary
                       </span>
                     )}
@@ -981,10 +981,10 @@ export default function DynamicProductForm({
             /* WYSIWYG Card Preview */
             <div className="p-5 rounded-3xl bg-white border border-zinc-200/90 shadow-md space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-extrabold tracking-wider uppercase text-zinc-400">
+                <span className="text-xs font-extrabold tracking-wider uppercase text-zinc-500">
                   Live Marketplace WYSIWYG
                 </span>
-                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                   {selectedSubcategory}
                 </span>
               </div>
@@ -1043,7 +1043,7 @@ export default function DynamicProductForm({
                       return (
                         <span
                           key={k}
-                          className="text-[10px] font-bold px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md border border-zinc-200"
+                          className="text-xs font-bold px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md border border-zinc-200"
                         >
                           <span className="capitalize">{k.replace(/_/g, " ")}:</span> {String(v)}
                         </span>
@@ -1073,10 +1073,10 @@ export default function DynamicProductForm({
             /* PostgreSQL JSONB Schema Inspector */
             <div className="p-5 rounded-3xl bg-zinc-950 text-emerald-400 font-mono text-xs border border-zinc-800 shadow-xl space-y-3">
               <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
-                <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-wider">
+                <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
                   PostgreSQL attributes JSONB
                 </span>
-                <span className="text-[10px] bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded border border-emerald-800">
+                <span className="text-xs bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded border border-emerald-800">
                   Valid Schema
                 </span>
               </div>

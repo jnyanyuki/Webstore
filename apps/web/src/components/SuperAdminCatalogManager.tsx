@@ -265,7 +265,7 @@ export default function SuperAdminCatalogManager({
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-lg font-bold tracking-tight text-white">Master Catalog &amp; Promotions Engine</h2>
-                <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full">
+                <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-extrabold uppercase px-2 py-0.5 rounded-full">
                   Super Admin: {user?.email || "abokos@juromart.com"}
                 </span>
               </div>
@@ -277,15 +277,15 @@ export default function SuperAdminCatalogManager({
 
           <div className="flex items-center gap-3">
             <div className="bg-gray-800/80 border border-gray-700/80 rounded-xl px-3.5 py-2 text-center">
-              <span className="block text-[10px] text-gray-400 uppercase font-semibold">Total Catalog Items</span>
+              <span className="block text-xs text-gray-400 uppercase font-semibold">Total Catalog Items</span>
               <span className="text-sm font-extrabold text-white">{promoStats.total.toLocaleString()}</span>
             </div>
             <div className="bg-gray-800/80 border border-gray-700/80 rounded-xl px-3.5 py-2 text-center">
-              <span className="block text-[10px] text-emerald-400 uppercase font-semibold">Active Promos</span>
+              <span className="block text-xs text-emerald-400 uppercase font-semibold">Active Promos</span>
               <span className="text-sm font-extrabold text-emerald-300">{promoStats.onPromo.toLocaleString()}</span>
             </div>
             <div className="bg-gray-800/80 border border-gray-700/80 rounded-xl px-3.5 py-2 text-center">
-              <span className="block text-[10px] text-amber-400 uppercase font-semibold">Live Overrides</span>
+              <span className="block text-xs text-amber-400 uppercase font-semibold">Live Overrides</span>
               <span className="text-sm font-extrabold text-amber-300">{promoStats.overridden}</span>
             </div>
           </div>
@@ -415,7 +415,7 @@ export default function SuperAdminCatalogManager({
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-gray-50/80 text-gray-500 uppercase tracking-wider text-[10px] font-bold border-b border-gray-100">
+            <thead className="bg-gray-50/80 text-gray-500 uppercase tracking-wider text-xs font-bold border-b border-gray-100">
               <tr>
                 <th className="py-3 px-4">Product Details</th>
                 <th className="py-3 px-3">Category</th>
@@ -450,7 +450,7 @@ export default function SuperAdminCatalogManager({
                           <div className="font-bold text-gray-900 truncate" title={p.name}>
                             {p.name}
                           </div>
-                          <div className="flex items-center gap-2 mt-0.5 text-[10px] text-gray-500">
+                          <div className="flex items-center gap-2 mt-0.5 text-xs text-gray-500">
                             <span>ID: {p.id}</span>
                             {p.sku && <span>• SKU: {p.sku}</span>}
                             {isOverridden && (
@@ -464,13 +464,13 @@ export default function SuperAdminCatalogManager({
                     </td>
 
                     <td className="py-3 px-3">
-                      <span className="inline-block bg-gray-100 text-gray-700 px-2 py-0.5 rounded text-[11px] font-medium">
+                      <span className="inline-block bg-gray-100 text-gray-700 px-2 py-0.5 rounded text-xs font-medium">
                         {p.category}
                       </span>
                     </td>
 
                     <td className="py-3 px-3">
-                      <span className="text-gray-600 text-[11px] font-medium">{p.merchantStall || "N/A"}</span>
+                      <span className="text-gray-600 text-xs font-medium">{p.merchantStall || "N/A"}</span>
                     </td>
 
                     <td className="py-3 px-3 font-extrabold text-gray-900">
@@ -483,21 +483,21 @@ export default function SuperAdminCatalogManager({
 
                     <td className="py-3 px-3">
                       {discount > 0 ? (
-                        <span className="bg-red-50 text-red-600 border border-red-200 font-extrabold px-2 py-0.5 rounded-full text-[11px]">
+                        <span className="bg-red-50 text-red-600 border border-red-200 font-extrabold px-2 py-0.5 rounded-full text-xs">
                           {discount}% OFF
                         </span>
                       ) : (
-                        <span className="text-gray-400 text-[11px]">0% (Standard)</span>
+                        <span className="text-gray-400 text-xs">0% (Standard)</span>
                       )}
                     </td>
 
                     <td className="py-3 px-3">
                       {p.badge ? (
-                        <span className="bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded text-[10px] font-bold">
+                        <span className="bg-amber-50 text-amber-800 border border-amber-200 px-2 py-0.5 rounded text-xs font-bold">
                           {p.badge}
                         </span>
                       ) : (
-                        <span className="text-gray-400 text-[11px]">—</span>
+                        <span className="text-gray-400 text-xs">—</span>
                       )}
                     </td>
 

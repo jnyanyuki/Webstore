@@ -65,7 +65,7 @@ export default function UserNavDropdown() {
         aria-label="User Account Menu"
         aria-expanded={isOpen}
       >
-        <div className="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center flex-shrink-0">
+        <div className="w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs">
           {initials}
         </div>
         <span className="max-w-[90px] truncate font-semibold text-gray-800 hidden md:inline">
@@ -89,8 +89,8 @@ export default function UserNavDropdown() {
             <p className="text-xs font-bold text-gray-900 truncate">
               {user.fullName || "JuroMart Shopper"}
             </p>
-            <p className="text-[11px] text-gray-500 truncate">{user.email}</p>
-            <span className="inline-block mt-1 text-[9px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-md border border-emerald-100">
+            <p className="text-xs text-gray-500 truncate mt-0.5">{user.email}</p>
+            <span className="inline-block mt-1.5 text-xs font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-md border border-emerald-100">
               {user.role}
             </span>
           </div>
