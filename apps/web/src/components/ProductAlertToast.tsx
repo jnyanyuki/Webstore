@@ -32,16 +32,9 @@ export function ProductAlertToast({
   const [toasts, setToasts] = useState<AlertNotification[]>([]);
 
   useEffect(() => {
-    // Determine effective WebSocket URL
-    const isLocalhost =
-      typeof window !== "undefined" &&
-      (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
+    // Only attempt WebSocket connection if an explicit WS URL is configured
+    const effectiveWsUrl = wsUrl;
 
-    const effectiveWsUrl =
-      wsUrl ||
-      (isLocalhost ? "ws://localhost:8000/ws/notifications" : undefined);
-
-    // If no WebSocket URL configured and we're not running on localhost, skip connection quietly
     if (!effectiveWsUrl) {
       return;
     }

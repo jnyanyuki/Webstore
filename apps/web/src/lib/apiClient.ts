@@ -40,7 +40,14 @@ class ApiClient {
       if (envUrl && !envUrl.includes("webstore-czie")) {
         return envUrl.replace(/\/$/, "");
       }
-      return "http://localhost:9000";
+
+      // 3. If running strictly on local dev machine:
+      if (hostname === "localhost" || hostname === "127.0.0.1") {
+        return "http://localhost:9000";
+      }
+
+      // 4. Any remote deployment (e.g. *.vercel.app) defaults to production API
+      return "https://api.juromart.com";
     }
 
     const envUrl = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL;
