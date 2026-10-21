@@ -182,12 +182,14 @@ export default function SellerCenterHome() {
           <div className="flex flex-col gap-2.5">
             <a
               href={getStorefrontUrl("/account")}
+              suppressHydrationWarning
               className="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition-all shadow-md"
             >
               ← Back to Customer Account
             </a>
             <a
               href={getStorefrontUrl("/")}
+              suppressHydrationWarning
               className="w-full py-2 px-4 bg-gray-700/60 hover:bg-gray-700 text-gray-300 font-medium text-xs rounded-xl transition-colors"
             >
               Continue Shopping
@@ -203,7 +205,7 @@ export default function SellerCenterHome() {
       <header className="bg-gray-900 text-white border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <a href={getStorefrontUrl("/")} className="hover:opacity-90 transition-opacity">
+            <a href={getStorefrontUrl("/")} suppressHydrationWarning className="hover:opacity-90 transition-opacity">
               <JuroMartLogo variant="icon" size="sm" />
             </a>
             <span className="font-bold text-base tracking-tight">JuroMart Seller Center</span>
@@ -215,6 +217,7 @@ export default function SellerCenterHome() {
           <div className="flex items-center gap-2">
             <a
               href={getStorefrontUrl("/")}
+              suppressHydrationWarning
               className="px-2.5 py-1.5 text-xs font-semibold text-gray-400 hover:text-white transition-colors"
             >
               ← Storefront

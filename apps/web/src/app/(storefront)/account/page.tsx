@@ -105,6 +105,7 @@ export default function AccountPage() {
             {(user.role === "SELLER" || user.role === "ADMIN") && (
               <a
                 href={getSellerUrl("/")}
+                suppressHydrationWarning
                 className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold text-xs rounded-xl shadow-md transition-colors"
               >
                 <span>Merchant Hub Portal</span>

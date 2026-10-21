@@ -121,6 +121,7 @@ export default function UserNavDropdown() {
             {(user.role === "SELLER" || user.role === "ADMIN") && (
               <a
                 href={getSellerUrl("/")}
+                suppressHydrationWarning
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2.5 px-3.5 py-2 text-xs font-medium text-emerald-700 hover:bg-emerald-50 transition-colors"
               >

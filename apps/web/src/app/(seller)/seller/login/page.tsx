@@ -58,7 +58,11 @@ function MerchantLoginForm() {
 
       {/* Header & Logo */}
       <div className="flex flex-col items-center text-center mb-6 relative z-10">
-        <a href={getStorefrontUrl("/")} className="mb-3 inline-block hover:opacity-90 transition-opacity">
+        <a
+          href={getStorefrontUrl("/")}
+          suppressHydrationWarning
+          className="mb-3 inline-block hover:opacity-90 transition-opacity"
+        >
           <JuroMartLogo size="md" inverted={true} />
         </a>
         <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold tracking-wider uppercase mb-2">
@@ -185,6 +189,7 @@ function MerchantLoginForm() {
         <div>
           <a
             href={getStorefrontUrl("/")}
+            suppressHydrationWarning
             className="inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-300 transition-colors"
           >
             <span>←</span> Back to Customer Storefront
