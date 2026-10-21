@@ -18,6 +18,8 @@ export interface ProductOverride {
   merchantStall?: string;
   frontImage?: string;
   sideImage?: string;
+  images?: string[];
+  gallery?: { url: string; label?: string }[];
   variants?: { name: string; priceDelta: number }[];
   discountPercentage?: number;
   updatedBy?: string;
@@ -30,6 +32,7 @@ interface ProductCatalogContextType {
   isLoading: boolean;
   updateProduct: (data: Partial<ProductOverride> & { id: string; resetPromotion?: boolean }) => Promise<{ success: boolean; message?: string }>;
   batchResetPromotions: (category?: string, productIds?: string[]) => Promise<{ success: boolean; count?: number; message?: string }>;
+  uploadImage: (file: File, productId?: string) => Promise<{ success: boolean; url?: string; message?: string }>;
   refreshOverrides: () => Promise<void>;
   getProductById: (id: string) => ProductItem | undefined;
 }
@@ -109,6 +112,8 @@ export function ProductCatalogProvider({ children }: { children: React.ReactNode
         merchantStall: override.merchantStall ?? p.merchantStall,
         frontImage: override.frontImage ?? p.frontImage,
         sideImage: override.sideImage ?? p.sideImage,
+        images: override.images ?? p.images,
+        gallery: override.gallery ?? p.gallery,
         variants: override.variants ?? p.variants,
       };
     });
@@ -154,6 +159,37 @@ export function ProductCatalogProvider({ children }: { children: React.ReactNode
     }
   };
 
+  // 6. Upload product image (Super Admin)
+  const uploadImage = async (
+    file: File,
+    productId?: string
+  ): Promise<{ success: boolean; url?: string; message?: string }> => {
+    try {
+      const dataUrl = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+
+      const res = await apiClient.post<{ success: boolean; url: string; error?: string }>(
+        "/api/products/upload-image",
+        {
+          dataUrl,
+          filename: file.name,
+          productId,
+        }
+      );
+
+      if (res && res.success && res.url) {
+        return { success: true, url: res.url };
+      }
+      return { success: false, message: res?.error || "Image upload failed" };
+    } catch (err: any) {
+      return { success: false, message: err?.message || "Failed to upload image" };
+    }
+  };
+
   const getProductById = useCallback(
     (id: string): ProductItem | undefined => {
       return products.find((p) => p.id === id);
@@ -169,6 +205,7 @@ export function ProductCatalogProvider({ children }: { children: React.ReactNode
         isLoading,
         updateProduct,
         batchResetPromotions,
+        uploadImage,
         refreshOverrides: fetchOverrides,
         getProductById,
       }}

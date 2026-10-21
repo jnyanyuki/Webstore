@@ -30,7 +30,7 @@ const PRESET_BADGES = [
 
 export default function SuperAdminCatalogManager() {
   const { user } = useAuth();
-  const { products, updateProduct, batchResetPromotions, overrides } = useProductCatalog();
+  const { products, updateProduct, batchResetPromotions, uploadImage, overrides } = useProductCatalog();
 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
@@ -43,6 +43,11 @@ export default function SuperAdminCatalogManager() {
   const [editForm, setEditForm] = useState<Partial<ProductOverride>>({});
   const [isSaving, setIsSaving] = useState(false);
   const [saveFeedback, setSaveFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+  // Image Upload & Gallery State
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const [urlInput, setUrlInput] = useState("");
+  const [uploadError, setUploadError] = useState<string | null>(null);
 
   // Batch actions state
   const [isBatchProcessing, setIsBatchProcessing] = useState(false);
@@ -91,6 +96,15 @@ export default function SuperAdminCatalogManager() {
       ? Math.round(((p.originalPrice - p.price) / p.originalPrice) * 100)
       : 0;
 
+    const existingImages: string[] = [
+      ...(p.images && p.images.length > 0
+        ? p.images
+        : p.gallery && p.gallery.length > 0
+        ? p.gallery.map((g) => g.url)
+        : ([p.frontImage, p.sideImage].filter(Boolean) as string[])),
+    ];
+    const uniqueImages = Array.from(new Set(existingImages.filter(Boolean)));
+
     setEditForm({
       id: p.id,
       name: p.name,
@@ -102,9 +116,12 @@ export default function SuperAdminCatalogManager() {
       badge: p.badge || "",
       merchantStall: p.merchantStall || "",
       description: p.description || "",
-      frontImage: p.frontImage || "",
-      sideImage: p.sideImage || "",
+      frontImage: p.frontImage || uniqueImages[0] || "",
+      sideImage: p.sideImage || uniqueImages[1] || uniqueImages[0] || "",
+      images: uniqueImages,
     });
+    setUrlInput("");
+    setUploadError(null);
     setSaveFeedback(null);
   };
 
@@ -173,6 +190,7 @@ export default function SuperAdminCatalogManager() {
       merchantStall: editForm.merchantStall,
       frontImage: editForm.frontImage,
       sideImage: editForm.sideImage,
+      images: editForm.images,
       discountPercentage: editForm.discountPercentage,
       resetPromotion: isReset,
     });
@@ -670,42 +688,247 @@ export default function SuperAdminCatalogManager() {
                 </div>
               </div>
 
-              {/* Badge & Image URLs */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 mb-1">Badge</label>
-                  <div className="space-y-1.5">
+              {/* Badge */}
+              <div>
+                <label className="block text-xs font-bold text-gray-700 mb-1">Marketing Badge</label>
+                <div className="space-y-1.5">
+                  <input
+                    type="text"
+                    value={editForm.badge || ""}
+                    onChange={(e) => setEditForm({ ...editForm, badge: e.target.value })}
+                    placeholder="e.g. 🔥 Best Seller"
+                    className="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
+                  />
+                  <div className="flex flex-wrap gap-1">
+                    {PRESET_BADGES.map((b) => (
+                      <button
+                        key={b}
+                        type="button"
+                        onClick={() => setEditForm({ ...editForm, badge: b === "None" ? "" : b })}
+                        className="text-[10px] bg-gray-100 hover:bg-gray-200 text-gray-700 px-2 py-0.5 rounded cursor-pointer"
+                      >
+                        {b}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Product Images & Multi-Angle Gallery Manager */}
+              <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 space-y-3.5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-xs font-extrabold text-gray-900 uppercase tracking-wider flex items-center gap-1.5">
+                      <span>📸</span> Product Images &amp; Multi-Angle Gallery
+                    </span>
+                    <p className="text-[11px] text-gray-500 mt-0.5">
+                      Upload multiple product images or add image URLs. Set front &amp; side angles.
+                    </p>
+                  </div>
+                  <span className="bg-white border border-gray-200 text-gray-700 text-[11px] font-bold px-2.5 py-1 rounded-full shadow-xs">
+                    {(editForm.images || []).length} Images Attached
+                  </span>
+                </div>
+
+                {/* Upload Zone & URL Add Bar */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {/* File Uploader */}
+                  <div className="relative border-2 border-dashed border-gray-300 hover:border-emerald-500 rounded-xl p-4 bg-white text-center transition-colors cursor-pointer group flex flex-col items-center justify-center min-h-[90px]">
                     <input
-                      type="text"
-                      value={editForm.badge || ""}
-                      onChange={(e) => setEditForm({ ...editForm, badge: e.target.value })}
-                      placeholder="e.g. 🔥 Best Seller"
-                      className="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
+                      type="file"
+                      multiple
+                      accept="image/*"
+                      disabled={isUploadingImage}
+                      onChange={async (e) => {
+                        if (!e.target.files || e.target.files.length === 0) return;
+                        setIsUploadingImage(true);
+                        setUploadError(null);
+                        try {
+                          const files = Array.from(e.target.files);
+                          const uploadedUrls: string[] = [];
+                          for (const file of files) {
+                            const res = await uploadImage(file, editingProduct?.id);
+                            if (res.success && res.url) {
+                              uploadedUrls.push(res.url);
+                            } else {
+                              setUploadError(res.message || "Failed to upload one or more images");
+                            }
+                          }
+                          if (uploadedUrls.length > 0) {
+                            setEditForm((prev) => {
+                              const currentImages = prev.images || [];
+                              const updated = [...currentImages, ...uploadedUrls];
+                              return {
+                                ...prev,
+                                images: updated,
+                                frontImage: prev.frontImage || updated[0],
+                                sideImage: prev.sideImage || (updated[1] || updated[0]),
+                              };
+                            });
+                          }
+                        } catch (err: any) {
+                          setUploadError(err?.message || "Upload failed");
+                        } finally {
+                          setIsUploadingImage(false);
+                          e.target.value = "";
+                        }
+                      }}
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer disabled:cursor-not-allowed"
                     />
-                    <div className="flex flex-wrap gap-1">
-                      {PRESET_BADGES.map((b) => (
+                    <div className="flex flex-col items-center justify-center pointer-events-none">
+                      <div className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-base mb-1 group-hover:scale-110 transition-transform">
+                        {isUploadingImage ? "⏳" : "📁"}
+                      </div>
+                      <div className="text-xs font-bold text-gray-800">
+                        {isUploadingImage ? "Uploading & Processing..." : "Choose Image Files to Upload"}
+                      </div>
+                      <div className="text-[10px] text-gray-400 mt-0.5">
+                        Multiple files supported (WebP, PNG, JPG, JPEG)
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* URL Add Input */}
+                  <div className="bg-white border border-gray-200 rounded-xl p-3 flex flex-col justify-between">
+                    <div>
+                      <label className="block text-[11px] font-bold text-gray-700 mb-1">Add Image by URL</label>
+                      <div className="flex gap-2">
+                        <input
+                          type="url"
+                          value={urlInput}
+                          onChange={(e) => setUrlInput(e.target.value)}
+                          placeholder="https://example.com/photo.jpg"
+                          className="flex-1 text-xs px-2.5 py-1.5 border border-gray-300 rounded-lg outline-none focus:ring-1 focus:ring-emerald-500"
+                        />
                         <button
-                          key={b}
                           type="button"
-                          onClick={() => setEditForm({ ...editForm, badge: b === "None" ? "" : b })}
-                          className="text-[10px] bg-gray-100 hover:bg-gray-200 text-gray-700 px-2 py-0.5 rounded cursor-pointer"
+                          onClick={() => {
+                            const trimmed = urlInput.trim();
+                            if (!trimmed) return;
+                            setEditForm((prev) => {
+                              const current = prev.images || [];
+                              const updated = [...current, trimmed];
+                              return {
+                                ...prev,
+                                images: updated,
+                                frontImage: prev.frontImage || trimmed,
+                                sideImage: prev.sideImage || (updated[1] || trimmed),
+                              };
+                            });
+                            setUrlInput("");
+                          }}
+                          className="px-3 py-1.5 bg-gray-900 hover:bg-emerald-600 text-white font-bold text-xs rounded-lg transition-colors cursor-pointer"
                         >
-                          {b}
+                          Add URL
                         </button>
-                      ))}
+                      </div>
+                    </div>
+                    <div className="text-[10px] text-gray-400 mt-2">
+                      Paste supplier URL, Unsplash, or CDN image link.
                     </div>
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 mb-1">Front Image URL</label>
-                  <input
-                    type="url"
-                    value={editForm.frontImage || ""}
-                    onChange={(e) => setEditForm({ ...editForm, frontImage: e.target.value })}
-                    className="w-full text-xs px-3 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
-                  />
-                </div>
+                {uploadError && (
+                  <div className="bg-red-50 text-red-700 border border-red-200 p-2 rounded-lg text-xs font-semibold">
+                    ⚠️ {uploadError}
+                  </div>
+                )}
+
+                {/* Image Gallery Cards */}
+                {(editForm.images || []).length > 0 ? (
+                  <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-2.5 pt-1">
+                    {(editForm.images || []).map((imgUrl, idx) => {
+                      const isFront = editForm.frontImage === imgUrl;
+                      const isSide = editForm.sideImage === imgUrl && !isFront;
+
+                      return (
+                        <div
+                          key={`${imgUrl}-${idx}`}
+                          className={`relative group bg-white rounded-xl border p-1.5 flex flex-col transition-all shadow-xs ${
+                            isFront
+                              ? "border-emerald-500 ring-2 ring-emerald-500/20 bg-emerald-50/20"
+                              : isSide
+                              ? "border-blue-500 ring-2 ring-blue-500/20 bg-blue-50/20"
+                              : "border-gray-200 hover:border-gray-300"
+                          }`}
+                        >
+                          <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-gray-100 mb-1.5">
+                            <img
+                              src={imgUrl}
+                              alt={`Angle ${idx + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                            {/* Role Badge */}
+                            <div className="absolute top-1 left-1">
+                              {isFront ? (
+                                <span className="bg-emerald-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-xs">
+                                  ⭐ Front
+                                </span>
+                              ) : isSide ? (
+                                <span className="bg-blue-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded shadow-xs">
+                                  🔄 Side
+                                </span>
+                              ) : (
+                                <span className="bg-gray-900/70 text-white text-[9px] font-medium px-1.5 py-0.5 rounded">
+                                  #{idx + 1}
+                                </span>
+                              )}
+                            </div>
+
+                            {/* Remove Button */}
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setEditForm((prev) => {
+                                  const filtered = (prev.images || []).filter((_, i) => i !== idx);
+                                  return {
+                                    ...prev,
+                                    images: filtered,
+                                    frontImage: prev.frontImage === imgUrl ? (filtered[0] || "") : prev.frontImage,
+                                    sideImage: prev.sideImage === imgUrl ? (filtered[1] || filtered[0] || "") : prev.sideImage,
+                                  };
+                                });
+                              }}
+                              className="absolute top-1 right-1 w-5 h-5 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center text-[10px] font-bold shadow-xs transition-transform group-hover:scale-110 cursor-pointer"
+                              title="Remove image"
+                            >
+                              ×
+                            </button>
+                          </div>
+
+                          {/* Quick Role Assignment Buttons */}
+                          <div className="flex gap-1 mt-auto">
+                            {!isFront && (
+                              <button
+                                type="button"
+                                onClick={() => setEditForm((prev) => ({ ...prev, frontImage: imgUrl }))}
+                                className="flex-1 py-1 bg-gray-100 hover:bg-emerald-50 hover:text-emerald-700 text-gray-700 text-[10px] font-bold rounded transition-colors cursor-pointer text-center"
+                                title="Set as Primary Front Image"
+                              >
+                                Set Front
+                              </button>
+                            )}
+                            {!isSide && (
+                              <button
+                                type="button"
+                                onClick={() => setEditForm((prev) => ({ ...prev, sideImage: imgUrl }))}
+                                className="flex-1 py-1 bg-gray-100 hover:bg-blue-50 hover:text-blue-700 text-gray-700 text-[10px] font-bold rounded transition-colors cursor-pointer text-center"
+                                title="Set as Secondary Side Image"
+                              >
+                                Set Side
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="text-center py-4 text-xs text-gray-400 bg-white rounded-xl border border-gray-100">
+                    No gallery images added yet. Click above to upload or paste a URL.
+                  </div>
+                )}
               </div>
 
               {/* Description */}

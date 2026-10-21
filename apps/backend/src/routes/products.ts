@@ -1,4 +1,6 @@
 import { Router, Request, Response } from "express";
+import fs from "fs";
+import path from "path";
 import { dbPool } from "../services/navigation";
 import { AuthService } from "../services/auth";
 import { AuthenticatedRequest } from "../types/auth";
@@ -25,12 +27,16 @@ async function ensureOverridesTable() {
         merchant_stall VARCHAR(255),
         front_image TEXT,
         side_image TEXT,
+        images JSONB,
+        gallery JSONB,
         variants JSONB,
         discount_percentage NUMERIC,
         is_active BOOLEAN DEFAULT TRUE,
         updated_by VARCHAR(255),
         updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
       );
+      ALTER TABLE product_overrides ADD COLUMN IF NOT EXISTS images JSONB;
+      ALTER TABLE product_overrides ADD COLUMN IF NOT EXISTS gallery JSONB;
       CREATE INDEX IF NOT EXISTS idx_product_overrides_category ON product_overrides(category);
     `);
     tableInitialized = true;
@@ -48,7 +54,7 @@ router.get("/overrides", async (_req: Request, res: Response): Promise<any> => {
     await ensureOverridesTable();
     const result = await dbPool.query(
       `SELECT id, name, category, subcategory, item_type, price, original_price, 
-              badge, description, merchant_stall, front_image, side_image, variants,
+              badge, description, merchant_stall, front_image, side_image, images, gallery, variants,
               discount_percentage, is_active, updated_by, updated_at 
        FROM product_overrides WHERE is_active = TRUE`
     );
@@ -68,6 +74,8 @@ router.get("/overrides", async (_req: Request, res: Response): Promise<any> => {
         merchantStall: row.merchant_stall,
         frontImage: row.front_image,
         sideImage: row.side_image,
+        images: row.images ? (Array.isArray(row.images) ? row.images : JSON.parse(row.images)) : undefined,
+        gallery: row.gallery ? (Array.isArray(row.gallery) ? row.gallery : JSON.parse(row.gallery)) : undefined,
         variants: row.variants,
         discountPercentage:
           row.discount_percentage !== null && row.discount_percentage !== undefined
@@ -84,6 +92,66 @@ router.get("/overrides", async (_req: Request, res: Response): Promise<any> => {
     return res.status(500).json({ error: "Failed to fetch product overrides" });
   }
 });
+
+/**
+ * POST /api/products/upload-image
+ * Super Admin capacity to upload product images (stored locally in public/uploads and edge cached)
+ */
+router.post(
+  "/upload-image",
+  AuthService.authenticate,
+  AuthService.requireRole(["ADMIN"]),
+  async (req: AuthenticatedRequest, res: Response): Promise<any> => {
+    try {
+      const { dataUrl, filename, productId } = req.body;
+      if (!dataUrl || typeof dataUrl !== "string") {
+        return res.status(400).json({ error: "dataUrl is required (base64 data URI)" });
+      }
+
+      // Check regex for data URL
+      const matches = dataUrl.match(/^data:image\/([a-zA-Z0-9+.-]+);base64,(.+)$/);
+      if (!matches) {
+        return res.status(400).json({ error: "Invalid image format. Expected: data:image/<type>;base64,<data>" });
+      }
+
+      let ext = matches[1].toLowerCase();
+      if (ext === "jpeg") ext = "jpg";
+      if (ext === "svg+xml") ext = "svg";
+      const buffer = Buffer.from(matches[2], "base64");
+
+      if (buffer.length > 25 * 1024 * 1024) {
+        return res.status(400).json({ error: "Image exceeds 25MB size limit" });
+      }
+
+      const cleanProdId = (productId || "product").replace(/[^a-zA-Z0-9_-]/g, "");
+      const timestamp = Date.now();
+      const rand = Math.random().toString(36).substring(2, 8);
+      const safeFilename = `${cleanProdId}_${timestamp}_${rand}.${ext}`;
+
+      const webUploadDir = path.resolve(__dirname, "../../../web/public/uploads/products");
+      const backendUploadDir = path.resolve(__dirname, "../../public/uploads/products");
+
+      await fs.promises.mkdir(webUploadDir, { recursive: true });
+      await fs.promises.writeFile(path.join(webUploadDir, safeFilename), buffer);
+
+      try {
+        await fs.promises.mkdir(backendUploadDir, { recursive: true });
+        await fs.promises.writeFile(path.join(backendUploadDir, safeFilename), buffer);
+      } catch {}
+
+      const publicUrl = `/uploads/products/${safeFilename}`;
+      return res.status(200).json({
+        success: true,
+        url: publicUrl,
+        filename: safeFilename,
+        size: buffer.length,
+      });
+    } catch (err: any) {
+      console.error("[Upload Image Error]:", err);
+      return res.status(500).json({ error: "Failed to upload image", details: err?.message });
+    }
+  }
+);
 
 /**
  * POST /api/products/update
@@ -109,6 +177,8 @@ router.post(
         merchantStall,
         frontImage,
         sideImage,
+        images,
+        gallery,
         variants,
         resetPromotion = false,
         discountPercentage,
@@ -147,9 +217,9 @@ router.post(
       const query = `
         INSERT INTO product_overrides (
           id, name, category, subcategory, item_type, price, original_price,
-          badge, description, merchant_stall, front_image, side_image, variants,
+          badge, description, merchant_stall, front_image, side_image, images, gallery, variants,
           discount_percentage, is_active, updated_by, updated_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, TRUE, $15, NOW())
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, TRUE, $17, NOW())
         ON CONFLICT (id) DO UPDATE SET
           name = COALESCE(EXCLUDED.name, product_overrides.name),
           category = COALESCE(EXCLUDED.category, product_overrides.category),
@@ -162,6 +232,8 @@ router.post(
           merchant_stall = COALESCE(EXCLUDED.merchant_stall, product_overrides.merchant_stall),
           front_image = COALESCE(EXCLUDED.front_image, product_overrides.front_image),
           side_image = COALESCE(EXCLUDED.side_image, product_overrides.side_image),
+          images = CASE WHEN EXCLUDED.images IS NOT NULL THEN EXCLUDED.images ELSE product_overrides.images END,
+          gallery = CASE WHEN EXCLUDED.gallery IS NOT NULL THEN EXCLUDED.gallery ELSE product_overrides.gallery END,
           variants = COALESCE(EXCLUDED.variants, product_overrides.variants),
           discount_percentage = EXCLUDED.discount_percentage,
           updated_by = EXCLUDED.updated_by,
@@ -182,6 +254,8 @@ router.post(
         merchantStall || null,
         frontImage || null,
         sideImage || null,
+        images ? JSON.stringify(images) : null,
+        gallery ? JSON.stringify(gallery) : null,
         variants ? JSON.stringify(variants) : null,
         finalDiscountPercentage !== undefined && finalDiscountPercentage !== null ? finalDiscountPercentage : null,
         req.authUser?.email || "abokos@juromart.com",
@@ -201,6 +275,8 @@ router.post(
         merchantStall: row.merchant_stall,
         frontImage: row.front_image,
         sideImage: row.side_image,
+        images: row.images ? (Array.isArray(row.images) ? row.images : JSON.parse(row.images)) : undefined,
+        gallery: row.gallery ? (Array.isArray(row.gallery) ? row.gallery : JSON.parse(row.gallery)) : undefined,
         variants: row.variants,
         discountPercentage:
           row.discount_percentage !== null && row.discount_percentage !== undefined
