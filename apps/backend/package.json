@@ -8,11 +8,11 @@
     "dev": "tsc-watch --onSuccess \"node dist/index.js\""
   },
   "dependencies": {
-    "@medusajs/medusa": "^1.20.0",
     "@webstore/types": "*",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "typeorm": "^0.3.20"
+    "pg": "^8.13.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

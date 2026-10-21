@@ -15,9 +15,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@webstore/types": ["../../packages/types/dist/index.d.ts"],
-      "@medusajs/medusa": ["../../node_modules/@medusajs/medusa"],
-      "typeorm": ["../../node_modules/typeorm"]
+      "@webstore/types": ["../../packages/types/dist/index.d.ts"]
     }
   },
   "include": ["src/**/*"],

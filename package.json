@@ -9,15 +9,11 @@
   "scripts": {
     "postinstall": "npx prisma generate --schema=apps/web/prisma/schema.prisma || true",
     "build": "turbo run build",
-    "deploy": "node scripts/deploy-ftp.js",
-    "deploy:build": "node scripts/deploy-ftp.js --build",
-    "deploy:backend": "node scripts/deploy-backend.js",
     "dev": "turbo run dev --parallel",
     "dev:web": "npm --prefix apps/web run dev",
     "lint": "turbo run lint"
   },
   "devDependencies": {
-    "basic-ftp": "^6.2.3",
     "tsx": "^4.7.0",
     "turbo": "^2.0.0"
   },
