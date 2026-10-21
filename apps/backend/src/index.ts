@@ -33,7 +33,7 @@ const isOriginAllowed = (origin?: string): boolean => {
   if (allowedOriginsList.includes(origin)) return true;
   if (/^https?:\/\/([a-z0-9-]+\.)*juromart\.com(:\d+)?$/i.test(origin)) return true;
   if (/^https:\/\/([a-z0-9-]+\.)*vercel\.app$/i.test(origin)) return true;
-  if (/^http:\/\/localhost(:\d+)?$/i.test(origin)) return true;
+  if (/^http:\/\/([a-z0-9-]+\.)*localhost(:\d+)?$/i.test(origin)) return true;
   return false;
 };
 

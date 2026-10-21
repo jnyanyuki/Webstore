@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import JuroMartLogo from "@/components/JuroMartLogo";
+import { getSellerUrl } from "@/lib/domainUrls";
 
 export default function AccountPage() {
   const { user, isLoading, logout } = useAuth();
@@ -102,15 +103,15 @@ export default function AccountPage() {
             </div>
 
             {(user.role === "SELLER" || user.role === "ADMIN") && (
-              <Link
-                href="/seller"
+              <a
+                href={getSellerUrl("/")}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold text-xs rounded-xl shadow-md transition-colors"
               >
                 <span>Merchant Hub Portal</span>
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </a>
             )}
           </div>
         </div>

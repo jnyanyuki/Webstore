@@ -7,6 +7,8 @@ import { OrderStatusTimelineTracker } from "@webstore/ui";
 import { OrderStatusTimeline } from "@webstore/types";
 
 import { apiClient } from "@/lib/apiClient";
+import JuroMartLogo from "@/components/JuroMartLogo";
+import { getStorefrontUrl } from "@/lib/domainUrls";
 
 const INITIAL_MOCK_ORDER: OrderStatusTimeline = {
   orderId: "ORD-CBD-8891",
@@ -94,10 +96,10 @@ export default function SellerCenterHome() {
       <header className="bg-gray-900 text-white border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <a href="/" className="w-7 h-7 bg-emerald-600 rounded-lg flex items-center justify-center font-bold text-white text-sm">
-              J
+            <a href={getStorefrontUrl("/")} className="hover:opacity-90 transition-opacity">
+              <JuroMartLogo variant="icon" size="sm" />
             </a>
-            <span className="font-bold text-base">JuroMart Seller Center</span>
+            <span className="font-bold text-base tracking-tight">JuroMart Seller Center</span>
             <span className="bg-gray-800 text-emerald-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-gray-700">
               ID: VEND-CBD-042
             </span>
@@ -105,7 +107,7 @@ export default function SellerCenterHome() {
 
           <div className="flex items-center gap-2">
             <a
-              href="/"
+              href={getStorefrontUrl("/")}
               className="px-2.5 py-1.5 text-xs font-semibold text-gray-400 hover:text-white transition-colors"
             >
               ← Storefront

@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useAuth } from "../context/AuthContext";
+import { getSellerUrl } from "@/lib/domainUrls";
 
 export default function UserNavDropdown() {
   const { user, isAuthenticated, isLoading, logout } = useAuth();
@@ -118,8 +119,8 @@ export default function UserNavDropdown() {
             </Link>
 
             {(user.role === "SELLER" || user.role === "ADMIN") && (
-              <Link
-                href="/seller"
+              <a
+                href={getSellerUrl("/")}
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-2.5 px-3.5 py-2 text-xs font-medium text-emerald-700 hover:bg-emerald-50 transition-colors"
               >
@@ -127,7 +128,7 @@ export default function UserNavDropdown() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
                 Merchant Center
-              </Link>
+              </a>
             )}
           </div>
 
