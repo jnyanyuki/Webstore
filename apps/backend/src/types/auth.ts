@@ -20,4 +20,9 @@ export interface TokenPayload {
 
 export interface AuthenticatedRequest extends Request {
   authUser?: AuthUser;
+  body: any;
+  cookies: Record<string, any>;
+  headers: Record<string, any>;
+  params: any;
+  query: any;
 }
