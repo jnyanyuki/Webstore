@@ -9,6 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const navigation_1 = require("./services/navigation");
 const auth_1 = __importDefault(require("./routes/auth"));
+const products_1 = __importDefault(require("./routes/products"));
 const notifications_1 = require("./services/notifications");
 const boda_dispatch_1 = require("./services/boda-dispatch");
 const app = (0, express_1.default)();
@@ -91,6 +92,8 @@ app.use(express_1.default.json());
 // Authentication Endpoints (Register, Login, Refresh, Logout, Me)
 app.use("/auth", auth_1.default);
 app.use("/api/auth", auth_1.default);
+// Product Catalog & Promotion Management (Super Admin)
+app.use("/api/products", products_1.default);
 // Optional CSRF Token Handshake Endpoint (for cookie/session forms)
 app.get("/api/auth/csrf-token", (_req, res) => {
     const csrfToken = Buffer.from(`${Date.now()}-${Math.random().toString(36).substring(2, 15)}`).toString("base64");
