@@ -21,10 +21,14 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.10",
     "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "bcryptjs": "^3.0.3",
     "postcss": "^8.4.35",
     "prisma": "^6.19.3",
     "tailwindcss": "^4",
-    "turbo": "^2.0.0"
+    "turbo": "^2.0.0",
+    "typescript": "^5"
   }
 }
