@@ -38,20 +38,48 @@ const CBD_STAGES = [
 export default function SellerCenterHome() {
   const { user, isAuthenticated, isLoading } = useAuth();
   const [activeTab, setActiveTab] = useState<"fulfillment" | "catalog-admin" | "pim" | "boda" | "analytics" | "settings">("fulfillment");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  
+  // Navigation sidebar states
+  const [sidebarOpen, setSidebarOpen] = useState(false); // Mobile drawer
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false); // Desktop collapsible side panel
+
+  // Side control panel states
+  const [sideControlPanelOpen, setSideControlPanelOpen] = useState(false); // From SuperAdminCatalogManager
+  const [orderInspectorOpen, setOrderInspectorOpen] = useState(false); // Order Telemetry side control panel
+  const [stageInspectorStage, setStageInspectorStage] = useState<any | null>(null); // Boda Stage side control panel
+
+  // Auto-collapse sidebar whenever any side control panel is open
+  const anySidePanelOpen = sideControlPanelOpen || orderInspectorOpen || Boolean(stageInspectorStage);
+  useEffect(() => {
+    if (anySidePanelOpen) {
+      setIsSidebarCollapsed(true);
+    }
+  }, [anySidePanelOpen]);
+
+  // Keyboard shortcut Ctrl+B / Cmd+B to toggle sidebar collapse
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "b") {
+        e.preventDefault();
+        setIsSidebarCollapsed((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   const [isStallOpen, setIsStallOpen] = useState(true);
   const [orders, setOrders] = useState<any[]>([]);
   const [orderTimeline, setOrderTimeline] = useState<OrderStatusTimeline>(INITIAL_MOCK_ORDER);
   const [dispatchLoading, setDispatchLoading] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
-  const [searchQuery, setSearchQuery] = useState("");
   const [checklist, setChecklist] = useState({
     inspected: true,
     boxed: true,
     securitySeal: false,
   });
 
-  // Synthesize a pleasant chime using Web Audio API (zero external assets needed)
+  // Synthesize a pleasant chime using Web Audio API
   const playAlertChime = (type: "dispatch" | "notify" = "notify") => {
     if (!soundEnabled || typeof window === "undefined") return;
     try {
@@ -64,8 +92,8 @@ export default function SellerCenterHome() {
       gain.connect(ctx.destination);
 
       if (type === "dispatch") {
-        osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
-        osc.frequency.exponentialRampToValueAtTime(783.99, ctx.currentTime + 0.15); // G5
+        osc.frequency.setValueAtTime(523.25, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(783.99, ctx.currentTime + 0.15);
         gain.gain.setValueAtTime(0.2, ctx.currentTime);
         gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.35);
         osc.start(ctx.currentTime);
@@ -170,7 +198,6 @@ export default function SellerCenterHome() {
         setChecklist({ inspected: true, boxed: true, securitySeal: true });
         fetchOrders();
       } else {
-        // Fallback local rider assignment
         const assignedRider: RiderInfo = {
           id: "r3",
           name: "Kipchumba Bett",
@@ -264,36 +291,63 @@ export default function SellerCenterHome() {
       )}
 
       {/* ========================================================================= */}
-      {/* 1. WORLD-CLASS ENTERPRISE SIDEBAR                                         */}
+      {/* 1. COLLAPSIBLE ENTERPRISE SIDEBAR (w-72 Expanded / w-20 Collapsed)        */}
       {/* ========================================================================= */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-72 bg-zinc-950 border-r border-zinc-800/80 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:translate-x-0 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed inset-y-0 left-0 z-50 bg-zinc-950 border-r border-zinc-800/80 flex flex-col justify-between transition-all duration-300 ease-in-out ${
+          isSidebarCollapsed ? "lg:w-20 w-72" : "w-72"
+        } ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
         <div className="flex flex-col h-full overflow-y-auto scrollbar-none">
-          {/* Logo & Portal Branding */}
-          <div className="p-5 border-b border-zinc-850">
+          {/* Header & Logo Area with Collapse Toggle Button */}
+          <div className={`border-b border-zinc-850 transition-all ${isSidebarCollapsed ? "p-3.5" : "p-5"}`}>
             <div className="flex items-center justify-between">
-              <a href={getStorefrontUrl("/")} suppressHydrationWarning className="flex items-center gap-3 group">
-                <div className="relative">
+              <a
+                href={getStorefrontUrl("/")}
+                suppressHydrationWarning
+                title="JuroMart Seller OS"
+                className="flex items-center gap-3 group"
+              >
+                <div className="relative flex-shrink-0">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center shadow-lg shadow-emerald-900/30">
                     <JuroMartLogo variant="icon" size="sm" />
                   </div>
                   <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-zinc-950"></span>
                 </div>
-                <div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="font-extrabold text-base tracking-tight text-white group-hover:text-emerald-400 transition-colors">
-                      JuroMart
-                    </span>
-                    <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded">
-                      SELLER OS
-                    </span>
+
+                {!isSidebarCollapsed && (
+                  <div className="transition-opacity duration-200">
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-extrabold text-base tracking-tight text-white group-hover:text-emerald-400 transition-colors">
+                        JuroMart
+                      </span>
+                      <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded">
+                        SELLER OS
+                      </span>
+                    </div>
+                    <p className="text-[11px] font-medium text-zinc-400">Nairobi CBD Merchant Hub</p>
                   </div>
-                  <p className="text-[11px] font-medium text-zinc-400">Nairobi CBD Merchant Hub</p>
-                </div>
+                )}
               </a>
+
+              {/* Desktop Collapse / Expand Toggle Button */}
+              <button
+                type="button"
+                onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+                className="hidden lg:flex p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-850 border border-zinc-800 transition-all cursor-pointer items-center justify-center"
+                title={isSidebarCollapsed ? "Expand sidebar (Ctrl+B)" : "Collapse sidebar (Ctrl+B)"}
+              >
+                <svg
+                  className={`w-4 h-4 transition-transform duration-300 ${isSidebarCollapsed ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                </svg>
+              </button>
+
+              {/* Mobile Close Button */}
               <button
                 onClick={() => setSidebarOpen(false)}
                 className="lg:hidden text-zinc-400 hover:text-white p-1"
@@ -306,43 +360,55 @@ export default function SellerCenterHome() {
             </div>
 
             {/* Stall Identity & Status Toggle */}
-            <div className="mt-4 p-3 bg-zinc-900/90 rounded-xl border border-zinc-800">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <div>
-                    <div className="text-xs font-bold text-white">Stall G14 • Imenti House</div>
-                    <div className="text-[10px] text-zinc-400 font-mono">ID: VEND-CBD-042</div>
+            <div className={`mt-3.5 bg-zinc-900/90 rounded-xl border border-zinc-800 transition-all ${isSidebarCollapsed ? "p-2 flex justify-center" : "p-3"}`}>
+              {isSidebarCollapsed ? (
+                <div
+                  className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"
+                  title="Stall G14 (Imenti House) • LIVE & Taking Orders"
+                />
+              ) : (
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <div>
+                      <div className="text-xs font-bold text-white">Stall G14 • Imenti House</div>
+                      <div className="text-[10px] text-zinc-400 font-mono">ID: VEND-CBD-042</div>
+                    </div>
                   </div>
+                  <button
+                    onClick={() => setIsStallOpen(!isStallOpen)}
+                    className={`text-[10px] font-bold px-2 py-1 rounded-md transition-all cursor-pointer ${
+                      isStallOpen
+                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
+                        : "bg-red-500/20 text-red-300 border border-red-500/40"
+                    }`}
+                  >
+                    {isStallOpen ? "LIVE" : "PAUSED"}
+                  </button>
                 </div>
-                <button
-                  onClick={() => setIsStallOpen(!isStallOpen)}
-                  className={`text-[10px] font-bold px-2 py-1 rounded-md transition-all cursor-pointer ${
-                    isStallOpen
-                      ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
-                      : "bg-red-500/20 text-red-300 border border-red-500/40"
-                  }`}
-                >
-                  {isStallOpen ? "LIVE" : "PAUSED"}
-                </button>
-              </div>
+              )}
             </div>
           </div>
 
           {/* Grouped Navigation */}
-          <nav className="p-3.5 space-y-6 flex-1">
+          <nav className={`space-y-6 flex-1 transition-all ${isSidebarCollapsed ? "p-2" : "p-3.5"}`}>
             {/* Section 1: Operations */}
             <div>
-              <div className="px-3 text-[10px] font-bold text-zinc-500 tracking-wider uppercase mb-2">
-                Operations
-              </div>
+              {!isSidebarCollapsed && (
+                <div className="px-3 text-[10px] font-bold text-zinc-500 tracking-wider uppercase mb-2">
+                  Operations
+                </div>
+              )}
               <div className="space-y-1">
                 <button
                   onClick={() => {
                     setActiveTab("fulfillment");
                     setSidebarOpen(false);
                   }}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                  title="Live Fulfillment & Dispatch"
+                  className={`w-full flex items-center rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                    isSidebarCollapsed ? "justify-center p-3" : "justify-between px-3.5 py-2.5"
+                  } ${
                     activeTab === "fulfillment"
                       ? "bg-emerald-600 text-white shadow-lg shadow-emerald-950/40"
                       : "text-zinc-300 hover:bg-zinc-900 hover:text-white"
@@ -350,19 +416,24 @@ export default function SellerCenterHome() {
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-base">📦</span>
-                    <span>Live Fulfillment</span>
+                    {!isSidebarCollapsed && <span>Live Fulfillment</span>}
                   </div>
-                  <span
-                    className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                      activeTab === "fulfillment"
-                        ? "bg-white/20 text-white"
-                        : orderTimeline.status === "PENDING"
-                        ? "bg-amber-500/20 text-amber-300 border border-amber-500/30"
-                        : "bg-zinc-800 text-zinc-400"
-                    }`}
-                  >
-                    {orderTimeline.status === "PENDING" ? "1 Action" : "Ready"}
-                  </span>
+                  {!isSidebarCollapsed && (
+                    <span
+                      className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                        activeTab === "fulfillment"
+                          ? "bg-white/20 text-white"
+                          : orderTimeline.status === "PENDING"
+                          ? "bg-amber-500/20 text-amber-300 border border-amber-500/30"
+                          : "bg-zinc-800 text-zinc-400"
+                      }`}
+                    >
+                      {orderTimeline.status === "PENDING" ? "1 Action" : "Ready"}
+                    </span>
+                  )}
+                  {isSidebarCollapsed && orderTimeline.status === "PENDING" && (
+                    <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-amber-400" />
+                  )}
                 </button>
 
                 <button
@@ -370,7 +441,10 @@ export default function SellerCenterHome() {
                     setActiveTab("boda");
                     setSidebarOpen(false);
                   }}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                  title="CBD Boda Fleet & Stages"
+                  className={`w-full flex items-center rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                    isSidebarCollapsed ? "justify-center p-3" : "justify-between px-3.5 py-2.5"
+                  } ${
                     activeTab === "boda"
                       ? "bg-emerald-600 text-white shadow-lg shadow-emerald-950/40"
                       : "text-zinc-300 hover:bg-zinc-900 hover:text-white"
@@ -378,20 +452,24 @@ export default function SellerCenterHome() {
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-base">🏍️</span>
-                    <span>CBD Boda Fleet</span>
+                    {!isSidebarCollapsed && <span>CBD Boda Fleet</span>}
                   </div>
-                  <span className="text-[10px] font-mono text-zinc-400 bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800">
-                    5 Stages
-                  </span>
+                  {!isSidebarCollapsed && (
+                    <span className="text-[10px] font-mono text-zinc-400 bg-zinc-900 px-2 py-0.5 rounded border border-zinc-800">
+                      5 Stages
+                    </span>
+                  )}
                 </button>
               </div>
             </div>
 
             {/* Section 2: Catalog Management */}
             <div>
-              <div className="px-3 text-[10px] font-bold text-zinc-500 tracking-wider uppercase mb-2">
-                Catalog & Products
-              </div>
+              {!isSidebarCollapsed && (
+                <div className="px-3 text-[10px] font-bold text-zinc-500 tracking-wider uppercase mb-2">
+                  Catalog & Products
+                </div>
+              )}
               <div className="space-y-1">
                 {/* Super Admin Master Catalog Button with Royal Gold Accent */}
                 {user?.role === "ADMIN" && (
@@ -400,7 +478,10 @@ export default function SellerCenterHome() {
                       setActiveTab("catalog-admin");
                       setSidebarOpen(false);
                     }}
-                    className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                    title="Master Catalog Super Admin"
+                    className={`w-full flex items-center rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                      isSidebarCollapsed ? "justify-center p-3" : "justify-between px-3.5 py-2.5"
+                    } ${
                       activeTab === "catalog-admin"
                         ? "bg-gradient-to-r from-amber-400 to-amber-500 text-zinc-950 font-black shadow-lg shadow-amber-950/50"
                         : "text-amber-400 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30"
@@ -408,15 +489,17 @@ export default function SellerCenterHome() {
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-base">👑</span>
-                      <span>Master Catalog Admin</span>
+                      {!isSidebarCollapsed && <span>Master Catalog Admin</span>}
                     </div>
-                    <span
-                      className={`text-[9px] uppercase tracking-wider font-extrabold px-1.5 py-0.5 rounded ${
-                        activeTab === "catalog-admin" ? "bg-zinc-950 text-amber-400" : "bg-amber-500/20 text-amber-300"
-                      }`}
-                    >
-                      Admin
-                    </span>
+                    {!isSidebarCollapsed && (
+                      <span
+                        className={`text-[9px] uppercase tracking-wider font-extrabold px-1.5 py-0.5 rounded ${
+                          activeTab === "catalog-admin" ? "bg-zinc-950 text-amber-400" : "bg-amber-500/20 text-amber-300"
+                        }`}
+                      >
+                        Admin
+                      </span>
+                    )}
                   </button>
                 )}
 
@@ -425,7 +508,10 @@ export default function SellerCenterHome() {
                     setActiveTab("pim");
                     setSidebarOpen(false);
                   }}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                  title="Dynamic PIM Lister"
+                  className={`w-full flex items-center rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                    isSidebarCollapsed ? "justify-center p-3" : "justify-between px-3.5 py-2.5"
+                  } ${
                     activeTab === "pim"
                       ? "bg-emerald-600 text-white shadow-lg shadow-emerald-950/40"
                       : "text-zinc-300 hover:bg-zinc-900 hover:text-white"
@@ -433,25 +519,30 @@ export default function SellerCenterHome() {
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-base">🏷️</span>
-                    <span>Dynamic PIM Lister</span>
+                    {!isSidebarCollapsed && <span>Dynamic PIM Lister</span>}
                   </div>
-                  <span className="text-[10px] text-zinc-400">+ New</span>
+                  {!isSidebarCollapsed && <span className="text-[10px] text-zinc-400">+ New</span>}
                 </button>
               </div>
             </div>
 
             {/* Section 3: Finance & Insights */}
             <div>
-              <div className="px-3 text-[10px] font-bold text-zinc-500 tracking-wider uppercase mb-2">
-                Insights & Finance
-              </div>
+              {!isSidebarCollapsed && (
+                <div className="px-3 text-[10px] font-bold text-zinc-500 tracking-wider uppercase mb-2">
+                  Insights & Finance
+                </div>
+              )}
               <div className="space-y-1">
                 <button
                   onClick={() => {
                     setActiveTab("analytics");
                     setSidebarOpen(false);
                   }}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                  title="M-Pesa Reconciliation & Settlement"
+                  className={`w-full flex items-center rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                    isSidebarCollapsed ? "justify-center p-3" : "justify-between px-3.5 py-2.5"
+                  } ${
                     activeTab === "analytics"
                       ? "bg-emerald-600 text-white shadow-lg shadow-emerald-950/40"
                       : "text-zinc-300 hover:bg-zinc-900 hover:text-white"
@@ -459,9 +550,11 @@ export default function SellerCenterHome() {
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-base">📊</span>
-                    <span>M-Pesa Reconciliation</span>
+                    {!isSidebarCollapsed && <span>M-Pesa Reconciliation</span>}
                   </div>
-                  <span className="text-[10px] text-emerald-400 font-bold">KES 38.5k</span>
+                  {!isSidebarCollapsed && (
+                    <span className="text-[10px] text-emerald-400 font-bold">KES 38.5k</span>
+                  )}
                 </button>
 
                 <button
@@ -469,7 +562,10 @@ export default function SellerCenterHome() {
                     setActiveTab("settings");
                     setSidebarOpen(false);
                   }}
-                  className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                  title="Stall & Till Settings"
+                  className={`w-full flex items-center rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                    isSidebarCollapsed ? "justify-center p-3" : "justify-between px-3.5 py-2.5"
+                  } ${
                     activeTab === "settings"
                       ? "bg-emerald-600 text-white shadow-lg shadow-emerald-950/40"
                       : "text-zinc-300 hover:bg-zinc-900 hover:text-white"
@@ -477,7 +573,7 @@ export default function SellerCenterHome() {
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-base">⚙️</span>
-                    <span>Stall & Till Settings</span>
+                    {!isSidebarCollapsed && <span>Stall & Till Settings</span>}
                   </div>
                 </button>
               </div>
@@ -485,32 +581,44 @@ export default function SellerCenterHome() {
           </nav>
 
           {/* Sidebar Footer with Storefront Link and User Identity */}
-          <div className="p-3.5 border-t border-zinc-850 space-y-3 bg-zinc-950/60">
+          <div className={`border-t border-zinc-850 space-y-3 bg-zinc-950/60 transition-all ${isSidebarCollapsed ? "p-2" : "p-3.5"}`}>
             <a
               href={getStorefrontUrl("/")}
               suppressHydrationWarning
-              className="w-full flex items-center justify-center gap-2 py-2 px-3 text-xs font-semibold text-zinc-300 hover:text-white bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 rounded-xl transition-all"
+              title="Open Customer Storefront"
+              className={`w-full flex items-center rounded-xl transition-all ${
+                isSidebarCollapsed
+                  ? "justify-center p-2.5 bg-zinc-900 text-zinc-300 hover:text-white hover:bg-zinc-850"
+                  : "justify-center gap-2 py-2 px-3 text-xs font-semibold text-zinc-300 hover:text-white bg-zinc-900 hover:bg-zinc-850 border border-zinc-800"
+              }`}
             >
               <span>←</span>
-              <span>Open Customer Storefront</span>
+              {!isSidebarCollapsed && <span>Open Customer Storefront</span>}
             </a>
 
-            <div className="p-3 bg-zinc-900/80 rounded-xl border border-zinc-800 flex items-center justify-between">
+            <div
+              title={`${user?.fullName || "Merchant"} (${user?.role || "SELLER"})`}
+              className={`bg-zinc-900/80 rounded-xl border border-zinc-800 flex items-center transition-all ${
+                isSidebarCollapsed ? "justify-center p-2" : "justify-between p-3"
+              }`}
+            >
               <div className="flex items-center gap-2.5 min-w-0">
-                <div className="w-8 h-8 rounded-full bg-emerald-600 text-white font-black text-xs flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-emerald-600 text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-sm">
                   {user?.fullName ? user.fullName[0] : user?.email ? user.email[0].toUpperCase() : "M"}
                 </div>
-                <div className="min-w-0">
-                  <p className="text-xs font-bold text-white truncate">
-                    {user?.fullName || user?.email?.split("@")[0] || "Merchant"}
-                  </p>
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-[9px] font-black uppercase text-emerald-400 bg-emerald-500/10 px-1 py-0.2 rounded border border-emerald-500/30">
-                      {user?.role || "SELLER"}
-                    </span>
-                    <span className="text-[10px] text-zinc-500 truncate">{user?.email}</span>
+                {!isSidebarCollapsed && (
+                  <div className="min-w-0">
+                    <p className="text-xs font-bold text-white truncate">
+                      {user?.fullName || user?.email?.split("@")[0] || "Merchant"}
+                    </p>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[9px] font-black uppercase text-emerald-400 bg-emerald-500/10 px-1 py-0.2 rounded border border-emerald-500/30">
+                        {user?.role || "SELLER"}
+                      </span>
+                      <span className="text-[10px] text-zinc-500 truncate">{user?.email}</span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
@@ -518,12 +626,17 @@ export default function SellerCenterHome() {
       </aside>
 
       {/* ========================================================================= */}
-      {/* 2. MAIN APPLICATION CONTENT CANVAS                                       */}
+      {/* 2. MAIN APPLICATION CONTENT CANVAS (Auto-expanding with sidebar collapse) */}
       {/* ========================================================================= */}
-      <div className="flex-1 lg:pl-72 flex flex-col min-w-0 min-h-screen">
+      <div
+        className={`flex-1 flex flex-col min-w-0 min-h-screen transition-all duration-300 ease-in-out ${
+          isSidebarCollapsed ? "lg:pl-20" : "lg:pl-72"
+        }`}
+      >
         {/* World-Class Top Header (App Bar) */}
         <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-zinc-200/80 h-16 px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all">
           <div className="flex items-center gap-3">
+            {/* Mobile Sidebar Trigger */}
             <button
               onClick={() => setSidebarOpen(true)}
               className="lg:hidden p-2 rounded-xl text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100 transition-colors"
@@ -532,6 +645,21 @@ export default function SellerCenterHome() {
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
+            </button>
+
+            {/* Desktop Quick Collapse / Expand Button */}
+            <button
+              type="button"
+              onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+              className="hidden lg:flex p-2 rounded-xl text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100 border border-zinc-200 transition-all cursor-pointer items-center gap-1.5 text-xs font-semibold"
+              title={isSidebarCollapsed ? "Expand Sidebar (Ctrl+B)" : "Collapse Sidebar (Ctrl+B)"}
+            >
+              <svg className="w-4 h-4 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
+              </svg>
+              <span className="text-[11px] text-zinc-500 font-mono">
+                {isSidebarCollapsed ? "Expand" : "Collapse"}
+              </span>
             </button>
 
             {/* Breadcrumb Context */}
@@ -704,6 +832,17 @@ export default function SellerCenterHome() {
                       </div>
 
                       <div className="flex items-center gap-2">
+                        {/* Order Telemetry Side Control Panel Trigger */}
+                        <button
+                          type="button"
+                          onClick={() => setOrderInspectorOpen(true)}
+                          className="px-2.5 py-1 rounded-lg text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors flex items-center gap-1 cursor-pointer"
+                          title="Open Order Telemetry Side Control Panel"
+                        >
+                          <span>🔍</span>
+                          <span>Audit Telemetry</span>
+                        </button>
+
                         <span className="text-[11px] font-bold text-zinc-500 bg-zinc-100 px-2.5 py-1 rounded-full">
                           M-Pesa Ref: QK42L89X
                         </span>
@@ -884,7 +1023,7 @@ export default function SellerCenterHome() {
                       Master Catalog Control & Image Studio
                     </h3>
                     <p className="text-xs text-zinc-600">
-                      Logged in with Super Admin role ({user?.email}). Edits sync directly to Neon PostgreSQL.
+                      Logged in with Super Admin role ({user?.email}). Side control panel defaults sidebar to collapsed.
                     </p>
                   </div>
                 </div>
@@ -893,7 +1032,8 @@ export default function SellerCenterHome() {
                 </span>
               </div>
 
-              <SuperAdminCatalogManager />
+              {/* Passes onSideControlPanelOpenChange to automatically collapse the sidebar */}
+              <SuperAdminCatalogManager onSideControlPanelOpenChange={setSideControlPanelOpen} />
             </div>
           )}
 
@@ -965,12 +1105,21 @@ export default function SellerCenterHome() {
                         <div className="text-[10px] text-zinc-400 font-bold uppercase">Lead Courier</div>
                         <div className="font-semibold text-zinc-800">{stage.leadRider}</div>
                       </div>
-                      <a
-                        href={`tel:${stage.phone}`}
-                        className="py-1 px-2.5 bg-zinc-100 hover:bg-emerald-600 hover:text-white rounded-lg text-xs font-bold text-zinc-700 transition-colors"
-                      >
-                        Call
-                      </a>
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          type="button"
+                          onClick={() => setStageInspectorStage(stage)}
+                          className="py-1 px-2.5 bg-zinc-100 hover:bg-zinc-200 rounded-lg text-xs font-bold text-zinc-700 transition-colors cursor-pointer"
+                        >
+                          Inspect
+                        </button>
+                        <a
+                          href={`tel:${stage.phone}`}
+                          className="py-1 px-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold transition-colors"
+                        >
+                          Call
+                        </a>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -1111,6 +1260,216 @@ export default function SellerCenterHome() {
           )}
         </main>
       </div>
+
+      {/* ========================================================================= */}
+      {/* 3. ORDER TELEMETRY SIDE CONTROL PANEL (Slide-Over Drawer)                 */}
+      {/* ========================================================================= */}
+      {orderInspectorOpen && (
+        <div className="fixed inset-0 z-50 overflow-hidden">
+          {/* Backdrop */}
+          <div
+            onClick={() => setOrderInspectorOpen(false)}
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
+          />
+
+          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div className="w-screen max-w-lg bg-white shadow-2xl border-l border-zinc-200 flex flex-col animate-in slide-in-from-right duration-300">
+              {/* Header */}
+              <div className="p-5 sm:p-6 border-b border-zinc-200 flex items-start justify-between bg-zinc-50/90 backdrop-blur-xs sticky top-0 z-10">
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300 text-[10px] font-black uppercase mb-1">
+                    Live Dispatch Telemetry
+                  </div>
+                  <h3 className="text-base sm:text-lg font-black text-zinc-900 tracking-tight">
+                    Order #{orderTimeline.orderId} Audit
+                  </h3>
+                  <div className="text-xs text-zinc-500 font-mono mt-0.5">
+                    Destination: {orderTimeline.deliveryAddress?.landmark || "Imenti House"}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setOrderInspectorOpen(false)}
+                  className="p-1.5 text-zinc-400 hover:text-zinc-700 hover:bg-zinc-200 rounded-xl text-lg font-bold transition-colors cursor-pointer"
+                  title="Close Side Control Panel"
+                >
+                  ✕
+                </button>
+              </div>
+
+              {/* Body */}
+              <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-5 text-xs">
+                {/* Integration Status Cards */}
+                <div className="space-y-3">
+                  <h4 className="font-extrabold uppercase text-[10px] tracking-wider text-zinc-400">
+                    Integration Gateways
+                  </h4>
+
+                  <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200/90 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold text-zinc-800">Africa's Talking SMS API</span>
+                      <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px]">
+                        HTTP 200 OK
+                      </span>
+                    </div>
+                    <p className="text-zinc-500 text-[11px]">
+                      Message ID: <span className="font-mono text-zinc-700">ATXID_892819402</span> • Dispatched to {orderTimeline.rider?.phone || "+254734567890"}
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200/90 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold text-zinc-800">Daraja M-Pesa IPN Webhook</span>
+                      <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px]">
+                        SETTLED
+                      </span>
+                    </div>
+                    <p className="text-zinc-500 text-[11px]">
+                      Receipt: <span className="font-mono text-zinc-700">QK42L89X</span> • KSh 38,500.00 • Instant till credit
+                    </p>
+                  </div>
+                </div>
+
+                {/* Courier GPS & Landmark Telemetry */}
+                <div className="space-y-3">
+                  <h4 className="font-extrabold uppercase text-[10px] tracking-wider text-zinc-400">
+                    Boda Courier Telemetry
+                  </h4>
+
+                  <div className="p-4 rounded-xl border border-zinc-200 bg-white space-y-2.5">
+                    <div className="flex justify-between">
+                      <span className="text-zinc-500">Assigned Courier:</span>
+                      <span className="font-bold text-zinc-900">{orderTimeline.rider?.name || "Kipchumba Bett"}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-zinc-500">Motorbike Plate:</span>
+                      <span className="font-mono font-bold text-zinc-900">{orderTimeline.rider?.motorbikePlate || "KMCG 112Y"}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-zinc-500">Current Stage:</span>
+                      <span className="font-semibold text-emerald-700">{orderTimeline.rider?.currentStage || "OTC / Ronald Ngala"}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-zinc-500">Estimated Arrival:</span>
+                      <span className="font-bold text-zinc-900">4 Minutes (CBD Core)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="p-4 border-t border-zinc-200 bg-white sticky bottom-0 z-10 flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={() => setOrderInspectorOpen(false)}
+                  className="px-4 py-2 rounded-xl text-xs font-semibold text-zinc-600 hover:bg-zinc-100 transition-colors cursor-pointer"
+                >
+                  Close
+                </button>
+                <a
+                  href={`tel:${orderTimeline.rider?.phone || "+254734567890"}`}
+                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center gap-1.5"
+                >
+                  📞 Direct Courier Call
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* 4. CBD BODA STAGE INSPECTOR SIDE CONTROL PANEL (Slide-Over Drawer)        */}
+      {/* ========================================================================= */}
+      {stageInspectorStage && (
+        <div className="fixed inset-0 z-50 overflow-hidden">
+          {/* Backdrop */}
+          <div
+            onClick={() => setStageInspectorStage(null)}
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
+          />
+
+          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div className="w-screen max-w-lg bg-white shadow-2xl border-l border-zinc-200 flex flex-col animate-in slide-in-from-right duration-300">
+              {/* Header */}
+              <div className="p-5 sm:p-6 border-b border-zinc-200 flex items-start justify-between bg-zinc-50/90 backdrop-blur-xs sticky top-0 z-10">
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-900 border border-cyan-300 text-[10px] font-black uppercase mb-1">
+                    CBD Boda Stage Telemetry
+                  </div>
+                  <h3 className="text-base sm:text-lg font-black text-zinc-900 tracking-tight">
+                    {stageInspectorStage.name}
+                  </h3>
+                  <div className="text-xs text-zinc-500 font-mono mt-0.5">
+                    📍 {stageInspectorStage.landmark}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setStageInspectorStage(null)}
+                  className="p-1.5 text-zinc-400 hover:text-zinc-700 hover:bg-zinc-200 rounded-xl text-lg font-bold transition-colors cursor-pointer"
+                  title="Close Side Control Panel"
+                >
+                  ✕
+                </button>
+              </div>
+
+              {/* Body */}
+              <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-4 text-xs">
+                <div className="p-4 rounded-xl bg-cyan-50 border border-cyan-200 text-cyan-950 space-y-2">
+                  <div className="flex justify-between font-bold">
+                    <span>Stage Readiness:</span>
+                    <span className="text-emerald-700">100% OPERATIONAL</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Active Couriers:</span>
+                    <span className="font-bold">{stageInspectorStage.activeRiders} Motorbikes</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Lead Stage Marshal:</span>
+                    <span className="font-bold">{stageInspectorStage.leadRider}</span>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="font-extrabold uppercase text-[10px] tracking-wider text-zinc-400">
+                    Active Courier Roster
+                  </h4>
+
+                  <div className="divide-y divide-zinc-100 border border-zinc-200 rounded-xl overflow-hidden bg-white">
+                    <div className="p-3 flex items-center justify-between">
+                      <div>
+                        <div className="font-bold text-zinc-900">{stageInspectorStage.leadRider}</div>
+                        <div className="text-[11px] text-zinc-500">{stageInspectorStage.phone}</div>
+                      </div>
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        AVAILABLE
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="p-4 border-t border-zinc-200 bg-white sticky bottom-0 z-10 flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={() => setStageInspectorStage(null)}
+                  className="px-4 py-2 rounded-xl text-xs font-semibold text-zinc-600 hover:bg-zinc-100 transition-colors cursor-pointer"
+                >
+                  Close
+                </button>
+                <a
+                  href={`tel:${stageInspectorStage.phone}`}
+                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center gap-1.5"
+                >
+                  📞 Call Stage Marshal
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

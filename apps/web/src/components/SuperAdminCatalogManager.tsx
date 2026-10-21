@@ -28,7 +28,13 @@ const PRESET_BADGES = [
   "Top Rated",
 ];
 
-export default function SuperAdminCatalogManager() {
+interface SuperAdminCatalogManagerProps {
+  onSideControlPanelOpenChange?: (isOpen: boolean) => void;
+}
+
+export default function SuperAdminCatalogManager({
+  onSideControlPanelOpenChange,
+}: SuperAdminCatalogManagerProps = {}) {
   const { user } = useAuth();
   const { products, updateProduct, batchResetPromotions, uploadImage, overrides } = useProductCatalog();
 
@@ -38,11 +44,16 @@ export default function SuperAdminCatalogManager() {
   const [page, setPage] = useState(1);
   const pageSize = 25;
 
-  // Selected product for editing modal
+  // Selected product for editing side control panel
   const [editingProduct, setEditingProduct] = useState<ProductItem | null>(null);
   const [editForm, setEditForm] = useState<Partial<ProductOverride>>({});
   const [isSaving, setIsSaving] = useState(false);
   const [saveFeedback, setSaveFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+  const handleCloseEdit = () => {
+    setEditingProduct(null);
+    onSideControlPanelOpenChange?.(false);
+  };
 
   // Image Upload & Gallery State
   const [isUploadingImage, setIsUploadingImage] = useState(false);
@@ -89,9 +100,10 @@ export default function SuperAdminCatalogManager() {
 
   const totalPages = Math.ceil(filteredProducts.length / pageSize) || 1;
 
-  // Open edit modal
+  // Open edit side control panel
   const handleOpenEdit = (p: ProductItem) => {
     setEditingProduct(p);
+    onSideControlPanelOpenChange?.(true);
     const discount = p.originalPrice && p.originalPrice > p.price
       ? Math.round(((p.originalPrice - p.price) / p.originalPrice) * 100)
       : 0;
@@ -199,7 +211,7 @@ export default function SuperAdminCatalogManager() {
     if (res.success) {
       setSaveFeedback({ type: "success", message: res.message || "Product successfully updated!" });
       setTimeout(() => {
-        setEditingProduct(null);
+        handleCloseEdit();
       }, 1200);
     } else {
       setSaveFeedback({ type: "error", message: res.message || "Failed to update product." });
@@ -528,27 +540,44 @@ export default function SuperAdminCatalogManager() {
         )}
       </div>
 
-      {/* Super Admin Edit Product Modal */}
+      {/* Super Admin Edit Product Side Control Panel (Slide-Over Drawer) */}
       {editingProduct && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto animate-in fade-in duration-150">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-gray-200 relative my-8">
-            <div className="flex items-start justify-between border-b border-gray-100 pb-4 mb-5">
-              <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-extrabold uppercase mb-1">
-                  👑 Super Admin Catalog Editor
+        <div className="fixed inset-0 z-50 overflow-hidden">
+          {/* Backdrop */}
+          <div
+            onClick={handleCloseEdit}
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
+          />
+
+          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div className="w-screen max-w-2xl bg-white shadow-2xl border-l border-zinc-200 flex flex-col animate-in slide-in-from-right duration-300">
+              {/* Sticky Header */}
+              <div className="p-5 sm:p-6 border-b border-zinc-200 flex items-start justify-between bg-zinc-50/90 backdrop-blur-xs sticky top-0 z-10">
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-[10px] font-black uppercase mb-1">
+                    👑 Super Admin Side Control Panel
+                  </div>
+                  <h3 className="text-base sm:text-lg font-black text-zinc-900 tracking-tight line-clamp-1">
+                    Edit: {editingProduct.name}
+                  </h3>
+                  <div className="flex items-center gap-2 text-xs text-zinc-500 font-mono mt-0.5">
+                    <span>ID: {editingProduct.id}</span>
+                    <span>•</span>
+                    <span className="text-emerald-700 font-semibold">{editingProduct.category}</span>
+                  </div>
                 </div>
-                <h3 className="text-lg font-black text-gray-900 tracking-tight">
-                  Edit Details: {editingProduct.name}
-                </h3>
-                <span className="text-xs text-gray-500 font-mono">ID: {editingProduct.id}</span>
+                <button
+                  type="button"
+                  onClick={handleCloseEdit}
+                  className="p-1.5 text-zinc-400 hover:text-zinc-700 hover:bg-zinc-200 rounded-xl text-lg font-bold transition-colors cursor-pointer"
+                  title="Close Side Control Panel"
+                >
+                  ✕
+                </button>
               </div>
-              <button
-                onClick={() => setEditingProduct(null)}
-                className="text-gray-400 hover:text-gray-600 text-xl font-bold p-1 cursor-pointer"
-              >
-                ✕
-              </button>
-            </div>
+
+              {/* Scrollable Form Body */}
+              <div className="flex-1 overflow-y-auto p-5 sm:p-6">
 
             {saveFeedback && (
               <div
@@ -943,23 +972,25 @@ export default function SuperAdminCatalogManager() {
               </div>
 
               {/* Form Action Buttons */}
-              <div className="flex items-center justify-end gap-3 pt-3 border-t border-gray-100">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-zinc-200 sticky bottom-0 bg-white/95 backdrop-blur-xs pb-1 mt-6">
                 <button
                   type="button"
-                  onClick={() => setEditingProduct(null)}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer"
+                  onClick={handleCloseEdit}
+                  className="px-4 py-2.5 rounded-xl text-xs font-semibold text-zinc-600 hover:bg-zinc-100 transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
+                  className="px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
                 >
                   {isSaving ? "Saving to PostgreSQL..." : "Save Product Changes"}
                 </button>
               </div>
             </form>
+              </div>
+            </div>
           </div>
         </div>
       )}
