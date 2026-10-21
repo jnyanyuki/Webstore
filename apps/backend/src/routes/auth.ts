@@ -19,6 +19,11 @@ const getClientIp = (req: Request): string =>
 const rateLimit =
   (name: string, max: number, windowMs: number) =>
   (req: Request, res: Response, next: () => void): any => {
+    // In development mode, bypass rate limit so local merchant testing is never blocked
+    if (process.env.NODE_ENV !== "production") {
+      return next();
+    }
+
     const key = `${name}:${getClientIp(req)}`;
     const now = Date.now();
     const bucket = rateBuckets.get(key);

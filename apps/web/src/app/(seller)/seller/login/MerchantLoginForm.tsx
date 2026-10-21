@@ -40,7 +40,8 @@ export default function MerchantLoginForm({ redirectTarget = "/" }: MerchantLogi
         return;
       }
 
-      router.push(redirectTarget);
+      // Perform full navigation so cookies are immediately picked up by Next.js middleware and SSR
+      window.location.href = redirectTarget || "/";
     } catch (err: any) {
       setError(
         err?.message || "Invalid merchant credentials. Please verify your email and password."

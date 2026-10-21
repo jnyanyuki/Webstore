@@ -28,29 +28,30 @@ class ApiClient {
   private resolveBaseUrl(): string {
     if (typeof window !== "undefined") {
       const hostname = window.location.hostname;
-      // 1. If running on production juromart.com (e.g. juromart.com or www.juromart.com),
+      // 1. If running on production juromart.com (e.g. juromart.com, seller.juromart.com),
       // ALWAYS target https://api.juromart.com so httpOnly session cookies (.juromart.com) propagate
-      // and obsolete/suspended Render service URLs in Vercel environment variables are bypassed.
       if (hostname === "juromart.com" || hostname.endsWith(".juromart.com")) {
         return "https://api.juromart.com";
       }
 
-      // 2. Custom environment override (guarding against suspended webstore-czie service)
+      // 2. Local development on localhost or subdomains (seller.localhost):
+      // Using relative URL "" routes requests through Next.js rewrites on the exact SAME ORIGIN.
+      // This allows the browser to accept and retain auth session cookies on seller.localhost without cross-origin rejection.
+      if (hostname === "localhost" || hostname.endsWith(".localhost") || hostname === "127.0.0.1") {
+        return "";
+      }
+
+      // 3. Custom environment override
       const envUrl = process.env.NEXT_PUBLIC_API_URL;
       if (envUrl && !envUrl.includes("webstore-czie")) {
         return envUrl.replace(/\/$/, "");
-      }
-
-      // 3. If running strictly on local dev machine:
-      if (hostname === "localhost" || hostname === "127.0.0.1") {
-        return "http://localhost:9000";
       }
 
       // 4. Any remote deployment (e.g. *.vercel.app) defaults to production API
       return "https://api.juromart.com";
     }
 
-    const envUrl = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL;
+    const envUrl = process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:9000";
     if (envUrl && !envUrl.includes("webstore-czie")) {
       return envUrl.replace(/\/$/, "");
     }
