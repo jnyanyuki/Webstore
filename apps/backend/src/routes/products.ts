@@ -37,6 +37,7 @@ async function ensureOverridesTable() {
       );
       ALTER TABLE product_overrides ADD COLUMN IF NOT EXISTS images JSONB;
       ALTER TABLE product_overrides ADD COLUMN IF NOT EXISTS gallery JSONB;
+      ALTER TABLE product_overrides ADD COLUMN IF NOT EXISTS attributes JSONB;
       CREATE INDEX IF NOT EXISTS idx_product_overrides_category ON product_overrides(category);
     `);
     tableInitialized = true;
@@ -55,7 +56,7 @@ router.get("/overrides", async (_req: Request, res: Response): Promise<any> => {
     const result = await dbPool.query(
       `SELECT id, name, category, subcategory, item_type, price, original_price, 
               badge, description, merchant_stall, front_image, side_image, images, gallery, variants,
-              discount_percentage, is_active, updated_by, updated_at 
+              attributes, discount_percentage, is_active, updated_by, updated_at 
        FROM product_overrides WHERE is_active = TRUE`
     );
 
@@ -77,6 +78,7 @@ router.get("/overrides", async (_req: Request, res: Response): Promise<any> => {
         images: row.images ? (Array.isArray(row.images) ? row.images : JSON.parse(row.images)) : undefined,
         gallery: row.gallery ? (Array.isArray(row.gallery) ? row.gallery : JSON.parse(row.gallery)) : undefined,
         variants: row.variants,
+        attributes: row.attributes ? (typeof row.attributes === "object" ? row.attributes : JSON.parse(row.attributes)) : undefined,
         discountPercentage:
           row.discount_percentage !== null && row.discount_percentage !== undefined
             ? parseFloat(row.discount_percentage)
@@ -363,6 +365,157 @@ router.post(
     } catch (error: any) {
       console.error("[Batch Reset Promotions Error]:", error);
       return res.status(500).json({ error: "Failed to reset promotions" });
+    }
+  }
+);
+
+/**
+ * POST /api/products/create
+ * Merchant & Super Admin capacity to list and publish new products with polymorphic attribute schemas
+ */
+router.post(
+  "/create",
+  AuthService.authenticate,
+  AuthService.requireRole(["SELLER", "ADMIN"]),
+  async (req: AuthenticatedRequest, res: Response): Promise<any> => {
+    try {
+      await ensureOverridesTable();
+      const {
+        id: customId,
+        category = "Electronics",
+        subcategory,
+        itemType,
+        originalPrice,
+        badge,
+        description,
+        merchantStall = "Stall G14 • Imenti House",
+        frontImage,
+        sideImage,
+        images = [],
+        gallery = [],
+        variants = [],
+        attributes = {},
+      } = req.body;
+
+      const name = req.body.name || req.body.title;
+      const rawPrice = req.body.price !== undefined ? req.body.price : req.body.basePrice;
+      const rawDiscount = req.body.discountPercentage !== undefined ? req.body.discountPercentage : req.body.discountPercent;
+
+      if (!name || typeof name !== "string" || name.trim().length === 0) {
+        return res.status(400).json({ error: "Product name/title is required" });
+      }
+
+      const numPrice = Number(rawPrice);
+      if (isNaN(numPrice) || numPrice <= 0) {
+        return res.status(400).json({ error: "A valid positive price is required" });
+      }
+
+      let discountPercentage = rawDiscount !== undefined ? Number(rawDiscount) : undefined;
+
+      // Generate clean unique ID if not provided
+      const slugPrefix = category.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 4).toUpperCase();
+      const randSuffix = Math.random().toString(36).substring(2, 6).toUpperCase();
+      const productId = customId || `PROD-${slugPrefix || "CBD"}-${Date.now().toString(36).toUpperCase()}-${randSuffix}`;
+
+      let finalPrice = numPrice;
+      let finalOriginalPrice = originalPrice ? Number(originalPrice) : undefined;
+      let finalDiscount = discountPercentage !== undefined ? Number(discountPercentage) : undefined;
+
+      if (finalOriginalPrice && finalOriginalPrice > finalPrice) {
+        finalDiscount = Math.round(((finalOriginalPrice - finalPrice) / finalOriginalPrice) * 100);
+      }
+
+      // Safe image fallback
+      const finalFrontImage = frontImage || (images && images.length > 0 ? images[0] : "");
+      const finalSideImage = sideImage || (images && images.length > 1 ? images[1] : finalFrontImage);
+
+      const query = `
+        INSERT INTO product_overrides (
+          id, name, category, subcategory, item_type, price, original_price,
+          badge, description, merchant_stall, front_image, side_image, images, gallery, variants,
+          attributes, discount_percentage, is_active, updated_by, updated_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, TRUE, $18, NOW())
+        ON CONFLICT (id) DO UPDATE SET
+          name = EXCLUDED.name,
+          category = EXCLUDED.category,
+          subcategory = EXCLUDED.subcategory,
+          item_type = EXCLUDED.item_type,
+          price = EXCLUDED.price,
+          original_price = EXCLUDED.original_price,
+          badge = EXCLUDED.badge,
+          description = EXCLUDED.description,
+          merchant_stall = EXCLUDED.merchant_stall,
+          front_image = EXCLUDED.front_image,
+          side_image = EXCLUDED.side_image,
+          images = EXCLUDED.images,
+          gallery = EXCLUDED.gallery,
+          variants = EXCLUDED.variants,
+          attributes = EXCLUDED.attributes,
+          discount_percentage = EXCLUDED.discount_percentage,
+          updated_by = EXCLUDED.updated_by,
+          updated_at = NOW()
+        RETURNING *;
+      `;
+
+      const result = await dbPool.query(query, [
+        productId,
+        name.trim(),
+        category,
+        subcategory || null,
+        itemType || null,
+        finalPrice,
+        finalOriginalPrice || null,
+        badge || null,
+        description || null,
+        merchantStall,
+        finalFrontImage || null,
+        finalSideImage || null,
+        images ? JSON.stringify(images) : null,
+        gallery ? JSON.stringify(gallery) : null,
+        variants ? JSON.stringify(variants) : null,
+        attributes ? JSON.stringify(attributes) : null,
+        finalDiscount !== undefined && finalDiscount !== null ? finalDiscount : null,
+        req.authUser?.email || "abokos@juromart.com",
+      ]);
+
+      const row = result.rows[0];
+      const createdProduct = {
+        id: row.id,
+        name: row.name,
+        category: row.category,
+        subcategory: row.subcategory,
+        itemType: row.item_type,
+        price: parseFloat(row.price),
+        originalPrice: row.original_price ? parseFloat(row.original_price) : undefined,
+        badge: row.badge,
+        description: row.description,
+        merchantStall: row.merchant_stall,
+        frontImage: row.front_image,
+        sideImage: row.side_image,
+        images: row.images ? (Array.isArray(row.images) ? row.images : JSON.parse(row.images)) : [],
+        gallery: row.gallery ? (Array.isArray(row.gallery) ? row.gallery : JSON.parse(row.gallery)) : [],
+        variants: row.variants,
+        attributes: row.attributes ? (typeof row.attributes === "object" ? row.attributes : JSON.parse(row.attributes)) : {},
+        discountPercentage: row.discount_percentage ? parseFloat(row.discount_percentage) : 0,
+        updatedBy: row.updated_by,
+        updatedAt: row.updated_at,
+      };
+
+      // Broadcast new product to all clients via SSE
+      NotificationHub.broadcast({
+        type: "PRODUCT_CATALOG_UPDATED",
+        payload: { product: createdProduct },
+        timestamp: new Date().toISOString(),
+      });
+
+      return res.status(201).json({
+        success: true,
+        message: `Product "${createdProduct.name}" successfully published to JuroMart!`,
+        product: createdProduct,
+      });
+    } catch (error: any) {
+      console.error("[Create Product PIM Error]:", error);
+      return res.status(500).json({ error: "Failed to publish product to catalog", details: error?.message });
     }
   }
 );

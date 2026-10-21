@@ -12,6 +12,7 @@ const auth_1 = __importDefault(require("./routes/auth"));
 const products_1 = __importDefault(require("./routes/products"));
 const notifications_1 = require("./services/notifications");
 const boda_dispatch_1 = require("./services/boda-dispatch");
+const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 app.set("trust proxy", 1);
 const PORT = process.env.PORT || 9000;
@@ -88,7 +89,11 @@ const csrfOriginGuard = (req, res, next) => {
 };
 app.use((0, cookie_parser_1.default)());
 app.use(csrfOriginGuard);
-app.use(express_1.default.json());
+app.use(express_1.default.json({ limit: "50mb" }));
+app.use(express_1.default.urlencoded({ limit: "50mb", extended: true }));
+// Static uploads directory for product media
+app.use("/uploads", express_1.default.static(path_1.default.resolve(__dirname, "../../web/public/uploads")));
+app.use("/uploads", express_1.default.static(path_1.default.resolve(__dirname, "../public/uploads")));
 // Authentication Endpoints (Register, Login, Refresh, Logout, Me)
 app.use("/auth", auth_1.default);
 app.use("/api/auth", auth_1.default);
