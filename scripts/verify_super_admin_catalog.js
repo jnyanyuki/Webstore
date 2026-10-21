@@ -48,7 +48,7 @@ async function main() {
   // Reset promotion test: discountPercentage 0, originalPrice = price
   const updatePayload = {
     id: "prod_earbuds",
-    name: "Wireless Noise-Canceling Earbuds Pro (Super Admin Verified Edition)",
+    name: "Wireless Noise-Canceling Earbuds Pro",
     category: "Phones & Tablets",
     subcategory: "Audio & Accessories",
     price: 4999,

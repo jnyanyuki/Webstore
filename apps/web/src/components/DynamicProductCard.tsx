@@ -181,7 +181,7 @@ export default function DynamicProductCard({
           )}
 
           {/* Discount Badge */}
-          {product.originalPrice && (
+          {product.originalPrice && product.originalPrice > product.price && (
             <div className="absolute top-2.5 sm:top-3 right-2 z-20 bg-rose-600 text-white text-[clamp(0.5625rem,0.52rem+0.18vw,0.6875rem)] font-extrabold px-1.5 py-0.5 rounded shadow-xs pointer-events-none">
               -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
             </div>
@@ -225,7 +225,7 @@ export default function DynamicProductCard({
           {/* Image with Dynamic Angle Switching */}
           <Image
             src={displayImage}
-            alt={`${product.name} - Angle ${activeImageIndex + 1}`}
+            alt={product.name}
             width={400}
             height={500}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
@@ -272,7 +272,7 @@ export default function DynamicProductCard({
                 <span className="text-[clamp(0.5625rem,0.52rem+0.18vw,0.6875rem)] font-bold text-emerald-700 bg-emerald-50 px-1 py-0.5 rounded border border-emerald-200">
                   (KSh {unitPrice.toLocaleString()}/ea)
                 </span>
-              ) : product.originalPrice ? (
+              ) : product.originalPrice && product.originalPrice > product.price ? (
                 <span className="text-[clamp(0.625rem,0.58rem+0.2vw,0.75rem)] text-gray-400 line-through">
                   KSh {product.originalPrice.toLocaleString()}
                 </span>

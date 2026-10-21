@@ -140,42 +140,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
                   </p>
                 </div>
 
-                {/* Multi-Generational Product Lineup Matrix */}
-                {product.lineage && product.lineage.length > 0 && (
-                  <div className="mt-5 p-4 bg-slate-900 text-white rounded-xl border border-slate-800 shadow-md">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <span className="text-base">🧬</span>
-                        <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200">
-                          Multi-Generational Lineup
-                        </h4>
-                      </div>
-                      {product.generation && (
-                        <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                          {product.generation}
-                        </span>
-                      )}
-                    </div>
-                    
-                    <div className="relative pl-3 border-l-2 border-slate-700 space-y-2.5 my-2">
-                      {product.lineage.map((item, idx) => {
-                        const isCurrent = idx === product.lineage.length - 1;
-                        return (
-                          <div key={idx} className="relative flex items-center justify-between group">
-                            <div className="absolute -left-[19px] w-2.5 h-2.5 rounded-full border-2 border-slate-900 bg-slate-500 group-last:bg-emerald-400 group-last:ring-4 group-last:ring-emerald-400/20" />
-                            <span className={`text-xs ${isCurrent ? 'font-bold text-emerald-300' : 'text-slate-400'}`}>
-                              {item}
-                            </span>
-                            <span className={`text-[10px] px-1.5 py-0.5 rounded ${isCurrent ? 'bg-emerald-400/10 text-emerald-300 font-bold' : 'text-slate-500'}`}>
-                              {isCurrent ? 'Current Flagship' : `Gen ${idx + 1}`}
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-
                 {/* Authenticity & Specs Box */}
                 <div className="mt-4 p-3.5 bg-gray-50 rounded-xl border border-gray-100 space-y-1.5 text-xs">
                   <div className="flex justify-between">

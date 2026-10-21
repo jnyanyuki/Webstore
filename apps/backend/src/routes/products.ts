@@ -197,16 +197,16 @@ router.post(
       }
 
       let finalPrice = numPrice;
-      let finalOriginalPrice = originalPrice ? Number(originalPrice) : undefined;
+      let finalOriginalPrice: number | null | undefined = originalPrice ? Number(originalPrice) : undefined;
       let finalDiscountPercentage = discountPercentage !== undefined ? Number(discountPercentage) : undefined;
 
-      // Reset promotion percentage: sets originalPrice equal to current price, clearing discount
+      // Reset promotion percentage: sets originalPrice to null, clearing strikethrough & discount
       if (resetPromotion) {
-        finalOriginalPrice = finalPrice;
+        finalOriginalPrice = null;
         finalDiscountPercentage = 0;
       } else if (finalDiscountPercentage !== undefined && !isNaN(finalDiscountPercentage) && finalDiscountPercentage >= 0) {
         if (finalDiscountPercentage === 0) {
-          finalOriginalPrice = finalPrice;
+          finalOriginalPrice = null;
         } else {
           // If discount % is provided, calculate price from base MSRP or originalPrice
           const base = finalOriginalPrice && finalOriginalPrice > finalPrice ? finalOriginalPrice : finalPrice;
@@ -334,7 +334,7 @@ router.post(
       if (category) {
         query = `
           UPDATE product_overrides
-          SET original_price = price, discount_percentage = 0, badge = NULL, updated_by = $1, updated_at = NOW()
+          SET original_price = NULL, discount_percentage = 0, badge = NULL, updated_by = $1, updated_at = NOW()
           WHERE LOWER(category) = LOWER($2)
           RETURNING id;
         `;
@@ -342,7 +342,7 @@ router.post(
       } else {
         query = `
           UPDATE product_overrides
-          SET original_price = price, discount_percentage = 0, badge = NULL, updated_by = $1, updated_at = NOW()
+          SET original_price = NULL, discount_percentage = 0, badge = NULL, updated_by = $1, updated_at = NOW()
           WHERE id = ANY($2::text[])
           RETURNING id;
         `;

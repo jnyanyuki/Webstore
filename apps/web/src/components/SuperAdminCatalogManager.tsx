@@ -178,7 +178,7 @@ export default function SuperAdminCatalogManager({
         // Reset promotion percentage
         return {
           ...prev,
-          originalPrice: prev.price,
+          originalPrice: undefined,
           discountPercentage: 0,
         };
       }
