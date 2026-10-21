@@ -147,7 +147,7 @@ app.post("/api/navigation/revalidate", (_req: Request, res: Response) => {
 // Admin endpoint to dynamically update featured promotional banners
 app.put("/api/navigation/featured/:categoryId", async (req: Request, res: Response) => {
   try {
-    const categoryId = parseInt(req.params.categoryId, 10);
+    const categoryId = parseInt(String(req.params.categoryId), 10);
     const { title, subtitle, targetUrl, imageUrl, isActive = true } = req.body;
 
     if (!title || !imageUrl) {
@@ -254,7 +254,7 @@ app.get("/api/orders/merchant", async (req: Request, res: Response) => {
 // Fetch order timeline
 app.get("/api/logistics/timeline/:orderId", async (req: Request, res: Response) => {
   try {
-    const { orderId } = req.params;
+    const orderId = String(req.params.orderId);
     const timeline = await bodaDispatch.getOrderTimeline(orderId);
     if (!timeline) {
       return res.status(404).json({ error: "Order timeline not found" });
