@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { ProductItem } from "./DynamicProductCard";
+import { useAuth } from "@/context/AuthContext";
+import { getSellerUrl } from "@/lib/domainUrls";
 
 interface PackOption {
   label: string;
@@ -23,6 +25,7 @@ export default function ProductQuickViewModal({
     selectedOptions: { color?: string; size?: string; variant?: string; quantity?: number }
   ) => void;
 }) {
+  const { user } = useAuth();
   const [selectedColor, setSelectedColor] = useState<string>("Black");
   const [selectedSize, setSelectedSize] = useState<string>("M");
   const [unitToggle, setUnitToggle] = useState<"cm" | "inch">("cm");
@@ -430,6 +433,24 @@ export default function ProductQuickViewModal({
               </span>
             </button>
           </div>
+
+          {user?.role === "ADMIN" && (
+            <div className="mt-3 pt-3 border-t border-amber-200/80 bg-amber-50 rounded-xl p-3 flex items-center justify-between">
+              <div className="flex items-center gap-2 text-amber-900 text-xs font-bold">
+                <span className="text-base">👑</span>
+                <div>
+                  <div>Super Admin Privilege</div>
+                  <div className="text-[10px] text-amber-700 font-medium">Logged in as {user.email}</div>
+                </div>
+              </div>
+              <a
+                href={getSellerUrl("/seller")}
+                className="px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-gray-950 font-extrabold text-xs rounded-lg transition-colors shadow-xs"
+              >
+                Open in Catalog Admin →
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import { NavigationService, dbPool } from "./services/navigation";
 import authRouter from "./routes/auth";
+import productsRouter from "./routes/products";
 import { NotificationHub } from "./services/notifications";
 import { BodaDispatchService } from "./services/boda-dispatch";
 import { AuthService } from "./services/auth";
@@ -97,6 +98,9 @@ app.use(express.json());
 // Authentication Endpoints (Register, Login, Refresh, Logout, Me)
 app.use("/auth", authRouter);
 app.use("/api/auth", authRouter);
+
+// Product Catalog & Promotion Management (Super Admin)
+app.use("/api/products", productsRouter);
 
 // Optional CSRF Token Handshake Endpoint (for cookie/session forms)
 app.get("/api/auth/csrf-token", (_req: Request, res: Response) => {

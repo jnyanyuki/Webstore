@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { useProductCatalog } from "@/context/ProductCatalogContext";
 
 export type SearchItem = {
   id: string;
@@ -13,21 +14,6 @@ export type SearchItem = {
   image: string;
   badge?: string;
 };
-
-import { INITIAL_PRODUCTS } from "../data/products";
-
-const SAMPLE_PRODUCTS: SearchItem[] = INITIAL_PRODUCTS.map((p) => ({
-  id: p.id,
-  name: p.name,
-  category: p.category,
-  subcategory: p.subcategory,
-  itemType: p.itemType,
-  price: p.price,
-  originalPrice: p.originalPrice,
-  image: p.frontImage,
-  badge: p.badge,
-}));
-
 
 const TRENDING = [
   "Noise-Canceling Earbuds",
@@ -46,7 +32,22 @@ export default function QuickSearchModal({
   onClose: () => void;
   onSelectProduct: (product: SearchItem) => void;
 }) {
+  const { products } = useProductCatalog();
   const [query, setQuery] = useState("");
+
+  const sampleProducts: SearchItem[] = useMemo(() => {
+    return products.map((p) => ({
+      id: p.id,
+      name: p.name,
+      category: p.category,
+      subcategory: p.subcategory,
+      itemType: p.itemType,
+      price: p.price,
+      originalPrice: p.originalPrice,
+      image: p.frontImage,
+      badge: p.badge,
+    }));
+  }, [products]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -66,14 +67,14 @@ export default function QuickSearchModal({
   if (!isOpen) return null;
 
   const filtered = query.trim()
-    ? SAMPLE_PRODUCTS.filter(
+    ? sampleProducts.filter(
         (p) =>
           p.name.toLowerCase().includes(query.toLowerCase()) ||
           p.category.toLowerCase().includes(query.toLowerCase()) ||
           (p.subcategory && p.subcategory.toLowerCase().includes(query.toLowerCase())) ||
           (p.itemType && p.itemType.toLowerCase().includes(query.toLowerCase()))
       )
-    : SAMPLE_PRODUCTS;
+    : sampleProducts;
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 px-4 bg-slate-900/60 backdrop-blur-sm animate-fadeIn">

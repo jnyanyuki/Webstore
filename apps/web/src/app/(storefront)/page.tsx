@@ -10,9 +10,10 @@ import WhatsAppWidget from "../../components/WhatsAppWidget";
 import PwaInstallPrompt from "../../components/PwaInstallPrompt";
 import JuroMartLogo from "../../components/JuroMartLogo";
 import UserNavDropdown from "../../components/UserNavDropdown";
-import { INITIAL_PRODUCTS } from "../../data/products";
+import { useProductCatalog } from "@/context/ProductCatalogContext";
 
 export default function StorefrontHome() {
+  const { products } = useProductCatalog();
   const [cartItems, setCartItems] = useState<CartItemType[]>([]);
   const [isCartSheetOpen, setIsCartSheetOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -64,7 +65,7 @@ export default function StorefrontHome() {
   };
 
   const filteredProducts = selectedCategoryFilter
-    ? INITIAL_PRODUCTS.filter((p) => {
+    ? products.filter((p) => {
         const q = selectedCategoryFilter.toLowerCase();
         if (q === "🔥 best sellers") return p.badge?.toLowerCase().includes("best seller");
         if (q === "⭐ top rated") return p.badge?.toLowerCase().includes("top rated");
@@ -79,7 +80,7 @@ export default function StorefrontHome() {
           (p.badge && p.badge.toLowerCase().includes(q))
         );
       })
-    : INITIAL_PRODUCTS;
+    : products;
 
   return (
     <div className="min-h-screen bg-[#FBFBFB] text-[#111827] font-sans selection:bg-emerald-600 selection:text-white">
@@ -331,7 +332,7 @@ export default function StorefrontHome() {
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
         onSelectProduct={(item) => {
-          const matched = INITIAL_PRODUCTS.find((p) => p.id === item.id) || {
+          const matched = products.find((p) => p.id === item.id) || {
             id: item.id,
             name: item.name,
             category: item.category as any,

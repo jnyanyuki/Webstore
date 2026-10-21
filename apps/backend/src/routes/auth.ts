@@ -111,6 +111,7 @@ router.post("/register", rateLimit("register", 5, 60 * 60 * 1000), async (req: R
     return res.status(201).json({
       success: true,
       message: "Account registered successfully",
+      accessToken,
       user: {
         id: user.id,
         email: user.email,
@@ -172,6 +173,7 @@ router.post("/login", rateLimit("login", 10, 15 * 60 * 1000), async (req: Reques
     return res.status(200).json({
       success: true,
       message: "Authentication successful",
+      accessToken,
       user: {
         id: user.id,
         email: user.email,

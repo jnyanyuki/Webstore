@@ -1,0 +1,187 @@
+"use client";
+
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from "react";
+import { ProductItem } from "@/components/DynamicProductCard";
+import { INITIAL_PRODUCTS } from "@/data/products";
+import { apiClient } from "@/lib/apiClient";
+
+export interface ProductOverride {
+  id: string;
+  name?: string;
+  category?: string;
+  subcategory?: string;
+  itemType?: string;
+  price: number;
+  originalPrice?: number;
+  badge?: string;
+  description?: string;
+  merchantStall?: string;
+  frontImage?: string;
+  sideImage?: string;
+  variants?: { name: string; priceDelta: number }[];
+  discountPercentage?: number;
+  updatedBy?: string;
+  updatedAt?: string;
+}
+
+interface ProductCatalogContextType {
+  products: ProductItem[];
+  overrides: Record<string, ProductOverride>;
+  isLoading: boolean;
+  updateProduct: (data: Partial<ProductOverride> & { id: string; resetPromotion?: boolean }) => Promise<{ success: boolean; message?: string }>;
+  batchResetPromotions: (category?: string, productIds?: string[]) => Promise<{ success: boolean; count?: number; message?: string }>;
+  refreshOverrides: () => Promise<void>;
+  getProductById: (id: string) => ProductItem | undefined;
+}
+
+const ProductCatalogContext = createContext<ProductCatalogContextType | undefined>(undefined);
+
+export function ProductCatalogProvider({ children }: { children: React.ReactNode }) {
+  const [overrides, setOverrides] = useState<Record<string, ProductOverride>>({});
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  // 1. Fetch persistent overrides from PostgreSQL
+  const fetchOverrides = useCallback(async () => {
+    try {
+      const res = await apiClient.get<{ success: boolean; overrides: Record<string, ProductOverride> }>(
+        "/api/products/overrides"
+      );
+      if (res && res.overrides) {
+        setOverrides(res.overrides);
+      }
+    } catch (err) {
+      console.warn("[ProductCatalogContext] Could not load product overrides:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchOverrides();
+  }, [fetchOverrides]);
+
+  // 2. Real-Time SSE Listener for catalog updates
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const apiUrl = apiClient.getBaseUrl();
+    let es: EventSource | null = null;
+
+    try {
+      es = new EventSource(`${apiUrl}/api/notifications/stream`);
+      es.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data);
+          if (data.type === "PRODUCT_CATALOG_UPDATED" && data.payload?.product) {
+            const p = data.payload.product;
+            setOverrides((prev) => ({ ...prev, [p.id]: p }));
+          } else if (data.type === "PRODUCT_PROMOTIONS_RESET") {
+            fetchOverrides();
+          }
+        } catch {
+          // ignore non-json
+        }
+      };
+    } catch {
+      // EventSource fallback
+    }
+
+    return () => {
+      es?.close();
+    };
+  }, [fetchOverrides]);
+
+  // 3. Merge INITIAL_PRODUCTS with active overrides
+  const products = useMemo(() => {
+    return INITIAL_PRODUCTS.map((p) => {
+      const override = overrides[p.id];
+      if (!override) return p;
+
+      return {
+        ...p,
+        name: override.name ?? p.name,
+        category: override.category ?? p.category,
+        subcategory: override.subcategory ?? p.subcategory,
+        itemType: override.itemType ?? p.itemType,
+        price: override.price ?? p.price,
+        originalPrice: override.originalPrice !== undefined ? override.originalPrice : p.originalPrice,
+        badge: override.badge !== undefined ? override.badge : p.badge,
+        description: override.description ?? p.description,
+        merchantStall: override.merchantStall ?? p.merchantStall,
+        frontImage: override.frontImage ?? p.frontImage,
+        sideImage: override.sideImage ?? p.sideImage,
+        variants: override.variants ?? p.variants,
+      };
+    });
+  }, [overrides]);
+
+  // 4. Update product details & promotions (Super Admin)
+  const updateProduct = async (
+    data: Partial<ProductOverride> & { id: string; resetPromotion?: boolean }
+  ): Promise<{ success: boolean; message?: string }> => {
+    try {
+      const res = await apiClient.post<{ success: boolean; product: ProductOverride; message: string }>(
+        "/api/products/update",
+        data
+      );
+
+      if (res && res.success && res.product) {
+        setOverrides((prev) => ({ ...prev, [res.product.id]: res.product }));
+        return { success: true, message: res.message };
+      }
+      return { success: false, message: "Update failed" };
+    } catch (err: any) {
+      return { success: false, message: err?.message || "Failed to update product" };
+    }
+  };
+
+  // 5. Batch reset promotions for a category or product IDs
+  const batchResetPromotions = async (
+    category?: string,
+    productIds?: string[]
+  ): Promise<{ success: boolean; count?: number; message?: string }> => {
+    try {
+      const res = await apiClient.post<{ success: boolean; count: number; message: string }>(
+        "/api/products/batch-reset-promotions",
+        { category, productIds }
+      );
+      if (res && res.success) {
+        await fetchOverrides();
+        return { success: true, count: res.count, message: res.message };
+      }
+      return { success: false, message: "Batch reset failed" };
+    } catch (err: any) {
+      return { success: false, message: err?.message || "Failed to reset promotions" };
+    }
+  };
+
+  const getProductById = useCallback(
+    (id: string): ProductItem | undefined => {
+      return products.find((p) => p.id === id);
+    },
+    [products]
+  );
+
+  return (
+    <ProductCatalogContext.Provider
+      value={{
+        products,
+        overrides,
+        isLoading,
+        updateProduct,
+        batchResetPromotions,
+        refreshOverrides: fetchOverrides,
+        getProductById,
+      }}
+    >
+      {children}
+    </ProductCatalogContext.Provider>
+  );
+}
+
+export function useProductCatalog(): ProductCatalogContextType {
+  const context = useContext(ProductCatalogContext);
+  if (!context) {
+    throw new Error("useProductCatalog must be used within a ProductCatalogProvider");
+  }
+  return context;
+}

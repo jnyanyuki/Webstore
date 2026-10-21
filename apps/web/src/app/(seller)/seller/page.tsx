@@ -10,6 +10,7 @@ import { apiClient } from "@/lib/apiClient";
 import JuroMartLogo from "@/components/JuroMartLogo";
 import { getStorefrontUrl } from "@/lib/domainUrls";
 import { useAuth } from "@/context/AuthContext";
+import SuperAdminCatalogManager from "@/components/SuperAdminCatalogManager";
 
 const INITIAL_MOCK_ORDER: OrderStatusTimeline = {
   orderId: "ORD-CBD-8891",
@@ -29,7 +30,7 @@ const INITIAL_MOCK_ORDER: OrderStatusTimeline = {
 
 export default function SellerCenterHome() {
   const { user, isAuthenticated, isLoading } = useAuth();
-  const [activeTab, setActiveTab] = useState<"pim" | "fulfillment">("fulfillment");
+  const [activeTab, setActiveTab] = useState<"pim" | "fulfillment" | "catalog-admin">("fulfillment");
   const [orders, setOrders] = useState<any[]>([]);
   const [orderTimeline, setOrderTimeline] = useState<OrderStatusTimeline>(INITIAL_MOCK_ORDER);
   const [dispatchLoading, setDispatchLoading] = useState(false);
@@ -212,6 +213,11 @@ export default function SellerCenterHome() {
             <span className="bg-gray-800 text-emerald-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-gray-700">
               ID: VEND-CBD-042
             </span>
+            {user?.role === "ADMIN" && (
+              <span className="bg-amber-500/20 text-amber-300 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-amber-500/40 flex items-center gap-1">
+                <span>👑</span> Super Admin ({user.email})
+              </span>
+            )}
           </div>
 
           <div className="flex items-center gap-2">
@@ -222,6 +228,18 @@ export default function SellerCenterHome() {
             >
               ← Storefront
             </a>
+            {user?.role === "ADMIN" && (
+              <button
+                onClick={() => setActiveTab("catalog-admin")}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
+                  activeTab === "catalog-admin"
+                    ? "bg-amber-400 text-gray-950 font-extrabold shadow-sm"
+                    : "text-amber-400 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30"
+                }`}
+              >
+                <span>👑</span> Super Admin Catalog
+              </button>
+            )}
             <button
               onClick={() => setActiveTab("fulfillment")}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
@@ -244,31 +262,35 @@ export default function SellerCenterHome() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-          <div className="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs">
-            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Today's Sales</div>
-            <div className="text-xl font-extrabold text-gray-900 mt-0.5">KSh 38,500</div>
-            <div className="text-[11px] text-green-600 font-semibold mt-0.5">↑ 14% vs yesterday</div>
-          </div>
-          <div className="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs">
-            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Pending Boda Pickups</div>
-            <div className="text-xl font-extrabold text-gray-900 mt-0.5">
-              {orderTimeline.status === "PENDING" ? "1 Order" : "0 Orders"}
+        {activeTab !== "catalog-admin" && (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div className="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs">
+              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Today's Sales</div>
+              <div className="text-xl font-extrabold text-gray-900 mt-0.5">KSh 38,500</div>
+              <div className="text-[11px] text-green-600 font-semibold mt-0.5">↑ 14% vs yesterday</div>
             </div>
-            <div className="text-[11px] text-yellow-600 font-semibold mt-0.5">Action required at shop</div>
-          </div>
-          <div className="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs">
-            <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Active Boda Rider</div>
-            <div className="text-xl font-extrabold text-gray-900 mt-0.5">
-              {orderTimeline.rider ? orderTimeline.rider.name.split(" ")[0] : "None"}
+            <div className="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs">
+              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Pending Boda Pickups</div>
+              <div className="text-xl font-extrabold text-gray-900 mt-0.5">
+                {orderTimeline.status === "PENDING" ? "1 Order" : "0 Orders"}
+              </div>
+              <div className="text-[11px] text-yellow-600 font-semibold mt-0.5">Action required at shop</div>
             </div>
-            <div className="text-[11px] text-blue-600 font-semibold mt-0.5">
-              {orderTimeline.rider ? `${orderTimeline.rider.motorbikePlate}` : "Awaiting packing"}
+            <div className="bg-white p-4 rounded-xl border border-gray-200/80 shadow-xs">
+              <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Active Boda Rider</div>
+              <div className="text-xl font-extrabold text-gray-900 mt-0.5">
+                {orderTimeline.rider ? orderTimeline.rider.name.split(" ")[0] : "None"}
+              </div>
+              <div className="text-[11px] text-blue-600 font-semibold mt-0.5">
+                {orderTimeline.rider ? `${orderTimeline.rider.motorbikePlate}` : "Awaiting packing"}
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
-        {activeTab === "pim" ? (
+        {activeTab === "catalog-admin" && user?.role === "ADMIN" ? (
+          <SuperAdminCatalogManager />
+        ) : activeTab === "pim" ? (
           <DynamicProductForm />
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
