@@ -113,13 +113,6 @@ export default function StorefrontHome() {
           <div className="flex items-center gap-2">
             <UserNavDropdown />
 
-            <a
-              href="/seller"
-              className="text-xs font-semibold text-gray-700 hover:text-emerald-600 px-2.5 py-1.5 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200"
-            >
-              Merchant Portal
-            </a>
-
             <button
               onClick={() => setIsSearchOpen(true)}
               className="sm:hidden text-gray-600 hover:text-emerald-600 p-1.5 rounded-lg hover:bg-gray-100"

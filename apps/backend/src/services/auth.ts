@@ -4,26 +4,56 @@ import { Response, NextFunction } from "express";
 import { dbPool } from "./navigation";
 import { AuthUser, TokenPayload, AuthenticatedRequest } from "../types/auth";
 
-const JWT_SECRET = process.env.JWT_SECRET || "juromart_production_jwt_secret_key_88921";
+const IS_PRODUCTION = process.env.NODE_ENV === "production" || Boolean(process.env.RENDER);
+
+// JWT secret MUST come from the environment in production. A hardcoded fallback would let
+// anyone who reads the repository forge tokens.
+const resolveJwtSecret = (): string => {
+  const secret = process.env.JWT_SECRET;
+  if (secret && secret.length >= 32) return secret;
+  if (IS_PRODUCTION) {
+    throw new Error(
+      "[Auth] JWT_SECRET is missing or shorter than 32 characters. Refusing to start in production."
+    );
+  }
+  // Development only: ephemeral per-process secret (sessions reset on restart)
+  console.warn("[Auth] JWT_SECRET not set - using an ephemeral development secret.");
+  return crypto.randomBytes(48).toString("hex");
+};
+
+const JWT_SECRET = resolveJwtSecret();
 const ACCESS_TOKEN_EXPIRY = "15m";
 const REFRESH_TOKEN_EXPIRY_DAYS = 7;
 
-// Domain configuration for cross-domain cookies across juromart.com and api.juromart.com
+// Non-sensitive, JS-readable flag telling the frontend a session exists (contains no token).
+export const SESSION_HINT_COOKIE = "jm_session";
+
+const getRequestHost = (req?: any): string =>
+  String(req?.headers?.["x-forwarded-host"] || req?.headers?.host || "")
+    .split(",")[0]
+    .trim()
+    .replace(/:\d+$/, "")
+    .toLowerCase();
+
+/**
+ * Cookie domain is derived from the host that actually served the request.
+ * - api.juromart.com  -> ".juromart.com" (shared with juromart.com / www.juromart.com)
+ * - *.onrender.com / localhost -> host-only cookie (browsers reject foreign domains)
+ */
 const getCookieDomain = (req?: any): string | undefined => {
   if (process.env.COOKIE_DOMAIN) {
     return process.env.COOKIE_DOMAIN;
   }
-  const host = req?.headers?.host || "";
-  const origin = req?.headers?.origin || "";
-  if (
-    host.includes("juromart.com") ||
-    origin.includes("juromart.com") ||
-    process.env.NODE_ENV === "production" ||
-    process.env.RENDER
-  ) {
+  const host = getRequestHost(req);
+  if (host === "juromart.com" || host.endsWith(".juromart.com")) {
     return ".juromart.com";
   }
-  return undefined; // Localhost development
+  return undefined;
+};
+
+const isSecureRequest = (req?: any): boolean => {
+  const proto = String(req?.headers?.["x-forwarded-proto"] || "").split(",")[0].trim();
+  return proto === "https" || Boolean(req?.secure) || IS_PRODUCTION;
 };
 
 export class AuthService {
@@ -132,63 +162,40 @@ export class AuthService {
   }
 
   /**
-   * Sets cross-domain httpOnly secure cookies
+   * Sets httpOnly token cookies plus a non-sensitive session hint cookie
    */
   public static setAuthCookies(res: Response, accessToken: string, refreshToken: string, req?: any): void {
-    const isProduction =
-      process.env.NODE_ENV === "production" ||
-      Boolean(process.env.RENDER) ||
-      req?.headers?.host?.includes("juromart.com") ||
-      req?.headers?.origin?.includes("juromart.com");
-    const cookieDomain = getCookieDomain(req);
-
-    // 15-minute access token cookie
-    res.cookie("access_token", accessToken, {
-      httpOnly: true,
-      secure: Boolean(isProduction),
-      sameSite: "lax",
-      domain: cookieDomain,
+    const base = {
+      secure: isSecureRequest(req),
+      sameSite: "lax" as const,
+      domain: getCookieDomain(req),
       path: "/",
-      maxAge: 15 * 60 * 1000,
-    });
+    };
+    const refreshMaxAge = REFRESH_TOKEN_EXPIRY_DAYS * 24 * 60 * 60 * 1000;
 
-    // 7-day refresh token cookie
-    res.cookie("refresh_token", refreshToken, {
-      httpOnly: true,
-      secure: Boolean(isProduction),
-      sameSite: "lax",
-      domain: cookieDomain,
-      path: "/",
-      maxAge: REFRESH_TOKEN_EXPIRY_DAYS * 24 * 60 * 60 * 1000,
-    });
+    // 15-minute access token (httpOnly - never readable by page scripts)
+    res.cookie("access_token", accessToken, { ...base, httpOnly: true, maxAge: 15 * 60 * 1000 });
+
+    // 7-day refresh token (httpOnly)
+    res.cookie("refresh_token", refreshToken, { ...base, httpOnly: true, maxAge: refreshMaxAge });
+
+    // Session presence flag only - contains no credentials
+    res.cookie(SESSION_HINT_COOKIE, "1", { ...base, httpOnly: false, maxAge: refreshMaxAge });
   }
 
   /**
    * Clears auth cookies upon logout
    */
   public static clearAuthCookies(res: Response, req?: any): void {
-    const isProduction =
-      process.env.NODE_ENV === "production" ||
-      Boolean(process.env.RENDER) ||
-      req?.headers?.host?.includes("juromart.com") ||
-      req?.headers?.origin?.includes("juromart.com");
-    const cookieDomain = getCookieDomain(req);
-
-    res.clearCookie("access_token", {
-      httpOnly: true,
-      secure: Boolean(isProduction),
-      sameSite: "lax",
-      domain: cookieDomain,
+    const base = {
+      secure: isSecureRequest(req),
+      sameSite: "lax" as const,
+      domain: getCookieDomain(req),
       path: "/",
-    });
-
-    res.clearCookie("refresh_token", {
-      httpOnly: true,
-      secure: Boolean(isProduction),
-      sameSite: "lax",
-      domain: cookieDomain,
-      path: "/",
-    });
+    };
+    res.clearCookie("access_token", { ...base, httpOnly: true });
+    res.clearCookie("refresh_token", { ...base, httpOnly: true });
+    res.clearCookie(SESSION_HINT_COOKIE, { ...base, httpOnly: false });
   }
 
   /**

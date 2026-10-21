@@ -50,7 +50,7 @@ function LoginForm() {
           Welcome back to JuroMart
         </h1>
         <p className="text-xs sm:text-sm text-gray-500 mt-1">
-          Nairobi CBD Express Marketplace & Merchant Hub
+          Sign in to access your orders, saved items, and express checkout
         </p>
       </div>
 

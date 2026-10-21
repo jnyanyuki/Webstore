@@ -54,29 +54,31 @@ class ApiClient {
     return this.baseUrl;
   }
 
-  public setAuthToken(token: string | null): void {
-    if (typeof window === "undefined") return;
-    if (token) {
-      localStorage.setItem("juromart_access_token", token);
-      const isJuromart =
-        window.location.hostname === "juromart.com" ||
-        window.location.hostname.endsWith(".juromart.com");
-      const domainAttr = isJuromart ? "; domain=.juromart.com" : "";
-      const secureAttr = window.location.protocol === "https:" ? "; secure" : "";
-      document.cookie = `access_token=${token}; path=/${domainAttr}; max-age=${15 * 60}${secureAttr}; samesite=lax`;
-    } else {
-      localStorage.removeItem("juromart_access_token");
-      const isJuromart =
-        window.location.hostname === "juromart.com" ||
-        window.location.hostname.endsWith(".juromart.com");
-      const domainAttr = isJuromart ? "; domain=.juromart.com" : "";
-      document.cookie = `access_token=; path=/${domainAttr}; max-age=0; samesite=lax`;
-    }
+  /**
+   * True when the backend has issued a session (non-secret `jm_session` flag cookie).
+   * Tokens themselves are httpOnly and never readable by page scripts.
+   */
+  public hasSessionHint(): boolean {
+    if (typeof document === "undefined") return false;
+    return document.cookie.split(";").some((c) => c.trim().startsWith("jm_session="));
   }
 
-  public getAuthToken(): string | null {
-    if (typeof window === "undefined") return null;
-    return localStorage.getItem("juromart_access_token");
+  /**
+   * Removes token copies written to localStorage / JS cookies by an earlier build.
+   */
+  public purgeLegacyClientTokens(): void {
+    if (typeof window === "undefined") return;
+    try {
+      localStorage.removeItem("juromart_access_token");
+    } catch {
+      /* storage may be unavailable (private mode) */
+    }
+    const host = window.location.hostname;
+    const domains = host === "juromart.com" || host.endsWith(".juromart.com") ? ["; domain=.juromart.com", ""] : [""];
+    // JS cannot overwrite the server's httpOnly cookie, so this only removes the legacy JS-set copy
+    domains.forEach((d) => {
+      document.cookie = `access_token=; path=/${d}; max-age=0; samesite=lax`;
+    });
   }
 
   private subscribeTokenRefresh(cb: (refreshed: boolean) => void) {
@@ -99,18 +101,14 @@ class ApiClient {
       ? endpoint
       : `${this.baseUrl}${endpoint.startsWith("/") ? "" : "/"}${endpoint}`;
 
-    const token = this.getAuthToken();
-    const configHeaders: Record<string, string> = {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...(options.headers as Record<string, string> || {}),
-    };
-
     const config: RequestInit = {
       ...options,
       credentials: "include", // Essential for sharing httpOnly cookies across juromart.com and api.juromart.com
-      headers: configHeaders,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        ...(options.headers || {}),
+      },
     };
 
     let response: Response;
@@ -121,8 +119,10 @@ class ApiClient {
       throw new Error("Unable to connect to JuroMart servers. Please check your network connection.");
     }
 
-    // Handle 401 Unauthorized with token refresh rotation
-    if (response.status === 401 && !options.skipAuthRefresh && !endpoint.includes("/auth/")) {
+    // Handle 401 Unauthorized with token refresh rotation.
+    // Credential endpoints are excluded; /auth/me IS eligible so sessions survive access-token expiry.
+    const isCredentialEndpoint = /\/auth\/(login|register|refresh|logout)\b/.test(endpoint);
+    if (response.status === 401 && !options.skipAuthRefresh && !isCredentialEndpoint) {
       if (this.isRefreshing) {
         // Wait for active refresh in-flight
         const refreshed = await new Promise<boolean>((resolve) => {

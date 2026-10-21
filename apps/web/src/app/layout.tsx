@@ -17,18 +17,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://juromart.com"),
   title: {
-    default: "JuroMart - Nairobi CBD E-Commerce Marketplace & Merchant Portal",
+    default: "JuroMart - Express Online Shopping & Fast Doorstep Delivery",
     template: "%s | JuroMart",
   },
   description:
-    "JuroMart connects verified Nairobi CBD merchants with express shoppers across Kenya. Sub-45 min Boda dispatch, instant stall pickup, and instant M-Pesa STK Push.",
+    "Shop verified electronics, fashion, and everyday essentials on JuroMart. Instant dispatch, live tracked fulfillment, and secure instant M-Pesa checkout.",
   keywords: [
     "JuroMart",
-    "Nairobi CBD shopping",
     "online shopping Kenya",
-    "CBD Boda delivery",
-    "M-Pesa marketplace",
-    "electronics Nairobi",
+    "express delivery Nairobi",
+    "instant delivery Kenya",
+    "M-Pesa checkout",
+    "electronics Kenya",
     "fashion Kenya",
   ],
   authors: [{ name: "JuroMart Kenya" }],
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "JuroMart - Nairobi CBD Express Marketplace",
+    title: "JuroMart - Express Online Shopping & Fast Doorstep Delivery",
     description:
-      "Shop verified electronics, fashion, and lifestyle items across Nairobi CBD with instant sub-45 min Boda dispatch and M-Pesa.",
+      "Shop verified electronics, fashion, and everyday essentials with instant dispatch, live courier tracking, and secure M-Pesa checkout.",
     url: "https://juromart.com",
     siteName: "JuroMart",
     locale: "en_KE",
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JuroMart - Nairobi CBD Express Marketplace",
+    title: "JuroMart - Express Online Shopping & Fast Doorstep Delivery",
     description:
-      "Shop verified electronics, fashion, and lifestyle items across Nairobi CBD with instant sub-45 min Boda dispatch and M-Pesa.",
+      "Shop verified electronics, fashion, and everyday essentials with instant dispatch, live courier tracking, and secure M-Pesa checkout.",
   },
   manifest: "/manifest.webmanifest",
 };

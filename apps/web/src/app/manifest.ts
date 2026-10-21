@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "JuroMart - Nairobi CBD E-Commerce Marketplace",
+    name: "JuroMart - Express Shopping & Fast Doorstep Delivery",
     short_name: "JuroMart",
-    description: "Verified Nairobi CBD express shopping with sub-45 minute Boda dispatch and M-Pesa checkout.",
+    description: "Shop electronics, fashion, and everyday essentials with instant dispatch, live courier tracking, and secure M-Pesa checkout.",
     start_url: "/",
     display: "standalone",
     background_color: "#FBFBFB",

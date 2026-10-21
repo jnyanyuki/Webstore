@@ -10,6 +10,7 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const navigation_1 = require("./services/navigation");
 const auth_1 = __importDefault(require("./routes/auth"));
 const app = (0, express_1.default)();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 9000;
 const allowedOriginsEnv = (process.env.CORS_ALLOWED_ORIGINS || "")
     .split(",")

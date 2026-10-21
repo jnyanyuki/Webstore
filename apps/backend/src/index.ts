@@ -6,6 +6,7 @@ import { NavigationService, dbPool } from "./services/navigation";
 import authRouter from "./routes/auth";
 
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 9000;
 
 const allowedOriginsEnv = (process.env.CORS_ALLOWED_ORIGINS || "")

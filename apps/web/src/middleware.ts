@@ -9,7 +9,9 @@ export function middleware(request: NextRequest) {
 
   const accessToken = request.cookies.get("access_token")?.value;
   const refreshToken = request.cookies.get("refresh_token")?.value;
-  const isAuthenticated = Boolean(accessToken || refreshToken);
+  const sessionHint = request.cookies.get("jm_session")?.value;
+  // Presence check only - the API validates tokens on every protected request
+  const isAuthenticated = Boolean(accessToken || refreshToken || sessionHint);
 
   // 1. Protect private route groups
   const isProtected = PROTECTED_ROUTES.some((route) => pathname.startsWith(route));
@@ -24,7 +26,10 @@ export function middleware(request: NextRequest) {
   // 2. Redirect authenticated users away from /login and /register
   const isAuthRoute = AUTH_ROUTES.some((route) => pathname.startsWith(route));
   if (isAuthRoute && isAuthenticated) {
-    const redirectUrl = request.nextUrl.searchParams.get("redirect") || "/account";
+    const requested = request.nextUrl.searchParams.get("redirect") || "";
+    // Only same-site relative paths are allowed (prevents open redirects like ?redirect=https://evil.com)
+    const redirectUrl =
+      requested.startsWith("/") && !requested.startsWith("//") ? requested : "/account";
     return NextResponse.redirect(new URL(redirectUrl, request.url));
   }
 

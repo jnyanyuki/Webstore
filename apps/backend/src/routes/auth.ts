@@ -6,22 +6,75 @@ import { AuthenticatedRequest } from "../types/auth";
 const router = Router();
 
 /**
+ * Lightweight in-memory fixed-window rate limiter (per client IP + route).
+ * Suitable for a single Render instance; move to Redis if the API is scaled horizontally.
+ */
+const rateBuckets = new Map<string, { count: number; resetAt: number }>();
+
+const getClientIp = (req: Request): string =>
+  String(req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown")
+    .split(",")[0]
+    .trim();
+
+const rateLimit =
+  (name: string, max: number, windowMs: number) =>
+  (req: Request, res: Response, next: () => void): any => {
+    const key = `${name}:${getClientIp(req)}`;
+    const now = Date.now();
+    const bucket = rateBuckets.get(key);
+
+    if (!bucket || bucket.resetAt <= now) {
+      rateBuckets.set(key, { count: 1, resetAt: now + windowMs });
+      return next();
+    }
+
+    bucket.count += 1;
+    if (bucket.count > max) {
+      res.setHeader("Retry-After", Math.ceil((bucket.resetAt - now) / 1000).toString());
+      return res
+        .status(429)
+        .json({ error: "Too many attempts. Please wait a few minutes and try again." });
+    }
+    next();
+  };
+
+// Periodically evict expired buckets to bound memory
+setInterval(() => {
+  const now = Date.now();
+  for (const [key, bucket] of rateBuckets) {
+    if (bucket.resetAt <= now) rateBuckets.delete(key);
+  }
+}, 5 * 60 * 1000).unref();
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const PHONE_REGEX = /^\+?[0-9\s-]{9,16}$/;
+
+/**
  * POST /auth/register
  * Registers a new customer account with email and password
  */
-router.post("/register", async (req: Request, res: Response): Promise<any> => {
+router.post("/register", rateLimit("register", 5, 60 * 60 * 1000), async (req: Request, res: Response): Promise<any> => {
   try {
-    const { email, password, fullName, phone } = req.body;
+    const email = typeof req.body?.email === "string" ? req.body.email.trim() : "";
+    const password = typeof req.body?.password === "string" ? req.body.password : "";
+    const fullName = typeof req.body?.fullName === "string" ? req.body.fullName.trim() : "";
+    const phone = typeof req.body?.phone === "string" ? req.body.phone.trim() : "";
     // Public registration strictly provisions CUSTOMER accounts only.
     // Merchant & administrative accounts are provisioned via secured internal channels.
     const role = "CUSTOMER";
 
     // 1. Validation
-    if (!email || !email.includes("@")) {
+    if (!email || email.length > 254 || !EMAIL_REGEX.test(email)) {
       return res.status(400).json({ error: "Invalid email address" });
     }
-    if (!password || password.length < 8) {
-      return res.status(400).json({ error: "Password must be at least 8 characters long" });
+    if (password.length < 8 || password.length > 128) {
+      return res.status(400).json({ error: "Password must be between 8 and 128 characters long" });
+    }
+    if (fullName.length > 150) {
+      return res.status(400).json({ error: "Full name is too long" });
+    }
+    if (phone && !PHONE_REGEX.test(phone)) {
+      return res.status(400).json({ error: "Invalid phone number" });
     }
 
     await AuthService.ensureTablesExist();
@@ -61,7 +114,6 @@ router.post("/register", async (req: Request, res: Response): Promise<any> => {
         role: user.role,
         createdAt: user.created_at,
       },
-      accessToken,
     });
   } catch (error: any) {
     console.error("[Auth Register Error]:", error);
@@ -73,11 +125,12 @@ router.post("/register", async (req: Request, res: Response): Promise<any> => {
  * POST /auth/login
  * Authenticates user credentials and issues session tokens
  */
-router.post("/login", async (req: Request, res: Response): Promise<any> => {
+router.post("/login", rateLimit("login", 10, 15 * 60 * 1000), async (req: Request, res: Response): Promise<any> => {
   try {
-    const { email, password } = req.body;
+    const email = typeof req.body?.email === "string" ? req.body.email.trim() : "";
+    const password = typeof req.body?.password === "string" ? req.body.password : "";
 
-    if (!email || !password) {
+    if (!email || !password || email.length > 254 || password.length > 128) {
       return res.status(400).json({ error: "Email and password are required" });
     }
 
@@ -122,7 +175,6 @@ router.post("/login", async (req: Request, res: Response): Promise<any> => {
         role: user.role,
         createdAt: user.created_at,
       },
-      accessToken,
     });
   } catch (error: any) {
     console.error("[Auth Login Error]:", error);
@@ -134,7 +186,7 @@ router.post("/login", async (req: Request, res: Response): Promise<any> => {
  * POST /auth/refresh
  * Rotates the refresh token and issues a new short-lived access token
  */
-router.post("/refresh", async (req: Request, res: Response): Promise<any> => {
+router.post("/refresh", rateLimit("refresh", 60, 15 * 60 * 1000), async (req: Request, res: Response): Promise<any> => {
   try {
     const token = req.cookies?.refresh_token || req.body?.refreshToken;
 
@@ -155,7 +207,7 @@ router.post("/refresh", async (req: Request, res: Response): Promise<any> => {
     );
 
     if (tokenRes.rows.length === 0) {
-      AuthService.clearAuthCookies(res);
+      AuthService.clearAuthCookies(res, req);
       return res.status(401).json({ error: "Invalid refresh token" });
     }
 
@@ -164,7 +216,7 @@ router.post("/refresh", async (req: Request, res: Response): Promise<any> => {
     // Check if token was revoked or expired
     if (record.revoked || new Date(record.expires_at) < new Date() || !record.is_active) {
       // Possible reuse detection: revoke all tokens for this user if compromised
-      AuthService.clearAuthCookies(res);
+      AuthService.clearAuthCookies(res, req);
       return res.status(401).json({ error: "Refresh token expired or revoked" });
     }
 
@@ -180,10 +232,7 @@ router.post("/refresh", async (req: Request, res: Response): Promise<any> => {
     const newRefreshToken = await AuthService.generateRefreshToken(record.user_id);
     AuthService.setAuthCookies(res, newAccessToken, newRefreshToken, req);
 
-    return res.status(200).json({
-      success: true,
-      accessToken: newAccessToken,
-    });
+    return res.status(200).json({ success: true });
   } catch (error: any) {
     console.error("[Auth Refresh Error]:", error);
     return res.status(500).json({ error: "Failed to refresh session" });
