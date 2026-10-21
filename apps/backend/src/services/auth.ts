@@ -162,9 +162,15 @@ export class AuthService {
   }
 
   /**
-   * Sets httpOnly token cookies plus a non-sensitive session hint cookie
+   * Sets httpOnly token cookies plus non-sensitive session & role hint cookies
    */
-  public static setAuthCookies(res: Response, accessToken: string, refreshToken: string, req?: any): void {
+  public static setAuthCookies(
+    res: Response,
+    accessToken: string,
+    refreshToken: string,
+    req?: any,
+    role: string = "CUSTOMER"
+  ): void {
     const base = {
       secure: isSecureRequest(req),
       sameSite: "lax" as const,
@@ -179,8 +185,9 @@ export class AuthService {
     // 7-day refresh token (httpOnly)
     res.cookie("refresh_token", refreshToken, { ...base, httpOnly: true, maxAge: refreshMaxAge });
 
-    // Session presence flag only - contains no credentials
+    // Session presence and role hints (non-sensitive flags for edge routing)
     res.cookie(SESSION_HINT_COOKIE, "1", { ...base, httpOnly: false, maxAge: refreshMaxAge });
+    res.cookie("jm_role", role, { ...base, httpOnly: false, maxAge: refreshMaxAge });
   }
 
   /**
@@ -196,6 +203,26 @@ export class AuthService {
     res.clearCookie("access_token", { ...base, httpOnly: true });
     res.clearCookie("refresh_token", { ...base, httpOnly: true });
     res.clearCookie(SESSION_HINT_COOKIE, { ...base, httpOnly: false });
+    res.clearCookie("jm_role", { ...base, httpOnly: false });
+  }
+
+  /**
+   * Role-based access control middleware
+   */
+  public static requireRole(allowedRoles: string[]) {
+    return (req: AuthenticatedRequest, res: Response, next: NextFunction): any => {
+      const user = req.authUser || (req as any).user;
+      if (!user) {
+        return res.status(401).json({ error: "Unauthorized", message: "Authentication required" });
+      }
+      if (!allowedRoles.includes(user.role)) {
+        return res.status(403).json({
+          error: "Forbidden",
+          message: `Access denied. Requires one of [${allowedRoles.join(", ")}] roles.`,
+        });
+      }
+      next();
+    };
   }
 
   /**

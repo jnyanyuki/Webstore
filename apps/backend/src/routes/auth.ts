@@ -101,7 +101,7 @@ router.post("/register", rateLimit("register", 5, 60 * 60 * 1000), async (req: R
     // 4. Issue tokens and set cookies
     const accessToken = AuthService.generateAccessToken(user);
     const refreshToken = await AuthService.generateRefreshToken(user.id);
-    AuthService.setAuthCookies(res, accessToken, refreshToken, req);
+    AuthService.setAuthCookies(res, accessToken, refreshToken, req, user.role);
 
     return res.status(201).json({
       success: true,
@@ -162,7 +162,7 @@ router.post("/login", rateLimit("login", 10, 15 * 60 * 1000), async (req: Reques
     // 3. Issue tokens and set cookies
     const accessToken = AuthService.generateAccessToken(user);
     const refreshToken = await AuthService.generateRefreshToken(user.id);
-    AuthService.setAuthCookies(res, accessToken, refreshToken, req);
+    AuthService.setAuthCookies(res, accessToken, refreshToken, req, user.role);
 
     return res.status(200).json({
       success: true,
@@ -230,7 +230,7 @@ router.post("/refresh", rateLimit("refresh", 60, 15 * 60 * 1000), async (req: Re
       role: record.role,
     });
     const newRefreshToken = await AuthService.generateRefreshToken(record.user_id);
-    AuthService.setAuthCookies(res, newAccessToken, newRefreshToken, req);
+    AuthService.setAuthCookies(res, newAccessToken, newRefreshToken, req, record.role);
 
     return res.status(200).json({ success: true });
   } catch (error: any) {

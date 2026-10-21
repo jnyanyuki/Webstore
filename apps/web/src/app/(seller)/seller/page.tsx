@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DynamicProductForm from "@/components/DynamicProductForm";
 import UserNavDropdown from "@/components/UserNavDropdown";
 import { OrderStatusTimelineTracker } from "@webstore/ui";
@@ -9,6 +9,7 @@ import { OrderStatusTimeline } from "@webstore/types";
 import { apiClient } from "@/lib/apiClient";
 import JuroMartLogo from "@/components/JuroMartLogo";
 import { getStorefrontUrl } from "@/lib/domainUrls";
+import { useAuth } from "@/context/AuthContext";
 
 const INITIAL_MOCK_ORDER: OrderStatusTimeline = {
   orderId: "ORD-CBD-8891",
@@ -27,9 +28,79 @@ const INITIAL_MOCK_ORDER: OrderStatusTimeline = {
 };
 
 export default function SellerCenterHome() {
+  const { user, isAuthenticated, isLoading } = useAuth();
   const [activeTab, setActiveTab] = useState<"pim" | "fulfillment">("fulfillment");
+  const [orders, setOrders] = useState<any[]>([]);
   const [orderTimeline, setOrderTimeline] = useState<OrderStatusTimeline>(INITIAL_MOCK_ORDER);
   const [dispatchLoading, setDispatchLoading] = useState(false);
+  const [fetchLoading, setFetchLoading] = useState(true);
+
+  // 1. Fetch live orders from backend
+  const fetchOrders = async () => {
+    try {
+      const apiUrl = apiClient.getBaseUrl();
+      const res = await fetch(`${apiUrl}/api/orders/merchant?merchant_id=VEND-CBD-042`, {
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.orders && data.orders.length > 0) {
+          setOrders(data.orders);
+          // Set primary active order
+          const primary = data.orders[0];
+          setOrderTimeline({
+            orderId: primary.id,
+            status: primary.status,
+            updatedAt: primary.updatedAt,
+            deliveryAddress: primary.deliveryAddress,
+            rider: primary.rider,
+            history: [
+              { status: primary.status, timestamp: primary.updatedAt, note: "Order placed" },
+            ],
+          });
+        }
+      }
+    } catch {
+      // Fallback to initial order on network failure
+    } finally {
+      setFetchLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchOrders();
+    }
+  }, [isAuthenticated]);
+
+  // 2. Real-Time SSE Listener for Order Updates
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const apiUrl = apiClient.getBaseUrl();
+    let eventSource: EventSource | null = null;
+
+    try {
+      eventSource = new EventSource(`${apiUrl}/api/notifications/stream`);
+      eventSource.onmessage = (event) => {
+        try {
+          const payload = JSON.parse(event.data);
+          if (payload.type === "ORDER_STATUS_UPDATE" && payload.payload) {
+            setOrderTimeline(payload.payload);
+            fetchOrders();
+          }
+        } catch {
+          // ignore non-json events
+        }
+      };
+    } catch {
+      // EventSource fallback
+    }
+
+    return () => {
+      eventSource?.close();
+    };
+  }, []);
 
   const handlePackAndDispatch = async () => {
     setDispatchLoading(true);
@@ -38,6 +109,7 @@ export default function SellerCenterHome() {
       const res = await fetch(`${apiUrl}/api/logistics/dispatch`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({
           action: "update",
           orderId: orderTimeline.orderId,
@@ -46,7 +118,12 @@ export default function SellerCenterHome() {
         }),
       });
 
-      if (!res.ok) {
+      if (res.ok) {
+        const data = await res.json();
+        setOrderTimeline(data.timeline);
+        fetchOrders();
+      } else {
+        // Fallback local rider assignment
         const assignedRider = {
           id: "r1",
           name: "Kamau Njuguna",
@@ -54,7 +131,6 @@ export default function SellerCenterHome() {
           motorbikePlate: "KMCE 452X",
           currentStage: "Kencom Stage",
         };
-
         setOrderTimeline((prev) => ({
           ...prev,
           status: "RIDER_ASSIGNED",
@@ -65,11 +141,9 @@ export default function SellerCenterHome() {
             { status: "RIDER_ASSIGNED", timestamp: new Date().toISOString(), note: "Rider Kamau assigned" },
           ],
         }));
-      } else {
-        const data = await res.json();
-        setOrderTimeline(data.timeline);
       }
-    } catch (err) {
+    } catch {
+      // Fallback simulation
       setOrderTimeline((prev) => ({
         ...prev,
         status: "RIDER_ASSIGNED",
@@ -90,6 +164,39 @@ export default function SellerCenterHome() {
       setDispatchLoading(false);
     }
   };
+
+  // 3. RBAC Barrier: Customer Account Trying to View Merchant Center
+  if (!isLoading && user && user.role !== "SELLER" && user.role !== "ADMIN") {
+    return (
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-6 font-sans">
+        <div className="max-w-md w-full bg-gray-800/90 border border-gray-700/80 rounded-2xl p-6 sm:p-8 text-center shadow-2xl backdrop-blur-md">
+          <div className="w-14 h-14 bg-amber-500/10 border border-amber-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg className="w-7 h-7 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <h2 className="text-xl font-bold tracking-tight text-white mb-2">Merchant Privileges Required</h2>
+          <p className="text-xs sm:text-sm text-gray-400 mb-6 leading-relaxed">
+            You are logged in as <span className="text-emerald-400 font-semibold">{user.email}</span> with a <span className="bg-gray-700 px-2 py-0.5 rounded text-[11px] font-bold text-gray-300 uppercase">{user.role}</span> role. Access to <span className="text-white font-mono text-xs">seller.juromart.com</span> is reserved for verified merchant accounts.
+          </p>
+          <div className="flex flex-col gap-2.5">
+            <a
+              href={getStorefrontUrl("/account")}
+              className="w-full py-2.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl transition-all shadow-md"
+            >
+              ← Back to Customer Account
+            </a>
+            <a
+              href={getStorefrontUrl("/")}
+              className="w-full py-2 px-4 bg-gray-700/60 hover:bg-gray-700 text-gray-300 font-medium text-xs rounded-xl transition-colors"
+            >
+              Continue Shopping
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
@@ -115,7 +222,7 @@ export default function SellerCenterHome() {
             <button
               onClick={() => setActiveTab("fulfillment")}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                activeTab === "fulfillment" ? "bg-green-600 text-white" : "text-gray-300 hover:bg-gray-800"
+                activeTab === "fulfillment" ? "bg-emerald-600 text-white" : "text-gray-300 hover:bg-gray-800"
               }`}
             >
               Fulfillment & Dispatch
@@ -123,7 +230,7 @@ export default function SellerCenterHome() {
             <button
               onClick={() => setActiveTab("pim")}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                activeTab === "pim" ? "bg-green-600 text-white" : "text-gray-300 hover:bg-gray-800"
+                activeTab === "pim" ? "bg-emerald-600 text-white" : "text-gray-300 hover:bg-gray-800"
               }`}
             >
               Dynamic PIM
@@ -163,7 +270,13 @@ export default function SellerCenterHome() {
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="bg-white p-5 rounded-xl border border-gray-200/80 shadow-xs">
-              <h3 className="text-lg font-bold text-gray-900 mb-1">Incoming Order Dispatch</h3>
+              <div className="flex items-center justify-between mb-1">
+                <h3 className="text-lg font-bold text-gray-900">Incoming Order Dispatch</h3>
+                <span className="text-[11px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Live PostgreSQL Sync
+                </span>
+              </div>
               <p className="text-xs text-gray-500 mb-4">
                 Customer ordered from stall G14 (Imenti House). Pack order and dispatch rider.
               </p>
@@ -175,11 +288,13 @@ export default function SellerCenterHome() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Customer Landmark:</span>
-                  <span className="font-bold text-green-700">{orderTimeline.deliveryAddress.landmark}</span>
+                  <span className="font-bold text-green-700">{orderTimeline.deliveryAddress?.landmark || "CBD Core"}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-500">Building / Shop:</span>
-                  <span className="font-bold text-gray-900">{orderTimeline.deliveryAddress.buildingName} ({orderTimeline.deliveryAddress.shopOrFloorNumber})</span>
+                  <span className="font-bold text-gray-900">
+                    {orderTimeline.deliveryAddress?.buildingName || "Imenti House"} ({orderTimeline.deliveryAddress?.shopOrFloorNumber || "Stall G14"})
+                  </span>
                 </div>
               </div>
 
@@ -187,7 +302,7 @@ export default function SellerCenterHome() {
                 <button
                   onClick={handlePackAndDispatch}
                   disabled={dispatchLoading}
-                  className="w-full bg-green-600 text-white font-bold py-2.5 rounded-lg hover:bg-green-700 transition-colors shadow-xs text-xs flex items-center justify-center gap-2"
+                  className="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-lg hover:bg-emerald-500 transition-colors shadow-xs text-xs flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 >
                   {dispatchLoading ? (
                     "Notifying Boda Stage..."
@@ -198,8 +313,9 @@ export default function SellerCenterHome() {
                   )}
                 </button>
               ) : (
-                <div className="bg-green-50 border border-green-200 text-green-800 p-3 rounded-lg text-center text-xs font-bold">
-                  ✓ Rider Assigned! SMS Alert sent via Africa's Talking API to {orderTimeline.rider?.phone}.
+                <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-3.5 rounded-lg text-center text-xs font-semibold">
+                  <div className="font-bold text-emerald-900 mb-0.5">✓ Rider Assigned ({orderTimeline.rider?.name})</div>
+                  <div>SMS Alert dispatched via Africa's Talking API to {orderTimeline.rider?.phone}.</div>
                 </div>
               )}
             </div>

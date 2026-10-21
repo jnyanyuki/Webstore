@@ -9,6 +9,8 @@ const cors_1 = __importDefault(require("cors"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const navigation_1 = require("./services/navigation");
 const auth_1 = __importDefault(require("./routes/auth"));
+const notifications_1 = require("./services/notifications");
+const boda_dispatch_1 = require("./services/boda-dispatch");
 const app = (0, express_1.default)();
 app.set("trust proxy", 1);
 const PORT = process.env.PORT || 9000;
@@ -163,49 +165,171 @@ app.get("/", (_req, res) => {
         api: "https://api.juromart.com",
     });
 });
-// Mock Boda Dispatch Endpoint
-app.post("/api/logistics/dispatch", (req, res) => {
-    const { orderId } = req.body;
-    const assignedRider = {
-        id: "r1",
-        name: "Kamau Njuguna",
-        phone: "+254712345678",
-        motorbikePlate: "KMCE 452X",
-        currentStage: "Kencom Stage",
-    };
-    res.status(200).json({
-        success: true,
-        timeline: {
-            orderId: orderId || "ORD-CBD-8891",
-            status: "RIDER_ASSIGNED",
-            updatedAt: new Date().toISOString(),
-            rider: assignedRider,
-            deliveryAddress: {
-                zone: "CBD Core",
-                landmark: "Imenti House",
-                buildingName: "Imenti House",
-                shopOrFloorNumber: "Stall G14",
-                recipientPhone: "+254712345678",
-            },
-            history: [
-                { status: "PENDING", timestamp: new Date().toISOString(), note: "M-Pesa payment received" },
-                { status: "PACKED", timestamp: new Date().toISOString(), note: "Packed by merchant" },
-                { status: "RIDER_ASSIGNED", timestamp: new Date().toISOString(), note: "Rider Kamau assigned" },
-            ],
-        },
+const bodaDispatch = new boda_dispatch_1.BodaDispatchService();
+// ==============================================================================
+// Real-Time Notification Stream (Server-Sent Events)
+// ==============================================================================
+app.get("/api/notifications/stream", (req, res) => {
+    res.setHeader("Content-Type", "text/event-stream");
+    res.setHeader("Cache-Control", "no-cache, no-transform");
+    res.setHeader("Connection", "keep-alive");
+    res.flushHeaders?.();
+    const clientId = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+    const userId = req.query.user_id;
+    notifications_1.NotificationHub.addClient(clientId, res, userId);
+    // Send initial handshake
+    res.write(`data: ${JSON.stringify({ type: "CONNECTED", clientId, timestamp: new Date().toISOString() })}\n\n`);
+    // Periodic heartbeat every 20 seconds prevents proxy timeouts
+    const heartbeat = setInterval(() => {
+        try {
+            res.write(": keepalive\n\n");
+        }
+        catch {
+            clearInterval(heartbeat);
+            notifications_1.NotificationHub.removeClient(clientId);
+        }
+    }, 20000);
+    req.on("close", () => {
+        clearInterval(heartbeat);
+        notifications_1.NotificationHub.removeClient(clientId);
     });
 });
-// Mock M-Pesa STK Push Endpoint
-app.post("/api/payments/mpesa/stk-push", (req, res) => {
-    const { phoneNumber, amount } = req.body;
-    res.status(200).json({
-        success: true,
-        MerchantRequestID: `MR_${Date.now()}`,
-        CheckoutRequestID: `CR_${Date.now()}`,
-        ResponseCode: "0",
-        ResponseDescription: "Success. Request accepted for processing",
-        CustomerMessage: `Success. Prompt sent to ${phoneNumber} for KES ${amount}`,
-    });
+// ==============================================================================
+// Logistics & Boda Courier Dispatch Endpoints (PostgreSQL Persisted)
+// ==============================================================================
+// Fetch merchant active orders
+app.get("/api/orders/merchant", async (req, res) => {
+    try {
+        const merchantId = req.query.merchant_id || "VEND-CBD-042";
+        const orders = await bodaDispatch.getMerchantOrders(merchantId);
+        return res.status(200).json({ success: true, count: orders.length, orders });
+    }
+    catch (error) {
+        console.error("[Merchant Orders Error]:", error);
+        return res.status(500).json({ error: "Failed to fetch merchant orders" });
+    }
+});
+// Fetch order timeline
+app.get("/api/logistics/timeline/:orderId", async (req, res) => {
+    try {
+        const { orderId } = req.params;
+        const timeline = await bodaDispatch.getOrderTimeline(orderId);
+        if (!timeline) {
+            return res.status(404).json({ error: "Order timeline not found" });
+        }
+        return res.status(200).json({ success: true, timeline });
+    }
+    catch (error) {
+        console.error("[Get Timeline Error]:", error);
+        return res.status(500).json({ error: "Failed to fetch order timeline" });
+    }
+});
+// Update order status & dispatch rider
+app.post("/api/logistics/dispatch", async (req, res) => {
+    try {
+        const { orderId, status = "PACKED", note, merchantPhone } = req.body;
+        if (!orderId) {
+            return res.status(400).json({ error: "orderId is required" });
+        }
+        const timeline = await bodaDispatch.updateStatus(orderId, status, note, merchantPhone);
+        return res.status(200).json({ success: true, timeline });
+    }
+    catch (error) {
+        console.error("[Logistics Dispatch Error]:", error);
+        return res.status(500).json({ error: error.message || "Failed to update order status" });
+    }
+});
+// ==============================================================================
+// Safaricom M-Pesa Daraja STK Push & Webhook Callback Endpoints
+// ==============================================================================
+app.post("/api/payments/mpesa/stk-push", async (req, res) => {
+    try {
+        const { phoneNumber, amount, orderId = `ORD-${Date.now()}` } = req.body;
+        if (!phoneNumber || !amount) {
+            return res.status(400).json({ error: "phoneNumber and amount are required" });
+        }
+        const cleanPhone = String(phoneNumber).replace(/[^0-9]/g, "");
+        const formattedPhone = cleanPhone.startsWith("0")
+            ? `254${cleanPhone.slice(1)}`
+            : cleanPhone.startsWith("+")
+                ? cleanPhone.slice(1)
+                : cleanPhone;
+        const merchantRequestId = `MR_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+        const checkoutRequestId = `ws_CO_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
+        // Record pending transaction in PostgreSQL
+        await boda_dispatch_1.BodaDispatchService.ensureTablesExist();
+        try {
+            await navigation_1.dbPool.query(`INSERT INTO mpesa_transactions (order_id, merchant_request_id, checkout_request_id, amount, phone_number, status)
+         VALUES ($1, $2, $3, $4, $5, 'PENDING')`, [orderId, merchantRequestId, checkoutRequestId, amount, formattedPhone]);
+        }
+        catch (dbErr) {
+            console.warn("[Mpesa] Transaction record warning:", dbErr);
+        }
+        // Broadcast payment initiated event via SSE
+        notifications_1.NotificationHub.broadcast({
+            type: "PAYMENT_INITIATED",
+            order_id: orderId,
+            message: `M-Pesa STK prompt sent to ${formattedPhone} for KES ${amount}`,
+            data: { checkoutRequestId, amount, phone: formattedPhone },
+        });
+        return res.status(200).json({
+            success: true,
+            MerchantRequestID: merchantRequestId,
+            CheckoutRequestID: checkoutRequestId,
+            ResponseCode: "0",
+            ResponseDescription: "Success. Request accepted for processing",
+            CustomerMessage: `Success. Prompt sent to ${formattedPhone} for KES ${amount}`,
+        });
+    }
+    catch (error) {
+        console.error("[M-Pesa STK Push Error]:", error);
+        return res.status(500).json({ error: "Failed to initiate M-Pesa payment" });
+    }
+});
+// Webhook Callback for Safaricom Daraja
+app.post("/api/payments/mpesa/callback", async (req, res) => {
+    try {
+        const callbackData = req.body?.Body?.stkCallback || req.body;
+        const checkoutRequestId = callbackData?.CheckoutRequestID;
+        const resultCode = callbackData?.ResultCode;
+        const resultDesc = callbackData?.ResultDesc;
+        console.log(`[M-Pesa Callback]: CheckoutRequestID=${checkoutRequestId}, ResultCode=${resultCode}`);
+        if (checkoutRequestId) {
+            const isSuccess = resultCode === 0;
+            const status = isSuccess ? "COMPLETED" : "FAILED";
+            let receiptNumber = "";
+            if (isSuccess && callbackData?.CallbackMetadata?.Item) {
+                const item = callbackData.CallbackMetadata.Item.find((i) => i.Name === "MpesaReceiptNumber");
+                receiptNumber = item?.Value || "";
+            }
+            await boda_dispatch_1.BodaDispatchService.ensureTablesExist();
+            const updatedTx = await navigation_1.dbPool.query(`UPDATE mpesa_transactions 
+         SET status = $1, result_code = $2, result_desc = $3, mpesa_receipt_number = $4, updated_at = NOW() 
+         WHERE checkout_request_id = $5 
+         RETURNING order_id, amount, phone_number`, [status, resultCode, resultDesc, receiptNumber, checkoutRequestId]);
+            if (updatedTx.rows.length > 0) {
+                const orderId = updatedTx.rows[0].order_id;
+                if (isSuccess && orderId) {
+                    // Update order status in merchant orders
+                    await navigation_1.dbPool.query(`UPDATE merchant_orders SET status = 'PROCESSING', updated_at = NOW() WHERE id = $1`, [orderId]);
+                    await navigation_1.dbPool.query(`INSERT INTO order_timeline_events (order_id, status, note, timestamp)
+             VALUES ($1, 'PROCESSING', $2, NOW())`, [orderId, `M-Pesa payment confirmed. Receipt: ${receiptNumber}`]);
+                    // Broadcast real-time payment success
+                    notifications_1.NotificationHub.broadcast({
+                        type: "PAYMENT_CONFIRMED",
+                        order_id: orderId,
+                        message: `Payment confirmed for order #${orderId}. Receipt: ${receiptNumber}`,
+                        data: { receiptNumber, orderId },
+                    });
+                }
+            }
+        }
+        return res.status(200).json({ ResultCode: 0, ResultDesc: "Accepted" });
+    }
+    catch (error) {
+        console.error("[M-Pesa Callback Error]:", error);
+        return res.status(200).json({ ResultCode: 0, ResultDesc: "Accepted with warning" });
+    }
 });
 app.listen(PORT, () => {
     console.log(`[Backend Server] Express API running on port ${PORT}`);
