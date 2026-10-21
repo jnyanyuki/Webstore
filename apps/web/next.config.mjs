@@ -1,3 +1,12 @@
+import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Load unified root .env across monorepo
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(__dirname, "../../.env") });
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
+
 const backendUrl = process.env.BACKEND_INTERNAL_URL || "http://127.0.0.1:9000";
 
 const nextConfig = {

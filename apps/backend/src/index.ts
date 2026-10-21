@@ -1,4 +1,11 @@
-import "dotenv/config";
+import dotenv from "dotenv";
+import path from "path";
+
+// Load unified root .env with robust path resolution
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
+dotenv.config({ path: path.resolve(__dirname, "../../.env") });
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
+
 import express, { Request, Response } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -8,8 +15,6 @@ import productsRouter from "./routes/products";
 import { NotificationHub } from "./services/notifications";
 import { BodaDispatchService } from "./services/boda-dispatch";
 import { AuthService } from "./services/auth";
-
-import path from "path";
 
 const app = express();
 app.set("trust proxy", 1);
