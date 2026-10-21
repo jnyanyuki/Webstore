@@ -3,6 +3,16 @@ const backendUrl = process.env.BACKEND_INTERNAL_URL || "http://127.0.0.1:9000";
 const nextConfig = {
   reactStrictMode: true,
   output: "standalone",
+  poweredByHeader: false,
+  compress: true,
+  experimental: {
+    optimizePackageImports: [
+      "@webstore/ui",
+      "@webstore/types",
+      "@webstore/api-client",
+      "@webstore/dynamic-attributes",
+    ],
+  },
   transpilePackages: [
     "@webstore/ui",
     "@webstore/types",
