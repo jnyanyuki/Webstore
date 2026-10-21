@@ -52,15 +52,24 @@ export function middleware(request: NextRequest) {
 
   // 2. Handling requests on the seller subdomain (seller.juromart.com / seller.localhost)
   if (isSellerDomain) {
-    // Require authentication for the entire seller portal
+    const isSellerAuthRoute = pathname === "/login" || pathname === "/login/";
+
+    // Allow accessing dedicated merchant login page
+    if (isSellerAuthRoute) {
+      if (isAuthenticated) {
+        return NextResponse.redirect(new URL(`/${search}`, request.url));
+      }
+      const response = NextResponse.rewrite(new URL(`/seller/login${search}`, request.url));
+      response.headers.set("x-workspace-zone", "seller-center");
+      return response;
+    }
+
+    // Require authentication for the rest of the seller portal
     if (!isAuthenticated) {
-      const loginBase =
-        host === "seller.juromart.com"
-          ? "https://www.juromart.com"
-          : `${request.nextUrl.protocol}//${host.replace(/^seller\./, "")}:${request.nextUrl.port || "3004"}`;
-      const returnUrl = `${request.nextUrl.protocol}//${rawHost}${pathname}${search}`;
-      const loginUrl = new URL("/login", loginBase);
-      loginUrl.searchParams.set("redirect", returnUrl);
+      const loginUrl = new URL("/login", request.url);
+      if (pathname !== "/") {
+        loginUrl.searchParams.set("redirect", `${pathname}${search}`);
+      }
       return NextResponse.redirect(loginUrl);
     }
 
@@ -77,8 +86,10 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // 3. Protect storefront private route groups
-  const isProtected = PROTECTED_ROUTES.some((route) => pathname.startsWith(route));
+  // 3. Protect storefront private route groups (exempting /seller/login)
+  const isProtected =
+    PROTECTED_ROUTES.some((route) => pathname.startsWith(route)) &&
+    !pathname.startsWith("/seller/login");
 
   if (isProtected && !isAuthenticated) {
     const loginUrl = new URL("/login", request.url);

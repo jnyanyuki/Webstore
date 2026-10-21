@@ -8,7 +8,7 @@ interface AuthContextType {
   user: AuthUser | null;
   isLoading: boolean;
   isAuthenticated: boolean;
-  login: (credentials: LoginCredentials) => Promise<void>;
+  login: (credentials: LoginCredentials) => Promise<AuthUser | undefined>;
   register: (payload: RegisterPayload) => Promise<void>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
@@ -53,7 +53,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, [fetchCurrentUser]);
 
-  const login = async (credentials: LoginCredentials): Promise<void> => {
+  const login = async (credentials: LoginCredentials): Promise<AuthUser | undefined> => {
     setIsLoading(true);
     try {
       const response = await apiClient.post<{ success: boolean; user: AuthUser }>(
@@ -62,7 +62,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       );
       if (response && response.user) {
         setUser(response.user);
+        return response.user;
       }
+      return undefined;
     } finally {
       setIsLoading(false);
     }
