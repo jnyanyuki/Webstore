@@ -182,6 +182,7 @@ router.post(
         images,
         gallery,
         variants,
+        attributes,
         resetPromotion = false,
         discountPercentage,
       } = req.body;
@@ -220,8 +221,8 @@ router.post(
         INSERT INTO product_overrides (
           id, name, category, subcategory, item_type, price, original_price,
           badge, description, merchant_stall, front_image, side_image, images, gallery, variants,
-          discount_percentage, is_active, updated_by, updated_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, TRUE, $17, NOW())
+          attributes, discount_percentage, is_active, updated_by, updated_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, TRUE, $18, NOW())
         ON CONFLICT (id) DO UPDATE SET
           name = COALESCE(EXCLUDED.name, product_overrides.name),
           category = COALESCE(EXCLUDED.category, product_overrides.category),
@@ -237,6 +238,7 @@ router.post(
           images = CASE WHEN EXCLUDED.images IS NOT NULL THEN EXCLUDED.images ELSE product_overrides.images END,
           gallery = CASE WHEN EXCLUDED.gallery IS NOT NULL THEN EXCLUDED.gallery ELSE product_overrides.gallery END,
           variants = COALESCE(EXCLUDED.variants, product_overrides.variants),
+          attributes = CASE WHEN EXCLUDED.attributes IS NOT NULL THEN EXCLUDED.attributes ELSE product_overrides.attributes END,
           discount_percentage = EXCLUDED.discount_percentage,
           updated_by = EXCLUDED.updated_by,
           updated_at = NOW()
@@ -259,6 +261,7 @@ router.post(
         images ? JSON.stringify(images) : null,
         gallery ? JSON.stringify(gallery) : null,
         variants ? JSON.stringify(variants) : null,
+        attributes ? JSON.stringify(attributes) : null,
         finalDiscountPercentage !== undefined && finalDiscountPercentage !== null ? finalDiscountPercentage : null,
         req.authUser?.email || "abokos@juromart.com",
       ]);
@@ -280,6 +283,7 @@ router.post(
         images: row.images ? (Array.isArray(row.images) ? row.images : JSON.parse(row.images)) : undefined,
         gallery: row.gallery ? (Array.isArray(row.gallery) ? row.gallery : JSON.parse(row.gallery)) : undefined,
         variants: row.variants,
+        attributes: row.attributes ? (typeof row.attributes === "string" ? JSON.parse(row.attributes) : row.attributes) : {},
         discountPercentage:
           row.discount_percentage !== null && row.discount_percentage !== undefined
             ? parseFloat(row.discount_percentage)

@@ -119,7 +119,8 @@ export function ProductCatalogProvider({ children }: { children: React.ReactNode
           images: override.images || [],
           gallery: override.gallery || [],
           variants: override.variants || [],
-        } as ProductItem);
+          attributes: override.attributes || {},
+        } as any);
       }
     }
 
@@ -145,7 +146,8 @@ export function ProductCatalogProvider({ children }: { children: React.ReactNode
           images: override.images ?? p.images,
           gallery: override.gallery ?? p.gallery,
           variants: override.variants ?? p.variants,
-        });
+          attributes: override.attributes || (p as any).attributes || {},
+        } as any);
       }
     }
 

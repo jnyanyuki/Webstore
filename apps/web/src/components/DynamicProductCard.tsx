@@ -31,6 +31,7 @@ export type ProductItem = {
   colors?: string[];
   sizes?: string[];
   variants?: { name: string; priceDelta: number }[];
+  attributes?: Record<string, any>;
 };
 
 function getBadgeStyles(badge: string) {

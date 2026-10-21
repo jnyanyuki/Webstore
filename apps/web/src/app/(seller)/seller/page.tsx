@@ -38,6 +38,7 @@ const CBD_STAGES = [
 export default function SellerCenterHome() {
   const { user, isAuthenticated, isLoading } = useAuth();
   const [activeTab, setActiveTab] = useState<"fulfillment" | "catalog-admin" | "pim" | "boda" | "analytics" | "settings">("fulfillment");
+  const [selectedPimProductId, setSelectedPimProductId] = useState<string | null>(null);
   
   // Navigation sidebar states
   const [sidebarOpen, setSidebarOpen] = useState(false); // Mobile drawer
@@ -1033,7 +1034,13 @@ export default function SellerCenterHome() {
               </div>
 
               {/* Passes onSideControlPanelOpenChange to automatically collapse the sidebar */}
-              <SuperAdminCatalogManager onSideControlPanelOpenChange={setSideControlPanelOpen} />
+              <SuperAdminCatalogManager
+                onSideControlPanelOpenChange={setSideControlPanelOpen}
+                onOpenInPim={(prodId) => {
+                  setSelectedPimProductId(prodId);
+                  setActiveTab("pim");
+                }}
+              />
             </div>
           )}
 
@@ -1043,18 +1050,21 @@ export default function SellerCenterHome() {
               <div className="p-4 rounded-2xl bg-white border border-zinc-200 flex items-center justify-between shadow-xs">
                 <div>
                   <h3 className="text-sm font-extrabold text-zinc-900">
-                    Dynamic Product Information Management (PIM)
+                    Enterprise Product Information Management (PIM) Studio
                   </h3>
                   <p className="text-xs text-zinc-500">
-                    List electronics or fashion products with dynamic polymorphic attribute schemas.
+                    Polymorphic schemas active across all 15 platform domains &amp; 62 subcategories.
                   </p>
                 </div>
                 <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-                  Polymorphic Schema Ready
+                  Full Catalog Capacity
                 </span>
               </div>
 
-              <DynamicProductForm />
+              <DynamicProductForm
+                initialProductId={selectedPimProductId}
+                onProductSaved={() => setSelectedPimProductId(null)}
+              />
             </div>
           )}
 

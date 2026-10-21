@@ -1,15 +1,19 @@
 "use client";
 
-import React, { useState, useMemo, useRef } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
 import {
   PIM_CATEGORIES_METADATA,
   PIMCategoryMetadata,
   AttributeFieldMeta,
+  getFieldsForCategoryAndSubcategory,
+  resolveCategoryForProduct,
   validateCategoryAttributes,
+  getCategoryBySlugOrName,
 } from "@webstore/dynamic-attributes";
-import { useProductCatalog } from "@/context/ProductCatalogContext";
+import { useProductCatalog, ProductOverride } from "@/context/ProductCatalogContext";
 import { useAuth } from "@/context/AuthContext";
+import { ProductItem } from "@/components/DynamicProductCard";
 import { getStorefrontUrl } from "@/lib/domainUrls";
 
 const PRESET_BADGES = [
@@ -20,13 +24,30 @@ const PRESET_BADGES = [
   "✨ Hot Deal",
   "💎 Premium Grade",
   "Top Rated",
+  "New Arrival",
 ];
 
-export default function DynamicProductForm() {
-  const { user } = useAuth();
-  const { createProduct, uploadImage } = useProductCatalog();
+interface DynamicProductFormProps {
+  initialProductId?: string | null;
+  onProductSaved?: (product: any) => void;
+}
 
-  // Selected Category (default: Phones & Tablets)
+export default function DynamicProductForm({
+  initialProductId,
+  onProductSaved,
+}: DynamicProductFormProps = {}) {
+  const { user } = useAuth();
+  const { products, createProduct, updateProduct, uploadImage, overrides } = useProductCatalog();
+
+  // Mode: "create" (list new product) vs "manage" (edit existing catalog product)
+  const [activeMode, setActiveMode] = useState<"create" | "manage">("create");
+
+  // Manage mode product selection state
+  const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
+  const [productSearchQuery, setProductSearchQuery] = useState("");
+  const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
+
+  // Selected Category & Subcategory
   const [selectedCategory, setSelectedCategory] = useState<PIMCategoryMetadata>(
     PIM_CATEGORIES_METADATA[0]
   );
@@ -35,8 +56,8 @@ export default function DynamicProductForm() {
   );
 
   // Core Product Details
+  const [productId, setProductId] = useState<string>("");
   const [title, setTitle] = useState("");
-  const [brand, setBrand] = useState("");
   const [basePrice, setBasePrice] = useState<number | "">("");
   const [originalPrice, setOriginalPrice] = useState<number | "">("");
   const [stockQuantity, setStockQuantity] = useState<number>(25);
@@ -68,53 +89,129 @@ export default function DynamicProductForm() {
   const [publishedProduct, setPublishedProduct] = useState<any | null>(null);
   const [previewTab, setPreviewTab] = useState<"card" | "json">("card");
 
+  // Dynamic active fields driven by Category + Subcategory
+  const activeFields = useMemo(() => {
+    return getFieldsForCategoryAndSubcategory(selectedCategory.slug, selectedSubcategory);
+  }, [selectedCategory, selectedSubcategory]);
+
+  // Filtered catalog products for the manage search combobox
+  const filteredCatalogProducts = useMemo(() => {
+    if (!productSearchQuery.trim()) return products.slice(0, 15);
+    const q = productSearchQuery.toLowerCase();
+    return products
+      .filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.id.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          (p.subcategory && p.subcategory.toLowerCase().includes(q)) ||
+          (p.merchantStall && p.merchantStall.toLowerCase().includes(q))
+      )
+      .slice(0, 20);
+  }, [products, productSearchQuery]);
+
+  // Load a catalog product into the PIM Studio
+  const handleLoadProduct = (prod: ProductItem) => {
+    setSelectedProductId(prod.id);
+    setProductId(prod.id);
+    setTitle(prod.name);
+    setBasePrice(prod.price);
+    setOriginalPrice(prod.originalPrice || "");
+    setBadge(prod.badge || "None");
+    setMerchantStall(prod.merchantStall || "Stall G14 • Imenti House");
+    setDescription(prod.description || "");
+
+    // Media
+    const prodImages = prod.images && prod.images.length > 0 ? prod.images : [prod.frontImage];
+    setImages(prodImages.filter(Boolean));
+
+    // Resolve Category & Subcategory Schema
+    const resolved = resolveCategoryForProduct(prod.category, prod.subcategory);
+    setSelectedCategory(resolved.category);
+    setSelectedSubcategory(resolved.subcategory);
+
+    // Dynamic Attributes: use existing or extract defaults
+    const existingAttrs = (prod as any).attributes || {};
+    const initialAttrs: Record<string, any> = { ...existingAttrs };
+
+    // Fill missing fields with defaults from options if not present
+    const fields = getFieldsForCategoryAndSubcategory(resolved.category.slug, resolved.subcategory);
+    fields.forEach((f) => {
+      if (initialAttrs[f.key] === undefined && f.options && f.options.length > 0) {
+        initialAttrs[f.key] = f.options[0];
+      }
+    });
+
+    setDynamicAttributes(initialAttrs);
+    setValidationErrors([]);
+    setPublishedProduct(null);
+    setIsSearchDropdownOpen(false);
+    setActiveMode("manage");
+  };
+
+  // React to initialProductId prop if provided
+  useEffect(() => {
+    if (initialProductId) {
+      const match = products.find((p) => p.id === initialProductId);
+      if (match) {
+        handleLoadProduct(match);
+      }
+    }
+  }, [initialProductId, products]);
+
   // Handle Category Switching
   const handleCategorySelect = (cat: PIMCategoryMetadata) => {
     setSelectedCategory(cat);
-    setSelectedSubcategory(cat.subcategories[0] || "");
+    const sub = cat.subcategories[0] || "General";
+    setSelectedSubcategory(sub);
     setValidationErrors([]);
 
-    // Initialize sensible defaults for the new category
+    // Initialize sensible defaults for the new category & subcategory
+    const fields = getFieldsForCategoryAndSubcategory(cat.slug, sub);
     const initialAttrs: Record<string, any> = {};
-    cat.fields.forEach((f) => {
+    fields.forEach((f) => {
       if (f.options && f.options.length > 0) {
         initialAttrs[f.key] = f.options[0];
       }
     });
     setDynamicAttributes(initialAttrs);
 
-    // Suggest default image for preview
-    if (cat.slug.includes("phone")) {
-      setImages(["https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&auto=format&fit=crop&q=80"]);
-      if (!title) setTitle("iPhone 16 Pro Max 256GB Desert Titanium");
-      if (!basePrice) setBasePrice(179999);
-      if (!originalPrice) setOriginalPrice(195000);
-    } else if (cat.slug.includes("computer")) {
-      setImages(["https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80"]);
-      if (!title) setTitle("MacBook Pro 16\" M3 Max 36GB / 1TB SSD Space Black");
-      if (!basePrice) setBasePrice(349000);
-      if (!originalPrice) setOriginalPrice(375000);
-    } else if (cat.slug.includes("fashion")) {
-      setImages(["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80"]);
-      if (!title) setTitle("Nike Air Jordan 1 Retro High OG Chicago");
-      if (!basePrice) setBasePrice(18500);
-      if (!originalPrice) setOriginalPrice(22000);
-    } else if (cat.slug.includes("tv")) {
-      setImages(["https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&auto=format&fit=crop&q=80"]);
-      if (!title) setTitle("Samsung 65\" OLED 4K Smart TV S90C");
-      if (!basePrice) setBasePrice(189000);
-      if (!originalPrice) setOriginalPrice(215000);
-    } else if (cat.slug.includes("solar")) {
-      setImages(["https://images.unsplash.com/photo-1509391365360-2e959784a276?w=800&auto=format&fit=crop&q=80"]);
-      if (!title) setTitle("Felicity Solar 5.12kWh 100Ah 51.2V LiFePO4 Lithium Battery");
-      if (!basePrice) setBasePrice(145000);
-      if (!originalPrice) setOriginalPrice(165000);
-    } else {
-      setImages(["https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=800&auto=format&fit=crop&q=80"]);
-      if (!title) setTitle("Nutricook Smart Air Fryer 2 XXL 5.5L 1700W");
-      if (!basePrice) setBasePrice(16500);
-      if (!originalPrice) setOriginalPrice(19000);
+    // If creating from scratch and no custom image set, suggest domain placeholder
+    if (activeMode === "create") {
+      if (cat.slug.includes("phone")) {
+        setImages(["https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&auto=format&fit=crop&q=80"]);
+      } else if (cat.slug.includes("computer")) {
+        setImages(["https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80"]);
+      } else if (cat.slug.includes("footwear") || cat.slug.includes("shoe")) {
+        setImages(["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80"]);
+      } else if (cat.slug.includes("fashion")) {
+        setImages(["https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&auto=format&fit=crop&q=80"]);
+      } else if (cat.slug.includes("tv")) {
+        setImages(["https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&auto=format&fit=crop&q=80"]);
+      } else if (cat.slug.includes("solar")) {
+        setImages(["https://images.unsplash.com/photo-1509391365360-2e959784a276?w=800&auto=format&fit=crop&q=80"]);
+      } else {
+        setImages(["https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=800&auto=format&fit=crop&q=80"]);
+      }
     }
+  };
+
+  // Handle Subcategory Switching
+  const handleSubcategorySelect = (sub: string) => {
+    setSelectedSubcategory(sub);
+    setValidationErrors([]);
+
+    // Refresh dynamic fields for the newly selected subcategory
+    const fields = getFieldsForCategoryAndSubcategory(selectedCategory.slug, sub);
+    setDynamicAttributes((prev) => {
+      const updated = { ...prev };
+      fields.forEach((f) => {
+        if (updated[f.key] === undefined && f.options && f.options.length > 0) {
+          updated[f.key] = f.options[0];
+        }
+      });
+      return updated;
+    });
   };
 
   const handleAttributeChange = (key: string, value: any) => {
@@ -187,7 +284,11 @@ export default function DynamicProductForm() {
     }
 
     // 1. Zod polymorphic validation
-    const valResult = validateCategoryAttributes(selectedCategory.slug, dynamicAttributes);
+    const valResult = validateCategoryAttributes(
+      selectedCategory.slug,
+      dynamicAttributes,
+      selectedSubcategory
+    );
     if (!valResult.success && valResult.errors) {
       setValidationErrors(valResult.errors);
       return;
@@ -196,6 +297,7 @@ export default function DynamicProductForm() {
     setIsSubmitting(true);
 
     const productPayload = {
+      id: activeMode === "manage" && productId ? productId : undefined,
       name: title.trim(),
       category: selectedCategory.name,
       subcategory: selectedSubcategory,
@@ -205,7 +307,8 @@ export default function DynamicProductForm() {
       discountPercentage,
       badge: badge === "None" ? undefined : badge,
       merchantStall,
-      description: description || `Original ${title} with full warranty available at ${merchantStall}.`,
+      description:
+        description || `Original ${title} with full warranty available at ${merchantStall}.`,
       frontImage: images[0] || "/placeholder.png",
       sideImage: images[1] || images[0] || "/placeholder.png",
       images: images,
@@ -214,14 +317,30 @@ export default function DynamicProductForm() {
     };
 
     try {
-      const res = await createProduct(productPayload);
-      if (res.success && res.product) {
-        setPublishedProduct(res.product);
+      if (activeMode === "manage" && productId) {
+        // Update existing product in Neon DB
+        const res = await updateProduct({
+          ...productPayload,
+          id: productId,
+        });
+        if (res.success) {
+          setPublishedProduct({ ...productPayload, id: productId });
+          onProductSaved?.(productPayload);
+        } else {
+          setValidationErrors([res.message || "Failed to update product"]);
+        }
       } else {
-        setValidationErrors([res.message || "Failed to publish product to catalog"]);
+        // Create brand new product
+        const res = await createProduct(productPayload as any);
+        if (res.success && res.product) {
+          setPublishedProduct(res.product);
+          onProductSaved?.(res.product);
+        } else {
+          setValidationErrors([res.message || "Failed to publish product to catalog"]);
+        }
       }
     } catch (err: any) {
-      setValidationErrors([err.message || "Network error while publishing product"]);
+      setValidationErrors([err.message || "Network error while saving product"]);
     } finally {
       setIsSubmitting(false);
     }
@@ -229,18 +348,149 @@ export default function DynamicProductForm() {
 
   const handleResetForm = () => {
     setPublishedProduct(null);
+    setSelectedProductId(null);
+    setProductId("");
     setTitle("");
     setBasePrice("");
     setOriginalPrice("");
     setDescription("");
+    setActiveMode("create");
     handleCategorySelect(selectedCategory);
   };
 
   return (
     <div className="space-y-6">
+      {/* Top Controller Bar: Mode Switching & Manage Product Picker */}
+      <div className="p-4 rounded-3xl bg-white border border-zinc-200/90 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+        {/* Mode Toggle Buttons */}
+        <div className="flex items-center gap-1.5 p-1 bg-zinc-100 rounded-2xl w-fit">
+          <button
+            type="button"
+            onClick={() => {
+              setActiveMode("create");
+              setPublishedProduct(null);
+              setSelectedProductId(null);
+              setProductId("");
+            }}
+            className={`px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
+              activeMode === "create"
+                ? "bg-emerald-600 text-white shadow-md shadow-emerald-950/20"
+                : "text-zinc-600 hover:text-zinc-900"
+            }`}
+          >
+            ➕ List New Product
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setActiveMode("manage");
+              setPublishedProduct(null);
+            }}
+            className={`px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
+              activeMode === "manage"
+                ? "bg-zinc-900 text-white shadow-md shadow-zinc-950/20"
+                : "text-zinc-600 hover:text-zinc-900"
+            }`}
+          >
+            🔍 Manage & Edit Catalog Item ({products.length})
+          </button>
+        </div>
+
+        {/* Catalog Search & Picker Combobox (When in Manage Mode) */}
+        {activeMode === "manage" && (
+          <div className="relative flex-1 max-w-md">
+            <div className="flex items-center gap-2 px-3.5 py-2 bg-zinc-50 border border-zinc-200 rounded-2xl focus-within:ring-2 focus-within:ring-emerald-500 focus-within:bg-white transition-all">
+              <span className="text-zinc-400">🔍</span>
+              <input
+                type="text"
+                placeholder="Search catalog product to load into PIM..."
+                value={productSearchQuery}
+                onFocus={() => setIsSearchDropdownOpen(true)}
+                onChange={(e) => {
+                  setProductSearchQuery(e.target.value);
+                  setIsSearchDropdownOpen(true);
+                }}
+                className="w-full text-xs font-medium bg-transparent focus:outline-hidden text-zinc-900"
+              />
+              {selectedProductId && (
+                <span className="text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-md whitespace-nowrap">
+                  Loaded
+                </span>
+              )}
+            </div>
+
+            {/* Dropdown Results */}
+            {isSearchDropdownOpen && (
+              <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-white border border-zinc-200 rounded-2xl shadow-2xl max-h-72 overflow-y-auto divide-y divide-zinc-100 animate-in fade-in zoom-in-95 duration-150">
+                <div className="p-2 text-[10px] font-bold uppercase tracking-wider text-zinc-400 bg-zinc-50 flex items-center justify-between">
+                  <span>Select Product to Edit Schema & Details</span>
+                  <button
+                    type="button"
+                    onClick={() => setIsSearchDropdownOpen(false)}
+                    className="text-zinc-500 hover:text-zinc-900 font-bold"
+                  >
+                    ✕
+                  </button>
+                </div>
+                {filteredCatalogProducts.length === 0 ? (
+                  <div className="p-4 text-center text-xs text-zinc-500">
+                    No matching products found.
+                  </div>
+                ) : (
+                  filteredCatalogProducts.map((prod) => (
+                    <button
+                      key={prod.id}
+                      type="button"
+                      onClick={() => handleLoadProduct(prod)}
+                      className="w-full p-2.5 flex items-center gap-3 hover:bg-emerald-50/60 transition-colors text-left cursor-pointer group"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-zinc-100 overflow-hidden relative shrink-0 border border-zinc-200">
+                        <Image
+                          src={prod.frontImage || "/placeholder.png"}
+                          alt={prod.name}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-bold text-zinc-900 truncate">
+                          {prod.name}
+                        </div>
+                        <div className="flex items-center gap-2 text-[10px] text-zinc-500">
+                          <span className="font-semibold text-emerald-700">{prod.category}</span>
+                          <span>•</span>
+                          <span className="font-mono text-zinc-700">KES {prod.price.toLocaleString()}</span>
+                          {prod.merchantStall && (
+                            <>
+                              <span>•</span>
+                              <span className="truncate">{prod.merchantStall}</span>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                      <span className="text-xs font-bold text-zinc-400 group-hover:text-emerald-600 transition-colors shrink-0">
+                        Edit →
+                      </span>
+                    </button>
+                  ))
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Global Schema Coverage Indicator */}
+        <div className="flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span className="text-[11px] font-extrabold text-zinc-700 tracking-tight">
+            15 Dedicated Domains • 62 Subcategories Active
+          </span>
+        </div>
+      </div>
+
       {/* Success Celebration Banner */}
       {publishedProduct && (
-        <div className="p-6 rounded-3xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-xl animate-in fade-in duration-300">
+        <div className="p-6 rounded-3xl bg-gradient-to-r from-emerald-600 via-teal-700 to-emerald-800 text-white shadow-xl animate-in fade-in duration-300">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3.5">
               <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-xs flex items-center justify-center text-2xl font-black">
@@ -248,256 +498,276 @@ export default function DynamicProductForm() {
               </div>
               <div>
                 <h3 className="text-lg font-black tracking-tight">
-                  Product Successfully Listed &amp; Live!
+                  {activeMode === "manage" ? "Product Updated Successfully!" : "Product Published to Platform!"}
                 </h3>
                 <p className="text-xs text-emerald-100">
-                  <span className="font-bold text-white">{publishedProduct.name}</span> is now active in JuroMart marketplace.
-                  SKU / ID: <span className="font-mono bg-white/20 px-1.5 py-0.5 rounded">{publishedProduct.id}</span>
+                  {publishedProduct.name} ({publishedProduct.id}) is live with dynamic polymorphic attributes synced to Neon PostgreSQL.
                 </p>
               </div>
             </div>
-
             <div className="flex items-center gap-2">
               <a
-                href={getStorefrontUrl("/")}
+                href={getStorefrontUrl(`/product/${publishedProduct.id}`)}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="py-2.5 px-4 bg-white text-emerald-800 rounded-xl font-bold text-xs hover:bg-emerald-50 transition-colors shadow-sm"
+                rel="noreferrer"
+                className="px-4 py-2 bg-white text-emerald-900 rounded-xl text-xs font-black shadow-md hover:bg-emerald-50 transition-colors"
               >
-                View on Storefront ↗
+                👁️ View on Storefront
               </a>
               <button
                 type="button"
                 onClick={handleResetForm}
-                className="py-2.5 px-4 bg-emerald-800/80 hover:bg-emerald-850 text-white rounded-xl font-bold text-xs transition-colors"
+                className="px-4 py-2 bg-emerald-950/40 hover:bg-emerald-950/60 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer"
               >
-                + List Another Product
+                {activeMode === "manage" ? "Edit Another" : "List Another"}
               </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Main Two-Column PIM Studio Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        {/* Left Column: Comprehensive Listing Form (7 Columns) */}
-        <div className="lg:col-span-7 bg-white rounded-3xl border border-zinc-200/90 shadow-sm p-6 sm:p-7 space-y-6">
-          {/* Header & Category Tabs */}
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <div>
-                <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
-                  Enterprise PIM v2.4
-                </span>
-                <h2 className="text-xl font-black text-zinc-900 mt-1">
-                  List New Product with Polymorphic Schemas
+      {/* Main Two-Column Studio Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Left Column (7 cols): The Polymorphic Listing Engine */}
+        <div className="lg:col-span-7 bg-white rounded-3xl border border-zinc-200/90 shadow-sm p-6 sm:p-8 space-y-8">
+          {/* Header & Active Schema Badge */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-zinc-100">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xl">{selectedCategory.icon}</span>
+                <h2 className="text-xl font-black text-zinc-900 tracking-tight">
+                  {activeMode === "manage" ? `Edit: ${title || "Catalog Product"}` : "Product Information Management Studio"}
                 </h2>
               </div>
-              <span className="text-xs font-semibold text-zinc-400">
-                PostgreSQL JSONB Engine
-              </span>
+              <p className="text-xs text-zinc-500 mt-1">
+                {selectedCategory.domain} • Dedicated Polymorphic Schema
+              </p>
             </div>
-            <p className="text-xs text-zinc-500 mb-4">
-              Select category below to instantly load category-specific specifications, attributes, and Zod validation rules.
-            </p>
-
-            {/* Category Selector Pills */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {PIM_CATEGORIES_METADATA.map((cat) => {
-                const isSelected = selectedCategory.id === cat.id;
-                return (
-                  <button
-                    key={cat.id}
-                    type="button"
-                    onClick={() => handleCategorySelect(cat)}
-                    className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex items-center gap-2.5 ${
-                      isSelected
-                        ? "bg-emerald-600 text-white border-emerald-600 shadow-md shadow-emerald-950/20"
-                        : "bg-zinc-50 text-zinc-700 border-zinc-200 hover:bg-zinc-100"
-                    }`}
-                  >
-                    <span className="text-xl flex-shrink-0">{cat.icon}</span>
-                    <div className="min-w-0">
-                      <div className={`text-xs font-bold truncate ${isSelected ? "text-white" : "text-zinc-900"}`}>
-                        {cat.name}
-                      </div>
-                      <div className={`text-[10px] truncate ${isSelected ? "text-emerald-100" : "text-zinc-400"}`}>
-                        {cat.fields.length} specs
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+            <span className="text-xs font-mono font-bold px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full border border-emerald-200 shrink-0 self-start sm:self-auto">
+              Schema: {selectedCategory.slug}
+            </span>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Section 1: Core Product Identity */}
-            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-3.5">
-              <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-800 flex items-center gap-2">
-                <span>1. Core Product Identity</span>
+          <form onSubmit={handleSubmit} className="space-y-8">
+            {/* 1. Category Domain Grid Selector */}
+            <div className="space-y-3">
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-zinc-700">
+                1. Dedicated Domain Category ({PIM_CATEGORIES_METADATA.length} Domains)
+              </label>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-h-56 overflow-y-auto pr-1">
+                {PIM_CATEGORIES_METADATA.map((cat) => {
+                  const isSelected = selectedCategory.id === cat.id;
+                  return (
+                    <button
+                      key={cat.id}
+                      type="button"
+                      onClick={() => handleCategorySelect(cat)}
+                      className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex items-center gap-2.5 ${
+                        isSelected
+                          ? "bg-emerald-50 border-emerald-500 ring-2 ring-emerald-500/20 text-emerald-950 font-black shadow-xs"
+                          : "bg-zinc-50/70 border-zinc-200/70 text-zinc-700 hover:bg-zinc-100/70 hover:border-zinc-300"
+                      }`}
+                    >
+                      <span className="text-xl shrink-0">{cat.icon}</span>
+                      <div className="min-w-0">
+                        <div className="text-xs font-bold truncate leading-tight">{cat.name}</div>
+                        <div className="text-[10px] text-zinc-500 truncate">{cat.subcategories.length} subcategories</div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* 2. Subcategory Selector */}
+            <div className="space-y-2.5">
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-zinc-700">
+                2. Subcategory Specification (Swaps Dynamic Attributes)
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {selectedCategory.subcategories.map((sub) => {
+                  const isSelected = selectedSubcategory === sub;
+                  return (
+                    <button
+                      key={sub}
+                      type="button"
+                      onClick={() => handleSubcategorySelect(sub)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                        isSelected
+                          ? "bg-zinc-900 text-white shadow-xs"
+                          : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900"
+                      }`}
+                    >
+                      {sub}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* 3. Core Identity & Pricing Engine */}
+            <div className="space-y-4 pt-4 border-t border-zinc-100">
+              <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-700">
+                3. Core Identity, Pricing & Commercial Terms
               </h3>
 
-              <div>
-                <label className="block text-xs font-bold text-zinc-700 mb-1">
-                  Product Title <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="e.g., iPhone 16 Pro Max 256GB or Nike Air Jordan 1 Retro"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  className="w-full text-xs sm:text-sm px-3.5 py-2.5 bg-white border border-zinc-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500 outline-none"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-3">
                 <div>
-                  <label className="block text-xs font-bold text-zinc-700 mb-1">Subcategory</label>
-                  <select
-                    value={selectedSubcategory}
-                    onChange={(e) => setSelectedSubcategory(e.target.value)}
-                    className="w-full text-xs px-3 py-2.5 bg-white border border-zinc-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
-                  >
-                    {selectedCategory.subcategories.map((sub) => (
-                      <option key={sub} value={sub}>
-                        {sub}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-zinc-700 mb-1">Merchant Stall / Fulfilled By</label>
+                  <label className="block text-xs font-bold text-zinc-700 mb-1">
+                    Product Title / Name *
+                  </label>
                   <input
                     type="text"
                     required
-                    value={merchantStall}
-                    onChange={(e) => setMerchantStall(e.target.value)}
-                    className="w-full text-xs px-3 py-2.5 bg-white border border-zinc-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Section 2: Pricing, Promotions & Inventory */}
-            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-3.5">
-              <div className="flex items-center justify-between">
-                <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-800">
-                  2. Pricing &amp; Inventory Engine
-                </h3>
-                {discountPercentage > 0 && (
-                  <span className="text-[10px] font-black bg-red-500 text-white px-2 py-0.5 rounded-full">
-                    {discountPercentage}% DISCOUNT ACTIVE
-                  </span>
-                )}
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div>
-                  <label className="block text-xs font-bold text-zinc-700 mb-1">
-                    Selling Price (KES) <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="number"
-                    required
-                    min="1"
-                    placeholder="e.g. 18500"
-                    value={basePrice}
-                    onChange={(e) => setBasePrice(e.target.value === "" ? "" : Number(e.target.value))}
-                    className="w-full text-xs sm:text-sm font-bold text-emerald-700 px-3.5 py-2.5 bg-white border border-zinc-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    placeholder="e.g. iPhone 16 Pro Max 256GB Desert Titanium / Italian Tailored Blazer"
+                    className="w-full px-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-sm font-semibold text-zinc-900 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500 transition-all"
                   />
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-zinc-700 mb-1">
-                    Original MSRP (KES)
-                  </label>
-                  <input
-                    type="number"
-                    min="1"
-                    placeholder="e.g. 22000"
-                    value={originalPrice}
-                    onChange={(e) => setOriginalPrice(e.target.value === "" ? "" : Number(e.target.value))}
-                    className="w-full text-xs sm:text-sm text-zinc-600 px-3.5 py-2.5 bg-white border border-zinc-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-700 mb-1">
+                      Selling Price (KES) *
+                    </label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-2.5 text-xs font-bold text-zinc-400">
+                        KES
+                      </span>
+                      <input
+                        type="number"
+                        required
+                        min="1"
+                        value={basePrice}
+                        onChange={(e) => setBasePrice(e.target.value === "" ? "" : Number(e.target.value))}
+                        placeholder="185000"
+                        className="w-full pl-12 pr-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-sm font-bold text-zinc-900 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="text-xs font-bold text-zinc-700">
+                        Original MSRP / Strikethrough
+                      </label>
+                      {discountPercentage > 0 && (
+                        <span className="text-[10px] font-black bg-rose-100 text-rose-700 px-2 py-0.5 rounded-full">
+                          -{discountPercentage}% Off
+                        </span>
+                      )}
+                    </div>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-2.5 text-xs font-bold text-zinc-400">
+                        KES
+                      </span>
+                      <input
+                        type="number"
+                        min="0"
+                        value={originalPrice}
+                        onChange={(e) => setOriginalPrice(e.target.value === "" ? "" : Number(e.target.value))}
+                        placeholder="205000"
+                        className="w-full pl-12 pr-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-sm font-semibold text-zinc-900 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-zinc-700 mb-1">Stock in Stall</label>
-                  <input
-                    type="number"
-                    min="0"
-                    value={stockQuantity}
-                    onChange={(e) => setStockQuantity(Number(e.target.value))}
-                    className="w-full text-xs sm:text-sm font-semibold text-zinc-700 px-3.5 py-2.5 bg-white border border-zinc-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
-                  />
-                </div>
-              </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-700 mb-1">
+                      Merchant Stall / Branch
+                    </label>
+                    <input
+                      type="text"
+                      value={merchantStall}
+                      onChange={(e) => setMerchantStall(e.target.value)}
+                      placeholder="Stall G14 • Imenti House"
+                      className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-xl text-xs font-medium text-zinc-900 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+                    />
+                  </div>
 
-              <div>
-                <label className="block text-xs font-bold text-zinc-700 mb-1">Marketing Ribbon Badge</label>
-                <div className="flex flex-wrap gap-1.5">
-                  {PRESET_BADGES.map((b) => (
-                    <button
-                      key={b}
-                      type="button"
-                      onClick={() => setBadge(b)}
-                      className={`text-xs px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${
-                        badge === b
-                          ? "bg-zinc-900 text-white shadow-xs"
-                          : "bg-white text-zinc-700 border border-zinc-200 hover:bg-zinc-100"
-                      }`}
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-700 mb-1">
+                      Stock Quantity
+                    </label>
+                    <input
+                      type="number"
+                      min="0"
+                      value={stockQuantity}
+                      onChange={(e) => setStockQuantity(Number(e.target.value))}
+                      className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-xl text-xs font-bold text-zinc-900 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-zinc-700 mb-1">
+                      Promotional Badge
+                    </label>
+                    <select
+                      value={badge}
+                      onChange={(e) => setBadge(e.target.value)}
+                      className="w-full px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-xl text-xs font-bold text-zinc-900 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
                     >
-                      {b}
-                    </button>
-                  ))}
+                      {PRESET_BADGES.map((b) => (
+                        <option key={b} value={b}>
+                          {b}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Section 3: Dynamic Polymorphic Attributes */}
-            <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-200/80 space-y-4">
+            {/* 4. Dedicated Polymorphic Attribute Engine */}
+            <div className="space-y-4 pt-4 border-t border-zinc-100">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-emerald-900 flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                    <span>3. Dynamic Specifications ({selectedCategory.name})</span>
+                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-700">
+                    4. Dedicated Specifications ({selectedSubcategory})
                   </h3>
-                  <p className="text-[11px] text-emerald-800 mt-0.5">
-                    Driven by polymorphic Zod schema. Stored as indexable JSONB in PostgreSQL.
+                  <p className="text-[11px] text-zinc-500">
+                    Polymorphic attributes validated against domain Zod schema
                   </p>
                 </div>
+                <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full">
+                  {activeFields.length} Attributes Defined
+                </span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {selectedCategory.fields.map((field: AttributeFieldMeta) => {
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-zinc-50/70 p-4 rounded-2xl border border-zinc-200/80">
+                {activeFields.map((field) => {
                   const currentValue = dynamicAttributes[field.key] || "";
 
                   return (
-                    <div key={field.key} className="space-y-1">
-                      <div className="flex items-center justify-between text-xs font-bold text-zinc-700">
-                        <span>
-                          {field.label} {field.unit ? `(${field.unit})` : ""}{" "}
-                          {field.required && <span className="text-red-500">*</span>}
-                        </span>
+                    <div key={field.key} className="space-y-1.5">
+                      <div className="flex items-center justify-between">
+                        <label className="text-xs font-bold text-zinc-700">
+                          {field.label} {field.required && <span className="text-rose-500">*</span>}
+                        </label>
+                        {field.unit && (
+                          <span className="text-[10px] text-zinc-400 font-mono font-bold">
+                            {field.unit}
+                          </span>
+                        )}
                       </div>
 
-                      {/* Chips selector */}
+                      {/* Chips / Pills Input */}
                       {field.type === "chips" && field.options ? (
                         <div className="flex flex-wrap gap-1.5">
                           {field.options.map((opt) => {
-                            const isChipActive = currentValue === opt;
+                            const isSelected = currentValue === opt;
                             return (
                               <button
                                 key={opt}
                                 type="button"
                                 onClick={() => handleAttributeChange(field.key, opt)}
-                                className={`text-xs font-bold px-2.5 py-1 rounded-lg transition-all cursor-pointer ${
-                                  isChipActive
+                                className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                                  isSelected
                                     ? "bg-emerald-600 text-white shadow-xs"
-                                    : "bg-white text-zinc-700 border border-zinc-200 hover:bg-zinc-100"
+                                    : "bg-white border border-zinc-200 text-zinc-700 hover:bg-zinc-100"
                                 }`}
                               >
                                 {opt}
@@ -506,13 +776,13 @@ export default function DynamicProductForm() {
                           })}
                         </div>
                       ) : field.type === "select" && field.options ? (
+                        /* Select Dropdown */
                         <select
-                          required={field.required}
                           value={currentValue}
                           onChange={(e) => handleAttributeChange(field.key, e.target.value)}
-                          className="w-full text-xs px-3 py-2 bg-white border border-zinc-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
+                          className="w-full px-3 py-2 bg-white border border-zinc-200 rounded-xl text-xs font-semibold text-zinc-800 focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
                         >
-                          <option value="">Select {field.label}</option>
+                          <option value="">Select {field.label}...</option>
                           {field.options.map((opt) => (
                             <option key={opt} value={opt}>
                               {opt}
@@ -520,13 +790,13 @@ export default function DynamicProductForm() {
                           ))}
                         </select>
                       ) : (
+                        /* Text or Number Input */
                         <input
                           type={field.type === "number" ? "number" : "text"}
-                          required={field.required}
-                          placeholder={field.placeholder || `Enter ${field.label.toLowerCase()}`}
                           value={currentValue}
+                          placeholder={field.placeholder || `Enter ${field.label}...`}
                           onChange={(e) => handleAttributeChange(field.key, e.target.value)}
-                          className="w-full text-xs px-3 py-2 bg-white border border-zinc-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
+                          className="w-full px-3 py-2 bg-white border border-zinc-200 rounded-xl text-xs font-medium text-zinc-900 focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
                         />
                       )}
                     </div>
@@ -535,288 +805,294 @@ export default function DynamicProductForm() {
               </div>
             </div>
 
-            {/* Section 4: Multi-Image Photography Studio */}
-            <div className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200/80 space-y-3.5">
+            {/* 5. Photography Studio & Multi-Image Gallery */}
+            <div className="space-y-4 pt-4 border-t border-zinc-100">
               <div className="flex items-center justify-between">
-                <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-800">
-                  4. Photography &amp; Product Gallery ({images.length} Images)
-                </h3>
-                <span className="text-[10px] text-zinc-400 font-semibold">
-                  Primary front image is first
-                </span>
-              </div>
-
-              {/* Upload Dropzone / Button */}
-              <div className="flex flex-col sm:flex-row items-center gap-2">
+                <div>
+                  <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-700">
+                    5. Photography Studio ({images.length} Images)
+                  </h3>
+                  <p className="text-[11px] text-zinc-500">
+                    First image will serve as primary storefront hero
+                  </p>
+                </div>
                 <input
                   type="file"
                   ref={fileInputRef}
-                  accept="image/*"
                   onChange={handleFileUpload}
+                  accept="image/*"
                   className="hidden"
                 />
                 <button
                   type="button"
                   disabled={isUploadingImage}
                   onClick={() => fileInputRef.current?.click()}
-                  className="w-full sm:w-auto px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
+                  className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
                 >
-                  {isUploadingImage ? "Uploading Image..." : "📸 Upload Local Image"}
+                  {isUploadingImage ? "Uploading..." : "📷 Upload Photo"}
                 </button>
-
-                <div className="flex-1 w-full flex items-center gap-2">
-                  <input
-                    type="url"
-                    placeholder="Or paste external image URL..."
-                    value={imageUrlInput}
-                    onChange={(e) => setImageUrlInput(e.target.value)}
-                    className="flex-1 text-xs px-3 py-2 bg-white border border-zinc-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
-                  />
-                  <button
-                    type="button"
-                    onClick={handleAddImageUrl}
-                    className="px-3 py-2 bg-zinc-200 hover:bg-zinc-300 text-zinc-800 text-xs font-bold rounded-xl transition-colors cursor-pointer"
-                  >
-                    Add URL
-                  </button>
-                </div>
               </div>
 
-              {/* Gallery Preview Strips */}
-              {images.length > 0 && (
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
-                  {images.map((imgUrl, idx) => (
-                    <div
-                      key={idx}
-                      className="relative group rounded-xl overflow-hidden border border-zinc-200 bg-white p-1.5 shadow-xs"
-                    >
-                      <div className="aspect-square relative rounded-lg overflow-hidden bg-zinc-100">
-                        <img
-                          src={imgUrl}
-                          alt={`Product media ${idx}`}
-                          className="w-full h-full object-cover"
-                        />
-                        {idx === 0 && (
-                          <span className="absolute top-1 left-1 bg-emerald-600 text-white text-[9px] font-black uppercase px-1.5 py-0.5 rounded shadow">
-                            Front
-                          </span>
-                        )}
-                      </div>
+              {/* URL Direct Add */}
+              <div className="flex items-center gap-2">
+                <input
+                  type="url"
+                  placeholder="Or paste direct image URL (https://...)"
+                  value={imageUrlInput}
+                  onChange={(e) => setImageUrlInput(e.target.value)}
+                  className="flex-1 px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-xl text-xs font-medium text-zinc-900 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+                />
+                <button
+                  type="button"
+                  onClick={handleAddImageUrl}
+                  className="px-3 py-2 bg-zinc-900 hover:bg-zinc-800 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer shrink-0"
+                >
+                  Add URL
+                </button>
+              </div>
 
-                      <div className="flex gap-1 mt-1.5">
-                        {idx !== 0 && (
-                          <button
-                            type="button"
-                            onClick={() => handleSetPrimaryImage(idx)}
-                            className="flex-1 py-1 text-[9px] font-bold bg-zinc-100 hover:bg-emerald-50 hover:text-emerald-700 text-zinc-700 rounded transition-colors"
-                          >
-                            Set Front
-                          </button>
-                        )}
+              {/* Thumbnails Row */}
+              <div className="flex flex-wrap gap-3 pt-1">
+                {images.map((imgUrl, idx) => (
+                  <div
+                    key={idx}
+                    className="relative w-20 h-20 rounded-2xl overflow-hidden border border-zinc-200 group bg-zinc-100 shadow-xs"
+                  >
+                    <Image
+                      src={imgUrl}
+                      alt={`Product Photo ${idx + 1}`}
+                      fill
+                      className="object-cover"
+                    />
+                    {idx === 0 && (
+                      <span className="absolute bottom-1 left-1 right-1 bg-emerald-600 text-white text-[9px] font-black uppercase text-center rounded py-0.5 shadow-xs">
+                        Primary
+                      </span>
+                    )}
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 p-1">
+                      {idx !== 0 && (
                         <button
                           type="button"
-                          onClick={() => handleRemoveImage(idx)}
-                          className="p-1 text-[10px] text-red-500 hover:bg-red-50 rounded transition-colors"
-                          title="Remove image"
+                          onClick={() => handleSetPrimaryImage(idx)}
+                          title="Set as primary"
+                          className="w-6 h-6 rounded-full bg-white text-zinc-900 text-xs font-bold flex items-center justify-center hover:bg-emerald-100 cursor-pointer"
                         >
-                          ✕
+                          ⭐
                         </button>
-                      </div>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveImage(idx)}
+                        title="Delete image"
+                        className="w-6 h-6 rounded-full bg-rose-600 text-white text-xs font-bold flex items-center justify-center hover:bg-rose-700 cursor-pointer"
+                      >
+                        ✕
+                      </button>
                     </div>
-                  ))}
-                </div>
-              )}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Section 5: Description & Features */}
-            <div>
-              <label className="block text-xs font-bold text-zinc-700 mb-1">
-                Product Description &amp; Highlights
+            {/* 6. Description & Selling Points */}
+            <div className="space-y-2 pt-4 border-t border-zinc-100">
+              <label className="block text-xs font-extrabold uppercase tracking-wider text-zinc-700">
+                6. Product Description & Warranty Notes
               </label>
               <textarea
                 rows={3}
-                placeholder="Describe key highlights, warranty coverage, accessories in the box, or sizing tips..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="w-full text-xs px-3.5 py-2.5 bg-white border border-zinc-300 rounded-xl focus:ring-2 focus:ring-emerald-500/40 outline-none"
+                placeholder="Include key details like warranty duration, box contents, or seller guarantees..."
+                className="w-full px-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-xs font-medium text-zinc-900 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
               />
             </div>
 
-            {/* Validation Errors Alert */}
+            {/* Validation Errors Notice */}
             {validationErrors.length > 0 && (
-              <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-red-800 text-xs space-y-1">
+              <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs space-y-1">
                 <div className="font-bold">Please correct the following:</div>
-                {validationErrors.map((err, i) => (
-                  <div key={i}>• {err}</div>
-                ))}
+                <ul className="list-disc list-inside space-y-0.5">
+                  {validationErrors.map((err, i) => (
+                    <li key={i}>{err}</li>
+                  ))}
+                </ul>
               </div>
             )}
 
-            {/* Submit Action */}
-            <div className="flex items-center gap-3 pt-2">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-sm shadow-xl shadow-emerald-950/20 hover:shadow-emerald-950/30 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-              >
-                {isSubmitting ? (
-                  <>
-                    <svg className="animate-spin w-4 h-4 text-white" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
-                    </svg>
-                    <span>Publishing to Neon PostgreSQL Catalog...</span>
-                  </>
-                ) : (
-                  <>
-                    <span>🚀</span>
-                    <span>Publish Product to Marketplace</span>
-                  </>
-                )}
-              </button>
-
+            {/* Action Buttons */}
+            <div className="pt-4 flex items-center justify-end gap-3">
               <button
                 type="button"
                 onClick={handleResetForm}
-                className="py-4 px-5 bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-bold text-xs rounded-2xl transition-colors cursor-pointer"
+                className="px-5 py-2.5 rounded-xl border border-zinc-200 text-zinc-600 hover:bg-zinc-100 text-xs font-bold transition-all cursor-pointer"
               >
                 Reset
+              </button>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="px-7 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-black transition-all shadow-lg shadow-emerald-950/20 disabled:opacity-50 flex items-center gap-2 cursor-pointer"
+              >
+                {isSubmitting ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    <span>Processing...</span>
+                  </>
+                ) : activeMode === "manage" ? (
+                  <span>💾 Save Changes to Neon DB</span>
+                ) : (
+                  <span>🚀 Publish to JuroMart Catalog</span>
+                )}
               </button>
             </div>
           </form>
         </div>
 
-        {/* Right Column: Live WYSIWYG Marketplace Card & JSON Schema Preview (5 Columns) */}
-        <div className="lg:col-span-5 sticky top-20 space-y-4">
-          {/* Preview Mode Selector */}
-          <div className="bg-white p-2 rounded-2xl border border-zinc-200 flex items-center justify-between shadow-xs">
-            <span className="text-xs font-black uppercase text-zinc-700 px-2">
-              Live WYSIWYG Preview
-            </span>
-            <div className="flex gap-1">
-              <button
-                type="button"
-                onClick={() => setPreviewTab("card")}
-                className={`text-xs font-bold px-3 py-1 rounded-xl transition-all cursor-pointer ${
-                  previewTab === "card"
-                    ? "bg-zinc-900 text-white"
-                    : "text-zinc-600 hover:bg-zinc-100"
-                }`}
-              >
-                Storefront Card
-              </button>
-              <button
-                type="button"
-                onClick={() => setPreviewTab("json")}
-                className={`text-xs font-bold px-3 py-1 rounded-xl transition-all cursor-pointer ${
-                  previewTab === "json"
-                    ? "bg-zinc-900 text-white"
-                    : "text-zinc-600 hover:bg-zinc-100"
-                }`}
-              >
-                JSONB Schema
-              </button>
-            </div>
+        {/* Right Column (5 cols): Live WYSIWYG Storefront Preview & Neon PostgreSQL JSONB Inspector */}
+        <div className="lg:col-span-5 space-y-4 lg:sticky lg:top-6">
+          {/* Preview Tab Selector */}
+          <div className="flex items-center justify-between p-1.5 bg-zinc-100 rounded-2xl border border-zinc-200/80">
+            <button
+              type="button"
+              onClick={() => setPreviewTab("card")}
+              className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-bold transition-all cursor-pointer text-center ${
+                previewTab === "card"
+                  ? "bg-white text-zinc-900 shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-900"
+              }`}
+            >
+              🛍️ Storefront Card Preview
+            </button>
+            <button
+              type="button"
+              onClick={() => setPreviewTab("json")}
+              className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-bold transition-all cursor-pointer text-center ${
+                previewTab === "json"
+                  ? "bg-white text-zinc-900 shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-900"
+              }`}
+            >
+              🐘 Neon JSONB Inspector
+            </button>
           </div>
 
-          {/* Tab 1: Live Storefront Product Card */}
           {previewTab === "card" ? (
-            <div className="bg-white rounded-3xl border border-zinc-200/90 shadow-md p-5 space-y-4">
-              {/* Product Card Image Container */}
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-100 relative group border border-zinc-100">
-                <img
+            /* WYSIWYG Card Preview */
+            <div className="p-5 rounded-3xl bg-white border border-zinc-200/90 shadow-md space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-extrabold tracking-wider uppercase text-zinc-400">
+                  Live Marketplace WYSIWYG
+                </span>
+                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                  {selectedSubcategory}
+                </span>
+              </div>
+
+              {/* Image Preview Carousel */}
+              <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-100">
+                <Image
                   src={images[0] || "/placeholder.png"}
-                  alt={title || "Preview product"}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  alt={title || "Product Preview"}
+                  fill
+                  className="object-cover"
                 />
-
-                {/* Badge Ribbon */}
                 {badge && badge !== "None" && (
-                  <span className="absolute top-3 left-3 bg-amber-50/95 text-amber-950 font-black text-[10px] px-2.5 py-1 rounded-full border border-amber-200/90 shadow-xs">
+                  <div className="absolute top-3 left-3 px-3 py-1 bg-amber-400/95 text-zinc-950 font-black text-xs rounded-full shadow-md backdrop-blur-xs">
                     {badge}
-                  </span>
-                )}
-
-                {/* Discount Percentage Pill */}
-                {discountPercentage > 0 && (
-                  <span className="absolute top-3 right-3 bg-red-600 text-white font-black text-[10px] px-2 py-0.5 rounded-full shadow-md">
-                    -{discountPercentage}%
-                  </span>
-                )}
-
-                <span className="absolute bottom-2 left-2 bg-black/60 backdrop-blur-xs text-white text-[9px] font-semibold px-2 py-0.5 rounded-md">
-                  📍 {merchantStall}
-                </span>
-              </div>
-
-              {/* Title & Category */}
-              <div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
-                  {selectedCategory.name} • {selectedSubcategory}
-                </span>
-                <h4 className="font-extrabold text-base text-zinc-900 mt-1 line-clamp-2 leading-snug">
-                  {title || "Untitled Product Title (e.g. iPhone 16 Pro Max)"}
-                </h4>
-              </div>
-
-              {/* Dynamic Polymorphic Attributes Chips */}
-              <div className="flex flex-wrap gap-1.5 pt-1">
-                {Object.entries(dynamicAttributes).map(([key, val]) => {
-                  if (!val) return null;
-                  return (
-                    <span
-                      key={key}
-                      className="text-[10px] font-bold bg-zinc-100 text-zinc-800 px-2.5 py-1 rounded-md border border-zinc-200"
-                    >
-                      <span className="text-zinc-400 capitalize">{key}:</span> {String(val)}
-                    </span>
-                  );
-                })}
-              </div>
-
-              {/* Pricing & Checkout */}
-              <div className="pt-3 border-t border-zinc-100 flex items-baseline justify-between">
-                <div>
-                  <div className="text-xl font-black text-zinc-900">
-                    KSh {basePrice ? Number(basePrice).toLocaleString() : "0"}
                   </div>
-                  {originalPrice && Number(originalPrice) > Number(basePrice) && (
-                    <div className="text-xs text-zinc-400 line-through">
-                      KSh {Number(originalPrice).toLocaleString()}
-                    </div>
+                )}
+                {discountPercentage > 0 && (
+                  <div className="absolute top-3 right-3 px-2.5 py-1 bg-rose-600 text-white font-black text-xs rounded-full shadow-md">
+                    -{discountPercentage}%
+                  </div>
+                )}
+              </div>
+
+              {/* Details */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between text-xs text-zinc-500">
+                  <span className="font-semibold text-emerald-800">{selectedCategory.name}</span>
+                  <span className="text-[11px] font-medium truncate max-w-[150px]">
+                    📍 {merchantStall}
+                  </span>
+                </div>
+
+                <h4 className="text-base font-black text-zinc-900 leading-snug line-clamp-2">
+                  {title || "Untitled Product Listing"}
+                </h4>
+
+                {/* Price Display */}
+                <div className="flex items-baseline gap-2 pt-1">
+                  <span className="text-xl font-black text-zinc-900 font-mono">
+                    KES {(Number(basePrice) || 0).toLocaleString()}
+                  </span>
+                  {originalPrice && Number(originalPrice) > (Number(basePrice) || 0) && (
+                    <span className="text-xs text-zinc-400 line-through font-mono">
+                      KES {Number(originalPrice).toLocaleString()}
+                    </span>
                   )}
                 </div>
 
-                <button
-                  type="button"
-                  className="py-2 px-4 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-500 transition-colors shadow-xs"
-                >
-                  Add to Cart
-                </button>
-              </div>
+                {/* Key Dynamic Specifications Chips */}
+                <div className="pt-2 flex flex-wrap gap-1.5">
+                  {Object.entries(dynamicAttributes)
+                    .slice(0, 5)
+                    .map(([k, v]) => {
+                      if (!v) return null;
+                      return (
+                        <span
+                          key={k}
+                          className="text-[10px] font-bold px-2 py-0.5 bg-zinc-100 text-zinc-700 rounded-md border border-zinc-200"
+                        >
+                          <span className="capitalize">{k.replace(/_/g, " ")}:</span> {String(v)}
+                        </span>
+                      );
+                    })}
+                </div>
 
-              <div className="text-[10px] text-zinc-400 text-center">
-                ✓ Verified M-Pesa Express • 1-Hour CBD Boda Delivery Guaranteed
+                <p className="text-xs text-zinc-500 pt-1 line-clamp-2">
+                  {description || "No description provided yet."}
+                </p>
+
+                {/* Simulated Order Button */}
+                <div className="pt-3">
+                  <button
+                    type="button"
+                    disabled
+                    className="w-full py-2.5 bg-emerald-600 text-white font-black rounded-xl text-xs flex items-center justify-center gap-2 opacity-90"
+                  >
+                    <span>Instant Boda Dispatch</span>
+                    <span>•</span>
+                    <span>KES {(Number(basePrice) || 0).toLocaleString()}</span>
+                  </button>
+                </div>
               </div>
             </div>
           ) : (
-            /* Tab 2: PostgreSQL JSONB Payload Inspector */
-            <div className="bg-zinc-950 text-emerald-400 rounded-3xl p-5 border border-zinc-800 font-mono text-xs overflow-x-auto shadow-md space-y-2">
-              <div className="text-[10px] uppercase tracking-wider text-zinc-400 font-bold border-b border-zinc-800 pb-2">
-                Neon PostgreSQL Attributes JSONB
+            /* PostgreSQL JSONB Schema Inspector */
+            <div className="p-5 rounded-3xl bg-zinc-950 text-emerald-400 font-mono text-xs border border-zinc-800 shadow-xl space-y-3">
+              <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
+                <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-wider">
+                  PostgreSQL attributes JSONB
+                </span>
+                <span className="text-[10px] bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded border border-emerald-800">
+                  Valid Schema
+                </span>
               </div>
-              <pre className="text-[11px] leading-relaxed">
+              <pre className="overflow-x-auto p-2 bg-zinc-900/60 rounded-xl max-h-96 text-[11px] leading-relaxed">
                 {JSON.stringify(
                   {
-                    category: selectedCategory.slug,
+                    id: activeMode === "manage" && productId ? productId : `PROD-${selectedCategory.slug.slice(0, 4).toUpperCase()}-...`,
+                    name: title || "Untitled",
+                    category: selectedCategory.name,
                     subcategory: selectedSubcategory,
-                    title,
                     price: Number(basePrice) || 0,
-                    originalPrice: Number(originalPrice) || undefined,
+                    originalPrice: originalPrice ? Number(originalPrice) : null,
                     discountPercentage,
+                    badge: badge === "None" ? null : badge,
                     merchantStall,
                     attributes: dynamicAttributes,
-                    images,
                   },
                   null,
                   2
@@ -824,16 +1100,6 @@ export default function DynamicProductForm() {
               </pre>
             </div>
           )}
-
-          {/* Quick Guidance Box */}
-          <div className="bg-white p-4 rounded-2xl border border-zinc-200/80 shadow-xs space-y-2 text-xs">
-            <h5 className="font-bold text-zinc-800 flex items-center gap-1.5">
-              <span>💡</span> Merchant Tip for Fast CBD Sales
-            </h5>
-            <p className="text-zinc-600 leading-relaxed text-[11px]">
-              Listing accurate RAM, storage, battery, or shoe size specs guarantees high conversion from shoppers filtering on the JuroMart storefront. Items listed with clear photos dispatch within 12 minutes via the Nairobi CBD Boda courier network.
-            </p>
-          </div>
         </div>
       </div>
     </div>

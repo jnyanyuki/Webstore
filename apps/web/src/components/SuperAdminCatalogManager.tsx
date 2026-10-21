@@ -30,10 +30,12 @@ const PRESET_BADGES = [
 
 interface SuperAdminCatalogManagerProps {
   onSideControlPanelOpenChange?: (isOpen: boolean) => void;
+  onOpenInPim?: (productId: string) => void;
 }
 
 export default function SuperAdminCatalogManager({
   onSideControlPanelOpenChange,
+  onOpenInPim,
 }: SuperAdminCatalogManagerProps = {}) {
   const { user } = useAuth();
   const { products, updateProduct, batchResetPromotions, uploadImage, overrides } = useProductCatalog();
@@ -500,12 +502,21 @@ export default function SuperAdminCatalogManager({
                     </td>
 
                     <td className="py-3 px-4 text-right">
-                      <button
-                        onClick={() => handleOpenEdit(p)}
-                        className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg transition-colors shadow-xs inline-flex items-center gap-1 cursor-pointer"
-                      >
-                        <span>✏️</span> Edit Details
-                      </button>
+                      <div className="flex items-center justify-end gap-1.5">
+                        <button
+                          onClick={() => onOpenInPim?.(p.id)}
+                          className="px-2.5 py-1.5 bg-zinc-900 hover:bg-zinc-800 text-white font-bold text-xs rounded-lg transition-colors shadow-xs inline-flex items-center gap-1 cursor-pointer"
+                          title="Open in Dynamic PIM with dedicated polymorphic schema"
+                        >
+                          <span>🏷️</span> PIM
+                        </button>
+                        <button
+                          onClick={() => handleOpenEdit(p)}
+                          className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-lg transition-colors shadow-xs inline-flex items-center gap-1 cursor-pointer"
+                        >
+                          <span>✏️</span> Edit
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 );
