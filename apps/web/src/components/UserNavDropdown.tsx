@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useAuth } from "../context/AuthContext";
-import { getSellerUrl } from "@/lib/domainUrls";
+import { getSellerUrl, getStorefrontUrl } from "@/lib/domainUrls";
 
 export default function UserNavDropdown() {
   const { user, isAuthenticated, isLoading, logout } = useAuth();
@@ -96,8 +96,9 @@ export default function UserNavDropdown() {
           </div>
 
           <div className="py-1">
-            <Link
-              href="/account"
+            <a
+              href={getStorefrontUrl("/account")}
+              suppressHydrationWarning
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2.5 px-3.5 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 hover:text-emerald-700 transition-colors"
             >
@@ -105,10 +106,11 @@ export default function UserNavDropdown() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
               My Profile & Addresses
-            </Link>
+            </a>
 
-            <Link
-              href="/account#orders"
+            <a
+              href={getStorefrontUrl("/account#orders")}
+              suppressHydrationWarning
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2.5 px-3.5 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 hover:text-emerald-700 transition-colors"
             >
@@ -116,7 +118,7 @@ export default function UserNavDropdown() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
               My Orders & Boda Tracking
-            </Link>
+            </a>
 
             {(user.role === "SELLER" || user.role === "ADMIN") && (
               <a
