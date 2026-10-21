@@ -16,7 +16,7 @@ const CATEGORIES = [
   "Men's Fashion & Shoes",
 ];
 
-const PRESET_DISCOUNTS = [0, 10, 15, 20, 25, 30, 40, 50];
+const PRESET_DISCOUNTS = [0, 5, 10, 15, 20, 25];
 
 const PRESET_BADGES = [
   "None",
@@ -61,6 +61,10 @@ export default function SuperAdminCatalogManager({
   const [isUploadingImage, setIsUploadingImage] = useState(false);
   const [urlInput, setUrlInput] = useState("");
   const [uploadError, setUploadError] = useState<string | null>(null);
+
+  // Custom Promotion Discount State
+  const [isCustomDiscountOpen, setIsCustomDiscountOpen] = useState(false);
+  const [customDiscountValue, setCustomDiscountValue] = useState<string>("");
 
   // Batch actions state
   const [isBatchProcessing, setIsBatchProcessing] = useState(false);
@@ -134,6 +138,11 @@ export default function SuperAdminCatalogManager({
       sideImage: p.sideImage || uniqueImages[1] || uniqueImages[0] || "",
       images: uniqueImages,
     });
+
+    const isStandardPreset = [0, 5, 10, 15, 20, 25].includes(discount);
+    setIsCustomDiscountOpen(!isStandardPreset && discount > 0);
+    setCustomDiscountValue(!isStandardPreset && discount > 0 ? String(discount) : "");
+
     setUrlInput("");
     setUploadError(null);
     setSaveFeedback(null);
@@ -158,6 +167,8 @@ export default function SuperAdminCatalogManager({
 
   // Quick preset discount percentage handler
   const handleApplyPresetDiscount = (pct: number) => {
+    setIsCustomDiscountOpen(false);
+    setCustomDiscountValue("");
     setEditForm((prev) => {
       const baseMsrp = prev.originalPrice && prev.originalPrice > (prev.price || 0)
         ? prev.originalPrice
@@ -180,6 +191,28 @@ export default function SuperAdminCatalogManager({
         discountPercentage: pct,
       };
     });
+  };
+
+  // Custom promotion discount handler
+  const handleApplyCustomDiscount = (val?: string) => {
+    const raw = val !== undefined ? val : customDiscountValue;
+    const num = Math.min(99, Math.max(1, Math.round(Number(raw))));
+    if (isNaN(num)) return;
+    setEditForm((prev) => {
+      const baseMsrp = prev.originalPrice && prev.originalPrice > (prev.price || 0)
+        ? prev.originalPrice
+        : prev.price || 1000;
+
+      const newPrice = Math.round(baseMsrp * (1 - num / 100));
+      return {
+        ...prev,
+        originalPrice: baseMsrp,
+        price: newPrice,
+        discountPercentage: num,
+      };
+    });
+    setCustomDiscountValue(String(num));
+    setIsCustomDiscountOpen(true);
   };
 
   // Save product changes
@@ -699,31 +732,103 @@ export default function SuperAdminCatalogManager({
 
                 {/* Preset Percentage Reset / Apply Buttons */}
                 <div>
-                  <div className="text-[11px] font-bold text-gray-600 mb-1.5 flex items-center justify-between">
+                  <div className="text-xs font-bold text-gray-700 mb-1.5 flex items-center justify-between">
                     <span>Quick Promotion % Presets:</span>
                     <button
                       type="button"
                       onClick={() => handleApplyPresetDiscount(0)}
-                      className="text-red-600 hover:text-red-700 font-bold underline cursor-pointer text-[11px]"
+                      className="text-red-600 hover:text-red-700 font-bold underline cursor-pointer text-xs"
                     >
                       Reset Promotion (Clear to 0%)
                     </button>
                   </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {PRESET_DISCOUNTS.map((pct) => (
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {/* Reset Button */}
+                    <button
+                      type="button"
+                      onClick={() => handleApplyPresetDiscount(0)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                        editForm.discountPercentage === 0 || !editForm.discountPercentage
+                          ? "bg-zinc-900 text-white shadow-xs"
+                          : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-100"
+                      }`}
+                    >
+                      Reset
+                    </button>
+
+                    {/* 5, 10, 15, 20, 25 Presets */}
+                    {[5, 10, 15, 20, 25].map((pct) => (
                       <button
                         key={pct}
                         type="button"
                         onClick={() => handleApplyPresetDiscount(pct)}
-                        className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                          editForm.discountPercentage === pct
+                        className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                          editForm.discountPercentage === pct && !isCustomDiscountOpen
                             ? "bg-emerald-600 text-white shadow-xs"
                             : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-100"
                         }`}
                       >
-                        {pct === 0 ? "0% (Reset)" : `${pct}% OFF`}
+                        {pct}% OFF
                       </button>
                     ))}
+
+                    {/* Custom Button */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setIsCustomDiscountOpen(!isCustomDiscountOpen);
+                        if (!customDiscountValue && editForm.discountPercentage) {
+                          setCustomDiscountValue(String(editForm.discountPercentage));
+                        }
+                      }}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                        isCustomDiscountOpen ||
+                        (Boolean(editForm.discountPercentage) &&
+                          ![0, 5, 10, 15, 20, 25].includes(editForm.discountPercentage || 0))
+                          ? "bg-emerald-600 text-white shadow-xs ring-2 ring-emerald-500/20"
+                          : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-100"
+                      }`}
+                    >
+                      <span>Custom</span>
+                      {Boolean(
+                        editForm.discountPercentage &&
+                          ![0, 5, 10, 15, 20, 25].includes(editForm.discountPercentage || 0)
+                      ) && (
+                        <span className="bg-white/20 px-1.5 py-0.2 rounded text-xs font-black">
+                          {editForm.discountPercentage}%
+                        </span>
+                      )}
+                    </button>
+
+                    {/* Custom Percentage Inline Form */}
+                    {isCustomDiscountOpen && (
+                      <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-300 rounded-xl px-2.5 py-1 animate-in fade-in zoom-in-95 duration-150">
+                        <input
+                          type="number"
+                          min="1"
+                          max="99"
+                          placeholder="%"
+                          value={customDiscountValue}
+                          autoFocus
+                          onChange={(e) => setCustomDiscountValue(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                              e.preventDefault();
+                              handleApplyCustomDiscount();
+                            }
+                          }}
+                          className="w-12 text-xs font-bold px-1.5 py-0.5 bg-white border border-emerald-300 rounded-lg text-emerald-950 focus:outline-hidden focus:ring-1 focus:ring-emerald-600 text-center"
+                        />
+                        <span className="text-xs font-bold text-emerald-800">%</span>
+                        <button
+                          type="button"
+                          onClick={() => handleApplyCustomDiscount()}
+                          className="px-2.5 py-0.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-black transition-colors cursor-pointer"
+                        >
+                          Apply
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

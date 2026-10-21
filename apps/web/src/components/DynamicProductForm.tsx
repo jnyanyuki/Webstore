@@ -89,6 +89,10 @@ export default function DynamicProductForm({
   const [publishedProduct, setPublishedProduct] = useState<any | null>(null);
   const [previewTab, setPreviewTab] = useState<"card" | "json">("card");
 
+  // Quick Promotion % Presets State
+  const [isCustomDiscountOpen, setIsCustomDiscountOpen] = useState(false);
+  const [customDiscountValue, setCustomDiscountValue] = useState("");
+
   // Dynamic active fields driven by Category + Subcategory
   const activeFields = useMemo(() => {
     return getFieldsForCategoryAndSubcategory(selectedCategory.slug, selectedSubcategory);
@@ -120,6 +124,18 @@ export default function DynamicProductForm({
     setBadge(prod.badge || "None");
     setMerchantStall(prod.merchantStall || "Stall G14 • Imenti House");
     setDescription(prod.description || "");
+
+    // Quick Promotion % state check
+    const currentDisc = prod.originalPrice && prod.originalPrice > prod.price
+      ? Math.round(((prod.originalPrice - prod.price) / prod.originalPrice) * 100)
+      : 0;
+    if (currentDisc > 0 && ![5, 10, 15, 20, 25].includes(currentDisc)) {
+      setIsCustomDiscountOpen(true);
+      setCustomDiscountValue(String(currentDisc));
+    } else {
+      setIsCustomDiscountOpen(false);
+      setCustomDiscountValue("");
+    }
 
     // Media
     const prodImages = prod.images && prod.images.length > 0 ? prod.images : [prod.frontImage];
@@ -267,6 +283,39 @@ export default function DynamicProductForm({
     }
     return 0;
   }, [basePrice, originalPrice]);
+
+  // Quick Promotion % Presets handlers
+  const handleApplyPresetDiscount = (pct: number) => {
+    setIsCustomDiscountOpen(false);
+    setCustomDiscountValue("");
+    const currPrice = Number(basePrice) || 0;
+    const currMsrp = Number(originalPrice) || 0;
+    const baseMsrp = currMsrp > currPrice ? currMsrp : currPrice || 1000;
+
+    if (pct === 0) {
+      setOriginalPrice(currPrice > 0 ? currPrice : "");
+      return;
+    }
+
+    const newPrice = Math.round(baseMsrp * (1 - pct / 100));
+    setOriginalPrice(baseMsrp);
+    setBasePrice(newPrice);
+  };
+
+  const handleApplyCustomDiscount = (val?: string) => {
+    const raw = val !== undefined ? val : customDiscountValue;
+    const num = Math.min(99, Math.max(1, Math.round(Number(raw))));
+    if (isNaN(num)) return;
+    const currPrice = Number(basePrice) || 0;
+    const currMsrp = Number(originalPrice) || 0;
+    const baseMsrp = currMsrp > currPrice ? currMsrp : currPrice || 1000;
+
+    const newPrice = Math.round(baseMsrp * (1 - num / 100));
+    setOriginalPrice(baseMsrp);
+    setBasePrice(newPrice);
+    setCustomDiscountValue(String(num));
+    setIsCustomDiscountOpen(true);
+  };
 
   // Submit & Publish to Neon PostgreSQL
   const handleSubmit = async (e: React.FormEvent) => {
@@ -671,6 +720,108 @@ export default function DynamicProductForm({
                         className="w-full pl-12 pr-4 py-2.5 bg-zinc-50 border border-zinc-200 rounded-xl text-sm font-semibold text-zinc-900 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
                       />
                     </div>
+                  </div>
+                </div>
+
+                {/* Quick Promotion % Presets Engine */}
+                <div className="bg-zinc-50/80 border border-zinc-200/80 rounded-xl p-3">
+                  <div className="text-xs font-bold text-zinc-700 mb-1.5 flex items-center justify-between">
+                    <span>Quick Promotion % Presets:</span>
+                    <button
+                      type="button"
+                      onClick={() => handleApplyPresetDiscount(0)}
+                      className="text-red-600 hover:text-red-700 font-bold underline cursor-pointer text-xs"
+                    >
+                      Reset Promotion (Clear to 0%)
+                    </button>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {/* Reset Button */}
+                    <button
+                      type="button"
+                      onClick={() => handleApplyPresetDiscount(0)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                        discountPercentage === 0
+                          ? "bg-zinc-900 text-white shadow-xs"
+                          : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-100"
+                      }`}
+                    >
+                      Reset
+                    </button>
+
+                    {/* 5, 10, 15, 20, 25 Presets */}
+                    {[5, 10, 15, 20, 25].map((pct) => (
+                      <button
+                        key={pct}
+                        type="button"
+                        onClick={() => handleApplyPresetDiscount(pct)}
+                        className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                          discountPercentage === pct && !isCustomDiscountOpen
+                            ? "bg-emerald-600 text-white shadow-xs"
+                            : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-100"
+                        }`}
+                      >
+                        {pct}% OFF
+                      </button>
+                    ))}
+
+                    {/* Custom Button */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setIsCustomDiscountOpen(!isCustomDiscountOpen);
+                        if (!customDiscountValue && discountPercentage) {
+                          setCustomDiscountValue(String(discountPercentage));
+                        }
+                      }}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                        isCustomDiscountOpen ||
+                        (Boolean(discountPercentage) &&
+                          ![0, 5, 10, 15, 20, 25].includes(discountPercentage))
+                          ? "bg-emerald-600 text-white shadow-xs ring-2 ring-emerald-500/20"
+                          : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-100"
+                      }`}
+                    >
+                      <span>Custom</span>
+                      {Boolean(
+                        discountPercentage &&
+                          ![0, 5, 10, 15, 20, 25].includes(discountPercentage)
+                      ) && (
+                        <span className="bg-white/20 px-1.5 py-0.2 rounded text-xs font-black">
+                          {discountPercentage}%
+                        </span>
+                      )}
+                    </button>
+
+                    {/* Custom Percentage Inline Form */}
+                    {isCustomDiscountOpen && (
+                      <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-300 rounded-xl px-2.5 py-1 animate-in fade-in zoom-in-95 duration-150">
+                        <input
+                          type="number"
+                          min="1"
+                          max="99"
+                          placeholder="%"
+                          value={customDiscountValue}
+                          autoFocus
+                          onChange={(e) => setCustomDiscountValue(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                              e.preventDefault();
+                              handleApplyCustomDiscount();
+                            }
+                          }}
+                          className="w-12 text-xs font-bold px-1.5 py-0.5 bg-white border border-emerald-300 rounded-lg text-emerald-950 focus:outline-hidden focus:ring-1 focus:ring-emerald-600 text-center"
+                        />
+                        <span className="text-xs font-bold text-emerald-800">%</span>
+                        <button
+                          type="button"
+                          onClick={() => handleApplyCustomDiscount()}
+                          className="px-2.5 py-0.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-black transition-colors cursor-pointer"
+                        >
+                          Apply
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
 
