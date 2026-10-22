@@ -67,6 +67,7 @@ export default function SuperAdminCatalogManager({
   // Image Upload & Gallery State
   const [isUploadingImage, setIsUploadingImage] = useState(false);
   const [urlInput, setUrlInput] = useState("");
+  const [isUrlPastedFeedback, setIsUrlPastedFeedback] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
 
   // Color & Finish Configuration State for Edit Drawer
@@ -172,6 +173,86 @@ export default function SuperAdminCatalogManager({
     setNewColorImage("");
     setUploadError(null);
     setSaveFeedback(null);
+  };
+
+  // Add Image URL Handler
+  const handleAddUrl = (customUrl?: string) => {
+    const raw = typeof customUrl === "string" ? customUrl : urlInput;
+    const trimmed = raw.trim();
+    if (!trimmed) return;
+    setEditForm((prev) => {
+      const current = prev.images || [];
+      const updated = [...current, trimmed];
+      return {
+        ...prev,
+        images: updated,
+        frontImage: prev.frontImage || trimmed,
+        sideImage: prev.sideImage || (updated[1] || trimmed),
+      };
+    });
+    setUrlInput("");
+  };
+
+  // Paste from Clipboard Handler (supports both Image URLs and direct Screenshot/Image uploads)
+  const handlePasteFromClipboard = async () => {
+    try {
+      // 1. Check if an actual image was copied to clipboard (e.g. screenshot or copied image file)
+      if (typeof navigator !== "undefined" && navigator?.clipboard?.read) {
+        try {
+          const items = await navigator.clipboard.read();
+          for (const item of items) {
+            const imageType = item.types.find((t) => t.startsWith("image/"));
+            if (imageType) {
+              const blob = await item.getType(imageType);
+              const file = new File(
+                [blob],
+                `clipboard-${Date.now()}.${imageType.split("/")[1] || "png"}`,
+                { type: imageType }
+              );
+              setIsUploadingImage(true);
+              setUploadError(null);
+              const res = await uploadImage(file, editingProduct?.id);
+              setIsUploadingImage(false);
+              if (res.success && res.url) {
+                setEditForm((prev) => {
+                  const current = prev.images || [];
+                  const updated = [...current, res.url!];
+                  return {
+                    ...prev,
+                    images: updated,
+                    frontImage: prev.frontImage || res.url!,
+                    sideImage: prev.sideImage || (updated[1] || res.url!),
+                  };
+                });
+                setIsUrlPastedFeedback(true);
+                setTimeout(() => setIsUrlPastedFeedback(false), 2000);
+                return;
+              }
+            }
+          }
+        } catch {
+          // Clipboard read image failed or denied, fall through to text
+        }
+      }
+
+      // 2. Read text from clipboard (image URL)
+      if (typeof navigator !== "undefined" && navigator?.clipboard?.readText) {
+        const text = await navigator.clipboard.readText();
+        const trimmed = text.trim();
+        if (trimmed) {
+          setUrlInput(trimmed);
+          setIsUrlPastedFeedback(true);
+          setTimeout(() => setIsUrlPastedFeedback(false), 2000);
+          return;
+        }
+      }
+    } catch (err: any) {
+      console.warn("Clipboard paste error:", err);
+      const manual = prompt("Paste your image URL here:");
+      if (manual && manual.trim()) {
+        setUrlInput(manual.trim());
+      }
+    }
   };
 
   // Handle price or originalPrice changes with automatic discount recalculation
@@ -1033,40 +1114,55 @@ export default function SuperAdminCatalogManager({
                   {/* URL Add Input */}
                   <div className="bg-white border border-gray-200 rounded-xl p-3 flex flex-col justify-between">
                     <div>
-                      <label className="block text-[11px] font-bold text-gray-700 mb-1">Add Image by URL</label>
-                      <div className="flex gap-2">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <label className="block text-[11px] font-bold text-gray-700">Add Image by URL</label>
+                        <button
+                          type="button"
+                          onClick={handlePasteFromClipboard}
+                          className="text-[10px] font-bold text-emerald-600 hover:text-emerald-700 hover:underline flex items-center gap-1 cursor-pointer"
+                        >
+                          <span>📋</span>
+                          <span>{isUrlPastedFeedback ? "✓ Pasted!" : "Paste from clipboard"}</span>
+                        </button>
+                      </div>
+                      <div className="flex gap-1.5 items-center">
                         <input
                           type="url"
                           value={urlInput}
                           onChange={(e) => setUrlInput(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                              e.preventDefault();
+                              handleAddUrl();
+                            }
+                          }}
                           placeholder="https://example.com/photo.jpg"
-                          className="flex-1 text-xs px-2.5 py-1.5 border border-gray-300 rounded-lg outline-none focus:ring-1 focus:ring-emerald-500"
+                          className="flex-1 min-w-0 text-xs px-2.5 py-1.5 border border-gray-300 rounded-lg outline-none focus:ring-1 focus:ring-emerald-500"
                         />
                         <button
                           type="button"
-                          onClick={() => {
-                            const trimmed = urlInput.trim();
-                            if (!trimmed) return;
-                            setEditForm((prev) => {
-                              const current = prev.images || [];
-                              const updated = [...current, trimmed];
-                              return {
-                                ...prev,
-                                images: updated,
-                                frontImage: prev.frontImage || trimmed,
-                                sideImage: prev.sideImage || (updated[1] || trimmed),
-                              };
-                            });
-                            setUrlInput("");
-                          }}
-                          className="px-3 py-1.5 bg-gray-900 hover:bg-emerald-600 text-white font-bold text-xs rounded-lg transition-colors cursor-pointer"
+                          onClick={handlePasteFromClipboard}
+                          className={`px-2.5 py-1.5 border rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1 shrink-0 ${
+                            isUrlPastedFeedback
+                              ? "bg-emerald-50 border-emerald-300 text-emerald-800"
+                              : "bg-gray-100 hover:bg-gray-200 text-gray-700 border-gray-200"
+                          }`}
+                          title="Paste copied URL or image file from clipboard"
+                        >
+                          <span>📋</span>
+                          <span>{isUrlPastedFeedback ? "✓ Pasted!" : "Paste"}</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleAddUrl()}
+                          className="px-3 py-1.5 bg-gray-900 hover:bg-emerald-600 text-white font-bold text-xs rounded-lg transition-colors cursor-pointer shrink-0"
                         >
                           Add URL
                         </button>
                       </div>
                     </div>
                     <div className="text-[10px] text-gray-400 mt-2">
-                      Paste supplier URL, Unsplash, or CDN image link.
+                      Paste supplier URL, Unsplash, or CDN image link or click paste button.
                     </div>
                   </div>
                 </div>

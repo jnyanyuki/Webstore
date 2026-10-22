@@ -296,6 +296,59 @@ export default function DynamicProductForm({
     }
   };
 
+  const [isPastedFeedback, setIsPastedFeedback] = useState(false);
+
+  const handlePasteFromClipboard = async () => {
+    try {
+      // 1. Try reading rich clipboard items if an image file was copied
+      if (typeof navigator !== "undefined" && navigator?.clipboard?.read) {
+        try {
+          const items = await navigator.clipboard.read();
+          for (const item of items) {
+            const imageType = item.types.find((t) => t.startsWith("image/"));
+            if (imageType) {
+              const blob = await item.getType(imageType);
+              const file = new File(
+                [blob],
+                `clipboard-${Date.now()}.${imageType.split("/")[1] || "png"}`,
+                { type: imageType }
+              );
+              setIsUploadingImage(true);
+              const res = await uploadImage(file, title.slice(0, 15).replace(/\s+/g, "-") || "pasted");
+              setIsUploadingImage(false);
+              if (res.success && res.url) {
+                setImages((prev) => [res.url!, ...prev]);
+                setIsPastedFeedback(true);
+                setTimeout(() => setIsPastedFeedback(false), 2000);
+                return;
+              }
+            }
+          }
+        } catch {
+          // Clipboard read image failed or denied, fall through to readText
+        }
+      }
+
+      // 2. Read text from clipboard (image URL)
+      if (typeof navigator !== "undefined" && navigator?.clipboard?.readText) {
+        const text = await navigator.clipboard.readText();
+        const trimmed = text.trim();
+        if (trimmed) {
+          setImageUrlInput(trimmed);
+          setIsPastedFeedback(true);
+          setTimeout(() => setIsPastedFeedback(false), 2000);
+          return;
+        }
+      }
+    } catch (err: any) {
+      console.warn("Clipboard paste error:", err);
+      const manual = prompt("Paste your image URL here:");
+      if (manual && manual.trim()) {
+        setImageUrlInput(manual.trim());
+      }
+    }
+  };
+
   const handleAddImageUrl = () => {
     if (!imageUrlInput.trim()) return;
     setImages((prev) => [...prev, imageUrlInput.trim()]);
@@ -1081,19 +1134,38 @@ export default function DynamicProductForm({
                 </button>
               </div>
 
-              {/* URL Direct Add */}
-              <div className="flex items-center gap-2">
+              {/* URL Direct Add with Paste from Clipboard */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                 <input
                   type="url"
                   placeholder="Or paste direct image URL (https://...)"
                   value={imageUrlInput}
                   onChange={(e) => setImageUrlInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      handleAddImageUrl();
+                    }
+                  }}
                   className="flex-1 px-3 py-2 bg-zinc-50 border border-zinc-200 rounded-xl text-xs font-medium text-zinc-900 focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
                 />
                 <button
                   type="button"
+                  onClick={handlePasteFromClipboard}
+                  className={`px-3 py-2 border rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5 shrink-0 ${
+                    isPastedFeedback
+                      ? "bg-emerald-50 border-emerald-300 text-emerald-800"
+                      : "bg-zinc-100 hover:bg-zinc-200 text-zinc-700 border-zinc-200"
+                  }`}
+                  title="Paste copied image URL or image file from your clipboard"
+                >
+                  <span>📋</span>
+                  <span>{isPastedFeedback ? "✓ Pasted!" : "Paste from Clipboard"}</span>
+                </button>
+                <button
+                  type="button"
                   onClick={handleAddImageUrl}
-                  className="px-3 py-2 bg-zinc-900 hover:bg-zinc-800 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer shrink-0"
+                  className="px-3.5 py-2 bg-zinc-900 hover:bg-zinc-800 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer shrink-0 shadow-xs"
                 >
                   Add URL
                 </button>
