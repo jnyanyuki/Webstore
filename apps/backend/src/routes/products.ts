@@ -38,6 +38,8 @@ async function ensureOverridesTable() {
       ALTER TABLE product_overrides ADD COLUMN IF NOT EXISTS images JSONB;
       ALTER TABLE product_overrides ADD COLUMN IF NOT EXISTS gallery JSONB;
       ALTER TABLE product_overrides ADD COLUMN IF NOT EXISTS attributes JSONB;
+      ALTER TABLE product_overrides ADD COLUMN IF NOT EXISTS colors JSONB;
+      ALTER TABLE product_overrides ADD COLUMN IF NOT EXISTS color_options JSONB;
       CREATE INDEX IF NOT EXISTS idx_product_overrides_category ON product_overrides(category);
     `);
     tableInitialized = true;
@@ -56,7 +58,7 @@ router.get("/overrides", async (_req: Request, res: Response): Promise<any> => {
     const result = await dbPool.query(
       `SELECT id, name, category, subcategory, item_type, price, original_price, 
               badge, description, merchant_stall, front_image, side_image, images, gallery, variants,
-              attributes, discount_percentage, is_active, updated_by, updated_at 
+              attributes, colors, color_options, discount_percentage, is_active, updated_by, updated_at 
        FROM product_overrides WHERE is_active = TRUE`
     );
 
@@ -79,6 +81,8 @@ router.get("/overrides", async (_req: Request, res: Response): Promise<any> => {
         gallery: row.gallery ? (Array.isArray(row.gallery) ? row.gallery : JSON.parse(row.gallery)) : undefined,
         variants: row.variants,
         attributes: row.attributes ? (typeof row.attributes === "object" ? row.attributes : JSON.parse(row.attributes)) : undefined,
+        colors: row.colors ? (Array.isArray(row.colors) ? row.colors : JSON.parse(row.colors)) : undefined,
+        colorOptions: row.color_options ? (Array.isArray(row.color_options) ? row.color_options : JSON.parse(row.color_options)) : undefined,
         discountPercentage:
           row.discount_percentage !== null && row.discount_percentage !== undefined
             ? parseFloat(row.discount_percentage)
@@ -183,6 +187,8 @@ router.post(
         gallery,
         variants,
         attributes,
+        colors,
+        colorOptions,
         resetPromotion = false,
         discountPercentage,
       } = req.body;
@@ -217,12 +223,21 @@ router.post(
         finalDiscountPercentage = Math.round(((finalOriginalPrice - finalPrice) / finalOriginalPrice) * 100);
       }
 
+      const resolvedColors =
+        colors && Array.isArray(colors) && colors.length > 0
+          ? colors
+          : colorOptions && Array.isArray(colorOptions) && colorOptions.length > 0
+          ? colorOptions.map((c: any) => (typeof c === "string" ? c : c.name))
+          : null;
+      const resolvedColorOptions =
+        colorOptions && Array.isArray(colorOptions) && colorOptions.length > 0 ? colorOptions : null;
+
       const query = `
         INSERT INTO product_overrides (
           id, name, category, subcategory, item_type, price, original_price,
           badge, description, merchant_stall, front_image, side_image, images, gallery, variants,
-          attributes, discount_percentage, is_active, updated_by, updated_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, TRUE, $18, NOW())
+          attributes, colors, color_options, discount_percentage, is_active, updated_by, updated_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, TRUE, $20, NOW())
         ON CONFLICT (id) DO UPDATE SET
           name = COALESCE(EXCLUDED.name, product_overrides.name),
           category = COALESCE(EXCLUDED.category, product_overrides.category),
@@ -239,6 +254,8 @@ router.post(
           gallery = CASE WHEN EXCLUDED.gallery IS NOT NULL THEN EXCLUDED.gallery ELSE product_overrides.gallery END,
           variants = COALESCE(EXCLUDED.variants, product_overrides.variants),
           attributes = CASE WHEN EXCLUDED.attributes IS NOT NULL THEN EXCLUDED.attributes ELSE product_overrides.attributes END,
+          colors = CASE WHEN EXCLUDED.colors IS NOT NULL THEN EXCLUDED.colors ELSE product_overrides.colors END,
+          color_options = CASE WHEN EXCLUDED.color_options IS NOT NULL THEN EXCLUDED.color_options ELSE product_overrides.color_options END,
           discount_percentage = EXCLUDED.discount_percentage,
           updated_by = EXCLUDED.updated_by,
           updated_at = NOW()
@@ -262,6 +279,8 @@ router.post(
         gallery ? JSON.stringify(gallery) : null,
         variants ? JSON.stringify(variants) : null,
         attributes ? JSON.stringify(attributes) : null,
+        resolvedColors ? JSON.stringify(resolvedColors) : null,
+        resolvedColorOptions ? JSON.stringify(resolvedColorOptions) : null,
         finalDiscountPercentage !== undefined && finalDiscountPercentage !== null ? finalDiscountPercentage : null,
         req.authUser?.email || "abokos@juromart.com",
       ]);
@@ -284,6 +303,8 @@ router.post(
         gallery: row.gallery ? (Array.isArray(row.gallery) ? row.gallery : JSON.parse(row.gallery)) : undefined,
         variants: row.variants,
         attributes: row.attributes ? (typeof row.attributes === "string" ? JSON.parse(row.attributes) : row.attributes) : {},
+        colors: row.colors ? (Array.isArray(row.colors) ? row.colors : JSON.parse(row.colors)) : undefined,
+        colorOptions: row.color_options ? (Array.isArray(row.color_options) ? row.color_options : JSON.parse(row.color_options)) : undefined,
         discountPercentage:
           row.discount_percentage !== null && row.discount_percentage !== undefined
             ? parseFloat(row.discount_percentage)
@@ -399,6 +420,8 @@ router.post(
         gallery = [],
         variants = [],
         attributes = {},
+        colors = [],
+        colorOptions = [],
       } = req.body;
 
       const name = req.body.name || req.body.title;
@@ -433,12 +456,21 @@ router.post(
       const finalFrontImage = frontImage || (images && images.length > 0 ? images[0] : "");
       const finalSideImage = sideImage || (images && images.length > 1 ? images[1] : finalFrontImage);
 
+      const resolvedColors =
+        colors && Array.isArray(colors) && colors.length > 0
+          ? colors
+          : colorOptions && Array.isArray(colorOptions) && colorOptions.length > 0
+          ? colorOptions.map((c: any) => (typeof c === "string" ? c : c.name))
+          : [];
+      const resolvedColorOptions =
+        colorOptions && Array.isArray(colorOptions) && colorOptions.length > 0 ? colorOptions : [];
+
       const query = `
         INSERT INTO product_overrides (
           id, name, category, subcategory, item_type, price, original_price,
           badge, description, merchant_stall, front_image, side_image, images, gallery, variants,
-          attributes, discount_percentage, is_active, updated_by, updated_at
-        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, TRUE, $18, NOW())
+          attributes, colors, color_options, discount_percentage, is_active, updated_by, updated_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, TRUE, $20, NOW())
         ON CONFLICT (id) DO UPDATE SET
           name = EXCLUDED.name,
           category = EXCLUDED.category,
@@ -455,6 +487,8 @@ router.post(
           gallery = EXCLUDED.gallery,
           variants = EXCLUDED.variants,
           attributes = EXCLUDED.attributes,
+          colors = EXCLUDED.colors,
+          color_options = EXCLUDED.color_options,
           discount_percentage = EXCLUDED.discount_percentage,
           updated_by = EXCLUDED.updated_by,
           updated_at = NOW()
@@ -478,6 +512,8 @@ router.post(
         gallery ? JSON.stringify(gallery) : null,
         variants ? JSON.stringify(variants) : null,
         attributes ? JSON.stringify(attributes) : null,
+        resolvedColors.length > 0 ? JSON.stringify(resolvedColors) : null,
+        resolvedColorOptions.length > 0 ? JSON.stringify(resolvedColorOptions) : null,
         finalDiscount !== undefined && finalDiscount !== null ? finalDiscount : null,
         req.authUser?.email || "abokos@juromart.com",
       ]);
@@ -500,6 +536,8 @@ router.post(
         gallery: row.gallery ? (Array.isArray(row.gallery) ? row.gallery : JSON.parse(row.gallery)) : [],
         variants: row.variants,
         attributes: row.attributes ? (typeof row.attributes === "object" ? row.attributes : JSON.parse(row.attributes)) : {},
+        colors: row.colors ? (Array.isArray(row.colors) ? row.colors : JSON.parse(row.colors)) : [],
+        colorOptions: row.color_options ? (Array.isArray(row.color_options) ? row.color_options : JSON.parse(row.color_options)) : [],
         discountPercentage: row.discount_percentage ? parseFloat(row.discount_percentage) : 0,
         updatedBy: row.updated_by,
         updatedAt: row.updated_at,

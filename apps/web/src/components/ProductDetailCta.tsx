@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ProductItem } from "./DynamicProductCard";
 import { useCart } from "@/context/CartContext";
 import MpesaCheckout from "./MpesaCheckout";
+import { getProductColorOptions, isLightColor, ProductColorOption } from "@/lib/productColors";
 
 interface PackOption {
   label: string;
@@ -19,6 +20,23 @@ export default function ProductDetailCta({ product }: { product: ProductItem }) 
   const [selectedPackIndex, setSelectedPackIndex] = useState(0);
   const [isAdded, setIsAdded] = useState(false);
   const [showMpesaForm, setShowMpesaForm] = useState(false);
+
+  // Dynamic authentic color options
+  const colorOptions = React.useMemo(() => {
+    return getProductColorOptions(product);
+  }, [product]);
+
+  const [selectedColorIndex, setSelectedColorIndex] = useState(0);
+
+  React.useEffect(() => {
+    if (colorOptions.length > 0) {
+      const pName = product.name.toLowerCase();
+      const matchedIdx = colorOptions.findIndex((c) => pName.includes(c.name.toLowerCase()));
+      setSelectedColorIndex(matchedIdx !== -1 ? matchedIdx : 0);
+    } else {
+      setSelectedColorIndex(0);
+    }
+  }, [product.id, product.name, colorOptions]);
 
   // Multi-item Pack & Variant Options
   const packOptions: PackOption[] = React.useMemo(() => {
@@ -38,6 +56,7 @@ export default function ProductDetailCta({ product }: { product: ProductItem }) 
   }, [product.variants]);
 
   const activePack = packOptions[selectedPackIndex] || packOptions[0];
+  const activeColorOption: ProductColorOption | undefined = colorOptions[selectedColorIndex];
 
   // Unit and bundle price calculation
   const unitPrice =
@@ -59,7 +78,8 @@ export default function ProductDetailCta({ product }: { product: ProductItem }) 
         price: packTotalPrice,
       },
       quantity,
-      activePack.label !== "1 pc" ? activePack.label : undefined
+      activePack.label !== "1 pc" ? activePack.label : undefined,
+      activeColorOption?.name
     );
   };
 
@@ -73,6 +93,61 @@ export default function ProductDetailCta({ product }: { product: ProductItem }) 
 
   return (
     <div className="space-y-5">
+      {/* Finish / Colour Selection */}
+      {colorOptions.length > 0 && (
+        <div className="space-y-2 pb-2">
+          <div className="flex items-center justify-between text-xs font-bold text-gray-700 uppercase tracking-wider">
+            <span>
+              Finish / Colour:{" "}
+              <span className="text-emerald-700 font-extrabold normal-case ml-1">
+                {activeColorOption?.name}
+              </span>
+            </span>
+            <span className="text-[11px] text-gray-400 font-normal lowercase">
+              {colorOptions.length} available
+            </span>
+          </div>
+          <div className="flex items-center gap-2 flex-wrap">
+            {colorOptions.map((opt, idx) => {
+              const isSelected = selectedColorIndex === idx;
+              const isLight = isLightColor(opt.hex);
+              return (
+                <button
+                  key={opt.name}
+                  type="button"
+                  onClick={() => {
+                    setSelectedColorIndex(idx);
+                    if (product.variants && product.variants.length > 0) {
+                      const optNameLower = opt.name.toLowerCase();
+                      const matchIdx = product.variants.findIndex((v) => {
+                        const vName = v.name.toLowerCase();
+                        return (
+                          vName.includes(optNameLower) ||
+                          optNameLower.split(" ").some((w) => w.length > 3 && vName.includes(w))
+                        );
+                      });
+                      if (matchIdx !== -1) setSelectedPackIndex(matchIdx);
+                    }
+                  }}
+                  className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border text-xs sm:text-sm transition-all cursor-pointer ${
+                    isSelected
+                      ? "bg-emerald-50 border-emerald-600 text-emerald-950 font-bold ring-2 ring-emerald-500/30 shadow-xs"
+                      : "bg-white border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50"
+                  }`}
+                >
+                  <span
+                    className={`w-4 h-4 rounded-full flex-shrink-0 shadow-2xs ${
+                      isLight ? "border border-gray-300" : "border border-black/10"
+                    }`}
+                    style={{ background: opt.bgGradient || opt.hex }}
+                  />
+                  <span>{opt.name}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
       {/* Pack Size & Quantity Row */}
       <div className="space-y-3 pt-2">
         <div>
@@ -89,7 +164,21 @@ export default function ProductDetailCta({ product }: { product: ProductItem }) 
               <button
                 key={pack.label}
                 type="button"
-                onClick={() => setSelectedPackIndex(idx)}
+                onClick={() => {
+                  setSelectedPackIndex(idx);
+                  const variant = packOptions[idx];
+                  if (variant && colorOptions.length > 0) {
+                    const vName = variant.label.toLowerCase();
+                    const matchIdx = colorOptions.findIndex(
+                      (c) =>
+                        vName.includes(c.name.toLowerCase()) ||
+                        c.name.toLowerCase().split(" ").some((w) => w.length > 3 && vName.includes(w))
+                    );
+                    if (matchIdx !== -1) {
+                      setSelectedColorIndex(matchIdx);
+                    }
+                  }
+                }}
                 className={`text-xs sm:text-sm font-bold px-3 py-1.5 rounded-xl border transition-all cursor-pointer active:scale-95 ${
                   selectedPackIndex === idx
                     ? "bg-emerald-600 text-white border-emerald-600 shadow-sm"
@@ -202,8 +291,17 @@ export default function ProductDetailCta({ product }: { product: ProductItem }) 
               />
             </div>
             <div className="min-w-0">
-              <div className="text-[11px] font-semibold text-gray-500 truncate">
-                {product.name}
+              <div className="text-[11px] font-semibold text-gray-700 truncate flex items-center gap-1.5">
+                <span className="truncate">{product.name}</span>
+                {activeColorOption && (
+                  <span className="inline-flex items-center gap-1 text-[10px] font-bold text-gray-800 bg-gray-100 px-1.5 py-0.5 rounded border border-gray-200 flex-shrink-0">
+                    <span
+                      className="w-1.5 h-1.5 rounded-full"
+                      style={{ background: activeColorOption.bgGradient || activeColorOption.hex }}
+                    />
+                    <span>{activeColorOption.name}</span>
+                  </span>
+                )}
               </div>
               <div className="text-sm font-black text-emerald-700 leading-tight">
                 KES {grandTotal.toLocaleString()}

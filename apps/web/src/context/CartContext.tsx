@@ -11,7 +11,8 @@ interface CartContextType {
   addToCart: (
     product: ProductItem,
     quantityToAdd?: number,
-    selectedVariant?: string
+    selectedVariant?: string,
+    selectedColor?: string
   ) => void;
   updateQuantity: (cartKeyOrId: string, delta: number) => void;
   removeItem: (cartKeyOrId: string) => void;
@@ -49,10 +50,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const addToCart = (
     product: ProductItem,
     quantityToAdd: number = 1,
-    selectedVariant?: string
+    selectedVariant?: string,
+    selectedColor?: string
   ) => {
     setCartItems((prev) => {
-      const cartKey = selectedVariant ? `${product.id}__${selectedVariant}` : product.id;
+      const cartKey = [product.id, selectedColor, selectedVariant].filter(Boolean).join("__") || product.id;
       const existing = prev.find((item) => (item.cartKey || item.id) === cartKey);
       if (existing) {
         return prev.map((item) =>
@@ -67,6 +69,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
           ...product,
           quantity: quantityToAdd,
           selectedVariant,
+          selectedColor,
           cartKey,
         },
       ];

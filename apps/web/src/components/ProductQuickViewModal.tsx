@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ProductItem } from "./DynamicProductCard";
 import { useAuth } from "@/context/AuthContext";
 import { getSellerUrl } from "@/lib/domainUrls";
+import { getProductColorOptions, isLightColor, ProductColorOption } from "@/lib/productColors";
 
 interface PackOption {
   label: string;
@@ -35,15 +36,27 @@ export default function ProductQuickViewModal({
   const [selectedPackIndex, setSelectedPackIndex] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  const [selectedVariant, setSelectedVariant] = useState<{ name: string; priceDelta: number }>(
-    product?.variants?.[0] || { name: "256GB", priceDelta: 0 }
-  );
+  // Dynamic authentic color options
+  const colorOptions = React.useMemo(() => {
+    return product ? getProductColorOptions(product) : [];
+  }, [product]);
+
+  const [selectedColorIndex, setSelectedColorIndex] = useState(0);
+  const [selectedColorImage, setSelectedColorImage] = useState<string | null>(null);
 
   React.useEffect(() => {
     setActiveImageIndex(0);
     setQuantity(1);
     setSelectedPackIndex(0);
-  }, [product?.id]);
+    setSelectedColorImage(null);
+    if (product && colorOptions.length > 0) {
+      const pName = product.name.toLowerCase();
+      const matchedIdx = colorOptions.findIndex((c) => pName.includes(c.name.toLowerCase()));
+      setSelectedColorIndex(matchedIdx !== -1 ? matchedIdx : 0);
+    } else {
+      setSelectedColorIndex(0);
+    }
+  }, [product?.id, product?.name, colorOptions]);
 
   if (!product) return null;
 
@@ -104,7 +117,7 @@ export default function ProductQuickViewModal({
           {/* Main Showcase Image */}
           <div className="relative aspect-square w-full flex items-center justify-center overflow-hidden rounded-xl bg-white border border-gray-200/70 p-4 select-none">
             <Image
-              src={allImages[activeImageIndex] || product.frontImage}
+              src={selectedColorImage || allImages[activeImageIndex] || product.frontImage}
               alt={`${product.name} - View ${activeImageIndex + 1}`}
               width={400}
               height={400}
@@ -249,7 +262,24 @@ export default function ProductQuickViewModal({
                   <button
                     key={pack.label}
                     type="button"
-                    onClick={() => setSelectedPackIndex(idx)}
+                    onClick={() => {
+                      setSelectedPackIndex(idx);
+                      const variant = packOptions[idx];
+                      if (variant && colorOptions.length > 0) {
+                        const vName = variant.label.toLowerCase();
+                        const matchIdx = colorOptions.findIndex(
+                          (c) =>
+                            vName.includes(c.name.toLowerCase()) ||
+                            c.name.toLowerCase().split(" ").some((w) => w.length > 3 && vName.includes(w))
+                        );
+                        if (matchIdx !== -1) {
+                          setSelectedColorIndex(matchIdx);
+                          if (colorOptions[matchIdx]?.image) {
+                            setSelectedColorImage(colorOptions[matchIdx].image!);
+                          }
+                        }
+                      }
+                    }}
                     className={`text-xs font-bold px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
                       selectedPackIndex === idx
                         ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
@@ -262,28 +292,67 @@ export default function ProductQuickViewModal({
               </div>
             </div>
 
+            {/* Authentic Color & Finish Selection */}
+            {colorOptions.length > 0 && (
+              <div className="space-y-2 pt-2 border-t border-gray-100 mb-4">
+                <div className="flex items-center justify-between text-xs font-bold text-gray-700 uppercase tracking-wider">
+                  <span>
+                    Finish / Colour:{" "}
+                    <span className="text-emerald-700 font-extrabold normal-case ml-1">
+                      {colorOptions[selectedColorIndex]?.name}
+                    </span>
+                  </span>
+                  <span className="text-[11px] text-gray-400 font-normal lowercase">
+                    {colorOptions.length} available
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  {colorOptions.map((opt, idx) => {
+                    const isSelected = selectedColorIndex === idx;
+                    const isLight = isLightColor(opt.hex);
+                    return (
+                      <button
+                        key={opt.name}
+                        type="button"
+                        onClick={() => {
+                          setSelectedColorIndex(idx);
+                          if (opt.image) {
+                            setSelectedColorImage(opt.image);
+                          }
+                          if (product.variants && product.variants.length > 0) {
+                            const optNameLower = opt.name.toLowerCase();
+                            const matchIdx = product.variants.findIndex((v) => {
+                              const vName = v.name.toLowerCase();
+                              return (
+                                vName.includes(optNameLower) ||
+                                optNameLower.split(" ").some((w) => w.length > 3 && vName.includes(w))
+                              );
+                            });
+                            if (matchIdx !== -1) setSelectedPackIndex(matchIdx);
+                          }
+                        }}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs transition-all cursor-pointer ${
+                          isSelected
+                            ? "bg-emerald-50 border-emerald-600 text-emerald-950 font-bold ring-2 ring-emerald-500/30 shadow-xs"
+                            : "bg-white border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50"
+                        }`}
+                      >
+                        <span
+                          className={`w-4 h-4 rounded-full flex-shrink-0 shadow-2xs ${
+                            isLight ? "border border-gray-300" : "border border-black/10"
+                          }`}
+                          style={{ background: opt.bgGradient || opt.hex }}
+                        />
+                        <span>{opt.name}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
             {product.category === "Fashion" && (
               <div className="space-y-4 pt-2 border-t border-gray-100 mb-4">
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
-                    Color: <span className="text-gray-500 font-normal">{selectedColor}</span>
-                  </label>
-                  <div className="flex items-center gap-2.5">
-                    {colors.map((hex, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setSelectedColor(`Option ${idx + 1}`)}
-                        style={{ backgroundColor: hex }}
-                        className={`w-7 h-7 rounded-full border-2 transition-transform ${
-                          selectedColor === `Option ${idx + 1}`
-                            ? "ring-2 ring-emerald-600 ring-offset-2 scale-110"
-                            : "border-transparent hover:scale-105"
-                        }`}
-                      ></button>
-                    ))}
-                  </div>
-                </div>
-
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <label className="text-xs font-bold text-gray-700 uppercase tracking-wider">
@@ -373,10 +442,14 @@ export default function ProductQuickViewModal({
                 type="button"
                 onClick={() => {
                   onAddToCart(
-                    { ...product, price: packTotalPrice },
                     {
-                      color: selectedColor,
-                      size: selectedSize,
+                      ...product,
+                      price: packTotalPrice,
+                      frontImage: selectedColorImage || allImages[activeImageIndex] || product.frontImage,
+                    },
+                    {
+                      color: colorOptions[selectedColorIndex]?.name || selectedColor,
+                      size: product.category === "Fashion" ? selectedSize : undefined,
                       variant: activePack.label !== "1 pc" ? activePack.label : undefined,
                       quantity,
                     }

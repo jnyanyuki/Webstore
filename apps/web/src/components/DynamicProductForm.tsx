@@ -15,6 +15,13 @@ import { useProductCatalog, ProductOverride } from "@/context/ProductCatalogCont
 import { useAuth } from "@/context/AuthContext";
 import { ProductItem } from "@/components/DynamicProductCard";
 import { getStorefrontUrl } from "@/lib/domainUrls";
+import {
+  ProductColorOption,
+  PRESET_COLOR_PALETTES,
+  KNOWN_COLOR_MAP,
+  getColorHex,
+  getProductColorOptions,
+} from "@/lib/productColors";
 
 const PRESET_BADGES = [
   "None",
@@ -82,6 +89,18 @@ export default function DynamicProductForm({
   const [imageUrlInput, setImageUrlInput] = useState("");
   const [isUploadingImage, setIsUploadingImage] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Color & Finish Options State
+  const [colorOptions, setColorOptions] = useState<ProductColorOption[]>([
+    { name: "Natural Titanium", hex: "#C2BCB2", bgGradient: "linear-gradient(135deg, #d3cdc4, #a8a299)" },
+    { name: "Desert Titanium", hex: "#BFA48F", bgGradient: "linear-gradient(135deg, #d5bdab, #a78f7c)" },
+    { name: "White Titanium", hex: "#F2F1ED", bgGradient: "linear-gradient(135deg, #ffffff, #deddd8)" },
+    { name: "Black Titanium", hex: "#3C3C3D", bgGradient: "linear-gradient(135deg, #4a4a4c, #2b2b2c)" },
+  ]);
+  const [newColorName, setNewColorName] = useState("");
+  const [newColorHex, setNewColorHex] = useState("#C2BCB2");
+  const [newColorImage, setNewColorImage] = useState("");
+  const [selectedPreviewColorIndex, setSelectedPreviewColorIndex] = useState(0);
 
   // Validation & Processing Status
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
@@ -159,6 +178,16 @@ export default function DynamicProductForm({
     });
 
     setDynamicAttributes(initialAttrs);
+
+    // Color & Finish Options
+    const loadedColors = (prod as any).colorOptions && (prod as any).colorOptions.length > 0
+      ? (prod as any).colorOptions
+      : (prod as any).colors && (prod as any).colors.length > 0
+      ? getProductColorOptions(prod)
+      : getProductColorOptions(prod);
+    setColorOptions(loadedColors || []);
+    setSelectedPreviewColorIndex(0);
+
     setValidationErrors([]);
     setPublishedProduct(null);
     setIsSearchDropdownOpen(false);
@@ -209,6 +238,17 @@ export default function DynamicProductForm({
       } else {
         setImages(["https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?w=800&auto=format&fit=crop&q=80"]);
       }
+
+      if (cat.slug.includes("phone") || cat.slug.includes("tablet")) {
+        setColorOptions(PRESET_COLOR_PALETTES[0].colors);
+      } else if (cat.slug.includes("fashion") || cat.slug.includes("apparel") || cat.slug.includes("suit")) {
+        setColorOptions(PRESET_COLOR_PALETTES[5].colors);
+      } else if (cat.slug.includes("footwear") || cat.slug.includes("shoe")) {
+        setColorOptions(PRESET_COLOR_PALETTES[6].colors);
+      } else {
+        setColorOptions(PRESET_COLOR_PALETTES[7].colors);
+      }
+      setSelectedPreviewColorIndex(0);
     }
   };
 
@@ -317,6 +357,56 @@ export default function DynamicProductForm({
     setIsCustomDiscountOpen(true);
   };
 
+  // Color & Finish Option Handlers
+  const handleAddColorOption = () => {
+    if (!newColorName.trim()) return;
+    const cleanName = newColorName.trim();
+    const mapEntry = KNOWN_COLOR_MAP[cleanName.toLowerCase()];
+    const hex = newColorHex || mapEntry?.hex || getColorHex(cleanName);
+    const bgGradient = mapEntry?.bgGradient;
+
+    setColorOptions((prev) => [
+      ...prev,
+      {
+        name: cleanName,
+        hex,
+        bgGradient,
+        image: newColorImage || undefined,
+      },
+    ]);
+    setNewColorName("");
+    setNewColorHex("#C2BCB2");
+    setNewColorImage("");
+  };
+
+  const handleRemoveColorOption = (index: number) => {
+    setColorOptions((prev) => prev.filter((_, idx) => idx !== index));
+    if (selectedPreviewColorIndex >= index && selectedPreviewColorIndex > 0) {
+      setSelectedPreviewColorIndex((prev) => prev - 1);
+    }
+  };
+
+  const handleColorNameChange = (val: string) => {
+    setNewColorName(val);
+    const lower = val.trim().toLowerCase();
+    if (KNOWN_COLOR_MAP[lower]) {
+      setNewColorHex(KNOWN_COLOR_MAP[lower].hex);
+    }
+  };
+
+  const handleApplyPalette = (paletteColors: ProductColorOption[], mode: "replace" | "append" = "replace") => {
+    if (mode === "replace") {
+      setColorOptions(paletteColors);
+    } else {
+      setColorOptions((prev) => {
+        const existingNames = new Set(prev.map((c) => c.name.toLowerCase()));
+        const toAdd = paletteColors.filter((c) => !existingNames.has(c.name.toLowerCase()));
+        return [...prev, ...toAdd];
+      });
+    }
+    setSelectedPreviewColorIndex(0);
+  };
+
   // Submit & Publish to Neon PostgreSQL
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -363,6 +453,8 @@ export default function DynamicProductForm({
       images: images,
       gallery: images.map((url, i) => ({ url, label: i === 0 ? "Front" : `Angle ${i}` })),
       attributes: dynamicAttributes,
+      colors: colorOptions.map((c) => c.name),
+      colorOptions: colorOptions,
     };
 
     try {
@@ -403,6 +495,11 @@ export default function DynamicProductForm({
     setBasePrice("");
     setOriginalPrice("");
     setDescription("");
+    setColorOptions([]);
+    setNewColorName("");
+    setNewColorHex("#C2BCB2");
+    setNewColorImage("");
+    setSelectedPreviewColorIndex(0);
     setActiveMode("create");
     handleCategorySelect(selectedCategory);
   };
@@ -1045,10 +1142,206 @@ export default function DynamicProductForm({
               </div>
             </div>
 
-            {/* 6. Description & Selling Points */}
+            {/* 6. Color Finishes & Product Variations */}
+            <div className="space-y-4 pt-4 border-t border-zinc-100">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-xs font-extrabold uppercase tracking-wider text-zinc-700">
+                      6. Color & Finish Configuration
+                    </h3>
+                    <span className="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-full">
+                      {colorOptions.length} Configured
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-zinc-500">
+                    Configure authentic device finishes or apparel colors with live swatches and photo linking
+                  </p>
+                </div>
+
+                {colorOptions.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setColorOptions([])}
+                    className="text-[11px] font-bold text-rose-600 hover:text-rose-700 cursor-pointer self-start sm:self-auto"
+                  >
+                    Clear All Finishes
+                  </button>
+                )}
+              </div>
+
+              {/* Quick Preset Palettes */}
+              <div className="bg-zinc-50/80 border border-zinc-200/80 rounded-2xl p-3.5 space-y-2">
+                <div className="text-[11px] font-extrabold uppercase tracking-wider text-zinc-600 flex items-center justify-between">
+                  <span>🎨 One-Click Preset Palettes:</span>
+                  <span className="text-[10px] text-zinc-400 font-normal">Click to apply palette finishes</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {PRESET_COLOR_PALETTES.map((palette) => (
+                    <button
+                      key={palette.name}
+                      type="button"
+                      onClick={() => handleApplyPalette(palette.colors, "replace")}
+                      className="px-2.5 py-1.5 bg-white hover:bg-emerald-50 hover:border-emerald-300 border border-zinc-200 rounded-xl text-xs font-bold text-zinc-700 hover:text-emerald-950 transition-all cursor-pointer flex items-center gap-1.5 shadow-2xs group"
+                    >
+                      {/* Mini Preview Dots */}
+                      <div className="flex -space-x-1">
+                        {palette.colors.slice(0, 3).map((c, i) => (
+                          <span
+                            key={i}
+                            className="w-3 h-3 rounded-full border border-white shadow-2xs inline-block"
+                            style={{ background: c.bgGradient || c.hex }}
+                          />
+                        ))}
+                      </div>
+                      <span>{palette.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Active Swatches List */}
+              {colorOptions.length > 0 ? (
+                <div className="space-y-2">
+                  <label className="block text-[11px] font-bold text-zinc-600">
+                    Configured Finishes (Assignable to gallery photos):
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {colorOptions.map((opt, idx) => (
+                      <div
+                        key={opt.name + idx}
+                        className="flex items-center justify-between p-2.5 bg-zinc-50 border border-zinc-200 rounded-2xl hover:border-zinc-300 transition-all group"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <span
+                            className="w-7 h-7 rounded-full shrink-0 shadow-xs border border-black/10 flex items-center justify-center font-bold text-[10px]"
+                            style={{ background: opt.bgGradient || opt.hex }}
+                          />
+                          <div className="min-w-0">
+                            <div className="text-xs font-bold text-zinc-900 truncate">
+                              {opt.name}
+                            </div>
+                            <div className="flex items-center gap-2 text-[10px] text-zinc-500 font-mono">
+                              <span>{opt.hex}</span>
+                              {opt.image && (
+                                <span className="text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded font-sans font-bold flex items-center gap-1">
+                                  🖼️ Linked
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-1 shrink-0">
+                          {/* Image selector dropdown */}
+                          {images.length > 0 && (
+                            <select
+                              value={opt.image || ""}
+                              onChange={(e) => {
+                                const chosen = e.target.value;
+                                setColorOptions((prev) =>
+                                  prev.map((c, i) => (i === idx ? { ...c, image: chosen || undefined } : c))
+                                );
+                              }}
+                              className="text-[10px] bg-white border border-zinc-200 rounded-lg px-2 py-1 text-zinc-700 focus:outline-hidden font-medium"
+                              title="Assign specific photograph to this color"
+                            >
+                              <option value="">No custom image</option>
+                              {images.map((img, imgIdx) => (
+                                <option key={imgIdx} value={img}>
+                                  Photo #{imgIdx + 1}
+                                </option>
+                              ))}
+                            </select>
+                          )}
+
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveColorOption(idx)}
+                            className="w-6 h-6 rounded-lg text-zinc-400 hover:text-rose-600 hover:bg-rose-50 flex items-center justify-center transition-colors cursor-pointer text-xs"
+                            title="Remove finish"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="p-4 rounded-2xl bg-zinc-50 border border-dashed border-zinc-300 text-center text-xs text-zinc-500">
+                  No color options configured yet. Use a preset palette above or add custom finishes below.
+                </div>
+              )}
+
+              {/* Add Custom Finish Bar */}
+              <div className="p-3 bg-zinc-100/70 border border-zinc-200 rounded-2xl space-y-2.5">
+                <div className="text-xs font-bold text-zinc-700">Add Custom Color / Finish:</div>
+                <div className="grid grid-cols-1 sm:grid-cols-12 gap-2 items-center">
+                  <div className="sm:col-span-5">
+                    <input
+                      type="text"
+                      placeholder="e.g. Natural Titanium, Emerald Green"
+                      value={newColorName}
+                      onChange={(e) => handleColorNameChange(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          handleAddColorOption();
+                        }
+                      }}
+                      className="w-full px-3 py-2 bg-white border border-zinc-200 rounded-xl text-xs font-medium text-zinc-900 focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+                    />
+                  </div>
+
+                  <div className="sm:col-span-3 flex items-center gap-1.5">
+                    <input
+                      type="color"
+                      value={newColorHex}
+                      onChange={(e) => setNewColorHex(e.target.value)}
+                      className="w-8 h-8 rounded-lg border border-zinc-200 cursor-pointer p-0.5 bg-white shrink-0"
+                      title="Pick color"
+                    />
+                    <input
+                      type="text"
+                      value={newColorHex}
+                      onChange={(e) => setNewColorHex(e.target.value)}
+                      placeholder="#000000"
+                      className="w-full px-2 py-2 bg-white border border-zinc-200 rounded-xl text-xs font-mono font-bold text-zinc-800 uppercase focus:outline-hidden focus:ring-2 focus:ring-emerald-500"
+                    />
+                  </div>
+
+                  <div className="sm:col-span-4 flex items-center gap-2">
+                    {images.length > 0 && (
+                      <select
+                        value={newColorImage}
+                        onChange={(e) => setNewColorImage(e.target.value)}
+                        className="w-full px-2 py-2 bg-white border border-zinc-200 rounded-xl text-xs text-zinc-700 focus:outline-hidden"
+                      >
+                        <option value="">Link photo...</option>
+                        {images.map((img, imgIdx) => (
+                          <option key={imgIdx} value={img}>
+                            Photo #{imgIdx + 1}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                    <button
+                      type="button"
+                      onClick={handleAddColorOption}
+                      className="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-black transition-colors cursor-pointer shrink-0 shadow-xs"
+                    >
+                      + Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 7. Description & Selling Points */}
             <div className="space-y-2 pt-4 border-t border-zinc-100">
               <label className="block text-xs font-extrabold uppercase tracking-wider text-zinc-700">
-                6. Product Description & Warranty Notes
+                7. Product Description & Warranty Notes
               </label>
               <textarea
                 rows={3}
@@ -1143,10 +1436,14 @@ export default function DynamicProductForm({
               {/* Image Preview Carousel */}
               <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-100">
                 <Image
-                  src={images[0] || "/placeholder.png"}
+                  src={
+                    (colorOptions[selectedPreviewColorIndex]?.image) ||
+                    images[0] ||
+                    "/placeholder.png"
+                  }
                   alt={title || "Product Preview"}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-all duration-200"
                 />
                 {badge && badge !== "None" && (
                   <div className="absolute top-3 left-3 px-3 py-1 bg-amber-400/95 text-zinc-950 font-black text-xs rounded-full shadow-md backdrop-blur-xs">
@@ -1172,6 +1469,55 @@ export default function DynamicProductForm({
                 <h4 className="text-base font-black text-zinc-900 leading-snug line-clamp-2">
                   {title || "Untitled Product Listing"}
                 </h4>
+
+                {/* Live Storefront Color Swatches Preview */}
+                {colorOptions.length > 0 && (
+                  <div className="pt-1.5 pb-0.5">
+                    <div className="flex items-center justify-between text-xs mb-1.5">
+                      <span className="font-bold text-zinc-500 uppercase tracking-wider text-[10px]">
+                        Finish:{" "}
+                        <span className="text-zinc-900 font-extrabold">
+                          {colorOptions[selectedPreviewColorIndex]?.name || colorOptions[0]?.name}
+                        </span>
+                      </span>
+                      <span className="text-[10px] text-zinc-400 font-medium">
+                        {colorOptions.length} finishes
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {colorOptions.map((opt, idx) => {
+                        const isSelected = selectedPreviewColorIndex === idx;
+                        const isWhite =
+                          opt.hex.toLowerCase() === "#ffffff" || opt.hex.toLowerCase() === "#f2f1ed";
+                        return (
+                          <button
+                            key={opt.name + idx}
+                            type="button"
+                            onClick={() => setSelectedPreviewColorIndex(idx)}
+                            className={`w-6 h-6 rounded-full transition-all relative cursor-pointer flex items-center justify-center ${
+                              isSelected
+                                ? "ring-2 ring-emerald-600 ring-offset-2 scale-110 shadow-xs"
+                                : "hover:scale-105 opacity-85 hover:opacity-100"
+                            }`}
+                            title={opt.name}
+                            style={{
+                              background: opt.bgGradient || opt.hex,
+                              border: isWhite ? "1px solid #d1d5db" : "1px solid rgba(0,0,0,0.12)",
+                            }}
+                          >
+                            {isSelected && (
+                              <span
+                                className={`w-1.5 h-1.5 rounded-full ${
+                                  isWhite ? "bg-zinc-900" : "bg-white"
+                                }`}
+                              />
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
 
                 {/* Price Display */}
                 <div className="flex items-baseline gap-2 pt-1">
@@ -1243,6 +1589,8 @@ export default function DynamicProductForm({
                     discountPercentage,
                     badge: badge === "None" ? null : badge,
                     merchantStall,
+                    colors: colorOptions.map((c) => c.name),
+                    colorOptions: colorOptions,
                     attributes: dynamicAttributes,
                   },
                   null,

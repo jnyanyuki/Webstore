@@ -7,12 +7,14 @@ import MpesaCheckout from "./MpesaCheckout";
 import { OrderStatusTimelineTracker } from "@webstore/ui";
 import { DeliveryAddress, OrderStatusTimeline } from "@webstore/types";
 import { ProductItem } from "./DynamicProductCard";
+import { getColorHex, KNOWN_COLOR_MAP, isLightColor } from "@/lib/productColors";
 
 const FREE_DELIVERY_THRESHOLD = 5000;
 
 export type CartItemType = ProductItem & {
   quantity: number;
   selectedVariant?: string;
+  selectedColor?: string;
   cartKey?: string;
 };
 
@@ -113,11 +115,30 @@ export default function SlideOverCartSheet({
                         />
                         <div>
                           <h4 className="text-xs font-bold text-gray-900 line-clamp-1">{item.name}</h4>
-                          {item.selectedVariant && (
-                            <span className="inline-block mt-0.5 text-[10px] font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
-                              {item.selectedVariant}
-                            </span>
-                          )}
+                          <div className="flex items-center gap-1 mt-0.5 flex-wrap">
+                            {item.selectedColor && (
+                              <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-gray-800 bg-white px-2 py-0.5 rounded-full border border-gray-200/90 shadow-2xs">
+                                <span
+                                  className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${
+                                    isLightColor(getColorHex(item.selectedColor))
+                                      ? "border border-gray-300"
+                                      : "border border-black/10"
+                                  }`}
+                                  style={{
+                                    background:
+                                      KNOWN_COLOR_MAP[item.selectedColor.toLowerCase()]?.bgGradient ||
+                                      getColorHex(item.selectedColor),
+                                  }}
+                                />
+                                <span>{item.selectedColor}</span>
+                              </span>
+                            )}
+                            {item.selectedVariant && item.selectedVariant !== item.selectedColor && (
+                              <span className="inline-block text-[10px] font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
+                                {item.selectedVariant}
+                              </span>
+                            )}
+                          </div>
                           <div className="text-xs font-extrabold text-emerald-700 mt-0.5">
                             KSh {item.price.toLocaleString()}
                           </div>

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { getProductColorOptions, isLightColor, ProductColorOption } from "@/lib/productColors";
 
 export type ProductImageAngle = {
   url: string;
@@ -30,6 +31,7 @@ export type ProductItem = {
   baseMsrp?: number;
   releaseYear?: number;
   colors?: string[];
+  colorOptions?: ProductColorOption[];
   sizes?: string[];
   variants?: { name: string; priceDelta: number }[];
   attributes?: Record<string, any>;
@@ -61,13 +63,36 @@ export default function DynamicProductCard({
   onQuickView,
 }: {
   product: ProductItem;
-  onAddToCart: (p: ProductItem, quantity?: number, variant?: string) => void;
+  onAddToCart: (p: ProductItem, quantity?: number, variant?: string, color?: string) => void;
   onQuickView: (p: ProductItem) => void;
 }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedPackIndex, setSelectedPackIndex] = useState(0);
   const [isAdded, setIsAdded] = useState(false);
+
+  // Dynamic color options extracted from product definition, finishes or categories
+  const colorOptions = React.useMemo(() => {
+    return getProductColorOptions(product);
+  }, [product]);
+
+  const [selectedColorIndex, setSelectedColorIndex] = useState(0);
+  const [selectedColorImage, setSelectedColorImage] = useState<string | null>(null);
+
+  // Auto-sync initial color if product name mentions a specific finish
+  React.useEffect(() => {
+    if (colorOptions.length > 0) {
+      const pNameLower = product.name.toLowerCase();
+      const matchedIdx = colorOptions.findIndex((c) =>
+        pNameLower.includes(c.name.toLowerCase())
+      );
+      setSelectedColorIndex(matchedIdx !== -1 ? matchedIdx : 0);
+      setSelectedColorImage(null);
+    } else {
+      setSelectedColorIndex(0);
+      setSelectedColorImage(null);
+    }
+  }, [product.id, product.name, colorOptions]);
 
   // Multi-angle image extraction
   const allImages = React.useMemo(() => {
@@ -98,6 +123,7 @@ export default function DynamicProductCard({
   }, [product.variants]);
 
   const activePack = packOptions[selectedPackIndex] || packOptions[0];
+  const activeColorOption: ProductColorOption | undefined = colorOptions[selectedColorIndex];
 
   // Unit and bundle price calculation
   const unitPrice =
@@ -108,7 +134,55 @@ export default function DynamicProductCard({
   const packTotalPrice = unitPrice * activePack.multiplier;
   const totalItemUnits = activePack.multiplier * quantity;
 
-  const displayImage = allImages[activeImageIndex] || product.frontImage;
+  // Active preview image (switches dynamically if a custom color image is selected)
+  const displayImage = selectedColorImage || allImages[activeImageIndex] || product.frontImage;
+
+  // Handle color swatch selection with bidirectional variant synchronization
+  const handleColorSelect = (idx: number) => {
+    setSelectedColorIndex(idx);
+    const opt = colorOptions[idx];
+    if (!opt) return;
+
+    if (opt.image) {
+      setSelectedColorImage(opt.image);
+    }
+
+    if (product.variants && product.variants.length > 0) {
+      const optNameLower = opt.name.toLowerCase();
+      const matchingVariantIndex = product.variants.findIndex((v) => {
+        const vName = v.name.toLowerCase();
+        return (
+          vName.includes(optNameLower) ||
+          optNameLower.split(" ").some((w) => w.length > 3 && vName.includes(w))
+        );
+      });
+      if (matchingVariantIndex !== -1) {
+        setSelectedPackIndex(matchingVariantIndex);
+      }
+    }
+  };
+
+  // Handle variant selection with bidirectional color swatch synchronization
+  const handleVariantSelect = (idx: number) => {
+    setSelectedPackIndex(idx);
+    const variant = packOptions[idx];
+    if (variant && colorOptions.length > 0) {
+      const vName = variant.label.toLowerCase();
+      const matchingColorIndex = colorOptions.findIndex((c) => {
+        const cName = c.name.toLowerCase();
+        return (
+          vName.includes(cName) ||
+          cName.split(" ").some((w) => w.length > 3 && vName.includes(w))
+        );
+      });
+      if (matchingColorIndex !== -1) {
+        setSelectedColorIndex(matchingColorIndex);
+        if (colorOptions[matchingColorIndex]?.image) {
+          setSelectedColorImage(colorOptions[matchingColorIndex].image!);
+        }
+      }
+    }
+  };
 
   const handleAdd = () => {
     setIsAdded(true);
@@ -118,9 +192,11 @@ export default function DynamicProductCard({
       {
         ...product,
         price: packTotalPrice,
+        frontImage: selectedColorImage || displayImage,
       },
       quantity,
-      activePack.label !== "1 pc" ? activePack.label : undefined
+      activePack.label !== "1 pc" ? activePack.label : undefined,
+      activeColorOption?.name
     );
   };
 
@@ -327,6 +403,60 @@ export default function DynamicProductCard({
             </div>
           </div>
 
+          {/* Interactive Color Selection Swatches */}
+          {colorOptions.length > 0 && (
+            <div className="pt-0.5">
+              <div className="text-[11px] font-bold text-gray-500 flex items-center justify-between mb-1">
+                <span className="uppercase tracking-wider text-[10px] text-gray-400 font-extrabold">
+                  Colour:
+                </span>
+                <span className="text-gray-900 text-[11px] font-bold truncate max-w-[130px]">
+                  {activeColorOption?.name}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none py-1 -mx-0.5 px-0.5">
+                {colorOptions.map((opt, idx) => {
+                  const isSelected = selectedColorIndex === idx;
+                  const isLight = isLightColor(opt.hex);
+                  return (
+                    <button
+                      key={opt.name}
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleColorSelect(idx);
+                      }}
+                      className={`group/swatch relative w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full transition-all duration-150 cursor-pointer flex items-center justify-center flex-shrink-0 ${
+                        isSelected
+                          ? "ring-2 ring-emerald-600 ring-offset-1 sm:ring-offset-2 scale-110 shadow-xs"
+                          : "hover:scale-105 opacity-85 hover:opacity-100 ring-1 ring-gray-200 hover:ring-gray-300"
+                      }`}
+                      title={opt.name}
+                      aria-label={`Select color ${opt.name}`}
+                    >
+                      <span
+                        className={`w-full h-full rounded-full transition-all ${
+                          isLight ? "border border-gray-300/80" : "border border-black/10"
+                        }`}
+                        style={{
+                          background: opt.bgGradient || opt.hex,
+                        }}
+                      />
+                      {isSelected && (
+                        <span
+                          className={`absolute w-1.5 h-1.5 rounded-full ${
+                            isLight ? "bg-gray-800" : "bg-white"
+                          } shadow-xs pointer-events-none`}
+                        />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           {/* Pack Options & Savings Selector */}
           <div className="pt-1">
             <div className="text-[11px] font-extrabold text-gray-400 uppercase tracking-wider mb-1 flex items-center justify-between">
@@ -342,7 +472,7 @@ export default function DynamicProductCard({
                 <button
                   key={pack.label}
                   type="button"
-                  onClick={() => setSelectedPackIndex(idx)}
+                  onClick={() => handleVariantSelect(idx)}
                   className={`text-[11px] sm:text-xs font-bold px-2 py-1 rounded-md border transition-all whitespace-nowrap cursor-pointer active:scale-95 ${
                     selectedPackIndex === idx
                       ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"

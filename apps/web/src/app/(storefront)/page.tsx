@@ -27,9 +27,10 @@ export default function StorefrontHome() {
   const handleAddToCart = (
     product: ProductItem,
     quantityToAdd: number = 1,
-    selectedVariant?: string
+    selectedVariant?: string,
+    selectedColor?: string
   ) => {
-    addToCart(product, quantityToAdd, selectedVariant);
+    addToCart(product, quantityToAdd, selectedVariant, selectedColor);
   };
 
   const filteredProducts = selectedCategoryFilter
@@ -317,7 +318,7 @@ export default function StorefrontHome() {
         product={quickViewProduct}
         onClose={() => setQuickViewProduct(null)}
         onAddToCart={(p, options) => {
-          handleAddToCart(p, options.quantity || 1, options.variant);
+          handleAddToCart(p, options.quantity || 1, options.variant, options.color);
         }}
       />
     </div>

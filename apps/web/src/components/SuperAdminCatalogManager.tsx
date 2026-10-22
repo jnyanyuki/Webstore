@@ -5,6 +5,13 @@ import Image from "next/image";
 import { ProductItem } from "@/components/DynamicProductCard";
 import { useProductCatalog, ProductOverride } from "@/context/ProductCatalogContext";
 import { useAuth } from "@/context/AuthContext";
+import {
+  ProductColorOption,
+  PRESET_COLOR_PALETTES,
+  KNOWN_COLOR_MAP,
+  getColorHex,
+  getProductColorOptions,
+} from "@/lib/productColors";
 
 const CATEGORIES = [
   "All Categories",
@@ -61,6 +68,11 @@ export default function SuperAdminCatalogManager({
   const [isUploadingImage, setIsUploadingImage] = useState(false);
   const [urlInput, setUrlInput] = useState("");
   const [uploadError, setUploadError] = useState<string | null>(null);
+
+  // Color & Finish Configuration State for Edit Drawer
+  const [newColorName, setNewColorName] = useState("");
+  const [newColorHex, setNewColorHex] = useState("#C2BCB2");
+  const [newColorImage, setNewColorImage] = useState("");
 
   // Custom Promotion Discount State
   const [isCustomDiscountOpen, setIsCustomDiscountOpen] = useState(false);
@@ -123,6 +135,15 @@ export default function SuperAdminCatalogManager({
     ];
     const uniqueImages = Array.from(new Set(existingImages.filter(Boolean)));
 
+    const existingColorOptions =
+      (p as any).colorOptions && (p as any).colorOptions.length > 0
+        ? (p as any).colorOptions
+        : getProductColorOptions(p);
+    const existingColors =
+      (p as any).colors && (p as any).colors.length > 0
+        ? (p as any).colors
+        : existingColorOptions.map((c: any) => c.name);
+
     setEditForm({
       id: p.id,
       name: p.name,
@@ -137,6 +158,8 @@ export default function SuperAdminCatalogManager({
       frontImage: p.frontImage || uniqueImages[0] || "",
       sideImage: p.sideImage || uniqueImages[1] || uniqueImages[0] || "",
       images: uniqueImages,
+      colors: existingColors,
+      colorOptions: existingColorOptions,
     });
 
     const isStandardPreset = [0, 5, 10, 15, 20, 25].includes(discount);
@@ -144,6 +167,9 @@ export default function SuperAdminCatalogManager({
     setCustomDiscountValue(!isStandardPreset && discount > 0 ? String(discount) : "");
 
     setUrlInput("");
+    setNewColorName("");
+    setNewColorHex("#C2BCB2");
+    setNewColorImage("");
     setUploadError(null);
     setSaveFeedback(null);
   };
@@ -215,6 +241,75 @@ export default function SuperAdminCatalogManager({
     setIsCustomDiscountOpen(true);
   };
 
+  // Color & Finish Option Handlers for Super Admin
+  const handleAddColorOption = () => {
+    if (!newColorName.trim()) return;
+    const clean = newColorName.trim();
+    const mapEntry = KNOWN_COLOR_MAP[clean.toLowerCase()];
+    const hex = newColorHex || mapEntry?.hex || getColorHex(clean);
+    const bgGradient = mapEntry?.bgGradient;
+
+    setEditForm((prev) => {
+      const existing = (prev.colorOptions || []) as ProductColorOption[];
+      const updated = [
+        ...existing,
+        {
+          name: clean,
+          hex,
+          bgGradient,
+          image: newColorImage || undefined,
+        },
+      ];
+      return {
+        ...prev,
+        colorOptions: updated,
+        colors: updated.map((c) => c.name),
+      };
+    });
+    setNewColorName("");
+    setNewColorHex("#C2BCB2");
+    setNewColorImage("");
+  };
+
+  const handleRemoveColorOption = (index: number) => {
+    setEditForm((prev) => {
+      const existing = (prev.colorOptions || []) as ProductColorOption[];
+      const updated = existing.filter((_, i) => i !== index);
+      return {
+        ...prev,
+        colorOptions: updated,
+        colors: updated.map((c) => c.name),
+      };
+    });
+  };
+
+  const handleColorNameChange = (val: string) => {
+    setNewColorName(val);
+    const lower = val.trim().toLowerCase();
+    if (KNOWN_COLOR_MAP[lower]) {
+      setNewColorHex(KNOWN_COLOR_MAP[lower].hex);
+    }
+  };
+
+  const handleApplyPalette = (paletteColors: ProductColorOption[], mode: "replace" | "append" = "replace") => {
+    setEditForm((prev) => {
+      const existing = (prev.colorOptions || []) as ProductColorOption[];
+      let updated: ProductColorOption[];
+      if (mode === "replace") {
+        updated = paletteColors;
+      } else {
+        const existingNames = new Set(existing.map((c) => c.name.toLowerCase()));
+        const toAdd = paletteColors.filter((c) => !existingNames.has(c.name.toLowerCase()));
+        updated = [...existing, ...toAdd];
+      }
+      return {
+        ...prev,
+        colorOptions: updated,
+        colors: updated.map((c) => c.name),
+      };
+    });
+  };
+
   // Save product changes
   const handleSaveProduct = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -238,6 +333,8 @@ export default function SuperAdminCatalogManager({
       frontImage: editForm.frontImage,
       sideImage: editForm.sideImage,
       images: editForm.images,
+      colors: editForm.colorOptions ? editForm.colorOptions.map((c) => c.name) : editForm.colors,
+      colorOptions: editForm.colorOptions,
       discountPercentage: editForm.discountPercentage,
       resetPromotion: isReset,
     });
@@ -1074,6 +1171,193 @@ export default function SuperAdminCatalogManager({
                     No gallery images added yet. Click above to upload or paste a URL.
                   </div>
                 )}
+              </div>
+
+              {/* Color & Finish Options Manager */}
+              <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 space-y-3.5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-xs font-extrabold text-gray-900 uppercase tracking-wider flex items-center gap-1.5">
+                      <span>🎨</span> Color &amp; Finish Options
+                    </span>
+                    <p className="text-[11px] text-gray-500 mt-0.5">
+                      Configure color swatches and link finishes directly to gallery photos.
+                    </p>
+                  </div>
+                  <span className="bg-white border border-gray-200 text-gray-700 text-[11px] font-bold px-2.5 py-1 rounded-full shadow-xs">
+                    {((editForm.colorOptions || []) as ProductColorOption[]).length} Finishes Active
+                  </span>
+                </div>
+
+                {/* Quick Preset Palettes */}
+                <div className="bg-white border border-gray-200 rounded-xl p-2.5 space-y-1.5">
+                  <div className="text-[11px] font-bold text-gray-600 flex items-center justify-between">
+                    <span>Apply Quick Palette:</span>
+                    {((editForm.colorOptions || []) as ProductColorOption[]).length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => setEditForm((prev) => ({ ...prev, colorOptions: [], colors: [] }))}
+                        className="text-[10px] text-red-600 hover:text-red-700 font-bold cursor-pointer"
+                      >
+                        Clear All
+                      </button>
+                    )}
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {PRESET_COLOR_PALETTES.map((palette) => (
+                      <button
+                        key={palette.name}
+                        type="button"
+                        onClick={() => handleApplyPalette(palette.colors, "replace")}
+                        className="px-2 py-1 bg-gray-50 hover:bg-emerald-50 hover:border-emerald-300 border border-gray-200 rounded-lg text-[10px] font-bold text-gray-700 hover:text-emerald-950 transition-all cursor-pointer flex items-center gap-1.5"
+                      >
+                        <div className="flex -space-x-1">
+                          {palette.colors.slice(0, 3).map((c, i) => (
+                            <span
+                              key={i}
+                              className="w-2.5 h-2.5 rounded-full border border-white inline-block shadow-2xs"
+                              style={{ background: c.bgGradient || c.hex }}
+                            />
+                          ))}
+                        </div>
+                        <span>{palette.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Configured Finishes Swatches List */}
+                {((editForm.colorOptions || []) as ProductColorOption[]).length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {((editForm.colorOptions || []) as ProductColorOption[]).map((opt, idx) => (
+                      <div
+                        key={opt.name + idx}
+                        className="flex items-center justify-between p-2 bg-white border border-gray-200 rounded-xl hover:border-gray-300 transition-all"
+                      >
+                        <div className="flex items-center gap-2 min-w-0">
+                          <span
+                            className="w-6 h-6 rounded-full shrink-0 shadow-2xs border border-black/10 flex items-center justify-center"
+                            style={{ background: opt.bgGradient || opt.hex }}
+                          />
+                          <div className="min-w-0">
+                            <div className="text-xs font-bold text-gray-900 truncate">{opt.name}</div>
+                            <div className="flex items-center gap-1.5 text-[10px] text-gray-500 font-mono">
+                              <span>{opt.hex}</span>
+                              {opt.image && (
+                                <span className="text-emerald-700 bg-emerald-50 px-1 rounded font-sans font-semibold">
+                                  🖼️ Linked
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-1 shrink-0">
+                          {/* Image Link Dropdown */}
+                          {(editForm.images || []).length > 0 && (
+                            <select
+                              value={opt.image || ""}
+                              onChange={(e) => {
+                                const chosen = e.target.value;
+                                setEditForm((prev) => {
+                                  const existing = (prev.colorOptions || []) as ProductColorOption[];
+                                  return {
+                                    ...prev,
+                                    colorOptions: existing.map((c, i) =>
+                                      i === idx ? { ...c, image: chosen || undefined } : c
+                                    ),
+                                  };
+                                });
+                              }}
+                              className="text-[10px] bg-gray-50 border border-gray-200 rounded-md px-1.5 py-0.5 text-gray-700 font-medium"
+                              title="Link gallery photo to this color"
+                            >
+                              <option value="">No photo</option>
+                              {(editForm.images || []).map((img, imgIdx) => (
+                                <option key={imgIdx} value={img}>
+                                  Photo #{imgIdx + 1}
+                                </option>
+                              ))}
+                            </select>
+                          )}
+
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveColorOption(idx)}
+                            className="w-5 h-5 rounded-md text-gray-400 hover:text-red-600 hover:bg-red-50 flex items-center justify-center transition-colors cursor-pointer text-xs"
+                            title="Remove finish"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-3 text-xs text-gray-400 bg-white rounded-xl border border-dashed border-gray-200">
+                    No finishes configured. Use a preset palette or add custom color finishes below.
+                  </div>
+                )}
+
+                {/* Add Custom Color Finish Input */}
+                <div className="bg-white border border-gray-200 rounded-xl p-2.5 space-y-2">
+                  <div className="text-[11px] font-bold text-gray-700">Add Custom Color Finish:</div>
+                  <div className="flex flex-wrap sm:flex-nowrap items-center gap-2">
+                    <input
+                      type="text"
+                      placeholder="e.g. Natural Titanium, Emerald Green"
+                      value={newColorName}
+                      onChange={(e) => handleColorNameChange(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          handleAddColorOption();
+                        }
+                      }}
+                      className="flex-1 text-xs px-2.5 py-1.5 border border-gray-300 rounded-lg outline-none focus:ring-1 focus:ring-emerald-500"
+                    />
+
+                    <div className="flex items-center gap-1">
+                      <input
+                        type="color"
+                        value={newColorHex}
+                        onChange={(e) => setNewColorHex(e.target.value)}
+                        className="w-7 h-7 rounded border border-gray-200 cursor-pointer p-0.5 bg-white shrink-0"
+                        title="Pick color"
+                      />
+                      <input
+                        type="text"
+                        value={newColorHex}
+                        onChange={(e) => setNewColorHex(e.target.value)}
+                        placeholder="#000000"
+                        className="w-20 text-xs font-mono font-bold uppercase px-1.5 py-1.5 border border-gray-300 rounded-lg outline-none focus:ring-1 focus:ring-emerald-500"
+                      />
+                    </div>
+
+                    {(editForm.images || []).length > 0 && (
+                      <select
+                        value={newColorImage}
+                        onChange={(e) => setNewColorImage(e.target.value)}
+                        className="text-xs border border-gray-300 rounded-lg px-2 py-1.5 text-gray-700 outline-none max-w-[130px]"
+                      >
+                        <option value="">Link photo...</option>
+                        {(editForm.images || []).map((img, imgIdx) => (
+                          <option key={imgIdx} value={img}>
+                            Photo #{imgIdx + 1}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={handleAddColorOption}
+                      className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold transition-colors cursor-pointer shrink-0"
+                    >
+                      + Add
+                    </button>
+                  </div>
+                </div>
               </div>
 
               {/* Description */}

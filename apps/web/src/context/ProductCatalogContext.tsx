@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback, use
 import { ProductItem } from "@/components/DynamicProductCard";
 import { INITIAL_PRODUCTS } from "@/data/products";
 import { apiClient } from "@/lib/apiClient";
+import { ProductColorOption } from "@/lib/productColors";
 
 export interface ProductOverride {
   id: string;
@@ -20,6 +21,8 @@ export interface ProductOverride {
   sideImage?: string;
   images?: string[];
   gallery?: { url: string; label?: string }[];
+  colors?: string[];
+  colorOptions?: ProductColorOption[];
   variants?: { name: string; priceDelta: number }[];
   attributes?: Record<string, any>;
   discountPercentage?: number;
@@ -118,6 +121,8 @@ export function ProductCatalogProvider({ children }: { children: React.ReactNode
           sideImage: override.sideImage || (override.images && override.images.length > 1 ? override.images[1] : override.frontImage || "/placeholder.png"),
           images: override.images || [],
           gallery: override.gallery || [],
+          colors: override.colors || [],
+          colorOptions: override.colorOptions || [],
           variants: override.variants || [],
           attributes: override.attributes || {},
         } as any);
@@ -145,6 +150,8 @@ export function ProductCatalogProvider({ children }: { children: React.ReactNode
           sideImage: override.sideImage ?? p.sideImage,
           images: override.images ?? p.images,
           gallery: override.gallery ?? p.gallery,
+          colors: override.colors ?? (p as any).colors ?? [],
+          colorOptions: override.colorOptions ?? (p as any).colorOptions ?? [],
           variants: override.variants ?? p.variants,
           attributes: override.attributes || (p as any).attributes || {},
         } as any);
