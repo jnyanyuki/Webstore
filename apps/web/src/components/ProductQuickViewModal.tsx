@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ProductItem } from "./DynamicProductCard";
 import { useAuth } from "@/context/AuthContext";
 import { getSellerUrl } from "@/lib/domainUrls";
@@ -342,59 +343,72 @@ export default function ProductQuickViewModal({
             )}
           </div>
 
-          {/* Option C: Action Footer with Quantity Stepper and Add to Cart */}
-          <div className="pt-3 border-t border-gray-100 flex items-center gap-3">
-            <div className="flex items-center border border-gray-200 rounded-xl bg-gray-50 p-1 shadow-xs">
+          {/* Action Footer with Sticky Docking on Mobile & Enhanced Touch Targets */}
+          <div className="sticky bottom-0 bg-white/95 backdrop-blur-md pt-3 pb-2 border-t border-gray-150 flex flex-col gap-2.5 mt-auto shadow-[0_-4px_12px_rgba(0,0,0,0.04)]">
+            <div className="flex items-center gap-2.5">
+              <div className="flex items-center border border-gray-200 rounded-xl bg-gray-50 p-1 shadow-2xs flex-shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                  disabled={quantity <= 1}
+                  className="w-10 h-10 flex items-center justify-center text-base font-bold text-gray-700 hover:bg-white rounded-lg transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer active:scale-95"
+                  aria-label="Decrease quantity"
+                >
+                  −
+                </button>
+                <span className="w-8 text-center text-sm font-bold text-gray-900 select-none">
+                  {quantity}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setQuantity((q) => Math.min(10, q + 1))}
+                  className="w-10 h-10 flex items-center justify-center text-base font-bold text-gray-700 hover:bg-white rounded-lg transition-colors cursor-pointer active:scale-95"
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+              </div>
+
               <button
                 type="button"
-                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-                disabled={quantity <= 1}
-                className="w-9 h-9 flex items-center justify-center text-sm font-bold text-gray-600 hover:bg-white rounded-lg transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-                title="Decrease quantity"
+                onClick={() => {
+                  onAddToCart(
+                    { ...product, price: packTotalPrice },
+                    {
+                      color: selectedColor,
+                      size: selectedSize,
+                      variant: activePack.label !== "1 pc" ? activePack.label : undefined,
+                      quantity,
+                    }
+                  );
+                  onClose();
+                }}
+                className="flex-1 bg-gray-900 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-emerald-500"
               >
-                −
-              </button>
-              <span className="w-8 text-center text-sm font-bold text-gray-900 select-none">
-                {quantity}
-              </span>
-              <button
-                type="button"
-                onClick={() => setQuantity((q) => Math.min(10, q + 1))}
-                className="w-9 h-9 flex items-center justify-center text-sm font-bold text-gray-600 hover:bg-white rounded-lg transition-colors cursor-pointer"
-                title="Increase quantity"
-              >
-                +
+                <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                <span className="truncate">
+                  Add {totalItemUnits > 1 ? `${totalItemUnits} Items` : "to Cart"} • KSh{" "}
+                  {grandTotal.toLocaleString()}
+                </span>
               </button>
             </div>
 
-            <button
-              onClick={() => {
-                onAddToCart(
-                  { ...product, price: packTotalPrice },
-                  {
-                    color: selectedColor,
-                    size: selectedSize,
-                    variant: activePack.label !== "1 pc" ? activePack.label : undefined,
-                    quantity,
-                  }
-                );
-                onClose();
-              }}
-              className="flex-1 bg-gray-900 hover:bg-emerald-600 text-white font-bold py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              <span>
-                Add {totalItemUnits > 1 ? `${totalItemUnits} Items` : "to Cart"} • KSh{" "}
-                {grandTotal.toLocaleString()}
-              </span>
-            </button>
+            <div className="flex items-center justify-between text-xs text-gray-500 px-0.5">
+              <Link
+                href={`/products/${product.id}`}
+                onClick={onClose}
+                className="text-emerald-700 font-bold hover:underline flex items-center gap-1"
+              >
+                View Full Specifications & Warranty Details →
+              </Link>
+            </div>
           </div>
 
           {user?.role === "ADMIN" && (

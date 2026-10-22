@@ -2,6 +2,9 @@ import React from "react";
 import Link from "next/link";
 import MpesaCheckout from "@/components/MpesaCheckout";
 import ProductImageGallery from "@/components/ProductImageGallery";
+import PdpHeader from "@/components/PdpHeader";
+import ProductDetailCta from "@/components/ProductDetailCta";
+import { ProductItem } from "@/components/DynamicProductCard";
 import { getCachedProductById } from "@/lib/data/products";
 
 import { INITIAL_PRODUCTS } from "@/data/products";
@@ -61,21 +64,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
     return (
       <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
-        <header className="bg-white border-b border-gray-100 py-4 px-6 sticky top-0 z-30 shadow-xs">
-          <div className="max-w-5xl mx-auto flex items-center justify-between">
-            <Link href="/" className="text-emerald-700 font-bold text-sm flex items-center gap-1.5 hover:underline transition-all">
-              ← Back to Storefront
-            </Link>
-            <div className="flex items-center gap-2">
-              <span className="text-xs bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
-                ✓ 100% Verified Authentic
-              </span>
-              <span className="text-xs bg-blue-50 text-blue-800 border border-blue-200 font-semibold px-2.5 py-1 rounded-full">
-                ⚡ Instant Pre-rendered
-              </span>
-            </div>
-          </div>
-        </header>
+        <PdpHeader />
 
         <main className="max-w-5xl mx-auto px-4 py-8">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8">
@@ -169,8 +158,20 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 </div>
               </div>
 
-              <div className="border-t border-gray-100 pt-6">
-                <MpesaCheckout amount={product.price} cartId={`pdp_${product.id}`} />
+              <div className="border-t border-gray-100 pt-5">
+                <ProductDetailCta
+                  product={{
+                    id: catalogItem.id,
+                    name: catalogItem.name,
+                    category: catalogItem.category,
+                    price: catalogItem.price,
+                    originalPrice: catalogItem.originalPrice,
+                    frontImage: catalogItem.frontImage,
+                    sideImage: catalogItem.sideImage,
+                    badge: catalogItem.badge,
+                    variants: catalogItem.variants,
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -194,23 +195,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
     description: "Premium quality item sourced directly from verified Nairobi CBD vendors with instant 45-minute Boda delivery.",
   };
 
-  return (
+    return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
-      <header className="bg-white border-b border-gray-100 py-4 px-6">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-green-600 font-bold text-sm flex items-center gap-1 hover:underline">
-            ← Back to Storefront
-          </Link>
-          <div className="flex items-center gap-2">
-            <span className="text-xs bg-blue-100 text-blue-800 font-semibold px-2.5 py-1 rounded-full">
-              Neon Connection Pooled
-            </span>
-            <span className="text-xs bg-green-100 text-green-800 font-semibold px-2.5 py-1 rounded-full">
-              Edge ISR Cached (60s)
-            </span>
-          </div>
-        </div>
-      </header>
+      <PdpHeader />
 
       <main className="max-w-5xl mx-auto px-4 py-8">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8">
@@ -239,8 +226,17 @@ export default async function ProductDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            <div>
-              <MpesaCheckout amount={product.price} cartId={`pdp_${product.id}`} />
+            <div className="border-t border-gray-100 pt-5">
+              <ProductDetailCta
+                product={{
+                  id: product.id,
+                  name: product.name,
+                  category: product.category,
+                  price: product.price,
+                  frontImage: typeof product.images === "object" && "front" in product.images ? (product.images as any).front : "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=900&q=85",
+                  description: product.description,
+                }}
+              />
             </div>
           </div>
         </div>

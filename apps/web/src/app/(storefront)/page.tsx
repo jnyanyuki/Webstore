@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import DynamicProductCard, { ProductItem } from "../../components/DynamicProductCard";
 import ProductQuickViewModal from "../../components/ProductQuickViewModal";
-import SlideOverCartSheet, { CartItemType } from "../../components/SlideOverCartSheet";
 import QuickSearchModal, { SearchItem } from "../../components/QuickSearchModal";
 import MegaMenu from "../../components/MegaMenu";
 import WhatsAppWidget from "../../components/WhatsAppWidget";
@@ -11,11 +10,16 @@ import PwaInstallPrompt from "../../components/PwaInstallPrompt";
 import JuroMartLogo from "../../components/JuroMartLogo";
 import UserNavDropdown from "../../components/UserNavDropdown";
 import { useProductCatalog } from "@/context/ProductCatalogContext";
+import { useCart } from "@/context/CartContext";
 
 export default function StorefrontHome() {
   const { products } = useProductCatalog();
-  const [cartItems, setCartItems] = useState<CartItemType[]>([]);
-  const [isCartSheetOpen, setIsCartSheetOpen] = useState(false);
+  const {
+    cartItems,
+    setIsCartSheetOpen,
+    addToCart,
+    totalCartCount,
+  } = useCart();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<ProductItem | null>(null);
   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState<string | null>(null);
@@ -25,43 +29,7 @@ export default function StorefrontHome() {
     quantityToAdd: number = 1,
     selectedVariant?: string
   ) => {
-    setCartItems((prev) => {
-      const cartKey = selectedVariant ? `${product.id}__${selectedVariant}` : product.id;
-      const existing = prev.find((item) => (item.cartKey || item.id) === cartKey);
-      if (existing) {
-        return prev.map((item) =>
-          (item.cartKey || item.id) === cartKey
-            ? { ...item, quantity: item.quantity + quantityToAdd }
-            : item
-        );
-      }
-      return [
-        ...prev,
-        {
-          ...product,
-          quantity: quantityToAdd,
-          selectedVariant,
-          cartKey,
-        },
-      ];
-    });
-    setIsCartSheetOpen(true);
-  };
-
-  const handleUpdateQuantity = (cartKeyOrId: string, delta: number) => {
-    setCartItems((prev) =>
-      prev
-        .map((item) =>
-          (item.cartKey || item.id) === cartKeyOrId
-            ? { ...item, quantity: item.quantity + delta }
-            : item
-        )
-        .filter((item) => item.quantity > 0)
-    );
-  };
-
-  const handleRemoveItem = (cartKeyOrId: string) => {
-    setCartItems((prev) => prev.filter((item) => (item.cartKey || item.id) !== cartKeyOrId));
+    addToCart(product, quantityToAdd, selectedVariant);
   };
 
   const filteredProducts = selectedCategoryFilter
@@ -312,7 +280,7 @@ export default function StorefrontHome() {
         </div>
 
         {/* 4. High-Density Aspect Ratio Product Grid with Maximum Horizontal & Vertical Consumption */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2.5 sm:gap-3.5 md:gap-4 lg:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 sm:gap-3.5 md:gap-4 lg:gap-5">
           {filteredProducts.map((product) => (
             <DynamicProductCard
               key={product.id}
@@ -351,15 +319,6 @@ export default function StorefrontHome() {
         onAddToCart={(p, options) => {
           handleAddToCart(p, options.quantity || 1, options.variant);
         }}
-      />
-
-      <SlideOverCartSheet
-        isOpen={isCartSheetOpen}
-        onClose={() => setIsCartSheetOpen(false)}
-        cartItems={cartItems}
-        onUpdateQuantity={handleUpdateQuantity}
-        onRemoveItem={handleRemoveItem}
-        onClearCart={() => setCartItems([])}
       />
     </div>
   );

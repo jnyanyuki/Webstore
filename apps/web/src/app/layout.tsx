@@ -4,6 +4,8 @@ import "./globals.css";
 import { ProductAlertToast } from "@/components/ProductAlertToast";
 import { AuthProvider } from "@/context/AuthContext";
 import { ProductCatalogProvider } from "@/context/ProductCatalogContext";
+import { CartProvider } from "@/context/CartContext";
+import GlobalCartDrawer from "@/components/GlobalCartDrawer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -76,8 +78,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#FBFBFB] text-[#111827]">
         <AuthProvider>
           <ProductCatalogProvider>
-            {children}
-            <ProductAlertToast />
+            <CartProvider>
+              {children}
+              <GlobalCartDrawer />
+              <ProductAlertToast />
+            </CartProvider>
           </ProductCatalogProvider>
         </AuthProvider>
       </body>
