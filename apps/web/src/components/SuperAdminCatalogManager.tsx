@@ -1114,17 +1114,7 @@ export default function SuperAdminCatalogManager({
                   {/* URL Add Input */}
                   <div className="bg-white border border-gray-200 rounded-xl p-3 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center justify-between mb-1.5">
-                        <label className="block text-[11px] font-bold text-gray-700">Add Image by URL</label>
-                        <button
-                          type="button"
-                          onClick={handlePasteFromClipboard}
-                          className="text-[10px] font-bold text-emerald-600 hover:text-emerald-700 hover:underline flex items-center gap-1 cursor-pointer"
-                        >
-                          <span>📋</span>
-                          <span>{isUrlPastedFeedback ? "✓ Pasted!" : "Paste from clipboard"}</span>
-                        </button>
-                      </div>
+                      <label className="block text-[11px] font-bold text-gray-700 mb-1.5">Add Image by URL</label>
                       <div className="flex gap-1.5 items-center">
                         <input
                           type="url"
