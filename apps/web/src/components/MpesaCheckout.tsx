@@ -9,16 +9,24 @@ const apiClient = new MarketplaceApiClient();
 export default function MpesaCheckout({
   amount,
   cartId,
+  initialPhone,
   onSuccess,
 }: {
   amount: number;
   cartId: string;
+  initialPhone?: string;
   onSuccess?: (details: { orderId: string; phone: string }) => void;
 }) {
-  const [phone, setPhone] = useState("254712345678");
+  const [phone, setPhone] = useState(initialPhone || "254712345678");
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "prompt_sent" | "success" | "error">("idle");
   const [countdown, setCountdown] = useState(60);
+
+  useEffect(() => {
+    if (initialPhone) {
+      setPhone(initialPhone);
+    }
+  }, [initialPhone]);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;

@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getProductColorOptions, isLightColor, ProductColorOption } from "@/lib/productColors";
+import { useCart } from "@/context/CartContext";
+import { ProductColorOption } from "@/lib/productColors";
 
 export type ProductImageAngle = {
   url: string;
@@ -37,62 +38,22 @@ export type ProductItem = {
   attributes?: Record<string, any>;
 };
 
-function getBadgeStyles(badge: string) {
-  if (badge.includes("🔥") || badge.includes("Only") || badge.includes("Trending") || badge.includes("Best Seller")) {
-    return "bg-amber-50 text-amber-900 border-amber-200/90";
-  }
-  if (badge.includes("⭐") || badge.includes("Top Rated") || badge.includes("✨")) {
-    return "bg-amber-50 text-amber-950 border-amber-200/90";
-  }
-  if (badge.includes("🛡️") || badge.includes("✓") || badge.includes("💎") || badge.includes("Warranty") || badge.includes("Genuine")) {
-    return "bg-blue-50 text-blue-900 border-blue-200/90";
-  }
-  return "bg-white/95 text-gray-800 border-gray-200/90";
-}
-
-interface PackOption {
-  label: string;
-  multiplier: number;
-  discountRate: number;
-  priceDelta?: number;
-}
-
 export default function DynamicProductCard({
   product,
   onAddToCart,
   onQuickView,
 }: {
   product: ProductItem;
-  onAddToCart: (p: ProductItem, quantity?: number, variant?: string, color?: string) => void;
+  onAddToCart?: (p: ProductItem, quantity?: number, variant?: string, color?: string) => void;
   onQuickView: (p: ProductItem) => void;
 }) {
+  const { cartItems, addToCart, updateQuantity } = useCart();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [quantity, setQuantity] = useState(1);
-  const [selectedPackIndex, setSelectedPackIndex] = useState(0);
-  const [isAdded, setIsAdded] = useState(false);
 
-  // Dynamic color options extracted from product definition, finishes or categories
-  const colorOptions = React.useMemo(() => {
-    return getProductColorOptions(product);
-  }, [product]);
-
-  const [selectedColorIndex, setSelectedColorIndex] = useState(0);
-  const [selectedColorImage, setSelectedColorImage] = useState<string | null>(null);
-
-  // Auto-sync initial color if product name mentions a specific finish
-  React.useEffect(() => {
-    if (colorOptions.length > 0) {
-      const pNameLower = product.name.toLowerCase();
-      const matchedIdx = colorOptions.findIndex((c) =>
-        pNameLower.includes(c.name.toLowerCase())
-      );
-      setSelectedColorIndex(matchedIdx !== -1 ? matchedIdx : 0);
-      setSelectedColorImage(null);
-    } else {
-      setSelectedColorIndex(0);
-      setSelectedColorImage(null);
-    }
-  }, [product.id, product.name, colorOptions]);
+  // Cart quantity tracking for this product
+  const cartItem = cartItems.find((item) => item.id === product.id);
+  const cartQuantity = cartItem ? cartItem.quantity : 0;
+  const inCart = cartQuantity > 0;
 
   // Multi-angle image extraction
   const allImages = React.useMemo(() => {
@@ -105,456 +66,212 @@ export default function DynamicProductCard({
     return list;
   }, [product]);
 
-  // Pack & Variant Options
-  const packOptions: PackOption[] = React.useMemo(() => {
-    if (product.variants && product.variants.length > 0) {
-      return product.variants.map((v) => ({
-        label: v.name,
-        multiplier: 1,
-        discountRate: 0,
-        priceDelta: v.priceDelta,
-      }));
-    }
-    return [
-      { label: "1 pc", multiplier: 1, discountRate: 0 },
-      { label: "2-Pack (-5%)", multiplier: 2, discountRate: 0.05 },
-      { label: "3-Pack (-10%)", multiplier: 3, discountRate: 0.1 },
-    ];
-  }, [product.variants]);
+  const displayImage = allImages[activeImageIndex] || product.frontImage;
 
-  const activePack = packOptions[selectedPackIndex] || packOptions[0];
-  const activeColorOption: ProductColorOption | undefined = colorOptions[selectedColorIndex];
-
-  // Unit and bundle price calculation
-  const unitPrice =
-    activePack.priceDelta !== undefined
-      ? product.price + activePack.priceDelta
-      : Math.round(product.price * (1 - activePack.discountRate));
-
-  const packTotalPrice = unitPrice * activePack.multiplier;
-  const totalItemUnits = activePack.multiplier * quantity;
-
-  // Active preview image (switches dynamically if a custom color image is selected)
-  const displayImage = selectedColorImage || allImages[activeImageIndex] || product.frontImage;
-
-  // Handle color swatch selection with bidirectional variant synchronization
-  const handleColorSelect = (idx: number) => {
-    setSelectedColorIndex(idx);
-    const opt = colorOptions[idx];
-    if (!opt) return;
-
-    if (opt.image) {
-      setSelectedColorImage(opt.image);
-    }
-
-    if (product.variants && product.variants.length > 0) {
-      const optNameLower = opt.name.toLowerCase();
-      const matchingVariantIndex = product.variants.findIndex((v) => {
-        const vName = v.name.toLowerCase();
-        return (
-          vName.includes(optNameLower) ||
-          optNameLower.split(" ").some((w) => w.length > 3 && vName.includes(w))
-        );
-      });
-      if (matchingVariantIndex !== -1) {
-        setSelectedPackIndex(matchingVariantIndex);
-      }
-    }
-  };
-
-  // Handle variant selection with bidirectional color swatch synchronization
-  const handleVariantSelect = (idx: number) => {
-    setSelectedPackIndex(idx);
-    const variant = packOptions[idx];
-    if (variant && colorOptions.length > 0) {
-      const vName = variant.label.toLowerCase();
-      const matchingColorIndex = colorOptions.findIndex((c) => {
-        const cName = c.name.toLowerCase();
-        return (
-          vName.includes(cName) ||
-          cName.split(" ").some((w) => w.length > 3 && vName.includes(w))
-        );
-      });
-      if (matchingColorIndex !== -1) {
-        setSelectedColorIndex(matchingColorIndex);
-        if (colorOptions[matchingColorIndex]?.image) {
-          setSelectedColorImage(colorOptions[matchingColorIndex].image!);
-        }
-      }
-    }
-  };
+  // Discount percentage calculation
+  const discountPercent =
+    product.originalPrice && product.originalPrice > product.price
+      ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
+      : 0;
 
   const handleAdd = () => {
-    setIsAdded(true);
-    setTimeout(() => setIsAdded(false), 1400);
+    addToCart(product, 1, undefined, undefined, false);
+  };
 
-    onAddToCart(
-      {
-        ...product,
-        price: packTotalPrice,
-        frontImage: selectedColorImage || displayImage,
-      },
-      quantity,
-      activePack.label !== "1 pc" ? activePack.label : undefined,
-      activeColorOption?.name
-    );
+  const handleIncrement = () => {
+    if (cartItem) {
+      updateQuantity(cartItem.cartKey || cartItem.id, 1);
+    } else {
+      handleAdd();
+    }
+  };
+
+  const handleDecrement = () => {
+    if (cartItem) {
+      updateQuantity(cartItem.cartKey || cartItem.id, -1);
+    }
   };
 
   return (
-    <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200/90 overflow-hidden hover:shadow-xl hover:border-emerald-400/80 transition-all duration-300 flex flex-col justify-between h-full group relative focus-within:ring-2 focus-within:ring-emerald-500/50">
-      <div className="flex flex-col flex-1 justify-between">
-        {/* Uniform 4:5 Aspect Ratio Container with Neutral Backdrop */}
-        <div className="relative aspect-[4/5] w-full bg-gradient-to-b from-gray-50/90 to-gray-100/50 overflow-hidden flex items-center justify-center p-2 sm:p-3 select-none flex-shrink-0">
-          {/* Main Product Link Wrapping Image Area */}
-          <Link
-            href={`/products/${product.id}`}
-            className="absolute inset-0 z-0 flex items-center justify-center"
-            title={`View details for ${product.name}`}
-          >
-            <Image
-              src={displayImage}
-              alt={product.name}
-              width={400}
-              height={500}
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-              className="w-full h-full object-contain transition-transform duration-300 ease-out group-hover:scale-105 pointer-events-none"
-            />
-          </Link>
-
-          {/* Segmented Hover Indicator Bars (Desktop) */}
-          {allImages.length > 1 && (
-            <div className="absolute top-2 inset-x-2 sm:inset-x-3 z-20 hidden sm:flex gap-1 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-              {allImages.map((_, idx) => (
-                <div
-                  key={idx}
-                  className={`h-1 flex-1 rounded-full transition-all ${
-                    activeImageIndex === idx ? "bg-emerald-600 shadow-sm" : "bg-black/20"
-                  }`}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Desktop Invisible Segmented Hover Zones across the image */}
-          {allImages.length > 1 && (
-            <div className="absolute inset-0 hidden sm:flex z-10 pointer-events-auto">
-              {allImages.map((_, idx) => (
-                <div
-                  key={idx}
-                  onMouseEnter={() => setActiveImageIndex(idx)}
-                  className="flex-1 h-full cursor-pointer"
-                  title={`Preview angle ${idx + 1} of ${allImages.length}`}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Trust / Highlight Badge */}
-          {product.badge && (
-            <div className="absolute top-2 left-2 z-20 pointer-events-none max-w-[65%]">
-              <span
-                className={`inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold px-2 py-0.5 rounded-full shadow-xs border backdrop-blur-xs truncate ${getBadgeStyles(
-                  product.badge
-                )}`}
-              >
-                {!/^[\p{Emoji}\u2700-\u27BF\uE000-\uF8FF]/u.test(product.badge) && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
-                )}
-                <span className="truncate">{product.badge}</span>
-              </span>
-            </div>
-          )}
-
-          {/* Discount Badge */}
-          {product.originalPrice && product.originalPrice > product.price && (
-            <div className="absolute top-2 right-2 z-20 bg-rose-600 text-white text-[11px] sm:text-xs font-extrabold px-1.5 py-0.5 rounded-md shadow-xs pointer-events-none">
-              -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
-            </div>
-          )}
-
-          {/* Mobile / Touch Pagination Dots */}
-          {allImages.length > 1 && (
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1 sm:hidden bg-black/45 backdrop-blur-xs px-2 py-1 rounded-full shadow-xs">
-              {allImages.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setActiveImageIndex(idx);
-                  }}
-                  className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-                    activeImageIndex === idx ? "bg-emerald-400 w-3.5" : "bg-white/60"
-                  }`}
-                  aria-label={`View angle ${idx + 1}`}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Angle Counter Indicator */}
-          {allImages.length > 1 && (
-            <div className="absolute bottom-2 right-2 z-20 bg-black/60 backdrop-blur-xs text-white text-[10px] sm:text-xs font-bold px-1.5 py-0.5 rounded-md shadow-xs pointer-events-none">
-              {activeImageIndex + 1}/{allImages.length}
-            </div>
-          )}
-
-          {/* Previous / Next Angle Stepper Arrows on Hover (Desktop) */}
-          {allImages.length > 1 && (
-            <>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setActiveImageIndex((prev) => (prev > 0 ? prev - 1 : allImages.length - 1));
-                }}
-                className="absolute left-1.5 top-1/2 -translate-y-1/2 z-20 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/95 hover:bg-white text-gray-800 shadow-md border border-gray-200 hidden sm:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold cursor-pointer"
-                aria-label="Previous image angle"
-              >
-                ‹
-              </button>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setActiveImageIndex((prev) => (prev < allImages.length - 1 ? prev + 1 : 0));
-                }}
-                className="absolute right-1.5 top-1/2 -translate-y-1/2 z-20 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-white/95 hover:bg-white text-gray-800 shadow-md border border-gray-200 hidden sm:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold cursor-pointer"
-                aria-label="Next image angle"
-              >
-                ›
-              </button>
-            </>
-          )}
-
-          {/* Desktop Floating Quick View Action */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              onQuickView(product);
-            }}
-            className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 bg-white/95 hover:bg-white text-gray-900 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md border border-gray-200 hidden sm:block opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-200 backdrop-blur-xs cursor-pointer whitespace-nowrap active:scale-95"
-          >
-            Quick View
-          </button>
-
-          {/* Mobile Quick View Icon Action Button */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              onQuickView(product);
-            }}
-            className="absolute bottom-2 left-2 z-20 sm:hidden bg-white/90 active:bg-white text-gray-800 p-1.5 rounded-full shadow-xs border border-gray-200 flex items-center justify-center cursor-pointer"
-            aria-label="Quick view product details"
-            title="Quick View"
-          >
-            <svg className="w-3.5 h-3.5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Content Details */}
-        <div className="p-2.5 sm:p-3.5 space-y-1.5 sm:space-y-2 flex-1 flex flex-col justify-between">
-          <div className="space-y-1 sm:space-y-1.5">
-            {/* Stock & Category Bar */}
-            <div className="flex items-center justify-between text-xs text-gray-500 gap-1">
-              <span className="font-semibold text-gray-400 uppercase tracking-wider truncate max-w-[60%]">
-                {product.category}
-              </span>
-              <span className="text-emerald-700 font-bold flex items-center gap-1 flex-shrink-0 text-[11px] sm:text-xs">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                In Stock
-              </span>
-            </div>
-
-            {/* Product Title Linked to Details */}
-            <h3 className="font-bold text-gray-900 text-xs sm:text-sm leading-snug line-clamp-2 min-h-[2.3rem] sm:min-h-[2.6rem]">
-              <Link
-                href={`/products/${product.id}`}
-                className="hover:text-emerald-700 transition-colors focus-visible:outline-emerald-500"
-              >
-                {product.name}
-              </Link>
-            </h3>
-
-            {/* Price Tag with dynamic pack calculation */}
-            <div className="flex items-baseline flex-wrap gap-1 sm:gap-1.5 pt-0.5">
-              <span className="text-sm sm:text-base md:text-lg font-black text-gray-900 tracking-tight leading-none">
-                KSh {packTotalPrice.toLocaleString()}
-              </span>
-              {activePack.multiplier > 1 ? (
-                <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
-                  (KSh {unitPrice.toLocaleString()}/ea)
-                </span>
-              ) : product.originalPrice && product.originalPrice > product.price ? (
-                <span className="text-xs text-gray-400 line-through">
-                  KSh {product.originalPrice.toLocaleString()}
-                </span>
-              ) : null}
-            </div>
-          </div>
-
-          {/* Interactive Color Selection Swatches */}
-          {colorOptions.length > 0 && (
-            <div className="pt-0.5">
-              <div className="text-[11px] font-bold text-gray-500 flex items-center justify-between mb-1">
-                <span className="uppercase tracking-wider text-[10px] text-gray-400 font-extrabold">
-                  Colour:
-                </span>
-                <span className="text-gray-900 text-[11px] font-bold truncate max-w-[130px]">
-                  {activeColorOption?.name}
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none py-1 -mx-0.5 px-0.5">
-                {colorOptions.map((opt, idx) => {
-                  const isSelected = selectedColorIndex === idx;
-                  const isLight = isLightColor(opt.hex);
-                  return (
-                    <button
-                      key={opt.name}
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        handleColorSelect(idx);
-                      }}
-                      className={`group/swatch relative w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full transition-all duration-150 cursor-pointer flex items-center justify-center flex-shrink-0 ${
-                        isSelected
-                          ? "ring-2 ring-emerald-600 ring-offset-1 sm:ring-offset-2 scale-110 shadow-xs"
-                          : "hover:scale-105 opacity-85 hover:opacity-100 ring-1 ring-gray-200 hover:ring-gray-300"
-                      }`}
-                      title={opt.name}
-                      aria-label={`Select color ${opt.name}`}
-                    >
-                      <span
-                        className={`w-full h-full rounded-full transition-all ${
-                          isLight ? "border border-gray-300/80" : "border border-black/10"
-                        }`}
-                        style={{
-                          background: opt.bgGradient || opt.hex,
-                        }}
-                      />
-                      {isSelected && (
-                        <span
-                          className={`absolute w-1.5 h-1.5 rounded-full ${
-                            isLight ? "bg-gray-800" : "bg-white"
-                          } shadow-xs pointer-events-none`}
-                        />
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* Pack Options & Savings Selector */}
-          <div className="pt-1">
-            <div className="text-[11px] font-extrabold text-gray-400 uppercase tracking-wider mb-1 flex items-center justify-between">
-              <span>{product.variants && product.variants.length > 0 ? "Options:" : "Pack Size & Savings:"}</span>
-              {activePack.discountRate > 0 && (
-                <span className="text-emerald-700 font-bold lowercase">
-                  save {Math.round(activePack.discountRate * 100)}%
-                </span>
+    <div className="bg-white rounded-xl border border-gray-200/90 overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-200 flex flex-col justify-between h-full group relative">
+      {/* 1. Image Container with Top-Left Promo Badge */}
+      <div className="relative aspect-square w-full bg-white flex items-center justify-center p-3 select-none flex-shrink-0">
+        {/* Top-Left Red Promotional / Discount Badge */}
+        {(discountPercent > 0 || product.badge) && (
+          <div className="absolute top-2 left-2 z-20 pointer-events-none max-w-[85%]">
+            <span className="inline-flex items-center gap-1 text-[11px] font-black px-2 py-0.5 rounded-full shadow-xs bg-[#d92328] text-white tracking-tight">
+              {discountPercent > 0 ? (
+                <>
+                  {product.badge?.includes("Best Seller") || product.badge?.includes("Lowest Price") ? (
+                    <span>🔥 Lowest Price {discountPercent}% OFF</span>
+                  ) : (
+                    <span>{discountPercent}% OFF</span>
+                  )}
+                </>
+              ) : (
+                <span>{product.badge}</span>
               )}
-            </div>
-            <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto scrollbar-none py-0.5 -mx-0.5 px-0.5">
-              {packOptions.map((pack, idx) => (
-                <button
-                  key={pack.label}
-                  type="button"
-                  onClick={() => handleVariantSelect(idx)}
-                  className={`text-[11px] sm:text-xs font-bold px-2 py-1 rounded-md border transition-all whitespace-nowrap cursor-pointer active:scale-95 ${
-                    selectedPackIndex === idx
-                      ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
-                      : "bg-gray-50 text-gray-700 border-gray-200 hover:border-emerald-400 hover:text-emerald-700"
-                  }`}
-                >
-                  {pack.label}
-                </button>
-              ))}
-            </div>
+            </span>
           </div>
-        </div>
+        )}
+
+        {/* Product Link & Image */}
+        <Link
+          href={`/products/${product.id}`}
+          className="absolute inset-0 z-0 flex items-center justify-center p-3"
+          title={`View details for ${product.name}`}
+        >
+          <Image
+            src={displayImage}
+            alt={product.name}
+            width={320}
+            height={320}
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+            className="w-full h-full object-contain transition-transform duration-300 ease-out group-hover:scale-105 pointer-events-none"
+          />
+        </Link>
+
+        {/* Segmented Image Indicator Bars (Desktop Hover) */}
+        {allImages.length > 1 && (
+          <div className="absolute top-1.5 inset-x-2 z-20 hidden sm:flex gap-1 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+            {allImages.map((_, idx) => (
+              <div
+                key={idx}
+                className={`h-0.5 flex-1 rounded-full transition-all ${
+                  activeImageIndex === idx ? "bg-[#004f98] shadow-xs" : "bg-black/15"
+                }`}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* Segmented Hover Zones for Multi-Angle */}
+        {allImages.length > 1 && (
+          <div className="absolute inset-0 hidden sm:flex z-10 pointer-events-auto">
+            {allImages.map((_, idx) => (
+              <div
+                key={idx}
+                onMouseEnter={() => setActiveImageIndex(idx)}
+                className="flex-1 h-full cursor-pointer"
+                title={`Preview angle ${idx + 1} of ${allImages.length}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Action Footer with Stepper and Add to Cart CTA */}
-      <div className="px-2.5 pb-2.5 sm:px-3.5 sm:pb-3.5 pt-2 border-t border-gray-100/90 bg-gray-50/40">
-        <div className="flex items-center gap-1.5 sm:gap-2">
-          {/* Interactive Quantity Stepper */}
-          <div className="flex items-center border border-gray-200 rounded-lg sm:rounded-xl bg-white p-0.5 shadow-2xs flex-shrink-0">
+      {/* 2. Action Controls Row: Plain listing before adding (...) and [+] vs In Basket [- qty +] */}
+      <div className="px-3 pt-1 pb-1.5">
+        {inCart ? (
+          /* State B: In Basket - Full-width solid royal blue stepper bar */
+          <div className="w-full bg-[#004f98] text-white rounded-lg flex items-center justify-between h-8 px-1.5 shadow-xs transition-all">
             <button
               type="button"
-              onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-              disabled={quantity <= 1}
-              className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm font-bold text-gray-700 hover:bg-gray-100 rounded transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer active:scale-95"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleDecrement();
+              }}
+              className="w-7 h-7 rounded flex items-center justify-center text-white hover:bg-white/20 active:scale-90 transition-colors cursor-pointer"
               aria-label="Decrease quantity"
             >
-              −
+              <svg className="w-4 h-4 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
+              </svg>
             </button>
-            <span className="w-5 sm:w-6 text-center text-xs sm:text-sm font-bold text-gray-900 select-none">
-              {quantity}
+            <span className="text-sm font-black select-none text-white px-2">
+              {cartQuantity}
             </span>
             <button
               type="button"
-              onClick={() => setQuantity((q) => Math.min(10, q + 1))}
-              className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm font-bold text-gray-700 hover:bg-gray-100 rounded transition-colors cursor-pointer active:scale-95"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleIncrement();
+              }}
+              className="w-7 h-7 rounded flex items-center justify-center text-white hover:bg-white/20 active:scale-90 transition-colors cursor-pointer"
               aria-label="Increase quantity"
             >
-              +
+              <svg className="w-4 h-4 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
             </button>
           </div>
+        ) : (
+          /* State A: Before Adding - Three dots on left, Royal Blue plus on right */
+          <div className="flex items-center justify-between h-8">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                onQuickView(product);
+              }}
+              className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-gray-800 hover:bg-gray-100 transition-colors cursor-pointer"
+              title="Product options & quick view"
+              aria-label="Product options"
+            >
+              <span className="text-xl font-bold tracking-widest leading-none pb-2 select-none">...</span>
+            </button>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleAdd();
+              }}
+              className="w-8 h-8 rounded-lg bg-[#004f98] hover:bg-[#003d75] active:scale-90 text-white flex items-center justify-center shadow-xs transition-all cursor-pointer"
+              title={`Add ${product.name} to basket`}
+              aria-label={`Add ${product.name} to basket`}
+            >
+              <svg className="w-4 h-4 stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+          </div>
+        )}
+      </div>
 
-          {/* Add to Cart CTA Button */}
-          <button
-            type="button"
-            onClick={handleAdd}
-            className={`flex-1 min-w-0 font-bold py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg sm:rounded-xl text-xs sm:text-sm transition-all duration-200 flex items-center justify-center gap-1 sm:gap-1.5 shadow-xs cursor-pointer active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-emerald-500 outline-none ${
-              isAdded
-                ? "bg-emerald-600 text-white ring-2 ring-emerald-400 shadow-md scale-[1.01]"
-                : "bg-gray-900 hover:bg-emerald-600 active:bg-emerald-700 text-white shadow-sm hover:shadow-md"
-            }`}
-            title={`Add ${product.name} to cart`}
-          >
-            {isAdded ? (
-              <>
-                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white flex-shrink-0 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="truncate">Added!</span>
-              </>
-            ) : (
-              <>
-                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                  />
-                </svg>
-                <span className="truncate font-bold tracking-tight">
-                  {totalItemUnits > 1 ? (
-                    `Add ${totalItemUnits}`
-                  ) : (
-                    <>
-                      <span className="hidden min-[380px]:inline">Add to Cart</span>
-                      <span className="min-[380px]:hidden">Add</span>
-                    </>
-                  )}
-                </span>
-              </>
+      {/* 3. Product Details */}
+      <div className="px-3 pb-3 pt-0.5 space-y-1 flex-1 flex flex-col justify-between">
+        <div className="space-y-1">
+          {/* Promo countdown line if discounted or special badge */}
+          {(discountPercent > 0 || (product.badge && product.badge.includes("Deal"))) && (
+            <div className="text-[11px] font-bold text-[#d92328]">
+              Ends in 5 days
+            </div>
+          )}
+
+          {/* Product Title */}
+          <h3 className="font-bold text-gray-900 text-xs sm:text-sm leading-snug line-clamp-2 min-h-[2.3rem]">
+            <Link
+              href={`/products/${product.id}`}
+              className="hover:text-[#004f98] transition-colors focus-visible:outline-[#004f98]"
+            >
+              {product.name}
+            </Link>
+          </h3>
+
+          {/* Price Section */}
+          <div className="flex items-baseline flex-wrap gap-1.5 pt-0.5">
+            <span className="text-sm sm:text-base md:text-lg font-black text-gray-900 tracking-tight leading-none">
+              KES {product.price.toLocaleString("en-KE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            </span>
+            {product.originalPrice && product.originalPrice > product.price && (
+              <span className="text-xs text-gray-400 line-through">
+                {product.originalPrice.toLocaleString("en-KE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              </span>
             )}
-          </button>
+          </div>
+
+          {/* Stock Notice */}
+          <div className="text-[11px] text-gray-400 font-medium pt-0.5">
+            {product.badge?.includes("Only") ? (
+              <span className="text-amber-700 italic font-semibold">{product.badge}</span>
+            ) : inCart ? (
+              <span className="text-gray-500 italic">Only 4 left</span>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

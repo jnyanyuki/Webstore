@@ -4,6 +4,15 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import { ProductItem } from "@/components/DynamicProductCard";
 import { CartItemType } from "@/components/SlideOverCartSheet";
 
+export interface LastAddedItem {
+  id: string;
+  name: string;
+  price: number;
+  frontImage: string;
+  quantity: number;
+  timestamp: number;
+}
+
 interface CartContextType {
   cartItems: CartItemType[];
   isCartSheetOpen: boolean;
@@ -12,8 +21,12 @@ interface CartContextType {
     product: ProductItem,
     quantityToAdd?: number,
     selectedVariant?: string,
-    selectedColor?: string
+    selectedColor?: string,
+    openDrawer?: boolean
   ) => void;
+  getItemQuantity: (productId: string) => number;
+  lastAddedItem: LastAddedItem | null;
+  clearLastAddedItem: () => void;
   updateQuantity: (cartKeyOrId: string, delta: number) => void;
   removeItem: (cartKeyOrId: string) => void;
   clearCart: () => void;
@@ -37,6 +50,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   });
 
   const [isCartSheetOpen, setIsCartSheetOpen] = useState(false);
+  const [lastAddedItem, setLastAddedItem] = useState<LastAddedItem | null>(null);
+
+  const clearLastAddedItem = () => {
+    setLastAddedItem(null);
+  };
 
   // Sync cart to localStorage
   useEffect(() => {
@@ -51,7 +69,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     product: ProductItem,
     quantityToAdd: number = 1,
     selectedVariant?: string,
-    selectedColor?: string
+    selectedColor?: string,
+    openDrawer: boolean = false
   ) => {
     setCartItems((prev) => {
       const cartKey = [product.id, selectedColor, selectedVariant].filter(Boolean).join("__") || product.id;
@@ -74,7 +93,25 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         },
       ];
     });
-    setIsCartSheetOpen(true);
+
+    setLastAddedItem({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      frontImage: product.frontImage,
+      quantity: quantityToAdd,
+      timestamp: Date.now(),
+    });
+
+    if (openDrawer) {
+      setIsCartSheetOpen(true);
+    }
+  };
+
+  const getItemQuantity = (productId: string): number => {
+    return cartItems
+      .filter((item) => item.id === productId || (item.cartKey && item.cartKey.startsWith(productId)))
+      .reduce((acc, item) => acc + item.quantity, 0);
   };
 
   const updateQuantity = (cartKeyOrId: string, delta: number) => {
@@ -107,6 +144,9 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         isCartSheetOpen,
         setIsCartSheetOpen,
         addToCart,
+        getItemQuantity,
+        lastAddedItem,
+        clearLastAddedItem,
         updateQuantity,
         removeItem,
         clearCart,

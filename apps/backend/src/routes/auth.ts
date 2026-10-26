@@ -282,4 +282,58 @@ router.get("/me", AuthService.authenticate as any, (req: AuthenticatedRequest, r
   });
 });
 
+/**
+ * PUT /auth/profile
+ * Updates the user's minimum standard profile (full_name and phone)
+ */
+router.put("/profile", AuthService.authenticate as any, async (req: AuthenticatedRequest, res: Response): Promise<any> => {
+  try {
+    const user = req.authUser || (req as any).user;
+    if (!user || !user.id) {
+      return res.status(401).json({ error: "Authentication required" });
+    }
+
+    const { fullName, phone } = req.body;
+    if (!fullName || typeof fullName !== "string" || fullName.trim().length < 2) {
+      return res.status(400).json({ error: "Full name is required (at least 2 characters)" });
+    }
+
+    if (!phone || typeof phone !== "string" || phone.trim().length < 9) {
+      return res.status(400).json({ error: "A valid phone number is required (at least 9 digits)" });
+    }
+
+    await AuthService.ensureTablesExist();
+    const result = await dbPool.query(
+      `UPDATE users 
+       SET full_name = $1, phone = $2, updated_at = NOW() 
+       WHERE id = $3 
+       RETURNING id, email, full_name, phone, role, created_at`,
+      [fullName.trim(), phone.trim(), user.id]
+    );
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    const row = result.rows[0];
+    const updatedUser = {
+      id: row.id,
+      email: row.email,
+      fullName: row.full_name,
+      phone: row.phone,
+      role: row.role,
+      createdAt: row.created_at,
+    };
+
+    return res.status(200).json({
+      success: true,
+      message: "Profile updated successfully",
+      user: updatedUser,
+    });
+  } catch (err: any) {
+    console.error("[Auth Profile Update Error]:", err);
+    return res.status(500).json({ error: "Failed to update profile" });
+  }
+});
+
 export default router;

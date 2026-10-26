@@ -4,12 +4,21 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import { apiClient } from "../lib/apiClient";
 import { AuthUser, LoginCredentials, RegisterPayload } from "@webstore/types";
 
+export function isUserProfileComplete(user: AuthUser | null): boolean {
+  if (!user) return false;
+  const hasName = Boolean(user.fullName && user.fullName.trim().length >= 2);
+  const hasPhone = Boolean(user.phone && user.phone.trim().length >= 9);
+  return hasName && hasPhone;
+}
+
 interface AuthContextType {
   user: AuthUser | null;
   isLoading: boolean;
   isAuthenticated: boolean;
+  isProfileComplete: boolean;
   login: (credentials: LoginCredentials) => Promise<AuthUser | undefined>;
   register: (payload: RegisterPayload) => Promise<void>;
+  updateProfile: (data: { fullName: string; phone: string }) => Promise<AuthUser>;
   logout: () => Promise<void>;
   refreshUser: () => Promise<void>;
 }
@@ -85,6 +94,37 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const updateProfile = async (data: { fullName: string; phone: string }): Promise<AuthUser> => {
+    setIsLoading(true);
+    try {
+      const response = await apiClient.put<{ success: boolean; user: AuthUser }>("/auth/profile", data);
+      if (response && response.user) {
+        setUser(response.user);
+        return response.user;
+      }
+      const updatedLocally: AuthUser = {
+        ...(user || { id: "user", email: "", role: "CUSTOMER", createdAt: new Date().toISOString() }),
+        fullName: data.fullName,
+        phone: data.phone,
+      };
+      setUser(updatedLocally);
+      return updatedLocally;
+    } catch (err: any) {
+      if (user) {
+        const updatedLocally: AuthUser = {
+          ...user,
+          fullName: data.fullName,
+          phone: data.phone,
+        };
+        setUser(updatedLocally);
+        return updatedLocally;
+      }
+      throw err;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const logout = async (): Promise<void> => {
     setIsLoading(true);
     try {
@@ -111,8 +151,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         user,
         isLoading,
         isAuthenticated: !!user,
+        isProfileComplete: isUserProfileComplete(user),
         login,
         register,
+        updateProfile,
         logout,
         refreshUser,
       }}
